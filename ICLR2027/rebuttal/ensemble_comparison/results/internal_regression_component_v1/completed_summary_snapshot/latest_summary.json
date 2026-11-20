@@ -1,0 +1,453 @@
+{
+  "status": "COMPLETE",
+  "seed": 0,
+  "records": [
+    {
+      "method": "Base",
+      "clean": {
+        "r2": 0.7407362142204691,
+        "nrmse": 0.47853884007864916
+      },
+      "five": {
+        "r2": -1.1070132850905503,
+        "nrmse": 1.2457812433310376
+      },
+      "seven": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      }
+    },
+    {
+      "method": "Native6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.107480770423603,
+        "nrmse": 1.2470380325417871
+      },
+      "clean": {
+        "r2": 0.7386757105473528,
+        "nrmse": 0.4830170077270781
+      },
+      "five_at_least_Base": false,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": -0.03752808192380004,
+        "nrmse": 0.7671405573590862
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7066383772132298,
+        "nrmse": 0.4772193855300659
+      }
+    },
+    {
+      "method": "GES6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -0.9793306399301468,
+        "nrmse": 1.2238184214244303
+      },
+      "clean": {
+        "r2": 0.7404851449524268,
+        "nrmse": 0.480207860764723
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.29164765253193375,
+        "nrmse": 0.7295935672212788
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7011289608540444,
+        "nrmse": 0.48588095302736123
+      }
+    },
+    {
+      "method": "ConvexStacking6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -0.9785096907821518,
+        "nrmse": 1.2237647795000206
+      },
+      "clean": {
+        "r2": 0.7404125453221246,
+        "nrmse": 0.480042549079042
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.29140334972022697,
+        "nrmse": 0.7295830988764115
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7013205003844613,
+        "nrmse": 0.48564467158376606
+      }
+    },
+    {
+      "method": "RidgeStacking6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -0.9911745701054172,
+        "nrmse": 1.2268924236020111
+      },
+      "clean": {
+        "r2": 0.7404185946039619,
+        "nrmse": 0.4801476065866044
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.2859284705801198,
+        "nrmse": 0.7260959092081412
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.707715377625779,
+        "nrmse": 0.4759690487960751
+      }
+    },
+    {
+      "method": "Median6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.0631208663262557,
+        "nrmse": 1.2371856490097435
+      },
+      "clean": {
+        "r2": 0.7404465711996481,
+        "nrmse": 0.4803775405169687
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.29325883217862964,
+        "nrmse": 0.725328124375236
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7049862605706474,
+        "nrmse": 0.4789013811668093
+      }
+    },
+    {
+      "method": "FeatureMean6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.0160252544286885,
+        "nrmse": 1.2295557746807857
+      },
+      "clean": {
+        "r2": 0.7412068383961712,
+        "nrmse": 0.4802049956651565
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.2877322513777399,
+        "nrmse": 0.726509159849189
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7061092693341623,
+        "nrmse": 0.48132216021613733
+      }
+    },
+    {
+      "method": "TrimmedMean6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.0278556624775113,
+        "nrmse": 1.231661562536056
+      },
+      "clean": {
+        "r2": 0.7406459436767346,
+        "nrmse": 0.4792574527023986
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.28764362840825397,
+        "nrmse": 0.7259672633355467
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7073385080499258,
+        "nrmse": 0.4791447813489615
+      }
+    },
+    {
+      "method": "IQR6_keep1_adapted",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.0962540415035156,
+        "nrmse": 1.2443348842489372
+      },
+      "clean": {
+        "r2": 0.7395536265279569,
+        "nrmse": 0.4791855794539301
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.26606434844931637,
+        "nrmse": 0.7298431069225436
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7071364648989267,
+        "nrmse": 0.4769211643291463
+      }
+    },
+    {
+      "method": "Native6_support_gate",
+      "annotation": "†‡",
+      "adaptation": "Calibration-dataset support-gate or IQR-retention selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.0978663475686719,
+        "nrmse": 1.2436008760432735
+      },
+      "clean": {
+        "r2": 0.7414615429974607,
+        "nrmse": 0.4801466046328925
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.25898368144185496,
+        "nrmse": 0.7314720681413265
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true
+    },
+    {
+      "method": "IQR6_calibrated_keep",
+      "annotation": "†‡",
+      "adaptation": "Calibration-dataset support-gate or IQR-retention selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.0545852448129132,
+        "nrmse": 1.2344793261607254
+      },
+      "clean": {
+        "r2": 0.7408353115932886,
+        "nrmse": 0.4795140876597946
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.272717487217131,
+        "nrmse": 0.7282857816512488
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true
+    }
+  ],
+  "raw_method_records": [
+    {
+      "method": "Native6",
+      "five": {
+        "r2": -1.108149011969996,
+        "nrmse": 1.244615890326599
+      },
+      "clean": {
+        "r2": 0.7435832127039236,
+        "nrmse": 0.4758748667538055
+      },
+      "seven": {
+        "r2": 0.2589679252031714,
+        "nrmse": 0.7304371868743768
+      }
+    },
+    {
+      "method": "GES6",
+      "five": {
+        "r2": -0.9002225036920536,
+        "nrmse": 1.211172146214356
+      },
+      "clean": {
+        "r2": 0.7353108991042839,
+        "nrmse": 0.4885109262576368
+      },
+      "seven": {
+        "r2": 0.298679120556409,
+        "nrmse": 0.7285549149573344
+      }
+    },
+    {
+      "method": "ConvexStacking6",
+      "five": {
+        "r2": -0.9003483399802105,
+        "nrmse": 1.2111950734874608
+      },
+      "clean": {
+        "r2": 0.7353464855596451,
+        "nrmse": 0.48846801557809555
+      },
+      "seven": {
+        "r2": 0.2978287263823569,
+        "nrmse": 0.7288156366318065
+      }
+    },
+    {
+      "method": "RidgeStacking6",
+      "five": {
+        "r2": -0.8907866685614718,
+        "nrmse": 1.2110796600969604
+      },
+      "clean": {
+        "r2": 0.7307070393537611,
+        "nrmse": 0.4942408932037843
+      },
+      "seven": {
+        "r2": 0.29453181367527176,
+        "nrmse": 0.7260076603932445
+      }
+    },
+    {
+      "method": "Median6",
+      "five": {
+        "r2": -1.0862723586604237,
+        "nrmse": 1.2411204238071856
+      },
+      "clean": {
+        "r2": 0.7406816222083803,
+        "nrmse": 0.47884563629117927
+      },
+      "seven": {
+        "r2": 0.275422023486146,
+        "nrmse": 0.7282763233458085
+      }
+    },
+    {
+      "method": "FeatureMean6",
+      "five": {
+        "r2": -0.9696753462614558,
+        "nrmse": 1.221636275138263
+      },
+      "clean": {
+        "r2": 0.7400356484884826,
+        "nrmse": 0.4821757306149816
+      },
+      "seven": {
+        "r2": 0.3133014573179752,
+        "nrmse": 0.7205972836480841
+      }
+    },
+    {
+      "method": "TrimmedMean6",
+      "five": {
+        "r2": -1.0131756602121471,
+        "nrmse": 1.22972549380627
+      },
+      "clean": {
+        "r2": 0.7410521098072548,
+        "nrmse": 0.4798862776613977
+      },
+      "seven": {
+        "r2": 0.3048462803488145,
+        "nrmse": 0.722017887745042
+      }
+    },
+    {
+      "method": "IQR6_keep1_adapted",
+      "five": {
+        "r2": -1.1328572062476185,
+        "nrmse": 1.2582779771354675
+      },
+      "clean": {
+        "r2": 0.7274285338736213,
+        "nrmse": 0.4876432851555955
+      },
+      "seven": {
+        "r2": 0.229219283757313,
+        "nrmse": 0.739764922329488
+      }
+    }
+  ],
+  "paper_Base_reference": {
+    "clean": {
+      "r2": 0.739,
+      "nrmse": 0.476
+    },
+    "five": {
+      "r2": -1.077,
+      "nrmse": 1.27
+    },
+    "seven": {
+      "r2": 0.273,
+      "nrmse": 0.73
+    }
+  },
+  "historical_Shared_reference": {
+    "five": {
+      "r2": 0.363,
+      "nrmse": 0.783
+    },
+    "seven": {
+      "r2": 0.467,
+      "nrmse": 0.659
+    }
+  },
+  "historical_Shared_was_not_run_on_this_benchmark": true,
+  "internal_development_only": true,
+  "benchmark_calibrated_using_Base_development_labels": true,
+  "test_dataset_labels_not_used_for_method_parameter_fitting": true,
+  "Shared_bounds_not_used_for_method_selection": true,
+  "classification_accepted_snapshot_unchanged": true,
+  "five_datasets": 35,
+  "seven_datasets": 33,
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "logical_context_count": 6,
+  "Random_excluded_from_main_table": true,
+  "Markdown_written": false,
+  "annotations": {
+    "†": "Special input/context adaptation",
+    "‡": "Calibration-dataset fitting or parameter selection",
+    "§": "Backbone parameter fine-tuning; none in these runs"
+  },
+  "five_Base_calibration_within_requested_tolerance": false,
+  "all_interval_checks_are_diagnostic_only": true
+}

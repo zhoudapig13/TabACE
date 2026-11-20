@@ -1,0 +1,257 @@
+{
+  "artifact": "TabACE 2x4 strength-comparison figure",
+  "aggregation": "For each observed strength, take an equal-weight arithmetic mean across the canonical family-level OOF macro means",
+  "plot_input": "Canonical summary_oof.csv family-by-strength macro means.",
+  "methods": [
+    "Base",
+    "TabACE-shared",
+    "TabACE-specific"
+  ],
+  "display_to_source_method": {
+    "Base": "base",
+    "TabACE-shared": "shared",
+    "TabACE-specific": "pro"
+  },
+  "metrics": [
+    "Accuracy",
+    "AUC",
+    "R2",
+    "nMAE"
+  ],
+  "sources": [
+    {
+      "benchmark": "controlled",
+      "task": "classification",
+      "raw_detail_paths": [
+        "fair_budget_experiments/unified_context_ensemble/results/tabicl_origin_safe_final_v2/five_shift/classification/summary_oof.csv"
+      ],
+      "raw_detail_rows": [
+        25
+      ],
+      "raw_source_usage": [
+        "canonical family-by-strength OOF macro means"
+      ],
+      "summary_validation_path": "fair_budget_experiments/unified_context_ensemble/results/tabicl_origin_safe_final_v2/five_shift/classification/summary_oof.csv",
+      "provenance_audit_paths": [
+        "fair_budget_experiments/unified_context_ensemble/results/tabicl_origin_safe_final_v2/five_shift/classification/origin_overlay_audit.json",
+        "fair_budget_experiments/unified_context_ensemble/results/adaptive_router_candidate_v1/five_shift/classification/audit.json"
+      ],
+      "summary_means_checked": 225,
+      "maximum_raw_to_summary_absolute_error": 0.0,
+      "families": [
+        "aucband",
+        "boundary",
+        "local",
+        "mixed",
+        "shortcut"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 72,
+      "origin_source": "canonical combined OOF summary"
+    },
+    {
+      "benchmark": "controlled",
+      "task": "regression",
+      "raw_detail_paths": [
+        "PaperResults/failure_recovery_20260913/tabicl/five_targeted_final/regression/summary_oof.csv"
+      ],
+      "raw_detail_rows": [
+        25
+      ],
+      "raw_source_usage": [
+        "canonical family-by-strength OOF macro means"
+      ],
+      "summary_validation_path": "PaperResults/failure_recovery_20260913/tabicl/five_targeted_final/regression/summary_oof.csv",
+      "provenance_audit_paths": [
+        "PaperResults/failure_recovery_20260913/tabicl/five_targeted_final/regression/promotion_manifest.json"
+      ],
+      "summary_means_checked": 225,
+      "maximum_raw_to_summary_absolute_error": 0.0,
+      "families": [
+        "boundary",
+        "local",
+        "mixed",
+        "rankband",
+        "shortcut"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "origin_source": "canonical combined OOF summary"
+    },
+    {
+      "benchmark": "shift",
+      "task": "classification",
+      "raw_detail_paths": [
+        "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/composite/classification/summary_oof.csv"
+      ],
+      "raw_detail_rows": [
+        35
+      ],
+      "raw_source_usage": [
+        "canonical family-by-strength OOF macro means"
+      ],
+      "summary_validation_path": "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/composite/classification/summary_oof.csv",
+      "provenance_audit_paths": [
+        "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/composite/classification/audit.json"
+      ],
+      "summary_means_checked": 315,
+      "maximum_raw_to_summary_absolute_error": 0.0,
+      "families": [
+        "concept",
+        "covariate",
+        "domain",
+        "label",
+        "selection",
+        "support",
+        "temporal"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "origin_source": "canonical combined OOF summary"
+    },
+    {
+      "benchmark": "shift",
+      "task": "regression",
+      "raw_detail_paths": [
+        "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/composite/regression/summary_oof.csv"
+      ],
+      "raw_detail_rows": [
+        35
+      ],
+      "raw_source_usage": [
+        "canonical family-by-strength OOF macro means"
+      ],
+      "summary_validation_path": "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/composite/regression/summary_oof.csv",
+      "provenance_audit_paths": [
+        "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/composite/regression/audit.json"
+      ],
+      "summary_means_checked": 315,
+      "maximum_raw_to_summary_absolute_error": 0.0,
+      "families": [
+        "concept",
+        "covariate",
+        "domain",
+        "label",
+        "selection",
+        "support",
+        "temporal"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 33,
+      "origin_source": "canonical combined OOF summary"
+    }
+  ],
+  "panel_y_limits": [
+    {
+      "panel": "(a)",
+      "benchmark": "controlled",
+      "task": "classification",
+      "metric": "accuracy",
+      "limits": [
+        0.25,
+        0.8500000000000001
+      ]
+    },
+    {
+      "panel": "(b)",
+      "benchmark": "controlled",
+      "task": "classification",
+      "metric": "auc",
+      "limits": [
+        0.45,
+        0.9500000000000001
+      ]
+    },
+    {
+      "panel": "(c)",
+      "benchmark": "controlled",
+      "task": "regression",
+      "metric": "r2",
+      "limits": [
+        -3.5,
+        1.0
+      ]
+    },
+    {
+      "panel": "(d)",
+      "benchmark": "controlled",
+      "task": "regression",
+      "metric": "nmae",
+      "limits": [
+        0.1,
+        1.7000000000000002
+      ]
+    },
+    {
+      "panel": "(e)",
+      "benchmark": "shift",
+      "task": "classification",
+      "metric": "accuracy",
+      "limits": [
+        0.72,
+        0.86
+      ]
+    },
+    {
+      "panel": "(f)",
+      "benchmark": "shift",
+      "task": "classification",
+      "metric": "auc",
+      "limits": [
+        0.79,
+        0.89
+      ]
+    },
+    {
+      "panel": "(g)",
+      "benchmark": "shift",
+      "task": "regression",
+      "metric": "r2",
+      "limits": [
+        -0.2,
+        0.8
+      ]
+    },
+    {
+      "panel": "(h)",
+      "benchmark": "shift",
+      "task": "regression",
+      "metric": "nmae",
+      "limits": [
+        0.25,
+        0.75
+      ]
+    }
+  ],
+  "derived_data": "paper/figures/tabace_strength_comparison_data.csv",
+  "outputs": [
+    "paper/figures/tabace_strength_comparison.pdf",
+    "paper/figures/tabace_strength_comparison.svg",
+    "paper/figures/tabace_strength_comparison.png"
+  ],
+  "rendering": "Observed points connected by straight segments with no smoothing, fitted values, or synthetic points. Each panel uses its own explicitly labeled vertical range; point values are not directly annotated."
+}

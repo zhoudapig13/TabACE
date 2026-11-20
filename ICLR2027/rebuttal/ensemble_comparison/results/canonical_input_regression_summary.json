@@ -1,0 +1,87 @@
+{
+  "status": "COMPLETE",
+  "seed": 0,
+  "datasets": 33,
+  "conditions": 957,
+  "source_rows": 256,
+  "candidate_budget": 6,
+  "Shared_run": false,
+  "original_full_pool_results_retained": true,
+  "protocol_changed": false,
+  "access_regime": "canonical Base source rows only",
+  "historical_Shared_not_same_regime": true,
+  "averages": [
+    {
+      "method": "Convex Stacking-6",
+      "clean": {
+        "r2": 0.685983064183776,
+        "nrmse": 0.4982450653283578
+      },
+      "seven": {
+        "r2": 0.2927059798218146,
+        "nrmse": 0.7327785966800734
+      }
+    },
+    {
+      "method": "GES-6",
+      "clean": {
+        "r2": 0.6849347840763111,
+        "nrmse": 0.4990302367101478
+      },
+      "seven": {
+        "r2": 0.3009205205167105,
+        "nrmse": 0.7319843759199655
+      }
+    },
+    {
+      "method": "base_protocol_check",
+      "clean": {
+        "r2": 0.7078184864700053,
+        "nrmse": 0.47622497419131526
+      },
+      "seven": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      }
+    },
+    {
+      "method": "bootstrap_mean_6",
+      "clean": {
+        "r2": 0.6840285966247376,
+        "nrmse": 0.499000364568515
+      },
+      "seven": {
+        "r2": 0.26095508185266886,
+        "nrmse": 0.7369296550233625
+      }
+    },
+    {
+      "method": "native_6",
+      "clean": {
+        "r2": 0.7075566538124595,
+        "nrmse": 0.4765234992875668
+      },
+      "seven": {
+        "r2": 0.2589679252031714,
+        "nrmse": 0.7304371868743768
+      }
+    },
+    {
+      "method": "oligoicp_iqr_6_keep1_adapted",
+      "clean": {
+        "r2": 0.6646572197997328,
+        "nrmse": 0.5216569951778254
+      },
+      "seven": {
+        "r2": 0.2121855399743895,
+        "nrmse": 0.7550774304641359
+      }
+    }
+  ],
+  "audit": {
+    "all_raw_metrics_recomputed": true,
+    "all_IQR_selections_checked": true,
+    "OOF_folds_disjoint": true,
+    "all_complete_grids": true
+  }
+}

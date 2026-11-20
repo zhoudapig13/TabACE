@@ -1,0 +1,202 @@
+{
+  "condition_counts": {
+    "coeff_0.75_label_-1": 980,
+    "coeff_0.75_label_1": 980,
+    "coeff_0.875_label_-1": 980,
+    "coeff_0.875_label_1": 980,
+    "coeff_1_label_-1": 980,
+    "coeff_1_label_1": 980
+  },
+  "trials": [
+    {
+      "candidate": "coeff_0.75_label_-1",
+      "generator_parameters": {
+        "x_weight_exponent": 2.25,
+        "max_boundary_flip_fraction": 0.22499999999999998,
+        "affine_scale_increment": 0.5625,
+        "affine_translation_sd": 0.375,
+        "support_translation_sd": 1.125,
+        "label_prior_displacement_coefficient": 0.75,
+        "label_prior_direction": -1,
+        "label_prior_extremes": [
+          0.1,
+          0.9
+        ]
+      },
+      "Base": {
+        "accuracy": 0.7633689413265307,
+        "auc": 0.8245589240123335
+      },
+      "difference": {
+        "accuracy": 0.0003689413265306474,
+        "auc": -0.001441075987666407
+      },
+      "distance": 2.2128177046509042e-06,
+      "within_tolerance": true
+    },
+    {
+      "candidate": "coeff_0.75_label_1",
+      "generator_parameters": {
+        "x_weight_exponent": 2.25,
+        "max_boundary_flip_fraction": 0.22499999999999998,
+        "affine_scale_increment": 0.5625,
+        "affine_translation_sd": 0.375,
+        "support_translation_sd": 1.125,
+        "label_prior_displacement_coefficient": 0.75,
+        "label_prior_direction": 1,
+        "label_prior_extremes": [
+          0.1,
+          0.9
+        ]
+      },
+      "Base": {
+        "accuracy": 0.767984693877551,
+        "auc": 0.8246902302648083
+      },
+      "difference": {
+        "accuracy": 0.004984693877550961,
+        "auc": -0.0013097697351917015
+      },
+      "distance": 2.6562669812118172e-05,
+      "within_tolerance": false
+    },
+    {
+      "candidate": "coeff_0.875_label_1",
+      "generator_parameters": {
+        "x_weight_exponent": 2.625,
+        "max_boundary_flip_fraction": 0.2625,
+        "affine_scale_increment": 0.65625,
+        "affine_translation_sd": 0.4375,
+        "support_translation_sd": 1.3125,
+        "label_prior_displacement_coefficient": 0.875,
+        "label_prior_direction": 1,
+        "label_prior_extremes": [
+          0.1,
+          0.9
+        ]
+      },
+      "Base": {
+        "accuracy": 0.7610809948979592,
+        "auc": 0.819142660274653
+      },
+      "difference": {
+        "accuracy": -0.0019190051020407939,
+        "auc": -0.006857339725346967
+      },
+      "distance": 5.070568869048022e-05,
+      "within_tolerance": false
+    },
+    {
+      "candidate": "coeff_0.875_label_-1",
+      "generator_parameters": {
+        "x_weight_exponent": 2.625,
+        "max_boundary_flip_fraction": 0.2625,
+        "affine_scale_increment": 0.65625,
+        "affine_translation_sd": 0.4375,
+        "support_translation_sd": 1.3125,
+        "label_prior_displacement_coefficient": 0.875,
+        "label_prior_direction": -1,
+        "label_prior_extremes": [
+          0.1,
+          0.9
+        ]
+      },
+      "Base": {
+        "accuracy": 0.7559231505102041,
+        "auc": 0.8189849692293064
+      },
+      "difference": {
+        "accuracy": -0.007076849489795922,
+        "auc": -0.007015030770693542
+      },
+      "distance": 9.929245541500204e-05,
+      "within_tolerance": false
+    },
+    {
+      "candidate": "coeff_1_label_1",
+      "generator_parameters": {
+        "x_weight_exponent": 3.0,
+        "max_boundary_flip_fraction": 0.3,
+        "affine_scale_increment": 0.75,
+        "affine_translation_sd": 0.5,
+        "support_translation_sd": 1.5,
+        "label_prior_displacement_coefficient": 1.0,
+        "label_prior_direction": 1,
+        "label_prior_extremes": [
+          0.1,
+          0.9
+        ]
+      },
+      "Base": {
+        "accuracy": 0.752782206632653,
+        "auc": 0.8124573050447789
+      },
+      "difference": {
+        "accuracy": -0.010217793367346961,
+        "auc": -0.01354269495522109
+      },
+      "distance": 0.00028780788794797036,
+      "within_tolerance": false
+    },
+    {
+      "candidate": "coeff_1_label_-1",
+      "generator_parameters": {
+        "x_weight_exponent": 3.0,
+        "max_boundary_flip_fraction": 0.3,
+        "affine_scale_increment": 0.75,
+        "affine_translation_sd": 0.5,
+        "support_translation_sd": 1.5,
+        "label_prior_displacement_coefficient": 1.0,
+        "label_prior_direction": -1,
+        "label_prior_extremes": [
+          0.1,
+          0.9
+        ]
+      },
+      "Base": {
+        "accuracy": 0.7470982142857143,
+        "auc": 0.812397601271996
+      },
+      "difference": {
+        "accuracy": -0.015901785714285688,
+        "auc": -0.01360239872800395
+      },
+      "distance": 0.00043789204005866385,
+      "within_tolerance": false
+    }
+  ],
+  "best": {
+    "candidate": "coeff_0.75_label_-1",
+    "generator_parameters": {
+      "x_weight_exponent": 2.25,
+      "max_boundary_flip_fraction": 0.22499999999999998,
+      "affine_scale_increment": 0.5625,
+      "affine_translation_sd": 0.375,
+      "support_translation_sd": 1.125,
+      "label_prior_displacement_coefficient": 0.75,
+      "label_prior_direction": -1,
+      "label_prior_extremes": [
+        0.1,
+        0.9
+      ]
+    },
+    "Base": {
+      "accuracy": 0.7633689413265307,
+      "auc": 0.8245589240123335
+    },
+    "difference": {
+      "accuracy": 0.0003689413265306474,
+      "auc": -0.001441075987666407
+    },
+    "distance": 2.2128177046509042e-06,
+    "within_tolerance": true
+  },
+  "internal_only": true,
+  "development_labels_used_for_benchmark_selection": true,
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "scope": "TabICL five-perturbation regression targeted recovery",
+  "tested_claim": "The requested Shortcut, Local, and Mixed cells can be recomputed without copying Base predictions, while preserving the frozen non-target results and excluding outer-test labels from selection.",
+  "input_sources": [
+    "PaperResults/regression_origin_rerun_preview_v2/curves/five/regression/detail_oof.csv",
+    "PaperResults/failure_recovery_20260913/tabicl/five_metric_residual_soft/regression/detail_oof.csv",
+    "PaperResults/failure_recovery_20260913/tabicl/five_local_exact/regression/detail_oof.csv"
+  ],
+  "result_sources": [
+    "PaperResults/failure_recovery_20260913/tabicl/five_targeted_final/regression/detail_oof.csv",
+    "PaperResults/failure_recovery_20260913/tabicl/five_targeted_final/regression/summary_oof.csv",
+    "PaperResults/failure_recovery_20260913/tabicl/five_targeted_final/regression/promotion_manifest.json"
+  ],
+  "perturbation": {
+    "families": ["shortcut", "local", "mixed"],
+    "strengths": {
+      "shortcut": [0.2, 0.5, 0.8],
+      "local": [0.2, 0.5],
+      "mixed": [0.2]
+    },
+    "outer_folds": 5,
+    "datasets": 35,
+    "tuning_boundary": "Context membership, residual scale, and regularization were selected from training/support or outer-training folds only. Outer-test labels were excluded."
+  },
+  "checks": [
+    {
+      "name": "outer-test-label exclusion",
+      "metric": "audited protocol flag",
+      "threshold": true,
+      "observed_value": true,
+      "status": "PASS",
+      "limitation": "This check relies on the saved run audit and promotion manifest rather than an independent code-level information-flow proof.",
+      "fallback_trigger_relevance": false
+    },
+    {
+      "name": "promoted predictions are not copied from Base",
+      "metric": "target method-metric cells with absolute difference from Base greater than 1e-12",
+      "threshold": "27 of 27",
+      "observed_value": "27 of 27",
+      "status": "PASS",
+      "limitation": "A nonzero difference establishes distinct predictions, not a practically meaningful gain.",
+      "fallback_trigger_relevance": false
+    },
+    {
+      "name": "Local strict ordering",
+      "metric": "R2 higher and nMAE/nRMSE lower in the order Base, TabACE-shared, TabACE-specific",
+      "threshold": "strict ordering at strengths 0.2 and 0.5 for all three metrics",
+      "observed_value": {
+        "0.2": {
+          "r2": [0.697065785979, 0.697067452919, 0.697096951102],
+          "nmae": [0.290964692507, 0.290964490399, 0.29096289204],
+          "nrmse": [0.533307141891, 0.533305474377, 0.533282511235]
+        },
+        "0.5": {
+          "r2": [0.641396417376, 0.641399734934, 0.641402016001],
+          "nmae": [0.339694481227, 0.339690686247, 0.33967340484],
+          "nrmse": [0.593439300556, 0.593436046661, 0.593430171522]
+        }
+      },
+      "status": "PASS",
+      "limitation": "The margins are smaller than the paper table's three-decimal precision, so the displayed Local entries tie after rounding.",
+      "fallback_trigger_relevance": true
+    },
+    {
+      "name": "Shortcut Shared display noninferiority",
+      "metric": "R2/nMAE/nRMSE after three-decimal rounding",
+      "threshold": "no displayed metric worse than Base at strengths 0.2, 0.5, and 0.8",
+      "observed_value": "all nine displayed comparisons are noninferior and all raw values differ from Base",
+      "status": "CONDITIONAL",
+      "limitation": "Raw changes are very small and their directions are mixed; the result supports near-neutral robustness, not a material improvement claim.",
+      "fallback_trigger_relevance": true
+    },
+    {
+      "name": "Mixed 0.2 targeted recovery",
+      "metric": "R2/nMAE/nRMSE",
+      "threshold": "Shared is noninferior at displayed precision and Specific improves all raw metrics over Base",
+      "observed_value": {
+        "base": [0.643301775666, 0.393394877863, 0.610899461954],
+        "shared": [0.64322099676, 0.39348378873, 0.610990215752],
+        "specific": [0.673485872188, 0.345850366003, 0.568983069254]
+      },
+      "status": "CONDITIONAL",
+      "limitation": "Shared is slightly worse in raw precision but ties Base at the paper's displayed precision; Specific provides the substantive gain.",
+      "fallback_trigger_relevance": true
+    },
+    {
+      "name": "non-target preservation",
+      "metric": "exact equality of every non-target method-metric value to the accepted snapshot",
+      "threshold": "zero changed non-target values",
+      "observed_value": 0,
+      "status": "PASS",
+      "limitation": "The composite keeps previously accepted cells unchanged and therefore does not revalidate those cells here.",
+      "fallback_trigger_relevance": false
+    },
+    {
+      "name": "local reproduction of promoted tables",
+      "metric": "dataframe equality and maximum numeric delta after rerunning the promotion script",
+      "threshold": "equal tables and maximum delta 0",
+      "observed_value": {
+        "detail_equal": true,
+        "summary_equal": true,
+        "maximum_numeric_delta": 0.0
+      },
+      "status": "PASS",
+      "limitation": "Binary SHA-256 differs across Linux and Windows reruns because CSV line endings differ; parsed values and row order are identical.",
+      "fallback_trigger_relevance": false
+    },
+    {
+      "name": "paper artifact rendering",
+      "metric": "ICLR PDF compile and visual inspection of the main table, strength figure, and appendix tables",
+      "threshold": "successful compile with no clipping, overlap, or unreadable target artifact",
+      "observed_value": "24-page PDF compiled; inspected pages 7-9 and 20-23 passed",
+      "status": "PASS",
+      "limitation": "Existing bibliography underfull-box warnings are outside this targeted experiment update.",
+      "fallback_trigger_relevance": false
+    }
+  ],
+  "overall_status": "CONDITIONAL",
+  "limitation": "Local ordering is numerically strict but visually tied at three decimals; Shortcut Shared and Mixed Shared should be described as stable or near-neutral rather than improved.",
+  "fallback_trigger": "If a visible or practically meaningful Local margin is required, predeclare a minimum train-only effect size and rerun rather than increasing display precision selectively or editing metrics."
+}

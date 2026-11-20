@@ -1,0 +1,4 @@
+method,n,mean_accuracy,mean_balanced_accuracy,mean_macro_f1,mean_minority_recall,mean_ece,mean_accuracy_delta,mean_balanced_accuracy_delta,mean_macro_f1_delta,mean_minority_recall_delta,mean_ece_delta
+apa_shift_margin_gate,2,0.65,0.756578947368421,0.5925550553499737,0.9,0.23008923156734623,0.0,0.0,0.0,0.0,-0.0020559109878905413
+apa_validation_selector,2,0.65,0.756578947368421,0.5925550553499737,0.9,0.23214514255523677,0.0,0.0,0.0,0.0,0.0
+tabicl_baseline,2,0.65,0.756578947368421,0.5925550553499737,0.9,0.23214514255523677,0.0,0.0,0.0,0.0,0.0

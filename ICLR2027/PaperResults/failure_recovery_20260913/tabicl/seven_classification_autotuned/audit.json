@@ -1,0 +1,15 @@
+{
+  "protocol_id": "uce_shift_profile_autotune_v2",
+  "task": "classification",
+  "records": 1225,
+  "summary_cells": 35,
+  "common_inference_core": "unified_context_ensemble.src.core.predict",
+  "all_predictions_out_of_fold": true,
+  "profile_selection_uses_outer_training_risk_only": true,
+  "outer_test_labels_used_for_selection": false,
+  "curve_shape_used_for_selection": false,
+  "strength_zero_forced_to_base": false,
+  "strength_zero_uses_shift_invariant_contexts": true,
+  "strength_zero_selection_uses_outer_training_only": true,
+  "maximum_core_vs_source_metric_error": 0.0
+}

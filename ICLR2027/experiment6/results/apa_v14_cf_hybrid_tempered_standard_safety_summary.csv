@@ -1,0 +1,4 @@
+method,n,mean_accuracy,mean_balanced_accuracy,mean_macro_f1,mean_minority_recall,mean_ece,mean_accuracy_delta,mean_balanced_accuracy_delta,mean_macro_f1_delta,mean_minority_recall_delta,mean_ece_delta
+apa_cf_batch_margin_router,24,0.609375,0.6094460227272727,0.60486453063921,0.6265625,0.13511325023137033,0.0,0.0,0.0,0.0,0.0
+apa_cf_hybrid_tempered_router,24,0.609375,0.6094460227272727,0.60486453063921,0.6265625,0.13511325023137033,0.0,0.0,0.0,0.0,0.0
+tabicl_baseline,24,0.609375,0.6094460227272727,0.60486453063921,0.6265625,0.13511325023137033,0.0,0.0,0.0,0.0,0.0

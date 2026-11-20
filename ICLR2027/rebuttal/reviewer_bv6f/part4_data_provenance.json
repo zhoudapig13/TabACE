@@ -1,0 +1,12 @@
+{
+  "classification_source": "rebuttal/gate_sensitivity_replay/results/algorithm_repairs_v1/summary/high_confidence.csv",
+  "classification_definition": "Base maximum class probability >=0.9; five nonzero perturbation strengths/conditions; 3792 and 4506 errors in 184320 query-condition pairs per backbone",
+  "corrected_incidence_rounding": "3792/184320=2.0573%, reported 2.06%; user image 2.04% was not used",
+  "single_extreme_definition": "Exactly one alternative outside query median +/-3 source-label SD",
+  "common_error_definition_source": "rebuttal/gate_sensitivity_replay/results/joint_harm_frequency/frozen_plan.json",
+  "seven_shift_incidence_source": "rebuttal/gate_sensitivity_replay/results/joint_harm_frequency/{tabicl,tabpfn}/seven_reimplemented/summary.csv",
+  "incidence_scope": "Both five and seven shown separately; 0.081/0.084% and 0.025/0.021% refer only to seven shifts",
+  "performance_source": "rebuttal/gate_sensitivity_replay/results/shared_error_rebuttal_summary/pooled_corruption_shift_summary.csv",
+  "statistics_scope": "Reconstructed development evaluation; not original submission prediction archive; no statistical-significance claim for improvements",
+  "risk_recovery_scope": "Fixed severe same-direction joint-error cohort; positive excess squared fusion loss relative to Base, not all prediction error"
+}

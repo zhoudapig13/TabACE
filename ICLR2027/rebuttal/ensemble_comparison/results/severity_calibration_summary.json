@@ -1,0 +1,188 @@
+{
+  "status": "COMPLETE",
+  "calibration_datasets": 63,
+  "rows": [
+    {
+      "configuration": "clean",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.8113839285714286,
+      "auc": 0.9106440792504396
+    },
+    {
+      "configuration": "labels_1_features1_amplitude6",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6561321924603175,
+      "auc": 0.8279628973216403,
+      "calibration_distance": 87.45592410898172
+    },
+    {
+      "configuration": "labels_1.25_features1_amplitude6",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6364769345238096,
+      "auc": 0.8209173450080224,
+      "calibration_distance": 70.5319882885644
+    },
+    {
+      "configuration": "labels_1.5_features1_amplitude6",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6203373015873015,
+      "auc": 0.8143082276673926,
+      "calibration_distance": 57.91612357971479
+    },
+    {
+      "configuration": "labels_1.75_features1_amplitude6",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6093812003968255,
+      "auc": 0.8087821975356568,
+      "calibration_distance": 49.85188378958925
+    },
+    {
+      "configuration": "labels_2_features1_amplitude6",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6054315476190477,
+      "auc": 0.7894593350153606,
+      "calibration_distance": 42.57668870370029
+    },
+    {
+      "configuration": "labels_2.5_features1_amplitude6",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6010044642857144,
+      "auc": 0.7874126864808733,
+      "calibration_distance": 39.73518698624649
+    },
+    {
+      "configuration": "labels_3_features1_amplitude6",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.599844990079365,
+      "auc": 0.7785272883050286,
+      "calibration_distance": 37.11156579709106
+    },
+    {
+      "configuration": "labels_3_features1_amplitude0",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.4837301587301587,
+      "auc": 0.6752235576029795,
+      "calibration_distance": 0.4729987058231857
+    },
+    {
+      "configuration": "labels_3_features1_amplitude1",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.5482266865079365,
+      "auc": 0.7350219583375284,
+      "calibration_distance": 9.85987963252527
+    },
+    {
+      "configuration": "labels_3_features1_amplitude2",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.5641493055555555,
+      "auc": 0.751447592885198,
+      "calibration_distance": 16.86078504814412
+    },
+    {
+      "configuration": "labels_3_features1_amplitude3",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.5791418650793652,
+      "auc": 0.7637694401235852,
+      "calibration_distance": 24.566397195235204
+    },
+    {
+      "configuration": "labels_3_features1_amplitude12",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6063182043650795,
+      "auc": 0.7803034534948756,
+      "calibration_distance": 40.93445260409558
+    },
+    {
+      "configuration": "labels_3_features1_amplitude24",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6081969246031745,
+      "auc": 0.7849926700061519,
+      "calibration_distance": 43.03475492448777
+    },
+    {
+      "configuration": "labels_3_features1_amplitude0.05",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.5320188492063492,
+      "auc": 0.7230129181000791,
+      "calibration_distance": 5.072130686538085
+    },
+    {
+      "configuration": "labels_3_features1_amplitude0.1",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.531733630952381,
+      "auc": 0.7224970023762622,
+      "calibration_distance": 4.973946669889973
+    },
+    {
+      "configuration": "labels_3_features1_amplitude0.2",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.5341269841269841,
+      "auc": 0.7248096519353198,
+      "calibration_distance": 5.62550264996435
+    },
+    {
+      "configuration": "labels_3_features1_amplitude0.4",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.5388082837301587,
+      "auc": 0.7278447658626885,
+      "calibration_distance": 6.857867883759976
+    },
+    {
+      "configuration": "labels_2.5_features1_amplitude0",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.4968315972222222,
+      "auc": 0.6978422012590446,
+      "calibration_distance": 0.3361008344368602
+    },
+    {
+      "configuration": "labels_2.75_features1_amplitude0",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.4899429563492063,
+      "auc": 0.6900457078103279,
+      "calibration_distance": 0.2280322087923713
+    }
+  ],
+  "selection_uses_only_disjoint_calibration_queries": true,
+  "TabACE_used_for_selection": false,
+  "target_on_calibration": {
+    "accuracy": 0.4970360553075397,
+    "auc": 0.680452644220445
+  },
+  "selected_configuration": {
+    "name": "labels_2.75_features1_amplitude0",
+    "label_multiplier": 2.75,
+    "feature_fraction": 0.0,
+    "feature_count": 1,
+    "amplitude": 0.0
+  },
+  "selected_scores": {
+    "configuration": "labels_2.75_features1_amplitude0",
+    "datasets": 63,
+    "complete": true,
+    "accuracy": 0.4899429563492063,
+    "auc": 0.6900457078103279,
+    "calibration_distance": 0.2280322087923713
+  },
+  "within_calibration_tolerance": true,
+  "target_definition": "match paper clean-to-perturbed degradation, with an additional 0.005 drop, on new calibration queries"
+}

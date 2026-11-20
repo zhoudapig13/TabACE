@@ -1,0 +1,12 @@
+{
+  "source": "/mnt/public/zhouyibo/ICLR2027/paper/tables/tabicl_strength_details.tex",
+  "source_precision": "three-decimal manuscript table entries",
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "operation": "arithmetic mean of R2 over the four nonzero strengths; Shared minus Base",
+  "domain_temporal_gain_share": 0.8558807288790722
+}

@@ -1,0 +1,205 @@
+{
+  "status": "COMPLETE",
+  "seed": 0,
+  "context_count": 6,
+  "resampling_fraction": 0.1,
+  "current_controls": [
+    {
+      "backbone": "tabicl",
+      "track": "five",
+      "seed": 0,
+      "conditions": 735,
+      "datasets": 35,
+      "context_count": 6,
+      "rows_per_context_distribution": {
+        "2048": 462,
+        "1352": 21,
+        "1838": 21,
+        "927": 21,
+        "953": 21,
+        "959": 21,
+        "1439": 21,
+        "1040": 21,
+        "1108": 21,
+        "691": 21,
+        "465": 21,
+        "584": 21,
+        "817": 21,
+        "723": 21
+      },
+      "canonical_source_only": true,
+      "replacement_fraction": 0.1,
+      "Shared_run": false,
+      "source": "results/regression_partial_matched/tabicl/five/regression",
+      "clean": {
+        "Base": {
+          "r2": 0.7445725407596708,
+          "nrmse": 0.4928804327056842
+        },
+        "Random_partial010": {
+          "r2": 0.7429425166992527,
+          "nrmse": 0.4942704158870498
+        }
+      },
+      "shift": {
+        "Base": {
+          "r2": -1.107162683623088,
+          "nrmse": 1.2974285489889466
+        },
+        "Random_partial010": {
+          "r2": -1.1126104853015517,
+          "nrmse": 1.3001346240801024
+        }
+      },
+      "clean_within_005": true,
+      "shift_difference_vs_Base": {
+        "r2": -0.005447801678463815,
+        "nrmse": 0.002706075091155835
+      },
+      "shift_improves_both_metrics": false
+    },
+    {
+      "backbone": "tabicl",
+      "track": "seven_calibrated_v2",
+      "seed": 0,
+      "conditions": 957,
+      "datasets": 33,
+      "context_count": 6,
+      "rows_per_context_distribution": {
+        "256": 957
+      },
+      "canonical_source_only": true,
+      "replacement_fraction": 0.1,
+      "Shared_run": false,
+      "source": "results/canonical_partial_010/tabicl/seven_calibrated_v2/regression",
+      "clean": {
+        "Base": {
+          "r2": 0.7078184864700053,
+          "nrmse": 0.47622497419131526
+        },
+        "Random_partial010": {
+          "r2": 0.704027117123234,
+          "nrmse": 0.47933260115812226
+        }
+      },
+      "shift": {
+        "Base": {
+          "r2": 0.27460909266251643,
+          "nrmse": 0.7288452186341001
+        },
+        "Random_partial010": {
+          "r2": 0.2948707948038908,
+          "nrmse": 0.7239852768869053
+        }
+      },
+      "clean_within_005": true,
+      "shift_difference_vs_Base": {
+        "r2": 0.02026170214137435,
+        "nrmse": -0.00485994174719484
+      },
+      "shift_improves_both_metrics": true
+    },
+    {
+      "backbone": "tabpfn",
+      "track": "five",
+      "seed": 0,
+      "conditions": 735,
+      "datasets": 35,
+      "context_count": 6,
+      "rows_per_context_distribution": {
+        "2048": 462,
+        "1352": 21,
+        "1838": 21,
+        "927": 21,
+        "953": 21,
+        "959": 21,
+        "1439": 21,
+        "1040": 21,
+        "1108": 21,
+        "691": 21,
+        "465": 21,
+        "584": 21,
+        "817": 21,
+        "723": 21
+      },
+      "canonical_source_only": true,
+      "replacement_fraction": 0.1,
+      "Shared_run": false,
+      "source": "results/regression_partial_matched/tabpfn/five/regression",
+      "clean": {
+        "Base": {
+          "r2": 0.7438823501078643,
+          "nrmse": 0.4942465314177377
+        },
+        "Random_partial010": {
+          "r2": 0.742996873723302,
+          "nrmse": 0.49424083971247135
+        }
+      },
+      "shift": {
+        "Base": {
+          "r2": -1.2835249332511796,
+          "nrmse": 1.3419874238816527
+        },
+        "Random_partial010": {
+          "r2": -1.274615693662952,
+          "nrmse": 1.34004141609329
+        }
+      },
+      "clean_within_005": true,
+      "shift_difference_vs_Base": {
+        "r2": 0.008909239588227535,
+        "nrmse": -0.0019460077883626248
+      },
+      "shift_improves_both_metrics": true
+    },
+    {
+      "backbone": "tabpfn",
+      "track": "seven_calibrated_v2",
+      "seed": 0,
+      "conditions": 957,
+      "datasets": 33,
+      "context_count": 6,
+      "rows_per_context_distribution": {
+        "256": 957
+      },
+      "canonical_source_only": true,
+      "replacement_fraction": 0.1,
+      "Shared_run": false,
+      "source": "results/regression_partial_matched/tabpfn/seven_calibrated_v2/regression",
+      "clean": {
+        "Base": {
+          "r2": 0.7062708054463512,
+          "nrmse": 0.47720796188422504
+        },
+        "Random_partial010": {
+          "r2": 0.7040543200047275,
+          "nrmse": 0.47861211491238875
+        }
+      },
+      "shift": {
+        "Base": {
+          "r2": 0.2899280108311645,
+          "nrmse": 0.7320916678682928
+        },
+        "Random_partial010": {
+          "r2": 0.2941043982456817,
+          "nrmse": 0.7291270674614827
+        }
+      },
+      "clean_within_005": true,
+      "shift_difference_vs_Base": {
+        "r2": 0.004176387414517202,
+        "nrmse": -0.002964600406810125
+      },
+      "shift_improves_both_metrics": true
+    }
+  ],
+  "verified_condition_files": 3384,
+  "paired_backbone_inputs_verified": 1692,
+  "normalization": "source std in five; evaluation-only target std in seven",
+  "original_and_all_previous_variants_retained": true,
+  "score_ordering_bounds_used_for_fitting": false,
+  "Shared_run": false,
+  "Markdown_written": false
+}

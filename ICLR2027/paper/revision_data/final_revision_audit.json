@@ -1,0 +1,31 @@
+{
+  "pdf": "/mnt/public/zhouyibo/ICLR2027/paper/main_iclr.pdf",
+  "revision_copy": "/mnt/public/zhouyibo/ICLR2027/paper/main_iclr_revision.pdf",
+  "pages": 44,
+  "new_appendix_start": 36,
+  "tables_added": 16,
+  "data_rows": 119,
+  "table16_shared_last": true,
+  "no_unresolved_latex_labels": true,
+  "no_overfull_boxes": true,
+  "first_nine_page_text_matches_backup": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "reference_section_begins_by_page": 10,
+  "bilingual_table_numbers_match": true,
+  "response_updater_idempotent": true,
+  "pdf_sha256": "feefa1cd7b922510ebbb65788f110e2369c43cddc81ced6914d7d9c0e45281fd",
+  "official_guidelines": "https://iclr.cc/Conferences/2027/AuthorGuidelines",
+  "manual_color_mandatory": false,
+  "new_appendix_color": "blue",
+  "missing_original_main_specific_per_fold_deployment_lists": "Not recovered; supplied Folktables deployment list is explicitly scoped to that supplemental experiment.",
+  "context_categories_and_counts_added": "Appendix B.4.5, p. 27; supplemental Folktables list Appendix E.5.1, p. 40"
+}

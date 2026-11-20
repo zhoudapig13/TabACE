@@ -1,0 +1,83 @@
+# APA-TabICL Experiment 6 Report
+
+Algorithm versions: `apa_v0` reruns TabICL with local contexts; `apa_v1` keeps full-context TabICL output and uses local contexts only for posterior correction; `apa_v2` adds batch-shift and margin/confidence gates; `apa_v3` uses train-internal validation selection; `apa_v4` tests more aggressive margin-gated correction for hard shift cases; `apa_v5` raises the hard-shift router threshold using observed no-shift diagnostics.
+
+This run compares original TabICL, KNN context, balanced KNN context, prior-aware KNN context, local correction, and prior-aware adaptive correction. All artifacts are stored in `experiment6`.
+
+## Command
+
+```text
+experiment6/scripts/run_apa_tabicl.py --datasets synthetic_label_shift --force-label-shift --label-shift-strengths 0.0,0.6,0.9 --seeds 0,1 --n-samples 180 --train-size 90 --test-size 32 --k 16 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_full_prior_aware_tiny,apa_dual_shift_router_v7,apa_cf_directional_router,apa_cf_strict_margin_router,apa_cf_batch_margin_router,apa_cf_tempered_rescue_router,apa_cf_hybrid_tempered_router,apa_cf_hybrid_calibrated_router,apa_cf_hybrid_stability_router --output-prefix apa_v1_v16_fixed11_selected_benchmark_by_dataset_synthetic_label_shift
+```
+
+## Method Summary
+
+| method | n | acc delta | bacc delta | macro-F1 delta | minority recall delta | ECE delta |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| apa_cf_batch_margin_router | 6 | +0.0000 | +0.0000 | +0.0000 | +0.0000 | +0.0063 |
+| apa_cf_directional_router | 6 | +0.0000 | +0.0000 | +0.0000 | +0.0000 | +0.0063 |
+| apa_cf_hybrid_calibrated_router | 6 | +0.0000 | +0.0000 | +0.0000 | +0.0000 | +0.0069 |
+| apa_cf_hybrid_stability_router | 6 | +0.0000 | +0.0000 | +0.0000 | +0.0000 | +0.0063 |
+| apa_cf_hybrid_tempered_router | 6 | +0.0000 | +0.0000 | +0.0000 | +0.0000 | +0.0063 |
+| apa_cf_strict_margin_router | 6 | +0.0000 | +0.0000 | +0.0000 | +0.0000 | +0.0000 |
+| apa_cf_tempered_rescue_router | 6 | +0.0000 | +0.0000 | +0.0000 | +0.0000 | +0.0063 |
+| apa_dual_shift_router_v7 | 6 | +0.0104 | +0.0054 | +0.0031 | +0.0000 | -0.0058 |
+| apa_full_prior_aware_tiny | 6 | +0.0104 | +0.0054 | +0.0031 | +0.0000 | +0.0054 |
+| tabicl_baseline | 6 | +0.0000 | +0.0000 | +0.0000 | +0.0000 | +0.0000 |
+
+## Dataset Detail
+
+- `synthetic_label_shift` seed 0 `apa_full_prior_aware_tiny` (apa_v1): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0002.
+- `synthetic_label_shift` seed 0 `apa_dual_shift_router_v7` (apa_v7): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 0 `apa_cf_directional_router` (apa_v8): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 0 `apa_cf_strict_margin_router` (apa_v9): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 0 `apa_cf_batch_margin_router` (apa_v10): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 0 `apa_cf_tempered_rescue_router` (apa_v13): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 0 `apa_cf_hybrid_tempered_router` (apa_v14): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 0 `apa_cf_hybrid_calibrated_router` (apa_v15): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 0 `apa_cf_hybrid_stability_router` (apa_v16): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 1 `apa_full_prior_aware_tiny` (apa_v1): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 1 `apa_dual_shift_router_v7` (apa_v7): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 1 `apa_cf_directional_router` (apa_v8): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 1 `apa_cf_strict_margin_router` (apa_v9): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 1 `apa_cf_batch_margin_router` (apa_v10): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 1 `apa_cf_tempered_rescue_router` (apa_v13): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 1 `apa_cf_hybrid_tempered_router` (apa_v14): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 1 `apa_cf_hybrid_calibrated_router` (apa_v15): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 1 `apa_cf_hybrid_stability_router` (apa_v16): shift 0.0000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 0 `apa_full_prior_aware_tiny` (apa_v1): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0005.
+- `synthetic_label_shift` seed 0 `apa_dual_shift_router_v7` (apa_v7): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0186.
+- `synthetic_label_shift` seed 0 `apa_cf_directional_router` (apa_v8): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0050.
+- `synthetic_label_shift` seed 0 `apa_cf_strict_margin_router` (apa_v9): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 0 `apa_cf_batch_margin_router` (apa_v10): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0050.
+- `synthetic_label_shift` seed 0 `apa_cf_tempered_rescue_router` (apa_v13): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0050.
+- `synthetic_label_shift` seed 0 `apa_cf_hybrid_tempered_router` (apa_v14): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0050.
+- `synthetic_label_shift` seed 0 `apa_cf_hybrid_calibrated_router` (apa_v15): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0042.
+- `synthetic_label_shift` seed 0 `apa_cf_hybrid_stability_router` (apa_v16): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0050.
+- `synthetic_label_shift` seed 1 `apa_full_prior_aware_tiny` (apa_v1): shift 0.6000, acc +0.0312, bacc +0.0161, macro-F1 +0.0094, minority recall +0.0000, ECE +0.0167.
+- `synthetic_label_shift` seed 1 `apa_dual_shift_router_v7` (apa_v7): shift 0.6000, acc +0.0312, bacc +0.0161, macro-F1 +0.0094, minority recall +0.0000, ECE +0.0011.
+- `synthetic_label_shift` seed 1 `apa_cf_directional_router` (apa_v8): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0239.
+- `synthetic_label_shift` seed 1 `apa_cf_strict_margin_router` (apa_v9): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 1 `apa_cf_batch_margin_router` (apa_v10): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0239.
+- `synthetic_label_shift` seed 1 `apa_cf_tempered_rescue_router` (apa_v13): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0239.
+- `synthetic_label_shift` seed 1 `apa_cf_hybrid_tempered_router` (apa_v14): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0239.
+- `synthetic_label_shift` seed 1 `apa_cf_hybrid_calibrated_router` (apa_v15): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0247.
+- `synthetic_label_shift` seed 1 `apa_cf_hybrid_stability_router` (apa_v16): shift 0.6000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0239.
+- `synthetic_label_shift` seed 0 `apa_full_prior_aware_tiny` (apa_v1): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0005.
+- `synthetic_label_shift` seed 0 `apa_dual_shift_router_v7` (apa_v7): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0186.
+- `synthetic_label_shift` seed 0 `apa_cf_directional_router` (apa_v8): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0050.
+- `synthetic_label_shift` seed 0 `apa_cf_strict_margin_router` (apa_v9): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 0 `apa_cf_batch_margin_router` (apa_v10): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0050.
+- `synthetic_label_shift` seed 0 `apa_cf_tempered_rescue_router` (apa_v13): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0050.
+- `synthetic_label_shift` seed 0 `apa_cf_hybrid_tempered_router` (apa_v14): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0050.
+- `synthetic_label_shift` seed 0 `apa_cf_hybrid_calibrated_router` (apa_v15): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0042.
+- `synthetic_label_shift` seed 0 `apa_cf_hybrid_stability_router` (apa_v16): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE -0.0050.
+- `synthetic_label_shift` seed 1 `apa_full_prior_aware_tiny` (apa_v1): shift 0.9000, acc +0.0312, bacc +0.0161, macro-F1 +0.0094, minority recall +0.0000, ECE +0.0167.
+- `synthetic_label_shift` seed 1 `apa_dual_shift_router_v7` (apa_v7): shift 0.9000, acc +0.0312, bacc +0.0161, macro-F1 +0.0094, minority recall +0.0000, ECE +0.0011.
+- `synthetic_label_shift` seed 1 `apa_cf_directional_router` (apa_v8): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0239.
+- `synthetic_label_shift` seed 1 `apa_cf_strict_margin_router` (apa_v9): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0000.
+- `synthetic_label_shift` seed 1 `apa_cf_batch_margin_router` (apa_v10): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0239.
+- `synthetic_label_shift` seed 1 `apa_cf_tempered_rescue_router` (apa_v13): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0239.
+- `synthetic_label_shift` seed 1 `apa_cf_hybrid_tempered_router` (apa_v14): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0239.
+- `synthetic_label_shift` seed 1 `apa_cf_hybrid_calibrated_router` (apa_v15): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0247.
+- `synthetic_label_shift` seed 1 `apa_cf_hybrid_stability_router` (apa_v16): shift 0.9000, acc +0.0000, bacc +0.0000, macro-F1 +0.0000, minority recall +0.0000, ECE +0.0239.

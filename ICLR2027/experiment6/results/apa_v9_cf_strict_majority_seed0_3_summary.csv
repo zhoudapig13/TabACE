@@ -1,0 +1,4 @@
+method,n,mean_accuracy_delta,mean_balanced_accuracy_delta,mean_macro_f1_delta,mean_ece_delta,pos_bacc,neg_bacc
+apa_cf_directional_router,24,0.024739583333333332,-0.034039075052527505,0.006694031395335566,-0.0016526643812656491,9,4
+apa_cf_strict_margin_router,96,0.004557291666666667,0.002444846125324433,0.0031265050414960045,-0.0018356225665836616,14,0
+tabicl_baseline,96,0.0,0.0,0.0,0.0,0,0

@@ -1,0 +1,77 @@
+% !TeX program = xelatex
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% ---------- Language and fonts ----------
+\usepackage[UTF8,fontset=fandol]{ctex}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% ---------- Presentation metadata ----------
+\title{TabACE}
+\subtitle{}
+\author{}
+\institute{}
+\date{}
+
+% ---------- Visual system ----------
+\definecolor{TabACENavy}{HTML}{173B65}
+\definecolor{TabACEBlue}{HTML}{4F78A8}
+\definecolor{TabACEOrange}{HTML}{C96A18}
+\definecolor{TabACEInk}{HTML}{20242A}
+\definecolor{TabACEMuted}{HTML}{68707A}
+\definecolor{TabACECanvas}{HTML}{FAFBFC}
+
+\setbeamercolor{background canvas}{bg=TabACECanvas}
+\setbeamercolor{normal text}{fg=TabACEInk,bg=TabACECanvas}
+\setbeamercolor{structure}{fg=TabACENavy}
+\setbeamercolor{frametitle}{fg=TabACENavy,bg=TabACECanvas}
+\setbeamercolor{title}{fg=TabACENavy}
+\setbeamercolor{subtitle}{fg=TabACEMuted}
+\setbeamercolor{alerted text}{fg=TabACEOrange}
+
+\setbeamerfont{title}{series=\bfseries,size=\fontsize{50}{56}}
+\setbeamerfont{subtitle}{size=\fontsize{24}{29}}
+\setbeamerfont{frametitle}{series=\bfseries,size=\fontsize{35}{40}}
+\setbeamerfont{normal text}{size=\fontsize{18}{23}}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{frametitle}{%
+  \vspace{0.035\paperheight}%
+  \hspace{0.005\paperwidth}\insertframetitle\par
+  \vspace{0.012\paperheight}%
+  {\color{TabACEBlue}\rule{0.99\textwidth}{0.8pt}}%
+}
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.88\paperwidth,ht=3.0ex,dp=1.3ex,leftskip=.055\paperwidth]{normal text}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.12\paperwidth,ht=3.0ex,dp=1.3ex,center]{normal text}%
+      \color{TabACEMuted}\insertframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+\setbeamersize{text margin left=0.055\paperwidth,text margin right=0.055\paperwidth}
+
+% ---------- Reusable helpers ----------
+\newcommand{\highlight}[1]{\textcolor{TabACEOrange}{\textbf{#1}}}
+\newcommand{\figpath}{../figures}
+
+\begin{document}
+
+% Title slide. Metadata can be edited above.
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% Add presentation frames below this line.
+% Example:
+% \begin{frame}{Slide title}
+%   Slide content
+% \end{frame}
+
+\end{document}

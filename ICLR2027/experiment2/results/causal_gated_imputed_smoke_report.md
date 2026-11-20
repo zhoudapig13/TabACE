@@ -1,0 +1,39 @@
+# Experiment 2 Search Summary
+
+This report compares each candidate method against `baseline_n1` on the same dataset split. Positive run counts show whether the gain appeared once or repeatedly across random seeds.
+
+## Strongest Dataset-Method Signals
+
+| Method | Dataset | Runs | Accuracy Change | BAcc Change | Macro F1 Change | AUC Change | Positive Runs | Notes |
+| --- | --- | ---: | --- | --- | --- | --- | --- | --- |
+| causal_validation_gated_feature | openml_credit_g | 1 | 0.7200 -> 0.7267 (+0.0067) | 0.7200 -> 0.7267 (+0.0067) | 0.7192 -> 0.7261 (+0.0069) | 0.8028 -> 0.8114 (+0.0085) | acc 1/1, bacc 1/1, f1 1/1 | Choose identity or a causal proxy transform using an internal validation split |
+| causal_validation_gated_feature | openml_ilpd | 1 | 0.6712 -> 0.6712 (+0.0000) | 0.5634 -> 0.5918 (+0.0284) | 0.5656 -> 0.5930 (+0.0274) | 0.7337 -> 0.7216 (-0.0121) | acc 0/1, bacc 1/1, f1 1/1 | Choose identity or a causal proxy transform using an internal validation split |
+| causal_mask_dropout_augmentation | openml_ilpd | 1 | 0.6712 -> 0.6644 (-0.0068) | 0.5634 -> 0.5870 (+0.0236) | 0.5656 -> 0.5876 (+0.0220) | 0.7337 -> 0.7221 (-0.0117) | acc 0/1, bacc 1/1, f1 1/1 | Augment context by masking weak causal-proxy features more often |
+| causal_mask_dropout_augmentation | openml_credit_g | 1 | 0.7200 -> 0.7200 (+0.0000) | 0.7200 -> 0.7200 (+0.0000) | 0.7192 -> 0.7196 (+0.0003) | 0.8028 -> 0.7908 (-0.0121) | acc 0/1, bacc 0/1, f1 1/1 | Augment context by masking weak causal-proxy features more often |
+| causal_validation_gated_feature | breast_cancer | 1 | 0.9790 -> 0.9790 (+0.0000) | 0.9756 -> 0.9756 (+0.0000) | 0.9774 -> 0.9774 (+0.0000) | 0.9973 -> 0.9973 (+0.0000) | acc 0/1, bacc 0/1, f1 0/1 | Choose identity or a causal proxy transform using an internal validation split |
+| causal_validation_gated_repeated_feature | breast_cancer | 1 | 0.9790 -> 0.9790 (+0.0000) | 0.9756 -> 0.9756 (+0.0000) | 0.9774 -> 0.9774 (+0.0000) | 0.9973 -> 0.9973 (+0.0000) | acc 0/1, bacc 0/1, f1 0/1 | Choose a causal proxy transform by averaging three internal validation splits |
+| causal_validation_gated_repeated_feature | synth_rare_boundary | 1 | 0.9133 -> 0.9133 (+0.0000) | 0.8229 -> 0.8229 (+0.0000) | 0.8464 -> 0.8464 (+0.0000) | 0.9713 -> 0.9713 (+0.0000) | acc 0/1, bacc 0/1, f1 0/1 | Choose a causal proxy transform by averaging three internal validation splits |
+| causal_validation_gated_repeated_feature | openml_cmc | 1 | 0.5933 -> 0.5933 (+0.0000) | 0.5933 -> 0.5933 (+0.0000) | 0.5937 -> 0.5937 (+0.0000) | 0.7861 -> 0.7861 (+0.0000) | acc 0/1, bacc 0/1, f1 0/1 | Choose a causal proxy transform by averaging three internal validation splits |
+| causal_validation_gated_repeated_feature | openml_ilpd | 1 | 0.6712 -> 0.6712 (+0.0000) | 0.5634 -> 0.5634 (+0.0000) | 0.5656 -> 0.5656 (+0.0000) | 0.7337 -> 0.7337 (+0.0000) | acc 0/1, bacc 0/1, f1 0/1 | Choose a causal proxy transform by averaging three internal validation splits |
+| causal_validation_gated_repeated_feature | openml_credit_g | 1 | 0.7200 -> 0.7200 (+0.0000) | 0.7200 -> 0.7200 (+0.0000) | 0.7192 -> 0.7192 (+0.0000) | 0.8028 -> 0.8028 (+0.0000) | acc 0/1, bacc 0/1, f1 0/1 | Choose a causal proxy transform by averaging three internal validation splits |
+| causal_validation_gated_feature | openml_blood_transfusion | 1 | 0.7800 -> 0.7800 (+0.0000) | 0.6715 -> 0.6649 (-0.0066) | 0.6894 -> 0.6829 (-0.0065) | 0.7862 -> 0.7378 (-0.0485) | acc 0/1, bacc 0/1, f1 0/1 | Choose identity or a causal proxy transform using an internal validation split |
+| causal_validation_gated_repeated_feature | openml_blood_transfusion | 1 | 0.7800 -> 0.7800 (+0.0000) | 0.6715 -> 0.6715 (+0.0000) | 0.6894 -> 0.6894 (+0.0000) | 0.7862 -> 0.7862 (+0.0000) | acc 0/1, bacc 0/1, f1 0/1 | Choose a causal proxy transform by averaging three internal validation splits |
+| causal_validation_gated_feature | openml_kc1 | 1 | 0.7267 -> 0.7267 (+0.0000) | 0.7267 -> 0.7267 (+0.0000) | 0.7239 -> 0.7239 (+0.0000) | 0.8145 -> 0.8145 (+0.0000) | acc 0/1, bacc 0/1, f1 0/1 | Choose identity or a causal proxy transform using an internal validation split |
+| causal_validation_gated_repeated_feature | openml_kc1 | 1 | 0.7267 -> 0.7267 (+0.0000) | 0.7267 -> 0.7267 (+0.0000) | 0.7239 -> 0.7239 (+0.0000) | 0.8145 -> 0.8145 (+0.0000) | acc 0/1, bacc 0/1, f1 0/1 | Choose a causal proxy transform by averaging three internal validation splits |
+| causal_mask_dropout_augmentation | openml_kc1 | 1 | 0.7267 -> 0.7133 (-0.0133) | 0.7267 -> 0.7133 (-0.0133) | 0.7239 -> 0.7118 (-0.0121) | 0.8145 -> 0.8164 (+0.0020) | acc 0/1, bacc 0/1, f1 0/1 | Augment context by masking weak causal-proxy features more often |
+| causal_validation_gated_feature | openml_cmc | 1 | 0.5933 -> 0.5800 (-0.0133) | 0.5933 -> 0.5800 (-0.0133) | 0.5937 -> 0.5830 (-0.0107) | 0.7861 -> 0.7653 (-0.0208) | acc 0/1, bacc 0/1, f1 0/1 | Choose identity or a causal proxy transform using an internal validation split |
+| causal_mask_dropout_augmentation | breast_cancer | 1 | 0.9790 -> 0.9650 (-0.0140) | 0.9756 -> 0.9645 (-0.0111) | 0.9774 -> 0.9627 (-0.0148) | 0.9973 -> 0.9971 (-0.0002) | acc 0/1, bacc 0/1, f1 0/1 | Augment context by masking weak causal-proxy features more often |
+| causal_mask_dropout_augmentation | synth_rare_boundary | 1 | 0.9133 -> 0.8933 (-0.0200) | 0.8229 -> 0.7693 (-0.0536) | 0.8464 -> 0.8016 (-0.0449) | 0.9713 -> 0.9394 (-0.0319) | acc 0/1, bacc 0/1, f1 0/1 | Augment context by masking weak causal-proxy features more often |
+| causal_validation_gated_feature | synth_rare_boundary | 1 | 0.9133 -> 0.8933 (-0.0200) | 0.8229 -> 0.7693 (-0.0536) | 0.8464 -> 0.8016 (-0.0449) | 0.9713 -> 0.9394 (-0.0319) | acc 0/1, bacc 0/1, f1 0/1 | Choose identity or a causal proxy transform using an internal validation split |
+| causal_mask_dropout_augmentation | openml_blood_transfusion | 1 | 0.7800 -> 0.7600 (-0.0200) | 0.6715 -> 0.6374 (-0.0341) | 0.6894 -> 0.6503 (-0.0391) | 0.7862 -> 0.7208 (-0.0654) | acc 0/1, bacc 0/1, f1 0/1 | Augment context by masking weak causal-proxy features more often |
+| causal_mask_dropout_augmentation | openml_cmc | 1 | 0.5933 -> 0.5600 (-0.0333) | 0.5933 -> 0.5600 (-0.0333) | 0.5937 -> 0.5585 (-0.0352) | 0.7861 -> 0.7311 (-0.0549) | acc 0/1, bacc 0/1, f1 0/1 | Augment context by masking weak causal-proxy features more often |
+
+## Top Single-Run Metric Improvements
+
+| Dataset | Seed | Method | Improved Metrics | Accuracy | BAcc | Macro F1 | AUC |
+| --- | ---: | --- | --- | --- | --- | --- | --- |
+| openml_ilpd | 42 | causal_validation_gated_feature | balanced_accuracy, macro_f1, weighted_f1 | 0.6712 -> 0.6712 (+0.0000) | 0.5634 -> 0.5918 (+0.0284) | 0.5656 -> 0.5930 (+0.0274) | 0.7337 -> 0.7216 (-0.0121) |
+| openml_ilpd | 42 | causal_mask_dropout_augmentation | balanced_accuracy, macro_f1, weighted_f1 | 0.6712 -> 0.6644 (-0.0068) | 0.5634 -> 0.5870 (+0.0236) | 0.5656 -> 0.5876 (+0.0220) | 0.7337 -> 0.7221 (-0.0117) |
+| openml_credit_g | 42 | causal_validation_gated_feature | accuracy, balanced_accuracy, macro_f1, weighted_f1, roc_auc | 0.7200 -> 0.7267 (+0.0067) | 0.7200 -> 0.7267 (+0.0067) | 0.7192 -> 0.7261 (+0.0069) | 0.8028 -> 0.8114 (+0.0085) |
+| openml_kc1 | 42 | causal_mask_dropout_augmentation | roc_auc | 0.7267 -> 0.7133 (-0.0133) | 0.7267 -> 0.7133 (-0.0133) | 0.7239 -> 0.7118 (-0.0121) | 0.8145 -> 0.8164 (+0.0020) |
+| openml_credit_g | 42 | causal_mask_dropout_augmentation | macro_f1, weighted_f1 | 0.7200 -> 0.7200 (+0.0000) | 0.7200 -> 0.7200 (+0.0000) | 0.7192 -> 0.7196 (+0.0003) | 0.8028 -> 0.7908 (-0.0121) |

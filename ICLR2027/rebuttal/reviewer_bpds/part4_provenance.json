@@ -1,0 +1,7 @@
+{
+  "source_of_comparison_scores": "user-provided Folktables table; kept as supplied, not labelled as means of the separate variance experiment",
+  "variance_source": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/multi_seed_natural_v13/summary_mean_std_variance.csv",
+  "variance_scope": "Separate source-supervised adapted configuration, fixed partitions and hyperparameters, seeds 0-4, sample variance ddof=1",
+  "no_variances_attached_to_unmatched_point_estimates": true,
+  "context_source": "user-provided eight-rule table, cap512, five/eight alternatives"
+}

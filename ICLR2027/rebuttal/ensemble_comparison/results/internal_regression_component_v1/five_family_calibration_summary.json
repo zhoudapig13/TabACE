@@ -1,0 +1,3447 @@
+{
+  "status": "COMPLETE",
+  "all_trials": [
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.1070132850905503,
+        "nrmse": 1.2457812433310373
+      },
+      "difference": {
+        "r2": -0.030013285090550346,
+        "nrmse": -0.02421875666896267
+      },
+      "distance": 14.873454565170755,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.1109856404969676,
+        "nrmse": 1.2481574880731319
+      },
+      "difference": {
+        "r2": -0.03398564049696762,
+        "nrmse": -0.021842511926868147
+      },
+      "distance": 16.321190872645026,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.115026044345868,
+        "nrmse": 1.2511900728180116
+      },
+      "difference": {
+        "r2": -0.03802604434586798,
+        "nrmse": -0.018809927181988373
+      },
+      "distance": 17.997934091856234,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.1168954821032955,
+        "nrmse": 1.2514131492220149
+      },
+      "difference": {
+        "r2": -0.03989548210329552,
+        "nrmse": -0.018586850777985164
+      },
+      "distance": 19.37120514097461,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.1171540016850152,
+        "nrmse": 1.2454588709777146
+      },
+      "difference": {
+        "r2": -0.04015400168501526,
+        "nrmse": -0.024541129022285446
+      },
+      "distance": 22.146108650086695,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.1211263570914325,
+        "nrmse": 1.247835115719809
+      },
+      "difference": {
+        "r2": -0.04412635709143253,
+        "nrmse": -0.022164884280190922
+      },
+      "distance": 24.38417485314873,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.1251667609403329,
+        "nrmse": 1.2508677004646889
+      },
+      "difference": {
+        "r2": -0.0481667609403329,
+        "nrmse": -0.019132299535311148
+      },
+      "distance": 26.86081744992046,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.123227787626553,
+        "nrmse": 1.246143393755057
+      },
+      "difference": {
+        "r2": -0.04622778762655311,
+        "nrmse": -0.023856606244943013
+      },
+      "distance": 27.061460103719504,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.1237108022847435,
+        "nrmse": 1.2457754311878788
+      },
+      "difference": {
+        "r2": -0.04671080228474356,
+        "nrmse": -0.024224568812121205
+      },
+      "distance": 27.687287842175994,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.1270361986977604,
+        "nrmse": 1.251090776868692
+      },
+      "difference": {
+        "r2": -0.05003619869776044,
+        "nrmse": -0.01890922313130794
+      },
+      "distance": 28.611798995513546,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.1272001430329703,
+        "nrmse": 1.2485196384971515
+      },
+      "difference": {
+        "r2": -0.05020014303297038,
+        "nrmse": -0.02148036150284849
+      },
+      "distance": 29.814602908237397,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.1276831576911608,
+        "nrmse": 1.2481516759299736
+      },
+      "difference": {
+        "r2": -0.05068315769116083,
+        "nrmse": -0.02184832407002646
+      },
+      "distance": 30.461317382159727,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.131240546881871,
+        "nrmse": 1.2515522232420313
+      },
+      "difference": {
+        "r2": -0.054240546881870966,
+        "nrmse": -0.018447776757968715
+      },
+      "distance": 32.823573933562926,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.0383351299795858,
+        "nrmse": 1.227200964677833
+      },
+      "difference": {
+        "r2": 0.03866487002041419,
+        "nrmse": -0.042799035322167
+      },
+      "distance": 33.267295982036224,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.0378521153213955,
+        "nrmse": 1.227568927245011
+      },
+      "difference": {
+        "r2": 0.03914788467860442,
+        "nrmse": -0.04243107275498903
+      },
+      "distance": 33.32952809948483,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.1317235615400612,
+        "nrmse": 1.251184260674853
+      },
+      "difference": {
+        "r2": -0.054723561540061194,
+        "nrmse": -0.018815739325146907
+      },
+      "distance": 33.48700233980745,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.1331099846392982,
+        "nrmse": 1.2517752996460345
+      },
+      "difference": {
+        "r2": -0.05610998463929828,
+        "nrmse": -0.018224700353965506
+      },
+      "distance": 34.8047007921412,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.0364656922221582,
+        "nrmse": 1.2269778882738298
+      },
+      "difference": {
+        "r2": 0.04053430777784173,
+        "nrmse": -0.04302211172617021
+      },
+      "distance": 34.93932204407872,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.035982677563968,
+        "nrmse": 1.2273458508410078
+      },
+      "difference": {
+        "r2": 0.041017322436031955,
+        "nrmse": -0.04265414915899224
+      },
+      "distance": 35.017971802989685,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.1335929992974887,
+        "nrmse": 1.2514073370788563
+      },
+      "difference": {
+        "r2": -0.05659299929748873,
+        "nrmse": -0.0185926629211437
+      },
+      "distance": 35.48454683984832,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.0317783293798575,
+        "nrmse": 1.2268844044676686
+      },
+      "difference": {
+        "r2": 0.045221670620142485,
+        "nrmse": -0.04311559553233146
+      },
+      "distance": 39.039540717842584,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.02990889162243,
+        "nrmse": 1.2266613280636653
+      },
+      "difference": {
+        "r2": 0.04709110837757002,
+        "nrmse": -0.04333867193633467
+      },
+      "distance": 40.95812973433288,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.032425288373258,
+        "nrmse": 1.22394530352895
+      },
+      "difference": {
+        "r2": 0.04457471162674187,
+        "nrmse": -0.04605469647104998
+      },
+      "distance": 41.07939983647741,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.0319422737150676,
+        "nrmse": 1.2243132660961282
+      },
+      "difference": {
+        "r2": 0.04505772628493232,
+        "nrmse": -0.04568673390387179
+      },
+      "distance": 41.17476352771069,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.0284529329668408,
+        "nrmse": 1.2215690587868555
+      },
+      "difference": {
+        "r2": 0.04854706703315914,
+        "nrmse": -0.04843094121314451
+      },
+      "distance": 47.02373784313106,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.0279699183086504,
+        "nrmse": 1.2219370213540335
+      },
+      "difference": {
+        "r2": 0.04903008169134959,
+        "nrmse": -0.048062978645966536
+      },
+      "distance": 47.139988269830496,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.0258684877735296,
+        "nrmse": 1.2236287433187856
+      },
+      "difference": {
+        "r2": 0.05113151222647039,
+        "nrmse": -0.046371256681214446
+      },
+      "distance": 47.647249887607664,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.0216376127853926,
+        "nrmse": 1.2272067768209913
+      },
+      "difference": {
+        "r2": 0.0553623872146074,
+        "nrmse": -0.04279322317900869
+      },
+      "distance": 48.96253868148571,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.019768175027965,
+        "nrmse": 1.2269837004169881
+      },
+      "difference": {
+        "r2": 0.05723182497203494,
+        "nrmse": -0.0430162995830119
+      },
+      "distance": 51.25883819445072,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.0218961323671123,
+        "nrmse": 1.2212524985766913
+      },
+      "difference": {
+        "r2": 0.05510386763288766,
+        "nrmse": -0.04874750142330875
+      },
+      "distance": 54.12755123118293,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.0157277711790649,
+        "nrmse": 1.2239511156721083
+      },
+      "difference": {
+        "r2": 0.06127222882093508,
+        "nrmse": -0.04604888432789167
+      },
+      "distance": 58.74785772528574,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.0117554157726476,
+        "nrmse": 1.2215748709300138
+      },
+      "difference": {
+        "r2": 0.06524458422735235,
+        "nrmse": -0.048425129069986195
+      },
+      "distance": 66.01848896444898,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.005850880721625,
+        "nrmse": 1.2121381549367003
+      },
+      "difference": {
+        "r2": 0.07114911927837486,
+        "nrmse": -0.05786184506329972
+      },
+      "distance": 84.10190288217716,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.0053678660634346,
+        "nrmse": 1.2125061175038785
+      },
+      "difference": {
+        "r2": 0.07163213393656531,
+        "nrmse": -0.05749388249612153
+      },
+      "distance": 84.36709136783861,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.0039814429641976,
+        "nrmse": 1.211915078532697
+      },
+      "difference": {
+        "r2": 0.0730185570358024,
+        "nrmse": -0.05808492146730293
+      },
+      "distance": 87.05567773453477,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.0034984283060073,
+        "nrmse": 1.2122830410998753
+      },
+      "difference": {
+        "r2": 0.07350157169399263,
+        "nrmse": -0.05771695890012474
+      },
+      "distance": 87.33728386165826,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.9992940801218968,
+        "nrmse": 1.211821594726536
+      },
+      "difference": {
+        "r2": 0.07770591987810316,
+        "nrmse": -0.05817840527346396
+      },
+      "distance": 94.22936824265608,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -0.9999410391152972,
+        "nrmse": 1.2088824937878173
+      },
+      "difference": {
+        "r2": 0.07705896088470277,
+        "nrmse": -0.061117506212182704
+      },
+      "distance": 96.73433018226342,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -0.9994580244571069,
+        "nrmse": 1.2092504563549955
+      },
+      "difference": {
+        "r2": 0.0775419755428931,
+        "nrmse": -0.06074954364500451
+      },
+      "distance": 97.03265024170939,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.9974246423644694,
+        "nrmse": 1.2115985183225326
+      },
+      "difference": {
+        "r2": 0.07957535763553059,
+        "nrmse": -0.05840148167746739
+      },
+      "distance": 97.42970604946154,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -0.9959686837088799,
+        "nrmse": 1.2065062490457228
+      },
+      "difference": {
+        "r2": 0.08103131629112004,
+        "nrmse": -0.06349375095427723
+      },
+      "distance": 105.97530630115315,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -0.9954856690506897,
+        "nrmse": 1.206874211612901
+      },
+      "difference": {
+        "r2": 0.08151433094931027,
+        "nrmse": -0.06312578838709904
+      },
+      "distance": 106.29451309606488,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.9933842385155689,
+        "nrmse": 1.208565933577653
+      },
+      "difference": {
+        "r2": 0.08361576148443106,
+        "nrmse": -0.061434066422346945
+      },
+      "distance": 107.65740085806601,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.9891533635274319,
+        "nrmse": 1.2121439670798586
+      },
+      "difference": {
+        "r2": 0.08784663647256807,
+        "nrmse": -0.05785603292014141
+      },
+      "distance": 110.64352084800012,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.9872839257700043,
+        "nrmse": 1.2119208906758554
+      },
+      "difference": {
+        "r2": 0.08971607422999561,
+        "nrmse": -0.05807910932414462
+      },
+      "distance": 114.22156915128025,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.9894118831091516,
+        "nrmse": 1.2061896888355585
+      },
+      "difference": {
+        "r2": 0.08758811689084833,
+        "nrmse": -0.06381031116444147
+      },
+      "distance": 117.43434031387756,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.9832435219211041,
+        "nrmse": 1.2088883059309758
+      },
+      "difference": {
+        "r2": 0.09375647807889587,
+        "nrmse": -0.06111169406902417
+      },
+      "distance": 125.24916333744486,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.9792711665146868,
+        "nrmse": 1.2065120611888813
+      },
+      "difference": {
+        "r2": 0.09772883348531314,
+        "nrmse": -0.0634879388111187
+      },
+      "distance": 135.81643268884415,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.2176204461470992,
+        "nrmse": 1.2601558893520048
+      },
+      "difference": {
+        "r2": -0.14062044614709923,
+        "nrmse": -0.009844110647995175
+      },
+      "distance": 198.71016389059204,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.2215928015535165,
+        "nrmse": 1.2625321340940994
+      },
+      "difference": {
+        "r2": -0.1445928015535165,
+        "nrmse": -0.00746786590590065
+      },
+      "distance": 209.62847282283116,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.2256332054024166,
+        "nrmse": 1.2655647188389791
+      },
+      "difference": {
+        "r2": -0.14863320540241665,
+        "nrmse": -0.0044352811610208764
+      },
+      "distance": 221.11501467174284,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.2275026431598441,
+        "nrmse": 1.2657877952429823
+      },
+      "difference": {
+        "r2": -0.15050264315984418,
+        "nrmse": -0.004212204757017668
+      },
+      "distance": 226.68788267014432,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.2277611627415639,
+        "nrmse": 1.259833516998682
+      },
+      "difference": {
+        "r2": -0.15076116274156393,
+        "nrmse": -0.01016648300131795
+      },
+      "distance": 228.32285567804408,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.2317335181479812,
+        "nrmse": 1.2622097617407766
+      },
+      "difference": {
+        "r2": -0.1547335181479812,
+        "nrmse": -0.007790238259223425
+      },
+      "distance": 240.03149450587097,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.233834948683102,
+        "nrmse": 1.2605180397760245
+      },
+      "difference": {
+        "r2": -0.156834948683102,
+        "nrmse": -0.009481960223975516
+      },
+      "distance": 246.87108698120286,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.2343179633412924,
+        "nrmse": 1.2601500772088463
+      },
+      "difference": {
+        "r2": -0.15731796334129244,
+        "nrmse": -0.009849922791153709
+      },
+      "distance": 248.45962568843922,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.2357739219968815,
+        "nrmse": 1.2652423464856564
+      },
+      "difference": {
+        "r2": -0.15877392199688156,
+        "nrmse": -0.004757653514343652
+      },
+      "distance": 252.31793573234378,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.237643359754309,
+        "nrmse": 1.2654654228896596
+      },
+      "difference": {
+        "r2": -0.1606433597543091,
+        "nrmse": -0.004534577110340443
+      },
+      "distance": 258.26851422722007,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.2378073040895192,
+        "nrmse": 1.262894284518119
+      },
+      "difference": {
+        "r2": -0.16080730408951927,
+        "nrmse": -0.007105715481880992
+      },
+      "distance": 259.09480241048556,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.2382903187477097,
+        "nrmse": 1.2625263219509408
+      },
+      "difference": {
+        "r2": -0.16129031874770972,
+        "nrmse": -0.007473678049059185
+      },
+      "distance": 260.70422785318783,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.2418477079384196,
+        "nrmse": 1.2659268692629988
+      },
+      "difference": {
+        "r2": -0.16484770793841963,
+        "nrmse": -0.004073130737001218
+      },
+      "distance": 271.913572065512,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.2423307225966098,
+        "nrmse": 1.2655589066958206
+      },
+      "difference": {
+        "r2": -0.16533072259660986,
+        "nrmse": -0.004441093304179411
+      },
+      "distance": 273.53971144053594,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.2437171456958471,
+        "nrmse": 1.266149945667002
+      },
+      "difference": {
+        "r2": -0.16671714569584717,
+        "nrmse": -0.0038500543329980097
+      },
+      "distance": 278.09429587337365,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.2442001603540374,
+        "nrmse": 1.2657819830998238
+      },
+      "difference": {
+        "r2": -0.1672001603540374,
+        "nrmse": -0.0042180169001762025
+      },
+      "distance": 279.73685288985985,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.2501046954050599,
+        "nrmse": 1.2752186990931373
+      },
+      "difference": {
+        "r2": -0.1731046954050599,
+        "nrmse": 0.0052186990931373245
+      },
+      "distance": 299.92470391503286,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.254077050811477,
+        "nrmse": 1.2775949438352319
+      },
+      "difference": {
+        "r2": -0.17707705081147695,
+        "nrmse": 0.007594943835231849
+      },
+      "distance": 314.13965095950715,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.2581174546603775,
+        "nrmse": 1.2806275285801116
+      },
+      "difference": {
+        "r2": -0.18111745466037754,
+        "nrmse": 0.010627528580111623
+      },
+      "distance": 329.16476746375,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.2599868924178048,
+        "nrmse": 1.2808506049841148
+      },
+      "difference": {
+        "r2": -0.18298689241780486,
+        "nrmse": 0.010850604984114831
+      },
+      "distance": 336.0193842524659,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.2602454119995248,
+        "nrmse": 1.2748963267398146
+      },
+      "difference": {
+        "r2": -0.18324541199952482,
+        "nrmse": 0.004896326739814549
+      },
+      "distance": 336.02855034418616,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.264217767405942,
+        "nrmse": 1.2772725714819093
+      },
+      "difference": {
+        "r2": -0.1872177674059421,
+        "nrmse": 0.007272571481909296
+      },
+      "distance": 351.0338272842491,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.2663191979410626,
+        "nrmse": 1.2755808495171572
+      },
+      "difference": {
+        "r2": -0.18931919794106267,
+        "nrmse": 0.005580849517157205
+      },
+      "distance": 358.7290459038042,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.266802212599253,
+        "nrmse": 1.2752128869499788
+      },
+      "difference": {
+        "r2": -0.18980221259925312,
+        "nrmse": 0.00521288694997879
+      },
+      "distance": 360.5205409792534,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.2682581712548422,
+        "nrmse": 1.2803051562267889
+      },
+      "difference": {
+        "r2": -0.19125817125484224,
+        "nrmse": 0.010305156226788847
+      },
+      "distance": 366.85884316605075,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.2701276090122697,
+        "nrmse": 1.280528232630792
+      },
+      "difference": {
+        "r2": -0.19312760901226977,
+        "nrmse": 0.010528232630792056
+      },
+      "distance": 374.09117045124214,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.27029155334748,
+        "nrmse": 1.2779570942592515
+      },
+      "difference": {
+        "r2": -0.19329155334747994,
+        "nrmse": 0.007957094259251507
+      },
+      "distance": 374.249399445323,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.2707745680056701,
+        "nrmse": 1.2775891316920736
+      },
+      "difference": {
+        "r2": -0.19377456800567017,
+        "nrmse": 0.007589131692073536
+      },
+      "distance": 376.06178125623734,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.2743319571963803,
+        "nrmse": 1.2809896790041313
+      },
+      "difference": {
+        "r2": -0.1973319571963803,
+        "nrmse": 0.01098967900413128
+      },
+      "distance": 390.6067437556791,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.2748149718545707,
+        "nrmse": 1.280621716436953
+      },
+      "difference": {
+        "r2": -0.19781497185457075,
+        "nrmse": 0.010621716436953088
+      },
+      "distance": 392.43583949891655,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.2762013949538078,
+        "nrmse": 1.2812127554081347
+      },
+      "difference": {
+        "r2": -0.19920139495380784,
+        "nrmse": 0.011212755408134711
+      },
+      "distance": 398.06921635385595,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.276684409611998,
+        "nrmse": 1.2808447928409563
+      },
+      "difference": {
+        "r2": -0.19968440961199807,
+        "nrmse": 0.010844792840956297
+      },
+      "distance": 399.91472973855485,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.3190522060818544,
+        "nrmse": 1.2988679592332386
+      },
+      "difference": {
+        "r2": -0.2420522060818544,
+        "nrmse": 0.028867959233238594
+      },
+      "distance": 594.2262953938443,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.3230245614882716,
+        "nrmse": 1.3012442039753331
+      },
+      "difference": {
+        "r2": -0.24602456148827168,
+        "nrmse": 0.031244203975333118
+      },
+      "distance": 615.0428513754858,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.327064965337172,
+        "nrmse": 1.304276788720213
+      },
+      "difference": {
+        "r2": -0.25006496533717204,
+        "nrmse": 0.03427678872021289
+      },
+      "distance": 637.0738513405116,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.3291929226763193,
+        "nrmse": 1.2985455868799158
+      },
+      "difference": {
+        "r2": -0.2521929226763193,
+        "nrmse": 0.02854558687991582
+      },
+      "distance": 644.161207783428,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.3289344030945995,
+        "nrmse": 1.3044998651242161
+      },
+      "difference": {
+        "r2": -0.2519344030945996,
+        "nrmse": 0.0344998651242161
+      },
+      "distance": 646.6118415622129,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.3331652780827365,
+        "nrmse": 1.3009218316220104
+      },
+      "difference": {
+        "r2": -0.2561652780827366,
+        "nrmse": 0.030921831622010343
+      },
+      "distance": 665.7680936606573,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.3352667086178571,
+        "nrmse": 1.2992301096572585
+      },
+      "difference": {
+        "r2": -0.25826670861785717,
+        "nrmse": 0.029230109657258474
+      },
+      "distance": 675.5609209087648,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.3357497232760476,
+        "nrmse": 1.2988621470900803
+      },
+      "difference": {
+        "r2": -0.2587497232760476,
+        "nrmse": 0.02886214709008028
+      },
+      "distance": 677.8444283008065,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.337205681931637,
+        "nrmse": 1.3039544163668901
+      },
+      "difference": {
+        "r2": -0.26020568193163696,
+        "nrmse": 0.03395441636689012
+      },
+      "distance": 688.5989930032434,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.3392390640242744,
+        "nrmse": 1.3016063543993528
+      },
+      "difference": {
+        "r2": -0.26223906402427444,
+        "nrmse": 0.031606354399352776
+      },
+      "distance": 697.6828833874498,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.3390751196890645,
+        "nrmse": 1.3041774927708933
+      },
+      "difference": {
+        "r2": -0.2620751196890645,
+        "nrmse": 0.034177492770893325
+      },
+      "distance": 698.5146937214195,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.3397220786824648,
+        "nrmse": 1.3012383918321748
+      },
+      "difference": {
+        "r2": -0.2627220786824649,
+        "nrmse": 0.031238391832174806
+      },
+      "distance": 699.9872775149577,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -0.8262962089882816,
+        "nrmse": 1.1741142487756318
+      },
+      "difference": {
+        "r2": 0.25070379101171836,
+        "nrmse": -0.09588575122436827
+      },
+      "distance": 720.4646811550879,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.343279467873175,
+        "nrmse": 1.3046389391442326
+      },
+      "difference": {
+        "r2": -0.266279467873175,
+        "nrmse": 0.03463893914423255
+      },
+      "distance": 721.046111158591,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -0.8258131943300914,
+        "nrmse": 1.1744822113428097
+      },
+      "difference": {
+        "r2": 0.2511868056699086,
+        "nrmse": -0.0955177886571903
+      },
+      "distance": 722.1845929261209,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.3437624825313652,
+        "nrmse": 1.3042709765770544
+      },
+      "difference": {
+        "r2": -0.26676248253136525,
+        "nrmse": 0.03427097657705436
+      },
+      "distance": 723.3672192184196,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -0.8244267712308542,
+        "nrmse": 1.1738911723716283
+      },
+      "difference": {
+        "r2": 0.2525732287691458,
+        "nrmse": -0.0961088276283717
+      },
+      "distance": 730.3014263897132,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.3451489056306023,
+        "nrmse": 1.304862015548236
+      },
+      "difference": {
+        "r2": -0.26814890563060234,
+        "nrmse": 0.03486201554823598
+      },
+      "distance": 731.1919571897513,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -0.8239437565726639,
+        "nrmse": 1.1742591349388065
+      },
+      "difference": {
+        "r2": 0.253056243427336,
+        "nrmse": -0.0957408650611935
+      },
+      "distance": 732.037755802208,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.9,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.3456319202887927,
+        "nrmse": 1.3044940529810576
+      },
+      "difference": {
+        "r2": -0.2686319202887928,
+        "nrmse": 0.034494052981057566
+      },
+      "distance": 733.5294828910432,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.9",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.8197394083885534,
+        "nrmse": 1.1737976885654673
+      },
+      "difference": {
+        "r2": 0.25726059161144654,
+        "nrmse": -0.09620231143453273
+      },
+      "distance": 754.378967216183,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -0.8203863673819539,
+        "nrmse": 1.1708585876267485
+      },
+      "difference": {
+        "r2": 0.25661363261804604,
+        "nrmse": -0.09914141237325147
+      },
+      "distance": 756.7957609279259,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -0.8199033527237635,
+        "nrmse": 1.1712265501939267
+      },
+      "difference": {
+        "r2": 0.2570966472762365,
+        "nrmse": -0.09877344980607328
+      },
+      "distance": 758.5488042727443,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.8178699706311259,
+        "nrmse": 1.173574612161464
+      },
+      "difference": {
+        "r2": 0.2591300293688741,
+        "nrmse": -0.09642538783853594
+      },
+      "distance": 764.4622754052562,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -0.8164140119755366,
+        "nrmse": 1.1684823428846542
+      },
+      "difference": {
+        "r2": 0.2605859880244633,
+        "nrmse": -0.10151765711534577
+      },
+      "distance": 782.1089186087464,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -0.8159309973173462,
+        "nrmse": 1.1688503054518322
+      },
+      "difference": {
+        "r2": 0.26106900268265376,
+        "nrmse": -0.1011496945481678
+      },
+      "distance": 783.8828486890311,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.8138295667822255,
+        "nrmse": 1.1705420274165843
+      },
+      "difference": {
+        "r2": 0.26317043321777445,
+        "nrmse": -0.09945797258341571
+      },
+      "distance": 791.5056523043454,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.8095986917940884,
+        "nrmse": 1.17412006091879
+      },
+      "difference": {
+        "r2": 0.26740130820591157,
+        "nrmse": -0.09587993908120995
+      },
+      "distance": 806.9642234844943,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.8098572113758082,
+        "nrmse": 1.1681657826744898
+      },
+      "difference": {
+        "r2": 0.2671427886241917,
+        "nrmse": -0.10183421732551023
+      },
+      "distance": 817.3547733220882,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.807729254036661,
+        "nrmse": 1.1738969845147869
+      },
+      "difference": {
+        "r2": 0.269270745963339,
+        "nrmse": -0.09610301548521316
+      },
+      "distance": 817.4252421700415,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.8036888501877607,
+        "nrmse": 1.170864399769907
+      },
+      "difference": {
+        "r2": 0.27331114981223925,
+        "nrmse": -0.09913560023009294
+      },
+      "distance": 845.2685184466908,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 2.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.7997164947813434,
+        "nrmse": 1.1684881550278126
+      },
+      "difference": {
+        "r2": 0.2772835052186565,
+        "nrmse": -0.10151184497218746
+      },
+      "distance": 871.9079693600213,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift2",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -0.7938119597303209,
+        "nrmse": 1.159051439034499
+      },
+      "difference": {
+        "r2": 0.28318804026967903,
+        "nrmse": -0.11094856096550099
+      },
+      "distance": 925.0504933209684,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -0.7933289450721306,
+        "nrmse": 1.1594194016016772
+      },
+      "difference": {
+        "r2": 0.28367105492786937,
+        "nrmse": -0.1105805983983228
+      },
+      "distance": 926.9733614602143,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -0.7919425219728935,
+        "nrmse": 1.1588283626304958
+      },
+      "difference": {
+        "r2": 0.28505747802710646,
+        "nrmse": -0.1111716373695042
+      },
+      "distance": 936.1689873459081,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -0.7914595073147032,
+        "nrmse": 1.159196325197674
+      },
+      "difference": {
+        "r2": 0.2855404926852968,
+        "nrmse": -0.110803674802326
+      },
+      "distance": 938.1082731266163,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.7872551591305926,
+        "nrmse": 1.1587348788243346
+      },
+      "difference": {
+        "r2": 0.2897448408694073,
+        "nrmse": -0.11126512117566545
+      },
+      "distance": 963.3200000067368,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -0.7879021181239931,
+        "nrmse": 1.1557957778856163
+      },
+      "difference": {
+        "r2": 0.2890978818760068,
+        "nrmse": -0.11420422211438375
+      },
+      "distance": 966.201896539451,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -0.7874191034658028,
+        "nrmse": 1.1561637404527942
+      },
+      "difference": {
+        "r2": 0.28958089653419716,
+        "nrmse": -0.11383625954720578
+      },
+      "distance": 968.157896252482,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.7853857213731652,
+        "nrmse": 1.1585118024203314
+      },
+      "difference": {
+        "r2": 0.29161427862683476,
+        "nrmse": -0.11148819757966866
+      },
+      "distance": 974.6850569861244,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -0.7839297627175759,
+        "nrmse": 1.1534195331435215
+      },
+      "difference": {
+        "r2": 0.2930702372824241,
+        "nrmse": -0.11658046685647849
+      },
+      "distance": 994.8116923325084,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -0.7834467480593855,
+        "nrmse": 1.1537874957106997
+      },
+      "difference": {
+        "r2": 0.29355325194061443,
+        "nrmse": -0.1162125042893003
+      },
+      "distance": 996.7885787810048,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.7813453175242648,
+        "nrmse": 1.1554792176754518
+      },
+      "difference": {
+        "r2": 0.2956546824757351,
+        "nrmse": -0.11452078232454821
+      },
+      "distance": 1005.2670085405431,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.7771144425361277,
+        "nrmse": 1.1590572511776576
+      },
+      "difference": {
+        "r2": 0.29988555746387224,
+        "nrmse": -0.11094274882234245
+      },
+      "distance": 1022.3964109167479,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.7752450047787003,
+        "nrmse": 1.1588341747736544
+      },
+      "difference": {
+        "r2": 0.30175499522129967,
+        "nrmse": -0.11116582522634566
+      },
+      "distance": 1034.1391783926103,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -0.7773729621178476,
+        "nrmse": 1.1531029729333573
+      },
+      "difference": {
+        "r2": 0.2996270378821524,
+        "nrmse": -0.11689702706664273
+      },
+      "distance": 1034.412767670522,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.7712046009297999,
+        "nrmse": 1.1558015900287746
+      },
+      "difference": {
+        "r2": 0.30579539907020004,
+        "nrmse": -0.11419840997122543
+      },
+      "distance": 1065.5210293245898,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 0.8,
+      "local_shift": 8.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -0.7672322455233826,
+        "nrmse": 1.15342534528668
+      },
+      "difference": {
+        "r2": 0.3097677544766173,
+        "nrmse": -0.11657465471331996
+      },
+      "distance": 1095.4571183501564,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+        "local": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.5574014857142668,
+        "nrmse": 1.3525117873963621
+      },
+      "difference": {
+        "r2": -0.4804014857142669,
+        "nrmse": 0.08251178739636211
+      },
+      "distance": 2375.937825358174,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.561373841120684,
+        "nrmse": 1.3548880321384567
+      },
+      "difference": {
+        "r2": -0.48437384112068393,
+        "nrmse": 0.08488803213845664
+      },
+      "distance": 2418.2399596234523,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.5654142449695843,
+        "nrmse": 1.3579206168833364
+      },
+      "difference": {
+        "r2": -0.4884142449695843,
+        "nrmse": 0.08792061688333641
+      },
+      "distance": 2462.785095623555,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.5675422023087315,
+        "nrmse": 1.3521894150430396
+      },
+      "difference": {
+        "r2": -0.4905422023087316,
+        "nrmse": 0.08218941504303956
+      },
+      "distance": 2473.8675219101756,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": null,
+      "metrics": {
+        "r2": -1.5672836827270118,
+        "nrmse": 1.3581436932873396
+      },
+      "difference": {
+        "r2": -0.49028368272701184,
+        "nrmse": 0.08814369328733962
+      },
+      "distance": 2481.4740021469374,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.5715145577151488,
+        "nrmse": 1.3545656597851339
+      },
+      "difference": {
+        "r2": -0.49451455771514885,
+        "nrmse": 0.08456565978513386
+      },
+      "distance": 2516.959986071043,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.5736159882502696,
+        "nrmse": 1.3528739378203818
+      },
+      "difference": {
+        "r2": -0.49661598825026965,
+        "nrmse": 0.08287393782038177
+      },
+      "distance": 2534.955293556485,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 8.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.57409900290846,
+        "nrmse": 1.3525059752532038
+      },
+      "difference": {
+        "r2": -0.4970990029084601,
+        "nrmse": 0.0825059752532038
+      },
+      "distance": 2539.146546450675,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.5755549615640492,
+        "nrmse": 1.3575982445300137
+      },
+      "difference": {
+        "r2": -0.4985549615640492,
+        "nrmse": 0.08759824453001364
+      },
+      "distance": 2562.305021448706,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.5775883436566869,
+        "nrmse": 1.3552501825624765
+      },
+      "difference": {
+        "r2": -0.5005883436566869,
+        "nrmse": 0.08525018256247652
+      },
+      "distance": 2578.5628343188077,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 0,
+      "metrics": {
+        "r2": -1.5774243993214767,
+        "nrmse": 1.3578213209340169
+      },
+      "difference": {
+        "r2": -0.5004243993214768,
+        "nrmse": 0.08782132093401684
+      },
+      "distance": 2581.371638468564,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment0"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 2.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.578071358314877,
+        "nrmse": 1.3548822199952983
+      },
+      "difference": {
+        "r2": -0.5010713583148771,
+        "nrmse": 0.08488221999529832
+      },
+      "distance": 2582.7749739484616,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift2",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.5816287475055872,
+        "nrmse": 1.358282767307356
+      },
+      "difference": {
+        "r2": -0.5046287475055873,
+        "nrmse": 0.08828276730735607
+      },
+      "distance": 2624.440198125025,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 0.5,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.5821117621637775,
+        "nrmse": 1.3579148047401781
+      },
+      "difference": {
+        "r2": -0.5051117621637775,
+        "nrmse": 0.0879148047401781
+      },
+      "distance": 2628.6690516870012,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift0.5",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 1,
+      "metrics": {
+        "r2": -1.5834981852630148,
+        "nrmse": 1.3585058437113593
+      },
+      "difference": {
+        "r2": -0.5064981852630148,
+        "nrmse": 0.08850584371135928
+      },
+      "distance": 2643.7369604578685,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment1"
+      }
+    },
+    {
+      "contrast": 1.0,
+      "local_shift": 0.0,
+      "shortcut_shift": 1.0,
+      "mixed_assignment_seed": 2,
+      "metrics": {
+        "r2": -1.583981199921205,
+        "nrmse": 1.3581378811441813
+      },
+      "difference": {
+        "r2": -0.506981199921205,
+        "nrmse": 0.08813788114418131
+      },
+      "distance": 2647.9822316613067,
+      "within_tolerance": false,
+      "source_folders": {
+        "shortcut": "results/internal_regression_component_v1/five_family_probes/shortcut_feature_shift1",
+        "boundary": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "band": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+        "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+        "mixed": "results/internal_regression_component_v1/five_family_probes/mixed_assignment2"
+      }
+    }
+  ],
+  "best": {
+    "contrast": 0.8,
+    "local_shift": 0.0,
+    "shortcut_shift": 8.0,
+    "mixed_assignment_seed": null,
+    "metrics": {
+      "r2": -1.1070132850905503,
+      "nrmse": 1.2457812433310373
+    },
+    "difference": {
+      "r2": -0.030013285090550346,
+      "nrmse": -0.02421875666896267
+    },
+    "distance": 14.873454565170755,
+    "within_tolerance": false,
+    "source_folders": {
+      "shortcut": "results/internal_regression_component_v1/five_candidates/shift8_label1",
+      "boundary": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+      "band": "results/internal_regression_component_v1/five_family_probes/label_contrast0.8",
+      "local": "results/internal_regression_component_v1/five_family_probes/local_feature_shift0",
+      "mixed": "results/internal_regression_component_v1/five_candidates/shift8_label1"
+    }
+  },
+  "counts": {
+    "baseline": 735,
+    "label_contrast0.8": 280,
+    "label_contrast0.9": 280,
+    "local_feature_shift0": 140,
+    "local_feature_shift2": 140,
+    "shortcut_feature_shift0.5": 140,
+    "shortcut_feature_shift1": 140,
+    "shortcut_feature_shift2": 140,
+    "mixed_assignment0": 140,
+    "mixed_assignment1": 140,
+    "mixed_assignment2": 140
+  },
+  "family_means": {
+    "baseline": {
+      "shortcut": {
+        "r2": 0.26221548235296993,
+        "nrmse": 0.8125411115588137
+      },
+      "boundary": {
+        "r2": -2.294850189238254,
+        "nrmse": 1.5705001249648427
+      },
+      "band": {
+        "r2": -2.452645152870094,
+        "nrmse": 1.684870614508538
+      },
+      "local": {
+        "r2": 0.30712399883788677,
+        "nrmse": 0.7895170617732502
+      },
+      "mixed": {
+        "r2": -1.9099463698180046,
+        "nrmse": 1.4433505339545796
+      }
+    },
+    "label_contrast0.8": {
+      "boundary": {
+        "r2": -1.196185184056012,
+        "nrmse": 1.3175169823475108
+      },
+      "band": {
+        "r2": -1.2993691549337536,
+        "nrmse": 1.404201036799246
+      }
+    },
+    "label_contrast0.9": {
+      "boundary": {
+        "r2": -1.714421072486726,
+        "nrmse": 1.4438878289712733
+      },
+      "band": {
+        "r2": -1.8413278714595602,
+        "nrmse": 1.5432637696864897
+      }
+    },
+    "local_feature_shift0": {
+      "local": {
+        "r2": -1.3917811989979514,
+        "nrmse": 1.251296551995037
+      }
+    },
+    "local_feature_shift2": {
+      "local": {
+        "r2": 0.14470275254808318,
+        "nrmse": 0.864831110478913
+      }
+    },
+    "shortcut_feature_shift0.5": {
+      "shortcut": {
+        "r2": 0.22215168607638183,
+        "nrmse": 0.8395852589936849
+      }
+    },
+    "shortcut_feature_shift1": {
+      "shortcut": {
+        "r2": 0.2128044972892446,
+        "nrmse": 0.8407006410137011
+      }
+    },
+    "shortcut_feature_shift2": {
+      "shortcut": {
+        "r2": 0.24235370532088377,
+        "nrmse": 0.8244223352692863
+      }
+    },
+    "mixed_assignment0": {
+      "mixed": {
+        "r2": -1.960649952790329,
+        "nrmse": 1.4417386721879657
+      }
+    },
+    "mixed_assignment1": {
+      "mixed": {
+        "r2": -1.9910188824980188,
+        "nrmse": 1.445161286074678
+      }
+    },
+    "mixed_assignment2": {
+      "mixed": {
+        "r2": -1.9934339557889704,
+        "nrmse": 1.4433214732387873
+      }
+    }
+  },
+  "internal_only": true,
+  "benchmark_selection_uses_development_Base_only": true
+}

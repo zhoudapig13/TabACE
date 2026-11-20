@@ -1,0 +1,17 @@
+task,outer_fold,method,family_scope,strength_used_for_selection,outer_test_labels_used,outer_train_datasets,outer_train_conditions,candidate_count,members,aggregation,alpha,weights,bias,gate,decision_guard,batch_router,metadata,nested_upgrade_evidence,nested_minimum_gain,fold_stability_evidence
+regression,0,shared,all_shifts,False,False,26,52,1,['shared/deduplicate'],mean,0.25,[],0.0,,,,"{'candidate': 'fixed_shared_grid_candidate', 'retrospective_point_tuned': True}",,,
+regression,0,specific,support,False,False,26,52,1,[],mean,0.0,[],0.0,,,,{'candidate': 'unused_base_placeholder'},nan,0.0,
+regression,0,pro,support,False,False,26,52,1,[],mean,0.0,[],0.0,,,,{'candidate': 'specific_anchor_fallback'},nan,0.0,0.0
+regression,1,shared,all_shifts,False,False,26,52,1,['shared/deduplicate'],mean,0.25,[],0.0,,,,"{'candidate': 'fixed_shared_grid_candidate', 'retrospective_point_tuned': True}",,,
+regression,1,specific,support,False,False,26,52,1,[],mean,0.0,[],0.0,,,,{'candidate': 'unused_base_placeholder'},nan,0.0,
+regression,1,pro,support,False,False,26,52,1,[],mean,0.0,[],0.0,,,,{'candidate': 'specific_anchor_fallback'},nan,0.0,0.0
+regression,2,shared,all_shifts,False,False,26,52,1,['shared/deduplicate'],mean,0.25,[],0.0,,,,"{'candidate': 'fixed_shared_grid_candidate', 'retrospective_point_tuned': True}",,,
+regression,2,specific,support,False,False,26,52,1,[],mean,0.0,[],0.0,,,,{'candidate': 'unused_base_placeholder'},nan,0.0,
+regression,2,pro,support,False,False,26,52,1,[],mean,0.0,[],0.0,,,,{'candidate': 'specific_anchor_fallback'},nan,0.0,0.0
+regression,3,shared,all_shifts,False,False,27,54,1,['shared/deduplicate'],mean,0.25,[],0.0,,,,"{'candidate': 'fixed_shared_grid_candidate', 'retrospective_point_tuned': True}",,,
+regression,3,specific,support,False,False,27,54,1,[],mean,0.0,[],0.0,,,,{'candidate': 'unused_base_placeholder'},nan,0.0,
+regression,3,pro,support,False,False,27,54,1,[],mean,0.0,[],0.0,,,,{'candidate': 'specific_anchor_fallback'},nan,0.0,0.0
+regression,4,shared,all_shifts,False,False,27,54,1,['shared/deduplicate'],mean,0.25,[],0.0,,,,"{'candidate': 'fixed_shared_grid_candidate', 'retrospective_point_tuned': True}",,,
+regression,4,specific,support,False,False,27,54,1,[],mean,0.0,[],0.0,,,,{'candidate': 'unused_base_placeholder'},nan,0.0,
+regression,4,pro,support,False,False,27,54,1,[],mean,0.0,[],0.0,,,,{'candidate': 'specific_anchor_fallback'},nan,0.0,0.0
+

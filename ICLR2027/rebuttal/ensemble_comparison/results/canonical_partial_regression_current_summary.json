@@ -1,0 +1,83 @@
+{
+  "status": "COMPLETE",
+  "scope": "Three canonical-input regression controls, not all requested baselines",
+  "seed": 0,
+  "datasets": 33,
+  "nonzero_conditions": 924,
+  "source_rows": 256,
+  "context_count": 6,
+  "context_resampling_fraction": 0.1,
+  "learned_weight_fraction": 0.25,
+  "Shared_run": false,
+  "previous_full_pool_and_unshrunk_results_retained": true,
+  "requested_score_bounds_used_for_prediction_or_fitting": false,
+  "development_history": "Fixed shrinkage check added after previous aggregate Clean declined; not untouched confirmatory evaluation",
+  "averages": [
+    {
+      "method": "Random-6（10%行替换）",
+      "clean": {
+        "r2": 0.704027117123234,
+        "nrmse": 0.47933260115812226
+      },
+      "seven": {
+        "r2": 0.2948707948038908,
+        "nrmse": 0.7239852768869053
+      },
+      "Clean_difference_vs_Base": {
+        "r2": -0.0037913693467713783,
+        "nrmse": 0.003107626966806998
+      },
+      "Clean_within_005": true,
+      "seven_both_metrics_better_than_Base": true,
+      "seven_both_metrics_worse_than_historical_Shared": true
+    },
+    {
+      "method": "GES-6 + 收缩",
+      "clean": {
+        "r2": 0.7044278916778968,
+        "nrmse": 0.4787019546588295
+      },
+      "seven": {
+        "r2": 0.29702566916071654,
+        "nrmse": 0.7233255926941552
+      },
+      "Clean_difference_vs_Base": {
+        "r2": -0.00339059479210857,
+        "nrmse": 0.0024769804675142115
+      },
+      "Clean_within_005": true,
+      "seven_both_metrics_better_than_Base": true,
+      "seven_both_metrics_worse_than_historical_Shared": true
+    },
+    {
+      "method": "Convex-6 + 收缩",
+      "clean": {
+        "r2": 0.704337398243651,
+        "nrmse": 0.47876289669992106
+      },
+      "seven": {
+        "r2": 0.2967304838905573,
+        "nrmse": 0.723465249425988
+      },
+      "Clean_difference_vs_Base": {
+        "r2": -0.0034810882263542897,
+        "nrmse": 0.0025379225086057944
+      },
+      "Clean_within_005": true,
+      "seven_both_metrics_better_than_Base": true,
+      "seven_both_metrics_worse_than_historical_Shared": true
+    }
+  ],
+  "Base": {
+    "method": "base_protocol_check",
+    "clean": {
+      "r2": 0.7078184864700053,
+      "nrmse": 0.47622497419131526
+    },
+    "seven": {
+      "r2": 0.27460909266251643,
+      "nrmse": 0.7288452186341001
+    }
+  },
+  "prediction_metrics_computed": 1914
+}

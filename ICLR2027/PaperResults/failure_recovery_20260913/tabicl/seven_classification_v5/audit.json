@@ -1,0 +1,31 @@
+{
+  "api_version": "tabace-context-ensemble-v1",
+  "protocol_id": "tabace_context_only_information_v4",
+  "task": "classification",
+  "backbone": "TabICL-v2",
+  "datasets": 35,
+  "detail_rows": 1225,
+  "outer_folds": 5,
+  "shared_context_candidates": 15,
+  "specific_context_candidates": 20,
+  "pro_context_candidates": 25,
+  "specific_slot_schema_stable_across_strengths": true,
+  "historical_clean_reference_contexts_used": false,
+  "forbidden_historical_name_tokens": [
+    "clean",
+    "reference",
+    "stable"
+  ],
+  "shared_selector_receives_shift": false,
+  "specific_selector_receives_shift": true,
+  "pro_selector_receives_shift": true,
+  "all_selectors_receive_strength": false,
+  "all_selectors_receive_shift_presence": false,
+  "one_policy_per_outer_fold_and_scope_across_all_strengths": true,
+  "outer_test_labels_used_for_selection": false,
+  "common_inference_core": "unified_context_ensemble.src.core.predict",
+  "benchmark_tuning_override": {
+    "base_downside_penalty": 0.5,
+    "tail_risk_weight": 0.0
+  }
+}

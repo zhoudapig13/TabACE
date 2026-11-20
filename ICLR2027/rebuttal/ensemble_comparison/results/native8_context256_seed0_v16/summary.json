@@ -1,0 +1,77 @@
+{
+  "complete": true,
+  "context_rows": 256,
+  "seed": 0,
+  "n_estimators": 8,
+  "rows": [
+    {
+      "task": "classification",
+      "block": "Clean",
+      "context_rows": 256,
+      "seed": 0,
+      "completed": 72,
+      "expected": 72,
+      "complete": true,
+      "accuracy": 0.8077256944444444,
+      "auc": 0.9009276003499883
+    },
+    {
+      "task": "classification",
+      "block": "Five",
+      "context_rows": 256,
+      "seed": 0,
+      "completed": 1440,
+      "expected": 1440,
+      "complete": true,
+      "accuracy": 0.49969075520833334,
+      "auc": 0.6637825316444467
+    },
+    {
+      "task": "classification",
+      "block": "Seven",
+      "context_rows": 256,
+      "seed": 0,
+      "completed": 980,
+      "expected": 980,
+      "complete": true,
+      "accuracy": 0.7630181760204081,
+      "auc": 0.8248199803030775
+    },
+    {
+      "task": "regression",
+      "block": "Clean",
+      "context_rows": 256,
+      "seed": 0,
+      "completed": 35,
+      "expected": 35,
+      "complete": true,
+      "r2": 0.6766950020292792,
+      "nrmse": 0.5576199628605758
+    },
+    {
+      "task": "regression",
+      "block": "Five",
+      "context_rows": 256,
+      "seed": 0,
+      "completed": 700,
+      "expected": 700,
+      "complete": true,
+      "r2": -0.7258777713910911,
+      "nrmse": 1.163888008553179
+    },
+    {
+      "task": "regression",
+      "block": "Seven",
+      "context_rows": 256,
+      "seed": 0,
+      "completed": 924,
+      "expected": 924,
+      "complete": true,
+      "r2": 0.26764857404770065,
+      "nrmse": 0.7286069149619357
+    }
+  ],
+  "cached_cells": 1512,
+  "benchmark_is_internal_development_reconstruction": true,
+  "run_512": false
+}

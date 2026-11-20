@@ -1,0 +1,144 @@
+{
+  "frozen_endpoints": 11,
+  "total_required_endpoints": 12,
+  "pending_endpoint": [
+    "shift",
+    "classification",
+    "interaction_sampling"
+  ],
+  "rows": [
+    {
+      "track": "perturbation",
+      "task": "classification",
+      "family": "cell_heavy_tail",
+      "datasets": 64,
+      "Base_primary": 0.7875162760416666,
+      "Base_secondary": 0.8931976185273189,
+      "Shared_primary": 0.8175862630208334,
+      "Shared_secondary": 0.9068495962461306,
+      "gain": 0.03006998697916674,
+      "recipe": "heavy_domain_validated_probe_v366"
+    },
+    {
+      "track": "perturbation",
+      "task": "classification",
+      "family": "column_desynchronization",
+      "datasets": 72,
+      "Base_primary": 0.7824074074074074,
+      "Base_secondary": 0.8919633014460042,
+      "Shared_primary": 0.8185763888888888,
+      "Shared_secondary": 0.910036670707226,
+      "gain": 0.0361689814814814,
+      "recipe": "column_desync_supervised_probe_v375"
+    },
+    {
+      "track": "perturbation",
+      "task": "classification",
+      "family": "feature_quantization",
+      "datasets": 64,
+      "Base_primary": 0.70697021484375,
+      "Base_secondary": 0.8781650788084012,
+      "Shared_primary": 0.757568359375,
+      "Shared_secondary": 0.8902340197106705,
+      "gain": 0.05059814453125,
+      "recipe": "shared_clean_reference_contexts_v269"
+    },
+    {
+      "track": "perturbation",
+      "task": "regression",
+      "family": "cell_heavy_tail",
+      "datasets": 35,
+      "Base_primary": 0.6379969877108482,
+      "Base_secondary": 0.5416580113334298,
+      "Shared_primary": 0.6756682841612233,
+      "Shared_secondary": 0.5161184943446095,
+      "gain": 0.037671296450375036,
+      "recipe": "shared_expanded_pool_v291"
+    },
+    {
+      "track": "perturbation",
+      "task": "regression",
+      "family": "column_desynchronization",
+      "datasets": 35,
+      "Base_primary": 0.6179104320706853,
+      "Base_secondary": 0.55911085680522,
+      "Shared_primary": 0.6751315405107079,
+      "Shared_secondary": 0.5170077279923214,
+      "gain": 0.057221108440022594,
+      "recipe": "shared_expanded_pool_v291"
+    },
+    {
+      "track": "perturbation",
+      "task": "regression",
+      "family": "feature_quantization",
+      "datasets": 35,
+      "Base_primary": 0.3743154891393875,
+      "Base_secondary": 0.7069712165730192,
+      "Shared_primary": 0.502286353331403,
+      "Shared_secondary": 0.6452397694138337,
+      "gain": 0.12797086419201553,
+      "recipe": "task_guarded_adaptation_v318"
+    },
+    {
+      "track": "shift",
+      "task": "classification",
+      "family": "cross_feature_rotation",
+      "datasets": 31,
+      "Base_primary": 0.7609206989247312,
+      "Base_secondary": 0.8217168277389042,
+      "Shared_primary": 0.786122311827957,
+      "Shared_secondary": 0.8420250183377129,
+      "gain": 0.025201612903225756,
+      "recipe": "shared_finetuned_inference_v309"
+    },
+    {
+      "track": "shift",
+      "task": "classification",
+      "family": "nonlinear_sensor",
+      "datasets": 32,
+      "Base_primary": 0.8001708984375,
+      "Base_secondary": 0.8524433025541603,
+      "Shared_primary": 0.82080078125,
+      "Shared_secondary": 0.8600014519542232,
+      "gain": 0.0206298828125,
+      "recipe": "nonlinear_sensor_exact_base_anchored_probe_v440"
+    },
+    {
+      "track": "shift",
+      "task": "regression",
+      "family": "cross_feature_rotation",
+      "datasets": 31,
+      "Base_primary": 0.3374606168973084,
+      "Base_secondary": 0.7527491539673942,
+      "Shared_primary": 0.4663241313517175,
+      "Shared_secondary": 0.6809589941873107,
+      "gain": 0.12886351445440913,
+      "recipe": "task_guarded_adaptation_v318"
+    },
+    {
+      "track": "shift",
+      "task": "regression",
+      "family": "interaction_sampling",
+      "datasets": 33,
+      "Base_primary": 0.6487192835932893,
+      "Base_secondary": 0.534958840733501,
+      "Shared_primary": 0.6860288754719615,
+      "Shared_secondary": 0.5042114294577945,
+      "gain": 0.03730959187867211,
+      "recipe": "shared_finetuned_inference_v309"
+    },
+    {
+      "track": "shift",
+      "task": "regression",
+      "family": "nonlinear_sensor",
+      "datasets": 33,
+      "Base_primary": 0.1009044201428522,
+      "Base_secondary": 0.8235339379261306,
+      "Shared_primary": 0.4413156964275691,
+      "Shared_secondary": 0.6664946545844959,
+      "gain": 0.3404112762847169,
+      "recipe": "task_guarded_adaptation_v318"
+    }
+  ],
+  "extra_supervision_and_per_endpoint_recipes": true
+}

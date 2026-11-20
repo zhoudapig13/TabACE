@@ -1,0 +1,989 @@
+{
+  "seed": 0,
+  "Shared_is_paper_reference_only": true,
+  "same_protocol_Shared_computed": false,
+  "all_results_reported": true,
+  "records": [
+    {
+      "backbone": "tabicl",
+      "method": "base_protocol_check",
+      "label": "Base",
+      "budget": "1",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.8032769097222222,
+          "auc": 0.900696720017334
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.5027180989583333,
+          "auc": 0.6715200711007724
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.752782206632653,
+          "auc": 0.8124573050447789
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "base_protocol_check",
+      "label": "Base",
+      "budget": "1",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.7445725407596708,
+          "nrmse": 0.4928804327056842
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.107162683623088,
+          "nrmse": 1.2974285489889466
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.27460909266251643,
+          "nrmse": 0.7288452186341002
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "native_6",
+      "label": "Native-6",
+      "budget": "6",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.8070746527777778,
+          "auc": 0.9005396815572415
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.5002332899305555,
+          "auc": 0.6644636082438573
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.7544403698979593,
+          "auc": 0.814014643938401
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "native_6",
+      "label": "Native-6",
+      "budget": "6",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.7439290145049395,
+          "nrmse": 0.4922620990879018
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.1003862677950191,
+          "nrmse": 1.295223878737334
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.2589679252031714,
+          "nrmse": 0.7304371868743768
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "bootstrap_mean_6",
+      "label": "Random-6",
+      "budget": "6",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.7998046875,
+          "auc": 0.8982145320734808
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.49887695312499997,
+          "auc": 0.6670295765807309
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.7541454081632653,
+          "auc": 0.8136110777899496
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "bootstrap_mean_6",
+      "label": "Random-6",
+      "budget": "6",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.7318583398249516,
+          "nrmse": 0.5051683913374789
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.0049459690843667,
+          "nrmse": 1.2747047279312782
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.7112820399786975,
+          "nrmse": 0.47289782273520903
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "DENSE_fullcontext_OOF_selected_adapted",
+      "label": "DENSE-6*",
+      "budget": "6",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.7978515625,
+          "auc": 0.8959001853256482
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.49761827256944446,
+          "auc": 0.6637519996390058
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.753531568877551,
+          "auc": 0.8119112242575929
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "GES_25_metric_normalized",
+      "label": "GES-6",
+      "budget": "≤6",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.7969835069444444,
+          "auc": 0.8977079145123411
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.49829644097222225,
+          "auc": 0.6666032647445982
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.7544802295918367,
+          "auc": 0.813330643917533
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "GES_25_metric_normalized",
+      "label": "GES-6",
+      "budget": "≤6",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.7310663782029573,
+          "nrmse": 0.5063404648370727
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.0099909292022249,
+          "nrmse": 1.2765352593124897
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.7096246507469581,
+          "nrmse": 0.4746893202658901
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "Stacking_convex_OOF",
+      "label": "Convex Stacking-6",
+      "budget": "≤6",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.7998046875,
+          "auc": 0.8978647609419078
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.49881184895833336,
+          "auc": 0.6666664097371223
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.7546077806122449,
+          "auc": 0.8134891652569995
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "Stacking_convex_OOF",
+      "label": "Convex Stacking-6",
+      "budget": "≤6",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.7316849027895492,
+          "nrmse": 0.5054814691678482
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.0063070872368245,
+          "nrmse": 1.275203729043125
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.7111805840695409,
+          "nrmse": 0.47305443192407975
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "Stacking_OOF",
+      "label": "Log-linear Stacking-6",
+      "budget": "6",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.7977430555555556,
+          "auc": 0.8976980470859355
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.4971354166666667,
+          "auc": 0.6676541279038183
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.7544961734693878,
+          "auc": 0.8132043030994113
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "TabFM_feature_views6_NNLS_adapted",
+      "label": "TabFM-6*",
+      "budget": "≤6",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.8052300347222222,
+          "auc": 0.9005955416872415
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.5057345920138889,
+          "auc": 0.6723915414976239
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.756951530612245,
+          "auc": 0.8150346975332431
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "Feature_views6_convex_OOF_adapted",
+      "label": "Feature views-6（凸融合适配）*",
+      "budget": "≤6",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.73711835746696,
+          "nrmse": 0.5054656550466284
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.0368127676042274,
+          "nrmse": 1.2801608987092141
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.31026966796450495,
+          "nrmse": 0.7220102215177095
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "TabFM_feature_views6_NNLS_adapted",
+      "label": "TabFM-6（原NNLS诊断）*",
+      "budget": "≤6",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.2742612448817318,
+          "nrmse": 0.911428896805979
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -0.1834031049134451,
+          "nrmse": 1.118390467647303
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.29457583029985884,
+          "nrmse": 0.7299541983650921
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "divide_conquer_feature_adapted",
+      "label": "Divide-and-conquer*",
+      "budget": "≤6",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.8046875,
+          "auc": 0.9020235155603209
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.5030056423611111,
+          "auc": 0.6721840161871131
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.7522161989795919,
+          "auc": 0.8126389044988979
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "divide_conquer_feature_adapted",
+      "label": "Divide-and-conquer*",
+      "budget": "≤6",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.7445725407596708,
+          "nrmse": 0.4928804327056842
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.107162683623088,
+          "nrmse": 1.2974285489889466
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.27460909266251643,
+          "nrmse": 0.7288452186341002
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "oligoicp_iqr_6_keep1_adapted",
+      "label": "OligoICP 6→1*",
+      "budget": "6→1",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.7146540586351193,
+          "nrmse": 0.5227587743998127
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.1116965427136274,
+          "nrmse": 1.3084310151699412
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.677439623818676,
+          "nrmse": 0.5049369393501861
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "OligoICP_IQR60_keep6_adapted",
+      "label": "OligoICP 60→6*",
+      "budget": "60→6",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.731358523859601,
+          "nrmse": 0.5063969330564356
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.0578001696215933,
+          "nrmse": 1.287014359480368
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.7162099717209557,
+          "nrmse": 0.46779195418730524
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "Bootstrap_mean60_extended_budget",
+      "label": "Random-60（筛选成本对照）",
+      "budget": "60",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.7351406338831185,
+          "nrmse": 0.5023323806791501
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -0.9953410949102539,
+          "nrmse": 1.2706293098177903
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.7180565569982154,
+          "nrmse": 0.4661349385306622
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "tabpfn_v3_base_check",
+      "label": "Base",
+      "budget": "1",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.7912326388888888,
+          "auc": 0.8927454374552314
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.47685004340277776,
+          "auc": 0.6514141676037993
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.7412228954081633,
+          "auc": 0.798673457163788
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "tabpfn_v3_base_check",
+      "label": "Base",
+      "budget": "1",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.7438823501078643,
+          "nrmse": 0.4942465314177377
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.2835249332511796,
+          "nrmse": 1.3419874238816527
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.2899280108311645,
+          "nrmse": 0.7320916678682928
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "tabpfn_bootstrap_mean_6",
+      "label": "Random-6",
+      "budget": "6",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.7875434027777778,
+          "auc": 0.8927831853633946
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.47610677083333336,
+          "auc": 0.650404945805533
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.7427136479591836,
+          "auc": 0.802648501197335
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "tabpfn_bootstrap_mean_6",
+      "label": "Random-6",
+      "budget": "6",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.7337607460851963,
+          "nrmse": 0.5019512763955518
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.2068069887698307,
+          "nrmse": 1.327548294812937
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.7136660201121597,
+          "nrmse": 0.4729604732418233
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "PHE_official_custom6_native_source_calibration",
+      "label": "PHE-6（官方六配置）",
+      "budget": "≤6",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.7994791666666666,
+          "auc": 0.8986573908857848
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.48165690104166664,
+          "auc": 0.6533706241630224
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.745264668367347,
+          "auc": 0.8062657199470731
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "PHE_official_custom6_native_source_calibration",
+      "label": "PHE-6（官方六配置）",
+      "budget": "≤6",
+      "task": "regression",
+      "clean": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 35,
+        "metrics": {
+          "r2": 0.7454712919682673,
+          "nrmse": 0.49182819785087495
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 700,
+        "metrics": {
+          "r2": -1.2556038841052617,
+          "nrmse": 1.3325527834377873
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 33,
+        "conditions": 924,
+        "metrics": {
+          "r2": 0.28402759953695256,
+          "nrmse": 0.7323497032909947
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "RF_PFN_official6_no_adaptive_tree",
+      "label": "RF-PFN-6*",
+      "budget": "6",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.8011067708333334,
+          "auc": 0.9011331742565348
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.48934461805555557,
+          "auc": 0.6579886489153727
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.7475685586734694,
+          "auc": 0.8069169415388772
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "MixturePFN_MICP6_no_CaPFN",
+      "label": "MixturePFN MICP-6（无CaPFN）*",
+      "budget": "6专家",
+      "task": "classification",
+      "clean": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 72,
+        "metrics": {
+          "accuracy": 0.7907986111111112,
+          "auc": 0.8932748107662845
+        }
+      },
+      "five": {
+        "complete": true,
+        "datasets": 72,
+        "conditions": 1440,
+        "metrics": {
+          "accuracy": 0.47727864583333335,
+          "auc": 0.6523199660772563
+        }
+      },
+      "seven": {
+        "complete": true,
+        "datasets": 35,
+        "conditions": 980,
+        "metrics": {
+          "accuracy": 0.738265306122449,
+          "auc": 0.795010580786158
+        }
+      },
+      "complete": true
+    }
+  ],
+  "complete": true
+}

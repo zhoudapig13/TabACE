@@ -1,0 +1,52 @@
+{
+  "paper_uncertainty": {
+    "source": "paper/sections/appendix.tex",
+    "section": "B.1.2",
+    "method": "10,000 bootstrap resamples of complete seed-DGP-scenario units; percentile 95% intervals",
+    "confirmation_seeds": [
+      4,
+      5,
+      6
+    ],
+    "total_nonclean_units": 180,
+    "units_per_nonzero_perturbation_point": 75,
+    "units_per_nonzero_shift_point": 105
+  },
+  "folktables_previous_run": {
+    "summary": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/multi_seed_natural_v13/summary_mean_std_variance.csv",
+    "paired_gains": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/multi_seed_natural_v13/paired_gain_summary.csv",
+    "audit": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/multi_seed_natural_v13/audit.json",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "ddof": 1,
+    "fixed_splits": true,
+    "additional_source_supervised_adaptation": true,
+    "original_paper_reproduction": false,
+    "usage": "Separate adapted-protocol evidence; do not attach these uncertainties to the current rebuttal table means.",
+    "Shared": {
+      "accuracy_std_range": [
+        0.001985447052932912,
+        0.03492398865980424
+      ],
+      "accuracy_sample_variance_range": [
+        3.9419999999999845e-06,
+        0.0012196849839101352
+      ]
+    },
+    "Specific": {
+      "accuracy_std_range": [
+        0.0002966479394837938,
+        0.011421383453855311
+      ],
+      "accuracy_sample_variance_range": [
+        8.79999999999806e-08,
+        0.00013044799999999986
+      ]
+    }
+  }
+}

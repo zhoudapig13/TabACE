@@ -1,0 +1,9 @@
+{
+  "event": "REBASE_REGRESSION_ON_ORIGINAL_STRONG",
+  "created_at": "2026-09-12T22:37:38.262677+00:00",
+  "preserved_original_passing_points": 33,
+  "replaced_original_failure_points": 23,
+  "original_source": "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/original_strong_baseline/regression/summary_oof.csv",
+  "repair_source": "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/pre_rebase_repair_snapshot/regression/summary_oof.csv",
+  "criterion": "R2/nMAE/nRMSE raw noninferiority to the matching Base"
+}

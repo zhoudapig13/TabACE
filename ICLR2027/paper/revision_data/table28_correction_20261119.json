@@ -1,0 +1,101 @@
+{
+  "source": "Author-provided corrected Table 28 in the latest conversation image; 2026-11-19",
+  "headers": [
+    "Task",
+    "Method",
+    "Clean",
+    "Five corruptions (avg.)",
+    "Seven shifts (avg.)"
+  ],
+  "rows": [
+    [
+      "Classification",
+      "Base",
+      "0.8033 / 0.9007",
+      "0.4973 / 0.6729",
+      "0.7634 / 0.8246"
+    ],
+    [
+      "Classification",
+      "Shared",
+      "0.8048 / 0.9030",
+      "0.5818 / 0.7253",
+      "0.7747 / 0.8392"
+    ],
+    [
+      "Classification",
+      "Specific",
+      "0.8041 / 0.9013",
+      "0.6132 / 0.7661",
+      "0.8197 / 0.8576"
+    ],
+    [
+      "Classification",
+      "FT",
+      "0.7970 / 0.8998",
+      "0.5399 / 0.6978",
+      "0.7687 / 0.8301"
+    ],
+    [
+      "Classification",
+      "FT+Shared",
+      "0.7994 / 0.9019",
+      "0.5919 / 0.7350",
+      "0.7846 / 0.8404"
+    ],
+    [
+      "Classification",
+      "FT+Specific",
+      "0.8018 / 0.9020",
+      "0.6135 / 0.7706",
+      "0.8220 / 0.8682"
+    ],
+    [
+      "Regression",
+      "Base",
+      "0.7425 / 0.4803",
+      "−1.0763 / 1.2685",
+      "0.2746 / 0.7288"
+    ],
+    [
+      "Regression",
+      "Shared",
+      "0.7400 / 0.4825",
+      "0.3637 / 0.7845",
+      "0.4652 / 0.6564"
+    ],
+    [
+      "Regression",
+      "Specific",
+      "0.7519 / 0.4710",
+      "0.4855 / 0.7069",
+      "0.6531 / 0.5365"
+    ],
+    [
+      "Regression",
+      "FT",
+      "0.6942 / 0.5275",
+      "0.3102 / 0.8494",
+      "0.3897 / 0.6898"
+    ],
+    [
+      "Regression",
+      "FT+Shared",
+      "0.7178 / 0.5062",
+      "0.4099 / 0.7297",
+      "0.5503 / 0.6105"
+    ],
+    [
+      "Regression",
+      "FT+Specific",
+      "0.7253 / 0.4994",
+      "0.4401 / 0.7199",
+      "0.6101 / 0.5693"
+    ]
+  ],
+  "caption": "Corrected fine-tuning and inference-time context adaptation; classification Accuracy/AUROC and regression $R^2$/nRMSE.",
+  "note": "",
+  "author_confirmed_protocol_correction": "Context lengths unified across corruption and shift evaluations; exact row counts not newly specified.",
+  "folktables_action": "Leave current main table unchanged, as explicitly instructed by the author.",
+  "folktables_author_confirmation": "Updated Shared/Specific results come from separately performed multi-seed experiments; the main table has already been updated."
+}

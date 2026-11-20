@@ -1,0 +1,83 @@
+{
+  "all_trials": [
+    {
+      "candidate": "label0.9",
+      "generator_parameters": {
+        "name": "label0.9",
+        "shift_scale": 10.0,
+        "label_scale": 0.9
+      },
+      "metrics": {
+        "r2": -1.313101744405244,
+        "nrmse": 1.2893877979933255
+      },
+      "gap_to_paper_Base": {
+        "r2": -0.06010174440524407,
+        "nrmse": -0.023612202006674465
+      },
+      "distance": 41.69755764157289,
+      "within_003_each": false,
+      "prediction_count": 735
+    },
+    {
+      "candidate": "label1",
+      "generator_parameters": {
+        "name": "label1",
+        "shift_scale": 10.0,
+        "label_scale": 1.0
+      },
+      "metrics": {
+        "r2": -1.404663412555265,
+        "nrmse": 1.3063718223443144
+      },
+      "gap_to_paper_Base": {
+        "r2": -0.15166341255526516,
+        "nrmse": -0.006628177655685574
+      },
+      "distance": 230.45723446943893,
+      "within_003_each": false,
+      "prediction_count": 735
+    },
+    {
+      "candidate": "label1.1",
+      "generator_parameters": {
+        "name": "label1.1",
+        "shift_scale": 10.0,
+        "label_scale": 1.1
+      },
+      "metrics": {
+        "r2": -1.4952125357336965,
+        "nrmse": 1.3229202007641396
+      },
+      "gap_to_paper_Base": {
+        "r2": -0.2422125357336966,
+        "nrmse": 0.009920200764139686
+      },
+      "distance": 587.653228497481,
+      "within_003_each": false,
+      "prediction_count": 735
+    }
+  ],
+  "selected": {
+    "candidate": "label0.9",
+    "generator_parameters": {
+      "name": "label0.9",
+      "shift_scale": 10.0,
+      "label_scale": 0.9
+    },
+    "metrics": {
+      "r2": -1.313101744405244,
+      "nrmse": 1.2893877979933255
+    },
+    "gap_to_paper_Base": {
+      "r2": -0.06010174440524407,
+      "nrmse": -0.023612202006674465
+    },
+    "distance": 41.69755764157289,
+    "within_003_each": false,
+    "prediction_count": 735
+  },
+  "benchmark_development_only": true,
+  "selection_uses_Base_labels_only": true,
+  "paper_reproduction": false
+}

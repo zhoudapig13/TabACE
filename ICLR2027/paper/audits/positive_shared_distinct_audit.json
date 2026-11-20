@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "positive_strength_coordinates": 28,
+  "raw_failure_coordinates": [],
+  "exact_shared_base_ties": [],
+  "three_decimal_r2_nmae_pair_ties": [],
+  "strength_zero_unchanged": true,
+  "strength_zero_max_absolute_difference": 0.0,
+  "positive_strength_mean_signed_gain": {
+    "r2": 0.1939508900609974,
+    "nmae": 0.07260151213609167,
+    "nrmse": 0.07007989587463154
+  },
+  "seven_shift_average": {
+    "base_r2": 0.2730278999351972,
+    "base_nrmse": 0.7295536836020975,
+    "shared_r2": 0.46697878999619463,
+    "shared_nrmse": 0.6594737877274659,
+    "pro_r2": 0.6551943538707207,
+    "pro_nrmse": 0.5351026509156586
+  },
+  "summary_sha256": "2bf7ab30064294485b582170e7bb3b6b6dc4705ef3288706b138989bca69e5af",
+  "criterion": "At strength > 0, Shared must be non-inferior to Base on raw R2/nMAE/nRMSE and its displayed R2/nMAE pair must differ at three decimals; strength 0 must match the frozen original."
+}

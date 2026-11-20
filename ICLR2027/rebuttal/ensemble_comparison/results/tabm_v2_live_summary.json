@@ -1,0 +1,136 @@
+{
+  "utc": "2026-11-07T08:02:45.715922+00:00",
+  "tabm_complete": 5731,
+  "tabm_expected": 5731,
+  "preprocessing_revision": 2,
+  "data": [
+    {
+      "task": "regression",
+      "block": "five_perturbations",
+      "metric": "r2",
+      "mean": -1.0238082334630734,
+      "datasets": 35,
+      "conditions": 700
+    },
+    {
+      "task": "regression",
+      "block": "five_perturbations",
+      "metric": "nrmse",
+      "mean": 1.2885117548024378,
+      "datasets": 35,
+      "conditions": 700
+    },
+    {
+      "task": "regression",
+      "block": "clean",
+      "metric": "r2",
+      "mean": 0.6783175997272436,
+      "datasets": 35,
+      "conditions": 35
+    },
+    {
+      "task": "regression",
+      "block": "clean",
+      "metric": "nrmse",
+      "mean": 0.5659625501189064,
+      "datasets": 35,
+      "conditions": 35
+    },
+    {
+      "task": "classification",
+      "block": "five_perturbations",
+      "metric": "accuracy",
+      "mean": 0.6126356336805556,
+      "datasets": 72,
+      "conditions": 1440
+    },
+    {
+      "task": "classification",
+      "block": "five_perturbations",
+      "metric": "auc",
+      "mean": 0.7744977847163423,
+      "datasets": 72,
+      "conditions": 1440
+    },
+    {
+      "task": "classification",
+      "block": "clean",
+      "metric": "accuracy",
+      "mean": 0.763671875,
+      "datasets": 72,
+      "conditions": 72
+    },
+    {
+      "task": "classification",
+      "block": "clean",
+      "metric": "auc",
+      "mean": 0.8775086460583863,
+      "datasets": 72,
+      "conditions": 72
+    },
+    {
+      "task": "classification",
+      "block": "seven_shifts",
+      "metric": "accuracy",
+      "mean": 0.7375876913265308,
+      "datasets": 35,
+      "conditions": 980
+    },
+    {
+      "task": "classification",
+      "block": "seven_shifts",
+      "metric": "auc",
+      "mean": 0.7882964996338094,
+      "datasets": 35,
+      "conditions": 980
+    },
+    {
+      "task": "classification",
+      "block": "seven_clean",
+      "metric": "accuracy",
+      "mean": 0.7946428571428571,
+      "datasets": 35,
+      "conditions": 35
+    },
+    {
+      "task": "classification",
+      "block": "seven_clean",
+      "metric": "auc",
+      "mean": 0.8437233839500224,
+      "datasets": 35,
+      "conditions": 35
+    },
+    {
+      "task": "regression",
+      "block": "seven_shifts",
+      "metric": "r2",
+      "mean": -12.013832763487862,
+      "datasets": 33,
+      "conditions": 924
+    },
+    {
+      "task": "regression",
+      "block": "seven_shifts",
+      "metric": "nrmse",
+      "mean": 1.2089309296165192,
+      "datasets": 33,
+      "conditions": 924
+    },
+    {
+      "task": "regression",
+      "block": "seven_clean",
+      "metric": "r2",
+      "mean": 0.5886290515041758,
+      "datasets": 33,
+      "conditions": 33
+    },
+    {
+      "task": "regression",
+      "block": "seven_clean",
+      "metric": "nrmse",
+      "mean": 0.5915710666873144,
+      "datasets": 33,
+      "conditions": 33
+    }
+  ]
+}

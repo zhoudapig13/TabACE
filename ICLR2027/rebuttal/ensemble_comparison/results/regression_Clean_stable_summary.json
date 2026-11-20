@@ -1,0 +1,355 @@
+{
+  "status": "COMPLETE",
+  "seed": 0,
+  "Shared_run": false,
+  "unconstrained_variants_retained": true,
+  "ranking_not_enforced": true,
+  "selection": "validation Clean R2 decrease <= .005 and nRMSE increase <= .005; then minimize validation prediction loss",
+  "averages": [
+    {
+      "track": "five",
+      "access_regime": "canonical",
+      "method": "Native-6",
+      "clean": {
+        "r2": 0.7443535003532686,
+        "nrmse": 0.49237362109094024
+      },
+      "clean_difference_vs_backbone": {
+        "r2": -0.00021904040640219336,
+        "nrmse": -0.0005068116147439738
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": -1.1047601304441006,
+        "nrmse": 1.2971061179078613
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.002402553178987299,
+        "nrmse": -0.000322431081085206
+      },
+      "backoff_condition_fraction": 0.2
+    },
+    {
+      "track": "five",
+      "access_regime": "canonical",
+      "method": "Random-6",
+      "clean": {
+        "r2": 0.7445725407596708,
+        "nrmse": 0.4928804327056842
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": -1.107162683623088,
+        "nrmse": 1.2974285489889466
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "backoff_condition_fraction": 1.0
+    },
+    {
+      "track": "five",
+      "access_regime": "canonical",
+      "method": "OligoICP 6→1",
+      "clean": {
+        "r2": 0.7445725407596708,
+        "nrmse": 0.4928804327056842
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": -1.107162683623088,
+        "nrmse": 1.2974285489889466
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "backoff_condition_fraction": 1.0
+    },
+    {
+      "track": "five",
+      "access_regime": "canonical",
+      "method": "GES-6",
+      "clean": {
+        "r2": 0.7445725407596708,
+        "nrmse": 0.4928804327056842
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": -1.107162683623088,
+        "nrmse": 1.2974285489889466
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "backoff_condition_fraction": 1.0
+    },
+    {
+      "track": "five",
+      "access_regime": "canonical",
+      "method": "Convex Stacking-6",
+      "clean": {
+        "r2": 0.7445725407596708,
+        "nrmse": 0.4928804327056842
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": -1.107162683623088,
+        "nrmse": 1.2974285489889466
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "backoff_condition_fraction": 1.0
+    },
+    {
+      "track": "seven_calibrated_v2",
+      "access_regime": "canonical",
+      "method": "Native-6",
+      "clean": {
+        "r2": 0.7078184864700053,
+        "nrmse": 0.47622497419131526
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "backoff_condition_fraction": 1.0
+    },
+    {
+      "track": "seven_calibrated_v2",
+      "access_regime": "canonical",
+      "method": "Random-6",
+      "clean": {
+        "r2": 0.7078184864700053,
+        "nrmse": 0.47622497419131526
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "backoff_condition_fraction": 1.0
+    },
+    {
+      "track": "seven_calibrated_v2",
+      "access_regime": "canonical",
+      "method": "OligoICP 6→1",
+      "clean": {
+        "r2": 0.7078184864700053,
+        "nrmse": 0.47622497419131526
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "backoff_condition_fraction": 1.0
+    },
+    {
+      "track": "seven_calibrated_v2",
+      "access_regime": "canonical",
+      "method": "GES-6",
+      "clean": {
+        "r2": 0.7078184864700053,
+        "nrmse": 0.47622497419131526
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "backoff_condition_fraction": 1.0
+    },
+    {
+      "track": "seven_calibrated_v2",
+      "access_regime": "canonical",
+      "method": "Convex Stacking-6",
+      "clean": {
+        "r2": 0.7078184864700053,
+        "nrmse": 0.47622497419131526
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "backoff_condition_fraction": 1.0
+    },
+    {
+      "track": "seven_calibrated_v2",
+      "access_regime": "full_pool",
+      "method": "Native-6",
+      "clean": {
+        "r2": 0.7078184864700053,
+        "nrmse": 0.47622497419131526
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.0,
+        "nrmse": 0.0
+      },
+      "backoff_condition_fraction": 1.0
+    },
+    {
+      "track": "seven_calibrated_v2",
+      "access_regime": "full_pool",
+      "method": "Random-6",
+      "clean": {
+        "r2": 0.7246454376273485,
+        "nrmse": 0.45788169967954667
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.016826951157343117,
+        "nrmse": -0.018343274511768592
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": 0.7112820399786975,
+        "nrmse": 0.47289782273520903
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.4366729473161811,
+        "nrmse": -0.2559473958988911
+      },
+      "backoff_condition_fraction": 0.0
+    },
+    {
+      "track": "seven_calibrated_v2",
+      "access_regime": "full_pool",
+      "method": "OligoICP 6→1",
+      "clean": {
+        "r2": 0.7042900437406628,
+        "nrmse": 0.48045599245716114
+      },
+      "clean_difference_vs_backbone": {
+        "r2": -0.003528442729342496,
+        "nrmse": 0.004231018265845876
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": 0.40535853870993743,
+        "nrmse": 0.6707642911998474
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.130749446047421,
+        "nrmse": -0.05808092743425275
+      },
+      "backoff_condition_fraction": 0.7878787878787878
+    },
+    {
+      "track": "seven_calibrated_v2",
+      "access_regime": "full_pool",
+      "method": "GES-6",
+      "clean": {
+        "r2": 0.7226288709995008,
+        "nrmse": 0.4602244455748453
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.014810384529495457,
+        "nrmse": -0.016000528616469945
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": 0.7096246507469581,
+        "nrmse": 0.4746893202658901
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.4350155580844417,
+        "nrmse": -0.25415589836821
+      },
+      "backoff_condition_fraction": 0.0
+    },
+    {
+      "track": "seven_calibrated_v2",
+      "access_regime": "full_pool",
+      "method": "Convex Stacking-6",
+      "clean": {
+        "r2": 0.724508533162387,
+        "nrmse": 0.45811510981394815
+      },
+      "clean_difference_vs_backbone": {
+        "r2": 0.01669004669238161,
+        "nrmse": -0.018109864377367113
+      },
+      "outer_Clean_within_005": true,
+      "shift": {
+        "r2": 0.7112001437191858,
+        "nrmse": 0.47305919987507583
+      },
+      "shift_difference_vs_backbone": {
+        "r2": 0.4365910510566694,
+        "nrmse": -0.2557860187590243
+      },
+      "backoff_condition_fraction": 0.0
+    }
+  ]
+}

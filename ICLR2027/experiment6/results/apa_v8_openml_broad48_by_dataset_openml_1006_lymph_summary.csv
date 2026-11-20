@@ -1,0 +1,3 @@
+method,n,mean_accuracy,mean_balanced_accuracy,mean_macro_f1,mean_minority_recall,mean_ece,mean_accuracy_delta,mean_balanced_accuracy_delta,mean_macro_f1_delta,mean_minority_recall_delta,mean_ece_delta
+apa_cf_directional_router,6,0.8489583333333334,0.899361559139785,0.6875246704337852,0.9375,0.12128246982031839,0.03125,0.016129032258064502,0.026229686604762215,0.0,0.018378169614908863
+tabicl_baseline,6,0.8177083333333334,0.8832325268817205,0.661294983829023,0.9375,0.10290430020540953,0.0,0.0,0.0,0.0,0.0

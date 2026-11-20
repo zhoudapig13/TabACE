@@ -1,0 +1,3 @@
+method,n,mean_accuracy,mean_balanced_accuracy,mean_macro_f1,mean_minority_recall,mean_ece,mean_accuracy_delta,mean_balanced_accuracy_delta,mean_macro_f1_delta,mean_minority_recall_delta,mean_ece_delta
+apa_cf_local_shift_val_router,1,0.78125,0.7153931339977851,0.7294685990338164,0.5238095238095238,0.09829388558864595,0.0,0.0,0.0,0.0,0.0
+tabicl_baseline,1,0.78125,0.7153931339977851,0.7294685990338164,0.5238095238095238,0.09829388558864595,0.0,0.0,0.0,0.0,0.0

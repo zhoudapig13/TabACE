@@ -1,0 +1,18 @@
+{
+  "task_query_outcomes_opened": false,
+  "diagnostic_only_no_new_hypothesis_tests": true,
+  "summary": {
+    "classification": {
+      "cases": 72,
+      "used_feature_models": 1010,
+      "cases_without_predictable_feature": 8,
+      "mean_CV_relative_feature_loss_reduction_on_used_models": 0.6433036452346228
+    },
+    "regression": {
+      "cases": 35,
+      "used_feature_models": 361,
+      "cases_without_predictable_feature": 3,
+      "mean_CV_relative_feature_loss_reduction_on_used_models": 0.6866281418039506
+    }
+  }
+}

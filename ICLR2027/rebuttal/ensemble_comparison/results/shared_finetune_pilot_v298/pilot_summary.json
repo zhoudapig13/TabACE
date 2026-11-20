@@ -1,0 +1,117 @@
+{
+  "status": "PILOT_COMPLETE",
+  "datasets": [
+    {
+      "task": "classification",
+      "task_id": 11,
+      "GPU": 0,
+      "training_steps": 2,
+      "selected_weights_changed": false,
+      "initial_validation": {
+        "primary": 0.6666666666666666,
+        "secondary": {
+          "accuracy": 0.75
+        },
+        "context_rows": 256
+      },
+      "best_validation_primary": 0.6666666666666666
+    },
+    {
+      "task": "classification",
+      "task_id": 3,
+      "GPU": 1,
+      "training_steps": 14,
+      "selected_weights_changed": false,
+      "initial_validation": {
+        "primary": 0.9921875,
+        "secondary": {
+          "accuracy": 0.9921875
+        },
+        "context_rows": 256
+      },
+      "best_validation_primary": 0.9921875
+    },
+    {
+      "task": "classification",
+      "task_id": 3481,
+      "GPU": 2,
+      "training_steps": 14,
+      "selected_weights_changed": false,
+      "initial_validation": {
+        "primary": 0.7442307692307691,
+        "secondary": {
+          "accuracy": 0.7421875
+        },
+        "context_rows": 256
+      },
+      "best_validation_primary": 0.7442307692307691
+    },
+    {
+      "task": "regression",
+      "task_id": 361234,
+      "GPU": 3,
+      "training_steps": 18,
+      "selected_weights_changed": true,
+      "initial_validation": {
+        "primary": -5.289704690485932,
+        "secondary": {
+          "mse": 5.289704690485932,
+          "mae": 1.5412872545421124,
+          "r2": 0.4563771976056208
+        },
+        "context_rows": 256
+      },
+      "best_validation_primary": -4.884838645522143
+    },
+    {
+      "task": "regression",
+      "task_id": 361242,
+      "GPU": 5,
+      "training_steps": 12,
+      "selected_weights_changed": false,
+      "initial_validation": {
+        "primary": -166.92747063815648,
+        "secondary": {
+          "mse": 166.92747063815648,
+          "mae": 9.005229591426998,
+          "r2": 0.8736138578640118
+        },
+        "context_rows": 256
+      },
+      "best_validation_primary": -166.92747063815648
+    },
+    {
+      "task": "regression",
+      "task_id": 361247,
+      "GPU": 4,
+      "training_steps": 12,
+      "selected_weights_changed": false,
+      "initial_validation": {
+        "primary": -1.5481017827910202e-07,
+        "secondary": {
+          "mse": 1.5481017827910202e-07,
+          "mae": 0.0002508443333208493,
+          "r2": 0.999370038717748
+        },
+        "context_rows": 256
+      },
+      "best_validation_primary": -1.3278457726849264e-07
+    }
+  ],
+  "all_used_GPUs": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "reserved_GPUs": [
+    6,
+    7
+  ],
+  "selected_changed_count": 1,
+  "final_query_labels_or_scores_used": false,
+  "not_full_benchmark_result": true,
+  "next_step": "Increase capacity of dataset supervised adaptation by unfreezing the row-interaction module, keeping the independent source-validation selection and GPU0-5 policy."
+}

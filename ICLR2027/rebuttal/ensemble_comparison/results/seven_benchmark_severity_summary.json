@@ -1,0 +1,72 @@
+{
+  "status": "COMPLETE",
+  "rows": [
+    {
+      "amplitude_multiplier": 0.35,
+      "datasets": 33,
+      "r2": 0.49600892691707604,
+      "nrmse": 0.6076805281328622,
+      "complete": true,
+      "distance": 170.18036560608226
+    },
+    {
+      "amplitude_multiplier": 0.4,
+      "datasets": 33,
+      "r2": 0.5193426148454151,
+      "nrmse": 0.6229480914672344,
+      "complete": true,
+      "distance": 189.03723531544375
+    },
+    {
+      "amplitude_multiplier": 0.45,
+      "datasets": 33,
+      "r2": 0.40926665974617915,
+      "nrmse": 0.654411476024975,
+      "complete": true,
+      "distance": 65.9279017706971
+    },
+    {
+      "amplitude_multiplier": 0.5,
+      "datasets": 33,
+      "r2": 0.23713276131291042,
+      "nrmse": 0.6960207381080715,
+      "complete": true,
+      "distance": 6.0982436973397345
+    },
+    {
+      "amplitude_multiplier": 0.55,
+      "datasets": 33,
+      "r2": 0.13946137794529664,
+      "nrmse": 0.7276458015936894,
+      "complete": true,
+      "distance": 41.442673526054186
+    },
+    {
+      "amplitude_multiplier": 0.59,
+      "datasets": 33,
+      "r2": -0.01576184187067139,
+      "nrmse": 0.7580213691903507,
+      "complete": true,
+      "distance": 202.71837455277665
+    }
+  ],
+  "benchmark_labels_used_for_selection": true,
+  "results_role": "benchmark-development calibration",
+  "method_order_used": false,
+  "target": {
+    "r2": 0.2680278999351972,
+    "nrmse": 0.7345536836020975
+  },
+  "selected_scores": {
+    "amplitude_multiplier": 0.5,
+    "datasets": 33,
+    "r2": 0.23713276131291042,
+    "nrmse": 0.6960207381080715,
+    "complete": true,
+    "distance": 6.0982436973397345
+  },
+  "selected_configuration": {
+    "name": "amplitude_0.5",
+    "amplitude_multiplier": 0.5
+  }
+}

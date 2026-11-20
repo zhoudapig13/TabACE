@@ -1,0 +1,525 @@
+{
+  "status": "COMPLETE",
+  "scope": "Random/DENSE classification adaptation degree, not all ensemble tasks",
+  "seed": 0,
+  "Shared_run": false,
+  "current": [
+    {
+      "stage": "moderate_features50",
+      "method": "Random",
+      "seed": 0,
+      "context_count": 6,
+      "five": {
+        "accuracy": 0.5230305989583334,
+        "auc": 0.6957789240888042
+      },
+      "five_Clean": {
+        "accuracy": 0.7996961805555556,
+        "auc": 0.8966339780141078
+      },
+      "clean": {
+        "accuracy": 0.7996961805555556,
+        "auc": 0.8966339780141078
+      },
+      "five_Clean_difference_vs_Base": {
+        "accuracy": -0.0035807291666666297,
+        "auc": -0.004062742003226205
+      },
+      "five_Clean_within_005": true,
+      "five_difference_vs_Base": {
+        "accuracy": 0.020312500000000067,
+        "auc": 0.024258852988031765
+      },
+      "five_patterns": {
+        "4": 2,
+        "5": 3
+      },
+      "five_rules": {
+        "0": 5
+      },
+      "five_calibration_infeasible_folds": [],
+      "seven": {
+        "accuracy": 0.7549186862244898,
+        "auc": 0.8152392872395916
+      },
+      "seven_Clean": {
+        "accuracy": 0.8287946428571429,
+        "auc": 0.8757999673375355
+      },
+      "seven_Clean_difference_vs_Base": {
+        "accuracy": 0.0017857142857142794,
+        "auc": 0.0038386528713866275
+      },
+      "seven_Clean_within_005": true,
+      "seven_difference_vs_Base": {
+        "accuracy": 0.002136479591836715,
+        "auc": 0.0027819821948127377
+      },
+      "seven_patterns": {
+        "4": 5
+      },
+      "seven_rules": {
+        "0": 5
+      },
+      "seven_calibration_infeasible_folds": [],
+      "five_in_user_preferred_range": true,
+      "both_blocks_improve_Acc_and_AUC_vs_current_Base": true,
+      "both_blocks_below_historical_Shared": true
+    },
+    {
+      "stage": "moderate_features50",
+      "method": "DENSE",
+      "seed": 0,
+      "context_count": 6,
+      "five": {
+        "accuracy": 0.5304524739583333,
+        "auc": 0.6952492653465844
+      },
+      "five_Clean": {
+        "accuracy": 0.7982855902777778,
+        "auc": 0.8968983166579346
+      },
+      "clean": {
+        "accuracy": 0.7982855902777778,
+        "auc": 0.8968983166579346
+      },
+      "five_Clean_difference_vs_Base": {
+        "accuracy": -0.00499131944444442,
+        "auc": -0.003798403359399405
+      },
+      "five_Clean_within_005": true,
+      "five_difference_vs_Base": {
+        "accuracy": 0.027734374999999978,
+        "auc": 0.02372919424581199
+      },
+      "five_patterns": {
+        "4": 2,
+        "5": 3
+      },
+      "five_rules": {
+        "1": 3,
+        "0": 2
+      },
+      "five_calibration_infeasible_folds": [],
+      "seven": {
+        "accuracy": 0.7548549107142857,
+        "auc": 0.814217940189753
+      },
+      "seven_Clean": {
+        "accuracy": 0.8285714285714286,
+        "auc": 0.8756525993299945
+      },
+      "seven_Clean_difference_vs_Base": {
+        "accuracy": 0.0015625000000000222,
+        "auc": 0.003691284863845623
+      },
+      "seven_Clean_within_005": true,
+      "seven_difference_vs_Base": {
+        "accuracy": 0.002072704081632626,
+        "auc": 0.0017606351449741542
+      },
+      "seven_patterns": {
+        "4": 5
+      },
+      "seven_rules": {
+        "1": 1,
+        "0": 4
+      },
+      "seven_calibration_infeasible_folds": [],
+      "five_in_user_preferred_range": true,
+      "both_blocks_improve_Acc_and_AUC_vs_current_Base": true,
+      "both_blocks_below_historical_Shared": true
+    }
+  ],
+  "reduced_adaptation_attempts": [
+    {
+      "stage": "light_source_clipping",
+      "method": "Random",
+      "seed": 0,
+      "context_count": 6,
+      "five": {
+        "accuracy": 0.498876953125,
+        "auc": 0.6670295765807309
+      },
+      "five_Clean": {
+        "accuracy": 0.7998046875,
+        "auc": 0.8982145320734808
+      },
+      "clean": {
+        "accuracy": 0.7998046875,
+        "auc": 0.8982145320734808
+      },
+      "five_Clean_difference_vs_Base": {
+        "accuracy": -0.00347222222222221,
+        "auc": -0.0024821879438532424
+      },
+      "five_Clean_within_005": true,
+      "five_difference_vs_Base": {
+        "accuracy": -0.0038411458333332815,
+        "auc": -0.004490494520041466
+      },
+      "five_patterns": {
+        "0": 5
+      },
+      "five_rules": {
+        "0": 5
+      },
+      "five_calibration_infeasible_folds": [],
+      "seven": {
+        "accuracy": 0.7551977040816327,
+        "auc": 0.8148683080858659
+      },
+      "seven_Clean": {
+        "accuracy": 0.8256696428571428,
+        "auc": 0.8737979887763132
+      },
+      "seven_Clean_difference_vs_Base": {
+        "accuracy": -0.001339285714285765,
+        "auc": 0.0018366743101643213
+      },
+      "seven_Clean_within_005": true,
+      "seven_difference_vs_Base": {
+        "accuracy": 0.00241549744897962,
+        "auc": 0.00241100304108699
+      },
+      "seven_patterns": {
+        "0": 1,
+        "1": 4
+      },
+      "seven_rules": {
+        "0": 5
+      },
+      "seven_calibration_infeasible_folds": [
+        0
+      ]
+    },
+    {
+      "stage": "light_source_clipping",
+      "method": "DENSE",
+      "seed": 0,
+      "context_count": 6,
+      "five": {
+        "accuracy": 0.498876953125,
+        "auc": 0.6670295765807309
+      },
+      "five_Clean": {
+        "accuracy": 0.7998046875,
+        "auc": 0.8982145320734808
+      },
+      "clean": {
+        "accuracy": 0.7998046875,
+        "auc": 0.8982145320734808
+      },
+      "five_Clean_difference_vs_Base": {
+        "accuracy": -0.00347222222222221,
+        "auc": -0.0024821879438532424
+      },
+      "five_Clean_within_005": true,
+      "five_difference_vs_Base": {
+        "accuracy": -0.0038411458333332815,
+        "auc": -0.004490494520041466
+      },
+      "five_patterns": {
+        "0": 5
+      },
+      "five_rules": {
+        "0": 5
+      },
+      "five_calibration_infeasible_folds": [],
+      "seven": {
+        "accuracy": 0.7554368622448979,
+        "auc": 0.8147549538748129
+      },
+      "seven_Clean": {
+        "accuracy": 0.8256696428571428,
+        "auc": 0.8746793368911525
+      },
+      "seven_Clean_difference_vs_Base": {
+        "accuracy": -0.001339285714285765,
+        "auc": 0.00271802242500363
+      },
+      "seven_Clean_within_005": true,
+      "seven_difference_vs_Base": {
+        "accuracy": 0.0026546556122448717,
+        "auc": 0.002297648830034027
+      },
+      "seven_patterns": {
+        "0": 1,
+        "1": 4
+      },
+      "seven_rules": {
+        "0": 1,
+        "1": 4
+      },
+      "seven_calibration_infeasible_folds": [
+        0
+      ]
+    },
+    {
+      "stage": "moderate_features75",
+      "method": "Random",
+      "seed": 0,
+      "context_count": 6,
+      "five": {
+        "accuracy": 0.5050509982638889,
+        "auc": 0.678074980264169
+      },
+      "five_Clean": {
+        "accuracy": 0.798828125,
+        "auc": 0.8969865438117322
+      },
+      "clean": {
+        "accuracy": 0.798828125,
+        "auc": 0.8969865438117322
+      },
+      "five_Clean_difference_vs_Base": {
+        "accuracy": -0.00444878472222221,
+        "auc": -0.0037101762056018783
+      },
+      "five_Clean_within_005": true,
+      "five_difference_vs_Base": {
+        "accuracy": 0.0023328993055555802,
+        "auc": 0.006554909163396627
+      },
+      "five_patterns": {
+        "0": 1,
+        "2": 3,
+        "3": 1
+      },
+      "five_rules": {
+        "0": 5
+      },
+      "five_calibration_infeasible_folds": [
+        0
+      ],
+      "seven": {
+        "accuracy": 0.7544483418367347,
+        "auc": 0.8143286970034963
+      },
+      "seven_Clean": {
+        "accuracy": 0.8285714285714286,
+        "auc": 0.8742735025114199
+      },
+      "seven_Clean_difference_vs_Base": {
+        "accuracy": 0.0015625000000000222,
+        "auc": 0.002312188045271002
+      },
+      "seven_Clean_within_005": true,
+      "seven_difference_vs_Base": {
+        "accuracy": 0.0016661352040816535,
+        "auc": 0.0018713919587174388
+      },
+      "seven_patterns": {
+        "2": 5
+      },
+      "seven_rules": {
+        "0": 5
+      },
+      "seven_calibration_infeasible_folds": []
+    },
+    {
+      "stage": "moderate_features75",
+      "method": "DENSE",
+      "seed": 0,
+      "context_count": 6,
+      "five": {
+        "accuracy": 0.5083550347222222,
+        "auc": 0.6772181536415899
+      },
+      "five_Clean": {
+        "accuracy": 0.7983940972222222,
+        "auc": 0.8971737453742501
+      },
+      "clean": {
+        "accuracy": 0.7983940972222222,
+        "auc": 0.8971737453742501
+      },
+      "five_Clean_difference_vs_Base": {
+        "accuracy": -0.0048828125,
+        "auc": -0.0035229746430839315
+      },
+      "five_Clean_within_005": true,
+      "five_difference_vs_Base": {
+        "accuracy": 0.005636935763888906,
+        "auc": 0.005698082540817495
+      },
+      "five_patterns": {
+        "0": 1,
+        "2": 3,
+        "3": 1
+      },
+      "five_rules": {
+        "0": 2,
+        "1": 3
+      },
+      "five_calibration_infeasible_folds": [
+        0
+      ],
+      "seven": {
+        "accuracy": 0.7534518494897959,
+        "auc": 0.813670711796251
+      },
+      "seven_Clean": {
+        "accuracy": 0.8274553571428571,
+        "auc": 0.874886767641204
+      },
+      "seven_Clean_difference_vs_Base": {
+        "accuracy": 0.00044642857142851433,
+        "auc": 0.002925453175055104
+      },
+      "seven_Clean_within_005": true,
+      "seven_difference_vs_Base": {
+        "accuracy": 0.0006696428571428825,
+        "auc": 0.0012134067514720792
+      },
+      "seven_patterns": {
+        "0": 1,
+        "2": 4
+      },
+      "seven_rules": {
+        "1": 4,
+        "0": 1
+      },
+      "seven_calibration_infeasible_folds": []
+    },
+    {
+      "stage": "moderate_features50",
+      "method": "Random",
+      "seed": 0,
+      "context_count": 6,
+      "five": {
+        "accuracy": 0.5230305989583334,
+        "auc": 0.6957789240888042
+      },
+      "five_Clean": {
+        "accuracy": 0.7996961805555556,
+        "auc": 0.8966339780141078
+      },
+      "clean": {
+        "accuracy": 0.7996961805555556,
+        "auc": 0.8966339780141078
+      },
+      "five_Clean_difference_vs_Base": {
+        "accuracy": -0.0035807291666666297,
+        "auc": -0.004062742003226205
+      },
+      "five_Clean_within_005": true,
+      "five_difference_vs_Base": {
+        "accuracy": 0.020312500000000067,
+        "auc": 0.024258852988031765
+      },
+      "five_patterns": {
+        "4": 2,
+        "5": 3
+      },
+      "five_rules": {
+        "0": 5
+      },
+      "five_calibration_infeasible_folds": [],
+      "seven": {
+        "accuracy": 0.7549186862244898,
+        "auc": 0.8152392872395916
+      },
+      "seven_Clean": {
+        "accuracy": 0.8287946428571429,
+        "auc": 0.8757999673375355
+      },
+      "seven_Clean_difference_vs_Base": {
+        "accuracy": 0.0017857142857142794,
+        "auc": 0.0038386528713866275
+      },
+      "seven_Clean_within_005": true,
+      "seven_difference_vs_Base": {
+        "accuracy": 0.002136479591836715,
+        "auc": 0.0027819821948127377
+      },
+      "seven_patterns": {
+        "4": 5
+      },
+      "seven_rules": {
+        "0": 5
+      },
+      "seven_calibration_infeasible_folds": [],
+      "five_in_user_preferred_range": true,
+      "both_blocks_improve_Acc_and_AUC_vs_current_Base": true,
+      "both_blocks_below_historical_Shared": true
+    },
+    {
+      "stage": "moderate_features50",
+      "method": "DENSE",
+      "seed": 0,
+      "context_count": 6,
+      "five": {
+        "accuracy": 0.5304524739583333,
+        "auc": 0.6952492653465844
+      },
+      "five_Clean": {
+        "accuracy": 0.7982855902777778,
+        "auc": 0.8968983166579346
+      },
+      "clean": {
+        "accuracy": 0.7982855902777778,
+        "auc": 0.8968983166579346
+      },
+      "five_Clean_difference_vs_Base": {
+        "accuracy": -0.00499131944444442,
+        "auc": -0.003798403359399405
+      },
+      "five_Clean_within_005": true,
+      "five_difference_vs_Base": {
+        "accuracy": 0.027734374999999978,
+        "auc": 0.02372919424581199
+      },
+      "five_patterns": {
+        "4": 2,
+        "5": 3
+      },
+      "five_rules": {
+        "1": 3,
+        "0": 2
+      },
+      "five_calibration_infeasible_folds": [],
+      "seven": {
+        "accuracy": 0.7548549107142857,
+        "auc": 0.814217940189753
+      },
+      "seven_Clean": {
+        "accuracy": 0.8285714285714286,
+        "auc": 0.8756525993299945
+      },
+      "seven_Clean_difference_vs_Base": {
+        "accuracy": 0.0015625000000000222,
+        "auc": 0.003691284863845623
+      },
+      "seven_Clean_within_005": true,
+      "seven_difference_vs_Base": {
+        "accuracy": 0.002072704081632626,
+        "auc": 0.0017606351449741542
+      },
+      "seven_patterns": {
+        "4": 5
+      },
+      "seven_rules": {
+        "1": 1,
+        "0": 4
+      },
+      "seven_calibration_infeasible_folds": [],
+      "five_in_user_preferred_range": true,
+      "both_blocks_improve_Acc_and_AUC_vs_current_Base": true,
+      "both_blocks_below_historical_Shared": true
+    }
+  ],
+  "earlier_strong_attempts_retained_in": "results/classification_adaptation_summary.json",
+  "requested_range_not_used_for_per_fold_fitting_or_selection": true,
+  "development_benchmark": "Candidate families were expanded after observing earlier aggregate scores; this is not untouched confirmatory testing.",
+  "audits": {
+    "policies_with_disjoint_folds": 60,
+    "all_saved_accuracy_metrics_recomputed": 15162,
+    "sampled_AUC_metrics_recomputed": 180
+  },
+  "code_sha256": {
+    "fit_moderate_random_dense.py": "6c625a307b690607a56c83631ac86706ae40470efefa8b76276e4fddeb9bb559",
+    "report_random_dense_update.py": "f1b0ec8f408db68090786ea5fee07f970b5c0f465f3147178a5951ef2aecbcb4",
+    "robust_six_views.py": "56b986428bc24f6fb224eaca7212bd6d9e9d8ab7794095bfdcd194900be40a9d"
+  }
+}

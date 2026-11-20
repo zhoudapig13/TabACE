@@ -1,0 +1,1677 @@
+{
+  "status": "COMPLETE",
+  "seed": 0,
+  "records": [
+    {
+      "backbone": "tabicl",
+      "method": "Base",
+      "label": "Base",
+      "role": "anchor",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7445725407596708,
+            "nrmse": 0.4928804327056842
+          },
+          "shift": {
+            "r2": -1.107162683623088,
+            "nrmse": 1.2974285489889466
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.0,
+            "nrmse": 0.0
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.0,
+            "nrmse": 0.0
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7078184864700053,
+            "nrmse": 0.47622497419131526
+          },
+          "shift": {
+            "r2": 0.27460909266251643,
+            "nrmse": 0.7288452186341001
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.0,
+            "nrmse": 0.0
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.0,
+            "nrmse": 0.0
+          },
+          "between_Base_and_historical_Shared": true
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "Base",
+      "label": "Base",
+      "role": "anchor",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7438823501078643,
+            "nrmse": 0.4942465314177377
+          },
+          "shift": {
+            "r2": -1.2835249332511796,
+            "nrmse": 1.3419874238816527
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.0,
+            "nrmse": 0.0
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.0,
+            "nrmse": 0.0
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7062708054463512,
+            "nrmse": 0.47720796188422504
+          },
+          "shift": {
+            "r2": 0.2899280108311645,
+            "nrmse": 0.7320916678682928
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.0,
+            "nrmse": 0.0
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.0,
+            "nrmse": 0.0
+          },
+          "between_Base_and_historical_Shared": true
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "native_6",
+      "label": "Native-6",
+      "role": "native ensemble; canonical source",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7439290145049395,
+            "nrmse": 0.4922620990879018
+          },
+          "shift": {
+            "r2": -1.1003862677950191,
+            "nrmse": 1.295223878737334
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.000643526254731297,
+            "nrmse": -0.0006183336177824073
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.00677641582806876,
+            "nrmse": -0.0022046702516125283
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7075566538124595,
+            "nrmse": 0.4765234992875668
+          },
+          "shift": {
+            "r2": 0.2589679252031714,
+            "nrmse": 0.7304371868743768
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.0002618326575458685,
+            "nrmse": 0.0002985250962515562
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": -0.015641167459345018,
+            "nrmse": 0.001591968240276631
+          },
+          "between_Base_and_historical_Shared": false
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "PHE6",
+      "label": "PHE-6（官方六配置）",
+      "role": "official implementation; controlled six-configuration portfolio",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7454712919682673,
+            "nrmse": 0.49182819785087495
+          },
+          "shift": {
+            "r2": -1.2556038841052617,
+            "nrmse": 1.332552783437787
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.001588941860403037,
+            "nrmse": -0.0024183335668627737
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.027921049145917864,
+            "nrmse": -0.00943464044386566
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7056177728852663,
+            "nrmse": 0.4768373935280712
+          },
+          "shift": {
+            "r2": 0.2840275995369525,
+            "nrmse": 0.7323497032909948
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.0006530325610849541,
+            "nrmse": -0.0003705683561538442
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": -0.005900411294211982,
+            "nrmse": 0.0002580354227019743
+          },
+          "between_Base_and_historical_Shared": false
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "Native_PFN6",
+      "label": "Native-6",
+      "role": "native preprocessing ensemble",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7449692903840307,
+            "nrmse": 0.49183849375779515
+          },
+          "shift": {
+            "r2": -1.2461794805359805,
+            "nrmse": 1.3310001427752078
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.0010869402761664038,
+            "nrmse": -0.0024080376599425746
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.03734545271519907,
+            "nrmse": -0.010987281106444868
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7102571587486152,
+            "nrmse": 0.4712555504987698
+          },
+          "shift": {
+            "r2": 0.2521749355691836,
+            "nrmse": 0.7300976100915173
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.003986353302263934,
+            "nrmse": -0.005952411385455214
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": -0.037753075261980906,
+            "nrmse": -0.0019940577767755263
+          },
+          "between_Base_and_historical_Shared": false
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "IQR6_keep1_TabPFN_adapted",
+      "label": "IQR-6→1（OligoICP策略适配）",
+      "role": "six-candidate strategy adaptation, not original 400-candidate OligoICP",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.719175923130828,
+            "nrmse": 0.5164272477895709
+          },
+          "shift": {
+            "r2": -1.3646811325160315,
+            "nrmse": 1.373588638960287
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.02470642697703629,
+            "nrmse": 0.02218071637183322
+          },
+          "Clean_within_005": false,
+          "shift_difference_vs_Base": {
+            "r2": -0.08115619926485196,
+            "nrmse": 0.031601215078634226
+          },
+          "between_Base_and_historical_Shared": false
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.6717489547949997,
+            "nrmse": 0.5137060194221759
+          },
+          "shift": {
+            "r2": 0.16437094660555762,
+            "nrmse": 0.7713601923660164
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.03452185065135149,
+            "nrmse": 0.03649805753795082
+          },
+          "Clean_within_005": false,
+          "shift_difference_vs_Base": {
+            "r2": -0.12555706422560686,
+            "nrmse": 0.039268524497723556
+          },
+          "between_Base_and_historical_Shared": false
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabpfn",
+      "method": "RF_PFN6_depth2_adaptive",
+      "label": "RF-PFN-6（depth2、自适应）",
+      "role": "official algorithm, fixed six trees and depth2; additional node/validation calls",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7462338951666,
+            "nrmse": 0.49081549895985166
+          },
+          "shift": {
+            "r2": -1.2252510704878785,
+            "nrmse": 1.3271399249031697
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.0023515450587356934,
+            "nrmse": -0.003431032457886063
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.05827386276330104,
+            "nrmse": -0.014847498978483031
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7070349737626733,
+            "nrmse": 0.47588513626162104
+          },
+          "shift": {
+            "r2": 0.30508409843917783,
+            "nrmse": 0.7261821306005902
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.0007641683163220891,
+            "nrmse": -0.0013228256226039958
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.015156087608013347,
+            "nrmse": -0.005909537267702603
+          },
+          "between_Base_and_historical_Shared": true
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "GES6",
+      "label": "GES-6＋校准正则",
+      "role": "fixed six source-feature views, regularized on calibration datasets",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.744168425554566,
+            "nrmse": 0.49523734104321776
+          },
+          "shift": {
+            "r2": -1.0741024279164764,
+            "nrmse": 1.2887122701038245
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.0004041152051048602,
+            "nrmse": 0.0023569083375335476
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.03306025570661153,
+            "nrmse": -0.008716278885122053
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7052871292039474,
+            "nrmse": 0.4816077687331947
+          },
+          "shift": {
+            "r2": 0.2853956866742017,
+            "nrmse": 0.7283786157072395
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.0025313572660579098,
+            "nrmse": 0.005382794541879454
+          },
+          "Clean_within_005": false,
+          "shift_difference_vs_Base": {
+            "r2": 0.010786594011685247,
+            "nrmse": -0.00046660292686062643
+          },
+          "between_Base_and_historical_Shared": true
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "ConvexStacking6",
+      "label": "Convex Stacking-6＋校准正则",
+      "role": "fixed six source-feature views, regularized on calibration datasets",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7437977012725409,
+            "nrmse": 0.49559155943483424
+          },
+          "shift": {
+            "r2": -1.0753363318184312,
+            "nrmse": 1.288976809217461
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.0007748394871299746,
+            "nrmse": 0.0027111267291500263
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.03182635180465665,
+            "nrmse": -0.008451739771485611
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7053979009567314,
+            "nrmse": 0.481505796304542
+          },
+          "shift": {
+            "r2": 0.282286695260664,
+            "nrmse": 0.7290032448884356
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.002420585513273954,
+            "nrmse": 0.005280822113226724
+          },
+          "Clean_within_005": false,
+          "shift_difference_vs_Base": {
+            "r2": 0.007677602598147593,
+            "nrmse": 0.0001580262543354749
+          },
+          "between_Base_and_historical_Shared": false
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "RidgeStacking6",
+      "label": "Affine Ridge Stacking-6",
+      "role": "fixed six source-feature views, regularized on calibration datasets",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7444080304946912,
+            "nrmse": 0.4940207015885335
+          },
+          "shift": {
+            "r2": -1.086538162838442,
+            "nrmse": 1.2918370827857486
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.00016451026497965593,
+            "nrmse": 0.0011402688828492935
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.020624520784645828,
+            "nrmse": -0.005591466203197948
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.707715377625779,
+            "nrmse": 0.4759690487960751
+          },
+          "shift": {
+            "r2": 0.2859284705801198,
+            "nrmse": 0.7260959092081412
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.0001031088442263739,
+            "nrmse": -0.0002559253952401641
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.011319377917603346,
+            "nrmse": -0.002749309425958968
+          },
+          "between_Base_and_historical_Shared": true
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "Median6",
+      "label": "Median-6＋校准混合",
+      "role": "fixed six source-feature views, regularized on calibration datasets",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7442973871450614,
+            "nrmse": 0.4932835103976701
+          },
+          "shift": {
+            "r2": -1.0919634943169083,
+            "nrmse": 1.2934388144505204
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.00027515361460939136,
+            "nrmse": 0.00040307769198588694
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.015199189306179584,
+            "nrmse": -0.003989734538426104
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7084138950544833,
+            "nrmse": 0.475204353950105
+          },
+          "shift": {
+            "r2": 0.2758709531403711,
+            "nrmse": 0.7279237262875248
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.00059540858447793,
+            "nrmse": -0.001020620241210246
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.0012618604778546483,
+            "nrmse": -0.0009214923465753477
+          },
+          "between_Base_and_historical_Shared": true
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl",
+      "method": "FeatureMean6",
+      "label": "FeatureMean-6＋校准混合",
+      "role": "fixed six source-feature views, regularized on calibration datasets",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7439002199125909,
+            "nrmse": 0.49643516501902973
+          },
+          "shift": {
+            "r2": -1.0762807338325362,
+            "nrmse": 1.289707047987694
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.0006723208470799102,
+            "nrmse": 0.003554732313345521
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.0308819497905517,
+            "nrmse": -0.007721501001252573
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7061294362272261,
+            "nrmse": 0.48086228196312913
+          },
+          "shift": {
+            "r2": 0.29086997912016743,
+            "nrmse": 0.7256736316346045
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.001689050242779211,
+            "nrmse": 0.00463730777181387
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.016260886457651003,
+            "nrmse": -0.0031715869994956014
+          },
+          "between_Base_and_historical_Shared": true
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl+tabpfn",
+      "method": "CrossTFMMean6",
+      "label": "跨TFM Mean-6＋校准混合",
+      "role": "three candidates per TFM; fixed six total, calibrated",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7453585881609074,
+            "nrmse": 0.49246927541911245
+          },
+          "shift": {
+            "r2": -1.091239573344663,
+            "nrmse": 1.2913588736268875
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.0007860474012365559,
+            "nrmse": -0.00041115728657176165
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.015923110278424968,
+            "nrmse": -0.006069675362059046
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7130398862753009,
+            "nrmse": 0.4716353213216915
+          },
+          "shift": {
+            "r2": 0.33096624867356883,
+            "nrmse": 0.714787928016856
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.005221399805295568,
+            "nrmse": -0.0045896528696237615
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.0563571560110524,
+            "nrmse": -0.014057290617244145
+          },
+          "between_Base_and_historical_Shared": true
+        }
+      },
+      "complete": true
+    },
+    {
+      "backbone": "tabicl+tabpfn",
+      "method": "CrossTFMGES6",
+      "label": "跨TFM GES-6＋校准正则",
+      "role": "three candidates per TFM; fixed six total, calibrated",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7441482599573787,
+            "nrmse": 0.4955002533958302
+          },
+          "shift": {
+            "r2": -1.0803353934101987,
+            "nrmse": 1.290538259970471
+          },
+          "Clean_difference_vs_Base": {
+            "r2": -0.00042428080229217624,
+            "nrmse": 0.002619820690145991
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.02682729021288921,
+            "nrmse": -0.006890289018475659
+          },
+          "between_Base_and_historical_Shared": true
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7125036897604395,
+            "nrmse": 0.4746055056570655
+          },
+          "shift": {
+            "r2": 0.3260963691360273,
+            "nrmse": 0.7164839357386155
+          },
+          "Clean_difference_vs_Base": {
+            "r2": 0.004685203290434203,
+            "nrmse": -0.0016194685342497683
+          },
+          "Clean_within_005": true,
+          "shift_difference_vs_Base": {
+            "r2": 0.05148727647351087,
+            "nrmse": -0.01236128289548466
+          },
+          "between_Base_and_historical_Shared": true
+        }
+      },
+      "complete": true
+    }
+  ],
+  "retained_raw_and_previous_variants": [
+    {
+      "backbone": "tabicl",
+      "method": "GES6",
+      "stage": "regression_expansion_static",
+      "variant": "rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7426032975428705,
+            "nrmse": 0.4991125296742174
+          },
+          "shift": {
+            "r2": -1.0555523526779393,
+            "nrmse": 1.2847017837068995
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7040998415516082,
+            "nrmse": 0.4829762965688594
+          },
+          "shift": {
+            "r2": 0.28275291563295996,
+            "nrmse": 0.7299907768413502
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "GES6",
+      "stage": "regression_expansion_static",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7369719424849196,
+            "nrmse": 0.5056111523924165
+          },
+          "shift": {
+            "r2": -1.0363398091223461,
+            "nrmse": 1.2801275092725737
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.701476012021859,
+            "nrmse": 0.48617391240345736
+          },
+          "shift": {
+            "r2": 0.29867912055640894,
+            "nrmse": 0.7285549149573344
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "GES6",
+      "stage": "regression_expansion_static_clean",
+      "variant": "rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.744168425554566,
+            "nrmse": 0.49523734104321776
+          },
+          "shift": {
+            "r2": -1.0741024279164764,
+            "nrmse": 1.2887122701038245
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7052871292039474,
+            "nrmse": 0.4816077687331947
+          },
+          "shift": {
+            "r2": 0.2853956866742017,
+            "nrmse": 0.7283786157072395
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "GES6",
+      "stage": "regression_expansion_static_clean",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7369719424849196,
+            "nrmse": 0.5056111523924165
+          },
+          "shift": {
+            "r2": -1.0363398091223461,
+            "nrmse": 1.2801275092725737
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.701476012021859,
+            "nrmse": 0.48617391240345736
+          },
+          "shift": {
+            "r2": 0.29867912055640894,
+            "nrmse": 0.7285549149573344
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "ConvexStacking6",
+      "stage": "regression_expansion_static",
+      "variant": "rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7422920387080221,
+            "nrmse": 0.49918730966344455
+          },
+          "shift": {
+            "r2": -1.0630000825943082,
+            "nrmse": 1.286763370155077
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7020545463100607,
+            "nrmse": 0.48592736852229046
+          },
+          "shift": {
+            "r2": 0.2777432370212812,
+            "nrmse": 0.7329089610249829
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "ConvexStacking6",
+      "stage": "regression_expansion_static",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7368978012661257,
+            "nrmse": 0.5057444266677134
+          },
+          "shift": {
+            "r2": -1.0364236562368188,
+            "nrmse": 1.2801921216570424
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.701631452908327,
+            "nrmse": 0.48605818265250345
+          },
+          "shift": {
+            "r2": 0.29782872638235686,
+            "nrmse": 0.7288156366318067
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "ConvexStacking6",
+      "stage": "regression_expansion_static_clean",
+      "variant": "rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7437977012725409,
+            "nrmse": 0.49559155943483424
+          },
+          "shift": {
+            "r2": -1.0753363318184312,
+            "nrmse": 1.288976809217461
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7053979009567314,
+            "nrmse": 0.481505796304542
+          },
+          "shift": {
+            "r2": 0.282286695260664,
+            "nrmse": 0.7290032448884356
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "ConvexStacking6",
+      "stage": "regression_expansion_static_clean",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7368978012661257,
+            "nrmse": 0.5057444266677134
+          },
+          "shift": {
+            "r2": -1.0364236562368188,
+            "nrmse": 1.2801921216570424
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.701631452908327,
+            "nrmse": 0.48605818265250345
+          },
+          "shift": {
+            "r2": 0.29782872638235686,
+            "nrmse": 0.7288156366318067
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "RidgeStacking6",
+      "stage": "regression_expansion_static",
+      "variant": "rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7412242602550455,
+            "nrmse": 0.5009258371256251
+          },
+          "shift": {
+            "r2": -1.0608563378958007,
+            "nrmse": 1.286734605526049
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7061203342895127,
+            "nrmse": 0.4781744110603042
+          },
+          "shift": {
+            "r2": 0.2828702028275709,
+            "nrmse": 0.7285055408654874
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "RidgeStacking6",
+      "stage": "regression_expansion_static",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7373374554639044,
+            "nrmse": 0.5051365783697868
+          },
+          "shift": {
+            "r2": -1.0444024503719787,
+            "nrmse": 1.282383947274732
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7053188688356916,
+            "nrmse": 0.4782118041587522
+          },
+          "shift": {
+            "r2": 0.29453181367527176,
+            "nrmse": 0.7260076603932445
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "RidgeStacking6",
+      "stage": "regression_expansion_static_clean",
+      "variant": "rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7444080304946912,
+            "nrmse": 0.4940207015885335
+          },
+          "shift": {
+            "r2": -1.086538162838442,
+            "nrmse": 1.2918370827857486
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.707715377625779,
+            "nrmse": 0.4759690487960751
+          },
+          "shift": {
+            "r2": 0.2859284705801198,
+            "nrmse": 0.7260959092081412
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "RidgeStacking6",
+      "stage": "regression_expansion_static_clean",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7373374554639044,
+            "nrmse": 0.5051365783697868
+          },
+          "shift": {
+            "r2": -1.0444024503719787,
+            "nrmse": 1.282383947274732
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7053188688356916,
+            "nrmse": 0.4782118041587522
+          },
+          "shift": {
+            "r2": 0.29453181367527176,
+            "nrmse": 0.7260076603932445
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "Median6",
+      "stage": "regression_expansion_static",
+      "variant": "rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7442973871450614,
+            "nrmse": 0.4932835103976701
+          },
+          "shift": {
+            "r2": -1.0919634943169083,
+            "nrmse": 1.2934388144505204
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7084138950544833,
+            "nrmse": 0.475204353950105
+          },
+          "shift": {
+            "r2": 0.2758709531403711,
+            "nrmse": 0.7279237262875248
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "Median6",
+      "stage": "regression_expansion_static",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7442973871450614,
+            "nrmse": 0.4932835103976701
+          },
+          "shift": {
+            "r2": -1.0919634943169083,
+            "nrmse": 1.2934388144505204
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7082720367575086,
+            "nrmse": 0.47521275162151244
+          },
+          "shift": {
+            "r2": 0.2754220234861459,
+            "nrmse": 0.7282763233458084
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "Median6",
+      "stage": "regression_expansion_static_clean",
+      "variant": "rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7442973871450614,
+            "nrmse": 0.4932835103976701
+          },
+          "shift": {
+            "r2": -1.0919634943169083,
+            "nrmse": 1.2934388144505204
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7084138950544833,
+            "nrmse": 0.475204353950105
+          },
+          "shift": {
+            "r2": 0.2758709531403711,
+            "nrmse": 0.7279237262875248
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "Median6",
+      "stage": "regression_expansion_static_clean",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7442973871450614,
+            "nrmse": 0.4932835103976701
+          },
+          "shift": {
+            "r2": -1.0919634943169083,
+            "nrmse": 1.2934388144505204
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7082720367575086,
+            "nrmse": 0.47521275162151244
+          },
+          "shift": {
+            "r2": 0.2754220234861459,
+            "nrmse": 0.7282763233458084
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "FeatureMean6",
+      "stage": "regression_expansion_static",
+      "variant": "rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7433029017829113,
+            "nrmse": 0.4979284536583026
+          },
+          "shift": {
+            "r2": -1.0718120202433243,
+            "nrmse": 1.2889242222441337
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.705358012678311,
+            "nrmse": 0.4817522772870461
+          },
+          "shift": {
+            "r2": 0.29156107454882735,
+            "nrmse": 0.7255045012090501
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "FeatureMean6",
+      "stage": "regression_expansion_static",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7407514512867917,
+            "nrmse": 0.5007301088268922
+          },
+          "shift": {
+            "r2": -1.0446563212330675,
+            "nrmse": 1.280808227756715
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7046025133213072,
+            "nrmse": 0.48213291701319677
+          },
+          "shift": {
+            "r2": 0.3133014573179752,
+            "nrmse": 0.7205972836480841
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "FeatureMean6",
+      "stage": "regression_expansion_static_clean",
+      "variant": "rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7439002199125909,
+            "nrmse": 0.49643516501902973
+          },
+          "shift": {
+            "r2": -1.0762807338325362,
+            "nrmse": 1.289707047987694
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7061294362272261,
+            "nrmse": 0.48086228196312913
+          },
+          "shift": {
+            "r2": 0.29086997912016743,
+            "nrmse": 0.7256736316346045
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "method": "FeatureMean6",
+      "stage": "regression_expansion_static_clean",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7407514512867917,
+            "nrmse": 0.5007301088268922
+          },
+          "shift": {
+            "r2": -1.0446563212330675,
+            "nrmse": 1.280808227756715
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7046025133213072,
+            "nrmse": 0.48213291701319677
+          },
+          "shift": {
+            "r2": 0.3133014573179752,
+            "nrmse": 0.7205972836480841
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl+tabpfn",
+      "method": "CrossTFMMean6",
+      "stage": "cross_TFM",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7434493283803733,
+            "nrmse": 0.49554743813608826
+          },
+          "shift": {
+            "r2": -1.1042236714221718,
+            "nrmse": 1.2949116115703905
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7117774823336634,
+            "nrmse": 0.47301657186653917
+          },
+          "shift": {
+            "r2": 0.33411842517724505,
+            "nrmse": 0.7142454813870541
+          }
+        }
+      }
+    },
+    {
+      "backbone": "tabicl+tabpfn",
+      "method": "CrossTFMGES6",
+      "stage": "cross_TFM",
+      "variant": "raw_rows",
+      "tracks": {
+        "five": {
+          "datasets": 35,
+          "expected_datasets": 35,
+          "conditions_seen": 735,
+          "conditions_complete_grid": 735,
+          "complete": true,
+          "clean": {
+            "r2": 0.7395108247978783,
+            "nrmse": 0.5031618572465761
+          },
+          "shift": {
+            "r2": -1.0558719706249868,
+            "nrmse": 1.2843329904957785
+          }
+        },
+        "seven_calibrated_v2": {
+          "datasets": 33,
+          "expected_datasets": 33,
+          "conditions_seen": 957,
+          "conditions_complete_grid": 957,
+          "complete": true,
+          "clean": {
+            "r2": 0.7125242515118102,
+            "nrmse": 0.47467045424439724
+          },
+          "shift": {
+            "r2": 0.34185932625490195,
+            "nrmse": 0.7120717016060586
+          }
+        }
+      }
+    }
+  ],
+  "main_ensemble_rows": 12,
+  "Random_excluded_from_main_table": true,
+  "partial_averages_use_only_fully_completed_dataset_grids": true,
+  "Shared_run": false,
+  "historical_reference_only": true,
+  "score_ordering_bounds_not_used_for_selection": true,
+  "Markdown_written": false
+}

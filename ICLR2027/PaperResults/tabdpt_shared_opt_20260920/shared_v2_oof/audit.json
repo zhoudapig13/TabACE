@@ -1,0 +1,233 @@
+{
+  "status": "passed",
+  "backbone": "TabDPT v1.2",
+  "checkpoint": "tabdpt1_2.safetensors",
+  "profile": "shared_v2_oof",
+  "shared_context_registry": [
+    "target_matched_a",
+    "target_matched_b",
+    "target_matched_c",
+    "recent_heavy",
+    "prior_context"
+  ],
+  "alpha_candidates": [
+    0.0,
+    0.95,
+    1.0
+  ],
+  "selection_objective": "equal mean of Accuracy and AUROC over all outer-training conditions",
+  "shared_selector_receives_shift": false,
+  "shared_selector_receives_strength": false,
+  "outer_test_labels_used_for_selection": false,
+  "target_labels_used_only_for_outer_training_selection_and_heldout_scoring": true,
+  "common_inference_core": "unified_context_ensemble.src.core.predict",
+  "curve_projection_used": false,
+  "copied_predictions": false,
+  "datasets": 35,
+  "detail_rows": 1225,
+  "positive_strength_rows": 980,
+  "targets": {
+    "accuracy_strictly_greater_than": 0.78,
+    "auc_strictly_greater_than": 0.83
+  },
+  "metrics": {
+    "origin": {
+      "accuracy": 0.8368303571428571,
+      "balanced_accuracy": 0.7850382240419645,
+      "auc": 0.8755468456177589
+    },
+    "positive_strength_mean": {
+      "accuracy": 0.7814253826530613,
+      "balanced_accuracy": 0.7391412055234535,
+      "auc": 0.8314521900211367
+    },
+    "base_positive_strength_mean": {
+      "accuracy": 0.7740832270408163,
+      "balanced_accuracy": 0.7290899934810596,
+      "auc": 0.8209019832471022
+    }
+  },
+  "outer_selections": [
+    {
+      "outer_fold": 0,
+      "outer_train_datasets": 28,
+      "outer_train_conditions": 980,
+      "members": [
+        "target_matched_a",
+        "target_matched_b",
+        "target_matched_c",
+        "recent_heavy",
+        "prior_context"
+      ],
+      "selected_alpha": 1.0,
+      "candidate_diagnostics": [
+        {
+          "alpha": 0.0,
+          "selection_score": 0.8060020237234121,
+          "train_accuracy": 0.780875318877551,
+          "train_auc": 0.8311287285692731
+        },
+        {
+          "alpha": 0.95,
+          "selection_score": 0.8130642785312353,
+          "train_accuracy": 0.7875637755102041,
+          "train_auc": 0.8385647815522665
+        },
+        {
+          "alpha": 1.0,
+          "selection_score": 0.8133044733321946,
+          "train_accuracy": 0.7879783163265306,
+          "train_auc": 0.8386306303378586
+        }
+      ],
+      "shift_used_for_selection": false,
+      "strength_used_for_selection": false,
+      "outer_test_labels_used_for_selection": false
+    },
+    {
+      "outer_fold": 1,
+      "outer_train_datasets": 28,
+      "outer_train_conditions": 980,
+      "members": [
+        "target_matched_a",
+        "target_matched_b",
+        "target_matched_c",
+        "recent_heavy",
+        "prior_context"
+      ],
+      "selected_alpha": 1.0,
+      "candidate_diagnostics": [
+        {
+          "alpha": 0.0,
+          "selection_score": 0.8034817095332092,
+          "train_accuracy": 0.7838887117346939,
+          "train_auc": 0.8230747073317243
+        },
+        {
+          "alpha": 0.95,
+          "selection_score": 0.811418051971621,
+          "train_accuracy": 0.7891262755102041,
+          "train_auc": 0.8337098284330381
+        },
+        {
+          "alpha": 1.0,
+          "selection_score": 0.8118326211216448,
+          "train_accuracy": 0.7896603954081632,
+          "train_auc": 0.8340048468351265
+        }
+      ],
+      "shift_used_for_selection": false,
+      "strength_used_for_selection": false,
+      "outer_test_labels_used_for_selection": false
+    },
+    {
+      "outer_fold": 2,
+      "outer_train_datasets": 28,
+      "outer_train_conditions": 980,
+      "members": [
+        "target_matched_a",
+        "target_matched_b",
+        "target_matched_c",
+        "recent_heavy",
+        "prior_context"
+      ],
+      "selected_alpha": 1.0,
+      "candidate_diagnostics": [
+        {
+          "alpha": 0.0,
+          "selection_score": 0.8063797263204485,
+          "train_accuracy": 0.785188137755102,
+          "train_auc": 0.8275713148857948
+        },
+        {
+          "alpha": 0.95,
+          "selection_score": 0.815093303180213,
+          "train_accuracy": 0.7920041454081632,
+          "train_auc": 0.8381824609522628
+        },
+        {
+          "alpha": 1.0,
+          "selection_score": 0.8154029211748834,
+          "train_accuracy": 0.7923628826530612,
+          "train_auc": 0.8384429596967056
+        }
+      ],
+      "shift_used_for_selection": false,
+      "strength_used_for_selection": false,
+      "outer_test_labels_used_for_selection": false
+    },
+    {
+      "outer_fold": 3,
+      "outer_train_datasets": 28,
+      "outer_train_conditions": 980,
+      "members": [
+        "target_matched_a",
+        "target_matched_b",
+        "target_matched_c",
+        "recent_heavy",
+        "prior_context"
+      ],
+      "selected_alpha": 1.0,
+      "candidate_diagnostics": [
+        {
+          "alpha": 0.0,
+          "selection_score": 0.8173198833906294,
+          "train_accuracy": 0.7947225765306123,
+          "train_auc": 0.8399171902506465
+        },
+        {
+          "alpha": 0.95,
+          "selection_score": 0.8257896829253827,
+          "train_accuracy": 0.8010283801020408,
+          "train_auc": 0.8505509857487247
+        },
+        {
+          "alpha": 1.0,
+          "selection_score": 0.8262205528456327,
+          "train_accuracy": 0.801610331632653,
+          "train_auc": 0.8508307740586124
+        }
+      ],
+      "shift_used_for_selection": false,
+      "strength_used_for_selection": false,
+      "outer_test_labels_used_for_selection": false
+    },
+    {
+      "outer_fold": 4,
+      "outer_train_datasets": 28,
+      "outer_train_conditions": 980,
+      "members": [
+        "target_matched_a",
+        "target_matched_b",
+        "target_matched_c",
+        "recent_heavy",
+        "prior_context"
+      ],
+      "selected_alpha": 1.0,
+      "candidate_diagnostics": [
+        {
+          "alpha": 0.0,
+          "selection_score": 0.8077085187257383,
+          "train_accuracy": 0.7849170918367347,
+          "train_auc": 0.8304999456147417
+        },
+        {
+          "alpha": 0.95,
+          "selection_score": 0.8148245808808386,
+          "train_accuracy": 0.7904177295918368,
+          "train_auc": 0.8392314321698405
+        },
+        {
+          "alpha": 1.0,
+          "selection_score": 0.815183178254348,
+          "train_accuracy": 0.7909199617346939,
+          "train_auc": 0.8394463947740023
+        }
+      ],
+      "shift_used_for_selection": false,
+      "strength_used_for_selection": false,
+      "outer_test_labels_used_for_selection": false
+    }
+  ],
+  "elapsed_seconds": 39.44006705284119
+}

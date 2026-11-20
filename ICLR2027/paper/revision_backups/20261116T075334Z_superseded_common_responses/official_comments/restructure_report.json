@@ -1,0 +1,50 @@
+{
+  "backup": "/mnt/public/zhouyibo/ICLR2027/paper/revision_backups/20261116T073506Z_before_common_responses",
+  "parts_per_reviewer": {
+    "SbVz": 4,
+    "BV6f": 5,
+    "bPdS": 5
+  },
+  "common_comments": 4,
+  "before": {
+    "en": {
+      "characters": 58288,
+      "words": 8547
+    },
+    "zh": {
+      "characters": 30705,
+      "words": 3948
+    }
+  },
+  "after": {
+    "en": {
+      "characters": 43834,
+      "words": 6253
+    },
+    "zh": {
+      "characters": 23557,
+      "words": 2939
+    }
+  },
+  "english_post_characters": {
+    "C1_en": 3313,
+    "C2_en": 3108,
+    "C3_en": 4214,
+    "C4_en": 4270,
+    "SbVz_part1_en": 1322,
+    "SbVz_part2_en": 1338,
+    "SbVz_part3_en": 3064,
+    "SbVz_part4_en": 1206,
+    "BV6f_part1_en": 2233,
+    "BV6f_part2_en": 2506,
+    "BV6f_part3_en": 1494,
+    "BV6f_part4_en": 1971,
+    "BV6f_part5_en": 1395,
+    "bPdS_part1_en": 3792,
+    "bPdS_part2_en": 1854,
+    "bPdS_part3_en": 2109,
+    "bPdS_part4_en": 3554,
+    "bPdS_part5_en": 1994
+  },
+  "pdf_changed": false
+}

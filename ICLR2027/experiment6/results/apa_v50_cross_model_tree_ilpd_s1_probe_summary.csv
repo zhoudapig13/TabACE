@@ -1,0 +1,3 @@
+method,n,mean_accuracy,mean_balanced_accuracy,mean_macro_f1,mean_minority_recall,mean_roc_auc,mean_ece,mean_accuracy_delta,mean_balanced_accuracy_delta,mean_macro_f1_delta,mean_minority_recall_delta,mean_roc_auc_delta,mean_ece_delta
+apa_cf_no_shift_cross_model_tree_rescue_router,1,0.71875,0.6014492753623188,0.6081632653061224,0.3333333333333333,0.7910628019323671,0.11444146994001671,-0.015625,-0.010869565217391242,-0.01287470055942963,0.0,-0.0024154589371980784,0.004996769758532471
+tabicl_baseline,1,0.734375,0.6123188405797101,0.621037965865552,0.3333333333333333,0.7934782608695652,0.10944470018148424,0.0,0.0,0.0,0.0,0.0,0.0

@@ -1,0 +1,246 @@
+{
+  "status": "CALIBRATION_COMPLETE",
+  "condition_counts": {
+    "0.75": 980,
+    "0.875": 980,
+    "1": 980
+  },
+  "all_trials": [
+    {
+      "common_factor": 0.75,
+      "label_factor": 0.75,
+      "Base": {
+        "accuracy": 0.767984693877551,
+        "auc": 0.8246902302648083
+      },
+      "difference_vs_development_target": {
+        "accuracy": 0.004984693877550961,
+        "auc": -0.0013097697351917015
+      },
+      "distance": 2.6562669812118172e-05,
+      "within_tolerance": false
+    },
+    {
+      "common_factor": 0.75,
+      "label_factor": 0.875,
+      "Base": {
+        "accuracy": 0.7681042729591836,
+        "auc": 0.8246323728761757
+      },
+      "difference_vs_development_target": {
+        "accuracy": 0.005104272959183587,
+        "auc": -0.001367627123824211
+      },
+      "distance": 2.792400639167245e-05,
+      "within_tolerance": false
+    },
+    {
+      "common_factor": 0.75,
+      "label_factor": 1.0,
+      "Base": {
+        "accuracy": 0.7681919642857142,
+        "auc": 0.8245479884453735
+      },
+      "difference_vs_development_target": {
+        "accuracy": 0.005191964285714223,
+        "auc": -0.0014520115546264867
+      },
+      "distance": 2.9064830698900832e-05,
+      "within_tolerance": false
+    },
+    {
+      "common_factor": 0.875,
+      "label_factor": 0.75,
+      "Base": {
+        "accuracy": 0.7609614158163265,
+        "auc": 0.8192005176632853
+      },
+      "difference_vs_development_target": {
+        "accuracy": -0.0020385841836735308,
+        "auc": -0.0067994823367146795
+      },
+      "distance": 5.03887855212188e-05,
+      "within_tolerance": false
+    },
+    {
+      "common_factor": 0.875,
+      "label_factor": 0.875,
+      "Base": {
+        "accuracy": 0.7610809948979592,
+        "auc": 0.819142660274653
+      },
+      "difference_vs_development_target": {
+        "accuracy": -0.0019190051020407939,
+        "auc": -0.006857339725346967
+      },
+      "distance": 5.070568869048022e-05,
+      "within_tolerance": false
+    },
+    {
+      "common_factor": 0.875,
+      "label_factor": 1.0,
+      "Base": {
+        "accuracy": 0.7611686862244899,
+        "auc": 0.8190582758438507
+      },
+      "difference_vs_development_target": {
+        "accuracy": -0.0018313137755101572,
+        "auc": -0.006941724156149243
+      },
+      "distance": 5.154124440443918e-05,
+      "within_tolerance": false
+    },
+    {
+      "common_factor": 1.0,
+      "label_factor": 0.875,
+      "Base": {
+        "accuracy": 0.7526945153061224,
+        "auc": 0.8125416894755811
+      },
+      "difference_vs_development_target": {
+        "accuracy": -0.010305484693877598,
+        "auc": -0.013458310524418815
+      },
+      "distance": 0.0002873291369474277,
+      "within_tolerance": false
+    },
+    {
+      "common_factor": 1.0,
+      "label_factor": 1.0,
+      "Base": {
+        "accuracy": 0.752782206632653,
+        "auc": 0.812457305044779
+      },
+      "difference_vs_development_target": {
+        "accuracy": -0.010217793367346961,
+        "auc": -0.01354269495522098
+      },
+      "distance": 0.00028780788794796733,
+      "within_tolerance": false
+    },
+    {
+      "common_factor": 1.0,
+      "label_factor": 0.75,
+      "Base": {
+        "accuracy": 0.7525749362244898,
+        "auc": 0.8125995468642137
+      },
+      "difference_vs_development_target": {
+        "accuracy": -0.010425063775510224,
+        "auc": -0.013400453135786305
+      },
+      "distance": 0.0002882540989678605,
+      "within_tolerance": false
+    }
+  ],
+  "all_factor_family_means": {
+    "0.75": {
+      "covariate": {
+        "accuracy": 0.7536272321428571,
+        "auc": 0.8011177283874633
+      },
+      "label": {
+        "accuracy": 0.8396205357142857,
+        "auc": 0.873997047302929
+      },
+      "concept": {
+        "accuracy": 0.7368861607142857,
+        "auc": 0.7871228551078484
+      },
+      "selection": {
+        "accuracy": 0.8086495535714285,
+        "auc": 0.8585240245906665
+      },
+      "domain": {
+        "accuracy": 0.7446986607142857,
+        "auc": 0.8471035882156454
+      },
+      "temporal": {
+        "accuracy": 0.7237165178571429,
+        "auc": 0.7746197921252143
+      },
+      "support": {
+        "accuracy": 0.7686941964285714,
+        "auc": 0.8303465761238905
+      }
+    },
+    "0.875": {
+      "covariate": {
+        "accuracy": 0.7455915178571428,
+        "auc": 0.7937634638502309
+      },
+      "label": {
+        "accuracy": 0.8404575892857142,
+        "auc": 0.8735920455825023
+      },
+      "concept": {
+        "accuracy": 0.7223772321428571,
+        "auc": 0.7748594446559024
+      },
+      "selection": {
+        "accuracy": 0.8075334821428571,
+        "auc": 0.8559066252033528
+      },
+      "domain": {
+        "accuracy": 0.7400111607142857,
+        "auc": 0.8454205019195798
+      },
+      "temporal": {
+        "accuracy": 0.7096540178571429,
+        "auc": 0.7629992474932549
+      },
+      "support": {
+        "accuracy": 0.7619419642857143,
+        "auc": 0.8274572932177475
+      }
+    },
+    "1.0": {
+      "covariate": {
+        "accuracy": 0.7305803571428572,
+        "auc": 0.7810185664912096
+      },
+      "label": {
+        "accuracy": 0.8410714285714286,
+        "auc": 0.8730013545668862
+      },
+      "concept": {
+        "accuracy": 0.7066964285714286,
+        "auc": 0.7611308578571
+      },
+      "selection": {
+        "accuracy": 0.8022321428571428,
+        "auc": 0.8528408940979392
+      },
+      "domain": {
+        "accuracy": 0.7345982142857143,
+        "auc": 0.8428550917532233
+      },
+      "temporal": {
+        "accuracy": 0.6979910714285714,
+        "auc": 0.751667851371614
+      },
+      "support": {
+        "accuracy": 0.7563058035714286,
+        "auc": 0.8246865191754803
+      }
+    }
+  },
+  "best": {
+    "common_factor": 0.75,
+    "label_factor": 0.75,
+    "Base": {
+      "accuracy": 0.767984693877551,
+      "auc": 0.8246902302648083
+    },
+    "difference_vs_development_target": {
+      "accuracy": 0.004984693877550961,
+      "auc": -0.0013097697351917015
+    },
+    "distance": 2.6562669812118172e-05,
+    "within_tolerance": false
+  },
+  "internal_development_only": true,
+  "parameter_selection_uses_benchmark_labels": true,
+  "method_results_used_for_benchmark_selection": false,
+  "original_protocol_reproduced": false
+}

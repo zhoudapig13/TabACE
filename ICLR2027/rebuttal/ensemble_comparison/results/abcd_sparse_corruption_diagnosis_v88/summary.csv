@@ -1,0 +1,4 @@
+score,corruption_detection_auc,corrupted_fraction_in_retained_half
+max_support_excess,0.8868537096140616,0.27003761574074076
+original_anchor_distance,0.6103170045686866,0.4484230324074074
+top3_support_excess,0.8704701948700526,0.28096064814814814

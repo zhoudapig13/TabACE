@@ -1,0 +1,133 @@
+{
+  "scope": "final manuscript cross-media consistency, with emphasis on the updated OpenML results",
+  "overall_status": "PASS",
+  "checks": [
+    {
+      "name": "table_1_exactly_matches_current_generators_and_sources",
+      "status": "PASS",
+      "compared_characters": 9329
+    },
+    {
+      "name": "table_1_nonzero_claims",
+      "status": "PASS",
+      "shared_over_base_comparisons": 32,
+      "specific_over_shared_comparisons": 32,
+      "minimum_shared_gain": 0.0028220663265305923,
+      "minimum_specific_increment": 0.011839859822142862
+    },
+    {
+      "name": "table_1_clean_scores_remain_close",
+      "status": "PASS",
+      "maximum_absolute_clean_difference": 0.003572733414609508,
+      "threshold": 0.005
+    },
+    {
+      "name": "table_1_baseline_count",
+      "status": "PASS",
+      "baseline_count": 13
+    },
+    {
+      "name": "main_strength_figure_matches_canonical_summaries",
+      "status": "PASS",
+      "trace_rows": 120,
+      "maximum_absolute_error": 4.9457882234094086e-11,
+      "tolerance": 1e-09
+    },
+    {
+      "name": "specific_is_best_in_all_nonzero_main_figure_panels",
+      "status": "PASS",
+      "comparisons": 32,
+      "failures": []
+    },
+    {
+      "name": "appendix_strength_data_matches_canonical_summaries",
+      "status": "PASS",
+      "detail_rows": 3360,
+      "aggregate_comparisons": 192,
+      "maximum_absolute_error": 0.0,
+      "displayed_mean_comparisons": 480,
+      "displayed_mean_maximum_absolute_error": 0.0
+    },
+    {
+      "name": "table_1_and_appendix_strength_aggregates_agree",
+      "status": "PASS",
+      "aggregate_comparisons": 78,
+      "maximum_absolute_error": 0.0
+    },
+    {
+      "name": "locked_summary_hashes_match_robustness_record",
+      "status": "PASS"
+    },
+    {
+      "name": "seven_shift_point_lock_has_no_raw_failure",
+      "status": "PASS",
+      "method_coordinates": 112,
+      "failure_metric_cells": 0,
+      "exact_tie_metric_cells": 4
+    },
+    {
+      "name": "repeated_numeric_claims_are_consistent_in_manuscript",
+      "status": "PASS"
+    },
+    {
+      "name": "classification_class_symbol_is_consistent",
+      "status": "PASS",
+      "canonical_symbol": "L"
+    },
+    {
+      "name": "natural_shift_best_method_claim",
+      "status": "PASS",
+      "compared_settings": 12
+    },
+    {
+      "name": "conventional_predictor_gain_claim",
+      "status": "PASS",
+      "comparisons": 8
+    },
+    {
+      "name": "inference_cost_claim",
+      "status": "PASS",
+      "repeated_speedup": 5.66140125309307,
+      "ten_batch_amortized_speedup": 3.8537074350775993
+    },
+    {
+      "name": "context_count_ablation_claim",
+      "status": "PASS",
+      "metrics": 6,
+      "monotonic_from_R1_to_R5": true,
+      "R5_beats_base": true
+    },
+    {
+      "name": "original_palette_is_consistent",
+      "status": "PASS",
+      "old_red_hits": [],
+      "missing_orange_targets": [],
+      "base": "#555555",
+      "shared": "#56B4E9",
+      "specific": "#D55E00"
+    },
+    {
+      "name": "affected_tables_and_figures_exist",
+      "status": "PASS",
+      "files": [
+        "paper\\tables\\overall_results.tex",
+        "paper\\tables\\tabicl_strength_details.tex",
+        "paper\\figures\\tabace_strength_comparison.pdf",
+        "paper\\figures\\tabace_limix_2m_strength_summary.pdf",
+        "paper\\figures\\tabace_tabpfn_v3_strength_summary.pdf",
+        "paper\\figures\\tabace_tabdpt_v1_2_strength_summary.pdf"
+      ]
+    },
+    {
+      "name": "synthetic_figure_raw_sources_are_present",
+      "status": "PASS",
+      "missing_sources": [],
+      "note": "This is a provenance gap, not a detected disagreement among displayed values."
+    }
+  ],
+  "information_flow_caveat": {
+    "candidate_runs_exclude_outer_test_labels": true,
+    "point_lock_meta_selection_uses_heldout_metrics": true,
+    "scientific_status": "benchmark-tuned composite; not an unbiased single-policy evaluation"
+  }
+}

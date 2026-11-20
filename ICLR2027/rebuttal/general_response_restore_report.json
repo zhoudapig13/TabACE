@@ -1,0 +1,15 @@
+{
+  "en": {
+    "general_response_characters": 2888,
+    "general_response_words": 366,
+    "original_rebuttal_restored_exactly": true,
+    "parts": 14
+  },
+  "zh": {
+    "general_response_characters": 1139,
+    "general_response_words": 89,
+    "original_rebuttal_restored_exactly": true,
+    "parts": 14
+  },
+  "restructured_version_archived": "/mnt/public/zhouyibo/ICLR2027/paper/revision_backups/20261116T075334Z_superseded_common_responses"
+}

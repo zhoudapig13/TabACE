@@ -1,0 +1,1213 @@
+{
+  "display_mapping": {
+    "Base": "summary column mean_base_*",
+    "TabACE-shared": "summary column mean_shared_*",
+    "TabACE-specific": "summary column mean_pro_* (complete admissible pool)"
+  },
+  "specific_context_limit": null,
+  "averaging": "equal family-by-strength macro-average over four nonzero strengths",
+  "outputs": [
+    "paper\\tables\\tabicl_strength_details.tex",
+    "paper\\figures\\tabace_limix_2m_strength_summary.pdf",
+    "paper\\figures\\tabace_limix_2m_strength_summary.svg",
+    "paper\\figures\\tabace_limix_2m_strength_summary.png",
+    "paper\\figures\\tabace_tabpfn_v3_strength_summary.pdf",
+    "paper\\figures\\tabace_tabpfn_v3_strength_summary.svg",
+    "paper\\figures\\tabace_tabpfn_v3_strength_summary.png",
+    "paper\\figures\\tabace_tabdpt_v1_2_strength_summary.pdf",
+    "paper\\figures\\tabace_tabdpt_v1_2_strength_summary.svg",
+    "paper\\figures\\tabace_tabdpt_v1_2_strength_summary.png"
+  ],
+  "results": [
+    {
+      "backbone": "TabICL-v2",
+      "track": "five",
+      "task": "classification",
+      "metric": "accuracy",
+      "source_csv": "fair_budget_experiments\\unified_context_ensemble\\results\\tabicl_origin_safe_final_v2\\five_shift\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "AUC-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 72,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.8037109375,
+          "shared": 0.8036024305555556,
+          "pro": 0.8040364583333334
+        },
+        "positive": {
+          "base": 0.4943630642361111,
+          "shared": 0.574880642361111,
+          "pro": 0.6101182725694445
+        }
+      }
+    },
+    {
+      "backbone": "TabICL-v2",
+      "track": "five",
+      "task": "classification",
+      "metric": "auc",
+      "source_csv": "fair_budget_experiments\\unified_context_ensemble\\results\\tabicl_origin_safe_final_v2\\five_shift\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "AUC-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 72,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.9007194650323471,
+          "shared": 0.9006507295483889,
+          "pro": 0.9003340627815903
+        },
+        "positive": {
+          "base": 0.6755280300023526,
+          "shared": 0.7203130654844317,
+          "pro": 0.7518920818004049
+        }
+      }
+    },
+    {
+      "backbone": "TabICL-v2",
+      "track": "five",
+      "task": "regression",
+      "metric": "r2",
+      "source_csv": "PaperResults\\failure_recovery_20260913\\tabicl\\five_targeted_final\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "Rank-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.7387343915284234,
+          "shared": 0.7383363655063082,
+          "pro": 0.7381616492968488
+        },
+        "positive": {
+          "base": -1.0766140420393766,
+          "shared": 0.3629879989363932,
+          "pro": 0.4852990016417199
+        }
+      }
+    },
+    {
+      "backbone": "TabICL-v2",
+      "track": "five",
+      "task": "regression",
+      "metric": "nmae",
+      "source_csv": "PaperResults\\failure_recovery_20260913\\tabicl\\five_targeted_final\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "Rank-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.25722956411711273,
+          "shared": 0.259686826644309,
+          "pro": 0.26111873208186226
+        },
+        "positive": {
+          "base": 0.9520224018394652,
+          "shared": 0.5214228574842541,
+          "pro": 0.46266691452624426
+        }
+      }
+    },
+    {
+      "backbone": "TabICL-v2",
+      "track": "seven",
+      "task": "classification",
+      "metric": "accuracy",
+      "source_csv": "PaperResults\\failure_recovery_20260913\\tabicl\\seven_point_lock\\composite\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.8408482142857144,
+          "shared": 0.8407525510204081,
+          "pro": 0.8409757653061225
+        },
+        "positive": {
+          "base": 0.7634964923469388,
+          "shared": 0.7717315051020408,
+          "pro": 0.8051817602040817
+        }
+      }
+    },
+    {
+      "backbone": "TabICL-v2",
+      "track": "seven",
+      "task": "classification",
+      "metric": "auc",
+      "source_csv": "PaperResults\\failure_recovery_20260913\\tabicl\\seven_point_lock\\composite\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.877267117909199,
+          "shared": 0.8746879568282016,
+          "pro": 0.8764471300137491
+        },
+        "positive": {
+          "base": 0.8260259469161486,
+          "shared": 0.8306694504551678,
+          "pro": 0.8536405968056718
+        }
+      }
+    },
+    {
+      "backbone": "TabICL-v2",
+      "track": "seven",
+      "task": "regression",
+      "metric": "r2",
+      "source_csv": "PaperResults\\failure_recovery_20260913\\tabicl\\seven_point_lock\\composite\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 33,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.7276846891939045,
+          "shared": 0.7279731996033283,
+          "pro": 0.7265174215050964
+        },
+        "positive": {
+          "base": 0.2730278999351972,
+          "shared": 0.46697878999619463,
+          "pro": 0.6551943538707207
+        }
+      }
+    },
+    {
+      "backbone": "TabICL-v2",
+      "track": "seven",
+      "task": "regression",
+      "metric": "nmae",
+      "source_csv": "PaperResults\\failure_recovery_20260913\\tabicl\\seven_point_lock\\composite\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 33,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.3005975346992799,
+          "shared": 0.30358495492212095,
+          "pro": 0.3033991231676375
+        },
+        "positive": {
+          "base": 0.5501940400221329,
+          "shared": 0.4775925278860412,
+          "pro": 0.3735524948685266
+        }
+      }
+    },
+    {
+      "backbone": "LimiX-2M",
+      "track": "five",
+      "task": "classification",
+      "metric": "accuracy",
+      "source_csv": "fair_budget_experiments\\limix_2m_tabace\\results\\oof_paper_final\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "AUC-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 72,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.7955729166666666,
+          "shared": 0.7955729166666666,
+          "pro": 0.7955729166666666
+        },
+        "positive": {
+          "base": 0.47490234375,
+          "shared": 0.5422254774305555,
+          "pro": 0.6281087239583333
+        }
+      }
+    },
+    {
+      "backbone": "LimiX-2M",
+      "track": "five",
+      "task": "classification",
+      "metric": "auc",
+      "source_csv": "fair_budget_experiments\\limix_2m_tabace\\results\\oof_paper_final\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "AUC-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 72,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.8958907077319328,
+          "shared": 0.8959141075906502,
+          "pro": 0.8960131651004721
+        },
+        "positive": {
+          "base": 0.6568067106932729,
+          "shared": 0.7158411124436069,
+          "pro": 0.7693762599157595
+        }
+      }
+    },
+    {
+      "backbone": "LimiX-2M",
+      "track": "five",
+      "task": "regression",
+      "metric": "r2",
+      "source_csv": "fair_budget_experiments\\limix_2m_tabace\\results\\oof_paper_final\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "Rank-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.7242608807494463,
+          "shared": 0.7245555881761752,
+          "pro": 0.7248817850225834
+        },
+        "positive": {
+          "base": -1.140541354734848,
+          "shared": -0.17268705444154964,
+          "pro": 0.05285824869654393
+        }
+      }
+    },
+    {
+      "backbone": "LimiX-2M",
+      "track": "five",
+      "task": "regression",
+      "metric": "nrmse",
+      "source_csv": "fair_budget_experiments\\limix_2m_tabace\\results\\oof_paper_final\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "Rank-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.49357609591585466,
+          "shared": 0.49332720555857873,
+          "pro": 0.49306440386261297
+        },
+        "positive": {
+          "base": 1.276953370654628,
+          "shared": 1.0594301914226503,
+          "pro": 0.9472627267973797
+        }
+      }
+    },
+    {
+      "backbone": "LimiX-2M",
+      "track": "seven",
+      "task": "classification",
+      "metric": "accuracy",
+      "source_csv": "fair_budget_experiments\\limix_2m_tabace\\results\\seven_strong_oof_v1\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.8375,
+          "shared": 0.8444196428571429,
+          "pro": 0.8378507653061223
+        },
+        "positive": {
+          "base": 0.7808195153061225,
+          "shared": 0.7836415816326531,
+          "pro": 0.8044084821428571
+        }
+      }
+    },
+    {
+      "backbone": "LimiX-2M",
+      "track": "seven",
+      "task": "classification",
+      "metric": "auc",
+      "source_csv": "fair_budget_experiments\\limix_2m_tabace\\results\\seven_strong_oof_v1\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.8787515605566373,
+          "shared": 0.8827931171008083,
+          "pro": 0.8765228094360714
+        },
+        "positive": {
+          "base": 0.8309620929618682,
+          "shared": 0.8348394162118247,
+          "pro": 0.8466792760339675
+        }
+      }
+    },
+    {
+      "backbone": "LimiX-2M",
+      "track": "seven",
+      "task": "regression",
+      "metric": "r2",
+      "source_csv": "fair_budget_experiments\\limix_2m_tabace\\results\\seven_strong_oof_v1\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": {
+        "shared": 0.7245555881761752,
+        "pro": 0.7248817850225834
+      },
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 33,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.7193085885221772,
+          "shared": 0.7019737322783582,
+          "pro": 0.664548850284927
+        },
+        "positive": {
+          "base": 0.3845660795219773,
+          "shared": 0.497575574284198,
+          "pro": 0.6289785540129875
+        }
+      }
+    },
+    {
+      "backbone": "LimiX-2M",
+      "track": "seven",
+      "task": "regression",
+      "metric": "nrmse",
+      "source_csv": "fair_budget_experiments\\limix_2m_tabace\\results\\seven_strong_oof_v1\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": {
+        "shared": 0.49332720555857873,
+        "pro": 0.49306440386261297
+      },
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 33,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.4672917833139705,
+          "shared": 0.4970026203454544,
+          "pro": 0.5354777499119849
+        },
+        "positive": {
+          "base": 0.6892282868952506,
+          "shared": 0.6585568816208498,
+          "pro": 0.5633017701187316
+        }
+      }
+    },
+    {
+      "backbone": "TabPFN-v3",
+      "track": "five",
+      "task": "classification",
+      "metric": "accuracy",
+      "source_csv": "fair_budget_experiments\\tabpfn_v3_tabace\\results\\five_shift\\oof\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "AUC-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 72,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.7925347222222222,
+          "shared": 0.7924262152777778,
+          "pro": 0.7922092013888888
+        },
+        "positive": {
+          "base": 0.4572102864583333,
+          "shared": 0.5526258680555556,
+          "pro": 0.59306640625
+        }
+      }
+    },
+    {
+      "backbone": "TabPFN-v3",
+      "track": "five",
+      "task": "classification",
+      "metric": "auc",
+      "source_csv": "fair_budget_experiments\\tabpfn_v3_tabace\\results\\five_shift\\oof\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "AUC-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 72,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.8926187169401769,
+          "shared": 0.8929321776883834,
+          "pro": 0.8933422862927516
+        },
+        "positive": {
+          "base": 0.6356017957885041,
+          "shared": 0.6973631349905888,
+          "pro": 0.7391142393563731
+        }
+      }
+    },
+    {
+      "backbone": "TabPFN-v3",
+      "track": "five",
+      "task": "regression",
+      "metric": "r2",
+      "source_csv": "fair_budget_experiments\\tabpfn_v3_tabace\\results\\five_shift\\oof\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "Rank-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.7390355767316041,
+          "shared": 0.7387860643756352,
+          "pro": 0.7389836474117832
+        },
+        "positive": {
+          "base": -1.2532621452366122,
+          "shared": 0.2374391053792415,
+          "pro": 0.5877218271008251
+        }
+      }
+    },
+    {
+      "backbone": "TabPFN-v3",
+      "track": "five",
+      "task": "regression",
+      "metric": "nmae",
+      "source_csv": "fair_budget_experiments\\tabpfn_v3_tabace\\results\\five_shift\\oof\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "Rank-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.25487035402718095,
+          "shared": 0.25769277237238264,
+          "pro": 0.25845122251648744
+        },
+        "positive": {
+          "base": 0.9877369045286682,
+          "shared": 0.5871362747528908,
+          "pro": 0.4008592130007768
+        }
+      }
+    },
+    {
+      "backbone": "TabPFN-v3",
+      "track": "seven",
+      "task": "classification",
+      "metric": "accuracy",
+      "source_csv": "fair_budget_experiments\\tabpfn_v3_tabace\\results\\seven_shift\\oof\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.8323660714285713,
+          "shared": 0.8354910714285714,
+          "pro": 0.8332589285714286
+        },
+        "positive": {
+          "base": 0.7577487244897959,
+          "shared": 0.7695870535714285,
+          "pro": 0.7876674107142857
+        }
+      }
+    },
+    {
+      "backbone": "TabPFN-v3",
+      "track": "seven",
+      "task": "classification",
+      "metric": "auc",
+      "source_csv": "fair_budget_experiments\\tabpfn_v3_tabace\\results\\seven_shift\\oof\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.8697347368489742,
+          "shared": 0.8720960222254963,
+          "pro": 0.8712527484115415
+        },
+        "positive": {
+          "base": 0.8091823822499553,
+          "shared": 0.8172680330433416,
+          "pro": 0.8352207817223798
+        }
+      }
+    },
+    {
+      "backbone": "TabPFN-v3",
+      "track": "seven",
+      "task": "regression",
+      "metric": "r2",
+      "source_csv": "fair_budget_experiments\\tabpfn_v3_tabace\\results\\seven_shift\\oof\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 33,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.7269924617518014,
+          "shared": 0.7304575797241296,
+          "pro": 0.7257397742196965
+        },
+        "positive": {
+          "base": 0.42567119484267035,
+          "shared": 0.4597536424645652,
+          "pro": 0.6201001935374704
+        }
+      }
+    },
+    {
+      "backbone": "TabPFN-v3",
+      "track": "seven",
+      "task": "regression",
+      "metric": "nmae",
+      "source_csv": "fair_budget_experiments\\tabpfn_v3_tabace\\results\\seven_shift\\oof\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 33,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.3070305719641587,
+          "shared": 0.30838504405550216,
+          "pro": 0.31007254601659245
+        },
+        "positive": {
+          "base": 0.48609097001655055,
+          "shared": 0.4767433567479474,
+          "pro": 0.40004086735442895
+        }
+      }
+    },
+    {
+      "backbone": "TabDPT v1.2",
+      "track": "five",
+      "task": "classification",
+      "metric": "accuracy",
+      "source_csv": "fair_budget_experiments\\tabdpt_tabace\\results\\five_shift\\oof\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "AUC-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 72,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.7789713541666666,
+          "shared": 0.7785373263888888,
+          "pro": 0.7786458333333334
+        },
+        "positive": {
+          "base": 0.4482638888888889,
+          "shared": 0.547677951388889,
+          "pro": 0.5998914930555556
+        }
+      }
+    },
+    {
+      "backbone": "TabDPT v1.2",
+      "track": "five",
+      "task": "classification",
+      "metric": "auc",
+      "source_csv": "fair_budget_experiments\\tabdpt_tabace\\results\\five_shift\\oof\\classification\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "AUC-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 72,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.891096866044409,
+          "shared": 0.8910905327617419,
+          "pro": 0.8912591287015388
+        },
+        "positive": {
+          "base": 0.6308077683455028,
+          "shared": 0.6944946453186419,
+          "pro": 0.7462367548598803
+        }
+      }
+    },
+    {
+      "backbone": "TabDPT v1.2",
+      "track": "five",
+      "task": "regression",
+      "metric": "r2",
+      "source_csv": "fair_budget_experiments\\tabdpt_tabace\\results\\five_shift\\oof\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "Rank-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.7308680416501162,
+          "shared": 0.7302142262236359,
+          "pro": 0.7300430886528065
+        },
+        "positive": {
+          "base": -1.1522480982062677,
+          "shared": 0.328673531126264,
+          "pro": 0.44334956496974687
+        }
+      }
+    },
+    {
+      "backbone": "TabDPT v1.2",
+      "track": "five",
+      "task": "regression",
+      "metric": "nmae",
+      "source_csv": "fair_budget_experiments\\tabdpt_tabace\\results\\five_shift\\oof\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Shortcut",
+        "Boundary",
+        "Rank-band",
+        "Local",
+        "Mixed"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.26601947270205323,
+          "shared": 0.2692156636347136,
+          "pro": 0.27038219253624235
+        },
+        "positive": {
+          "base": 0.9754972044866701,
+          "shared": 0.539096211596536,
+          "pro": 0.48519382632845776
+        }
+      }
+    },
+    {
+      "backbone": "TabDPT v1.2",
+      "track": "seven",
+      "task": "classification",
+      "metric": "accuracy",
+      "source_csv": "fair_budget_experiments\\tabdpt_tabace\\results\\seven_shift\\oof\\classification\\summary_oof.csv",
+      "shared_override_csv": "PaperResults\\tabdpt_shared_opt_20260920\\shared_v2_oof\\summary_oof.csv",
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.8332589285714286,
+          "shared": 0.8368303571428571,
+          "pro": 0.8334821428571428
+        },
+        "positive": {
+          "base": 0.7740832270408163,
+          "shared": 0.7814253826530612,
+          "pro": 0.8045041454081633
+        }
+      }
+    },
+    {
+      "backbone": "TabDPT v1.2",
+      "track": "seven",
+      "task": "classification",
+      "metric": "auc",
+      "source_csv": "fair_budget_experiments\\tabdpt_tabace\\results\\seven_shift\\oof\\classification\\summary_oof.csv",
+      "shared_override_csv": "PaperResults\\tabdpt_shared_opt_20260920\\shared_v2_oof\\summary_oof.csv",
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 35,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.8685839536637717,
+          "shared": 0.8755468456177586,
+          "pro": 0.8708605372326416
+        },
+        "positive": {
+          "base": 0.8209019832471023,
+          "shared": 0.8314521900211366,
+          "pro": 0.8464639915792801
+        }
+      }
+    },
+    {
+      "backbone": "TabDPT v1.2",
+      "track": "seven",
+      "task": "regression",
+      "metric": "r2",
+      "source_csv": "fair_budget_experiments\\tabdpt_tabace\\results\\seven_shift\\oof\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 33,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.7051598628057754,
+          "shared": 0.7051598628057754,
+          "pro": 0.7051598628057754
+        },
+        "positive": {
+          "base": 0.5141417731123566,
+          "shared": 0.5466495080363561,
+          "pro": 0.6100272203582046
+        }
+      }
+    },
+    {
+      "backbone": "TabDPT v1.2",
+      "track": "seven",
+      "task": "regression",
+      "metric": "nmae",
+      "source_csv": "fair_budget_experiments\\tabdpt_tabace\\results\\seven_shift\\oof\\regression\\summary_oof.csv",
+      "shared_override_csv": null,
+      "display_origin_override": null,
+      "families": [
+        "Covariate",
+        "Label",
+        "Concept",
+        "Selection",
+        "Domain",
+        "Temporal",
+        "Support"
+      ],
+      "strengths": [
+        0.0,
+        0.2,
+        0.5,
+        0.8,
+        1.0
+      ],
+      "n_datasets": 33,
+      "canonical_summary_aggregates": {
+        "origin": {
+          "base": 0.3193405592088439,
+          "shared": 0.3193405592088439,
+          "pro": 0.3193405592088439
+        },
+        "positive": {
+          "base": 0.44956486339349905,
+          "shared": 0.4349972770026288,
+          "pro": 0.40311995271324363
+        }
+      }
+    }
+  ]
+}

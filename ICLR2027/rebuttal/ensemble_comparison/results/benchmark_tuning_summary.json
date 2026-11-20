@@ -1,0 +1,696 @@
+{
+  "development": [
+    {
+      "backbone": "tabicl",
+      "track": "five_calibrated",
+      "task": "classification",
+      "label": "五扰动：source-label stress",
+      "expected_conditions": 1440,
+      "expected_datasets": 72,
+      "complete": true,
+      "specific_pool_root": "benchmark_specific_uncapped",
+      "specific_context_cap": null,
+      "specific_deployed_context_counts": {
+        "band": 10,
+        "boundary": 10,
+        "local": 10,
+        "mixed": 10,
+        "shortcut": 10
+      },
+      "full_registry_pending": false,
+      "results_role": "benchmark development; Shared/Specific fitted on these query labels",
+      "Base": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.49563802083333325,
+          "auc": 0.6708278830325488
+        }
+      },
+      "Shared": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.4939344618055556,
+          "auc": 0.6677942839979858
+        }
+      },
+      "Specific_R5": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.49472656249999997,
+          "auc": 0.669952839622289
+        }
+      },
+      "Specific": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.4957628038194443,
+          "auc": 0.6701412879227792
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "track": "five_feature_calibrated",
+      "task": "classification",
+      "label": "五扰动：feature-only",
+      "expected_conditions": 1440,
+      "expected_datasets": 72,
+      "complete": true,
+      "specific_pool_root": "benchmark_specific_uncapped",
+      "specific_context_cap": null,
+      "specific_deployed_context_counts": {
+        "band": 10,
+        "boundary": 10,
+        "local": 10,
+        "mixed": 10,
+        "shortcut": 10
+      },
+      "full_registry_pending": true,
+      "results_role": "benchmark development; Shared/Specific fitted on these query labels",
+      "Base": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.5027180989583333,
+          "auc": 0.6715200711007725
+        }
+      },
+      "Shared": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.5033365885416666,
+          "auc": 0.6710079870967091
+        }
+      },
+      "Specific_R5": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.51083984375,
+          "auc": 0.6786806115765268
+        }
+      },
+      "Specific": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.5104437934027778,
+          "auc": 0.6772667547644646
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "track": "five",
+      "task": "regression",
+      "label": "五扰动：回归",
+      "expected_conditions": 700,
+      "expected_datasets": 35,
+      "complete": true,
+      "specific_pool_root": "benchmark_specific_uncapped",
+      "specific_context_cap": null,
+      "specific_deployed_context_counts": {
+        "band": 10,
+        "boundary": 10,
+        "local": 10,
+        "mixed": 10,
+        "shortcut": 10
+      },
+      "full_registry_pending": true,
+      "results_role": "benchmark development; Shared/Specific fitted on these query labels",
+      "Base": {
+        "conditions": 700,
+        "datasets": 35,
+        "metrics": {
+          "r2": -1.107162683623088,
+          "nrmse": 1.2974285489889463
+        }
+      },
+      "Shared": {
+        "conditions": 700,
+        "datasets": 35,
+        "metrics": {
+          "r2": -0.8205261090744802,
+          "nrmse": 1.2626511650496
+        }
+      },
+      "Specific_R5": {
+        "conditions": 700,
+        "datasets": 35,
+        "metrics": {
+          "r2": 0.34093138240789994,
+          "nrmse": 0.8036621503742171
+        }
+      },
+      "Specific": {
+        "conditions": 700,
+        "datasets": 35,
+        "metrics": {
+          "r2": 0.34148918606305817,
+          "nrmse": 0.8052310075411365
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "track": "seven_reimplemented",
+      "task": "classification",
+      "label": "七偏移：分类",
+      "expected_conditions": 980,
+      "expected_datasets": 35,
+      "complete": true,
+      "specific_pool_root": "benchmark_specific_uncapped",
+      "specific_context_cap": null,
+      "specific_deployed_context_counts": {
+        "concept": 10,
+        "covariate": 10,
+        "domain": 10,
+        "label": 10,
+        "selection": 10,
+        "support": 10,
+        "temporal": 10
+      },
+      "full_registry_pending": false,
+      "results_role": "benchmark development; Shared/Specific fitted on these query labels",
+      "Base": {
+        "conditions": 980,
+        "datasets": 35,
+        "metrics": {
+          "accuracy": 0.7527822066326529,
+          "auc": 0.812457305044779
+        }
+      },
+      "Shared": {
+        "conditions": 980,
+        "datasets": 35,
+        "metrics": {
+          "accuracy": 0.7535475127551021,
+          "auc": 0.8137670163621171
+        }
+      },
+      "Specific_R5": {
+        "conditions": 980,
+        "datasets": 35,
+        "metrics": {
+          "accuracy": 0.7624362244897959,
+          "auc": 0.8155999108324505
+        }
+      },
+      "Specific": {
+        "conditions": 980,
+        "datasets": 35,
+        "metrics": {
+          "accuracy": 0.7631776147959184,
+          "auc": 0.8175306657733229
+        }
+      }
+    },
+    {
+      "backbone": "tabicl",
+      "track": "seven_calibrated",
+      "task": "regression",
+      "label": "七偏移：回归（幅度0.59）",
+      "expected_conditions": 924,
+      "expected_datasets": 33,
+      "complete": true,
+      "specific_pool_root": "benchmark_specific_uncapped",
+      "specific_context_cap": null,
+      "specific_deployed_context_counts": {
+        "concept": 10,
+        "covariate": 10,
+        "domain": 10,
+        "label": 10,
+        "selection": 10,
+        "support": 10,
+        "temporal": 10
+      },
+      "full_registry_pending": false,
+      "results_role": "benchmark development; Shared/Specific fitted on these query labels",
+      "Base": {
+        "conditions": 924,
+        "datasets": 33,
+        "metrics": {
+          "r2": -0.015761841870671388,
+          "nrmse": 0.7580213691903508
+        }
+      },
+      "Shared": {
+        "conditions": 924,
+        "datasets": 33,
+        "metrics": {
+          "r2": 0.6992063223169772,
+          "nrmse": 0.49119421350779874
+        }
+      },
+      "Specific_R5": {
+        "conditions": 924,
+        "datasets": 33,
+        "metrics": {
+          "r2": 0.7134540798160962,
+          "nrmse": 0.4715673009968018
+        }
+      },
+      "Specific": {
+        "conditions": 924,
+        "datasets": 33,
+        "metrics": {
+          "r2": 0.7133255695108534,
+          "nrmse": 0.4730692817863911
+        }
+      }
+    },
+    {
+      "backbone": "tabpfn",
+      "track": "five_calibrated",
+      "task": "classification",
+      "label": "五扰动：source-label stress",
+      "expected_conditions": 1440,
+      "expected_datasets": 72,
+      "complete": true,
+      "specific_pool_root": "benchmark_specific_uncapped",
+      "specific_context_cap": null,
+      "specific_deployed_context_counts": {
+        "band": 10,
+        "boundary": 10,
+        "local": 10,
+        "mixed": 10,
+        "shortcut": 10
+      },
+      "full_registry_pending": false,
+      "results_role": "benchmark development; Shared/Specific fitted on these query labels",
+      "Base": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.49007703993055557,
+          "auc": 0.6688596283947912
+        }
+      },
+      "Shared": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.4902235243055555,
+          "auc": 0.6675932277584303
+        }
+      },
+      "Specific_R5": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.4919704861111111,
+          "auc": 0.6688935914668838
+        }
+      },
+      "Specific": {
+        "conditions": 1440,
+        "datasets": 72,
+        "metrics": {
+          "accuracy": 0.49242621527777775,
+          "auc": 0.6692989700101313
+        }
+      }
+    },
+    {
+      "backbone": "tabpfn",
+      "track": "five_feature_calibrated",
+      "task": "classification",
+      "label": "五扰动：feature-only",
+      "expected_conditions": 1440,
+      "expected_datasets": 72,
+      "complete": false,
+      "specific_pool_root": "benchmark_specific_uncapped",
+      "specific_context_cap": null,
+      "specific_deployed_context_counts": {},
+      "full_registry_pending": true,
+      "results_role": "benchmark development; Shared/Specific fitted on these query labels",
+      "Base": {
+        "conditions": 1381,
+        "datasets": 71,
+        "metrics": {
+          "accuracy": 0.476817262079421,
+          "auc": 0.6534791947107096
+        }
+      },
+      "Shared": {
+        "conditions": 0,
+        "datasets": 0,
+        "metrics": null
+      },
+      "Specific_R5": {
+        "conditions": 0,
+        "datasets": 0,
+        "metrics": null
+      },
+      "Specific": {
+        "conditions": 0,
+        "datasets": 0,
+        "metrics": null
+      }
+    },
+    {
+      "backbone": "tabpfn",
+      "track": "five",
+      "task": "regression",
+      "label": "五扰动：回归",
+      "expected_conditions": 700,
+      "expected_datasets": 35,
+      "complete": true,
+      "specific_pool_root": "benchmark_specific_uncapped",
+      "specific_context_cap": null,
+      "specific_deployed_context_counts": {
+        "band": 10,
+        "boundary": 10,
+        "local": 10,
+        "mixed": 10,
+        "shortcut": 10
+      },
+      "full_registry_pending": true,
+      "results_role": "benchmark development; Shared/Specific fitted on these query labels",
+      "Base": {
+        "conditions": 700,
+        "datasets": 35,
+        "metrics": {
+          "r2": -1.2835249332511793,
+          "nrmse": 1.3419874238816527
+        }
+      },
+      "Shared": {
+        "conditions": 700,
+        "datasets": 35,
+        "metrics": {
+          "r2": -0.9803677726891623,
+          "nrmse": 1.3073004444285103
+        }
+      },
+      "Specific_R5": {
+        "conditions": 700,
+        "datasets": 35,
+        "metrics": {
+          "r2": 0.346011940587314,
+          "nrmse": 0.8010344763749987
+        }
+      },
+      "Specific": {
+        "conditions": 700,
+        "datasets": 35,
+        "metrics": {
+          "r2": 0.34572739735311164,
+          "nrmse": 0.8022574878483442
+        }
+      }
+    },
+    {
+      "backbone": "tabpfn",
+      "track": "seven_reimplemented",
+      "task": "classification",
+      "label": "七偏移：分类",
+      "expected_conditions": 980,
+      "expected_datasets": 35,
+      "complete": true,
+      "specific_pool_root": "benchmark_specific_uncapped",
+      "specific_context_cap": null,
+      "specific_deployed_context_counts": {
+        "concept": 10,
+        "covariate": 10,
+        "domain": 10,
+        "label": 10,
+        "selection": 10,
+        "support": 10,
+        "temporal": 10
+      },
+      "full_registry_pending": false,
+      "results_role": "benchmark development; Shared/Specific fitted on these query labels",
+      "Base": {
+        "conditions": 980,
+        "datasets": 35,
+        "metrics": {
+          "accuracy": 0.7412228954081633,
+          "auc": 0.7986734571637879
+        }
+      },
+      "Shared": {
+        "conditions": 980,
+        "datasets": 35,
+        "metrics": {
+          "accuracy": 0.7439333545918367,
+          "auc": 0.8012657873859886
+        }
+      },
+      "Specific_R5": {
+        "conditions": 980,
+        "datasets": 35,
+        "metrics": {
+          "accuracy": 0.7499441964285714,
+          "auc": 0.8068676296146909
+        }
+      },
+      "Specific": {
+        "conditions": 980,
+        "datasets": 35,
+        "metrics": {
+          "accuracy": 0.7520487882653061,
+          "auc": 0.8095346920837929
+        }
+      }
+    },
+    {
+      "backbone": "tabpfn",
+      "track": "seven_calibrated",
+      "task": "regression",
+      "label": "七偏移：回归（幅度0.59）",
+      "expected_conditions": 924,
+      "expected_datasets": 33,
+      "complete": false,
+      "specific_pool_root": "benchmark_specific_uncapped",
+      "specific_context_cap": null,
+      "specific_deployed_context_counts": {},
+      "full_registry_pending": false,
+      "results_role": "benchmark development; Shared/Specific fitted on these query labels",
+      "Base": {
+        "conditions": 924,
+        "datasets": 33,
+        "metrics": {
+          "r2": 0.08758182142449793,
+          "nrmse": 0.7607154701371565
+        }
+      },
+      "Shared": {
+        "conditions": 924,
+        "datasets": 33,
+        "metrics": {
+          "r2": 0.7079777832333753,
+          "nrmse": 0.48468312963866084
+        }
+      },
+      "Specific_R5": {
+        "conditions": 0,
+        "datasets": 0,
+        "metrics": null
+      },
+      "Specific": {
+        "conditions": 0,
+        "datasets": 0,
+        "metrics": null
+      }
+    }
+  ],
+  "independent_queries": [
+    {
+      "backbone": "tabicl",
+      "track": "five_calibrated",
+      "task": "classification",
+      "label": "五扰动：source-label stress",
+      "expected_datasets": 56,
+      "expected_conditions": 1120,
+      "complete": true,
+      "methods": {
+        "Base": {
+          "conditions": 1120,
+          "datasets": 56,
+          "metrics": {
+            "accuracy": 0.48153599330357144,
+            "auc": 0.7018822096558379
+          }
+        },
+        "Shared_context_mean": {
+          "conditions": 1120,
+          "datasets": 56,
+          "metrics": {
+            "accuracy": 0.47334681919642857,
+            "auc": 0.6937487618840719
+          }
+        },
+        "TabACE_Shared_benchmark_tuned_R5": {
+          "conditions": 1120,
+          "datasets": 56,
+          "metrics": {
+            "accuracy": 0.47970145089285715,
+            "auc": 0.6993917369432979
+          }
+        },
+        "Specific_context_mean": {
+          "conditions": 1120,
+          "datasets": 56,
+          "metrics": {
+            "accuracy": 0.4697963169642857,
+            "auc": 0.685539434422686
+          }
+        },
+        "TabACE_Specific_benchmark_tuned_R5": {
+          "conditions": 1120,
+          "datasets": 56,
+          "metrics": {
+            "accuracy": 0.4800641741071429,
+            "auc": 0.7010996061953441
+          }
+        }
+      },
+      "results_role": "independent queries on seen benchmark datasets; not unseen datasets"
+    },
+    {
+      "backbone": "tabicl",
+      "track": "five_feature_calibrated",
+      "task": "classification",
+      "label": "五扰动：feature-only",
+      "expected_datasets": 56,
+      "expected_conditions": 1120,
+      "complete": false,
+      "methods": {
+        "Base": {
+          "conditions": 248,
+          "datasets": 17,
+          "metrics": {
+            "accuracy": 0.5107019761029411,
+            "auc": 0.7289084055251652
+          }
+        },
+        "Shared_context_mean": {
+          "conditions": 248,
+          "datasets": 17,
+          "metrics": {
+            "accuracy": 0.5094152113970588,
+            "auc": 0.7227507824978556
+          }
+        },
+        "TabACE_Shared_benchmark_tuned_R5": {
+          "conditions": 248,
+          "datasets": 17,
+          "metrics": {
+            "accuracy": 0.5117168351715686,
+            "auc": 0.7308435327096214
+          }
+        },
+        "Specific_context_mean": {
+          "conditions": 248,
+          "datasets": 17,
+          "metrics": {
+            "accuracy": 0.5035251991421569,
+            "auc": 0.7209228166800566
+          }
+        },
+        "TabACE_Specific_benchmark_tuned_R5": {
+          "conditions": 248,
+          "datasets": 17,
+          "metrics": {
+            "accuracy": 0.5107498468137255,
+            "auc": 0.7301709220897782
+          }
+        }
+      },
+      "results_role": "independent queries on seen benchmark datasets; not unseen datasets"
+    },
+    {
+      "backbone": "tabicl",
+      "track": "seven_calibrated",
+      "task": "regression",
+      "label": "七偏移：回归（幅度0.59）",
+      "expected_datasets": 25,
+      "expected_conditions": 700,
+      "complete": false,
+      "methods": {},
+      "results_role": "independent queries on seen benchmark datasets; not unseen datasets"
+    },
+    {
+      "backbone": "tabpfn",
+      "track": "five_calibrated",
+      "task": "classification",
+      "label": "五扰动：source-label stress",
+      "expected_datasets": 56,
+      "expected_conditions": 1120,
+      "complete": true,
+      "methods": {
+        "Base": {
+          "conditions": 1120,
+          "datasets": 56,
+          "metrics": {
+            "accuracy": 0.4731375558035714,
+            "auc": 0.6982430692869012
+          }
+        },
+        "Shared_context_mean": {
+          "conditions": 1120,
+          "datasets": 56,
+          "metrics": {
+            "accuracy": 0.46758510044642854,
+            "auc": 0.692182694841722
+          }
+        },
+        "TabACE_Shared_benchmark_tuned_R5": {
+          "conditions": 1120,
+          "datasets": 56,
+          "metrics": {
+            "accuracy": 0.4747907366071428,
+            "auc": 0.6975669221991013
+          }
+        },
+        "Specific_context_mean": {
+          "conditions": 1120,
+          "datasets": 56,
+          "metrics": {
+            "accuracy": 0.4670479910714286,
+            "auc": 0.6849767612113401
+          }
+        },
+        "TabACE_Specific_benchmark_tuned_R5": {
+          "conditions": 1120,
+          "datasets": 56,
+          "metrics": {
+            "accuracy": 0.47395368303571433,
+            "auc": 0.6973760270030377
+          }
+        }
+      },
+      "results_role": "independent queries on seen benchmark datasets; not unseen datasets"
+    },
+    {
+      "backbone": "tabpfn",
+      "track": "five_feature_calibrated",
+      "task": "classification",
+      "label": "五扰动：feature-only",
+      "expected_datasets": 56,
+      "expected_conditions": 1120,
+      "complete": false,
+      "methods": {},
+      "results_role": "independent queries on seen benchmark datasets; not unseen datasets"
+    },
+    {
+      "backbone": "tabpfn",
+      "track": "seven_calibrated",
+      "task": "regression",
+      "label": "七偏移：回归（幅度0.59）",
+      "expected_datasets": 25,
+      "expected_conditions": 700,
+      "complete": false,
+      "methods": {},
+      "results_role": "independent queries on seen benchmark datasets; not unseen datasets"
+    }
+  ],
+  "exact_original_paper_protocol_restored": false,
+  "target_ranking_enforced": false
+}

@@ -1,0 +1,169 @@
+{
+  "status": "COMPLETE",
+  "rows": [
+    {
+      "beta": 2.0,
+      "feature_multiplier": 1,
+      "name": "beta_2",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6831907242063493,
+      "auc": 0.8358129713870631,
+      "distance": 113.45260327908424
+    },
+    {
+      "beta": 4.0,
+      "feature_multiplier": 1,
+      "name": "beta_4",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6557291666666666,
+      "auc": 0.8134968082800348,
+      "distance": 82.6262585268951
+    },
+    {
+      "beta": 6.0,
+      "feature_multiplier": 1,
+      "name": "beta_6",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6453931051587302,
+      "auc": 0.8053546665633649,
+      "distance": 72.35844136287292
+    },
+    {
+      "beta": 8.0,
+      "feature_multiplier": 1,
+      "name": "beta_8",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6426525297619047,
+      "auc": 0.8027985153480471,
+      "distance": 69.64207428348774
+    },
+    {
+      "beta": 12.0,
+      "feature_multiplier": 1,
+      "name": "beta_12",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6424727182539685,
+      "auc": 0.7993974787029504,
+      "distance": 68.59941693367236
+    },
+    {
+      "beta": 20.0,
+      "feature_multiplier": 1,
+      "name": "beta_20",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6411644345238093,
+      "auc": 0.8008199637859478,
+      "distance": 68.03057603808747
+    },
+    {
+      "beta": 2.0,
+      "feature_multiplier": 2,
+      "name": "beta_2_features2",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.6304005456349204,
+      "auc": 0.8005453941256494,
+      "distance": 60.48996106714281
+    },
+    {
+      "beta": 4.0,
+      "feature_multiplier": 2,
+      "name": "beta_4_features2",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.5968812003968254,
+      "auc": 0.7712700015561258,
+      "distance": 34.08684626523651
+    },
+    {
+      "beta": 2.0,
+      "feature_multiplier": 4,
+      "name": "beta_2_features4",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.5869481646825397,
+      "auc": 0.7661462107326756,
+      "distance": 28.36978779908392
+    },
+    {
+      "beta": 4.0,
+      "feature_multiplier": 4,
+      "name": "beta_4_features4",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.544016617063492,
+      "auc": 0.7285300887822651,
+      "distance": 8.086200374589772
+    },
+    {
+      "beta": 2.0,
+      "feature_multiplier": 8,
+      "name": "beta_2_features8",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.5454489087301587,
+      "auc": 0.7295954399221164,
+      "distance": 8.542860240606885
+    },
+    {
+      "beta": 4.0,
+      "feature_multiplier": 8,
+      "name": "beta_4_features8",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.5087611607142857,
+      "auc": 0.6906137199939233,
+      "distance": 0.4584146429697781
+    },
+    {
+      "beta": 5.0,
+      "feature_multiplier": 8,
+      "name": "beta_5_features8",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.5008494543650794,
+      "auc": 0.6803525942095101,
+      "distance": 0.036366153157543754
+    },
+    {
+      "beta": 6.0,
+      "feature_multiplier": 8,
+      "name": "beta_6_features8",
+      "datasets": 63,
+      "complete": true,
+      "accuracy": 0.4934461805555554,
+      "auc": 0.6725058389519779,
+      "distance": 0.10238657292059927
+    }
+  ],
+  "target_on_calibration": {
+    "accuracy": 0.4970360553075397,
+    "auc": 0.680452644220445
+  },
+  "original_test_labels_used": false,
+  "method_order_used": false,
+  "source_labels_unchanged": true,
+  "protocol_role": "additional historical feature-only variant, not exact original-paper restoration",
+  "selected_scores": {
+    "beta": 5.0,
+    "feature_multiplier": 8,
+    "name": "beta_5_features8",
+    "datasets": 63,
+    "complete": true,
+    "accuracy": 0.5008494543650794,
+    "auc": 0.6803525942095101,
+    "distance": 0.036366153157543754
+  },
+  "selected_configuration": {
+    "beta": 5.0,
+    "feature_multiplier": 8,
+    "name": "beta_5_features8"
+  },
+  "within_tolerance": true
+}

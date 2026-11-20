@@ -1,0 +1,122 @@
+{
+  "app:rebuttal-additions": {
+    "number": "E",
+    "page": 36
+  },
+  "app:revision-ensembles": {
+    "number": "E.1",
+    "page": 36
+  },
+  "tab:revision-tabicl-cls": {
+    "number": "16",
+    "page": 36
+  },
+  "tab:revision-tabicl-reg": {
+    "number": "17",
+    "page": 37
+  },
+  "tab:revision-tabpfn-cls": {
+    "number": "18",
+    "page": 37
+  },
+  "tab:revision-tabpfn-reg": {
+    "number": "19",
+    "page": 37
+  },
+  "app:revision-large-context": {
+    "number": "E.2",
+    "page": 38
+  },
+  "tab:revision-large-cls": {
+    "number": "20",
+    "page": 38
+  },
+  "tab:revision-large-reg": {
+    "number": "21",
+    "page": 38
+  },
+  "app:revision-matching": {
+    "number": "E.3",
+    "page": 38
+  },
+  "tab:revision-matching": {
+    "number": "22",
+    "page": 39
+  },
+  "app:revision-unseen": {
+    "number": "E.4",
+    "page": 39
+  },
+  "tab:revision-unseen-cls": {
+    "number": "23",
+    "page": 39
+  },
+  "tab:revision-unseen-reg": {
+    "number": "24",
+    "page": 39
+  },
+  "app:revision-natural": {
+    "number": "E.5",
+    "page": 40
+  },
+  "app:revision-folktables-contexts": {
+    "number": "E.5.1",
+    "page": 40
+  },
+  "app:revision-folktables-comparison": {
+    "number": "E.5.2",
+    "page": 40
+  },
+  "tab:revision-folktables": {
+    "number": "25",
+    "page": 41
+  },
+  "app:revision-folktables-variance": {
+    "number": "E.5.3",
+    "page": 41
+  },
+  "tab:revision-folktables-variance": {
+    "number": "26",
+    "page": 41
+  },
+  "app:revision-medical": {
+    "number": "E.5.4",
+    "page": 41
+  },
+  "tab:revision-medical": {
+    "number": "27",
+    "page": 42
+  },
+  "app:revision-finetuning": {
+    "number": "E.6",
+    "page": 42
+  },
+  "tab:revision-finetuning": {
+    "number": "28",
+    "page": 42
+  },
+  "app:revision-gate": {
+    "number": "E.7",
+    "page": 43
+  },
+  "app:revision-high-confidence": {
+    "number": "E.7.1",
+    "page": 43
+  },
+  "tab:revision-high-confidence": {
+    "number": "29",
+    "page": 43
+  },
+  "app:revision-regression-robustness": {
+    "number": "E.7.2",
+    "page": 43
+  },
+  "tab:revision-joint-errors": {
+    "number": "30",
+    "page": 43
+  },
+  "tab:revision-regression-extension": {
+    "number": "31",
+    "page": 44
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "en": {
+    "parts": {
+      "SbVz": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "BV6f": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "bPdS": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "tables": 12,
+    "balanced_display_math": true,
+    "no_control_characters": true
+  },
+  "zh": {
+    "parts": {
+      "SbVz": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "BV6f": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "bPdS": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "tables": 12,
+    "balanced_display_math": true,
+    "no_control_characters": true
+  },
+  "all_english_posts_below_5000_characters": true,
+  "appendix_numeric_snapshot_unchanged": {
+    "tables": 16,
+    "rows": 119
+  },
+  "pdf_sha256": "feefa1cd7b922510ebbb65788f110e2369c43cddc81ced6914d7d9c0e45281fd"
+}

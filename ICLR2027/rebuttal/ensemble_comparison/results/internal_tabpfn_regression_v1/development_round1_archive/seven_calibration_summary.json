@@ -1,0 +1,79 @@
+{
+  "all_trials": [
+    {
+      "candidate": "amplitude0.375",
+      "generator_parameters": {
+        "name": "amplitude0.375",
+        "amplitude": 0.375
+      },
+      "metrics": {
+        "r2": 0.5019181893538969,
+        "nrmse": 0.6323570857587069
+      },
+      "gap_to_paper_Base": {
+        "r2": 0.07591818935389688,
+        "nrmse": -0.03664291424129318
+      },
+      "distance": 71.06274638868908,
+      "within_003_each": false,
+      "prediction_count": 957
+    },
+    {
+      "candidate": "amplitude0.25",
+      "generator_parameters": {
+        "name": "amplitude0.25",
+        "amplitude": 0.25
+      },
+      "metrics": {
+        "r2": 0.5964906528352112,
+        "nrmse": 0.5757349947251514
+      },
+      "gap_to_paper_Base": {
+        "r2": 0.1704906528352112,
+        "nrmse": -0.0932650052748486
+      },
+      "distance": 377.6542391309405,
+      "within_003_each": false,
+      "prediction_count": 957
+    },
+    {
+      "candidate": "amplitude0.5",
+      "generator_parameters": {
+        "name": "amplitude0.5",
+        "amplitude": 0.5
+      },
+      "metrics": {
+        "r2": 0.2215118548727346,
+        "nrmse": 0.7125162893913848
+      },
+      "gap_to_paper_Base": {
+        "r2": -0.2044881451272654,
+        "nrmse": 0.043516289391384744
+      },
+      "distance": 437.090689399843,
+      "within_003_each": false,
+      "prediction_count": 957
+    }
+  ],
+  "selected": {
+    "candidate": "amplitude0.375",
+    "generator_parameters": {
+      "name": "amplitude0.375",
+      "amplitude": 0.375
+    },
+    "metrics": {
+      "r2": 0.5019181893538969,
+      "nrmse": 0.6323570857587069
+    },
+    "gap_to_paper_Base": {
+      "r2": 0.07591818935389688,
+      "nrmse": -0.03664291424129318
+    },
+    "distance": 71.06274638868908,
+    "within_003_each": false,
+    "prediction_count": 957
+  },
+  "benchmark_development_only": true,
+  "selection_uses_Base_labels_only": true,
+  "paper_reproduction": false
+}

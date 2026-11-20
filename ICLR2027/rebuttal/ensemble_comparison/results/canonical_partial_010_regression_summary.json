@@ -1,0 +1,88 @@
+{
+  "status": "COMPLETE",
+  "seed": 0,
+  "datasets": 33,
+  "conditions": 957,
+  "source_rows": 256,
+  "candidate_budget": 6,
+  "Shared_run": false,
+  "original_full_pool_results_retained": true,
+  "protocol_changed": false,
+  "access_regime": "canonical Base source rows only",
+  "historical_Shared_not_same_regime": true,
+  "averages": [
+    {
+      "method": "Convex Stacking-6",
+      "clean": {
+        "r2": 0.7021767180281081,
+        "nrmse": 0.48023326557986123
+      },
+      "seven": {
+        "r2": 0.29901086840834823,
+        "nrmse": 0.7239353514141725
+      }
+    },
+    {
+      "method": "GES-6",
+      "clean": {
+        "r2": 0.7022889690038233,
+        "nrmse": 0.4804126211024093
+      },
+      "seven": {
+        "r2": 0.29958053775765303,
+        "nrmse": 0.7237576899757603
+      }
+    },
+    {
+      "method": "base_protocol_check",
+      "clean": {
+        "r2": 0.7078184864700053,
+        "nrmse": 0.47622497419131526
+      },
+      "seven": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      }
+    },
+    {
+      "method": "bootstrap_mean_6",
+      "clean": {
+        "r2": 0.704027117123234,
+        "nrmse": 0.47933260115812226
+      },
+      "seven": {
+        "r2": 0.2948707948038908,
+        "nrmse": 0.7239852768869053
+      }
+    },
+    {
+      "method": "native_6",
+      "clean": {
+        "r2": 0.7075566538124595,
+        "nrmse": 0.4765234992875668
+      },
+      "seven": {
+        "r2": 0.2589679252031714,
+        "nrmse": 0.7304371868743768
+      }
+    },
+    {
+      "method": "oligoicp_iqr_6_keep1_adapted",
+      "clean": {
+        "r2": 0.6933530249012598,
+        "nrmse": 0.4883134109035582
+      },
+      "seven": {
+        "r2": 0.2901875198900492,
+        "nrmse": 0.7279881676339369
+      }
+    }
+  ],
+  "resampling_policy": "fixed 10% source-row replacement",
+  "audit": {
+    "all_raw_metrics_recomputed": true,
+    "all_IQR_selections_checked": true,
+    "OOF_folds_disjoint": true,
+    "all_complete_grids": true
+  }
+}

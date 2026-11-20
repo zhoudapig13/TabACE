@@ -1,0 +1,582 @@
+{
+  "status": "COMPLETE_AND_AUDITED",
+  "seed": 0,
+  "records": [
+    {
+      "method": "Base",
+      "annotation": "",
+      "clean": {
+        "r2": 0.7407362142204691,
+        "nrmse": 0.47853884007864916
+      },
+      "five": {
+        "r2": -1.076504029252845,
+        "nrmse": 1.2701100911368408
+      },
+      "seven": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      }
+    },
+    {
+      "method": "Native6",
+      "variant": "cross_fitted_calibration_safety_gate",
+      "annotation": "†‡",
+      "backbone_weights_updated": false,
+      "candidate_budget_maximum": 6,
+      "five": {
+        "r2": -1.076504029252845,
+        "nrmse": 1.2701100911368408
+      },
+      "five_Base_fallback_folds": 5,
+      "five_Base_fallback_fold_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "clean": {
+        "r2": 0.7407362142204691,
+        "nrmse": 0.47853884007864905
+      },
+      "seven": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      },
+      "seven_Base_fallback_folds": 5,
+      "seven_Base_fallback_fold_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "Clean_within_005": true,
+      "all_interval_checks_pass": true
+    },
+    {
+      "method": "GES6",
+      "variant": "cross_fitted_calibration_safety_gate",
+      "annotation": "†‡",
+      "backbone_weights_updated": false,
+      "candidate_budget_maximum": 6,
+      "five": {
+        "r2": -1.0204143361944291,
+        "nrmse": 1.2564398947638633
+      },
+      "five_Base_fallback_folds": 0,
+      "five_Base_fallback_fold_ids": [],
+      "clean": {
+        "r2": 0.7394837245959227,
+        "nrmse": 0.480662119733787
+      },
+      "seven": {
+        "r2": 0.2779128317155108,
+        "nrmse": 0.7280927921089152
+      },
+      "seven_Base_fallback_folds": 4,
+      "seven_Base_fallback_fold_ids": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "Clean_within_005": true,
+      "all_interval_checks_pass": true
+    },
+    {
+      "method": "ConvexStacking6",
+      "variant": "cross_fitted_calibration_safety_gate",
+      "annotation": "†‡",
+      "backbone_weights_updated": false,
+      "candidate_budget_maximum": 6,
+      "five": {
+        "r2": -1.0427492347447092,
+        "nrmse": 1.261746233096991
+      },
+      "five_Base_fallback_folds": 0,
+      "five_Base_fallback_fold_ids": [],
+      "clean": {
+        "r2": 0.7406290585779771,
+        "nrmse": 0.47933373699356696
+      },
+      "seven": {
+        "r2": 0.27462466826757725,
+        "nrmse": 0.7288343429724362
+      },
+      "seven_Base_fallback_folds": 3,
+      "seven_Base_fallback_fold_ids": [
+        0,
+        1,
+        4
+      ],
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "Clean_within_005": true,
+      "all_interval_checks_pass": true
+    },
+    {
+      "method": "RidgeStacking6",
+      "variant": "cross_fitted_calibration_safety_gate",
+      "annotation": "†‡",
+      "backbone_weights_updated": false,
+      "candidate_budget_maximum": 6,
+      "five": {
+        "r2": -1.0373084091537659,
+        "nrmse": 1.260333273647681
+      },
+      "five_Base_fallback_folds": 0,
+      "five_Base_fallback_fold_ids": [],
+      "clean": {
+        "r2": 0.7409726522942742,
+        "nrmse": 0.4789569860786224
+      },
+      "seven": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      },
+      "seven_Base_fallback_folds": 5,
+      "seven_Base_fallback_fold_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "Clean_within_005": true,
+      "all_interval_checks_pass": true
+    },
+    {
+      "method": "Median6",
+      "variant": "cross_fitted_calibration_safety_gate",
+      "annotation": "†‡",
+      "backbone_weights_updated": false,
+      "candidate_budget_maximum": 6,
+      "five": {
+        "r2": -1.037965327623381,
+        "nrmse": 1.2616670524673679
+      },
+      "five_Base_fallback_folds": 0,
+      "five_Base_fallback_fold_ids": [],
+      "clean": {
+        "r2": 0.741324579531157,
+        "nrmse": 0.47966903278351714
+      },
+      "seven": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      },
+      "seven_Base_fallback_folds": 5,
+      "seven_Base_fallback_fold_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "Clean_within_005": true,
+      "all_interval_checks_pass": true
+    },
+    {
+      "method": "FeatureMean6",
+      "variant": "cross_fitted_calibration_safety_gate",
+      "annotation": "†‡",
+      "backbone_weights_updated": false,
+      "candidate_budget_maximum": 6,
+      "five": {
+        "r2": -1.0197909360675395,
+        "nrmse": 1.2563712284574253
+      },
+      "five_Base_fallback_folds": 0,
+      "five_Base_fallback_fold_ids": [],
+      "clean": {
+        "r2": 0.7396606532469919,
+        "nrmse": 0.48059783192768385
+      },
+      "seven": {
+        "r2": 0.28480107281518474,
+        "nrmse": 0.726502094261042
+      },
+      "seven_Base_fallback_folds": 4,
+      "seven_Base_fallback_fold_ids": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "Clean_within_005": true,
+      "all_interval_checks_pass": true
+    },
+    {
+      "method": "TrimmedMean6",
+      "variant": "cross_fitted_calibration_safety_gate",
+      "annotation": "†‡",
+      "backbone_weights_updated": false,
+      "candidate_budget_maximum": 6,
+      "five": {
+        "r2": -1.0285158647327706,
+        "nrmse": 1.2589345473356526
+      },
+      "five_Base_fallback_folds": 0,
+      "five_Base_fallback_fold_ids": [],
+      "clean": {
+        "r2": 0.7403273408375551,
+        "nrmse": 0.4802450156837476
+      },
+      "seven": {
+        "r2": 0.28213528384490877,
+        "nrmse": 0.7271691914420612
+      },
+      "seven_Base_fallback_folds": 4,
+      "seven_Base_fallback_fold_ids": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "Clean_within_005": true,
+      "all_interval_checks_pass": true
+    },
+    {
+      "method": "IQR6",
+      "variant": "cross_fitted_calibration_safety_gate",
+      "annotation": "†‡",
+      "backbone_weights_updated": false,
+      "candidate_budget_maximum": 6,
+      "five": {
+        "r2": -1.0272854477946363,
+        "nrmse": 1.2582301547612722
+      },
+      "five_Base_fallback_folds": 0,
+      "five_Base_fallback_fold_ids": [],
+      "clean": {
+        "r2": 0.7408353115932886,
+        "nrmse": 0.4795140876597946
+      },
+      "seven": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      },
+      "seven_Base_fallback_folds": 5,
+      "seven_Base_fallback_fold_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "Clean_within_005": true,
+      "all_interval_checks_pass": true
+    }
+  ],
+  "default_variant": "explicitly_adapted_calibration_safety_gate",
+  "original_method_results": "first_stage_summary.json",
+  "raw_default_results": "raw_defaults_averages.csv",
+  "first_stage_method_records": [
+    {
+      "method": "Base",
+      "clean": {
+        "r2": 0.7407362142204691,
+        "nrmse": 0.47853884007864916
+      },
+      "five": {
+        "r2": -1.076504029252845,
+        "nrmse": 1.2701100911368408
+      },
+      "seven": {
+        "r2": 0.27460909266251643,
+        "nrmse": 0.7288452186341001
+      }
+    },
+    {
+      "method": "Native6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.0577575683717606,
+        "nrmse": 1.260140052785609
+      },
+      "clean": {
+        "r2": 0.7386757105473528,
+        "nrmse": 0.4830170077270781
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": -0.03752808192380004,
+        "nrmse": 0.7671405573590862
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7066383772132298,
+        "nrmse": 0.4772193855300659
+      }
+    },
+    {
+      "method": "GES6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.027636727560272,
+        "nrmse": 1.258288472729917
+      },
+      "clean": {
+        "r2": 0.7401334054094137,
+        "nrmse": 0.4801514867269729
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.29164765253193375,
+        "nrmse": 0.7295935672212788
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7011289608540444,
+        "nrmse": 0.48588095302736123
+      }
+    },
+    {
+      "method": "ConvexStacking6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.0392613226498,
+        "nrmse": 1.2611300347187775
+      },
+      "clean": {
+        "r2": 0.7406374706836132,
+        "nrmse": 0.478813077286602
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.29140334972022697,
+        "nrmse": 0.7295830988764115
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7013205003844613,
+        "nrmse": 0.48564467158376606
+      }
+    },
+    {
+      "method": "RidgeStacking6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.037308409153766,
+        "nrmse": 1.2603332736476809
+      },
+      "clean": {
+        "r2": 0.740972652294274,
+        "nrmse": 0.4789569860786226
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.2859284705801198,
+        "nrmse": 0.7260959092081412
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.707715377625779,
+        "nrmse": 0.4759690487960751
+      }
+    },
+    {
+      "method": "Median6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.0355556397344186,
+        "nrmse": 1.2608207504621558
+      },
+      "clean": {
+        "r2": 0.7404465711996481,
+        "nrmse": 0.4803775405169687
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.29325883217862964,
+        "nrmse": 0.725328124375236
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7049862605706474,
+        "nrmse": 0.4789013811668093
+      }
+    },
+    {
+      "method": "FeatureMean6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.0250200028808014,
+        "nrmse": 1.2576993921990411
+      },
+      "clean": {
+        "r2": 0.7399738350355739,
+        "nrmse": 0.4803358282338265
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.2877322513777399,
+        "nrmse": 0.726509159849189
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7061092693341623,
+        "nrmse": 0.48132216021613733
+      }
+    },
+    {
+      "method": "TrimmedMean6",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.0291610614343714,
+        "nrmse": 1.259085730964893
+      },
+      "clean": {
+        "r2": 0.7404210171375739,
+        "nrmse": 0.480164450792486
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.28764362840825397,
+        "nrmse": 0.7259672633355467
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7073385080499258,
+        "nrmse": 0.4791447813489615
+      }
+    },
+    {
+      "method": "IQR6_keep1_adapted",
+      "annotation": "†‡",
+      "adaptation": "Input/context bank selection and calibration-dataset combiner or parameter selection",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.066978369157002,
+        "nrmse": 1.2686346824092587
+      },
+      "clean": {
+        "r2": 0.7395536265279569,
+        "nrmse": 0.4791855794539301
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.26606434844931637,
+        "nrmse": 0.7298431069225436
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "seven_clean_separate_33_dataset_cohort": {
+        "r2": 0.7071364648989267,
+        "nrmse": 0.4769211643291463
+      }
+    }
+  ],
+  "historical_Shared_reference": {
+    "five": {
+      "r2": 0.363,
+      "nrmse": 0.783
+    },
+    "seven": {
+      "r2": 0.467,
+      "nrmse": 0.659
+    }
+  },
+  "Shared_was_not_run_on_this_benchmark": true,
+  "interval_checks_diagnostic_only": true,
+  "Shared_bounds_not_used_for_parameter_selection": true,
+  "benchmark_frozen_and_unchanged": true,
+  "benchmark_role": "internal Base-calibrated development benchmark",
+  "not_original_paper_protocol_reproduction": true,
+  "outer_test_labels_not_used_for_method_fitting": true,
+  "fallback_is_ensemble_gain": false,
+  "Native_fallback_deploys_one_Base_instead_of_native_six": true,
+  "six_is_candidate_budget_not_guaranteed_nonzero_member_count": true,
+  "all_recommended_safety_versions_meet_diagnostic_intervals": true,
+  "all_original_methods_meet_intervals": false,
+  "all_variants_retained": true,
+  "backbone_parameter_finetuning": false,
+  "Markdown_written": false,
+  "annotations": {
+    "†": "Dedicated context/calibration safety-gate adaptation",
+    "‡": "Calibration-dataset fitting/selection",
+    "§": "Backbone parameter fine-tuning; none performed"
+  },
+  "safety_prediction_audit": {
+    "status": "PASS",
+    "safety_prediction_vectors_recomputed": 13536,
+    "original_prediction_audit": "first_stage_prediction_audit.json",
+    "dataset_outer_and_inner_fit_validation_disjointness_verified": true,
+    "predictions_reconstructed_from_models": true,
+    "all_Base_fallbacks_equal_saved_actual_Base_predictions": true,
+    "reported_means_verified": true,
+    "benchmark_and_previous_completed_results_unchanged": true,
+    "Shared_bounds_not_used_for_selection": true,
+    "backbone_weights_updated": false,
+    "Markdown_bytes": 0
+  }
+}

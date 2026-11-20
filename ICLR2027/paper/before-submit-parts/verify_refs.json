@@ -1,0 +1,1090 @@
+﻿{
+  "results": [
+    {
+      "key": "hollmann2025tabpfn",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "Accurate predictions on small data with a tabular foundation model",
+      "bib_year": "2025",
+      "bib_doi": "",
+      "found_title": "Accurate predictions on small data with a tabular foundation model",
+      "found_year": "2025",
+      "found_source": "crossref",
+      "found_venue": "Nature",
+      "corroborated_by": [
+        "openalex"
+      ],
+      "confidence": 0.93,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: openalex"
+      ]
+    },
+    {
+      "key": "grinsztajn2025tabpfn25",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "TabPFN-2.5: Advancing the State of the Art in Tabular Foundation Models",
+      "bib_year": "2025",
+      "bib_doi": "10.48550/ARXIV.2511.08667",
+      "found_title": "TabPFN-2.5: Advancing the State of the Art in Tabular Foundation Models",
+      "found_year": "2025",
+      "found_source": "arxiv",
+      "found_venue": "arXiv",
+      "corroborated_by": [
+        "arxiv",
+        "openalex"
+      ],
+      "confidence": 0.95,
+      "bib_is_arxiv": true,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: arxiv, openalex"
+      ]
+    },
+    {
+      "key": "muller2023tabpfn",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second",
+      "bib_year": "2023",
+      "bib_doi": "",
+      "found_title": "TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second",
+      "found_year": "2022",
+      "found_source": "arxiv",
+      "found_venue": "arXiv",
+      "corroborated_by": [
+        "openalex"
+      ],
+      "confidence": 0.93,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: openalex"
+      ]
+    },
+    {
+      "key": "feuer2024tunetables",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Tunetables: Context optimization for scalable prior-data fitted networks",
+      "bib_year": "2024",
+      "bib_doi": "",
+      "found_title": "TuneTables: Context Optimization for Scalable Prior-Data Fitted Networks",
+      "found_year": "2024",
+      "found_source": "crossref",
+      "found_venue": "Advances in Neural Information Processing Systems 37",
+      "corroborated_by": [
+        "arxiv"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: arxiv"
+      ]
+    },
+    {
+      "key": "thomas2024localpfn",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Retrieval \\& Fine-Tuning for In-Context Tabular Models",
+      "bib_year": "2024",
+      "bib_doi": "10.52202/079017-3442",
+      "found_title": "Retrieval &amp; Fine-Tuning for In-Context Tabular Models",
+      "found_year": "2024",
+      "found_source": "crossref",
+      "found_venue": "Advances in Neural Information Processing Systems 37",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 0.98,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "xu2025mixturepfn",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Mixture of In-Context Prompters for Tabular PFNs",
+      "bib_year": "2025",
+      "bib_doi": "",
+      "found_title": "Mixture of In-Context Prompters for Tabular PFNs",
+      "found_year": "2024",
+      "found_source": "arxiv",
+      "found_venue": "arXiv",
+      "corroborated_by": [
+        "openalex"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: openalex"
+      ]
+    },
+    {
+      "key": "abdullah2026contextsampling",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "Understanding Context Sampling in TabPFN on Small Tabular Datasets",
+      "bib_year": "2026",
+      "bib_doi": "10.48550/ARXIV.2607.26628",
+      "found_title": "Understanding Context Sampling in TabPFN on Small Tabular Datasets",
+      "found_year": "2026",
+      "found_source": "arxiv",
+      "found_venue": "arXiv",
+      "corroborated_by": [
+        "arxiv",
+        "openalex"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": true,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: arxiv, openalex"
+      ]
+    },
+    {
+      "key": "he2026skilltfm",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "SkillTFM: Gated Skill Evolution for Training-Free Adaptation of Tabular Foundation Models",
+      "bib_year": "2026",
+      "bib_doi": "10.48550/ARXIV.2608.06137",
+      "found_title": "SkillTFM: Gated Skill Evolution for Training-Free Adaptation of Tabular Foundation Models",
+      "found_year": "2026",
+      "found_source": "arxiv",
+      "found_venue": "arXiv",
+      "corroborated_by": [
+        "arxiv",
+        "openalex"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": true,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: arxiv, openalex"
+      ]
+    },
+    {
+      "key": "khalifa2023dense",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "Exploring Demonstration Ensembling for In-context Learning",
+      "bib_year": "2023",
+      "bib_doi": "10.48550/ARXIV.2308.08780",
+      "found_title": "Exploring Demonstration Ensembling for In-context Learning",
+      "found_year": "2023",
+      "found_source": "arxiv",
+      "found_venue": "arXiv",
+      "corroborated_by": [
+        "arxiv"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": true,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: arxiv"
+      ]
+    },
+    {
+      "key": "gardner2023tableshift",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Benchmarking Distribution Shift in Tabular Data with TableShift",
+      "bib_year": "2023",
+      "bib_doi": "10.52202/075280-2324",
+      "found_title": "Benchmarking Distribution Shift in Tabular Data with TableShift",
+      "found_year": "2023",
+      "found_source": "crossref",
+      "found_venue": "Advances in Neural Information Processing Systems 36",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "cheng2025tabfsbench",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "TabFSBench: Tabular Benchmark for Feature Shifts in Open Environments",
+      "bib_year": "2025",
+      "bib_doi": "",
+      "found_title": "TabFSBench: Tabular Benchmark for Feature Shifts in Open Environments",
+      "found_year": "2025",
+      "found_source": "arxiv",
+      "found_venue": "arXiv",
+      "corroborated_by": [
+        "openalex"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: openalex"
+      ]
+    },
+    {
+      "key": "lipton2018bbse",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Detecting and Correcting for Label Shift with Black Box Predictors",
+      "bib_year": "2018",
+      "bib_doi": "",
+      "found_title": "Detecting and Correcting for Label Shift with Black Box Predictors",
+      "found_year": "2018",
+      "found_source": "arxiv",
+      "found_venue": "arXiv",
+      "corroborated_by": [
+        "openalex"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: openalex"
+      ]
+    },
+    {
+      "key": "alexandari2020labelshift",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Maximum Likelihood with Bias-Corrected Calibration is Hard-To-Beat at Label Shift Adaptation",
+      "bib_year": "2020",
+      "bib_doi": "",
+      "found_title": "Maximum Likelihood with Bias-Corrected Calibration is Hard-To-Beat at Label Shift Adaptation",
+      "found_year": "2019",
+      "found_source": "arxiv",
+      "found_venue": "arXiv",
+      "corroborated_by": [
+        "openalex"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: openalex"
+      ]
+    },
+    {
+      "key": "lee2026distpfn",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Mitigating Label Shift in Tabular In-Context Learning via Test-Time Posterior Adjustment",
+      "bib_year": "2026",
+      "bib_doi": "",
+      "found_title": "Mitigating Label Shift in Tabular In-Context Learning via Test-Time Posterior Adjustment",
+      "found_year": "2026",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [
+        "arxiv"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: arxiv"
+      ]
+    },
+    {
+      "key": "qu2025tabicl",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "TabICL: A Tabular Foundation Model for In-Context Learning on Large Data",
+      "bib_year": "2025",
+      "bib_doi": "",
+      "found_title": "TabICL: A Tabular Foundation Model for In-Context Learning on Large Data",
+      "found_year": "2025",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [
+        "arxiv"
+      ],
+      "confidence": 0.85,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: arxiv"
+      ]
+    },
+    {
+      "key": "qu2026tabiclv2",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "TabICLv2: A Better, Faster, Scalable, and Open Tabular Foundation Model",
+      "bib_year": "2026",
+      "bib_doi": "",
+      "found_title": "TabICLv2: A better, faster, scalable, and open tabular foundation model",
+      "found_year": "2026",
+      "found_source": "arxiv",
+      "found_venue": "arXiv",
+      "corroborated_by": [
+        "openalex"
+      ],
+      "confidence": 0.93,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: openalex"
+      ]
+    },
+    {
+      "key": "wang2026limix2m",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models",
+      "bib_year": "2026",
+      "bib_doi": "",
+      "found_title": "LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models",
+      "found_year": "2026",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "ma2025tabdpt",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "TabDPT: Scaling Tabular Foundation Models on Real Data",
+      "bib_year": "2025",
+      "bib_doi": "10.52202/085713-5748",
+      "found_title": "TabDPT: Scaling Tabular Foundation Models on Real Data",
+      "found_year": "2025",
+      "found_source": "crossref",
+      "found_venue": "Advances in Neural Information Processing Systems 38",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "treerath2026tabaicl",
+      "type": "article",
+      "status": "mismatch",
+      "bib_title": "Active In-Context Learning for Tabular Foundation Models",
+      "bib_year": "2026",
+      "bib_doi": "10.48550/ARXIV.2603.27385",
+      "found_title": "In-Context Learning for Microcontroller Performance Screening Using Tabular Foundation Models",
+      "found_year": "2025",
+      "found_source": "crossref",
+      "found_venue": "2025 28th Euromicro Conference on Digital System Design (DSD)",
+      "corroborated_by": [],
+      "confidence": 0.53,
+      "bib_is_arxiv": true,
+      "published_alt": null,
+      "issues": [
+        "Title differs (sim=0.66): found 'In-Context Learning for Microcontroller Performance Screening Using Tabular Foun'."
+      ],
+      "notes": []
+    },
+    {
+      "key": "helli2024drifttabpfn",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Drift-Resilient TabPFN: In-Context Learning Temporal Distribution Shifts on Tabular Data",
+      "bib_year": "2024",
+      "bib_doi": "10.52202/079017-3134",
+      "found_title": "Drift-Resilient TabPFN: In-Context Learning Temporal Distribution Shifts on Tabular Data",
+      "found_year": "2024",
+      "found_source": "crossref",
+      "found_venue": "Advances in Neural Information Processing Systems 37",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 0.94,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "lv2026strategic",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "When Tabular Foundation Models Meet Strategic Tabular Data: A Prior Alignment Approach",
+      "bib_year": "2026",
+      "bib_doi": "",
+      "found_title": "When Tabular Foundation Models Meet Strategic Tabular Data: A Prior Alignment Approach",
+      "found_year": "2026",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "cox1958binary",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "The Regression Analysis of Binary Sequences",
+      "bib_year": "1958",
+      "bib_doi": "10.1111/j.2517-6161.1958.tb00292.x",
+      "found_title": "The Regression Analysis of Binary Sequences",
+      "found_year": "1958",
+      "found_source": "crossref",
+      "found_venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "hoerl1970ridge",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "Ridge Regression: Biased Estimation for Nonorthogonal Problems",
+      "bib_year": "1970",
+      "bib_doi": "10.1080/00401706.1970.10488634",
+      "found_title": "Ridge Regression: Biased Estimation for Nonorthogonal Problems",
+      "found_year": "1970",
+      "found_source": "crossref",
+      "found_venue": "Technometrics",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "cortes1995svm",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "Support-Vector Networks",
+      "bib_year": "1995",
+      "bib_doi": "10.1007/BF00994018",
+      "found_title": "Support-vector networks",
+      "found_year": "1995",
+      "found_source": "crossref",
+      "found_venue": "Machine Learning",
+      "corroborated_by": [
+        "openalex"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: openalex"
+      ]
+    },
+    {
+      "key": "drucker1996svr",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Support Vector Regression Machines",
+      "bib_year": "1996",
+      "bib_doi": "",
+      "found_title": "Support Vector Regression Machines",
+      "found_year": "1996",
+      "found_source": "openalex",
+      "found_venue": "",
+      "corroborated_by": [],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "cover1967knn",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "Nearest neighbor pattern classification",
+      "bib_year": "1967",
+      "bib_doi": "10.1109/TIT.1967.1053964",
+      "found_title": "Nearest neighbor pattern classification",
+      "found_year": "1967",
+      "found_source": "crossref",
+      "found_venue": "IEEE Transactions on Information Theory",
+      "corroborated_by": [
+        "openalex"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: openalex"
+      ]
+    },
+    {
+      "key": "breiman2001randomforests",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "Random Forests",
+      "bib_year": "2001",
+      "bib_doi": "10.1023/A:1010933404324",
+      "found_title": "Random Forests",
+      "found_year": "2001",
+      "found_source": "crossref",
+      "found_venue": "Machine Learning",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "ke2017lightgbm",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "LightGBM: A Highly Efficient Gradient Boosting Decision Tree",
+      "bib_year": "2017",
+      "bib_doi": "",
+      "found_title": "LightGBM: A Highly Efficient Gradient Boosting Decision Tree",
+      "found_year": "2017",
+      "found_source": "openalex",
+      "found_venue": "HAL (Le Centre pour la Communication Scientifique Directe)",
+      "corroborated_by": [],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "prokhorenkova2018catboost",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "CatBoost: unbiased boosting with categorical features",
+      "bib_year": "2018",
+      "bib_doi": "",
+      "found_title": "CatBoost: unbiased boosting with categorical features",
+      "found_year": "2017",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "chen2016xgboost",
+      "type": "inproceedings",
+      "status": "mismatch",
+      "bib_title": "XGBoost: A Scalable Tree Boosting System",
+      "bib_year": "2016",
+      "bib_doi": "10.1145/2939672.2939785",
+      "found_title": "XGBoost",
+      "found_year": "2016",
+      "found_source": "crossref",
+      "found_venue": "Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+      "corroborated_by": [
+        "openalex"
+      ],
+      "confidence": 0.65,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [
+        "Title differs (sim=0.30): found 'XGBoost'."
+      ],
+      "notes": [
+        "Corroborated by: openalex"
+      ]
+    },
+    {
+      "key": "rumelhart1986backprop",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "Learning Representations by Back-Propagating Errors",
+      "bib_year": "1986",
+      "bib_doi": "10.1038/323533a0",
+      "found_title": "Learning representations by back-propagating errors",
+      "found_year": "1986",
+      "found_source": "crossref",
+      "found_venue": "Nature",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "gorishniy2021fttransformer",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Revisiting Deep Learning Models for Tabular Data",
+      "bib_year": "2021",
+      "bib_doi": "",
+      "found_title": "Revisiting Deep Learning Models for Tabular Data",
+      "found_year": "2021",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "gorishniy2025tabm",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "TabM: Advancing tabular deep learning with parameter-efficient ensembling",
+      "bib_year": "2025",
+      "bib_doi": "",
+      "found_title": "TabM: Advancing Tabular Deep Learning with Parameter-Efficient Ensembling",
+      "found_year": "2024",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "thielmann2024tabularnn",
+      "type": "inproceedings",
+      "status": "mismatch",
+      "bib_title": "On the Efficiency of NLP-Inspired Methods for Tabular Deep Learning",
+      "bib_year": "2024",
+      "bib_doi": "",
+      "found_title": "On the Efficiency of NLP-Inspired Methods for Tabular Deep Learning",
+      "found_year": "2024",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [],
+      "confidence": 0.85,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "ahamed2024mambatab",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "MambaTab: A Plug-and-Play Model for Learning Tabular Data",
+      "bib_year": "2024",
+      "bib_doi": "10.1109/MIPR62202.2024.00065",
+      "found_title": "MambaTab: A Plug-and-Play Model for Learning Tabular Data",
+      "found_year": "2024",
+      "found_source": "crossref",
+      "found_venue": "2024 IEEE 7th International Conference on Multimedia Information Processing and Retrieval (MIPR)",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "holzmueller2024realmlp",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Better by default: Strong pre-tuned MLPs and boosted trees on tabular data",
+      "bib_year": "2024",
+      "bib_doi": "10.52202/079017-0837",
+      "found_title": "Better by default: Strong pre-tuned MLPs and boosted trees on tabular data",
+      "found_year": "2024",
+      "found_source": "crossref",
+      "found_venue": "Advances in Neural Information Processing Systems 37",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 0.9,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "grinsztajn2026tabpfn3technicalreport",
+      "type": "misc",
+      "status": "verified",
+      "bib_title": "TabPFN-3: Technical Report",
+      "bib_year": "2026",
+      "bib_doi": "",
+      "found_title": "TabPFN-3: Technical Report",
+      "found_year": "2026",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [],
+      "confidence": 1.0,
+      "bib_is_arxiv": true,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "bischl2021openml",
+      "type": "inproceedings",
+      "status": "mismatch",
+      "bib_title": "OpenML Benchmarking Suites",
+      "bib_year": "2021",
+      "bib_doi": "",
+      "found_title": "OpenML Benchmarking Suites",
+      "found_year": "2017",
+      "found_source": "openalex",
+      "found_venue": "TU/e Research Portal",
+      "corroborated_by": [],
+      "confidence": 0.83,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [
+        "Year mismatch: bib=2021 vs found=2017."
+      ],
+      "notes": []
+    },
+    {
+      "key": "fischer2023openmlctr23",
+      "type": "inproceedings",
+      "status": "unable",
+      "bib_title": "OpenML-CTR23 A curated tabular regression benchmarking suite",
+      "bib_year": "2023",
+      "bib_doi": "",
+      "found_title": "",
+      "found_year": "",
+      "found_source": "",
+      "found_venue": "",
+      "corroborated_by": [],
+      "confidence": 0.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [
+        "All sources failed/unreachable (offline or rate-limited)."
+      ],
+      "notes": []
+    },
+    {
+      "key": "sagawa2020groupdro",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Distributionally Robust Neural Networks",
+      "bib_year": "2020",
+      "bib_doi": "",
+      "found_title": "Distributionally Robust Neural Networks",
+      "found_year": "2020",
+      "found_source": "openalex",
+      "found_venue": "International Conference on Learning Representations",
+      "corroborated_by": [],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "rockafellar2000cvar",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "Optimization of Conditional Value-at-Risk",
+      "bib_year": "2000",
+      "bib_doi": "10.21314/JOR.2000.038",
+      "found_title": "Optimization of conditional value-at-risk",
+      "found_year": "2000",
+      "found_source": "crossref",
+      "found_venue": "The Journal of Risk",
+      "corroborated_by": [
+        "openalex"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: openalex"
+      ]
+    },
+    {
+      "key": "sun2016deepcoral",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Deep CORAL: Correlation Alignment for Deep Domain Adaptation",
+      "bib_year": "2016",
+      "bib_doi": "10.1007/978-3-319-49409-8_35",
+      "found_title": "Deep CORAL: Correlation Alignment for Deep Domain Adaptation",
+      "found_year": "2016",
+      "found_source": "crossref",
+      "found_venue": "Lecture Notes in Computer Science",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "simonetto2024caa",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Constrained Adaptive Attack: Effective Adversarial Attack Against Deep Neural Networks for Tabular Data",
+      "bib_year": "2024",
+      "bib_doi": "10.52202/079017-0873",
+      "found_title": "Constrained Adaptive Attack: Effective Adversarial Attack Against Deep Neural Networks for Tabular Data",
+      "found_year": "2024",
+      "found_source": "crossref",
+      "found_venue": "Advances in Neural Information Processing Systems 37",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "yun2019cutmix",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "CutMix: Regularization Strategy to Train Strong Classifiers With Localizable Features",
+      "bib_year": "2019",
+      "bib_doi": "10.1109/ICCV.2019.00612",
+      "found_title": "CutMix: Regularization Strategy to Train Strong Classifiers With Localizable Features",
+      "found_year": "2019",
+      "found_source": "crossref",
+      "found_venue": "2019 IEEE/CVF International Conference on Computer Vision (ICCV)",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "madry2018adversarial",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Towards Deep Learning Models Resistant to Adversarial Attacks",
+      "bib_year": "2018",
+      "bib_doi": "",
+      "found_title": "Towards Deep Learning Models Resistant to Adversarial Attacks",
+      "found_year": "2017",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [],
+      "confidence": 0.94,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "zhang2018mixup",
+      "type": "inproceedings",
+      "status": "mismatch",
+      "bib_title": "mixup: Beyond Empirical Risk Minimization",
+      "bib_year": "2018",
+      "bib_doi": "",
+      "found_title": "mixup: Beyond Empirical Risk Minimization",
+      "found_year": "2017",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [],
+      "confidence": 0.85,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "ganin2016domain",
+      "type": "article",
+      "status": "verified",
+      "bib_title": "Domain-Adversarial Training of Neural Networks",
+      "bib_year": "2016",
+      "bib_doi": "",
+      "found_title": "Domain-Adversarial Training of Neural Networks",
+      "found_year": "2017",
+      "found_source": "openalex",
+      "found_venue": "Advances in computer vision and pattern recognition",
+      "corroborated_by": [],
+      "confidence": 0.96,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "krueger2021vrex",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Out-of-Distribution Generalization via Risk Extrapolation (REx)",
+      "bib_year": "2021",
+      "bib_doi": "",
+      "found_title": "Out-of-Distribution Generalization via Risk Extrapolation (REx)",
+      "found_year": "2020",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    },
+    {
+      "key": "zhou2025ftat",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Fully Test-time Adaptation for Tabular Data",
+      "bib_year": "2025",
+      "bib_doi": "10.1609/AAAI.V39I21.34466",
+      "found_title": "Fully Test-time Adaptation for Tabular Data",
+      "found_year": "2025",
+      "found_source": "crossref",
+      "found_venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "corroborated_by": [
+        "crossref"
+      ],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": [
+        "Corroborated by: crossref"
+      ]
+    },
+    {
+      "key": "adachi2025ssa",
+      "type": "inproceedings",
+      "status": "unable",
+      "bib_title": "Test-time Adaptation for Regression by Subspace Alignment",
+      "bib_year": "2025",
+      "bib_doi": "",
+      "found_title": "",
+      "found_year": "",
+      "found_source": "",
+      "found_venue": "",
+      "corroborated_by": [],
+      "confidence": 0.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [
+        "All sources failed/unreachable (offline or rate-limited)."
+      ],
+      "notes": []
+    },
+    {
+      "key": "hasan2025elliptic",
+      "type": "inproceedings",
+      "status": "unable",
+      "bib_title": "Elliptic Loss Regularization",
+      "bib_year": "2025",
+      "bib_doi": "",
+      "found_title": "",
+      "found_year": "",
+      "found_source": "",
+      "found_venue": "",
+      "corroborated_by": [],
+      "confidence": 0.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [
+        "All sources failed/unreachable (offline or rate-limited)."
+      ],
+      "notes": []
+    },
+    {
+      "key": "ding2021folktables",
+      "type": "inproceedings",
+      "status": "verified",
+      "bib_title": "Retiring Adult: New Datasets for Fair Machine Learning",
+      "bib_year": "2021",
+      "bib_doi": "",
+      "found_title": "Retiring Adult: New Datasets for Fair Machine Learning",
+      "found_year": "2021",
+      "found_source": "openalex",
+      "found_venue": "arXiv (Cornell University)",
+      "corroborated_by": [],
+      "confidence": 1.0,
+      "bib_is_arxiv": false,
+      "published_alt": null,
+      "issues": [],
+      "notes": []
+    }
+  ],
+  "summary": {
+    "verified": 44,
+    "mismatch": 5,
+    "unable": 3,
+    "total": 52,
+    "arxiv_with_published": 0
+  }
+}

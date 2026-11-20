@@ -1,0 +1,77 @@
+{
+  "protocol_id": "seven_classification_margin_v1_merged",
+  "task": "classification",
+  "datasets": 35,
+  "detail_rows": 1225,
+  "outer_folds": 5,
+  "selected_outer_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "source_parts": [
+    "PaperResults/failure_recovery_20260913/tabicl/seven_classification_gain020_parts/fold0",
+    "PaperResults/failure_recovery_20260913/tabicl/seven_classification_gain020_parts/fold1",
+    "PaperResults/failure_recovery_20260913/tabicl/seven_classification_gain020_parts/fold2",
+    "PaperResults/failure_recovery_20260913/tabicl/seven_classification_gain020_parts/fold3",
+    "PaperResults/failure_recovery_20260913/tabicl/seven_classification_gain020_parts/fold4"
+  ],
+  "route_profile": "legacy_nostrength",
+  "shared_context_registry_fixed": true,
+  "shared_raw_policy_structure_locked": true,
+  "accepted_shared_source": "/root/tabicl-experiments/fair_budget_experiments/unified_context_ensemble/results/context_only_seven_shift_v12/classification/detail_oof.csv",
+  "accepted_raw_shared_maximum_metric_error": 0.0078125,
+  "accepted_raw_shared_metric_tolerance": 0.008,
+  "accepted_raw_shared_check_enforced": false,
+  "accepted_raw_shared_reproduced": true,
+  "shared_selector_receives_family_or_strength": false,
+  "nominal_strength_used_by_any_policy_selector": false,
+  "policy_selection_unit": "outer_training_dataset_condition",
+  "shared_stagewise_gains_by_fold": {
+    "0": 0.02,
+    "1": 0.02,
+    "2": 0.02,
+    "3": 0.02,
+    "4": 0.02
+  },
+  "shared_stagewise_gain_candidates": [
+    0.02
+  ],
+  "shared_postfusion_router": "outer_train_prediction_diagnostics_only",
+  "specific_context_count_limit": 5,
+  "specific_update_cap": 1.0,
+  "pro_context_count_limit": null,
+  "pro_postfusion_router": "outer_train_prediction_diagnostics_only",
+  "pro_route_fit_scopes": [
+    "pooled_all_shifts",
+    "registered_shift"
+  ],
+  "classification_router_training_target": "minimum_accuracy_balanced_accuracy_auc_gain",
+  "pro_primary_only_route_candidates_excluded": false,
+  "route_selection_priority": "condition_consistency_without_nominal_strength",
+  "binary_pro_stacker": "binary_logit_residual",
+  "pro_raw_context_candidates_by_shift": {
+    "covariate": 30,
+    "label": 31,
+    "concept": 35,
+    "selection": 33,
+    "domain": 30,
+    "temporal": 38,
+    "support": 30
+  },
+  "pro_stagewise_virtual_experts": [
+    "pro/stagewise_specific_delta_1x",
+    "pro/stagewise_specific_delta_2x"
+  ],
+  "pro_global_stagewise_virtual_experts": [
+    "pro/global_base_to_specific_1p25x",
+    "pro/global_base_to_specific_1p50x",
+    "pro/global_base_to_specific_2p00x"
+  ],
+  "specific_and_pro_receive_family_but_not_strength": true,
+  "outer_test_labels_used_for_selection": false,
+  "common_inference_core": "unified_context_ensemble.src.core.predict",
+  "smoothing_or_curve_projection": false
+}

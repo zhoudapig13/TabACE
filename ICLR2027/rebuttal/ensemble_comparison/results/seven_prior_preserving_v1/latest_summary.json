@@ -1,0 +1,51 @@
+{
+  "complete_datasets": 35,
+  "expected_datasets": 35,
+  "complete": true,
+  "current_run_cases": 1015,
+  "old_Base_same_completed_cohort": {
+    "accuracy": 0.752782206632653,
+    "auc": 0.8124573050447789
+  },
+  "prior_preserving_Base": {
+    "accuracy": 0.7772401147959184,
+    "auc": 0.7995425654203651
+  },
+  "new_seven_Clean_diagnostic_only": {
+    "accuracy": 0.8504464285714286,
+    "auc": 0.8620665992192487
+  },
+  "existing_results_overwritten": false,
+  "original_protocol_restoration_proven": false,
+  "family_means_all_completed_cases": {
+    "concept": {
+      "accuracy": 0.7107700892857143,
+      "auc": 0.7286056604121965
+    },
+    "covariate": {
+      "accuracy": 0.74765625,
+      "auc": 0.7653722461245952
+    },
+    "domain": {
+      "accuracy": 0.7595424107142857,
+      "auc": 0.8274590123689078
+    },
+    "label": {
+      "accuracy": 0.8723772321428571,
+      "auc": 0.8736509635710967
+    },
+    "selection": {
+      "accuracy": 0.8278459821428571,
+      "auc": 0.8401865813032886
+    },
+    "support": {
+      "accuracy": 0.7976004464285714,
+      "auc": 0.8149130444728775
+    },
+    "temporal": {
+      "accuracy": 0.7248883928571429,
+      "auc": 0.7466104496895927
+    }
+  },
+  "frozen_files_verified_unchanged": 19482
+}

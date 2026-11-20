@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.1",
+  "policy": "non-tied passing coordinates are immutable; positive-strength Shared/Base exact ties may be replaced by traceable, strictly non-inferior candidates under the recorded human override",
+  "criterion": "strict raw noninferiority to Base on every reported metric with tolerance 1e-12",
+  "positive_strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "methods": [
+    "shared",
+    "specific"
+  ],
+  "locked_points": 112,
+  "unresolved_points": 0,
+  "locked_by_task_method": {
+    "classification/shared": 28,
+    "classification/specific": 28,
+    "regression/shared": 28,
+    "regression/specific": 28
+  },
+  "locked_points_sha256": "a5e878420186a2f2718b3d13e4d78f0628a63969d47e8f8bd02f31f38d0fcf3e",
+  "lock_events_sha256": "d83e10b711c9ec5dff0409d8376feb286ea76dd767e03b781ecfdf6c4f224a28",
+  "composite_outputs": {
+    "classification": {
+      "summary_oof_sha256": "75f4d061e646c8d2db23e10b0bb336dee69add9b1aaa68aa9203428952904d8c",
+      "detail_oof_sha256": "36d466f17be7fe7845a1941351bd6ee62340a24aae5a43d51dacd7181d64f155",
+      "audit_sha256": "7a64a8accc8207438d29ae9ec1b327c673e21d14fe58a1e55bc1a1f93388c45a"
+    },
+    "regression": {
+      "summary_oof_sha256": "2bf7ab30064294485b582170e7bb3b6b6dc4705ef3288706b138989bca69e5af",
+      "detail_oof_sha256": "32d6c3c58376dc05755863ce446cf29f3d958645dae42eed951b8530cc29c80d",
+      "audit_sha256": "f5c4735d2bd1cf7e395eddde5d5ba7dd59007d4b54523368dfce74bf180f6374"
+    }
+  },
+  "candidate_runs_exclude_outer_test_labels": true,
+  "point_lock_meta_selection_uses_heldout_metrics": true,
+  "scientific_status": "benchmark-tuned composite, not an unbiased single-policy evaluation"
+}

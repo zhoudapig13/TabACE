@@ -1,0 +1,49 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "method": "Native-1",
+      "block": "Clean",
+      "context_cap": 2048,
+      "seed": 0,
+      "completed": 35,
+      "expected": 35,
+      "r2": 0.7407362142204691,
+      "nrmse": 0.47853884007864916
+    },
+    {
+      "method": "Native-1",
+      "block": "Five",
+      "context_cap": 2048,
+      "seed": 0,
+      "completed": 700,
+      "expected": 700,
+      "r2": -1.076504029252845,
+      "nrmse": 1.2701100911368408
+    },
+    {
+      "method": "Native-8",
+      "block": "Clean",
+      "context_cap": 2048,
+      "seed": 0,
+      "completed": 35,
+      "expected": 35,
+      "r2": 0.7437808101782085,
+      "nrmse": 0.47588702554820983
+    },
+    {
+      "method": "Native-8",
+      "block": "Five",
+      "context_cap": 2048,
+      "seed": 0,
+      "completed": 700,
+      "expected": 700,
+      "r2": -1.0827237723784273,
+      "nrmse": 1.2728100366181
+    }
+  ],
+  "actual_context_rows_min": 465,
+  "actual_context_rows_max": 2048,
+  "same_input_for_both_methods": true,
+  "seven_not_rerun": true
+}

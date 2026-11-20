@@ -1,0 +1,176 @@
+{
+  "five": {
+    "completed_bank_conditions": 735,
+    "expected_bank_conditions": 735,
+    "complete_dataset_grids": 35,
+    "means_on_complete_dataset_grids_only": {
+      "Base": {
+        "clean": {
+          "r2": 0.7471601183326355,
+          "nrmse": 0.47490216944568847
+        },
+        "shift": {
+          "r2": -1.2864582338297923,
+          "nrmse": 1.3098735210216081
+        }
+      },
+      "Native6_raw": {
+        "clean": {
+          "r2": 0.7496179918420245,
+          "nrmse": 0.4718879153946792
+        },
+        "shift": {
+          "r2": -1.2484472079077555,
+          "nrmse": 1.2961917208062126
+        }
+      },
+      "Native6_source_quantiles": {
+        "clean": {
+          "r2": 0.7435835630072051,
+          "nrmse": 0.4800972762996292
+        },
+        "shift": {
+          "r2": -1.2314486851567426,
+          "nrmse": 1.2859341751529134
+        }
+      },
+      "FeatureMean6_raw": {
+        "clean": {
+          "r2": 0.7458703431338325,
+          "nrmse": 0.47759384718942854
+        },
+        "shift": {
+          "r2": -1.2050409671621132,
+          "nrmse": 1.2915087439930215
+        }
+      },
+      "Median6_raw": {
+        "clean": {
+          "r2": 0.7467321309833016,
+          "nrmse": 0.47563342771213857
+        },
+        "shift": {
+          "r2": -1.2724279396805922,
+          "nrmse": 1.3065918333752617
+        }
+      },
+      "TrimmedMean6_raw": {
+        "clean": {
+          "r2": 0.7469716473599358,
+          "nrmse": 0.4758805644495547
+        },
+        "shift": {
+          "r2": -1.2366837172955134,
+          "nrmse": 1.298618676603113
+        }
+      },
+      "IQR6_keep1_raw_adapted": {
+        "clean": {
+          "r2": 0.7339629827728338,
+          "nrmse": 0.4851291884328447
+        },
+        "shift": {
+          "r2": -1.3934022619871533,
+          "nrmse": 1.3442638032338259
+        }
+      }
+    },
+    "references": {
+      "PHE6": {
+        "completed_conditions": 0,
+        "expected_conditions": 735
+      },
+      "RF_PFN6": {
+        "completed_conditions": 0,
+        "expected_conditions": 735
+      }
+    }
+  },
+  "seven": {
+    "completed_bank_conditions": 215,
+    "expected_bank_conditions": 957,
+    "complete_dataset_grids": 6,
+    "means_on_complete_dataset_grids_only": {
+      "Base": {
+        "clean": {
+          "r2": 0.7518151056184115,
+          "nrmse": 0.45817377923375147
+        },
+        "shift": {
+          "r2": 0.6038769152618155,
+          "nrmse": 0.5838954838432024
+        }
+      },
+      "Native6_raw": {
+        "clean": {
+          "r2": 0.7597957710608233,
+          "nrmse": 0.4460170904059801
+        },
+        "shift": {
+          "r2": 0.6072352162130007,
+          "nrmse": 0.5806561298092019
+        }
+      },
+      "Native6_source_quantiles": {
+        "clean": {
+          "r2": 0.7571524707677865,
+          "nrmse": 0.44837252304381864
+        },
+        "shift": {
+          "r2": 0.5627661847256151,
+          "nrmse": 0.6104248450467338
+        }
+      },
+      "FeatureMean6_raw": {
+        "clean": {
+          "r2": 0.7538819634699058,
+          "nrmse": 0.4549186505746013
+        },
+        "shift": {
+          "r2": 0.6184756774355531,
+          "nrmse": 0.5744499535486538
+        }
+      },
+      "Median6_raw": {
+        "clean": {
+          "r2": 0.7518151056184115,
+          "nrmse": 0.45817377923375147
+        },
+        "shift": {
+          "r2": 0.6038769152618155,
+          "nrmse": 0.5838954838432024
+        }
+      },
+      "TrimmedMean6_raw": {
+        "clean": {
+          "r2": 0.7526839816940089,
+          "nrmse": 0.45658413030304107
+        },
+        "shift": {
+          "r2": 0.6134414775385175,
+          "nrmse": 0.5776492376076067
+        }
+      },
+      "IQR6_keep1_raw_adapted": {
+        "clean": {
+          "r2": 0.7326795811277808,
+          "nrmse": 0.4784473046016943
+        },
+        "shift": {
+          "r2": 0.5673976611010618,
+          "nrmse": 0.6086988575049319
+        }
+      }
+    },
+    "references": {
+      "PHE6": {
+        "completed_conditions": 0,
+        "expected_conditions": 957
+      },
+      "RF_PFN6": {
+        "completed_conditions": 0,
+        "expected_conditions": 957
+      }
+    }
+  }
+}

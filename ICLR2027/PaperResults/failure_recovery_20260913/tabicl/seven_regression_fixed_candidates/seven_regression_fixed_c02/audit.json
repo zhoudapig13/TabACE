@@ -1,0 +1,86 @@
+{
+  "api_version": "tabace-context-ensemble-v1",
+  "protocol_id": "tabace_context_only_information_v4",
+  "task": "regression",
+  "backbone": "TabICL-v2",
+  "checkpoint": "tabicl-regressor-v2-20260212.ckpt",
+  "prediction_bank": "fair_budget_experiments/unified_context_ensemble/results/strict_seven_regression_banks_repairable_v3_base_corrected",
+  "family_prediction_bank_overrides": {},
+  "bank_manipulation_protocol": "repairable_v2",
+  "bank_manipulation_protocol_by_source": {
+    "default": "repairable_v2"
+  },
+  "bank_base_prediction_refreshed_for_manipulation": true,
+  "datasets": 33,
+  "detail_rows": 66,
+  "outer_folds": 5,
+  "selected_outer_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "tier_context_candidates": {
+    "shared": 5,
+    "specific": 10,
+    "pro": 15
+  },
+  "tier_context_candidates_by_shift": {
+    "concept": {
+      "shared": 5,
+      "specific": 10,
+      "pro": 15
+    }
+  },
+  "pro_lower_tier_context_candidates": 2,
+  "pro_effective_context_candidates": 17,
+  "pro_effective_context_candidates_by_shift": {
+    "concept": 17
+  },
+  "shared_context_schema": [
+    "shared/uniform",
+    "shared/quantile",
+    "shared/target_match",
+    "shared/transport",
+    "shared/transport_match"
+  ],
+  "shared_policy": "outer-training adaptive selection",
+  "shared_context_registry_locked": false,
+  "shared_residual_alpha_adaptive": false,
+  "shared_selector_receives_shift": false,
+  "specific_selector_receives_shift": true,
+  "pro_selector_receives_shift": true,
+  "all_selectors_receive_strength": false,
+  "all_selectors_receive_shift_presence": false,
+  "outer_test_labels_used_for_selection": false,
+  "clean_history_or_reference_used": false,
+  "target_labels_used_for_context_construction": false,
+  "outer_training_loss_uses_training_target_scale": true,
+  "inference_uses_target_label_scale": false,
+  "unlabeled_target_features_allowed": true,
+  "one_policy_per_shift_scope_and_outer_fold": true,
+  "training_origin_noninferiority_gate": true,
+  "training_origin_noninferiority_tolerance_nrmse": 0.002,
+  "nested_upgrade_gate_enabled": false,
+  "pro_nested_upgrade_gate_enabled": false,
+  "pro_fold_stability_gate_enabled": true,
+  "benchmark_tuning_override": {
+    "base_downside_penalty": 0.0,
+    "tail_risk_weight": 0.0,
+    "regression_nested_upgrade_gate": false,
+    "regression_pro_nested_upgrade_gate": false,
+    "regression_pro_fold_stability_gate": true,
+    "regression_nested_minimum_gain": 0.0,
+    "regression_origin_noninferiority_gate": true,
+    "regression_origin_noninferiority_tolerance_nrmse": 0.002
+  },
+  "selection_profile": "protocol",
+  "pro_incremental_specific_anchor": true,
+  "pro_requires_incremental_context": false,
+  "hierarchical_tier_anchors": false,
+  "common_inference_core": "unified_context_ensemble.src.core.predict",
+  "common_inference_interface": "unified_context_ensemble.src.inference.run_context_inference",
+  "batch_context_router_uses_only_unlabeled_predictions": true
+}
+

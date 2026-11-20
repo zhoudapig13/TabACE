@@ -1,0 +1,47 @@
+{
+  "task": "classification",
+  "positive_strength_base_macro": 0.7634964923469388,
+  "positive_strength_pro_macro": 0.8071269132653061,
+  "positive_strength_pro_gain": 0.04363042091836722,
+  "clean_strength_base_macro": 0.8408482142857141,
+  "clean_strength_pro_macro": 0.8473214285714283,
+  "clean_strength_pro_gain": 0.006473214285714235,
+  "endpoint_by_shift": {
+    "covariate": {
+      "base_drop": 0.03705357142857146,
+      "pro_gain_over_base": 0.00691964285714286
+    },
+    "label": {
+      "base_drop": 0.17142857142857149,
+      "pro_gain_over_base": 0.04843750000000002
+    },
+    "concept": {
+      "base_drop": 0.24732142857142858,
+      "pro_gain_over_base": 0.21004464285714286
+    },
+    "selection": {
+      "base_drop": 0.04933035714285716,
+      "pro_gain_over_base": 0.012053571428571441
+    },
+    "domain": {
+      "base_drop": 0.08950892857142856,
+      "pro_gain_over_base": 0.08437499999999998
+    },
+    "temporal": {
+      "base_drop": 0.1205357142857143,
+      "pro_gain_over_base": 0.06339285714285714
+    },
+    "support": {
+      "base_drop": 0.0825892857142857,
+      "pro_gain_over_base": 0.0669642857142857
+    }
+  },
+  "base_endpoint_drop_min": 0.03705357142857146,
+  "pro_endpoint_gain_min": 0.00691964285714286,
+  "thresholds": {
+    "positive_gain_min": 0.035,
+    "base_endpoint_drop_min": 0.015,
+    "pro_endpoint_gain_required": 0.0
+  },
+  "passed": true
+}

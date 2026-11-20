@@ -1,0 +1,9 @@
+{
+  "time_unix": 1794188967.1462507,
+  "hashes": {
+    "balanced_clean_calibration_v71.py": "b29f438c6b2b55f545f749f7118dc3eedb17d2711ec990dd8b0ea55dd3acaf38",
+    "continue_balanced_clean_v71.py": "d836c93e983e4659e98a878dd1e362cc753e33690df6cace41637ac314b0ea7a",
+    "audit_balanced_clean_v71.py": "9f6046db9ef3e6a3b070bd5f09776afc1ff2586d271bb9aeec4a1a01b40346ba"
+  },
+  "snapshot_note": "source and fit code frozen before source selection or query evaluation; audit added while source generation runs"
+}

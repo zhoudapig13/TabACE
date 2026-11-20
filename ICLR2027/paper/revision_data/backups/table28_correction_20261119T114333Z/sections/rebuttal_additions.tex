@@ -1,0 +1,248 @@
+% Generated from revision_data/rebuttal_tables.json and author-provided response tables.
+\clearpage
+\begingroup
+\providecolor{revisionblue}{RGB}{25,55,135}
+\color{revisionblue}
+\section{Additional Experiments and Clarifications during Discussion}
+\label{app:rebuttal-additions}
+
+This section collects the additional evaluations discussed in the author
+responses. Newly added material is shown in blue to help locate revisions.
+These supplementary evaluations complement the original results; configuration
+adaptations, development-task changes, and repeated-run statistics are identified
+where applicable rather than replacing the original benchmark definitions.
+
+\subsection{Ensemble Comparisons}
+\label{app:revision-ensembles}
+
+Tables~\ref{tab:revision-tabicl-cls}--\ref{tab:revision-tabpfn-reg} give
+the supplementary ensemble comparisons. Classification cells report
+Accuracy/AUROC and regression cells report $R^2$/nRMSE. Each robustness block
+averages its nonzero strengths over the five perturbation or seven shift families.
+Native-6 uses the backbone's native ensemble; Random-6 averages six sampled
+contexts. GES selects members greedily; convex and log-linear stacking learn
+fixed fusion rules. Median, trimmed-mean, and IQR variants provide robust
+aggregation or uncertainty-based selection controls. DENSE follows demonstration
+ensembling~\citep{khalifa2023dense}; PHE and RF-PFN follow the TabPFN
+ensemble components~\citep{hollmann2025tabpfn}. OligoICP uses low-IQR member
+selection and averaging~\citep{revision_li2025oligo}.
+
+The suffix ``6'' denotes six deployed predictions; Shared uses Base and five
+alternatives. OligoICP $60\!\rightarrow\!6$ and $400\!\rightarrow\!40$
+denote candidate/deployed counts. The latter has a larger deployment budget and
+is reported separately from six-member comparisons. Candidate generation and
+selection are additional preparation costs, not counted as deployed predictions.
+An asterisk marks a component-level or budget-adapted implementation; a dagger
+marks an adapted supplementary configuration, not necessarily backbone fine-tuning.
+
+\input{tables/revision/ensemble_tabicl_cls}
+
+\input{tables/revision/ensemble_tabicl_reg}
+
+\input{tables/revision/ensemble_tabpfn_cls}
+
+\input{tables/revision/ensemble_tabpfn_reg}
+
+
+\subsection{Larger Context Budgets}
+\label{app:revision-large-context}
+We evaluate TabICL-v2 with row caps of 1,024, 4,096, and 8,192 for Base,
+Shared, and Specific. The sample counts are 72 classification/35 regression
+datasets for clean and perturbed evaluation, and 35/33 for shifts.
+These are supplementary calibrated development-benchmark evaluations; the
+regression clean and perturbed tasks include semisynthetic reconstruction.
+For the regression recovery protocol, the original 256-row perturbed core is
+retained and added context rows come from clean training data. Thus these
+recovery results include the contribution of extra clean evidence as the budget
+increases, rather than keeping the contamination fraction fixed.
+Tables~\ref{tab:revision-large-cls} and~\ref{tab:revision-large-reg}
+report the additional results. The compact 256-row budget is also examined in
+TabDPT's inference ablation~\citep{ma2025tabdpt}; it is not its capacity limit.
+
+\input{tables/revision/large_context_cls}
+
+\input{tables/revision/large_context_reg}
+
+
+\subsection{Calibration Coverage and Constructor Matching}
+\label{app:revision-matching}
+The $2\times2$ Shortcut experiment independently varies whether calibration
+includes Shortcut and whether the matched feature-removal constructor is present.
+B/D exclude Shortcut from policy calibration; C/D use nonmatching constructions.
+The comparisons use the same available supervision. This diagnostic separately
+tests calibration transfer and the need for a matched constructor.
+Problem-aware construction is useful when domain knowledge is available: SPN
+constructs strategic contexts for post-manipulation inputs~\citep{lv2026strategic}.
+Shared instead operates without a mechanism identifier.
+
+\input{tables/revision/matching_ablation}
+
+
+\subsection{Unseen Perturbations and Distribution Shifts}
+\label{app:revision-unseen}
+All six mechanisms below are excluded from policy calibration and have no
+dedicated matching constructors added to the Shared bank. Strengths are
+$s\in\{0.2,0.5,0.8,1.0\}$; results average strengths and datasets.
+Use source-feature median $m$ and IQR $a$ (falling back to the standard
+deviation for zero IQR) as location and scale. Heavy-tailed corruption selects
+numeric cells with probability $0.1s$ and adds
+$2a\,\operatorname{clip}(t_2,-20,20)$, with $t_2$ Student-$t$ noise.
+Column misalignment independently permutes approximately half of nonconstant
+columns within approximately $0.5s$ of source rows. Quantization rounds numeric
+source features to a grid with step $sa$.
+
+For sensor transformation let $z=(x-m)/a$ and set
+$\widetilde x=m+a\operatorname{sign}(z)\log(1+s|z|)/s$.
+Rotation randomly pairs numeric features and rotates standardized pairs by
+$s\pi/4$ before restoring scale. These two maps act on target-query features for
+classification and source-context features for regression. Interaction-dependent
+sampling selects up to eight nonconstant feature pairs, computes the average
+product of their standardized, $\tanh$-compressed values $g_i$, and resamples
+complete source rows with $w_i\propto\exp(3s g_i)$. Associated labels travel
+with each row; target labels are not used to generate these changes.
+
+\input{tables/revision/unseen_cls}
+
+\input{tables/revision/unseen_reg}
+
+
+\subsection{Natural Shifts and Repeated Runs}
+\label{app:revision-natural}
+\subsubsection{Folktables Context Lists}
+\label{app:revision-folktables-contexts}
+Geographic transfer uses California to Michigan (2018); temporal transfer uses
+California 2014 to 2018, on Employment, Income, and TravelTime. Specific uses
+source-to-target domain-shift contexts: the five Shared alternatives plus three
+additional constructions, each capped at 512 rows (six/nine predictions including
+Base). The following is the deployed list for this supplementary Folktables study,
+not a uniform branch-count claim for every main-benchmark family.
+For this deployed list, $R_{\mathrm{Shared}}=5$ and
+$R_{\mathrm{Specific}}=8$; including Base gives
+$N_{\mathrm{Shared}}=6$ and $N_{\mathrm{Specific}}=9$ predictions per query.
+The five shared types and three additional Specific types are enumerated below.
+
+Let $z_i$ denote robustly standardized source features, $d_i$ the mean squared distance to the ten nearest target examples, $o_i=\operatorname{mean}_j z_{ij}^2$, and $\delta_i=1-\max_c\frac1{10}\sum_{k\in N_{10}(i)}\mathbf1[y_k=c]$ the source-neighborhood label-conflict score. Unless stated otherwise, we retain the lowest-scoring source rows and sample without replacement.
+
+\begin{itemize}
+
+\item \textbf{Target neighborhood (Shared/Specific):} Form target anchors $A_Q$ from the coordinate-wise 10th, 30th, 50th, 70th, and 90th percentiles; rank by $s_i=\min_{a\in A_Q}\|z_i-a\|_2^2$ and retain 80\%.
+
+\item \textbf{Representative samples (Shared/Specific):} Rank by $s_i=d_i+0.35o_i$ and retain 70\%.
+
+\item \textbf{Local stability (Shared/Specific):} Rank by $s_i=\delta_i+0.10d_i$ and retain 80\%.
+
+\item \textbf{Feature subspace (Shared/Specific):} Remove $j^*=\arg\max_j|\operatorname{corr}(X_j,y)|$ from both context and query, then sample source rows.
+
+\item \textbf{Low conflict (Shared/Specific):} Rank by $s_i=\delta_i+0.20o_i$ and retain 75\%.
+
+\item \textbf{Target-matched bootstrap (Specific):} Standardize continuous features and one-hot encode categorical features; sample with replacement using $w_i\propto\exp(-d_i^{\mathrm{mix}}/h)$, where $d_i^{\mathrm{mix}}$ is the ten-neighbor target distance and $h$ is its positive median, preserving class coverage.
+
+\item \textbf{Density-ratio bootstrap (Specific):} Fit a logistic domain classifier $g(x)$ and sample with replacement using $w_i\propto[\min\{\frac{g(x_i)}{1-g(x_i)}\frac{n_s}{n_t},10\}]^{1/2}$, preserving class coverage; $n_s,n_t$ are source and target sample counts.
+
+\item \textbf{Continuous-feature alignment (Specific):} For prespecified continuous features, apply $T(x)=0.5x+0.5[(x-m_s)s_t/s_s+m_t]$, where $m$ is the median and $s=\max(\mathrm{IQR},1)$. Sample source rows without replacement, retaining source labels and categorical features.
+
+\end{itemize}
+
+
+\subsubsection{Folktables Accuracy Comparisons}
+\label{app:revision-folktables-comparison}
+DistPFN uses the TabICL-v2 backbone~\citep{lee2026distpfn}; Drift-Resilient
+TabPFN uses its own model~\citep{helli2024drifttabpfn}. Table~\ref{tab:revision-folktables}
+reports the accuracy comparisons and baseline dispersions. The separate
+repeated-run configuration below has its own statistics.
+
+\input{tables/revision/folktables_comparison}
+
+
+\subsubsection{Seed Variability}
+\label{app:revision-folktables-variance}
+For a separate source-supervised adapted configuration, repeat seeds 0--4 with
+fixed data partitions and hyperparameters. Table~\ref{tab:revision-folktables-variance}
+reports sample standard deviation and sample variance
+$s^2=\frac14\sum_{k=0}^4(a_k-\bar a)^2$. These quantify context sampling,
+model randomness, and adaptation under the fixed split; they are not attached
+to the different point estimates in Table~\ref{tab:revision-folktables}.
+
+\input{tables/revision/folktables_variance}
+
+
+\subsubsection{Additional Clinical Shifts}
+\label{app:revision-medical}
+PhysioNet Sepsis 2019 uses bidirectional hospital-system A/B transfer. UCI
+Diabetes 130-US Hospitals uses non-emergency-room to emergency-room admission
+source transfer. ID and OOD denote held-out source and target domains.
+The table reports the case--control component evaluation with balanced classes
+(1:1); this changes prevalence relative to the natural clinical population.
+
+\input{tables/revision/medical_shifts}
+
+
+\subsection{Robust Backbone Fine-Tuning}
+\label{app:revision-finetuning}
+FT updates TabICL-v2 on 20\% clean and 80\% corruption-augmented training
+episodes at strengths $\{0.2,0.5,0.8,1.0\}$. AdamW updates the last four ICL
+blocks and prediction components. Held-out training data select checkpoints;
+final evaluation queries do not train or select the models. FT+Shared/Specific
+freeze the fine-tuned backbone and apply context fusion at inference.
+All compared methods use the same queries within this supplementary benchmark.
+Shared/Specific use context-and-fusion-adapted configurations; regression clean
+and five-perturbation results include supplementary semisynthetic tasks.
+
+\input{tables/revision/finetuning}
+
+
+The recorded run configuration uses eight RTX 5090 GPUs (32 GB each), one job
+per GPU, for 175 dataset--track jobs. Selected-model training averages
+41.4 seconds/model; all recorded candidates total 147.8 GPU-minutes. The latter
+is summed device time, not elapsed wall-clock time. For context, the original
+inference-cost experiment reports median Shared latencies of 872 ms for
+classification and 141 ms for regression. Direct inference-time use avoids
+backbone optimization; these timing measurements describe distinct stages.
+
+\subsection{Gate Diagnostics and Robustness Extensions}
+\label{app:revision-gate}
+\subsubsection{High-Confidence Classification Errors}
+\label{app:revision-high-confidence}
+On the reconstructed five-perturbation benchmark, high-confidence Base errors
+(maximum class probability at least 0.9) occupy 2.06--2.44\% of all
+query--condition pairs. An extended update-strength estimator adds relative
+Base/context confidence, disagreement, and branch consensus; branch aggregation
+is unchanged and the added score is calibrated on training folds.
+
+\input{tables/revision/high_confidence}
+
+
+\subsubsection{Single-Branch Extremes and Joint Errors}
+\label{app:revision-regression-robustness}
+The original scalar predictions have no extra clipping. For the single-branch
+extension, replace alternative $\widehat y_i^{(r)}$ by
+\[
+\widetilde y_i^{(r)}=m_i+\operatorname{clip}
+ (\widehat y_i^{(r)}-m_i,-3s_{\mathrm{src}},3s_{\mathrm{src}}),
+\]
+where $m_i$ is the median alternative and $s_{\mathrm{src}}$ the source-label
+standard deviation; Base is unchanged. Exactly one alternative lies outside
+this interval on 0.109--0.379\% of queries. Clipping changes ordinary mean
+$R^2$ by less than 0.0007 in absolute value in all four backbone/track settings.
+In the TabICL five-perturbation single-branch stress test, output-displacement
+P95 falls from 24.264 to 0.996 source standard deviations.
+
+For correlated errors, a severe event means all five alternatives make
+same-direction errors exceeding three evaluation-target standard deviations.
+It is materially harmful when the original fused squared loss exceeds Base's
+by more than 0.01 times target variance. Rates use all nonzero-strength
+query--condition pairs; target labels define these post-hoc events only.
+
+\input{tables/revision/joint_error_frequency}
+
+
+A separate composite extension combines source-calibrated residual correction
+with a learned harm-risk score, contracts risky updates toward Base, and bounds
+their magnitude using the source scale. This differs from single-branch clipping.
+Table~\ref{tab:revision-regression-extension} macro-averages within each track
+and then equally weights five-perturbation and seven-shift tracks.
+
+\input{tables/revision/regression_extension}
+
+\FloatBarrier
+\endgroup

@@ -1,0 +1,667 @@
+{
+  "status": "COMPLETE",
+  "selection_role": "benchmark-development difficulty matching by family",
+  "benchmark_labels_used": true,
+  "method_order_used": false,
+  "family_severities": {
+    "concept": {
+      "amplitude_multiplier": 0.45,
+      "r2": 0.5441662151903006,
+      "nrmse": 0.6373625358053312
+    },
+    "covariate": {
+      "amplitude_multiplier": 0.55,
+      "r2": 0.38683951722089505,
+      "nrmse": 0.6247801898930776
+    },
+    "domain": {
+      "amplitude_multiplier": 1.25,
+      "r2": 0.1706728753817158,
+      "nrmse": 0.8141090099372905
+    },
+    "label": {
+      "amplitude_multiplier": 0.45,
+      "r2": 0.34106220654693675,
+      "nrmse": 0.6769123225313488
+    },
+    "selection": {
+      "amplitude_multiplier": 0.0,
+      "r2": 0.65926477385585,
+      "nrmse": 0.5235407630149999
+    },
+    "support": {
+      "amplitude_multiplier": 0.0,
+      "r2": 0.65926477385585,
+      "nrmse": 0.5235407630149999
+    },
+    "temporal": {
+      "amplitude_multiplier": 1.5,
+      "r2": -0.747434844537862,
+      "nrmse": 1.2382626278359923
+    }
+  },
+  "all_candidates": [
+    {
+      "family": "concept",
+      "amplitude_multiplier": 0.0,
+      "r2": 0.7078184864700052,
+      "nrmse": 0.47622497419131526,
+      "distance": 64.81588943236147
+    },
+    {
+      "family": "concept",
+      "amplitude_multiplier": 0.1,
+      "r2": 0.6985112200522623,
+      "nrmse": 0.4911411033507039,
+      "distance": 56.06564767953141
+    },
+    {
+      "family": "concept",
+      "amplitude_multiplier": 0.35,
+      "r2": 0.6073633382609966,
+      "nrmse": 0.5864769118111526,
+      "distance": 9.799432965073239
+    },
+    {
+      "family": "concept",
+      "amplitude_multiplier": 0.4,
+      "r2": 0.5776353757357563,
+      "nrmse": 0.6113331347024649,
+      "distance": 3.4180811741007737
+    },
+    {
+      "family": "concept",
+      "amplitude_multiplier": 0.45,
+      "r2": 0.5441662151903006,
+      "nrmse": 0.6373625358053312,
+      "distance": 0.23204824926254308
+    },
+    {
+      "family": "concept",
+      "amplitude_multiplier": 0.5,
+      "r2": 0.5072756039094448,
+      "nrmse": 0.6641692709151386,
+      "distance": 1.2416666674991046
+    },
+    {
+      "family": "concept",
+      "amplitude_multiplier": 0.55,
+      "r2": 0.46677941962563946,
+      "nrmse": 0.6918014691958463,
+      "distance": 7.458685181274557
+    },
+    {
+      "family": "concept",
+      "amplitude_multiplier": 0.59,
+      "r2": 0.43172807350115117,
+      "nrmse": 0.7144886408200726,
+      "distance": 16.945461898831734
+    },
+    {
+      "family": "concept",
+      "amplitude_multiplier": 0.75,
+      "r2": 0.26763399044998926,
+      "nrmse": 0.8098992461731165,
+      "distance": 108.66091328852761
+    },
+    {
+      "family": "concept",
+      "amplitude_multiplier": 1.25,
+      "r2": -0.4896598022568219,
+      "nrmse": 1.1359516352485457,
+      "distance": 1428.7607528462972
+    },
+    {
+      "family": "concept",
+      "amplitude_multiplier": 1.5,
+      "r2": -1.0118849351082102,
+      "nrmse": 1.309498491410372,
+      "distance": 3139.8686745441205
+    },
+    {
+      "family": "concept",
+      "amplitude_multiplier": 1.0,
+      "r2": -0.06389657625573236,
+      "nrmse": 0.9685888001861565,
+      "distance": 512.0476861451771
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 0.0,
+      "r2": 0.6666861086680697,
+      "nrmse": 0.5157208591223775,
+      "distance": 123.86013783499726
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 0.1,
+      "r2": 0.6547464298717924,
+      "nrmse": 0.526322740492932,
+      "distance": 112.37766993196723
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 0.35,
+      "r2": 0.6222991910637121,
+      "nrmse": 0.5541606952021657,
+      "distance": 84.3639621532034
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 0.4,
+      "r2": 0.618319601722304,
+      "nrmse": 0.556938915772701,
+      "distance": 81.41900285861382
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 0.45,
+      "r2": 0.6027214276402384,
+      "nrmse": 0.5699439888365235,
+      "distance": 69.73281568934944
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 0.5,
+      "r2": 0.5058843535694443,
+      "nrmse": 0.6008600656816684,
+      "distance": 26.650282006541705
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 0.55,
+      "r2": 0.38683951722089505,
+      "nrmse": 0.6247801898930776,
+      "distance": 7.497189024567355
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 0.59,
+      "r2": 0.4603339261836168,
+      "nrmse": 0.6260394754143668,
+      "distance": 12.293539169806206
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 0.75,
+      "r2": 0.01480567564946673,
+      "nrmse": 0.6829020519831822,
+      "distance": 159.40670678856475
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 1.25,
+      "r2": 0.2235756079726264,
+      "nrmse": 0.6956558677753976,
+      "distance": 31.964242975708505
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 1.5,
+      "r2": 0.259897150776547,
+      "nrmse": 0.6968037392810176,
+      "distance": 19.742383110532412
+    },
+    {
+      "family": "covariate",
+      "amplitude_multiplier": 1.0,
+      "r2": -0.051811843862939654,
+      "nrmse": 0.7115710149548328,
+      "distance": 219.69623776208442
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 0.0,
+      "r2": 0.707812519711961,
+      "nrmse": 0.4762327051397865,
+      "distance": 509.2540876688689
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 0.1,
+      "r2": 0.6748464927045437,
+      "nrmse": 0.5212529039826964,
+      "distance": 435.48077145030095
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 0.35,
+      "r2": 0.5613031783258167,
+      "nrmse": 0.6147072169286211,
+      "distance": 258.5077802396483
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 0.4,
+      "r2": 0.5359291609282562,
+      "nrmse": 0.6311894452364007,
+      "distance": 227.37409186521492
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 0.45,
+      "r2": 0.5106702890943697,
+      "nrmse": 0.646542686927473,
+      "distance": 198.81217164096216
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 0.5,
+      "r2": 0.4853149458910641,
+      "nrmse": 0.6613912046656448,
+      "distance": 172.29467792940466
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 0.55,
+      "r2": 0.461187484799903,
+      "nrmse": 0.6750366019482632,
+      "distance": 149.00068221437905
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 0.59,
+      "r2": 0.44174800479359255,
+      "nrmse": 0.685619841023497,
+      "distance": 131.59908284049123
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 0.75,
+      "r2": 0.37068757845125655,
+      "nrmse": 0.7222158484127108,
+      "distance": 77.71031673273046
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 1.25,
+      "r2": 0.1706728753817158,
+      "nrmse": 0.8141090099372905,
+      "distance": 2.3084577805034407
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 1.5,
+      "r2": 0.0845801071347118,
+      "nrmse": 0.8500911396317307,
+      "distance": 2.761697914622792
+    },
+    {
+      "family": "domain",
+      "amplitude_multiplier": 1.0,
+      "r2": 0.26778138112035643,
+      "nrmse": 0.7709267083276912,
+      "distance": 25.304547418974234
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 0.0,
+      "r2": 0.65926477385585,
+      "nrmse": 0.5235407630149999,
+      "distance": 426.5730822638444
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 0.1,
+      "r2": 0.6502345900436685,
+      "nrmse": 0.527992618111755,
+      "distance": 412.9366803310111
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 0.35,
+      "r2": 0.5599360956282861,
+      "nrmse": 0.5963761469841556,
+      "distance": 274.0180139991738
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 0.4,
+      "r2": 0.41756197393940536,
+      "nrmse": 0.633862227945869,
+      "distance": 143.73060109243528
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 0.45,
+      "r2": 0.34106220654693675,
+      "nrmse": 0.6769123225313488,
+      "distance": 83.3959659842005
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 0.5,
+      "r2": -0.428647096368717,
+      "nrmse": 0.7987039729464093,
+      "distance": 368.26397215736483
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 0.55,
+      "r2": -0.771918484643076,
+      "nrmse": 0.8814496055632173,
+      "distance": 930.5017853844653
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 0.59,
+      "r2": -0.9995815585362335,
+      "nrmse": 0.9137793624028685,
+      "distance": 1453.2564873564224
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 0.75,
+      "r2": -3.0087361682356604,
+      "nrmse": 1.2440427114654065,
+      "distance": 11196.276436438586
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 1.25,
+      "r2": -4.300375446970523,
+      "nrmse": 1.6923195044498265,
+      "distance": 22696.263862395426
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 1.5,
+      "r2": -4.983635976067031,
+      "nrmse": 1.8368900571908897,
+      "distance": 30250.333947680076
+    },
+    {
+      "family": "label",
+      "amplitude_multiplier": 1.0,
+      "r2": -3.9902151639196393,
+      "nrmse": 1.5168918514004364,
+      "distance": 19452.69339866202
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 0.0,
+      "r2": 0.65926477385585,
+      "nrmse": 0.5235407630149999,
+      "distance": 5.3467497679969185
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 0.1,
+      "r2": 0.6488704580293535,
+      "nrmse": 0.5306490350349037,
+      "distance": 7.421796995552368
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 0.35,
+      "r2": -0.025979407300705123,
+      "nrmse": 0.6925583967640825,
+      "distance": 650.5851085578065
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 0.4,
+      "r2": 0.3764305767888343,
+      "nrmse": 0.6933687215539395,
+      "distance": 175.31381963566326
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 0.45,
+      "r2": -0.19376448343234437,
+      "nrmse": 0.7818554358598747,
+      "distance": 1007.5748018299764
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 0.5,
+      "r2": -0.4268080517532116,
+      "nrmse": 0.8502271023943878,
+      "distance": 1586.545111421898
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 0.55,
+      "r2": -0.5364867537990972,
+      "nrmse": 0.8902293215715198,
+      "distance": 1911.5705743017443
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 0.59,
+      "r2": -1.3692400741587492,
+      "nrmse": 1.0069632001159041,
+      "distance": 5106.806169824692
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 0.75,
+      "r2": -1.1486860803208157,
+      "nrmse": 1.0494761749453636,
+      "distance": 4195.597567685093
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 1.25,
+      "r2": -0.9072038879925597,
+      "nrmse": 1.047414886358156,
+      "distance": 3261.8664715891573
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 1.5,
+      "r2": -0.4884011744131111,
+      "nrmse": 1.0073866145114787,
+      "distance": 1905.035251920154
+    },
+    {
+      "family": "selection",
+      "amplitude_multiplier": 1.0,
+      "r2": -0.9441553009430751,
+      "nrmse": 1.0498559847757696,
+      "distance": 3399.065462398807
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 0.0,
+      "r2": 0.65926477385585,
+      "nrmse": 0.5235407630149999,
+      "distance": 2.539399253648182
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 0.1,
+      "r2": 0.6554740163709362,
+      "nrmse": 0.5254018760102421,
+      "distance": 2.976492339822356
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 0.35,
+      "r2": 0.6278451016173241,
+      "nrmse": 0.5533722413374366,
+      "distance": 9.215588833436586
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 0.4,
+      "r2": 0.6289018072772027,
+      "nrmse": 0.5509976164179614,
+      "distance": 8.729756794511086
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 0.45,
+      "r2": 0.6185398845072773,
+      "nrmse": 0.5596887971910975,
+      "distance": 11.586219495983226
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 0.5,
+      "r2": 0.6167048883760226,
+      "nrmse": 0.5625969340252939,
+      "distance": 12.358739040045862
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 0.55,
+      "r2": 0.6125266526292138,
+      "nrmse": 0.570456105954693,
+      "distance": 14.440313912823987
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 0.59,
+      "r2": 0.6032076879371626,
+      "nrmse": 0.5788906539738095,
+      "distance": 17.79214760080114
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 0.75,
+      "r2": 0.6011171018472462,
+      "nrmse": 0.5830895749207489,
+      "distance": 19.072890304254226
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 1.25,
+      "r2": 0.5773336388947194,
+      "nrmse": 0.6049552474269485,
+      "distance": 29.617962025669634
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 1.5,
+      "r2": 0.5487917302816288,
+      "nrmse": 0.629950854818435,
+      "distance": 44.94092667967394
+    },
+    {
+      "family": "support",
+      "amplitude_multiplier": 1.0,
+      "r2": 0.5770130199806757,
+      "nrmse": 0.602938881282951,
+      "distance": 29.18065717390683
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 0.0,
+      "r2": 0.707812519711961,
+      "nrmse": 0.4762327051397865,
+      "distance": 2584.238687303786
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 0.1,
+      "r2": 0.6674585153359662,
+      "nrmse": 0.5290714324423751,
+      "distance": 2390.2802055072116
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 0.35,
+      "r2": 0.5192949908241026,
+      "nrmse": 0.656112087902422,
+      "distance": 1825.0638433837835
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 0.4,
+      "r2": 0.4806198075261471,
+      "nrmse": 0.6829465786413043,
+      "distance": 1697.4280232225378
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 0.45,
+      "r2": 0.44147107867647595,
+      "nrmse": 0.7085745650231758,
+      "distance": 1574.6138219198144
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 0.5,
+      "r2": 0.40020468556632605,
+      "nrmse": 0.7341966161279582,
+      "distance": 1451.5865060757612
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 0.55,
+      "r2": 0.3573018097835983,
+      "nrmse": 0.7597673170292085,
+      "distance": 1330.0708864180754
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 0.59,
+      "r2": 0.32147104718475905,
+      "nrmse": 0.7803684105819373,
+      "distance": 1233.3873515334903
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 0.75,
+      "r2": 0.17055277337870184,
+      "nrmse": 0.8615685113169732,
+      "distance": 870.8772317812994
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 1.25,
+      "r2": -0.4055066356768907,
+      "nrmse": 1.112995728284169,
+      "distance": 83.0914044908578
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 1.5,
+      "r2": -0.747434844537862,
+      "nrmse": 1.2382626278359923,
+      "distance": 23.262030572653593
+    },
+    {
+      "family": "temporal",
+      "amplitude_multiplier": 1.0,
+      "r2": -0.09794361920750991,
+      "nrmse": 0.9875338984668489,
+      "distance": 391.9728642853339
+    }
+  ],
+  "target": {
+    "support": {
+      "r2": 0.6914403339208989,
+      "nrmse": 0.4881826993974345
+    },
+    "label": {
+      "r2": 0.14307955889660087,
+      "nrmse": 0.8662776852964105
+    },
+    "domain": {
+      "r2": 0.125784681582426,
+      "nrmse": 0.8220249470195631
+    },
+    "covariate": {
+      "r2": 0.3928261361512709,
+      "nrmse": 0.7067047314901661
+    },
+    "selection": {
+      "r2": 0.7071458891660365,
+      "nrmse": 0.47334640488731927
+    },
+    "temporal": {
+      "r2": -0.6789612656119748,
+      "nrmse": 1.1107981366846582
+    },
+    "concept": {
+      "r2": 0.529879965441122,
+      "nrmse": 0.6395411804391308
+    }
+  },
+  "macro": {
+    "r2": 0.28769078821624083,
+    "nrmse": 0.7197868874332914
+  }
+}

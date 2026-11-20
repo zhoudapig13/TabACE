@@ -1,0 +1,32 @@
+{
+  "tested_claim": "The K=5 inference-cost figure uses five alternative Contexts plus one separately evaluated Base branch, and propensity caching preserves predictions.",
+  "input_sources": [
+    "fair_budget_experiments/k5_inference_cost_reproduction/exp44_k5_component_efficiency/results/component_timing_detail.csv",
+    "fair_budget_experiments/k5_inference_cost_reproduction/exp45_k5_propensity_cache/results/prediction_equivalence.csv"
+  ],
+  "protocol": {
+    "alternative_contexts": 5,
+    "base_evaluated_separately": true,
+    "expected_nonbase_backbone_calls": 6,
+    "datasets_per_task": 3,
+    "shift_families": 7,
+    "strength": 0.5,
+    "device": "NVIDIA GeForce RTX 4090"
+  },
+  "checks": [
+    {
+      "metric": "observed_backbone_calls",
+      "expected": 6,
+      "observed": 6,
+      "status": "PASS"
+    },
+    {
+      "metric": "max_abs_prediction_difference_after_cache",
+      "expected": 0.0,
+      "observed": 0.0,
+      "status": "PASS"
+    }
+  ],
+  "limitation": "Latency is hardware- and environment-dependent; the figure reports this synchronized RTX 4090 run.",
+  "fallback_trigger_relevance": "none"
+}

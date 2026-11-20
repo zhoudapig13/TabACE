@@ -1,0 +1,1115 @@
+{
+  "sha": "a6e75afb82d13e7abb46deade3669c4106b3d636",
+  "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/a6e75afb82d13e7abb46deade3669c4106b3d636",
+  "tree": [
+    {
+      "path": ".idea",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5fd6d16fdbd28c6ec9426dab1a6d386b6f19ec87",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/5fd6d16fdbd28c6ec9426dab1a6d386b6f19ec87"
+    },
+    {
+      "path": ".idea/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13566b81b018ad684f3a35fee301741b2734c8f4",
+      "size": 176,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/13566b81b018ad684f3a35fee301741b2734c8f4"
+    },
+    {
+      "path": ".idea/Drift-Resilient_TabPFN.iml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b8c395472a5a6b3598af42086e590417ace9933",
+      "size": 441,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/8b8c395472a5a6b3598af42086e590417ace9933"
+    },
+    {
+      "path": ".idea/inspectionProfiles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b5a0b01b5b38a7acdfc8ee8ab629fba6635ad771",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/b5a0b01b5b38a7acdfc8ee8ab629fba6635ad771"
+    },
+    {
+      "path": ".idea/inspectionProfiles/Project_Default.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4733e1e68985f781548b7d541ca75354d701195b",
+      "size": 2515,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/4733e1e68985f781548b7d541ca75354d701195b"
+    },
+    {
+      "path": ".idea/inspectionProfiles/profiles_settings.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "105ce2da2d6447d11dfe32bfb846c3d5b199fc99",
+      "size": 174,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/105ce2da2d6447d11dfe32bfb846c3d5b199fc99"
+    },
+    {
+      "path": ".idea/misc.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e557d17a7adc64a668108b10003b7ccdea2818d9",
+      "size": 276,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e557d17a7adc64a668108b10003b7ccdea2818d9"
+    },
+    {
+      "path": ".idea/modules.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "209ca0d53ef08b904d27e7e4598cafdd0b4977a0",
+      "size": 296,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/209ca0d53ef08b904d27e7e4598cafdd0b4977a0"
+    },
+    {
+      "path": ".idea/vcs.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35eb1ddfbbc029bcab630581847471d7f238ec53",
+      "size": 167,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/35eb1ddfbbc029bcab630581847471d7f238ec53"
+    },
+    {
+      "path": "Drift_Resilient_TabPFN_Demo.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e80da1ea403e1f483bbab2eef845eade77b6f61",
+      "size": 40833,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/2e80da1ea403e1f483bbab2eef845eade77b6f61"
+    },
+    {
+      "path": "LICENSE.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5c866c32c5ff2e50713c02e17e081ce7d09bf74",
+      "size": 11477,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/a5c866c32c5ff2e50713c02e17e081ce7d09bf74"
+    },
+    {
+      "path": "LICENSES",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f5247fd97c142a2dfd3c34d354a0de662a2f9a4f",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/f5247fd97c142a2dfd3c34d354a0de662a2f9a4f"
+    },
+    {
+      "path": "LICENSES/GPL-3.0.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46ff6af23613039fea787ff4cb6f7f60588bf97a",
+      "size": 34892,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/46ff6af23613039fea787ff4cb6f7f60588bf97a"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec74799ab7ff5837b57f0044a7bb1800954452fc",
+      "size": 6014,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/ec74799ab7ff5837b57f0044a7bb1800954452fc"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b719fef06080c4f0ebf14f185475d659d9787b7",
+      "size": 709,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/9b719fef06080c4f0ebf14f185475d659d9787b7"
+    },
+    {
+      "path": "requirements-experiments.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8eaafbc4dadb9e076a4e4d878c89228cf4ac42f9",
+      "size": 688,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/8eaafbc4dadb9e076a4e4d878c89228cf4ac42f9"
+    },
+    {
+      "path": "requirements-release.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "416670258de3f34c4ea9d9f1b83c40d5cea28add",
+      "size": 421,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/416670258de3f34c4ea9d9f1b83c40d5cea28add"
+    },
+    {
+      "path": "tabpfn",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dddde867836df2063808bf821756847f9c703552",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/dddde867836df2063808bf821756847f9c703552"
+    },
+    {
+      "path": "tabpfn/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef9d7fd37c727ca66e64445f298161b9fd32be8f",
+      "size": 155,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/ef9d7fd37c727ca66e64445f298161b9fd32be8f"
+    },
+    {
+      "path": "tabpfn/best_models.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b2f51ea1ba818fcd03de9819b716eac6fbf1b6b",
+      "size": 10828,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/8b2f51ea1ba818fcd03de9819b716eac6fbf1b6b"
+    },
+    {
+      "path": "tabpfn/datasets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "027892b2104a59a5dab6fc153095e3dd7ad3cc04",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/027892b2104a59a5dab6fc153095e3dd7ad3cc04"
+    },
+    {
+      "path": "tabpfn/datasets/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "865813d08ccdb04d37813b24a70e69b93038eba3",
+      "size": 54917,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/865813d08ccdb04d37813b24a70e69b93038eba3"
+    },
+    {
+      "path": "tabpfn/datasets/benchmark_dids.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f81188f525f1d404ae9342db5616e402c41e559e",
+      "size": 11840,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/f81188f525f1d404ae9342db5616e402c41e559e"
+    },
+    {
+      "path": "tabpfn/datasets/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fbdff204f5f8ec904b5ce367e325e364068f2a8f",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/fbdff204f5f8ec904b5ce367e325e364068f2a8f"
+    },
+    {
+      "path": "tabpfn/datasets/data/2-Moons",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "173928d99d61c34376ab6d616d17393c9544a40b",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/173928d99d61c34376ab6d616d17393c9544a40b"
+    },
+    {
+      "path": "tabpfn/datasets/data/2-Moons/X.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd0e78e776e6555392ccc07d2266662a1e69d9b0",
+      "size": 35328,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/fd0e78e776e6555392ccc07d2266662a1e69d9b0"
+    },
+    {
+      "path": "tabpfn/datasets/data/2-Moons/Y.npy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b472899a0c720a63228bad824eeebe9bcf0decfa",
+      "size": 17728,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/b472899a0c720a63228bad824eeebe9bcf0decfa"
+    },
+    {
+      "path": "tabpfn/datasets/data/absenteeism_at_work.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4760632b5c939727039e2c6a845f262892ae9a27",
+      "size": 44491,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/4760632b5c939727039e2c6a845f262892ae9a27"
+    },
+    {
+      "path": "tabpfn/datasets/data/airlines.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84ad7d163b635ad51e6cad601c63bf682af43e1a",
+      "size": 21039847,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/84ad7d163b635ad51e6cad601c63bf682af43e1a"
+    },
+    {
+      "path": "tabpfn/datasets/data/behaviour_of_urban_traffic_sao_paulo.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24b3598ba6ee6f9471875b6920be1800eaff2a27",
+      "size": 5590,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/24b3598ba6ee6f9471875b6920be1800eaff2a27"
+    },
+    {
+      "path": "tabpfn/datasets/data/chess.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed66c77e5ba5bc86ac5c7ca7bec5a54f9b13c3f3",
+      "size": 23100,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/ed66c77e5ba5bc86ac5c7ca7bec5a54f9b13c3f3"
+    },
+    {
+      "path": "tabpfn/datasets/data/cleveland_heart_disease.csv",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "290c4574bbe40863e62c957bb60afc358785a758",
+      "size": 18541,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/290c4574bbe40863e62c957bb60afc358785a758"
+    },
+    {
+      "path": "tabpfn/datasets/data/data_istanbul_stock_exchange.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b960147884b662c90c897988765afcc6c198209a",
+      "size": 63533,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/b960147884b662c90c897988765afcc6c198209a"
+    },
+    {
+      "path": "tabpfn/datasets/data/diabetes_pima_indians.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e6a36214b9dcd6e9a29dd1199cf0496782a2745",
+      "size": 23105,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/9e6a36214b9dcd6e9a29dd1199cf0496782a2745"
+    },
+    {
+      "path": "tabpfn/datasets/data/diabetes_questionaire.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ba8d90c4a260b44e4d7351098aa13ae11dd18b2",
+      "size": 34161,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/3ba8d90c4a260b44e4d7351098aa13ae11dd18b2"
+    },
+    {
+      "path": "tabpfn/datasets/data/diabetic_data.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "347452bb27adbfa13aeee888f9478686a32bbb96",
+      "size": 19057616,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/347452bb27adbfa13aeee888f9478686a32bbb96"
+    },
+    {
+      "path": "tabpfn/datasets/data/elec2.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf2b6c9dafaa30e8935d6b1040e720cb77dae4b9",
+      "size": 2025720,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/cf2b6c9dafaa30e8935d6b1040e720cb77dae4b9"
+    },
+    {
+      "path": "tabpfn/datasets/data/free_light_chain_mortality.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a3f1da4dcf6345bb8574a95ead36801db5889b4",
+      "size": 386453,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/6a3f1da4dcf6345bb8574a95ead36801db5889b4"
+    },
+    {
+      "path": "tabpfn/datasets/data/housing_ames.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d68e0d76ce5c7d0e20e7883a48893a9696d3a041",
+      "size": 460676,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/d68e0d76ce5c7d0e20e7883a48893a9696d3a041"
+    },
+    {
+      "path": "tabpfn/datasets/data/hyperplane_5feats_3drift_0-5mag_0-1noise.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b578ab3f6830daf148065c28674baa2edb56791",
+      "size": 157119,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/6b578ab3f6830daf148065c28674baa2edb56791"
+    },
+    {
+      "path": "tabpfn/datasets/data/indian_liver_patient.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "42b77ee10116b12c5afe795334d7a96533e4b7e4",
+      "size": 23347,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/42b77ee10116b12c5afe795334d7a96533e4b7e4"
+    },
+    {
+      "path": "tabpfn/datasets/data/occupancy_detection.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4a204c0577088145f7a0b4c57a3fd24631339bf",
+      "size": 1496961,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/f4a204c0577088145f7a0b4c57a3fd24631339bf"
+    },
+    {
+      "path": "tabpfn/datasets/data/parking_birmingham.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29a0a8787b1077225cfe08ab9046c876b9af3a27",
+      "size": 1479909,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/29a0a8787b1077225cfe08ab9046c876b9af3a27"
+    },
+    {
+      "path": "tabpfn/datasets/data/randomrbfdrift_4classes_8features_10centroids_10shiftingcentroids_2changespeed.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfbcdc93200cffa5a7c2a208f2f69a9bfc2e0d6a",
+      "size": 243728,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/bfbcdc93200cffa5a7c2a208f2f69a9bfc2e0d6a"
+    },
+    {
+      "path": "tabpfn/datasets/dist_shift_datasets.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd4e95b242a37708a2ba7a6504f9848a5bcdc6b2",
+      "size": 66026,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/bd4e95b242a37708a2ba7a6504f9848a5bcdc6b2"
+    },
+    {
+      "path": "tabpfn/local_settings.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03afd8bc131383f8499bec340f616e738c38c3e2",
+      "size": 2905,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/03afd8bc131383f8499bec340f616e738c38c3e2"
+    },
+    {
+      "path": "tabpfn/model",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "575618cfb8965eadea128edeb171ec745d0a1604",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/575618cfb8965eadea128edeb171ec745d0a1604"
+    },
+    {
+      "path": "tabpfn/model/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b04e7d2c64fb5522e4f76806303fd33feadbbf3",
+      "size": 1742,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/8b04e7d2c64fb5522e4f76806303fd33feadbbf3"
+    },
+    {
+      "path": "tabpfn/model/bar_distribution.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d36b188cf2a81b9526b3946bae40eca19d15a808",
+      "size": 17199,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/d36b188cf2a81b9526b3946bae40eca19d15a808"
+    },
+    {
+      "path": "tabpfn/model/encoders.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c90c7010cf29746feb4245e5d4d57afe5b1548f4",
+      "size": 34770,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/c90c7010cf29746feb4245e5d4d57afe5b1548f4"
+    },
+    {
+      "path": "tabpfn/model/layer.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69da9472cc992e27344a2db94c8b0ad29659cf1f",
+      "size": 16355,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/69da9472cc992e27344a2db94c8b0ad29659cf1f"
+    },
+    {
+      "path": "tabpfn/model/mlp.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91eb809712b77eb32f008779a1d51ec954b99fa9",
+      "size": 4631,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/91eb809712b77eb32f008779a1d51ec954b99fa9"
+    },
+    {
+      "path": "tabpfn/model/multi_head_attention.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5834d7ed0b474ac2a6102098820dd698b8dbd12",
+      "size": 24951,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e5834d7ed0b474ac2a6102098820dd698b8dbd12"
+    },
+    {
+      "path": "tabpfn/model/save_peak_mem_factor.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1f05572a4db5475cf3e871a725736e8f20ba998",
+      "size": 2956,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/d1f05572a4db5475cf3e871a725736e8f20ba998"
+    },
+    {
+      "path": "tabpfn/model/transformer.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a8a29b98a3eaaca73c653faa918e58aef53b45f",
+      "size": 28468,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/4a8a29b98a3eaaca73c653faa918e58aef53b45f"
+    },
+    {
+      "path": "tabpfn/model/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "357613d80414725c0bc7f54f60d045e19578b727",
+      "size": 1000,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/357613d80414725c0bc7f54f60d045e19578b727"
+    },
+    {
+      "path": "tabpfn/model_cache",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9b2fd60a2af79f8666864682b78181f3be279026",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/9b2fd60a2af79f8666864682b78181f3be279026"
+    },
+    {
+      "path": "tabpfn/model_cache/tabpfn_base_model_1.cpkt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c8f90f1afd0447d7f0e89438c9c3624a51feb86",
+      "size": 29007720,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/6c8f90f1afd0447d7f0e89438c9c3624a51feb86"
+    },
+    {
+      "path": "tabpfn/model_cache/tabpfn_base_model_2.cpkt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "357d4e6f5e2977ab273c6173b6be7cf6de6c9476",
+      "size": 29007720,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/357d4e6f5e2977ab273c6173b6be7cf6de6c9476"
+    },
+    {
+      "path": "tabpfn/model_cache/tabpfn_base_model_3.cpkt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fdaa2b4abd596e3b41ae2d4a96d1f928e174ffb",
+      "size": 29007720,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/0fdaa2b4abd596e3b41ae2d4a96d1f928e174ffb"
+    },
+    {
+      "path": "tabpfn/model_cache/tabpfn_dist_ablation_no_t2v_model_1.cpkt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "073ee66cebad02752f0a847eec279eafaacd8879",
+      "size": 29009992,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/073ee66cebad02752f0a847eec279eafaacd8879"
+    },
+    {
+      "path": "tabpfn/model_cache/tabpfn_dist_model_1.cpkt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af25c55c0e886d389b2fb75a073c1e2c21d774df",
+      "size": 29085946,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/af25c55c0e886d389b2fb75a073c1e2c21d774df"
+    },
+    {
+      "path": "tabpfn/model_cache/tabpfn_dist_model_2.cpkt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3905d6f319617965026ea08e4fae1158e3625ea",
+      "size": 29085946,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/f3905d6f319617965026ea08e4fae1158e3625ea"
+    },
+    {
+      "path": "tabpfn/model_cache/tabpfn_dist_model_3.cpkt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a41621ee749eb69376645b72e70dd5629fae195",
+      "size": 29085946,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/5a41621ee749eb69376645b72e70dd5629fae195"
+    },
+    {
+      "path": "tabpfn/scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3c3ce74a579ffb03ffda7f0573326679608ddc29",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/3c3ce74a579ffb03ffda7f0573326679608ddc29"
+    },
+    {
+      "path": "tabpfn/scripts/decision_boundary.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9c9e44755c9d5f0e433f72f8231b49ba0cc1da7",
+      "size": 7243,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/b9c9e44755c9d5f0e433f72f8231b49ba0cc1da7"
+    },
+    {
+      "path": "tabpfn/scripts/estimator",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d62f05097d08589f9c305e166279390ac8a67bab",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/d62f05097d08589f9c305e166279390ac8a67bab"
+    },
+    {
+      "path": "tabpfn/scripts/estimator/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1cdeccd277c620888c208f33893ea21a0e82308d",
+      "size": 731,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/1cdeccd277c620888c208f33893ea21a0e82308d"
+    },
+    {
+      "path": "tabpfn/scripts/estimator/base.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df637c75e94534b4ec55fcbfe49e638e10ca2c39",
+      "size": 119404,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/df637c75e94534b4ec55fcbfe49e638e10ca2c39"
+    },
+    {
+      "path": "tabpfn/scripts/estimator/base_dist_shift.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f878c956a41d238b44fef203c94be3cdb53482c",
+      "size": 11252,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/8f878c956a41d238b44fef203c94be3cdb53482c"
+    },
+    {
+      "path": "tabpfn/scripts/estimator/configs.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc9a9533bfadb448d05357e53b30807983f8137b",
+      "size": 8877,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/bc9a9533bfadb448d05357e53b30807983f8137b"
+    },
+    {
+      "path": "tabpfn/scripts/estimator/feature_transformers.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a7722b81bdae6c8b0efbfe02ea26405ff801d66",
+      "size": 4655,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/3a7722b81bdae6c8b0efbfe02ea26405ff801d66"
+    },
+    {
+      "path": "tabpfn/scripts/estimator/preprocessing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18f966f4d6f2fe17847af7e28073d9210a6d0ed5",
+      "size": 33064,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/18f966f4d6f2fe17847af7e28073d9210a6d0ed5"
+    },
+    {
+      "path": "tabpfn/scripts/estimator/scoring_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31cf1b52d0c94b79c60029da9f252d2808eb87c0",
+      "size": 5343,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/31cf1b52d0c94b79c60029da9f252d2808eb87c0"
+    },
+    {
+      "path": "tabpfn/scripts/model_builder.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f38bce41ea37e10415c25ba92cdd7bde017f00b6",
+      "size": 22699,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/f38bce41ea37e10415c25ba92cdd7bde017f00b6"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_baselines",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cd35dd16a67f37ea5481d6dc6d0426bd1137547b",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/cd35dd16a67f37ea5481d6dc6d0426bd1137547b"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_baselines/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dedbfab4510a4ad7da6ce0de10c53f29b7701a94",
+      "size": 5254,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/dedbfab4510a4ad7da6ce0de10c53f29b7701a94"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_baselines/custom_folds.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07911e3b6b335bfcb360da7c88f5321ff2305458",
+      "size": 8932,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/07911e3b6b335bfcb360da7c88f5321ff2305458"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_baselines/methods",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5c1e7dd98c63b043cdb971204a37f298b38fa86e",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/5c1e7dd98c63b043cdb971204a37f298b38fa86e"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_baselines/methods/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "356623db2b057de761b7ebd64522318e33c20053",
+      "size": 181,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/356623db2b057de761b7ebd64522318e33c20053"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_baselines/methods/catboost.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23320d80dfbe71cd180f819be2f661eb7893c972",
+      "size": 4412,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/23320d80dfbe71cd180f819be2f661eb7893c972"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_baselines/methods/lightgbm.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f796c500ba37530271582ad4b65872d30b89461",
+      "size": 2484,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/2f796c500ba37530271582ad4b65872d30b89461"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_baselines/methods/tabpfn.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8e8d1584b15b6104e3051b8b964a067f85ea471",
+      "size": 5701,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/c8e8d1584b15b6104e3051b8b964a067f85ea471"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_baselines/methods/wildtime.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d16f89edd62fa8e496eea487f0f2e9c2b6f4bda",
+      "size": 18100,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/4d16f89edd62fa8e496eea487f0f2e9c2b6f4bda"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_baselines/methods/xgb.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40d6219049fab39aa91e1cd19c2cf65a91c8a1d3",
+      "size": 3757,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/40d6219049fab39aa91e1cd19c2cf65a91c8a1d3"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_baselines/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5477f980d8bea4972dccb4b143fbf66a814f701b",
+      "size": 39285,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/5477f980d8bea4972dccb4b143fbf66a814f701b"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_evaluation.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff91752d3fdc104271e7dae14328007b2df492df",
+      "size": 32833,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/ff91752d3fdc104271e7dae14328007b2df492df"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_evaluation_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8791fa2f804102202e0b688cce6112402c49a8bc",
+      "size": 5630,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/8791fa2f804102202e0b688cce6112402c49a8bc"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_metrics",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cedf52b8aa3dd9dd474bc6b6aa7ccbcfeeffbac7",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/cedf52b8aa3dd9dd474bc6b6aa7ccbcfeeffbac7"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_metrics/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "529b2168cb884019533700546048b740c431d363",
+      "size": 85,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/529b2168cb884019533700546048b740c431d363"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_metrics/classification.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e472c27a393e0e48ba2eaaed456166fcfe67882d",
+      "size": 9209,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e472c27a393e0e48ba2eaaed456166fcfe67882d"
+    },
+    {
+      "path": "tabpfn/scripts/tabular_metrics/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2628b6df1a0d4aa997ff8a679ec71579342e16f2",
+      "size": 15592,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/2628b6df1a0d4aa997ff8a679ec71579342e16f2"
+    },
+    {
+      "path": "tabpfn/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a64996f0be32c34a18e90ecd08d76345cb6edc03",
+      "size": 24192,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/a64996f0be32c34a18e90ecd08d76345cb6edc03"
+    },
+    {
+      "path": "vendor",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eef2b52c3adda1a5cabcd667a612b796811c3e7b",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/eef2b52c3adda1a5cabcd667a612b796811c3e7b"
+    },
+    {
+      "path": "vendor/wildtime",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0812859a84756ddb7ff9a33a204859c600265fa6",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/0812859a84756ddb7ff9a33a204859c600265fa6"
+    },
+    {
+      "path": "vendor/wildtime/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/baseline_trainer.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38cbf227667a2b69053adcec411d26297d6dc3c4",
+      "size": 974,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/38cbf227667a2b69053adcec411d26297d6dc3c4"
+    },
+    {
+      "path": "vendor/wildtime/config.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cbae84dee11d7bd799f9e2d17c110a7663d0926d",
+      "size": 2675,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/cbae84dee11d7bd799f9e2d17c110a7663d0926d"
+    },
+    {
+      "path": "vendor/wildtime/configs_builder.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "849a594e79ca484e35bd8bb06eb2880e631a444e",
+      "size": 5502,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/849a594e79ca484e35bd8bb06eb2880e631a444e"
+    },
+    {
+      "path": "vendor/wildtime/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8546918f5bbd13d1533b8998863b6d8c9cedc775",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/8546918f5bbd13d1533b8998863b6d8c9cedc775"
+    },
+    {
+      "path": "vendor/wildtime/data/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/data/datasets.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "868310a7b3aa819552b0d170a44caeec8399d6fc",
+      "size": 14255,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/868310a7b3aa819552b0d170a44caeec8399d6fc"
+    },
+    {
+      "path": "vendor/wildtime/methods",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a1c8039821f9e2f89b34241005297c976ca9c295",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/a1c8039821f9e2f89b34241005297c976ca9c295"
+    },
+    {
+      "path": "vendor/wildtime/methods/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "864dec704ffc48cce35f468a0c42de0a79d1dc10",
+      "size": 247,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/864dec704ffc48cce35f468a0c42de0a79d1dc10"
+    },
+    {
+      "path": "vendor/wildtime/methods/agem",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c0d9f823c4b39251aa2550002242875f9e91d562",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/c0d9f823c4b39251aa2550002242875f9e91d562"
+    },
+    {
+      "path": "vendor/wildtime/methods/agem/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/methods/agem/agem.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f04587e3cf8c8b164531e0569726eb026e03ac99",
+      "size": 6762,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/f04587e3cf8c8b164531e0569726eb026e03ac99"
+    },
+    {
+      "path": "vendor/wildtime/methods/agem/buffer.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59e53e2217cc9946c3f776adc4878f30c2b5bc4b",
+      "size": 8303,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/59e53e2217cc9946c3f776adc4878f30c2b5bc4b"
+    },
+    {
+      "path": "vendor/wildtime/methods/base_trainer.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c1fa6750774bca44aa417ee32342b5e344f0581",
+      "size": 16359,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/7c1fa6750774bca44aa417ee32342b5e344f0581"
+    },
+    {
+      "path": "vendor/wildtime/methods/coral",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b5157733d21d0c95b83c3c0e57976cc1105170b",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/4b5157733d21d0c95b83c3c0e57976cc1105170b"
+    },
+    {
+      "path": "vendor/wildtime/methods/coral/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/methods/coral/coral.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a0596fecdcdc03680d13100d46dfa639f9e4cda",
+      "size": 4564,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/6a0596fecdcdc03680d13100d46dfa639f9e4cda"
+    },
+    {
+      "path": "vendor/wildtime/methods/dataloaders.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "514b595f17b5976d047585a4f2ba19d13eea2a34",
+      "size": 4201,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/514b595f17b5976d047585a4f2ba19d13eea2a34"
+    },
+    {
+      "path": "vendor/wildtime/methods/erm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dd1c952107c6e1617b4fa81ca5ddf66f2ddf0d92",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/dd1c952107c6e1617b4fa81ca5ddf66f2ddf0d92"
+    },
+    {
+      "path": "vendor/wildtime/methods/erm/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/methods/erm/erm.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8450d1aa4eaaec8f13e20f055f3adbe20d0c57f7",
+      "size": 427,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/8450d1aa4eaaec8f13e20f055f3adbe20d0c57f7"
+    },
+    {
+      "path": "vendor/wildtime/methods/ewc",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3aed8b53514ac6989a52d6e2c4fd5f3022eea219",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/3aed8b53514ac6989a52d6e2c4fd5f3022eea219"
+    },
+    {
+      "path": "vendor/wildtime/methods/ewc/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/methods/ewc/ewc.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2caa17e884854684de4b616b64d433548badc387",
+      "size": 9669,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/2caa17e884854684de4b616b64d433548badc387"
+    },
+    {
+      "path": "vendor/wildtime/methods/ft",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ff82dd38144a8a23e06df36b805a68727d7faab1",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/ff82dd38144a8a23e06df36b805a68727d7faab1"
+    },
+    {
+      "path": "vendor/wildtime/methods/ft/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/methods/ft/ft.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6e62b8471ca561d030347992512e3b78640daf1",
+      "size": 238,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/c6e62b8471ca561d030347992512e3b78640daf1"
+    },
+    {
+      "path": "vendor/wildtime/methods/groupdro",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "954a650dfd9905af6578b8d2e7b9a08e6c67883e",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/954a650dfd9905af6578b8d2e7b9a08e6c67883e"
+    },
+    {
+      "path": "vendor/wildtime/methods/groupdro/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/methods/groupdro/groupdro.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a396077545fe574ca05268aee0d96de4a21bb5c0",
+      "size": 3715,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/a396077545fe574ca05268aee0d96de4a21bb5c0"
+    },
+    {
+      "path": "vendor/wildtime/methods/groupdro/loss.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e715b53e4ae204297d3d6051460714d790f54135",
+      "size": 10180,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e715b53e4ae204297d3d6051460714d790f54135"
+    },
+    {
+      "path": "vendor/wildtime/methods/irm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1a1fbc202937a2a0776cf16faeffe7870547b587",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/1a1fbc202937a2a0776cf16faeffe7870547b587"
+    },
+    {
+      "path": "vendor/wildtime/methods/irm/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/methods/irm/irm.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48e81429e2e65564f0ba42fe9c236ee550ee45f8",
+      "size": 4476,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/48e81429e2e65564f0ba42fe9c236ee550ee45f8"
+    },
+    {
+      "path": "vendor/wildtime/methods/lisa.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15963d721666b1d4b9371298753dbb5e28fee89b",
+      "size": 3149,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/15963d721666b1d4b9371298753dbb5e28fee89b"
+    },
+    {
+      "path": "vendor/wildtime/methods/mixup.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82639302473c3a69734aec43ba5181e11690706e",
+      "size": 654,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/82639302473c3a69734aec43ba5181e11690706e"
+    },
+    {
+      "path": "vendor/wildtime/methods/si",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8e0b06bccc25b05cb0617ee92cb13c3b291489fd",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/8e0b06bccc25b05cb0617ee92cb13c3b291489fd"
+    },
+    {
+      "path": "vendor/wildtime/methods/si/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/methods/si/si.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efba4ad858376159212bee614a85c3dc5fa10bc5",
+      "size": 6849,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/efba4ad858376159212bee614a85c3dc5fa10bc5"
+    },
+    {
+      "path": "vendor/wildtime/methods/swa",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6460552a6dbebc63118c03a8a1478dc62e326b72",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/6460552a6dbebc63118c03a8a1478dc62e326b72"
+    },
+    {
+      "path": "vendor/wildtime/methods/swa/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/methods/swa/swa.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3f9361ef496f435afe6db2814d942889795ac7e",
+      "size": 6111,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/c3f9361ef496f435afe6db2814d942889795ac7e"
+    },
+    {
+      "path": "vendor/wildtime/methods/utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d449d057d21d478644389dd4fd5403decd1713cd",
+      "size": 3783,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/d449d057d21d478644389dd4fd5403decd1713cd"
+    },
+    {
+      "path": "vendor/wildtime/networks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "220d82cf4d82c0c465d368bf881d5f0f6ec6b398",
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/trees/220d82cf4d82c0c465d368bf881d5f0f6ec6b398"
+    },
+    {
+      "path": "vendor/wildtime/networks/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "vendor/wildtime/networks/ftt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7c3da02d8ee1375dff0aeee096b91c1b534d5dd",
+      "size": 1683,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/f7c3da02d8ee1375dff0aeee096b91c1b534d5dd"
+    },
+    {
+      "path": "vendor/wildtime/networks/mlp.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4429e31419e5255193e7a2b488ed6aa08729ba7",
+      "size": 2562,
+      "url": "https://api.github.com/repos/automl/Drift-Resilient_TabPFN/git/blobs/b4429e31419e5255193e7a2b488ed6aa08729ba7"
+    }
+  ],
+  "truncated": false
+}

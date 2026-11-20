@@ -1,0 +1,2 @@
+task,benchmark,strength,n_datasets,mean_base_r2,mean_base_nmae,mean_base_nrmse,mean_shared_r2,mean_shared_nmae,mean_shared_nrmse,mean_specific_r2,mean_specific_nmae,mean_specific_nrmse,mean_pro_r2,mean_pro_nmae,mean_pro_nrmse
+regression,seven,0.0,33,0.7276846891939045,0.3005975346992799,0.44799299061028236,0.7279731996033283,0.30358495492212095,0.44875840574747805,0.7280155099710749,0.30161467802935144,0.4477475949898578,0.7265174215050964,0.3033991231676375,0.45076019293278047

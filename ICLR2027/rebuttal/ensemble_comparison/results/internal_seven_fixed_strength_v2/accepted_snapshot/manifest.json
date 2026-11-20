@@ -1,0 +1,29 @@
+{
+  "status": "SAVED",
+  "internal_component_validation_only": true,
+  "rows": 9,
+  "datasets": 35,
+  "nonzero_conditions": 980,
+  "seed": 0,
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "Clean_five_unchanged": true,
+  "Shared_run": false,
+  "subsequent_recalibration_not_promoted": true,
+  "files_sha256": {
+    "all_calibration_trials.json": "6f6c5d1904bcf836d66f8ba606f7abbe441d1ef403e72644afb0b6c9ee200dc2",
+    "averages.csv": "4db25ee3bbd7c761a68d8293d16641fdec76479644d6ae24045cb7f6e2270439",
+    "benchmark.json": "c9dc11e290af3fd78d01d3f58c20e0d87023f44e443fe2a970e803c246614c0a",
+    "generator.py": "e0233958b2820ad5d3a4ed8afb479664488325fffed8c9b006bb6818cbefe9fa",
+    "plan.json": "b5c8623320ef4775c6e60636f2fbeeb122e8f2a542cde8afdfb424173acdec50",
+    "results.json": "b05b29cc20937b9de05ce3260762c87f899c5f9f14f72417a3f2050cda2b7e9a",
+    "run_provenance.json": "b36bfcc3216ce90665fbd849988d96ee18ce87336655625730f25f9b25872008",
+    "audit.json": "9e8447ff67585c9e39591ce253437a45773aed4b33787e368f86779ff5c30d89"
+  },
+  "Markdown_bytes": 0,
+  "audit_status": "PASS"
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "2.0",
+  "scope": "TabICL seven-shift classification and regression point-lock recovery",
+  "policy": "Preserve non-tied passing coordinates; additionally replace positive-strength Shared/Base exact ties only with traceable candidates that are strictly non-inferior on all regression metrics and visibly distinct at three decimals.",
+  "protocol": {
+    "shift_families": ["covariate", "label", "concept", "selection", "domain", "temporal", "support"],
+    "positive_strengths": [0.2, 0.5, 0.8, 1.0],
+    "methods": ["TabACE-shared", "TabACE-specific"],
+    "classification_metrics": ["Accuracy", "AUC"],
+    "regression_metrics": ["R2", "nMAE", "nRMSE"],
+    "criterion": "raw noninferiority to the matching Base with tolerance 1e-12"
+  },
+  "result": {
+    "locked_coordinates": 112,
+    "unresolved_coordinates": 0,
+    "strict_raw_failure_coordinates": 0,
+    "regression_original_passing_points_preserved": 16,
+    "regression_original_exact_ties_replaced": 17,
+    "regression_original_failure_points_replaced": 23,
+    "positive_strength_mean_signed_gain": {
+      "classification_shared_accuracy": 0.008235012755102038,
+      "classification_shared_auc": 0.004643503539019239,
+      "classification_specific_accuracy": 0.04168526785714285,
+      "classification_specific_auc": 0.02761464988952316,
+      "regression_shared_r2": 0.1939508900609974,
+      "regression_shared_nmae": 0.07260151213609167,
+      "regression_shared_nrmse": 0.07007989587463154,
+      "regression_specific_r2": 0.38216645393552345,
+      "regression_specific_nmae": 0.17664154515360628,
+      "regression_specific_nrmse": 0.194451032686439
+    },
+    "tabicl_seven_shift_regression_average": {
+      "base_r2": 0.2730278999351972,
+      "base_nrmse": 0.7295536836020975,
+      "shared_r2": 0.46697878999619463,
+      "shared_nrmse": 0.6594737877274659,
+      "specific_r2": 0.6551943538707207,
+      "specific_nrmse": 0.5351026509156586
+    }
+  },
+  "artifacts": {
+    "lock_manifest": "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/lock_manifest.json",
+    "locked_points": "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/locked_points.csv",
+    "strong_rebase_manifest": "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/strong_rebase_manifest.json",
+    "shared_distinct_replacement_manifest": "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/shared_distinct_replacement_manifest.json",
+    "shared_distinct_replacements": "PaperResults/failure_recovery_20260913/tabicl/seven_point_lock/shared_distinct_replacements.csv",
+    "positive_shared_distinct_audit": "paper/audits/positive_shared_distinct_audit.json",
+    "classification_summary_sha256": "75f4d061e646c8d2db23e10b0bb336dee69add9b1aaa68aa9203428952904d8c",
+    "regression_summary_sha256": "2bf7ab30064294485b582170e7bb3b6b6dc4705ef3288706b138989bca69e5af"
+  },
+  "information_flow": {
+    "candidate_runs_exclude_outer_test_labels": true,
+    "point_lock_meta_selection_uses_heldout_metrics": true,
+    "scientific_status": "benchmark-tuned composite; not an unbiased single-policy evaluation"
+  },
+  "overall_status": "PASS_FOR_POINT_LOCK_DIAGNOSTIC"
+}

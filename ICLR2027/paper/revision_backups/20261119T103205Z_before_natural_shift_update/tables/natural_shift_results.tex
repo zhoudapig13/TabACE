@@ -1,0 +1,38 @@
+\definecolor{sharedblue}{RGB}{31,84,147}
+\definecolor{specificred}{RGB}{213,94,0}
+
+\begin{table}[H]
+  \centering
+  \caption{ID and OOD Accuracy under natural geographic and temporal shifts.}
+  \label{tab:natural-shifts}
+  \small
+  \setlength{\tabcolsep}{4.4pt}
+  \renewcommand{\arraystretch}{1.02}
+  \begin{tabular}{llcccccc}
+    \toprule
+    & & \multicolumn{3}{c}{Geographic: California $\rightarrow$ Michigan (2018)}
+      & \multicolumn{3}{c}{Temporal: California 2014 $\rightarrow$ 2018} \\
+    \cmidrule(lr){3-5}\cmidrule(lr){6-8}
+    Method & Domain & Employment & Income & TravelTime
+      & Employment & Income & TravelTime \\
+    \midrule
+    \multicolumn{8}{l}{\textit{Accuracy} $\uparrow$} \\
+    Base & ID
+      & 0.7922 & 0.7888 & 0.5912 & 0.7704 & 0.7926 & 0.5951 \\
+         & OOD
+      & 0.8043 & 0.7655 & 0.5472 & 0.7847 & 0.7844 & 0.5908 \\
+    Shared & ID
+      & \textcolor{sharedblue}{0.7948} & \textcolor{sharedblue}{0.7951} & \textcolor{sharedblue}{0.5945}
+      & \textcolor{sharedblue}{0.7751} & \textcolor{sharedblue}{0.7968} & \textcolor{sharedblue}{0.6032} \\
+         & OOD
+      & \textcolor{sharedblue}{0.8078} & \textcolor{sharedblue}{0.7832} & \textcolor{sharedblue}{0.5961}
+      & \textcolor{sharedblue}{0.7900} & \textcolor{sharedblue}{0.7937} & \textcolor{sharedblue}{0.5975} \\
+    Specific & ID
+      & \textcolor{specificred}{\textbf{0.7979}} & \textcolor{specificred}{\textbf{0.7955}} & \textcolor{specificred}{\textbf{0.6002}}
+      & \textcolor{specificred}{\textbf{0.7757}} & \textcolor{specificred}{\textbf{0.7980}} & \textcolor{specificred}{\textbf{0.6061}} \\
+         & OOD
+      & \textcolor{specificred}{\textbf{0.8089}} & \textcolor{specificred}{\textbf{0.7840}} & \textcolor{specificred}{\textbf{0.6034}}
+      & \textcolor{specificred}{\textbf{0.7916}} & \textcolor{specificred}{\textbf{0.7947}} & \textcolor{specificred}{\textbf{0.5981}} \\
+    \bottomrule
+  \end{tabular}
+\end{table}

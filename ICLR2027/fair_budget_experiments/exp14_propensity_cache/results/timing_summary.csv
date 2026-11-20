@@ -1,0 +1,3 @@
+family,cells,timed_repeats,logical_calls,median_original_seconds,median_cached_seconds,median_propensity_setup_seconds,repeated_inference_speedup,amortized_two_batches_original_seconds,amortized_two_batches_cached_seconds
+shared_context_6,21,3,6,0.679874412715435,0.1355767957866192,0.5407188609242439,5.014681227497601,1.35974882543087,0.8118724524974823
+specific_context_6,21,3,6,0.6721267476677895,0.13583894073963165,0.5407188609242439,4.947968115829788,1.344253495335579,0.8123967424035072

@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "input": "experiment17/results/tabdpt_v1_2/{unified_bank,final_bank}",
+  "output": "PaperResults/tabdpt_shared_opt_20260920/shared_v2_oof",
+  "backbone": "TabDPT v1.2",
+  "checkpoint": "tabdpt1_2.safetensors",
+  "shared_context_registry": [
+    "target_matched_a",
+    "target_matched_b",
+    "target_matched_c",
+    "recent_heavy",
+    "prior_context"
+  ],
+  "metrics": {
+    "origin": {
+      "accuracy": 0.8368303571428571,
+      "balanced_accuracy": 0.7850382240419645,
+      "auc": 0.8755468456177589
+    },
+    "positive_strength_mean": {
+      "accuracy": 0.7814253826530613,
+      "balanced_accuracy": 0.7391412055234535,
+      "auc": 0.8314521900211367
+    },
+    "base_positive_strength_mean": {
+      "accuracy": 0.7740832270408163,
+      "balanced_accuracy": 0.7290899934810596,
+      "auc": 0.8209019832471022
+    }
+  },
+  "warnings": [],
+  "elapsed_seconds": 39.44006705284119
+}

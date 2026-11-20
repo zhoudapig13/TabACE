@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "benchmark": "seven",
+  "task": "regression",
+  "evaluation": "complete five-fold outer OOF on strength-0 only",
+  "prediction_bank": "fair_budget_experiments/unified_context_ensemble/results/strict_seven_regression_banks_v1",
+  "datasets": 33,
+  "outer_folds": 5,
+  "family_or_shift_identity_used": false,
+  "outer_test_labels_used_for_selection": false,
+  "positive_strength_rows_read_or_written": 0,
+  "context_counts": {
+    "shared": 1,
+    "specific": 3,
+    "pro": 5
+  },
+  "alpha_grid": [
+    0.25,
+    0.2,
+    0.15,
+    0.1,
+    0.075,
+    0.05,
+    0.025,
+    0.01
+  ],
+  "training_macro_abs_gap_limit": 0.003,
+  "held_out_macro_abs_gap_limit": 0.01,
+  "held_out_signed_gaps": {
+    "shared": {
+      "r2": 0.00028851040942379225,
+      "nmae": 0.002987420222841042,
+      "nrmse": 0.0007654151371956908
+    },
+    "specific": {
+      "r2": 0.00033082077717039304,
+      "nmae": 0.0010171433300715238,
+      "nrmse": -0.0002453956204245822
+    },
+    "pro": {
+      "r2": -0.001167267688808149,
+      "nmae": 0.0028015884683575965,
+      "nrmse": 0.002767202322498108
+    }
+  },
+  "maximum_prediction_difference_from_base": {
+    "shared": 105560.67500000005,
+    "specific": 46795.427083333256,
+    "pro": 109001.69999999995
+  },
+  "all_upper_tier_predictions_nonidentical_to_base": true,
+  "held_out_macro_gap_passed": true
+}

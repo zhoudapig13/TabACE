@@ -1,0 +1,485 @@
+{
+  "status": "COMPLETE",
+  "seed": 0,
+  "records": [
+    {
+      "method": "Base",
+      "annotation": "",
+      "backbone_weight_finetuning": false,
+      "clean": {
+        "r2": 0.7471601183326355,
+        "nrmse": 0.47490216944568847
+      },
+      "five": {
+        "r2": -1.2864582338297923,
+        "nrmse": 1.3098735210216081
+      },
+      "seven": {
+        "r2": 0.4256912141607607,
+        "nrmse": 0.6686247015281267
+      }
+    },
+    {
+      "method": "Native6_original",
+      "five": {
+        "r2": -1.2484472079077555,
+        "nrmse": 1.2961917208062126
+      },
+      "clean": {
+        "r2": 0.7496179918420246,
+        "nrmse": 0.4718879153946792
+      },
+      "seven": {
+        "r2": 0.3738830990730075,
+        "nrmse": 0.6666988401610395
+      },
+      "annotation": "",
+      "backbone_weight_finetuning": false,
+      "budget_group": "six native estimators",
+      "adaptation": "Original native six-estimator configuration; no dedicated adaptation",
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true
+    },
+    {
+      "method": "Native6",
+      "annotation": "†‡",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.2343321797196891,
+        "nrmse": 1.287316498034622
+      },
+      "clean": {
+        "r2": 0.7438056890726112,
+        "nrmse": 0.4793171151573964
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.3738830990730075,
+        "nrmse": 0.6666988401610395
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "budget_group": "six logical candidates/configurations",
+      "adaptation": "Input/context bank and combiner calibration using other dataset folds"
+    },
+    {
+      "method": "GES6",
+      "annotation": "†‡",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.222453485856157,
+        "nrmse": 1.2942553934915215
+      },
+      "clean": {
+        "r2": 0.7471195240542967,
+        "nrmse": 0.47569637388953123
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.4416486824892812,
+        "nrmse": 0.6644382086183465
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "budget_group": "six logical candidates/configurations",
+      "adaptation": "Input/context bank and combiner calibration using other dataset folds"
+    },
+    {
+      "method": "ConvexStacking6",
+      "annotation": "†‡",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.220454837527307,
+        "nrmse": 1.2943948223608686
+      },
+      "clean": {
+        "r2": 0.7471055731053845,
+        "nrmse": 0.47603140530316634
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.4210622219497804,
+        "nrmse": 0.6666165048167253
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "budget_group": "six logical candidates/configurations",
+      "adaptation": "Input/context bank and combiner calibration using other dataset folds"
+    },
+    {
+      "method": "RidgeStacking6",
+      "annotation": "†‡",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.2188173281791934,
+        "nrmse": 1.2941367158233723
+      },
+      "clean": {
+        "r2": 0.746992831076755,
+        "nrmse": 0.47620831223706384
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.4186326090421752,
+        "nrmse": 0.6678239204804701
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "budget_group": "six logical candidates/configurations",
+      "adaptation": "Input/context bank and combiner calibration using other dataset folds"
+    },
+    {
+      "method": "Median6",
+      "annotation": "†‡",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.2754822943071196,
+        "nrmse": 1.3070079742179246
+      },
+      "clean": {
+        "r2": 0.7465521052330711,
+        "nrmse": 0.47561957896272344
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.4288103775303285,
+        "nrmse": 0.6666897492910839
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "budget_group": "six logical candidates/configurations",
+      "adaptation": "Input/context bank and combiner calibration using other dataset folds"
+    },
+    {
+      "method": "FeatureMean6",
+      "annotation": "†‡",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.212803478902993,
+        "nrmse": 1.292774323330993
+      },
+      "clean": {
+        "r2": 0.7467887412675606,
+        "nrmse": 0.47649394824724467
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.43041904830731836,
+        "nrmse": 0.6655649660003723
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "budget_group": "six logical candidates/configurations",
+      "adaptation": "Input/context bank and combiner calibration using other dataset folds"
+    },
+    {
+      "method": "TrimmedMean6",
+      "annotation": "†‡",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.2366837172955134,
+        "nrmse": 1.2986186766031127
+      },
+      "clean": {
+        "r2": 0.7469716473599358,
+        "nrmse": 0.4758805644495547
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.4251032677483646,
+        "nrmse": 0.6665985620992193
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "budget_group": "six logical candidates/configurations",
+      "adaptation": "Input/context bank and combiner calibration using other dataset folds"
+    },
+    {
+      "method": "IQR6_keep1_adapted",
+      "annotation": "†‡",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.2865815682654185,
+        "nrmse": 1.3099304662640594
+      },
+      "clean": {
+        "r2": 0.7472330749895381,
+        "nrmse": 0.47483031500328404
+      },
+      "five_at_least_Base": false,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.4368962295114461,
+        "nrmse": 0.6664600019939602
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "budget_group": "six logical candidates/configurations",
+      "adaptation": "Input/context bank and combiner calibration using other dataset folds"
+    },
+    {
+      "method": "PHE6",
+      "annotation": "†‡",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.2733346858061103,
+        "nrmse": 1.3055163314564526
+      },
+      "clean": {
+        "r2": 0.749253382872503,
+        "nrmse": 0.4727322583169655
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.4048750721097595,
+        "nrmse": 0.6725235486771111
+      },
+      "seven_at_least_Base": false,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "budget_group": "six logical candidates/configurations",
+      "adaptation": "Official source holdout selection in a controlled six-seed portfolio"
+    },
+    {
+      "method": "RF_PFN6",
+      "annotation": "†‡",
+      "backbone_weight_finetuning": false,
+      "five": {
+        "r2": -1.244465647863581,
+        "nrmse": 1.2993491847826453
+      },
+      "clean": {
+        "r2": 0.7508689423623256,
+        "nrmse": 0.4711576004927373
+      },
+      "five_at_least_Base": true,
+      "five_below_historical_Shared": true,
+      "seven": {
+        "r2": 0.4375388121094313,
+        "nrmse": 0.6600725508299321
+      },
+      "seven_at_least_Base": true,
+      "seven_below_historical_Shared": true,
+      "clean_within_005": true,
+      "budget_group": "six trees, variable node contexts and prediction calls",
+      "adaptation": "Official adaptive forest; six trees, depth two and source-only pruning"
+    }
+  ],
+  "raw_method_records": [
+    {
+      "method": "Native6",
+      "five": {
+        "r2": -1.2484472079077555,
+        "nrmse": 1.2961917208062126
+      },
+      "clean": {
+        "r2": 0.7496179918420246,
+        "nrmse": 0.4718879153946792
+      },
+      "seven": {
+        "r2": 0.3738830990730075,
+        "nrmse": 0.6666988401610395
+      }
+    },
+    {
+      "method": "GES6",
+      "five": {
+        "r2": -1.2004572487796155,
+        "nrmse": 1.2918008828118743
+      },
+      "clean": {
+        "r2": 0.744172204808828,
+        "nrmse": 0.48016605475046065
+      },
+      "seven": {
+        "r2": 0.42476475171754263,
+        "nrmse": 0.6655542642004467
+      }
+    },
+    {
+      "method": "ConvexStacking6",
+      "five": {
+        "r2": -1.2003605365331957,
+        "nrmse": 1.2918002022397996
+      },
+      "clean": {
+        "r2": 0.7441275005856564,
+        "nrmse": 0.48021530778156946
+      },
+      "seven": {
+        "r2": 0.4248823374894859,
+        "nrmse": 0.6655607121380527
+      }
+    },
+    {
+      "method": "RidgeStacking6",
+      "five": {
+        "r2": -1.2047191498771566,
+        "nrmse": 1.2920220210070206
+      },
+      "clean": {
+        "r2": 0.7450569783106963,
+        "nrmse": 0.47887323895798445
+      },
+      "seven": {
+        "r2": 0.42722210304009745,
+        "nrmse": 0.6644578955562281
+      }
+    },
+    {
+      "method": "Median6",
+      "five": {
+        "r2": -1.2724279396805924,
+        "nrmse": 1.3065918333752613
+      },
+      "clean": {
+        "r2": 0.7467321309833014,
+        "nrmse": 0.47563342771213857
+      },
+      "seven": {
+        "r2": 0.4304516391319815,
+        "nrmse": 0.6655601548591482
+      }
+    },
+    {
+      "method": "FeatureMean6",
+      "five": {
+        "r2": -1.2050409671621132,
+        "nrmse": 1.2915087439930215
+      },
+      "clean": {
+        "r2": 0.7458703431338326,
+        "nrmse": 0.47759384718942866
+      },
+      "seven": {
+        "r2": 0.4187249394066016,
+        "nrmse": 0.6634863170719297
+      }
+    },
+    {
+      "method": "TrimmedMean6",
+      "five": {
+        "r2": -1.2366837172955134,
+        "nrmse": 1.2986186766031127
+      },
+      "clean": {
+        "r2": 0.7469716473599358,
+        "nrmse": 0.4758805644495547
+      },
+      "seven": {
+        "r2": 0.42803556730552483,
+        "nrmse": 0.6623675303535803
+      }
+    },
+    {
+      "method": "IQR6_keep1_adapted",
+      "five": {
+        "r2": -1.3934022619871531,
+        "nrmse": 1.3442638032338259
+      },
+      "clean": {
+        "r2": 0.7339629827728337,
+        "nrmse": 0.48512918843284475
+      },
+      "seven": {
+        "r2": 0.2789509880347979,
+        "nrmse": 0.7019373341745108
+      }
+    },
+    {
+      "method": "PHE6",
+      "five": {
+        "r2": -1.2733346858061103,
+        "nrmse": 1.3055163314564526
+      },
+      "clean": {
+        "r2": 0.749253382872503,
+        "nrmse": 0.4727322583169655
+      },
+      "seven": {
+        "r2": 0.4048750721097595,
+        "nrmse": 0.6725235486771111
+      }
+    },
+    {
+      "method": "RF_PFN6",
+      "five": {
+        "r2": -1.244465647863581,
+        "nrmse": 1.2993491847826453
+      },
+      "clean": {
+        "r2": 0.7508689423623256,
+        "nrmse": 0.4711576004927373
+      },
+      "seven": {
+        "r2": 0.4375388121094313,
+        "nrmse": 0.6600725508299321
+      }
+    }
+  ],
+  "paper_Base_reference": {
+    "clean": {
+      "r2": 0.739,
+      "nrmse": 0.476
+    },
+    "five": {
+      "r2": -1.253,
+      "nrmse": 1.313
+    },
+    "seven": {
+      "r2": 0.426,
+      "nrmse": 0.669
+    }
+  },
+  "historical_Shared_reference": {
+    "five": {
+      "r2": 0.237,
+      "nrmse": 0.834
+    },
+    "seven": {
+      "r2": 0.46,
+      "nrmse": 0.656
+    }
+  },
+  "historical_Shared_not_evaluated_on_new_benchmark": true,
+  "internal_development_only": true,
+  "paper_protocol_reproduction": false,
+  "cross_backbone_benchmarks_differ": true,
+  "benchmark_calibrated_using_Base_development_labels": true,
+  "Shared_bounds_not_used_for_selection": true,
+  "interval_flags_diagnostic_only": true,
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "five_datasets": 35,
+  "seven_datasets": 33,
+  "annotations": {
+    "†": "Dedicated input/context/budget adaptation",
+    "‡": "Calibration learning or source-only selection",
+    "§": "Backbone weight fine-tuning; none performed"
+  },
+  "all_raw_variants_preserved": true,
+  "Markdown_written": false
+}

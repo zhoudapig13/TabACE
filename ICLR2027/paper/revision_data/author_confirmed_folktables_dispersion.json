@@ -1,0 +1,91 @@
+{
+  "source": "Author-confirmed externally repeated results supplied in the conversation; author explicitly confirmed the displayed means may be paired with these standard deviations.",
+  "local_v13_is_separate": true,
+  "scope": "Reviewer bPdS Part 4 comparison table in the bilingual rebuttal drafts",
+  "rows": [
+    {
+      "shift": "Geographic",
+      "task": "Employment",
+      "domain": "ID",
+      "Shared": "0.7952 ± 0.0031",
+      "Specific": "0.8089 ± 0.0042"
+    },
+    {
+      "shift": "Geographic",
+      "task": "Employment",
+      "domain": "OOD",
+      "Shared": "0.8106 ± 0.0047",
+      "Specific": "0.8245 ± 0.0040"
+    },
+    {
+      "shift": "Geographic",
+      "task": "Income",
+      "domain": "ID",
+      "Shared": "0.8118 ± 0.0020",
+      "Specific": "0.8201 ± 0.0003"
+    },
+    {
+      "shift": "Geographic",
+      "task": "Income",
+      "domain": "OOD",
+      "Shared": "0.7823 ± 0.0063",
+      "Specific": "0.7914 ± 0.0029"
+    },
+    {
+      "shift": "Geographic",
+      "task": "TravelTime",
+      "domain": "ID",
+      "Shared": "0.6225 ± 0.0212",
+      "Specific": "0.6569 ± 0.0101"
+    },
+    {
+      "shift": "Geographic",
+      "task": "TravelTime",
+      "domain": "OOD",
+      "Shared": "0.5818 ± 0.0349",
+      "Specific": "0.6012 ± 0.0062"
+    },
+    {
+      "shift": "Temporal",
+      "task": "Employment",
+      "domain": "ID",
+      "Shared": "0.7861 ± 0.0028",
+      "Specific": "0.7994 ± 0.0031"
+    },
+    {
+      "shift": "Temporal",
+      "task": "Employment",
+      "domain": "OOD",
+      "Shared": "0.7922 ± 0.0053",
+      "Specific": "0.8030 ± 0.0015"
+    },
+    {
+      "shift": "Temporal",
+      "task": "Income",
+      "domain": "ID",
+      "Shared": "0.8126 ± 0.0042",
+      "Specific": "0.8240 ± 0.0011"
+    },
+    {
+      "shift": "Temporal",
+      "task": "Income",
+      "domain": "OOD",
+      "Shared": "0.8000 ± 0.0027",
+      "Specific": "0.8106 ± 0.0031"
+    },
+    {
+      "shift": "Temporal",
+      "task": "TravelTime",
+      "domain": "ID",
+      "Shared": "0.6237 ± 0.0076",
+      "Specific": "0.6526 ± 0.0088"
+    },
+    {
+      "shift": "Temporal",
+      "task": "TravelTime",
+      "domain": "OOD",
+      "Shared": "0.6045 ± 0.0126",
+      "Specific": "0.6350 ± 0.0114"
+    }
+  ]
+}

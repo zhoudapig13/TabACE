@@ -1,0 +1,248 @@
+{
+  "context_count": {
+    "source": "PaperResults/tabace_comprehensive_ablation/average_context_count_summary.csv",
+    "columns": [
+      "base",
+      "avg_k1",
+      "avg_k2",
+      "avg_k3",
+      "avg_k4",
+      "avg_k5",
+      "avg_k6",
+      "avg_k7",
+      "pro"
+    ],
+    "values": {
+      "classification_accuracy": {
+        "five": [
+          0.4943630642361111,
+          0.48974609375,
+          0.5006955295138888,
+          0.5030935329861111,
+          0.5040570746527778,
+          0.5038791232638888,
+          null,
+          null,
+          null
+        ],
+        "seven": [
+          0.7634964923469387,
+          0.7550577965561226,
+          0.7657029991272825,
+          0.7707517351422991,
+          0.773583003452846,
+          0.7751806609484614,
+          null,
+          null,
+          null
+        ]
+      },
+      "classification_auc": {
+        "five": [
+          0.6755280300023526,
+          0.6822921617694536,
+          0.6923390107996605,
+          0.6976032337426367,
+          0.7008848926965346,
+          0.7030392433168725,
+          null,
+          null,
+          null
+        ],
+        "seven": [
+          0.8260259469161486,
+          0.8108880439642855,
+          0.8239376909388539,
+          0.8281065447936183,
+          0.8301822456355565,
+          0.8312476589606576,
+          null,
+          null,
+          null
+        ]
+      },
+      "regression_r2": {
+        "five": [
+          -1.0766140420393766,
+          -0.13737614250787542,
+          0.014594166615306615,
+          0.07901827250475493,
+          0.10351160295624995,
+          0.1171341000740564,
+          null,
+          null,
+          null
+        ],
+        "seven": [
+          0.27302789993519716,
+          0.3929456045382979,
+          0.47628775993991407,
+          0.5040684784071195,
+          0.5179588376407221,
+          0.5262930531808838,
+          null,
+          null,
+          null
+        ]
+      },
+      "regression_nmae": {
+        "five": [
+          0.9520224018394652,
+          0.6860462012448963,
+          0.6611181644390846,
+          0.6459462290812079,
+          0.6404015539301903,
+          0.6363871110861249,
+          null,
+          null,
+          null
+        ],
+        "seven": [
+          0.5501940400221329,
+          0.5114688998014937,
+          0.48409755677222066,
+          0.4736450518508195,
+          0.4680859416386056,
+          0.46467740680387765,
+          null,
+          null,
+          null
+        ]
+      }
+    }
+  },
+  "context_bank": {
+    "source": "PaperResults/tabace_k5_aggregation_preview/summary.csv",
+    "variants": [
+      "mean",
+      "median",
+      "trimmed_mean",
+      "oof_weighted"
+    ],
+    "values": {
+      "classification_accuracy": [
+        0.6440557017077664,
+        0.632974042481576,
+        0.6382676866319444,
+        0.6720678212691327
+      ],
+      "regression_nrmse": [
+        0.8247772651921093,
+        0.7839141482984306,
+        0.808770581557547,
+        0.7392303537291853
+      ]
+    }
+  },
+  "inference_cost": {
+    "component_source": "fair_budget_experiments/k5_inference_cost_reproduction/exp44_k5_component_efficiency/results/component_timing_summary.csv",
+    "cache_source": "fair_budget_experiments/k5_inference_cost_reproduction/exp45_k5_propensity_cache/results/timing_summary.csv",
+    "context_protocol": {
+      "alternative_contexts": 5,
+      "base_evaluated_separately": true,
+      "total_backbone_calls": 6
+    },
+    "components_ms": {
+      "classification": {
+        "methods": [
+          "tabicl_base",
+          "random_context_6",
+          "shared_context_6",
+          "specific_context_6"
+        ],
+        "total": [
+          25.312118232250214,
+          150.30343923717737,
+          871.6876851394773,
+          871.3381299749017
+        ],
+        "backbone": [
+          25.21037869155407,
+          149.088392034173,
+          149.51165299862623,
+          149.8213168233633
+        ],
+        "measured_context_and_fusion_median": [
+          0.09680259972810745,
+          1.2261420488357544,
+          734.5371022820473,
+          734.8534483462572
+        ],
+        "displayed_context_and_fusion": [
+          0.1017395406961441,
+          1.2150472030043602,
+          722.176032140851,
+          721.5168131515384
+        ]
+      },
+      "regression": {
+        "methods": [
+          "tabicl_base",
+          "random_context_6",
+          "shared_context_6",
+          "specific_context_6"
+        ],
+        "total": [
+          21.623069420456886,
+          129.39574848860502,
+          141.27691742032766,
+          132.4421977624297
+        ],
+        "backbone": [
+          21.485122852027416,
+          128.65308113396168,
+          128.64586059004068,
+          128.81349958479404
+        ],
+        "measured_context_and_fusion_median": [
+          0.08922722190618515,
+          0.7426673546433449,
+          12.63105683028698,
+          3.6006178706884384
+        ],
+        "displayed_context_and_fusion": [
+          0.13794656842947006,
+          0.7426673546433449,
+          12.63105683028698,
+          3.6286981776356697
+        ]
+      }
+    },
+    "cache_ms": {
+      "families": [
+        "shared_context_6",
+        "specific_context_6"
+      ],
+      "original": [
+        865.1735745370388,
+        874.9780477955937
+      ],
+      "cached": [
+        150.36333911120892,
+        154.55149859189987
+      ]
+    },
+    "amortized_speedup": {
+      "shared_context_6": [
+        0.9883945495079338,
+        1.6869988068758888,
+        2.929245791054314,
+        3.882135424273625
+      ],
+      "specific_context_6": [
+        0.994835468357063,
+        1.692296413986635,
+        2.921021073408874,
+        3.8537074350775993
+      ]
+    }
+  },
+  "outputs": [
+    "paper/figures/tabace_aggregation_ablation.pdf",
+    "paper/figures/tabace_aggregation_ablation.svg",
+    "paper/figures/tabace_aggregation_ablation.png",
+    "paper/figures/tabace_inference_cost_ablation.pdf",
+    "paper/figures/tabace_inference_cost_ablation.svg",
+    "paper/figures/tabace_inference_cost_ablation.png"
+  ]
+}

@@ -1,0 +1,114 @@
+name: E2E Integration Test
+
+on:
+  push:
+    branches: [main, master, "release/*", "development"]
+  pull_request:
+    branches: [main, master, "release/*", "development"]
+  workflow_dispatch:
+
+jobs:
+  e2e-integration-test:
+    name: Run YAIB E2E Integration Test (XGBClassifier / Mortality24)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    env:
+      UV_PYTHON: ${{ matrix.python-version }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install YAIB and dependencies
+        # The imputation extra lets the tests exercise the hyperimpute/pypots models, the explain extra the DL attributions
+        run: uv sync --locked --extra imputation --extra explain
+
+      - name: Run the test suite with coverage
+        run: |
+          uv run coverage run -m pytest tests/
+          uv run coverage report
+          echo "## Test coverage (Python ${{ matrix.python-version }})" >> "$GITHUB_STEP_SUMMARY"
+          uv run coverage report --format=markdown >> "$GITHUB_STEP_SUMMARY"
+          uv run coverage xml
+
+      # One upload per commit is enough for the badge and PR comments
+      - name: Upload coverage to Codecov
+        if: matrix.python-version == '3.12'
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: coverage.xml
+          # Pull requests from forks have no access to the token; don't fail their CI over the upload
+          fail_ci_if_error: false
+
+      - name: Verify icu-benchmarks CLI is available
+        run: uv run icu-benchmarks --help
+
+      - name: Run E2E integration test
+        run: |
+          uv run icu-benchmarks train \
+            -d demo_data/mortality24/mimic_demo \
+            -n mimic_demo \
+            -t BinaryClassification \
+            -tn Mortality24 \
+            -m XGBClassifier \
+            --seed 2222 \
+            -l yaib_logs/ \
+
+      # Mortality24 has one label per stay; AKI has one label per hour, which takes a different ML feature path
+      - name: Run E2E integration test on an hourly task (XGBClassifier / AKI)
+        run: |
+          uv run icu-benchmarks train \
+            -d demo_data/aki/mimic_demo \
+            -n mimic_demo \
+            -t BinaryClassification \
+            -tn AKI \
+            -m XGBClassifier \
+            --seed 2222 \
+            -l yaib_logs/
+
+      - name: Verify log output was created
+        run: |
+          if [ ! -d "yaib_logs/mimic_demo" ]; then
+            echo "ERROR: Expected log directory yaib_logs/mimic_demo was not created."
+            exit 1
+          fi
+          echo "Log directory found:"
+          find yaib_logs/ -type f | head -50
+
+      - name: Evaluate the saved model on eICU demo
+        run: |
+          source_dir=$(find yaib_logs/mimic_demo/Mortality24 -path "*repetition_0/fold_0" -type d | head -1)
+          uv run icu-benchmarks evaluate \
+            -d demo_data/mortality24/eicu_demo \
+            -n eicu_demo \
+            -t BinaryClassification \
+            -tn Mortality24 \
+            -m XGBClassifier \
+            --seed 2222 \
+            -l yaib_logs/ \
+            -sn mimic \
+            --source-dir "$source_dir" \
+            --eval \
+            --cpu
+
+      - name: Upload run logs as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yaib-e2e-logs-py${{ matrix.python-version }}
+          path: yaib_logs/
+          retention-days: 7

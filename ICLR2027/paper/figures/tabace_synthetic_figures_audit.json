@@ -1,0 +1,83 @@
+{
+  "artifacts": {
+    "stability": [
+      "paper/figures/tabace_synthetic_stability.pdf",
+      "paper/figures/tabace_synthetic_stability.svg",
+      "paper/figures/tabace_synthetic_stability.png"
+    ],
+    "response": [
+      "paper/figures/tabace_synthetic_response_merged.pdf",
+      "paper/figures/tabace_synthetic_response_merged.svg",
+      "paper/figures/tabace_synthetic_response_merged.png"
+    ],
+    "controlled_response": [
+      "paper/figures/tabace_controlled_response.pdf",
+      "paper/figures/tabace_controlled_response.svg",
+      "paper/figures/tabace_controlled_response.png"
+    ],
+    "shift_response": [
+      "paper/figures/tabace_shift_response.pdf",
+      "paper/figures/tabace_shift_response.svg",
+      "paper/figures/tabace_shift_response.png"
+    ]
+  },
+  "sources": [
+    "experiment41/results/confirmation/stability_pairwise_classification_all12.csv",
+    "experiment41/results/confirmation/stability_ranking_classification_all12.csv",
+    "experiment41/results/confirmation/stability_pairwise_regression_all12.csv",
+    "experiment41/results/confirmation/stability_ranking_regression_all12.csv",
+    "experiment41/results/confirmation/severity_curves.csv",
+    "experiment41/results/confirmation/detail_classification.csv",
+    "experiment41/results/confirmation/detail_regression.csv"
+  ],
+  "checks": {
+    "stability_shapes": {
+      "classification": [
+        10,
+        10
+      ],
+      "regression": [
+        10,
+        10
+      ]
+    },
+    "stability_pairwise_complements": true,
+    "stability_ranking_alignment": true,
+    "stability_metrics": {
+      "classification": {
+        "metric": "auc",
+        "normalization": "chance-adjusted AUROC margin"
+      },
+      "regression": {
+        "metric": "r2",
+        "normalization": "normalized R² drop"
+      }
+    },
+    "severity_nonzero_rows": 160,
+    "severity_expected_nonzero_rows": 160,
+    "detail_rows": {
+      "classification": 7350,
+      "regression": 7350
+    },
+    "stability_canvas_inches": [
+      7.08,
+      3.2
+    ],
+    "response_canvas_inches": [
+      7.08,
+      2.72
+    ],
+    "heatmap_axes": 2,
+    "heatmap_summary_tables": 0,
+    "heatmap_colorbars": 0,
+    "heatmap_cell_font_size_pt": 6.55,
+    "response_axes": 2,
+    "panels_per_figure": 2,
+    "problem_blocks_per_axis": 1,
+    "problem_families_merged_per_point": 12,
+    "nonclean_units_per_method_strength": 180,
+    "vector_live_text": true,
+    "embedded_raster_images": false,
+    "smoothing_or_fitted_values": false
+  }
+}
