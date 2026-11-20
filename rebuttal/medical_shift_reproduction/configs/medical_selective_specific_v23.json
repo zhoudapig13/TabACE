@@ -1,0 +1,32 @@
+{
+  "version": "medical-selective-specific-v23",
+  "declared_at_utc": "2026-11-11T10:47:57.215510+00:00",
+  "method": "Specific-S dagger: learned selective expert routing on disagreement cases.",
+  "frozen_controls": "v18 Base/Shared; exactly unchanged",
+  "expert_candidates": [
+    "v20 best standalone supervised auxiliary",
+    "v21/v22 frozen-TFM context expert"
+  ],
+  "target_fitting_budget": 64,
+  "source_calibration": "Full existing source calibration plus32 target calibration; no validation/test fitting",
+  "reference_probabilities": "5fold OOF Shared and crossfitted calibrated expert on fitting-calibration rows",
+  "selector": "Weighted L2 logistic classifier of expert correctness on binary-disagreement calibration rows; standardized centered scores and confidence features",
+  "selector_C": [
+    0.1,
+    1.0
+  ],
+  "minimum_win_probability": [
+    0.5,
+    0.65
+  ],
+  "max_prediction_changes_per_batch": 0.045,
+  "budget_selection": "Rank by estimated expert win probability among disagreements, no labels needed at prediction time; top floor.045*N at most.",
+  "accuracy_bound": "At most4.5percent labels change, so absolute accuracy difference cannot exceed4.5percentage points. Lower bound not guaranteed.",
+  "selection": "Development accuracy only, Shared fallback. No test-driven filtering.",
+  "auxiliary_training_and_data": "All experts frozen from earlier development; no new clinical labels or expert fitting",
+  "domain_metadata": "Known domains as in v18, equally available to all methods",
+  "test_patients_unchanged": true,
+  "prior_results_preserved": true,
+  "not_original_paper_specific": true,
+  "seed": 0
+}

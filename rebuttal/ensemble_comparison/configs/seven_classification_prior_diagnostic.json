@@ -1,0 +1,314 @@
+{
+  "status": "FROZEN_DIAGNOSTIC",
+  "track": "seven_prior_preserving_v1",
+  "seed": 0,
+  "datasets": 35,
+  "conditions_per_dataset": 29,
+  "single_changed_factor": "class-prior preservation in row cap",
+  "all_shift_parameters_unchanged": {
+    "protocol_revision": 2,
+    "source_sampling_seed": 0,
+    "regression_sampling_seed": 2718,
+    "x_weight_exponent": 3.0,
+    "label_extreme_prior": 0.9,
+    "max_boundary_flip_fraction": 0.3,
+    "affine_scale_increment": 0.75,
+    "affine_translation_sd": 0.5,
+    "support_translation_sd": 1.5,
+    "regression_response_drift_sd": 2.0,
+    "classification_history": 256,
+    "classification_reference": 64,
+    "classification_target": 128,
+    "regression_pool_cap": 1024,
+    "regression_reference": 128,
+    "regression_context": 256,
+    "regression_target_cap": 256
+  },
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "paper_score_used_for_selection": false,
+  "severity_search": false,
+  "original_generator_recovered": false,
+  "Shared_run": false,
+  "existing_Clean_and_five_results_overwritten": false,
+  "new_seven_Clean_is_diagnostic_only": true,
+  "source_code_sha256": "933a68c40eb881f67590850e37c017a948110ad2cdb5d70278d7be6750d374df",
+  "prior_diagnostics": [
+    {
+      "task_id": 3902,
+      "dataset": "pc4",
+      "raw_class_prior": 0.12208504801097393,
+      "balanced_target_prior": 0.3984375,
+      "prior_preserving_target_prior": 0.125
+    },
+    {
+      "task_id": 3903,
+      "dataset": "pc3",
+      "raw_class_prior": 0.10236724248240563,
+      "balanced_target_prior": 0.359375,
+      "prior_preserving_target_prior": 0.1015625
+    },
+    {
+      "task_id": 3904,
+      "dataset": "jm1",
+      "raw_class_prior": 0.1934772622875517,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.1953125
+    },
+    {
+      "task_id": 3913,
+      "dataset": "kc2",
+      "raw_class_prior": 0.2049808429118774,
+      "balanced_target_prior": 0.2421875,
+      "prior_preserving_target_prior": 0.203125
+    },
+    {
+      "task_id": 3917,
+      "dataset": "kc1",
+      "raw_class_prior": 0.15457562825983878,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.15625
+    },
+    {
+      "task_id": 3918,
+      "dataset": "pc1",
+      "raw_class_prior": 0.06943192064923355,
+      "balanced_target_prior": 0.171875,
+      "prior_preserving_target_prior": 0.0703125
+    },
+    {
+      "task_id": 14965,
+      "dataset": "bank-marketing",
+      "raw_class_prior": 0.11698480458295547,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.1171875
+    },
+    {
+      "task_id": 10093,
+      "dataset": "banknote-authentication",
+      "raw_class_prior": 0.4446064139941691,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.4453125
+    },
+    {
+      "task_id": 10101,
+      "dataset": "blood-transfusion-service-center",
+      "raw_class_prior": 0.23796791443850268,
+      "balanced_target_prior": 0.3984375,
+      "prior_preserving_target_prior": 0.2421875
+    },
+    {
+      "task_id": 9971,
+      "dataset": "ilpd",
+      "raw_class_prior": 0.2864493996569468,
+      "balanced_target_prior": 0.375,
+      "prior_preserving_target_prior": 0.2890625
+    },
+    {
+      "task_id": 9976,
+      "dataset": "madelon",
+      "raw_class_prior": 0.5,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.5
+    },
+    {
+      "task_id": 9977,
+      "dataset": "nomao",
+      "raw_class_prior": 0.7143769041056144,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.7109375
+    },
+    {
+      "task_id": 9978,
+      "dataset": "ozone-level-8hr",
+      "raw_class_prior": 0.06314127861089187,
+      "balanced_target_prior": 0.359375,
+      "prior_preserving_target_prior": 0.0625
+    },
+    {
+      "task_id": 9952,
+      "dataset": "phoneme",
+      "raw_class_prior": 0.2934863064396743,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.2890625
+    },
+    {
+      "task_id": 9957,
+      "dataset": "qsar-biodeg",
+      "raw_class_prior": 0.33744075829383885,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.3359375
+    },
+    {
+      "task_id": 15,
+      "dataset": "breast-w",
+      "raw_class_prior": 0.3447782546494993,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.34375
+    },
+    {
+      "task_id": 219,
+      "dataset": "electricity",
+      "raw_class_prior": 0.4245453742937853,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.421875
+    },
+    {
+      "task_id": 9946,
+      "dataset": "wdbc",
+      "raw_class_prior": 0.37258347978910367,
+      "balanced_target_prior": 0.4765625,
+      "prior_preserving_target_prior": 0.375
+    },
+    {
+      "task_id": 7592,
+      "dataset": "adult",
+      "raw_class_prior": 0.23928176569346055,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.2421875
+    },
+    {
+      "task_id": 125920,
+      "dataset": "dresses-sales",
+      "raw_class_prior": 0.42,
+      "balanced_target_prior": 0.46875,
+      "prior_preserving_target_prior": 0.421875
+    },
+    {
+      "task_id": 167120,
+      "dataset": "numerai28.6",
+      "raw_class_prior": 0.5051702657807309,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.5078125
+    },
+    {
+      "task_id": 29,
+      "dataset": "credit-approval",
+      "raw_class_prior": 0.5550724637681159,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.5546875
+    },
+    {
+      "task_id": 3,
+      "dataset": "kr-vs-kp",
+      "raw_class_prior": 0.522215269086358,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.5234375
+    },
+    {
+      "task_id": 31,
+      "dataset": "credit-g",
+      "raw_class_prior": 0.7,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.703125
+    },
+    {
+      "task_id": 37,
+      "dataset": "diabetes",
+      "raw_class_prior": 0.3489583333333333,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.3515625
+    },
+    {
+      "task_id": 3021,
+      "dataset": "sick",
+      "raw_class_prior": 0.0612407211028632,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.0625
+    },
+    {
+      "task_id": 167141,
+      "dataset": "churn",
+      "raw_class_prior": 0.1414,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.140625
+    },
+    {
+      "task_id": 167125,
+      "dataset": "Internet-Advertisements",
+      "raw_class_prior": 0.8600182982616651,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.859375
+    },
+    {
+      "task_id": 146820,
+      "dataset": "wilt",
+      "raw_class_prior": 0.05393676379417235,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.0546875
+    },
+    {
+      "task_id": 146819,
+      "dataset": "climate-model-simulation-crashes",
+      "raw_class_prior": 0.9148148148148149,
+      "balanced_target_prior": 0.8984375,
+      "prior_preserving_target_prior": 0.9140625
+    },
+    {
+      "task_id": 9910,
+      "dataset": "Bioresponse",
+      "raw_class_prior": 0.5422553985603839,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.5390625
+    },
+    {
+      "task_id": 43,
+      "dataset": "spambase",
+      "raw_class_prior": 0.39404477287546186,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.3984375
+    },
+    {
+      "task_id": 14952,
+      "dataset": "PhishingWebsites",
+      "raw_class_prior": 0.5569425599276345,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.5546875
+    },
+    {
+      "task_id": 49,
+      "dataset": "tic-tac-toe",
+      "raw_class_prior": 0.6534446764091858,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.65625
+    },
+    {
+      "task_id": 14954,
+      "dataset": "cylinder-bands",
+      "raw_class_prior": 0.5777777777777777,
+      "balanced_target_prior": 0.5,
+      "prior_preserving_target_prior": 0.578125
+    }
+  ],
+  "historical_prior_evidence_count": 41,
+  "historical_prior_example": {
+    "task": "classification",
+    "dataset": "1068",
+    "outer_fold": "0",
+    "shift": "concept",
+    "strength": "0.2",
+    "shared_context_registry_fixed": "True",
+    "shared_shift_known": "False",
+    "specific_shift_known": "True",
+    "pro_shift_known": "True",
+    "strength_used_for_selection_or_inference": "False",
+    "outer_test_labels_used_for_selection": "False",
+    "base_accuracy": "0.8671875",
+    "base_balanced_accuracy": "0.5",
+    "base_auc": "0.7472178060413354",
+    "shared_accuracy": "0.8828125",
+    "shared_balanced_accuracy": "0.6086380498145204",
+    "shared_auc": "0.789613142554319",
+    "specific_accuracy": "0.8828125",
+    "specific_balanced_accuracy": "0.5837307896131425",
+    "specific_auc": "0.8171701112877584",
+    "pro_accuracy": "0.9140625",
+    "pro_balanced_accuracy": "0.6764705882352942",
+    "pro_auc": "0.9077901430842606"
+  },
+  "historical_point_lock_is_not_unbiased_policy_evaluation": true
+}

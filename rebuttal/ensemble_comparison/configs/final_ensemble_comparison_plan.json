@@ -1,0 +1,24 @@
+{
+  "run_name": "frozen_protocol_six_member_ensembles_seed0",
+  "seed": 0,
+  "tracks": {
+    "five_classification": "five_feature_calibrated",
+    "five_regression": "five",
+    "seven_classification": "seven_reimplemented",
+    "seven_regression": "seven_calibrated_v2"
+  },
+  "five_classification_protocol": "a26ae463ccd99c123b1a8feecde96325bba48c0ce9b0b8a92b84677bfbb17777",
+  "seven_regression_protocol": "30a2b8b0757e1a89eb1b13496a1231f13fa34b252f07488790f9ded6585c8d47",
+  "no_generator_tuning_during_comparisons": true,
+  "Shared_inference_or_fitting_requested": false,
+  "Shared_values": "published main-table historical reference only; no same-protocol superiority claim",
+  "candidate_or_member_budget": 6,
+  "native_8_not_added_to_primary_comparison": true,
+  "OligoICP_six_candidate_rule": "6 candidates -> 1 retained, six-call control",
+  "OligoICP_six_retained_rule": "60 candidates -> 6 retained, 60-call additional-cost group",
+  "learned_fusion_selection": "dataset-level five-fold OOF prediction loss; fixed candidate grids",
+  "backbone_adaptation_training": false,
+  "all_outcomes_reported": true,
+  "desired_ranking_not_an_enforced_constraint": true,
+  "created_utc": "2026-11-07T12:35:51.821661+00:00"
+}

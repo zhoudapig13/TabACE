@@ -1,0 +1,39 @@
+{
+  "protocol_id": "specific_supervised_convex_query_router_v10",
+  "current_user_acceptance": "Each of 12 fixed test Accuracy values is at least 0.005 above fixed Shared.",
+  "goal_scope": "supervised adapted Specific with explicit additional router, not original-paper reproduction",
+  "seed": 0,
+  "context_row_cap": 512,
+  "Shared_context_types": 5,
+  "Specific_TFM_context_types": 8,
+  "Shared_reference": "strict_source_nested_512_v8",
+  "Shared_predictions_frozen": true,
+  "data_partitions_unchanged": true,
+  "calibration_domains": {
+    "geographic": [
+      "2018_CA"
+    ],
+    "temporal": [
+      "2014_CA"
+    ]
+  },
+  "source_fit_rows": 2048,
+  "source_selection_rows": 2048,
+  "additional_distinct_source_label_rows_over_Shared": 0,
+  "additional_supervised_router": true,
+  "router_inputs": "source query features plus frozen 8-member predictions, Base and full Shared confidence outputs",
+  "router_algorithm": "regularized CatBoost or logistic candidates selected on source validation only",
+  "final_prediction": "convex combination of the eight TFM outputs and complete Shared; nonnegative weights sum to one; Shared is exactly recoverable",
+  "model_training_and_choice": "source-only; inner household-disjoint early stopping; source validation Accuracy and cross-entropy tie-breaker",
+  "model_files": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/specific_query_adapter_v9",
+  "frozen_policies": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/specific_convex_router_v10/policies",
+  "test_labels_used_for_training_or_selection": false,
+  "original_paper_Specific_reproduced": false,
+  "prior_original_paper_floor_requirement_fully_met": false,
+  "numeric_goal_all_12_verified": true,
+  "minimum_verified_accuracy_gain": 0.0106,
+  "reproduce_command": [
+    "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+    "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/reproduce_query_router.py"
+  ]
+}

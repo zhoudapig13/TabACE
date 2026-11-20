@@ -1,0 +1,59 @@
+{
+  "status": "DECLARED_BEFORE_NEW_RUNS",
+  "internal_only": true,
+  "paper_protocol_reproduction": false,
+  "reason": "R2 and source-normalized RMSE weight target/source response variances differently; source-tail scaling did not jointly calibrate them.",
+  "formula": "contrast = clip(std(y_target)/std(y_source), 0.05, 20)^power; source corrupted response = y_original + contrast*(original_corrupt_response-y_original)",
+  "candidates": [
+    {
+      "name": "variance_unit0.05",
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast_query_scale_power": 0.05
+      }
+    },
+    {
+      "name": "variance_unit0.1",
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast_query_scale_power": 0.1
+      }
+    },
+    {
+      "name": "variance_unit0.15",
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast_query_scale_power": 0.15
+      }
+    },
+    {
+      "name": "variance_unit0.2",
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast_query_scale_power": 0.2
+      }
+    }
+  ],
+  "maximum_initial_candidates": 4,
+  "maximum_additional_interpolations": 2,
+  "generator_uses_target_label_standard_deviation": true,
+  "target_label_values_modified": false,
+  "predictors_and_combiners_receive_no_target_labels": true,
+  "no_independent_test_generalization_claim": true,
+  "metric_denominators_unchanged": true,
+  "same_formula_for_all_datasets": true,
+  "no_dataset_specific_tuning": true,
+  "Clean_fixed": true,
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "strength_rescaled": false,
+  "all_prior_trials_retained": true
+}

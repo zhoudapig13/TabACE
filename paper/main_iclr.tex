@@ -1,0 +1,72 @@
+\documentclass{article}
+
+% Official ICLR 2027 review style.  Do not modify the style file.
+\usepackage{iclr2027_conference,times}
+
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{flafter}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{url}
+
+\setcounter{topnumber}{5}
+\setcounter{dbltopnumber}{5}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\textfraction}{0.04}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{8pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+
+\definecolor{linkblue}{RGB}{31,84,147}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkblue,
+  citecolor=linkblue,
+  urlcolor=linkblue
+}
+
+\input{macros}
+\newcommand{\ICLRLayout}{}
+
+\title{TabACE: Robust Inference in Tabular Foundation Models via Adaptive Context Ensembling}
+
+\author{Anonymous Authors}
+
+% Uncomment only for the camera-ready manuscript and replace the anonymous
+% author block with the final author information.
+% \iclrfinalcopy
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{sections/00_abstract_iclr}
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/04_method}
+\input{sections/04_theory}
+\input{sections/05_experiments}
+\input{sections/06_results}
+\input{sections/08_conclusion}
+
+\FloatBarrier
+\bibliography{references}
+\bibliographystyle{iclr2027_conference}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

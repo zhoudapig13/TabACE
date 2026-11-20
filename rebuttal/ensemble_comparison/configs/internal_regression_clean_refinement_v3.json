@@ -1,0 +1,32 @@
+{
+  "status": "DECLARED_BEFORE_NEW_RUNS",
+  "internal_only": true,
+  "purpose": "Uniform source-fitted numeric measurement precision in newly designed clean benchmark",
+  "previous_candidates_evaluated": 16,
+  "best_previous": {
+    "candidate": "source11_target7",
+    "metrics": {
+      "r2": 0.7431538837574395,
+      "nrmse": 0.4737861105592808
+    },
+    "difference": {
+      "r2": 0.004153883757439525,
+      "nrmse": -0.0022138894407191523
+    },
+    "within_tolerance": false,
+    "distance": 2.461784080671963
+  },
+  "maximum_total_clean_candidates": 19,
+  "additional_candidates": [
+    "source11_target7_precision0.01",
+    "source11_target7_precision0.025",
+    "source11_target7_precision0.05"
+  ],
+  "definition": "Continuous columns with >32 unique source values are rounded on a grid of step times source std; same source-fitted map for source and query.",
+  "labels_or_predictions_modified": false,
+  "metric_denominators_changed": false,
+  "new_clean_feature_map_reused_for_all_five_perturbation_conditions_and_all_methods": true,
+  "model_seed": 0,
+  "query_labels_used_for_map_fitting": false,
+  "all_trials_retained": true
+}

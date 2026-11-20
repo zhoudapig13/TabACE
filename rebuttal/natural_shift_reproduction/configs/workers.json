@@ -1,0 +1,101 @@
+{
+  "workers": [
+    {
+      "gpu": 0,
+      "pid": 1865289,
+      "scenario": "geographic",
+      "task": "Employment",
+      "command": [
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+        "-u",
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_natural.py",
+        "--scenario",
+        "geographic",
+        "--task",
+        "Employment"
+      ],
+      "log": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/logs/geographic_Employment.log"
+    },
+    {
+      "gpu": 1,
+      "pid": 1865290,
+      "scenario": "geographic",
+      "task": "Income",
+      "command": [
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+        "-u",
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_natural.py",
+        "--scenario",
+        "geographic",
+        "--task",
+        "Income"
+      ],
+      "log": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/logs/geographic_Income.log"
+    },
+    {
+      "gpu": 2,
+      "pid": 1865291,
+      "scenario": "geographic",
+      "task": "TravelTime",
+      "command": [
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+        "-u",
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_natural.py",
+        "--scenario",
+        "geographic",
+        "--task",
+        "TravelTime"
+      ],
+      "log": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/logs/geographic_TravelTime.log"
+    },
+    {
+      "gpu": 3,
+      "pid": 1865292,
+      "scenario": "temporal",
+      "task": "Employment",
+      "command": [
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+        "-u",
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_natural.py",
+        "--scenario",
+        "temporal",
+        "--task",
+        "Employment"
+      ],
+      "log": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/logs/temporal_Employment.log"
+    },
+    {
+      "gpu": 4,
+      "pid": 1865293,
+      "scenario": "temporal",
+      "task": "Income",
+      "command": [
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+        "-u",
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_natural.py",
+        "--scenario",
+        "temporal",
+        "--task",
+        "Income"
+      ],
+      "log": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/logs/temporal_Income.log"
+    },
+    {
+      "gpu": 5,
+      "pid": 1865294,
+      "scenario": "temporal",
+      "task": "TravelTime",
+      "command": [
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+        "-u",
+        "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_natural.py",
+        "--scenario",
+        "temporal",
+        "--task",
+        "TravelTime"
+      ],
+      "log": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/logs/temporal_TravelTime.log"
+    }
+  ],
+  "seed": 0
+}

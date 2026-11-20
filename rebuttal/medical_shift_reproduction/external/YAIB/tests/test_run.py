@@ -1,0 +1,257 @@
+"""End to end: train on the MIMIC demo through the CLI entry point, then evaluate the saved model on the eICU demo."""
+
+import json
+import sys
+from pathlib import Path
+
+import gin
+import joblib
+import numpy as np
+import pytest
+
+import icu_benchmarks.run
+from icu_benchmarks.run import main
+
+ROOT = Path(__file__).parent.parent
+FAST = ["execute_repeated_cv.cv_repetitions_to_train=1", "execute_repeated_cv.cv_folds_to_train=3"]
+
+
+@pytest.fixture(autouse=True)
+def clean_gin():
+    gin.clear_config()
+    yield
+    gin.clear_config()
+
+
+def run(args, monkeypatch, cwd=ROOT):
+    # main reads the configs relative to the repository. setup_logging (#260) expects the handlers that lightning only adds
+    # when the root logger has none (not under pytest), and it would silence warnings for the remaining tests.
+    monkeypatch.chdir(cwd)
+    monkeypatch.setattr(icu_benchmarks.run, "setup_logging", lambda *args: None)
+    main(args)
+    gin.clear_config()
+
+
+def test_train_then_evaluate_on_demo_data(tmp_path, monkeypatch):
+    common = ["-t", "BinaryClassification", "-tn", "Mortality24", "-m", "LogisticRegression", "--cpu", "-l", str(tmp_path)]
+    run(["-d", "demo_data/mortality24/mimic_demo", "-n", "mimic_demo", *common, "-hp", *FAST], monkeypatch)
+    (run_dir,) = (tmp_path / "mimic_demo" / "Mortality24" / "LogisticRegression").iterdir()
+    folds = sorted(p.relative_to(run_dir).as_posix() for p in run_dir.glob("repetition_*/fold_*"))
+    assert folds == ["repetition_0/fold_0", "repetition_0/fold_1", "repetition_0/fold_2"]
+    summary = json.loads((run_dir / "accumulated_test_metrics.json").read_text())
+    assert 0 <= summary["avg"]["AUC"] <= 1 and summary["execution_time"] > 0
+    source = run_dir / "repetition_0" / "fold_0"
+    assert {"last.joblib", "test_metrics.json", "durations.json", "train_config.gin"} <= {p.name for p in source.iterdir()}
+
+    run(
+        [
+            "-d",
+            "demo_data/mortality24/eicu_demo",
+            "-n",
+            "eicu_demo",
+            *common,
+            "--eval",
+            "-sn",
+            "mimic",
+            "--source-dir",
+            str(source),
+        ],
+        monkeypatch,
+    )
+    (eval_dir,) = (tmp_path / "eicu_demo" / "Mortality24" / "LogisticRegression" / "_from_mimic").iterdir()
+    evaluated = json.loads((eval_dir / "repetition_0" / "fold_0" / "test_metrics.json").read_text())
+    assert 0 <= evaluated["AUC"] <= 1
+    # Evaluation reuses the trained model instead of fitting a new one
+    assert not (eval_dir / "repetition_0" / "fold_0" / "last.joblib").exists()
+    # The names of the source run, which its train_config.gin binds, are replaced (#275)
+    names = bound(eval_dir / "repetition_0" / "fold_0", "train_common.dataset_names")
+    assert names == {"train": "mimic", "val": "mimic", "test": "eicu_demo"}
+
+
+def test_explain_features_flag_is_saved_and_replayed(tmp_path, monkeypatch):
+    common = ["-t", "BinaryClassification", "-tn", "Mortality24", "-m", "XGBClassifier", "--cpu", "-l", str(tmp_path)]
+    one_fold = ["execute_repeated_cv.cv_repetitions_to_train=1", "execute_repeated_cv.cv_folds_to_train=1"]
+    run(
+        ["-d", "demo_data/mortality24/mimic_demo", "-n", "mimic_demo", *common, "--explain-features", "-hp", *one_fold],
+        monkeypatch,
+    )
+    (run_dir,) = (tmp_path / "mimic_demo" / "Mortality24" / "XGBClassifier").iterdir()
+    source = run_dir / "repetition_0" / "fold_0"
+    assert (source / "test_shap_values.parquet").exists()
+    # The flag is a gin binding, so the saved config records it
+    assert "train_common.explain_features = True" in (source / "train_config.gin").read_text()
+
+    # Evaluating with the saved config, without the flag, explains the features again
+    evaluate = ["-d", "demo_data/mortality24/eicu_demo", "-n", "eicu_demo", *common, "--eval", "-sn", "mimic"]
+    run([*evaluate, "--source-dir", str(source)], monkeypatch)
+    (eval_dir,) = (tmp_path / "eicu_demo" / "Mortality24" / "XGBClassifier" / "_from_mimic").iterdir()
+    assert (eval_dir / "repetition_0" / "fold_0" / "test_shap_values.parquet").exists()
+
+
+def test_complete_train_of_dl_model_on_hourly_task(tmp_path, monkeypatch):
+    hyperparams = ["train_common.epochs=1", "GRUNet.hidden_dim=4", "GRUNet.layer_dim=1"]
+    args = ["-d", "demo_data/aki/mimic_demo", "-t", "BinaryClassification", "-tn", "AKI", "-m", "GRU", "--cpu"]
+    run([*args, "--complete-train", "-l", str(tmp_path), "-hp", *hyperparams], monkeypatch)
+    # Without a name, the run is named after the data directory
+    (run_dir,) = (tmp_path / "mimic_demo" / "AKI" / "GRU").iterdir()
+    assert [p.name for p in run_dir.glob("repetition_*/fold_*")] == ["fold_0"]
+    fold = run_dir / "repetition_0" / "fold_0"
+    assert (fold / "last.ckpt").exists() and not (fold / "test_metrics.json").exists()
+    assert "GRUNet.hidden_dim = 4" in (fold / "train_config.gin").read_text()
+
+
+def test_unknown_model_is_rejected(tmp_path, monkeypatch):
+    with pytest.raises(ValueError, match="Invalid task or model"):
+        run(
+            ["-d", "demo_data/mortality24/mimic_demo", "-t", "BinaryClassification", "-m", "NoSuchModel", "-l", str(tmp_path)],
+            monkeypatch,
+        )
+
+
+MORTALITY = ["-t", "BinaryClassification", "-tn", "Mortality24", "-m", "LogisticRegression", "--cpu"]
+ONE_FOLD = ["execute_repeated_cv.cv_repetitions_to_train=1", "execute_repeated_cv.cv_folds_to_train=1"]
+EICU = ["-d", "demo_data/mortality24/eicu_demo", "-n", "eicu_demo", *MORTALITY]
+
+
+def bound(fold: Path, name: str):
+    """The value a run saved for a gin parameter."""
+    gin.clear_config()
+    gin.parse_config_file(fold / "train_config.gin")
+    value = gin.query_parameter(name)
+    gin.clear_config()
+    return value
+
+
+@pytest.fixture(scope="module")
+def source(tmp_path_factory):
+    """One fold of a model trained on the MIMIC demo, to start the transfer runs from."""
+    log_dir = tmp_path_factory.mktemp("source")
+    with pytest.MonkeyPatch.context() as monkeypatch:
+        gin.clear_config()
+        run(
+            ["-d", "demo_data/mortality24/mimic_demo", "-n", "mimic_demo", *MORTALITY, "-l", str(log_dir), "-hp", *ONE_FOLD],
+            monkeypatch,
+        )
+    (fold,) = log_dir.glob("mimic_demo/Mortality24/LogisticRegression/*/repetition_0/fold_0")
+    return fold
+
+
+def test_fine_tune_retrains_on_target_data(source, tmp_path, monkeypatch):
+    run([*EICU, "-l", str(tmp_path), "-ft", "40", "-sn", "mimic", "--source-dir", str(source)], monkeypatch)
+    (run_dir,) = (tmp_path / "eicu_demo" / "Mortality24" / "LogisticRegression" / "_from_mimic" / "fine_tune_40").iterdir()
+    # The fold settings and the hyperparameters come from the source run
+    assert [p.relative_to(run_dir).as_posix() for p in run_dir.glob("repetition_*/fold_*")] == ["repetition_0/fold_0"]
+    fold = run_dir / "repetition_0" / "fold_0"
+    assert bound(fold, "LogisticRegression.C") == bound(source, "LogisticRegression.C")
+    # Unlike evaluation, fine-tuning fits and saves a new model. Strong regularization can zero every coefficient,
+    # so compare the unpenalized intercept too
+    tuned, original = joblib.load(fold / "last.joblib"), joblib.load(source / "last.joblib")
+    assert not (np.allclose(tuned.coef_, original.coef_) and np.allclose(tuned.intercept_, original.intercept_))
+    assert 0 <= json.loads((fold / "test_metrics.json").read_text())["AUC"] <= 1
+    # The names of the source run, which its train_config.gin binds, are replaced (#275)
+    assert bound(source, "train_common.dataset_names")["test"] == "mimic_demo"
+    assert bound(fold, "train_common.dataset_names") == {"train": "eicu_demo", "val": "eicu_demo", "test": "eicu_demo"}
+
+
+def test_samples_train_new_model_with_source_config(source, tmp_path, monkeypatch):
+    run([*EICU, "-l", str(tmp_path), "--samples", "40", "--source-dir", str(source)], monkeypatch)
+    # The run directory is named after the fine-tune size instead of the samples (#241), so it is not checked here
+    (fold,) = (tmp_path / "eicu_demo" / "Mortality24" / "LogisticRegression").glob("*/*/repetition_0/fold_0")
+    assert bound(fold, "LogisticRegression.C") == bound(source, "LogisticRegression.C")
+    assert (fold / "last.joblib").exists() and (fold / "test_metrics.json").exists()
+
+
+def test_experiment_config_replaces_model_and_task_configs(tmp_path, monkeypatch):
+    # Experiment configs live in configs/experiments, which the repository does not ship
+    configs = tmp_path / "configs"
+    configs.mkdir()
+    for path in (ROOT / "configs").iterdir():
+        (configs / path.name).symlink_to(path)
+    (configs / "experiments").mkdir()
+    (configs / "experiments" / "small_lr.gin").write_text(
+        'include "configs/prediction_models/LogisticRegression.gin"\n'
+        'include "configs/tasks/BinaryClassification.gin"\n'
+        "LogisticRegression.C = 0.25\n" + "".join(f"{binding}\n" for binding in ONE_FOLD)
+    )
+    data = str(ROOT / "demo_data" / "mortality24" / "mimic_demo")
+    run(
+        ["-d", data, "-n", "mimic_demo", *MORTALITY, "-e", "small_lr", "-l", str(tmp_path / "logs")], monkeypatch, cwd=tmp_path
+    )
+    # The experiment names the log directory instead of the task and model
+    (fold,) = (tmp_path / "logs" / "mimic_demo" / "small_lr").glob("*/repetition_*/fold_*")
+    assert bound(fold, "LogisticRegression.C") == 0.25
+    assert (fold / "test_metrics.json").exists()
+
+
+@pytest.fixture
+def custom_preprocessor(tmp_path, monkeypatch):
+    """A custom preprocessor file, and the marker file it creates when it is applied."""
+    marker = tmp_path / "applied"
+    path = tmp_path / "custom.py"
+    path.write_text(
+        "from pathlib import Path\n"
+        "from icu_benchmarks.data.preprocessor import PolarsClassificationPreprocessor\n\n\n"
+        "class CustomPreprocessor(PolarsClassificationPreprocessor):\n"
+        "    def apply(self, data, vars):\n"
+        f"        Path({str(marker)!r}).touch()\n"
+        "        return super().apply(data, vars)\n"
+    )
+    monkeypatch.setitem(sys.modules, "preprocessor", None)
+    return path, marker
+
+
+def test_custom_preprocessor_is_used(custom_preprocessor, tmp_path, monkeypatch):
+    # The task config binds the default preprocessor (#274)
+    path, marker = custom_preprocessor
+    args = ["-d", "demo_data/mortality24/mimic_demo", *MORTALITY, "-l", str(tmp_path / "logs"), "-p", str(path)]
+    run([*args, "-hp", *ONE_FOLD], monkeypatch)
+    assert marker.exists()
+
+
+def test_runs_from_a_custom_preprocessor_run_use_it_without_p(custom_preprocessor, tmp_path, monkeypatch):
+    path, marker = custom_preprocessor
+    args = ["-d", "demo_data/mortality24/mimic_demo", "-n", "mimic_demo", *MORTALITY, "-l", str(tmp_path / "source")]
+    run([*args, "-p", str(path), "-hp", *ONE_FOLD], monkeypatch)
+    (fold,) = (tmp_path / "source").glob("mimic_demo/Mortality24/LogisticRegression/*/repetition_0/fold_0")
+    # gin cannot save the class itself, so evaluating from this run used the default preprocessor
+    assert bound(fold, "custom_preprocessor.path") == str(path.resolve())
+    marker.unlink()
+    run([*EICU, "-l", str(tmp_path / "logs"), "--eval", "-sn", "mimic", "--source-dir", str(fold)], monkeypatch)
+    assert marker.exists()
+
+
+def test_hp_binds_parameters_of_a_custom_preprocessor(tmp_path, monkeypatch):
+    marker = tmp_path / "applied"
+    path = tmp_path / "custom.py"
+    path.write_text(
+        "from pathlib import Path\n"
+        "import gin\n"
+        "from icu_benchmarks.data.preprocessor import PolarsClassificationPreprocessor\n\n\n"
+        '@gin.configurable("hp_custom_preprocessor")\n'
+        "class CustomPreprocessor(PolarsClassificationPreprocessor):\n"
+        "    def __init__(self, marker=None, **kwargs):\n"
+        "        super().__init__(**kwargs)\n"
+        "        self.marker = marker\n\n"
+        "    def apply(self, data, vars):\n"
+        "        Path(self.marker).touch()\n"
+        "        return super().apply(data, vars)\n"
+    )
+    monkeypatch.setitem(sys.modules, "preprocessor", None)
+    # gin parses -hp before the training path binds the custom preprocessor, so the file must be imported first
+    hp = [*ONE_FOLD, f"hp_custom_preprocessor.marker = {str(marker)!r}"]
+    args = ["-d", "demo_data/mortality24/mimic_demo", *MORTALITY, "-l", str(tmp_path / "logs"), "-p", str(path)]
+    run([*args, "-hp", *hp], monkeypatch)
+    assert marker.exists()
+
+
+@pytest.mark.parametrize(
+    "transfer",
+    [["--eval", "-sn", "mimic"], ["-ft", "40", "-sn", "mimic"], ["--samples", "40"]],
+    ids=["eval", "fine_tune", "samples"],
+)
+def test_custom_preprocessor_is_used_with_source_config(transfer, custom_preprocessor, source, tmp_path, monkeypatch):
+    # The train_config.gin of the source run binds the default preprocessor (#274)
+    assert bound(source, "preprocess.preprocessor").selector == "base_classification_preprocessor"
+    path, marker = custom_preprocessor
+    run([*EICU, "-l", str(tmp_path / "logs"), *transfer, "--source-dir", str(source), "-p", str(path)], monkeypatch)
+    assert marker.exists()

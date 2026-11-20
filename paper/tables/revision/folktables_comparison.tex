@@ -1,0 +1,27 @@
+\begin{table}[H]
+\centering\footnotesize
+\color{revisionblue}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Folktables accuracy; Geog. and Temp. denote geographic and temporal transfer.}
+\label{tab:revision-folktables}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+Shift & Task & Domain & Base & DistPFN & Drift-res. & Shared & Specific \\
+\midrule
+Geog. & Employment & ID & 0.7922 & 0.7892 \(\pm\) 0.0030 & 0.7885 \(\pm\) 0.0071 & \textbf{0.7952} & \textbf{0.8089} \\
+Geog. & Employment & OOD & 0.8043 & 0.8034 \(\pm\) 0.0033 & 0.8022 \(\pm\) 0.0067 & \textbf{0.8106} & \textbf{0.8245} \\
+Geog. & Income & ID & 0.7888 & 0.7930 \(\pm\) 0.0100 & 0.7856 \(\pm\) 0.0147 & \textbf{0.8118} & \textbf{0.8201} \\
+Geog. & Income & OOD & 0.7655 & 0.7768 \(\pm\) 0.0288 & 0.7733 \(\pm\) 0.0209 & \textbf{0.7823} & \textbf{0.7914} \\
+Geog. & TravelTime & ID & 0.5912 & 0.5731 \(\pm\) 0.0253 & 0.5723 \(\pm\) 0.0252 & \textbf{0.6225} & \textbf{0.6569} \\
+Geog. & TravelTime & OOD & 0.5472 & 0.5802 \(\pm\) 0.0071 & 0.5667 \(\pm\) 0.0338 & \textbf{0.5818} & \textbf{0.6012} \\
+Temp. & Employment & ID & 0.7704 & 0.7770 \(\pm\) 0.0043 & 0.7699 \(\pm\) 0.0095 & \textbf{0.7861} & \textbf{0.7994} \\
+Temp. & Employment & OOD & 0.7847 & 0.7804 \(\pm\) 0.0090 & 0.7742 \(\pm\) 0.0140 & \textbf{0.7922} & \textbf{0.8030} \\
+Temp. & Income & ID & 0.7926 & 0.8009 \(\pm\) 0.0050 & 0.8010 \(\pm\) 0.0055 & \textbf{0.8126} & \textbf{0.8240} \\
+Temp. & Income & OOD & 0.7844 & 0.7894 \(\pm\) 0.0040 & 0.7867 \(\pm\) 0.0054 & \textbf{0.8000} & \textbf{0.8106} \\
+Temp. & TravelTime & ID & 0.5951 & 0.5937 \(\pm\) 0.0235 & 0.5956 \(\pm\) 0.0145 & \textbf{0.6237} & \textbf{0.6526} \\
+Temp. & TravelTime & OOD & 0.5908 & 0.5731 \(\pm\) 0.0309 & 0.5692 \(\pm\) 0.0179 & \textbf{0.6045} & \textbf{0.6350} \\
+\bottomrule
+\end{tabular}}
+\end{table}

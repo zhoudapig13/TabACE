@@ -1,0 +1,21 @@
+\begin{table}[H]
+\centering\footnotesize
+\color{revisionblue}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Clinical domain-shift component evaluation (Accuracy; 1:1 case--control).}
+\label{tab:revision-medical}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Dataset & Task & Domain & Base & Shared & Specific \\
+\midrule
+Sepsis 2019 & Sepsis A $\rightarrow$ B & ID & 70.20\% & \textbf{70.71\%} & \textbf{71.72\%} \\
+Sepsis 2019 & Sepsis A $\rightarrow$ B & OOD & 61.59\% & \textbf{62.14\%} & \textbf{63.04\%} \\
+Sepsis 2019 & Sepsis B $\rightarrow$ A & ID & 76.19\% & \textbf{77.38\%} & \textbf{78.57\%} \\
+Sepsis 2019 & Sepsis B $\rightarrow$ A & OOD & 63.79\% & \textbf{64.60\%} & \textbf{64.91\%} \\
+Diabetes 130-US & Readmission & ID & 54.82\% & \textbf{55.26\%} & \textbf{56.87\%} \\
+Diabetes 130-US & Readmission & OOD & 57.27\% & \textbf{58.97\%} & \textbf{59.24\%} \\
+\bottomrule
+\end{tabular}}
+\end{table}

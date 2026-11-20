@@ -1,0 +1,38 @@
+{
+  "status": "FROZEN",
+  "track": "seven_calibrated_v2",
+  "task": "regression",
+  "family_amplitude_multipliers": {
+    "covariate": 0.55,
+    "label": 0.45,
+    "concept": 0.55,
+    "selection": 0.1,
+    "domain": 1.25,
+    "temporal": 1.5,
+    "support": 0.1
+  },
+  "nominal_strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "datasets": 33,
+  "seed": 0,
+  "context_budget": 256,
+  "history_reference_and_query_splits": "unchanged from seven_calibrated",
+  "selection": "minimum aggregate Base distance among three documented positive family vectors",
+  "benchmark_queries_are_development_data": true,
+  "TabACE_scores_used_for_selection": false,
+  "exact_original_paper_protocol": false,
+  "target": {
+    "r2": 0.2730278999351972,
+    "nrmse": 0.7295536836020975
+  },
+  "Base_metrics": {
+    "r2": 0.27460909266251643,
+    "nrmse": 0.7288452186341001
+  },
+  "protocol_sha256": "30a2b8b0757e1a89eb1b13496a1231f13fa34b252f07488790f9ded6585c8d47",
+  "frozen_utc": "2026-11-07T11:55:36.526691+00:00"
+}

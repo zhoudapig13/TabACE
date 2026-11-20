@@ -1,0 +1,240 @@
+{
+  "status": "DECLARED_BEFORE_NEW_PREDICTIONS",
+  "internal_development_only": true,
+  "paper_protocol_reproduction": false,
+  "seed": 0,
+  "outer_repetitions": 1,
+  "nominal_strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "targets": {
+    "classification": {
+      "clean": {
+        "accuracy": 0.793,
+        "auc": 0.893
+      },
+      "five": {
+        "accuracy": 0.457,
+        "auc": 0.636
+      },
+      "seven": {
+        "accuracy": 0.758,
+        "auc": 0.809
+      }
+    },
+    "regression": {
+      "clean": {
+        "r2": 0.739,
+        "nrmse": 0.476
+      },
+      "five": {
+        "r2": -1.253,
+        "nrmse": 1.313
+      },
+      "seven": {
+        "r2": 0.426,
+        "nrmse": 0.669
+      }
+    }
+  },
+  "primary_metric_allowed_signed_gap": [
+    -0.1,
+    0.003
+  ],
+  "threshold_interpretation": "Acc/R2 may be at most .003 above and .1 below historical paper Base; aim nearer",
+  "secondary_metrics_reported_without_hard_threshold": true,
+  "candidate_configs": {
+    "classification": {
+      "clean": [
+        {
+          "name": "existing",
+          "kind": "cached"
+        }
+      ],
+      "five": [
+        {
+          "name": "feature12",
+          "feature_multiplier": 12
+        },
+        {
+          "name": "feature16",
+          "feature_multiplier": 16
+        }
+      ],
+      "seven": [
+        {
+          "name": "amplitude0.8",
+          "amplitude": 0.8
+        }
+      ]
+    },
+    "regression": {
+      "clean": [
+        {
+          "name": "pristine1024",
+          "source_cap": 1024
+        },
+        {
+          "name": "pristine512",
+          "source_cap": 512
+        },
+        {
+          "name": "pristine1280",
+          "source_cap": 1280
+        },
+        {
+          "name": "pristine1536",
+          "source_cap": 1536
+        }
+      ],
+      "five": [
+        {
+          "name": "shift1_label0.8",
+          "shift_scale": 1.0,
+          "label_scale": 0.8
+        },
+        {
+          "name": "shift1_label0.8125",
+          "shift_scale": 1.0,
+          "label_scale": 0.8125
+        },
+        {
+          "name": "shift1_label0.825",
+          "shift_scale": 1.0,
+          "label_scale": 0.825
+        },
+        {
+          "name": "shift1_label0.88",
+          "shift_scale": 1.0,
+          "label_scale": 0.88
+        },
+        {
+          "name": "shift1_label0.9",
+          "shift_scale": 1.0,
+          "label_scale": 0.9
+        }
+      ],
+      "seven": [
+        {
+          "name": "existing",
+          "kind": "previous_frozen"
+        }
+      ]
+    }
+  },
+  "selection": "Base-only nearest primary, secondary gap used only to break ties",
+  "ensemble_outcomes_or_Shared_bounds_select_benchmark": false,
+  "cross_backbone_benchmarks_differ": true,
+  "all_trials_retained": true,
+  "methods": [
+    "Native6",
+    "PHE6_official_portfolio",
+    "RF_PFN6_official",
+    "MixturePFN_MICP_component_classification",
+    "OligoICP_regression"
+  ],
+  "MixturePFN_full_CaPFN_claimed_without_checkpoint_or_training": false,
+  "OligoICP_original_reference": "https://arxiv.org/html/2510.02476v2",
+  "OligoICP_candidate_count": 400,
+  "OligoICP_retained_count": 40,
+  "OligoICP_six_retained_budget_variant_from_same_bank": [
+    60,
+    6
+  ],
+  "OligoICP_generic_grouping_adaptation": "20 source-only KMeans groups; choose k uniformly from 1..20, then k groups without replacement",
+  "adaptation_selection": "source TRAIN validation only; never use benchmark query scores or historical Shared as a selection rule",
+  "extra_clean_TRAIN_supervision_authorized": true,
+  "Markdown_written": false,
+  "clean_refinement": {
+    "reason": "1024-row Clean R2 gap -.00676; test two larger pristine contexts to approach historical Base without corrupting clean data",
+    "new_global_source_caps": [
+      1280,
+      1536
+    ],
+    "ensemble_predictions_consulted": false,
+    "all_previous_results_retained": true
+  },
+  "five_refinement": {
+    "reason": "New pristine 1536-row context Base R2 -1.192835 exceeds historical +.003 bound; two slightly stronger label-drift probes",
+    "ensemble_outcomes_consulted": false,
+    "nrmse_metric_fix": "pristine source std, never corrupted source std",
+    "prior_metadata_archived": true
+  },
+  "PHE_portfolio": {
+    "generator": "official 0.0.4 random search, seed0, first six non-RF PFNs",
+    "version3_compatibility": "legacy subsample_features -> max_features_per_estimator derived from each input feature dimension",
+    "checkpoint": "v3 pinned",
+    "estimators_per_candidate": 1,
+    "holdout_fraction": 0.25,
+    "repeats": 1,
+    "GES_iterations": 25,
+    "max_time_seconds": 30
+  },
+  "RF_parameters": {
+    "n_estimators": 6,
+    "random_state": 0,
+    "all_other_RF_parameters": "official defaults; variable node calls measured"
+  },
+  "MixturePFN_parameters": {
+    "components": "MICP only; no available CaPFN adapter checkpoint",
+    "router": "KMeans source-standardized Euclidean",
+    "prompters": 6,
+    "support_budget": 128,
+    "gamma": 1,
+    "full_original_method": false
+  },
+  "adapter": {
+    "kind": "auxiliary ExtraTrees supervised on pristine source labels, blended with official output",
+    "maximum_weight": 0.25,
+    "candidates": [
+      0,
+      0.1,
+      0.25
+    ],
+    "seed": 0,
+    "selection": "inner source 80/20 holdout, fixed synthetic conditions, single-PFN proxy shared across methods",
+    "benchmark_query_labels_used": false,
+    "backbone_parameter_updates": false,
+    "raw_and_adapted_results_preserved": true
+  },
+  "historical_Shared_references": {
+    "classification": {
+      "clean": {
+        "accuracy": 0.792,
+        "auc": 0.893
+      },
+      "five": {
+        "accuracy": 0.553,
+        "auc": 0.697
+      },
+      "seven": {
+        "accuracy": 0.77,
+        "auc": 0.818
+      }
+    },
+    "regression": {
+      "clean": {
+        "r2": 0.739,
+        "nrmse": 0.48
+      },
+      "five": {
+        "r2": 0.237,
+        "nrmse": 0.834
+      },
+      "seven": {
+        "r2": 0.46,
+        "nrmse": 0.656
+      }
+    }
+  },
+  "Shared_range_checks": "descriptive only, never used for parameter choice or stopping",
+  "five_refinement2": {
+    "reason": "Observed Base-only slope from label_scale .8 to .825 suggests .88 near historical R2; bracket with .90",
+    "maximum_five_configs": 5,
+    "ensemble_outcomes_used": false
+  },
+  "blockwise_freezing": "Each task/track benchmark is frozen before its own ensemble predictions; no ensemble outcomes from any block select a remaining benchmark"
+}

@@ -1,0 +1,24 @@
+\begin{table}[H]
+\centering\footnotesize
+\color{revisionblue}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Larger-context regression ($R^2$/nRMSE); columns cover 35/35/33 datasets.}
+\label{tab:revision-large-reg}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Context cap & Method & Clean & Five perturbations & Seven shifts \\
+\midrule
+1024 & Base & 0.7557 / 0.4680 & -1.0547 / 1.2598 & 0.2891 / 0.6659 \\
+1024 & Shared & 0.7570 / 0.4662 & 0.4779 / 0.6803 & 0.5816 / 0.5533 \\
+1024 & Specific & \textbf{0.7573 / 0.4633} & \textbf{0.5968 / 0.6051} & \textbf{0.7322 / 0.4569} \\
+4096 & Base & 0.7590 / 0.4647 & -1.0380 / 1.2560 & 0.3265 / 0.6379 \\
+4096 & Shared & 0.7599 / 0.4627 & 0.4800 / 0.6793 & 0.5980 / 0.5325 \\
+4096 & Specific & \textbf{0.7604 / 0.4622} & \textbf{0.5985 / 0.6040} & \textbf{0.7512 / 0.4306} \\
+8192 & Base & 0.7596 / 0.4642 & -1.0317 / 1.2545 & 0.3287 / 0.6310 \\
+8192 & Shared & 0.7603 / 0.4623 & 0.4809 / 0.6790 & 0.5864 / 0.5328 \\
+8192 & Specific & \textbf{0.7609 / 0.4621} & \textbf{0.5989 / 0.6038} & \textbf{0.7649 / 0.4109} \\
+\bottomrule
+\end{tabular}}
+\end{table}

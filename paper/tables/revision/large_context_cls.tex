@@ -1,0 +1,24 @@
+\begin{table}[H]
+\centering\footnotesize
+\color{revisionblue}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Larger-context classification (Accuracy/AUROC); columns cover 72/72/35 datasets.}
+\label{tab:revision-large-cls}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Context cap & Method & Clean & Five perturbations & Seven shifts \\
+\midrule
+1024 & Base & 0.8254 / 0.9218 & 0.5332 / 0.7015 & 0.7635 / 0.8474 \\
+1024 & Shared & 0.8268 / 0.9223 & 0.6586 / 0.8044 & 0.7762 / 0.8661 \\
+1024 & Specific & \textbf{0.8289 / 0.9229} & \textbf{0.6917 / 0.8374} & \textbf{0.8047 / 0.8767} \\
+4096 & Base & 0.8381 / 0.9304 & 0.5446 / 0.7105 & 0.7607 / 0.8554 \\
+4096 & Shared & 0.8402 / 0.9306 & 0.6790 / 0.8116 & 0.7738 / 0.8724 \\
+4096 & Specific & \textbf{0.8436 / 0.9308} & \textbf{0.7071 / 0.8433} & \textbf{0.7982 / 0.8806} \\
+8192 & Base & 0.8416 / 0.9314 & 0.5469 / 0.7107 & 0.7625 / 0.8576 \\
+8192 & Shared & 0.8433 / 0.9315 & 0.6814 / 0.8124 & 0.7746 / 0.8734 \\
+8192 & Specific & \textbf{0.8456 / 0.9316} & \textbf{0.7115 / 0.8440} & \textbf{0.8042 / 0.8824} \\
+\bottomrule
+\end{tabular}}
+\end{table}

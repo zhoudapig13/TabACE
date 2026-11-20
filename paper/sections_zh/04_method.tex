@@ -1,0 +1,97 @@
+\section{方法}
+\label{sec:method}
+
+\subsection{问题设定与方法概述}
+
+记 $\mathcal D_s=\{(x_j^s,y_j^s)\}_{j=1}^{n_s}$ 为带标签参考数据，$\mathcal X_t=\{x_i^t\}_{i=1}^{n_t}$ 为无标签目标批次，其中的样本即目标查询。分类任务的输出空间为 $\mathcal Y=\{1,\ldots,L\}$，回归任务的输出空间为 $\mathcal Y\subseteq\mathbb R$。冻结的表格基础模型 $f_\theta$ 根据一个带标签上下文对每个查询样本进行预测。该上下文由源样本构造；对于已注册的选择偏移构造器，还可包含带伪标签的目标样本。真实目标标签仅用于评估，测试时始终不更新 $f_\theta$。参考样本与目标样本分别服从 $P_s(X,Y)$ 和 $P_t(X,Y)$。我们既研究可访问上下文的受控变化，也研究满足 $P_t\neq P_s$ 的分布偏移；推理时仅使用 $\mathcal D_s$ 与 $\mathcal X_t$。
+
+如图~\ref{fig:tabace_overview} 所示，\method{} 在保持 $f_\theta$ 冻结的同时，使用一个 Base 分支和多个替代上下文分支。置信度与跨上下文一致性决定各替代分支的相对影响，任务特定门控和总体上下文支持度则决定相对于 Base 的更新幅度。因此，更新由当前查询样本可获得的证据决定。
+
+\subsection{可配置上下文与输出接口}
+\label{sec:context_interface}
+
+记 $\Phi=\{\phi_0,\ldots,\phi_R\}$ 为目标推理前根据源侧信息与应用知识选定的分支配置，并以 $\mathcal I(\Phi)=\{r:\phi_r\in\Phi,\ r\geq1\}=\{1,\ldots,R\}$ 表示替代分支的索引集合。$F_{\phi_r}$ 表示由配置 $\phi_r$ 诱导的完整预测映射，而不是另一个额外训练的模型。对于目标批次中的查询样本 $x_i^t$，有
+\begin{equation}
+  o_i^{(r)}
+  =F_{\phi_r}(\mathcal D_s,\mathcal X_t,x_i^t;f_\theta),
+  \qquad r=0,\ldots,R.
+  \label{eq:context_prediction}
+\end{equation}
+对于 TFM 分支，该映射将可配置上下文构造器与冻结预测器组合起来。批次共享构造器只需构造一次 $C^{(r)}=G_{\phi_r}(\mathcal D_s,\mathcal X_t)$，随后在不同查询间复用，因此
+$F_{\phi_r}(\mathcal D_s,\mathcal X_t,x_i^t;f_\theta)=f_\theta(C^{(r)},x_i^t)$。留一目标构造则生成 $C_i^{(r)}=G_{\phi_r}(\mathcal D_s,\mathcal X_t,x_i^t)$。对于兼容的常规预测器，所构造的上下文充当该分支的训练数据，并暴露相同的输出接口。分类任务中，$o_i^{(r)}=p_i^{(r)}\in\Delta^{L-1}$ 为类别概率向量；点回归任务中，$o_i^{(r)}=\hat y_i^{(r)}$ 为标量。
+
+我们将 $\phi_0$ 保留给 Base 分支，并以 $o_i^{(0)}$ 表示其输出。其构造器 $G_{\phi_0}$ 遵循主干模型的标准采样规则，从可用的带标签参考数据中形成规范上下文，不依据目标数据修改所选特征或标签。对于 $r\geq1$，$G_{\phi_r}$ 通过选择或重加权参考样本、选择或变换特征，或者应用预先规定且由源数据确定的标签调整来构造互补上下文。选择偏移构造器还可将 Base 伪标签附加到目标样本行上。对于查询 $x_i^t$，这些样本行为
+$\widehat{\mathcal D}_{t,-i}^{(0)}=\{(x_j^t,\widetilde y_j^{(0)}):j\neq i\}$，其中 $\widetilde y_j^{(0)}=\arg\max_{\ell\in\mathcal Y}p_{j,\ell}^{(0)}$。因此，当前查询样本不会被放入自身的上下文。上述操作可依赖参考特征、参考标签以及无标签目标批次的统计量；留一构造还依赖当前查询样本，但任何构造都不使用目标标签。当构造器选择特征子集时，同一投影会同时作用于上下文和查询样本。由这些配置得到替代输出库
+\begin{equation}
+  \mathcal O_i(\Phi)=\{o_i^{(r)}:r\in\mathcal I(\Phi)\}.
+  \label{eq:output_bank}
+\end{equation}
+其中，$\Phi$ 指定上下文构造规则，$\mathcal O_i(\Phi)$ 汇集这些规则针对查询样本产生的输出。
+
+\subsection{基于置信度与一致性的上下文聚合}
+\label{sec:evidence_aggregation}
+
+对于查询样本 $x_i^t$，$R$ 个替代上下文产生式~\eqref{eq:output_bank} 中的输出。我们先分别为分类和回归构造与任务兼容的支持度得分，再使用统一的归一化加权规则聚合相应预测。
+
+在分类任务中，令 $p_i^{(r)}\in\Delta^{L-1}$ 为上下文 $r$ 的预测。给定从源数据学习的非负系数 $\eta_{Q,r},\eta_{S,r}\geq0$，计算
+\begin{equation}
+  \begin{aligned}
+    \mu_i&=\frac{1}{R}\sum_{s=1}^{R}p_i^{(s)},
+    &Q_i^{(r)}&=1-\frac{H(p_i^{(r)})}{\log L},\\
+    S_i^{(r)}&=1-\frac12\lVert p_i^{(r)}-\mu_i\rVert_1,
+    &\rho_i^{(r)}&=\eta_{Q,r}Q_i^{(r)}+\eta_{S,r}S_i^{(r)}.
+  \end{aligned}
+  \label{eq:classification_evidence}
+\end{equation}
+其中 $H(p)=-\sum_{\ell=1}^{L}p_\ell\log p_\ell$。$Q_i^{(r)}$ 衡量归一化熵置信度，$S_i^{(r)}$ 衡量该预测与替代预测均值的一致性；二者同时较高时，$\rho_i^{(r)}$ 增大。
+
+在回归任务中，令 $\hat y_i^{(r)}\in\mathbb R$ 为上下文 $r$ 的预测。定义
+\begin{equation}
+  \begin{aligned}
+    m_i&=\operatorname{median}\{\hat y_i^{(s)}\}_{s=1}^{R},
+    &S_i^{(r)}&=\exp\!\left(-\frac{|\hat y_i^{(r)}-m_i|}{\tau_y}\right),\\
+    \rho_i^{(r)}&=\eta_{S,r}^{\mathrm{reg}}S_i^{(r)},
+    \qquad \eta_{S,r}^{\mathrm{reg}}\geq0.
+  \end{aligned}
+  \label{eq:regression_evidence}
+\end{equation}
+中位数 $m_i$ 是稳健中心，$\tau_y>0$ 由源数据确定；偏离该中心较远的预测获得较低支持度。
+
+两个任务随后采用相同的归一化加权与聚合规则：
+\begin{equation}
+  \begin{aligned}
+    w_i^{(r)}&=\frac{\pi_r e^{\rho_i^{(r)}}}
+      {\sum_{s=1}^{R}\pi_s e^{\rho_i^{(s)}}},\\
+    \bar o_i&=\sum_{r=1}^{R}w_i^{(r)}o_i^{(r)},
+    \qquad \sum_{r=1}^{R}w_i^{(r)}=1.
+  \end{aligned}
+  \label{eq:task_aware_aggregation}
+\end{equation}
+其中 $\pi_r>0$ 是从源数据学习的上下文 $r$ 的先验可靠性，并满足 $\sum_r\pi_r=1$。分类任务取 $o_i^{(r)}=p_i^{(r)}$，回归任务取 $o_i^{(r)}=\hat y_i^{(r)}$。聚合结果 $\bar o_i$ 随后与 Base 进行整合。
+
+\subsection{与 Base 的查询相关整合}
+\label{sec:base_integration}
+
+我们使用任务特定门控 $U_i$ 和总体上下文支持度 $E_i$ 将 $\bar o_i$ 与 Base 整合。分类任务中，$U_i$ 表示 Base 的内在不确定性；回归任务中，$U_i$ 表示 Base 与聚合结果之间的外在差异。相应的 $E_i$ 衡量替代预测的支持度：
+\begin{equation}
+  \begin{aligned}
+    U_i^{\mathrm{cls}}&=\frac{H(p_i^{(0)})}{\log L},
+    &E_i^{\mathrm{cls}}&=\sum_{r=1}^{R}w_i^{(r)}Q_i^{(r)}S_i^{(r)},\\
+    U_i^{\mathrm{reg}}&=1-\exp\!\left(-\frac{|\bar y_i-\hat y_i^{(0)}|}{\tau_y}\right),
+    &E_i^{\mathrm{reg}}&=\sum_{r=1}^{R}w_i^{(r)}S_i^{(r)}.
+  \end{aligned}
+  \label{eq:context_integration_evidence}
+\end{equation}
+下文以 $U_i$ 和 $E_i$ 表示当前任务对应的这一对量。
+
+两个任务采用相同的整合规则：
+\begin{equation}
+  \alpha_i=\alpha_{\max}U_iE_i,
+  \qquad o_i^{\mathrm{final}}
+  =(1-\alpha_i)o_i^{(0)}+\alpha_i\bar o_i.
+  \label{eq:base_anchored_update}
+\end{equation}
+由于 $U_i$、$E_i$ 和 $\alpha_{\max}$ 均位于 $[0,1]$，$\alpha_i$ 也位于该区间。因此，只要任务特定门控或上下文支持度较弱，更新就会锚定到 Base。
+
+\paragraph{外层折策略学习。}
+我们在外层训练数据集生成的校准 episode 上拟合上下文先验、得分系数、输出尺度与整合上限。每个 episode 将一个带标签源上下文与一个伪目标批次配对；构造器可以访问该批次的特征，而其标签仅进入校准损失。在留出数据推理之前，拟合后的策略与 $\Phi$ 均保持固定。

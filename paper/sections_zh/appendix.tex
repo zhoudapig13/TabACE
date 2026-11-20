@@ -1,0 +1,896 @@
+\raggedbottom
+
+\section*{附录内容}
+\begingroup
+\footnotesize
+\hypersetup{linkcolor=black}
+\setlength{\parindent}{0pt}
+\newcommand{\apptocsection}[3]{%
+  \vspace{0.22em}\noindent
+  \textbf{\hyperref[#3]{#1\quad #2}}\nobreak\dotfill
+  \textbf{\pageref*{#3}}\par}
+\newcommand{\apptocsubsection}[3]{%
+  \noindent\hspace{1.5em}\hyperref[#3]{#1\quad #2}\nobreak\dotfill
+  \pageref*{#3}\par}
+\apptocsection{A}{理论分析}{app:theory}
+\apptocsubsection{A.1}{定理 1 的证明}{app:theorem-proof}
+\apptocsubsection{A.2}{理论鲁棒性}{app:theoretical-robustness}
+\apptocsection{B}{实验设置与可复现性}{app:experimental_setup}
+\apptocsubsection{B.1}{评估协议}{app:evaluation_protocol}
+\apptocsubsection{B.2}{受控扰动与分布偏移}{app:data_transformations}
+\apptocsubsection{B.3}{比较方法与任务适用性}{app:baseline_details}
+\apptocsubsection{B.4}{上下文构造}{app:context_construction}
+\apptocsubsection{B.5}{实现细节}{app:implementation_details}
+\apptocsection{C}{各主干模型的强度结果}{app:backbone-strength-curves}
+\apptocsubsection{C.1}{TabICL-v2}{app:tabicl-strength-results}
+\apptocsubsection{C.2}{其他主干模型}{app:additional-backbone-strength-results}
+\apptocsection{D}{消融研究}{app:supplemental_ablations}
+\apptocsubsection{D.1}{上下文预算}{app:context-budget}
+\apptocsubsection{D.2}{聚合规则}{app:aggregation-rule}
+\apptocsubsection{D.3}{固定上下文库组件消融}{app:fixed-bank-formula-diagnostic}
+\apptocsubsection{D.4}{不同证据分箱下的门控行为}{app:gate-bin-analysis}
+\endgroup
+\hypersetup{linkcolor=linkblue}
+\vspace{0.35em}
+
+\section{理论分析}
+\label{app:theory}
+
+\subsection{定理的证明~\ref{thm:effective_context_repair}}
+\label{app:theorem-proof}
+
+\paragraph{分析设置与符号。}
+\label{app:analysis-setup}
+
+让 $\Phi=\{\phi_0,\ldots,\phi_R\}$ 成为从第~\ref{sec:context_interface} 设置的配置，其替代分支由 $\mathcal I(\Phi)=\{1,\ldots,R\}$ 索引。对于查询 $i$,文本 $r$ 产生 $o_i^{(r)}$,收到源端校准先验 $\pi_r$,并具有上下文库依赖的无标签分数 $\rho_i^{(r)}(\Phi)$,下面简称 $\rho_i^{(r)}$.
+方程~\eqref{eq:task_aware_aggregation}形式权重$w_i^{(r)}$和总数$\bar o_i$最终预测是任务门控的混合物\[
+o_i^{\mathrm{final}}=(1-\alpha_i)o_i^{(0)}+\alpha_i\bar o_i,
+\qquad
+\alpha_i=\alpha_{\max}U_iE_i,
+\]在哪里$U_i,E_i,\alpha_{\max}\in[0,1]$.
+
+对于一个损失曲的预测论点，上下文智能和总体改善是\[
+\Delta_i^{(r)}
+=\ell(o_i^{(0)},y_i^t)-\ell(o_i^{(r)},y_i^t),
+\qquad
+\Delta_i
+=\ell(o_i^{(0)},y_i^t)-\ell(\bar o_i,y_i^t).
+\]目标标签只出现在这些分析量中。构建，权重和基因集成在目标推断时仍然没有标签.$P_t^{(h)}$对于与变化类别相关的目标分布$h$其他$P_t$对于风险分析中使用的目标分布.
+
+\paragraph{上下文互补性与有益覆盖。}
+\label{app:repair-coverage}
+
+固定式$\delta_+>0$定义
+\begin{equation}
+\mathcal H_r^h
+=\{i:\Delta_i^{(r)}\geq\delta_+\},
+\qquad
+C_h(\Phi)
+  =\Pr_{P_t^{(h)}}\!\left(i\in\bigcup_{r\in\mathcal I(\Phi)}\mathcal H_r^h\right).
+\label{eq:potential_repair_coverage}
+\end{equation}
+集中的$\mathcal H_r^h$收集了相关问题$r$在家庭下可以改善$h$欧盟的措施至少有一个有利的背景.
+
+添加一个配置$\phi_{r'}$通过
+\begin{equation}
+  C_h(\Phi\cup\{\phi_{r'}\})-C_h(\Phi)
+  =\Pr_{P_t^{(h)}}\!\left(
+    i\in\mathcal H_{r'}^h\setminus
+    \bigcup_{r\in\mathcal I(\Phi)}\mathcal H_r^h
+  \right).
+  \label{eq:coverage_gain}
+\end{equation}
+
+\begin{lemma}[单调和子模块的环境覆盖]
+\label{prop:coverage_submodular}覆盖功能$C_h$单调和子模块化.$\Phi_1\subseteq\Phi_2$其他$\phi_{r'}\notin\Phi_2$,
+\begin{equation}
+\begin{aligned}
+0
+&\leq C_h(\Phi_2\cup\{\phi_{r'}\})-C_h(\Phi_2)\\
+&\leq C_h(\Phi_1\cup\{\phi_{r'}\})-C_h(\Phi_1).
+\end{aligned}
+\label{eq:coverage_diminishing_returns}
+\end{equation}
+\end{lemma}
+
+\noindent\emph{证明.}让我们$\mathcal U_j=\bigcup_{r\in\mathcal I(\Phi_j)}\mathcal H_r^h$边缘覆盖率$r'$是\[
+\Pr_{P_t^{(h)}}(i\in\mathcal H_{r'}^h\setminus\mathcal U_j).
+\]自从$\mathcal U_1\subseteq\mathcal U_2$对于$\Phi_2$包含在此为$\Phi_1$两种不平等都会发生.
+\hfill$\square$
+
+方程~\eqref{eq:coverage_diminishing_returns}上下文库依赖的分数和关门控将覆盖与风险联系起来，通过$\mathcal G_i$在下面.
+
+\paragraph{分数分离与有效权重。}
+\label{app:evidence-separation}
+
+固定上下文库 $\Phi$、查询 $i$ 和非空有效集合 $\mathcal G_i$。在式~\eqref{eq:repair_conditions} 的条件下，令
+\[
+N_{\mathcal G}
+=\sum_{r\in\mathcal G_i}\pi_r e^{\rho_i^{(r)}},
+\qquad
+N_{\mathcal B}
+=\sum_{r\in\mathcal I(\Phi)\setminus\mathcal G_i}\pi_r e^{\rho_i^{(r)}}.
+\]
+记 $\Pi_i=\sum_{r\in\mathcal G_i}\pi_r$，分数分离条件给出
+\[
+N_{\mathcal G}\geq\Pi_i e^{\rho_+},
+\qquad
+N_{\mathcal B}\leq(1-\Pi_i)e^{\rho_-}.
+\]
+因此，有效上下文上的归一化权重满足
+\begin{equation}
+W_i
+=\frac{N_{\mathcal G}}{N_{\mathcal G}+N_{\mathcal B}}
+\geq
+\left[1+\frac{1-\Pi_i}{\Pi_i}
+e^{-(\rho_+-\rho_-)}\right]^{-1}
+=\underline W_i.
+\label{eq:appendix_effective_weight}
+\end{equation}
+这一边界将两个路线暴露在更大的有效权重上:更大的前面质量$\Pi_i$并且更广泛的分数差距$\rho_+-\rho_-$曲率然后产生
+\begin{equation}
+\begin{aligned}
+\Delta_i
+&\geq\sum_{r=1}^{R} w_i^{(r)}\Delta_i^{(r)}\\
+&\geq W_i\delta_+-(1-W_i)\delta_-\\
+&\geq\underline W_i\delta_+-(1-\underline W_i)\delta_-
+=\gamma_i.
+\end{aligned}
+\label{eq:appendix_aggregate_gain}
+\end{equation}因此，当当一个人对一个人的$\underline W_i>\delta_-/(\delta_++\delta_-)$.
+
+分数结合了源校准与目标侧的信任，协议或近距离。它们的联合排序决定了分离条件是否有效;下面的分析还涵盖了不完美的排序.
+
+\paragraph{定理~\ref{thm:effective_context_repair} 的证明。}
+
+式~\eqref{eq:appendix_effective_weight} 给出了 $W_i$ 的下界，式~\eqref{eq:appendix_aggregate_gain} 则证明 $\Delta_i\geq\gamma_i$。条件 $\underline W_i>\delta_-/(\delta_++\delta_-)$ 等价于 $\gamma_i>0$。
+
+应用曲率到任务关键更新给出 \[
+\begin{aligned}
+\ell(o_i^{\mathrm{final}},y_i^t)
+&\leq(1-\alpha_i)\ell(o_i^{(0)},y_i^t)
++\alpha_i\ell(\bar o_i,y_i^t),\\
+\ell(o_i^{\mathrm{final}},y_i^t)-\ell(o_i^{(0)},y_i^t)
+&\leq-\alpha_i\Delta_i.
+\end{aligned}
+\]对于$i\in\mathcal A_\Phi$总结结结为\[
+\ell(o_i^{\mathrm{final}},y_i^t)-\ell(o_i^{(0)},y_i^t)
+\leq-\alpha_{\max}U_iE_i\gamma_i.
+\]
+对于 $i\notin\mathcal A_\Phi$，曲率不等式给出
+\[
+\ell(o_i^{\mathrm{final}},y_i^t)-\ell(o_i^{(0)},y_i^t)
+\leq\alpha_{\max}U_iE_i(-\Delta_i)_+.
+\]接收了$P_t$预期和分开$\mathcal A_\Phi$并且其补充值为Eq.~\eqref{eq:changed_risk_gain}严格的风险改善是$\Gamma_t(\Phi)>\varepsilon_t(\Phi)$. \hfill$\square$
+
+\paragraph{解释：类别导向的构造。}
+\label{app:family-construction}
+
+类别导向的建筑通过互补覆盖和有效分数量进入。建筑物在其受益区域包含在现行区域联盟之外的查询时增加覆盖，如以Eq定量化.~\eqref{eq:coverage_gain}在覆盖查询中，更大的有效前质量$\Pi_i$或是分数差距$\rho_+-\rho_-$增加了下边界$W_i$如果分离条件维持，增加边缘$\gamma_i$.
+
+这些结果将类别导向的构建，补充覆盖，分数权重和任务特定的门控连接到理论中的风险分解~\ref{thm:effective_context_repair}分析了分分分和有害的高支持共识的偏差~\ref{app:theoretical-robustness}.
+
+\subsection{理论鲁棒性}
+\label{app:theoretical-robustness}
+
+\paragraph{分数分离不完美时的风险。}
+\label{app:imperfect-separation}
+
+让$\mathcal A_\Phi$ 成为理论~\ref{thm:effective_context_repair} 中定义的好处更新区域。其补充包含未能满足所需的改进，分数排序或总分数的查询.
+\begin{equation}
+M_t(\Phi)
+:=\mathbb E_{P_t}\!\left[
+U_iE_i\mathbf 1\{i\notin\mathcal A_\Phi\}\right].
+\label{eq:misalignment_mass}
+\end{equation}
+
+假设 \begin{proposition}[不完美分分分] \label{prop:imperfect_evidence} 假设 $(-\Delta_i)_+\leq L_\Delta<\infty$在目标预测域上。例如，当每个类概率满足 $p_\ell\geq\epsilon>0$,回归目标和预测是有限的时，这就适用于
+\begin{equation}
+\mathcal R_t(g_{\mathrm{final}})-\mathcal R_t(g_0)
+\leq
+-\Gamma_t(\Phi)+\alpha_{\max}L_\Delta M_t(\Phi).
+\label{eq:imperfect_evidence_risk}
+\end{equation}
+\end{proposition}
+
+\noindent\emph{证明.}剩余期在Eq.~\eqref{eq:repair_residual_terms}满足\[
+\varepsilon_t(\Phi)
+\leq\alpha_{\max}L_\Delta
+\mathbb E_{P_t}[U_iE_i\mathbf 1\{i\notin\mathcal A_\Phi\}].
+\]替换为Eq.~\eqref{eq:changed_risk_gain}证明结果.
+\hfill$\square$
+
+建议~\ref{prop:imperfect_evidence} 要求在目标分布的有益部分上分离，而不是在每个查询上。评分排序错误通过 $M_t(\Phi)$ 进入，并且被算法使用的相同的任务特定和文本支持门控所减弱.
+
+\paragraph{有害的高支持度共识。}
+\label{app:harmful-consensus}
+
+相关的替代错误可以导致高效的结合.$e\in[0,1]$确定有害的支持共识率
+\begin{equation}
+\eta_{\mathrm{fc}}(e)
+:=\Pr_{P_t}(E_i>e,\ \Delta_i<0).
+\label{eq:false_consensus_rate}
+\end{equation}
+分析损失的目标标签下，该事件将将数据从分析损失中移除.
+
+\begin{proposition}[剩余风险的精炼]
+\label{prop:false_consensus}在提案的限制性不利改善条件下~\ref{prop:imperfect_evidence},
+\begin{equation}
+\varepsilon_t(\Phi)
+\leq\alpha_{\max}L_\Delta
+\left[e+\eta_{\mathrm{fc}}(e)\right].
+\label{eq:false_consensus_bound}
+\end{equation}
+因此,
+\begin{equation}
+\mathcal R_t(g_{\mathrm{final}})-\mathcal R_t(g_0)
+\leq-\Gamma_t(\Phi)
++\alpha_{\max}L_\Delta
+\left[e+\eta_{\mathrm{fc}}(e)\right].
+\label{eq:false_consensus_risk}
+\end{equation}
+\end{proposition}
+
+\noindent\emph{证明.}放弃指标的$\mathcal A_\Phi^c$剩余的预期在$E_i=e$接着$E_i\leq e$,
+$U_iE_i(-\Delta_i)_+\leq eL_\Delta$接着$E_i>e$积极的贡献需要$\Delta_i<0$在$U_iE_i(-\Delta_i)_+\leq L_\Delta$.
+预期给出Eq.~\eqref{eq:false_consensus_bound};结合Eq.~\eqref{eq:changed_risk_gain}给出Eq.~\eqref{eq:false_consensus_risk}. \hfill$\square$
+
+方程~\eqref{eq:false_consensus_bound}是一种保守的离合结合，得到了$U_i\leq1$均等.~\eqref{eq:repair_residual_terms}保留$U_i$.
+
+限制分为低支持更新，由$e$支持的共识,$\eta_{\mathrm{fc}}(e)$补充的环境可以扩大$\Gamma_t(\Phi)$由于这种情况,$\eta_{\mathrm{fc}}(e)$.
+
+\paragraph{相对 Base 的偏差界。}
+\label{app:base-preservation}
+
+根据 Eq~\eqref{eq:base_anchored_update}的更新，满足了精确的身份 \[
+o_i^{\mathrm{final}}-o_i^{(0)}
+=\alpha_{\max}U_iE_i(\bar o_i-o_i^{(0)}).
+\], 因此最终的预测每次恢复Base $U_iE_i=0$, 否则其移动量由两个门控的乘法缩小.
+
+为了分类,\[
+p_i^{\mathrm{final}}-p_i^{(0)}
+=\alpha_i(\bar p_i-p_i^{(0)}).
+\]总变异的均性,$\operatorname{TV}(\bar p_i,p_i^{(0)})\leq1$其他$E_i^{\mathrm{cls}}\leq1$产量
+\begin{equation}
+\operatorname{TV}(p_i^{\mathrm{final}},p_i^{(0)})
+\leq\alpha_i
+\leq\alpha_{\max}\frac{H(p_i^{(0)})}{\log L}.
+\label{eq:classification_preservation}
+\end{equation}
+让 $M_i^{(0)}$ 成为最大和第二大Base类概率之间的差距。由于每个概率变化最大的 $\alpha_i\lVert\bar p_i-p_i^{(0)}\rVert_\infty$,预测的类始终不变，每当
+\begin{equation}
+2\alpha_i\lVert\bar p_i-p_i^{(0)}\rVert_\infty<M_i^{(0)}.
+\label{eq:classification_margin_preservation}
+\end{equation}
+
+对于回归,$U_i$是Base-aggregate分歧门控。让 $d_i=|\bar y_i-\hat y_i^{(0)}|$.由于 $E_i^{\mathrm{reg}}\leq1$和 $1-e^{-x}\leq x$为 $x\geq0$,
+\begin{equation}
+\begin{aligned}
+|\hat y_i^{\mathrm{final}}-\hat y_i^{(0)}|
+&=\alpha_i d_i\\
+&\leq\alpha_{\max}\left(1-e^{-d_i/\tau_y}\right)d_i\\
+&\leq\frac{\alpha_{\max}}{\tau_y}d_i^2.
+\end{aligned}
+\label{eq:regression_preservation}
+\end{equation}方程~\eqref{eq:classification_preservation}--\eqref{eq:regression_preservation}是Eq中的基本偏差身份的任务特定形式.~\eqref{eq:base_preservation_identity}.
+
+\section{实验设置与可复现性}
+\label{app:experimental_setup}
+\label{app:experimental_details}
+
+\subsection{评估协议}
+\label{app:evaluation_protocol}
+
+\subsubsection{基准与评估划分}
+\label{app:data_splits}
+
+公共数据轨道进一步分开了5个控制的上下文扰动从7个分布转变。表~\ref{tab:public-benchmark-protocols}总结了固定任务集和样本协议.
+
+\begin{table}[H]
+  \caption{公共数据基准组合和固定样本协议。一个顶点是上限;较小的官方折叠保留所有可用的行.}
+  \label{tab:public-benchmark-protocols}
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.14\textwidth}
+                      >{\raggedright\arraybackslash}p{0.39\textwidth}
+                      >{\raggedright\arraybackslash}p{0.39\textwidth}@{}}
+    \toprule 追踪&类别&回归\\
+    \midrule 控制的上下文扰动&所有72个OpenML-CC18任务，包括二进制和多类任务。每个任务使用384个固定行: 256个标记的源上下文行和 128个目标评估行.
+      &所有35个OpenML-CTR23任务。官方源和目标分区分别分别为分别的2,048和512行。\\
+分布偏移&每个任务使用256个历史源行,64个参考行和128个目标评估行，有标签上下文预算为256.
+      &支持固定分区的33个OpenML-CTR23任务:最多1024个源行和256个目标行，其中256个当前文本行,128个参考行，以及剩余的源行作为历史。\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+分布偏移回归轨道不包括 \nolinkurl{forest_fires} 和 \nolinkurl{student_performance_por}。这两个数据集的官方训练折少于 640 行，无法在固定预算下支持互不重叠的当前、参考与历史分区。
+
+公共数据政策选择使用五倍\emph{数据集级别}通过使用其他四个折叠的数据集来确定背景配置和融合政策，然后结结;仅从其源背景中重新计算了预处理和构造数据.
+所有方法都共享相同的数据集折叠和基源--目标分区。对于每个问题类别，我们评估强度 $s\in\{0,0.2,0.5,0.8,1.0\}$; $s=0$保留原始文本和输入。在扫描中，特征地图保留目标行身份，而标签转换操作符则从固定类特定目标池中复制完整的行.
+
+完全合成的轨道使用了五种反应机制---线性，相互作用，光滑非线性，门控和子组.0种用于方法开发，而报告的确认结果使用以前未见的种子4,5和6.每个条件包含512个源行和384个目标行，设定为256行标记的上下文。在一个种子--DGP--场景单元中，所有方法和强度都重复使用相同的基层样本，随机流和上下文指标。五个DGP,三个确认种子,
+其他12个不清洁问题类别产量$5\times3\times12=180$排列的评估单位~\ref{app:data_transformations}指定发电机和转换机.
+
+\subsubsection{指标与统计报告}
+\label{app:metrics_reporting}
+
+归类是通过精度和AUROC进行评估，归 regression是通过$R^2$,归一化平均绝对错误 (nMAE),归一化根平均正方误 (nRMSE).更高的比较为精度,AUROC,和$R^2$;较低的比较为为 nMAE和nRMSE.AUROC和$R^2$是强度排名和强度--响应分析的主要指标.
+
+针对目标值$y_i$预测$\hat y_i$让我们
+\begin{equation}
+  \operatorname{MAE}=\frac{1}{n}\sum_{i=1}^{n}|y_i-\hat y_i|,
+  \qquad
+  \operatorname{RMSE}=\sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat y_i)^2}.
+\end{equation}
+我们报告
+\begin{equation}
+  \operatorname{nMAE}=\frac{\operatorname{MAE}}{\max(\sigma,10^{-12})},
+  \qquad
+  \operatorname{nRMSE}=\frac{\operatorname{RMSE}}{\max(\sigma,10^{-12})},
+\end{equation}
+如果结的基准实施使用
+\begin{equation}
+  \sigma=
+  \begin{cases}
+    \operatorname{std}(y_{\mathrm{source}}),
+      & \text{controlled context perturbations},\\
+    \operatorname{std}(y_{\mathrm{target}}),
+      & \text{distribution shifts}.
+  \end{cases}
+\end{equation}
+二者均为总体标准差（\texttt{ddof=0}）。由于两条轨道采用不同的归一化尺度，nMAE 与 nRMSE 仅在同一轨道内比较；跨轨道的回归汇总采用 $R^2$。在分布偏移轨道中，$\operatorname{std}(y_{\mathrm{target}})$ 仅在生成全部预测后计算，且只用于指标评估。
+
+对于公共数据，我们计算一个数据集级OOF分数，然后在数据集中计算一个宏观平均值，给每个数据集相同的权重。在几个问题类别的总结首先在每个类别和强度中平均数据集级分数，然后在五个上下文扰动或七个分布转移中取出相同的权重平均值。报告的公共数据曲线仅使用观察点，而没有平滑，适应或单调投影.
+
+合成信任间隔使用10,000个非参数式自助采样样本，并替换了自助采样的2.5和97.5个百分比.--GP果--清洁具备$3\times5=15$单位;每一个非零控制扰乱点都包含$3\times5\times5=75$单位;每一个非零分布转移点都包含$3\times5\times7=105$单位;和
+总结12个家庭包含180个单元.
+
+对于对稳定分析，我们平均每一个测量表在一个种子内的四个非零强度--GP果--写AROC为AUC,归一化的分类和回归降解是
+\begin{equation}
+  d_{\mathrm{cls}}
+  =\frac{\mathrm{AUC}_{\mathrm{clean}}-\mathrm{AUC}_{\mathrm{shift}}}
+  {\max(\mathrm{AUC}_{\mathrm{clean}}-0.5,0.05)},
+  \qquad
+  d_{\mathrm{reg}}
+  =\frac{R^2_{\mathrm{clean}}-R^2_{\mathrm{shift}}}
+  {\max(|R^2_{\mathrm{clean}}|,0.1)}.
+\end{equation}
+对于每种方法对，较小的降解算为胜利;绝对差不大于 $0.001$,被算为.
+
+\subsubsection{泄漏控制}
+\label{app:leakage_control}
+
+数据集级OOF设计将政策选择与数据集评估分开。对于一个数据集，聚合权重和其他数据依赖的政策参数由其他四个折叠确定，然后结结.
+构建者可以使用该方法可用的标记源上下文，并且目标意识的构建者也可以检查未标记的目标特性 $X_t$,但从来没有针对标签.
+
+保留的标签不用于文本构建，候选人选择，融合政策适配或预测。只有在预测后才能计算报告的指标。元数据可视性由方法界面确定:共享使用家庭-无知文本文本登记器，而预先信息的特定变体可能会接收目标推断之前指定的问题-类别标识符.~\ref{app:regression_evidence}
+详细说明每个界面的候选人选择和汇总.
+
+\subsection{受控扰动与分布偏移}
+\label{app:data_transformations}
+
+\subsubsection{共同设计}
+
+我们将每种干预都表达为确定性，重度指数的运算器 $\mathcal T_s$,其中 $s\in\{0,0.2,0.5,0.8,1.0\}$和 $\mathcal T_0$是身份。对于源上下文扰乱, $s$决定了受影响的行数量 $m_s=\lceil s n_c\rceil$为 $s>0$;对于分布转移，它控制了嵌套的替代分数或特征或响应地图的大小。在数据集--家庭对内，干净数据分区和基层组是
+任何分离，模型或政策都不沿强度曲线重新调整.
+
+合成轨道画$X\sim\mathcal N(0,\Sigma)$在12个维度,$\Sigma_{jj}=1$, $\Sigma_{12}=\Sigma_{21}=0.35$,
+$\Sigma_{34}=\Sigma_{43}=-0.25$通过5个固定响应机制,---线性，双向相互作用，平滑非线性，门控，两组子组零件线性---具有所有方法，强度和种子的同样的活性坐标和系数.
+对于每个生成的区块,$g(x)=h(x)-\operatorname{median}\{h(X)\}$. 分类绘制 $Y\sim\operatorname{Bernoulli}(\sigma(g(X)))$;回归使用 $Y=g(X)+\epsilon$和 $\epsilon\sim\mathcal N(0,0.65^2)$.旋转概念规则逆转了第五个信号坐标。公众数据轨道从表~\ref{tab:public-benchmark-protocols}中的固定OpenML分区开始，并应用了实验性复样或功能/响应转换。因此，分布式等式
+它们的OpenML对手通过设计保留相应的变量或行标识，而不是声称确切的有限样本等式.
+
+\subsubsection{受控源上下文扰动}
+
+让$j^\star$表示具有最大绝对源特征--目标关联的特征。对于每个类别，确定性规则选择 $I_s$的$m_s$源行的子集;分数排名的家庭嵌入于重度，而混合使用每一个重度的种子子子集。这些行上的只有 $(X_c,y_c)$ 修改;目标评估队伍及其标签没有改变.
+表表~\ref{tab:context-perturbation-transformations}提供操作员级的完整描述.
+
+\begin{table}[H]
+  \caption{标记源上下文的控制转变。标记循环仅适用于分类;对尾反应的替代仅适用于回归.}
+  \label{tab:context-perturbation-transformations}
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.12\textwidth} >{\raggedright\arraybackslash}p{0.25\textwidth} >{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+    \toprule 家庭&影响行规则&选择的行列的转换\\
+    \midrule 快捷方式&减少标签/响应的绝对偏差与其中位数.&取代$X_{j^\star}$通过对应的标签或响应的侧面强的值;$y$保持。\\
+边界&增加对实验标签/响应四分之一切断点的距离.&类别变更$X_{j^\star}$归 regression 转回回应对反的实验性尾巴。\\
+排名带/AUC&距离与中位数的距离增加$X_{j^\star}$.
+      &类别变更$X_{j^\star}$归 regression 发送选定的答案到相反的实验性尾巴。\\
+地方&增加距离到特色空间中的固定局部.&修改两者$X_{j^\star}$标签/响应，创造一个矛盾的模式,\\
+混合物&种子的随机小组$m_s$.
+      &选择的子集分为四个固定块，并分别应用快捷方式，边界,AUC/Rank-band和本地。\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{分布偏移类别}
+
+对于合成轨道，让$Z$表示隐藏的特性,$g_{\mathrm{rot}}$表示一个带有重排信号坐标的响应规则，以及$T_s$一个严格控制的观察地图。表~\ref{tab:shift-transformations}首先表示预期的分布偏移，然后记录其分类和回归OpenML实现。公开分类协议可以转换历史/参考源块或目标块，而公开回归协议转换了当前标记的
+根据图表中的样本界面,~\ref{tab:public-benchmark-protocols}.
+
+\begin{table}[H]
+  \caption{七个来源--目标变量类别。不变列描述了合成人口结构;最后两个列指定了经验性OpenML运算符.}
+  \label{tab:shift-transformations}
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2.5pt}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.09\textwidth}
+                      >{\raggedright\arraybackslash}p{0.22\textwidth}
+                      >{\raggedright\arraybackslash}p{0.30\textwidth}
+                      >{\raggedright\arraybackslash}p{0.30\textwidth}@{}}
+    \toprule 家庭&合成变化/不变&OpenML分类&OpenML回归\\
+    \midrule 变量&改变$P(X)$保持$P(Y\mid X)$.
+      &历史/参考行的复制样本$X$-仅权重;保持目标队列的固定.&取代在最高变量特征沿线的当前文本行中嵌套的部分;保持目标固定。\\
+标签&改变$P(Y)$保持$P(X\mid Y)$.
+      &为了改变前班的类型，重新样本了类内的完整目标行.&复制对一个响应尾巴的完整的电流文本行列。\\
+概念&插入$g$走向$g_{\mathrm{rot}}$在固定$P(X)$.
+      &应用嵌入式本地边界标签变化到参考和目标行;特征是固定的.&加入一个顺利的，依赖特征的响应向当前的背景;特征是固定的。\\
+选择&让源入之取决于$X$保留$P(Y\mid X)$.
+      &通过一个$X$只有预测多数的亲密性; 保持目标固定.&通过$X$- 距离目标中心的距离。\\
+域名&使用$T_0$其他$T_s$在共享的隐形行上;保留$P(Y\mid Z)$.
+      &应用一个相似的观察地图到目标特征; 列标识和标签是固定的.&应用一个相似的观察地图到当前的文本特征;响应是固定的。\\
+时间&进化了两者$T_s$保持时间秩序.&应用共同特征和本地概念向参考和目标块;历史行仍然是早期的观察.
+      &应用联合特性和响应漂移到当前块，同时保留离散的历史和参考块。\\
+支持&保持的同时转换观察支持$P(Y\mid Z)$.
+      &转换目标坐标; 列标识和标签是固定的.&通过使用一个$X$- 只有分数。\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+所有干预操作员都在方法评估之前创建。用于定义或评分基准条件的目标标签从未暴露于比较方法，文本构造器或聚合政策.
+
+\FloatBarrier
+
+\subsection{比较方法与任务适用性}
+\label{app:baseline_details}
+
+我们根据评估目的组织比较方法.OpenML研究在普通数据分区下比较标准统计，基于树，深表和结的基础模型预测器。合成研究侧重于用于扰乱或分布转移的方法。由于不每个强度方法都支持两个预测任务，我们区分共享，仅分类和仅回归的基线.
+定义了比较组和任务可应用性;协议和选择细节分为周围的附件子部分.
+
+\subsubsection{OpenML基线}
+
+\paragraph{经典模型与树模型。}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{后勤/台}---规范化的线性分类和
+回归~\citep{cox1958binary,hoerl1970ridge}.
+  \item \textbf{标准/SVR}---基于边际分类和
+回归~\citep{cortes1995svm,drucker1996svr}.
+  \item \textbf{子}---地方邻居的分类或回归
+功能空间~\citep{cover1967knn}.
+  \item \textbf{随机森林}---包装的决策树
+集团~\citep{breiman2001randomforests}.
+  \item \textbf{轻GBM}---基于 histogram 的梯度增强
+树木~\citep{ke2017lightgbm}.
+  \item \textbf{鱼}---梯性树木，训练有素
+增强~\citep{prokhorenkova2018catboost}.
+  \item \textbf{果}---调整式梯度增强
+树木~\citep{chen2016xgboost}.
+  \item \textbf{类}---每个源中训练的输送前线神经基线
+折叠~\citep{rumelhart1986backprop}.
+\end{itemize}
+
+\paragraph{深度表格模型。}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{电动变压器}---转变器对代币表表
+特性~\citep{gorishniy2021fttransformer}.
+  \item \textbf{标签:}---一个类似MLP的参数效率组
+预测因素~\citep{gorishniy2025tabm}.
+  \item \textbf{标签:}---基于RNN的架构,
+表格学习~\citep{thielmann2024tabularnn}.
+  \item \textbf{巴}---结构化状态空间架构
+预测~\citep{ahamed2024mambatab}.
+  \item \textbf{实际MLP}---具有表格配置预定的MLP
+数据~\citep{holzmueller2024realmlp}.
+\end{itemize}
+
+\paragraph{冻结的基础模型主干模型.}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{体}---官方检查站，没有评估
+参数更新并显示在主表中~\citep{wang2026limix2m}. \item \textbf{TabICL-v2}---一个可扩展的表格在文本中学习
+模型~\citep{qu2026tabiclv2}.
+  \item \textbf{标签:}---预训练的表表基础
+模型~\citep{grinsztajn2026tabpfn3technicalreport}.
+  \item \textbf{果版 v1.2}---基于实体的表式基础模型
+数据~\citep{ma2025tabdpt}.
+\end{itemize}
+
+\paragraph{对于整个套房,LimiX兼容性.}LimiX-2M研究排除了超过十个目标类的分类数据集，因此报告了72个OpenML-CC18任务中的62个;应用相同的过器就会留下33个OpenML-CTR23任务~\citep{wang2026limix2m}根据该表，我们将使用 72 个任务 CC18 和 35 个任务 CTR23 上下文扰乱套件.
+其余五个任务采用预先声明的一对其余（OvR）兼容包装器：\texttt{letter}（26 类）、\texttt{vowel}（11 类）、\texttt{isolet}（26 类）、\texttt{texture}（11 类）以及 \texttt{Devnagari-Script}（46 类）。每个类别由一次二分类 LimiX 调用评估，正类概率在类别间归一化，用于计算 Accuracy 与宏平均 OvR AUROC。这五项结果来自兼容包装器，而非 LimiX 原生多分类接口；检查点始终保持冻结。
+
+对于预测列超过 1,024 的三个 CC18 任务——\texttt{Bioresponse}（1,776）、\texttt{CIFAR\_10}（3,072）和 \texttt{Internet-Advertisements}（1,558）——先在原始特征空间中施加扰动。随后，仅在未修改的有标签源特征上拟合确定性的 TruncatedSVD，并将上下文特征与目标特征映射到至多 256 个分量；该投影从不使用目标标签。全部 35 个回归任务均使用 LimiX 原生回归接口，不采用 OvR 或特征投影。
+官方非检索组使用四个分类和八个回归组成员;所有配置和预训练参数在清洁和非零强度条件中保持固定.
+
+七转分类块遵循该协议所使用的结结结35任务二进制CC18子组。网络载体将名义特征转换为序列代码，并在形成分区之前输入缺失特征值的中位数。在调用未变的分区和分区构造器之前，我们将相同的确定性转换应用于缓存的OpenML公积文件。转换没有使用目标标签.
+
+基础模型保留了其规定的预测接口，并且它们预训练参数不会更新。对于每个结的主干模型,Base, \method{}-共享，以及先前通知的 \method{}-特定使用相同的数据分区，上下文预算和目标评估示例.
+
+\subsubsection{合成强度基准}
+
+\paragraph{分类与回归通用基线。}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{鱼}---没有依赖于一个
+特定任务的神经架构~\citep{prokhorenkova2018catboost}.
+  \item \textbf{集团DRO}---优化与最差的预定义
+集团~\citep{sagawa2020groupdro}.
+  \item \textbf{科创板}---损失的上尾优化
+分配~\citep{rockafellar2000cvar}.
+  \item \textbf{珊瑚}---来源--目标共变率
+排列~\citep{sun2016deepcoral}.
+  \item \textbf{圆损失规律化}---强度的损失规律化
+预测~\citep{hasan2025elliptic}.
+\end{itemize}
+
+\paragraph{仅用于分类的基线。}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{酸}---基于限制性训练的对抗性训练
+适应性攻击，结合样品混合~\citep{simonetto2024caa,yun2019cutmix,
+  madry2018adversarial}.
+  \item \textbf{水耐力TabPFN}---适应时间的环境
+分布转移~\citep{helli2024drifttabpfn}.
+  \item \textbf{金融服务}---完全适应表表时间的试验时间
+类别~\citep{zhou2025ftat}.
+  \item \textbf{区分PFN}---标签变换后部纠正应用到
+基于TabICL-v2的概率~\citep{lee2026distpfn}.
+\end{itemize}
+
+\paragraph{仅用于回归的基线。}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{PG酸+混合物}---预测的渐进性对抗训练
+混合样品~\citep{madry2018adversarial,zhang2018mixup}.
+  \item \textbf{鱼}---域对比代表性
+排列~\citep{ganin2016domain}.
+  \item \textbf{美国国家安全局}---测试时间子空间对齐
+回归~\citep{adachi2025ssa}.
+  \item \textbf{子}---培训中风险外分
+环境~\citep{krueger2021vrex}.
+\end{itemize}
+
+\subsection{上下文构造}
+\label{app:context_construction}
+
+本节规定了文本构建界面，每个变体可用的注册构建器和选择和汇集预测的程序。每个构建器将标记的源上下文和，必要时，一个未标记的目标批次映射到标记的文本中，具有与目标数据相同的功能界面.
+
+\subsubsection{测试时目标批次接口与单样本回退}
+\label{app:test_time_batch_interface}
+
+每次测试时间调用都会收到一个未标记的目标批次 $X_t=\{x_i^t\}_{i=1}^{n_t}$,并返回对该批次的每个成员的预测。批次依赖的构造商只能检查目标变量，如目标支持，坐标量，位置和规模;它们不会访问目标标签，更新结的预测器，或改变学习的来源政策。因此，目标批次提供功能转变信息而不是测试时间监督.
+通过此界面提供了评估条件的已保留目标分区.
+
+对于选择转换构建,Base预测器首先将伪标签分配给目标行。预测$x_i^t$时，结果的文本可能只使用伪标签的同行 $\{x_j^t:j\ne i\}$;查询的行被排除在自己的文本之外。仅供来源构造器，包括采样，权重化和源衍生的响应调整，不需要目标批次统计.
+
+对于单个流动请求 ($n_t=1$),我们禁用需要目标批次统计或同行查询的构造器，包括目标支持匹配，位置和规模或量化运输，以及单独留下伪标签。剩下的仅供源的文本使用普通的融合规则。如果没有有效的仅供源的替代方案，我们将$\alpha_i=0$设置在Eq.~\eqref{eq:base_anchored_update}中，并返回预测精确.
+
+\input{sections_zh/context_construction_details}
+
+\iffalse
+\subsubsection{标识符与信息接口}
+
+让我们$(X_c,y_c)$标记在外面折叠中可用的有标签上下文，并让$X_t$标签不标记的目标批次.$d_t(x_i)$对于源示例到目标支持的强大的距离,$u(x_i)$由于其强大的外围特征,$a(x_i,y_i)$对于当地标签的不一致.$j^\star$成为主要的源预测特征,$J_{\mathrm{weak}}$排除主导预测方向的特征集,$r_i$其他
+源响应与本地回归估计的绝对偏差。对于标签转移,$\hat\pi_t$表示从未标记的目标批次估计的类比例.
+
+表表~\ref{tab:context-information-interface}共有的使用相同的注册上下文库为每一个问题。预先通知的特定还收到声明的家庭$z$根据"国家"的规定，该国有6个国家,$\mathcal C_{\mathrm{Shared}}$对于共享上下文库和$\mathcal C_z$对于这些额外的候选人，其可接受的上下文库是
+\begin{equation}
+  \mathcal C_{\mathrm{Specific}}(z)
+  =\mathcal C_{\mathrm{Shared}}\cup\mathcal C_z.
+  \label{eq:specific-context-bank}
+\end{equation}
+标识符 $z$仅控制候选人可用性;它不编码转移强度或提供目标标签。特征子空间构造器对源和目标特征应用相同的投影，分类子集保留每个观察到的源类.
+
+\begin{table}[H]
+  \caption{信息在文本构建和目标推断过程中可用。这两种变体都使用标记的源数据，并且可能使用未标记的目标特性;没有一个观察目标标签或转变强度.}
+  \label{tab:context-information-interface}
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth} >{\raggedright\arraybackslash}p{0.20\textwidth} >{\raggedright\arraybackslash}p{0.27\textwidth} >{\raggedright\arraybackslash}p{0.23\textwidth}@{}}
+    \toprule 变量&类别标识符&现有数据&没有信息\\
+    \midrule 共同的&没有& $(X_c,y_c)$在需要时,$X_t$
+      &目标标签和转变强度\\
+预先获悉的具体情况&宣布的家庭$z$
+      & $(X_c,y_c)$在需要时,$X_t$
+      &目标标签和转变强度\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{Shared 构造器注册表}
+
+共有组织其注册上下文库围绕每个任务的五个互补构建原则。结果的视图不同于样本支持，本地监督，特征表示和源--目标配线，没有类别标识符。表~\ref{tab:shared-context-bank}给出了这些视图的操作.
+
+\begin{table}[H]
+  \caption{已被共享使用的注册文本构建.}
+  \label{tab:shared-context-bank}
+  \centering
+  \footnotesize
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}p{0.70\textwidth}@{}}
+    \toprule 上下文视图&建筑\\
+    \midrule
+    \multicolumn{2}{@{}l}{\textit{类别}} \\
+目标邻居&选择一个具有较大的覆盖率的源示例子集,$d_t(x_i)$与来自$X_t$. \\
+代表&通过共同支持小型的代表性来源例子$d_t(x_i)$低$u(x_i)$. \\
+邻居稳定&保持低的例子$a(x_i,y_i)$通过$d_t(x_i)$对于其他研究,\\
+功能子空间&删除$j^\star$并且将所产生的特征投影应用于源上下文和目标批次。\\
+噪音过&具有高的 joint选例$a(x_i,y_i)$高的$u(x_i)$保护所有观察到的类。\\
+    \addlinespace
+    \multicolumn{2}{@{}l}{\textit{回归}} \\
+源自助采样&标记的源上下文以更换方式重新样本。\\
+反应平衡&通过反应量度进行复试，以使源响应分布的不同区域均表示。\\
+目标匹配&检测源的观察量减少$d_t(x_i)$. \\
+时刻的配合&交通来源的特征,$X_t$它们的源头反应。\\
+配合目标&根据目标的测量，在强度的时刻调整后，应对目标的重样。\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{预先给定类别的 Specific 构造器注册表}
+
+预先通知的特定保留了共享上下文库，并激活了与声明的类别 $z$相关的完整注册库。标识符是固定的每个目标批次在评估条件下，并控制注册表的激活和融合。它不指定变更强度。表中~\ref{tab:specific-perturbation-contexts}和~\ref{tab:specific-shift-contexts}中的每一个大胆输入都表示一个单独注册的构造组;替代覆盖，邻居，维修或配合
+组没有协议级别限制，其成员数量在外部政策选择之前确定.
+
+\paragraph{受控上下文扰动.}所有五个控制 perturbation 家庭都访问相同的完整登记器;$z$归化池包括邻近，原型，边界，少数保留，清洁和功能子空间视图。回归池增加了目前的尾部维修，频率峰维修，功能稳定，子空间和联合功能登记.--响应维修视图表~\ref{tab:specific-perturbation-contexts}
+根据这些指标，申请人将获得家庭领导的职位.
+
+\begingroup
+  \footnotesize
+  \setlength{\LTpre}{0.45\baselineskip}
+  \setlength{\LTpost}{0.45\baselineskip}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.11\textwidth} >{\raggedright\arraybackslash}p{0.405\textwidth} >{\raggedright\arraybackslash}p{0.405\textwidth}@{}}
+    \caption{类别导向的上下文构造，用于特定控制的源上下文扰乱。大胆标签标识别不同的构造组;每个组可以实现几个注册级别.}
+    \label{tab:specific-perturbation-contexts} \\
+    \toprule 家庭&类别结构&回归结构\\
+    \midrule
+    \endfirsthead
+    \multicolumn{3}{@{}l}{\tablename~\thetable\ （续）} \\
+    \toprule 家庭&类别结构&回归结构\\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{在下一页继续} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot 快捷方式& \textbf{控制方向的移动:}放下一个或多个高度预测性的特性。\textbf{弱相关子空间:}保持低相关性半部分或更广泛的弱特征集。\textbf{支持恢复:}在投影后添加邻居，原型和干净的背景.
+      & \textbf{快捷方式子空间:}取消最高的快捷方式分数或保留低相关性特征集。\textbf{功能稳定:}或中和重复极端特征水平。\textbf{关节修复:}结合选定的功能视图和响应修复。\\
+边界& \textbf{边境地区:}保持在决定边界附近的样本,\textbf{邻居稳定性:}保持本地一致的例子。\textbf{补充:}包含原型和弱次空间环境.
+      & \textbf{配尾维修:}反映了反复向强大的中心的极端反应水平。\textbf{半点修复:}根据双尾水平估算中心。\textbf{覆盖范围:}尾部深度和修复强度不同。\\
+排名带/AUC& \textbf{少数民族保护区:}保留少数民族和当地对比的例子在几个社区规模。\textbf{预测:}选择代表性源。\textbf{亚空间补充:}减少对主导排名方向的依赖.
+      & \textbf{频率峰维修:}探测到经验性尾巴中反复响应水平，并将它们缩小到中心。\textbf{附带功能查看:}稳定极端的变量。\textbf{组合维修:}应对修复与功能稳定一起进行。\\
+地方& \textbf{地方社区:}构建几个背景$k$- 子的尺度。\textbf{干净的社区:}抑制具有较高的地方分歧的样本。\textbf{代表性补充:}增加边界和功能子空间视图.
+      & \textbf{地方支持意见:}区间和尺度都不同。\textbf{尾部维修:}纠正本地不支持的响应极端。\textbf{功能--响应修复:}配对干净的功能视图与修复的响应。\\
+混合物& \textbf{基本观点:}暴露邻居，边界，少数民族，原型，清洁和子空间候选人。\textbf{复合的观点:}结合样品过和特征投影。\textbf{杆:}保持互补的高覆盖性环境.
+      & \textbf{响应维修:}结合双尾，中点和频率尖点纠正。\textbf{功能维修:}通过剪切, neutra杆中和快捷方式的子空间。\textbf{关节修复:}构成特征和响应转换。\\
+  \end{longtable}
+\endgroup
+
+\paragraph{分布偏移.}对于分发转换,Specific将共享视图增加到家庭条件的登记簿。分类登记簿包括每个类别的完整高级库，因此其尺寸可能随着$z$回归登记组组合粗和细修网;选择，支持和临时还使用了当前等级中引入的支持重建运算符。目标匹配和运输仅取决于$X_t$其他
+没有标签.
+
+\begingroup
+  \footnotesize
+  \setlength{\LTpre}{0.45\baselineskip}
+  \setlength{\LTpost}{0.45\baselineskip}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.11\textwidth} >{\raggedright\arraybackslash}p{0.405\textwidth} >{\raggedright\arraybackslash}p{0.405\textwidth}@{}}
+    \caption{目前的家庭条件下文本登记表，用于特定的七个分布转型家庭。大胆标签标识别不同的构造组;格格值产生单独的文本候选.}
+    \label{tab:specific-shift-contexts} \\
+    \toprule 家庭&类别结构&回归结构\\
+    \midrule
+    \endfirsthead
+    \multicolumn{3}{@{}l}{\tablename~\thetable\ （续）} \\
+    \toprule 家庭&类别结构&回归结构\\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{在下一页继续} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot 变量& \textbf{目标匹配的自助采样:}根据目标接近度权重权重源行。\textbf{目标邻居子组:}保持的覆盖率有所不同。\textbf{代表支持:}结合目标距离与强大的偏远。\textbf{运输的视图:}在匹配之前，将源分数排列.
+      & \textbf{量化运输:}图源的图表显示了对目标的边缘,\textbf{时刻运输:}调整强大的位置和规模。\textbf{目标匹配:}根据目标附近重新样本运输或原始源行。\\
+标签& \textbf{之前的匹配:}部分或全部移动源类质量向$\hat\pi_t$. \textbf{按类平衡的自助采样:}通过测试，可以实现等级化。\textbf{目标匹配的自助采样:}权重化示例$X_t$. \textbf{身份:}保持源上下文.
+      & \textbf{响应规模:}它们的中位数在粗和细的电网上缩小了源响应。\textbf{分位点发行器:}均衡应对区域。\textbf{目标匹配和尾部维修:}通过$X_t$并且稳定了极端反应。\\
+概念& \textbf{渐进式子空间:}删除一个或多个主导预测方向。\textbf{弱功能视图:}保持更广泛和更窄的低相关子集。\textbf{稳定支持:}保持高覆盖率的例子，地方分歧较低.
+      & \textbf{概念残留化:}减弱最强的滑动特征--响应组件在粗和细电网上。\textbf{目标配合的:}保持目标一致的重新样本视图。\\
+选择& \textbf{倾向性观点:}根据估计的来源的权重权重观察--目标成员。\textbf{目标邻居子组:}覆盖范围在$d_t(x_i)$. \textbf{异常控制:}限制高$u(x_i)$其他问题\textbf{匹配的原型:}保持代表性的目标支持.
+      & \textbf{精确的减倍:}复制复制的排行。\textbf{适应目标分位区间:}保持目标支持的垃圾箱在几个分辨率上。\textbf{无双的袋视图:}恢复多种背景的多个保留的分数。\\
+域名& \textbf{时刻运输:}部分或完全对应强大的位置和规模。\textbf{运输地点:}转换中心，同时保持源量。\textbf{配合:}运输后再采样.
+        \textbf{直接匹配:}保持未运输的目标相匹配视图.& \textbf{量化运输:}使用粗和细的边缘配线网。\textbf{位置--规模运输:}让我们有能力.
+        \textbf{运输匹配:}完成完整的排列后重新样本对目标的行列。\\
+时间& \textbf{最近的窗户:}保持短，中和宽的后音。\textbf{最新的自助采样:}时间权重强度不同。\textbf{目标匹配:}保持目标的支持.
+        \textbf{临时补充:}结合最新性与稳定或一致的背景.& \textbf{时间阶段过器:}排除逐步扩大周期阶段。\textbf{相对相对子组:}通过相片过后，应对目标量量。\textbf{电网:}提供粗和微型权重后音假设。\\
+支持& \textbf{支持运输:}部分或全部调整源支持$X_t$. \textbf{目标匹配:}权重转载和原始行。\textbf{邻居覆盖率:}保持多个针对目标的支持水平。\textbf{代表性观点:}控制源异常值.
+      & \textbf{精确的减倍:}取消通过重新样本取而来的多样性。\textbf{适应性支持子组:}保持目标支持的量化垃圾桶。\textbf{无双的袋视图:}扩大覆盖范围，以多个独立重建的背景。\\
+  \end{longtable}
+\endgroup
+
+\fi
+\subsubsection{候选选择与聚合}
+\label{app:regression_evidence}
+
+\paragraph{策略学习。}
+\label{app:policy_learning}让我们$\Theta=(\mathbf u,\mathbf v_Q,\mathbf v_S,a)$对于分类和$(\mathbf u,\mathbf v_S^{\mathrm{reg}},t_y,a)$对于回归,$\boldsymbol\pi=\operatorname{softmax}(\mathbf u)$,
+$\boldsymbol\eta_Q=\operatorname{softplus}(\mathbf v_Q)$,
+$\boldsymbol\eta_S=\operatorname{softplus}(\mathbf v_S)$,
+$\boldsymbol\eta_S^{\mathrm{reg}}=
+\operatorname{softplus}(\mathbf v_S^{\mathrm{reg}})$,
+$\alpha_{\max}=\sigma(a)$并且$\tau_y=\operatorname{softplus}(t_y)+\epsilon$适用于小型$\epsilon>0$对于目前的外层折叠,$P^{\mathrm{cal}}$是节目分布$e=(\mathcal D_{s,e}^{\mathrm{cal}},\mathcal X_{t,e}^{\mathrm{cal}},
+y_{t,e}^{\mathrm{cal}})$根据训练数据集,
+\begin{equation}
+  \Theta^*\in\arg\min_{\Theta}
+  \mathbb E_{e\sim P^{\mathrm{cal}}}
+  \!\left[\mathcal L_{\mathrm{task}}
+  \!\left(o^{\mathrm{final}}(\mathcal D_{s,e}^{\mathrm{cal}},
+  \mathcal X_{t,e}^{\mathrm{cal}};\Theta),y_{t,e}^{\mathrm{cal}}\right)\right].
+  \label{eq:joint_calibration}
+\end{equation}
+在此,$y_{t,e}^{\mathrm{cal}}$仅由$\mathcal L_{\mathrm{task}}$ (分类的跨或回归的正方形错误) 使用，从来没有由文本构造。结果的 $\Theta^*$和 $\Phi$在目标推断之前固定，而背骨参数 $\theta$仍然结.
+
+聚合政策通过五次数据集层次的外折评估。对于每个持久的数据集，采用其他外部折叠组装集成参数，然后固定为目标推断。校准事件跨越固定电网$\{0,0.2,0.5,0.8,1\}$标准化不合成额外的转换。分享池组家庭，而具体适用于一个政策，每一个被申报的家庭，而不是固定构造器
+没有强度提供到部署的政策，并且没有保留的数据集标签进入适应.
+
+对于回归查询 $x_i^t$,Base文本产生 $\hat y_i^{(0)}$,而可配置的替代方案产生了规模预测上下文库 $\mathcal P_i=\{\hat y_i^{(r)}\}_{r=1}^{R}$.接口不假设一个固定的文本构造器列表;它只需要每个分支暴露一个规模预测。方程 \eqref{eq:regression_evidence}和 \eqref{eq:task_aware_aggregation}分配支持权重成员权重和形式 $\bar y_i$.方程
+\eqref{eq:context_integration_evidence}然后将支持的集体与Base进行分数,Eq.~\eqref{eq:base_anchored_update}执行任务门控 update的曲更新。所有集成和集成参数都通过Eq进行校准.~\eqref{eq:joint_calibration}并在目标推断之前固定;基础模型仍然结.
+
+\paragraph{批量共享和计算复杂性.}让我们$\mathcal B$其他$\mathcal Q$索引分批共享和查询特定的替代分支,$|\mathcal B|+|\mathcal Q|=R$对于 TF结的TFM,分支支机构的成本$T_{G_r}(n_s,n_t,d)+T_f(m_r,n_t)$其他公司的分支支机构$\sum_i[T_{G_r}^{(i)}(n_s,n_t,d)+T_f(m_{ir},1)]$这里.$T_G$其他$T_f$标示建筑成本和前期成本;基础分支补充$T_{G_0}(n_s,d)+T_f(m_0,n_t)$通过$R$
+其他选择需要$O(n_tRL)$类别操作和$O(n_tR)$对于回归.
+
+\subsection{实施细节}
+\label{app:implementation_details}
+
+表~\ref{tab:implementation-details}概括了共享实现设置;上述列出了特定轨道的样本限制和背景布局.
+
+\begingroup
+  \scriptsize
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.0}
+  \setlength{\LTpre}{0.45\baselineskip}
+  \setlength{\LTpost}{0.45\baselineskip}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.17\textwidth}
+                      >{\raggedright\arraybackslash}p{0.75\textwidth}@{}}
+    \caption{公共数据实验的实施设置.}
+    \label{tab:implementation-details} \\
+    \toprule 配置&设置\\
+    \midrule
+    \endfirsthead
+    \multicolumn{2}{@{}l}{\tablename~\thetable\ （续）} \\
+    \toprule 配置&设置\\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{2}{r@{}}{在下一页继续} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    主干模型
+      & TabICL 2.1.1，使用 \nolinkurl{tabicl-classifier-v2-20260212.ckpt} 与
+        \nolinkurl{tabicl-regressor-v2-20260212.ckpt}。每个上下文使用一个批大小为 8 的估计器，主干参数保持冻结。模型输入采用 \texttt{float32}，缓存预测与融合采用 \texttt{float64}，TabICL 保留自动混合精度。\\
+数据处理&预处理是基于源数据的。数值使用中位数计算。分类类类通常编码，未见或缺失的值被映射为$-1$回归类别使用最常见的归因和单次编码;移除了常规编码的列。回归目标在主干模型内标准化。\\
+环境构建&标记的预算排行表~\ref{tab:public-benchmark-protocols}共享使用表中的固定注册表~\ref{tab:shared-context-bank}具体保留 分享和使用表中的家庭条件范围~\ref{tab:specific-perturbation-contexts}其他~\ref{tab:specific-shift-contexts}没有协议级别的候选池大小。\\
+候选人选择&每个配置都保留了其完整的注册库。五倍数据集级OOF在其他四个折叠上将源边政策参数相匹配，并将其结为保留的数据集，使用分类的十字和回归的正方形错误。\\
+总结&候选预测是使用Eq中的查询依赖证据权重组合的.~\eqref{eq:task_aware_aggregation}结果的总体通过Eqs与基准预测集成.~\eqref{eq:context_integration_evidence}--\eqref{eq:base_anchored_update}标准的标准是Eq.~\eqref{eq:joint_calibration}. \\
+评估&比较方法使用相同的源分区，目标批次和数据集水平外层折叠.~\ref{tab:public-benchmark-protocols}. \\
+计算 & 实验运行在NVIDIA GeForce RTX 4090上使用Python 3.12.3,PyTorch 2.8.0+cu128,scikit-learn 1.9.0,和NumPy 2.3.2. \\
+  \end{longtable}
+\endgroup
+
+\FloatBarrier
+\section{各主干模型的强度结果}
+\label{app:backbone-strength-curves}
+
+本节沿偏移强度展开表~\ref{tab:overall-performance} 中各主干模型的宏平均结果。对于 TabICL-v2，表格分别给出 Base、\method{}-Shared 与采用先验信息的 \method{}-Specific 的 Accuracy/AUC 和 $R^2$/nMAE。Specific 从完整的可用候选池中选择并冻结成员列表，不预先截断选择空间。对四个非零强度下的平均行再取平均，可复现表~\ref{tab:overall-performance} 中相应的 $R^2$ 条目；nMAE 则提供互补的绝对误差视角。第~\ref{app:tabicl-strength-results} 节报告 TabICL-v2 的主要结果，第~\ref{app:additional-backbone-strength-results} 节在其他冻结主干模型上评估相同接口。组件消融另见附录~\ref{app:supplemental_ablations}。
+
+\subsection{TabICL-v2}
+\label{app:tabicl-strength-results}
+
+\input{tables_zh/tabicl_strength_details}
+
+\subsection{其他主干模型}
+\label{app:additional-backbone-strength-results}
+
+\begingroup
+\setlength{\intextsep}{5pt}
+\setlength{\abovecaptionskip}{3pt}
+\setlength{\belowcaptionskip}{0pt}
+
+对于 LimiX-2M、TabPFN-v3 和 TabDPT v1.2，图~\ref{fig:limix-strength-summary}、\ref{fig:tabpfn-strength-summary} 与~\ref{fig:tabdpt-strength-summary} 展示主比较所采用的同一组八条宏平均强度曲线。三个主干模型均使用附录~\ref{app:context_construction} 中的 Shared 上下文构造与评估接口，并在留出推理前冻结拟合后的策略。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_limix_2m_strength_summary.pdf}
+  \caption{LimiX-2M 在不同偏移强度下的结果。各行分别汇总五种上下文扰动与七种分布偏移；各列报告 Accuracy、AUC、$R^2$ 和 nRMSE（越低越好）。}
+  \label{fig:limix-strength-summary}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_tabpfn_v3_strength_summary.pdf}
+  \caption{TabPFN-v3 在不同偏移强度下的结果。各行分别汇总五种上下文扰动与七种分布偏移；各列报告 Accuracy、AUC、$R^2$ 和 nMAE（越低越好）。}
+  \label{fig:tabpfn-strength-summary}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_tabdpt_v1_2_strength_summary.pdf}
+  \caption{TabDPT v1.2 在不同偏移强度下的结果。各行分别汇总五种上下文扰动与七种分布偏移；各列报告 Accuracy、AUC、$R^2$ 和 nMAE（越低越好）。}
+  \label{fig:tabdpt-strength-summary}
+\end{figure}
+
+\FloatBarrier
+\vspace{-0.5em}
+\section{消融研究}
+\label{app:supplemental_ablations}
+
+采用一个五上下文共享参考上下文库，选择在每个外部培训折叠。上下文预算研究评估嵌套的预先语，而剩余的研究保持所有五上下文固定。这种设计将上下文数量，聚合和公式组件的影响从上下文重新选择中隔离.
+
+\subsection{上下文预算}
+\label{app:context-budget}
+
+我们的背景预算从$R=1$为了$R=5$单文本设置的基础，之后所有六个指标都变得单调和$R=5$总体超过Base. 这一趋势与第2节的补充性分析一致.~\ref{sec:theory}其他相关问题: 添加的文本可以涵盖以前未修复的查询.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_context_count_ablation.pdf}
+  \caption{根据本文数值，每一个曲线从Base开始，继续通过$R=1,\ldots,5$五个乱和七个转换轨道获得相同的宏观权重。只有少数背景下，转换覆盖范围是有限的。随着补充的背景添加，性能会提高，并且
+  $R=5$箭头指的是最喜欢的方向.}
+  \label{fig:context-count}
+\end{figure}
+
+\vspace{-0.45em}
+\subsection{聚合规则}
+\label{app:aggregation-rule}
+
+通过使用相同的五个上下文上下文库，我们将平均，中值，剪缩中值和外折重积分进行比较，同时保持上下文数量和成员数量固定。用于分类，在抛弃每个类的五个最大和最小值后，坐标中值和平均值被重新归一化为概率简体;回归将相同的运算符应用于规模预测。这些仅基于上下文的变体取代了整个聚合规则,
+因此，没有使用 $Q_i$, $S_i$,或Base gate. 折叠式权重规则达到最高分类精度和最低回归率 nRMSE,显示了源学习可靠性权重对这个上下文库无权重统计汇总的好处.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_aggregation_ablation.pdf}
+  \caption{总结规则的减算$R=5$五和七的轨道均重。板组比较分类精度和回归 nRMSE.}
+  \label{fig:aggregation-ablation}
+\end{figure}
+
+\vspace{-0.45em}
+\subsection{固定上下文库组件消融}
+\label{app:fixed-bank-formula-diagnostic}
+
+在这种诊断配置中，我们将每个格特定的五个文本上下文库固定并一次删除一个组件。所有聚合和门控参数都在相应的外部训练格上选择，并且仅用于评估。我们评估了五个格:\emph{信心}组件$\eta_Q=0$保持$Q_i$在$E_i$;
+\emph{协议}组件$\eta_S=0$; \emph{统一的牧师}组件$\pi_r=1/R$; \emph{/o 基门控}组件$U_i=1$; \emph{文本门控}
+组件$E_i=1$. \emph{信心}适用于分类，其公式包括$Q_i$在五和七轨道中平均四个非零强度，然后给轨道提供相同的权重.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_k5_formula_diagnostic.pdf}
+  \caption{组件的排序和回归。更高的精度和更低的 nRMSE 较好。灰色条除了一个组件的固定上下文库参考，显示的最后蓝色条。值在每个条以上打印，星标标记Holm-纠正的对配标志翻转$p<0.05$断裂标志表明截断的垂直轴.}
+  \label{fig:k5-formula-diagnostic}
+\end{figure}
+
+固定上下文库参考达到0.672准确度和0.739nRMSE. 删除信心，协议，学习前，基础门控户或上下文门控户，将分别降低分类准确度至0.638,0.639,0.636,0.642,和0.656.
+由于两项任务之前的学习环境而产生.
+
+\subsection{不同证据分箱下的门控行为}
+\label{app:gate-bin-analysis}
+
+我们按任务分别将 752,144 个查询预测划分到 Base 不可靠性 $U_i$ 与上下文证据 $E_i$ 的三分位分箱中。每个单元格报告相对 Base 的平均插值权重与损失增益，以及实质性修改的比例（$\alpha_i\geq0.5$）及其恶化率。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.68\textwidth]{figures/tabace_gate_bin_analysis.pdf}
+  \caption{Base 不可靠性（$U_i$）与上下文证据（$E_i$）三分位分箱下的门控行为。正增益表示性能改善；灰色单元格没有实质性修改。在高 $U_i$/高 $E_i$ 分箱中，分类/回归的插值权重为 0.667/0.534，修改率为 0.809/0.529，损失增益为 0.322/2.040，恶化率为 0.037/0.128；低/低分箱的损失增益为 0.000/0.005。}
+  \label{fig:gate-bin-analysis}
+  \vspace{-0.5em}
+\end{figure}
+
+在回归的高 $U_i$/中 $E_i$ 单元格中，仅有 $0.6\%$ 的查询获得实质性更新；这些查询的条件恶化率为 $43.8\%$，而单元格层面的平均损失增益仍为正，为 $0.163$。
+
+\FloatBarrier
+\endgroup

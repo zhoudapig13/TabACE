@@ -1,0 +1,34 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+\method{} uses alternative contexts as query-level evidence for a fixed
+predictor. Consensus weighting identifies mutually supported predictions,
+while the gate controls how far the output moves from Base. Across controlled
+benchmarks and natural-shift evaluations, this design improves prediction
+stability for both foundation and conventional tabular predictors without
+backbone retraining.
+
+\paragraph{Limitations and future work.}
+The current implementation evaluates multiple candidate contexts for each
+query. Adaptive pruning could further reduce one-shot latency beyond the caching
+gains reported here, while evaluation under evolving natural shifts would
+extend the empirical scope.
+
+\section*{Reproducibility Statement}
+
+Reproducibility information is organized across the main text and appendix.
+Appendix~\ref{app:theory} gives the complete theoretical analysis;
+Appendix~\ref{app:experimental_setup} specifies the datasets, splits,
+perturbations, distribution shifts, context construction, aggregation, and
+implementation settings; and Appendices~\ref{app:backbone-strength-curves}
+and~\ref{app:supplemental_ablations} report the full strength-wise results and
+ablations.  All experimental results follow the fixed protocol in
+Appendix~\ref{app:experimental_setup}.  License-restricted model weights are
+obtained from their public releases and are not redistributed.
+
+\section*{AI Use Statement}
+
+The authors used generative AI tools to aid and polish writing, draft portions
+of the manuscript, and assist with other supporting tasks. All AI-assisted
+material was reviewed and verified by the authors, who
+take responsibility for the final manuscript.

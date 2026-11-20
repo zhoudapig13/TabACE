@@ -1,0 +1,32 @@
+output_dir: experiment3/results/smoke
+random_states: [0]
+test_size: 0.3
+max_test_eval: 24
+
+synthetic:
+  n_samples: 180
+  n_features: 8
+  treatment_imbalance: 0.0
+  confounding_strength: 1.0
+  overlap_violation: 0.5
+  heterogeneity: 1.0
+  noise_std: 1.0
+
+context_sizes: [16, 32]
+retrievers:
+  - random
+  - knn
+  - treatment_balanced_random
+  - propensity_nearest
+  - matched_pair
+  - overlap_aware
+context_estimators:
+  - local_context_t_learner
+classical_estimators:
+  - global_t_learner
+  - global_s_learner
+
+ablations:
+  confounding_strengths: [1.0]
+  treatment_imbalances: [0.0]
+  overlap_violations: [0.5]

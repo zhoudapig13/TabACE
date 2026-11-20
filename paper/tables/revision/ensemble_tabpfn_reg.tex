@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering\footnotesize
+\color{revisionblue}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{TabPFN regression ensemble comparison ($R^2$/nRMSE).}
+\label{tab:revision-tabpfn-reg}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Method & Clean & Five perturbations & Seven shifts \\
+\midrule
+TabPFN Base & 0.739 / 0.476 & -1.253 / 1.313 & 0.426 / 0.669 \\
+Native-6\textsuperscript{\(\dagger\)} & 0.737 / 0.508 & -0.405 / 1.116 & 0.444 / 0.640 \\
+PHE-6\textsuperscript{\(\dagger\)} & 0.728 / 0.516 & -0.387 / 1.111 & 0.424 / 0.659 \\
+RF-PFN-6\textsuperscript{\(\dagger\)} & 0.737 / 0.509 & -0.400 / 1.116 & 0.444 / 0.660 \\
+OligoICP 60\(\rightarrow\)6*\textsuperscript{\(\dagger\)} & 0.703 / 0.549 & -0.370 / 1.120 & 0.333 / 0.703 \\
+OligoICP 400\(\rightarrow\)40*\textsuperscript{\(\dagger\)} & 0.697 / 0.549 & -0.325 / 1.104 & 0.355 / 0.695 \\
+Shared & 0.739 / 0.480 & \textbf{0.237 / 0.834} & \textbf{0.460} / 0.656 \\
+\bottomrule
+\end{tabular}}
+\end{table}

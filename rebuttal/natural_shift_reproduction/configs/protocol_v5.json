@@ -1,0 +1,45 @@
+{
+  "protocol_id": "acs_natural_matched_row_budget_v5",
+  "seed": 0,
+  "base_context_rows": 256,
+  "base_and_test_split_frozen_from_v1": true,
+  "shared_type_count": 5,
+  "specific_type_count": 8,
+  "candidate_context_row_budgets": [
+    256,
+    512,
+    1024,
+    2048
+  ],
+  "source_pool_rows": 2048,
+  "shared_types": [
+    "target_neighbor",
+    "representative",
+    "locally_stable",
+    "feature_subspace",
+    "low_conflict"
+  ],
+  "specific_extra_types": [
+    "target_matched_bootstrap",
+    "domain_ratio_bootstrap",
+    "continuous_transport"
+  ],
+  "note": "context row count expansion is user requested; number of types remains moderate",
+  "coverage": "retain registered 70-80 percent source pool before class-preserving uniform sampling; a view can be smaller than the maximum budget if eligible rows are fewer",
+  "selection": "source-only calibration selection CE; no test-label or paper-number optimization",
+  "additional_supervision": "4096 disjoint source calibration labels per source domain for fusion fit and selection",
+  "backbone_finetuned": false,
+  "original_configuration_recovered": false,
+  "row_budget_selection": "Shared row budget chosen on source validation pooled across source domains; reused by Specific for each task",
+  "specific_fusion_selection": "regularization and fusion fitted independently using source calibration; context type count eight",
+  "comparison_purpose": "control per-context maximum row budget while using five Shared and eight Specific types",
+  "supervision_scope_correction": {
+    "pooled_shared_calibration_domains": [
+      "CA2014",
+      "CA2018"
+    ],
+    "temporal_Shared_has_labeled_target_year_calibration": true,
+    "test_labels_used_for_fitting_or_selection": false,
+    "superseded_by_strict_source_protocol": "protocol_v8_strict_source_nested512.json"
+  }
+}

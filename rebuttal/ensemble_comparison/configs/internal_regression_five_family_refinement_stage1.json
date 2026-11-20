@@ -1,0 +1,70 @@
+{
+  "status": "DECLARED_BEFORE_PROBE_RUNS",
+  "internal_only": true,
+  "reason": "Common label amplitude gave nearly collinear R2/nRMSE changes; feature shifts above 8 were saturated.",
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "strength_rescaled": false,
+  "metric_definitions_unchanged": true,
+  "probes": [
+    {
+      "name": "label_contrast0.8",
+      "families": [
+        "boundary",
+        "band"
+      ],
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast": 0.8
+      }
+    },
+    {
+      "name": "label_contrast0.9",
+      "families": [
+        "boundary",
+        "band"
+      ],
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast": 0.9
+      }
+    },
+    {
+      "name": "local_feature_shift0",
+      "families": [
+        "local"
+      ],
+      "parameters": {
+        "shift_scale": 0.0,
+        "label_scale": 1.0,
+        "label_contrast": 1.0
+      }
+    },
+    {
+      "name": "local_feature_shift2",
+      "families": [
+        "local"
+      ],
+      "parameters": {
+        "shift_scale": 2.0,
+        "label_scale": 1.0,
+        "label_contrast": 1.0
+      }
+    }
+  ],
+  "baseline_other_families": {
+    "shift_scale": 8.0,
+    "label_scale": 1.0,
+    "label_contrast": 1.0
+  },
+  "label_contrast_definition": "y_corrupt = y_original + contrast * (original_corrupt_operator(y) - y_original), source context only",
+  "calibration_uses_Base_only": true,
+  "all_probes_retained": true,
+  "query_labels_not_passed_to_corruption_operator": true
+}

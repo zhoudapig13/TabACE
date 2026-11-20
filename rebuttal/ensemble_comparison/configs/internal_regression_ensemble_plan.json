@@ -1,0 +1,45 @@
+{
+  "status": "DECLARED",
+  "backbone": "TabICL-v2",
+  "seed": 0,
+  "logical_members": 6,
+  "methods": [
+    "Native6",
+    "GES6",
+    "ConvexStacking6",
+    "RidgeStacking6",
+    "Median6",
+    "FeatureMean6",
+    "TrimmedMean6",
+    "IQR6_keep1_adapted"
+  ],
+  "Native_adaptation": [
+    "unchanged native6",
+    "source-only Gaussian quantiles then native6"
+  ],
+  "feature_bank": [
+    "identity",
+    "source SVD16",
+    "source SVD32",
+    "source SVD64",
+    "source crosses32",
+    "source crosses64"
+  ],
+  "IQR_bank": "Base exact canonical context plus five canonical bootstrap contexts, total six",
+  "IQR_quantiles": [
+    0.15,
+    0.85
+  ],
+  "IQR_method_is_original_OligoICP_replication": false,
+  "source_access": "Every method uses only Base canonical current-context rows; no extra history/reference rows",
+  "existing_unrestricted_pool_results_preserved": true,
+  "clean_decline_tolerance": 0.005,
+  "method_selection": "nested dataset-OOF normalized loss, Clean calibration constraint",
+  "static_shrinkage_prior": "identity member already in six-member bank; no seventh inference",
+  "historical_Shared_bounds_used_for_method_selection": false,
+  "all_raw_and_adapted_variants_retained": true,
+  "Random_excluded_from_main_table": true,
+  "Shared_run": false,
+  "internal_only": true,
+  "Markdown_written": false
+}

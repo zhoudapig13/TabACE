@@ -1,0 +1,48 @@
+{
+  "requested_by": "user",
+  "recorded_on": "2026-11-10",
+  "datasets": [
+    "eICU",
+    "MIMIC"
+  ],
+  "scope": "All copies acquired or generated for this project's medical experiments, including public demos and credentialed full data.",
+  "trigger": "After the authorized medical experiments finish and aggregate results have been verified and retained.",
+  "additional_confirmation_required": false,
+  "delete": [
+    "Raw source files, download archives, and incomplete downloads",
+    "Patient-level processed tables, split exports, and predictions",
+    "Temporary files, dataset caches, and data backups created for these experiments",
+    "Patient-level demo tables in external/YAIB/demo_data for eicu_demo and mimic_demo",
+    "Any logs or other experiment artifacts containing patient records"
+  ],
+  "known_raw_directories": [
+    "data/raw/eicu_demo",
+    "data/raw/mimiciv_demo",
+    "data/raw/eicu_full",
+    "data/raw/mimiciv_full",
+    "data/raw/mimiciii_demo"
+  ],
+  "additional_locations": "Include alternate download roots (MEDICAL_DATA_ROOT) and any other copies created during the medical experiments; record these locations when used.",
+  "retain": [
+    "Code and experiment configurations",
+    "Non-patient-level aggregate metrics and aggregate statistical summaries",
+    "A cleanup report listing removed paths and verification status, without patient records"
+  ],
+  "completion_check": "Check all recorded raw, processed, cache, temporary, backup, and external demo locations after deletion and report the outcome to the user.",
+  "status": "RECORDED_EICU_MIMIC_COPIES_DELETED_AND_VERIFIED",
+  "deletion_performed": true,
+  "additional_public_medical_inputs": [
+    "data/raw/diabetes_readmission",
+    "data/raw/sepsis_public",
+    "data/processed/public_shift_v1",
+    "data/processed/public_casecontrol_v1",
+    "data/processed/target_development_v2",
+    "data/processed/target_development_readmission_cc_v5",
+    "data/processed/expanded_medical_development_v18",
+    "data/processed/medical_test_assisted_v26",
+    "data/processed/readmission_development_adaptation_v29",
+    "data/processed/readmission_fresh_development_v32"
+  ],
+  "public_shift_status": "Readmission-only exploratory component development evaluated. Original780 remaining evaluation patients and preceding strong Base/Shared retained. Additional-target supervision and computation disclosed. All Sepsis results frozen; eICU/MIMIC copies remain deleted.",
+  "cleanup_report": "results/eicu_mimic_cleanup_report.json"
+}

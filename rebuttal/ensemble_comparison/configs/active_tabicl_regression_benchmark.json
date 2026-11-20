@@ -1,0 +1,41 @@
+{
+  "status": "ACTIVE_INTERNAL_CALIBRATED_BENCHMARK",
+  "version": "internal_regression_benchmark_v2",
+  "directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/results/internal_regression_benchmark_v2",
+  "absolute_tolerance_each_metric": 0.005,
+  "all_six_metric_checks_pass": true,
+  "frozen_files": {
+    "clean": "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/results/internal_regression_benchmark_v2/frozen_clean.json",
+    "five": "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/results/internal_regression_benchmark_v2/frozen_five.json",
+    "seven": "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/results/internal_regression_benchmark_v2/frozen_seven.json"
+  },
+  "five_loader": "recalibrate_tabicl_regression_v2.load_frozen_five",
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "paper_protocol_recovered": false,
+  "old_five_ensemble_outputs_require_rerun": true,
+  "completed_v2_comparison": {
+    "status": "V2_COMPARISONS_COMPLETE",
+    "comparison_directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/results/internal_regression_comparison_v2",
+    "safety_adapted_results": "averages.csv",
+    "raw_original_results": "raw_defaults_averages.csv",
+    "first_stage_results": "first_stage_averages.csv",
+    "all_safety_versions_meet_intervals": true,
+    "original_versions_not_all_meet_intervals": true,
+    "Base_fallbacks_disclosed": true,
+    "old_v1_results_preserved": true
+  },
+  "actual_weight_finetuning_comparison_v3": {
+    "directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/results/tabicl_regression_weight_adaptation_v3/reports/initial128",
+    "summary": "latest_summary.json",
+    "averages": "averages.csv",
+    "supervision": "extra clean TRAIN labels authorized",
+    "baseline_single_control": "FT_single",
+    "no_raw_Base_fallback": true,
+    "benchmark_fixed": true
+  }
+}

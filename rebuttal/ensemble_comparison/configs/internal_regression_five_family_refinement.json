@@ -1,0 +1,143 @@
+{
+  "status": "DECLARED_BEFORE_PROBE_RUNS",
+  "internal_only": true,
+  "reason": "Common label amplitude gave nearly collinear R2/nRMSE changes; feature shifts above 8 were saturated.",
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "strength_rescaled": false,
+  "metric_definitions_unchanged": true,
+  "probes": [
+    {
+      "name": "label_contrast0.8",
+      "families": [
+        "boundary",
+        "band"
+      ],
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast": 0.8
+      }
+    },
+    {
+      "name": "label_contrast0.9",
+      "families": [
+        "boundary",
+        "band"
+      ],
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast": 0.9
+      }
+    },
+    {
+      "name": "local_feature_shift0",
+      "families": [
+        "local"
+      ],
+      "parameters": {
+        "shift_scale": 0.0,
+        "label_scale": 1.0,
+        "label_contrast": 1.0
+      }
+    },
+    {
+      "name": "local_feature_shift2",
+      "families": [
+        "local"
+      ],
+      "parameters": {
+        "shift_scale": 2.0,
+        "label_scale": 1.0,
+        "label_contrast": 1.0
+      }
+    },
+    {
+      "name": "shortcut_feature_shift0.5",
+      "families": [
+        "shortcut"
+      ],
+      "parameters": {
+        "shift_scale": 0.5,
+        "label_scale": 1.0,
+        "label_contrast": 1.0
+      }
+    },
+    {
+      "name": "shortcut_feature_shift1",
+      "families": [
+        "shortcut"
+      ],
+      "parameters": {
+        "shift_scale": 1.0,
+        "label_scale": 1.0,
+        "label_contrast": 1.0
+      }
+    },
+    {
+      "name": "shortcut_feature_shift2",
+      "families": [
+        "shortcut"
+      ],
+      "parameters": {
+        "shift_scale": 2.0,
+        "label_scale": 1.0,
+        "label_contrast": 1.0
+      }
+    },
+    {
+      "name": "mixed_assignment0",
+      "families": [
+        "mixed"
+      ],
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast": 1.0,
+        "mixed_assignment_seed": 0
+      }
+    },
+    {
+      "name": "mixed_assignment1",
+      "families": [
+        "mixed"
+      ],
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast": 1.0,
+        "mixed_assignment_seed": 1
+      }
+    },
+    {
+      "name": "mixed_assignment2",
+      "families": [
+        "mixed"
+      ],
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast": 1.0,
+        "mixed_assignment_seed": 2
+      }
+    }
+  ],
+  "baseline_other_families": {
+    "shift_scale": 8.0,
+    "label_scale": 1.0,
+    "label_contrast": 1.0
+  },
+  "label_contrast_definition": "y_corrupt = y_original + contrast * (original_corrupt_operator(y) - y_original), source context only",
+  "calibration_uses_Base_only": true,
+  "all_probes_retained": true,
+  "query_labels_not_passed_to_corruption_operator": true,
+  "refinement_reason": "Boundary contrast and local feature shift alone did not span the desired joint metrics; shortcut amplitude offers a separate error profile.",
+  "additional_parameters_declared_before_new_runs": true,
+  "mixed_assignment_definition": "Same selected row set and four equal subtype counts; shuffle selected row indices before assigning subtypes with global seed plus nominal rho.",
+  "new_probe_parameters_declared_before_runs": true
+}

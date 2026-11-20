@@ -1,0 +1,47 @@
+{
+  "run_id": "ensemble_single_seed_20261107",
+  "seed": 0,
+  "suite": "original_main_table",
+  "tracks": [
+    "five",
+    "seven"
+  ],
+  "strengths": [
+    0,
+    20,
+    50,
+    80,
+    100
+  ],
+  "classification_tasks": {
+    "five": 72,
+    "seven": 35
+  },
+  "regression_tasks": {
+    "five": 35,
+    "seven": 33
+  },
+  "tune_on": "outer_training_calibration_only",
+  "test_result_selection": false,
+  "adaptation_training": false,
+  "reuse_existing": true,
+  "status": "RUNNING_ALL_COMPARISONS",
+  "missing_original_seven_protocol": true,
+  "five_main_table_comparability": "FAILED_OPERATOR_MATCH_PENDING_RECONSTRUCTION",
+  "seven_implementation": "scripts/seven_shifts.py",
+  "seven_protocol_audit": "results/seven_protocol_audit.json",
+  "old_base_numeric_matching_required": false,
+  "main_nonzero_strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "fixed_protocol_no_test_score_selection": true,
+  "stress_levels_separate_from_main": [
+    1.0,
+    1.25,
+    1.5
+  ],
+  "new_matched_tabace_reference_required": true
+}

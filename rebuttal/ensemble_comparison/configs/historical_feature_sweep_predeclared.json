@@ -1,0 +1,53 @@
+{
+  "declared_before_scoring": true,
+  "betas": [
+    2,
+    4,
+    6,
+    8,
+    12,
+    20
+  ],
+  "query_split": "reserved independent calibration queries",
+  "source_labels_unchanged": true,
+  "selector_uses_TabACE_scores": false,
+  "timestamp": "2026-11-07T11:10:46.429721+00:00",
+  "feature_coverage_extension_before_scoring": [
+    {
+      "beta": 2.0,
+      "feature_multiplier": 2
+    },
+    {
+      "beta": 4.0,
+      "feature_multiplier": 2
+    },
+    {
+      "beta": 2.0,
+      "feature_multiplier": 4
+    },
+    {
+      "beta": 4.0,
+      "feature_multiplier": 4
+    },
+    {
+      "beta": 2.0,
+      "feature_multiplier": 8
+    },
+    {
+      "beta": 4.0,
+      "feature_multiplier": 8
+    }
+  ],
+  "timestamp_extension": "2026-11-07T11:15:44.336149+00:00",
+  "beta_refinement_before_scoring": [
+    {
+      "beta": 5,
+      "feature_multiplier": 8
+    },
+    {
+      "beta": 6,
+      "feature_multiplier": 8
+    }
+  ],
+  "timestamp_refinement": "2026-11-07T11:19:23.783305+00:00"
+}

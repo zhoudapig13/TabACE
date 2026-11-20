@@ -1,0 +1,22 @@
+{
+  "timestamp_UTC": "2026-11-07T16:19:50.671641+00:00",
+  "reason": "Final OOF refit caused some Clean violations despite feasible inner validation; constrain final weights on calibration data with a margin",
+  "final_refit_calibration_Clean_margin": 0.0025,
+  "external_Clean_limit": 0.005,
+  "source_refit_shrinkage_grid": [
+    0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "identity_is_existing_bank_member": true,
+  "no_extra_backbone_inference": true,
+  "test_dataset_labels_not_used_for_weight_fitting": true,
+  "Shared_reference_not_used": true,
+  "raw_and_previous_calibrated_runs_retained": true,
+  "development_iteration": true,
+  "Markdown_written": false,
+  "code_sha256": "bd61fe4b583ac0dbd6ab5823ca9052dcbd2f5fcf8b38f8c742ffac9213af20e7"
+}

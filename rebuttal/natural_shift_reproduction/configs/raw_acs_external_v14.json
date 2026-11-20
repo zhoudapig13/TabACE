@@ -1,0 +1,54 @@
+{
+  "version": "raw_acs_external_v14",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "context_rows": 512,
+  "tasks": [
+    "Employment",
+    "Income",
+    "TravelTime"
+  ],
+  "scenarios": {
+    "geographic": {
+      "source": "CA2018",
+      "ID": "CA2018",
+      "OOD": "MI2018"
+    },
+    "temporal": {
+      "source": "CA2014",
+      "ID": "CA2014",
+      "OOD": "CA2018"
+    }
+  },
+  "unmodified_ACS_features_and_labels": true,
+  "source_pool_rows": 2048,
+  "fixed_evaluation_household_disjoint_split": true,
+  "original_paper_row_split_recovered": false,
+  "finetuning": false,
+  "additional_calibration_labels": false,
+  "DistPFN": {
+    "backbone": "TabICL-v2",
+    "n_estimators": 1,
+    "variant": "DistPFN, no temperature",
+    "posterior_correction": "official eval_TABPFN_shift_X.py:81-85",
+    "target_prior_estimate": "full ID/OOD batch separately"
+  },
+  "Drift-Resilient": {
+    "implementation": "official get_best_tabpfn best_dist",
+    "checkpoint": "tabpfn_dist_model_1.cpkt",
+    "n_estimators": 32,
+    "time_input": "actual survey year",
+    "source_time_history": "single source year only",
+    "torch_compatibility": "existing 2.8 CUDA build for RTX5090; official code unchanged"
+  },
+  "statistics": {
+    "sd": "sample SD, ddof=1",
+    "variance": "sample variance, ddof=1",
+    "uncertainty_scope": "context sampling and inference randomness conditional on fixed data split"
+  }
+}

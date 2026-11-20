@@ -1,0 +1,103 @@
+{
+  "name": "internal_regression_component_v1",
+  "internal_only": true,
+  "paper_protocol_reproduction": false,
+  "benchmark_selected_using_development_labels": true,
+  "model_seed": 0,
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "strength_rescaling_allowed": false,
+  "datasets_five": 35,
+  "datasets_seven": 33,
+  "five_source_cap": 2048,
+  "five_query_cap": 512,
+  "seven_context": 256,
+  "seven_query_cap": 256,
+  "targets": {
+    "clean": {
+      "r2": 0.739,
+      "nrmse": 0.476
+    },
+    "five": {
+      "r2": -1.077,
+      "nrmse": 1.27
+    },
+    "seven": {
+      "r2": 0.273,
+      "nrmse": 0.73
+    }
+  },
+  "absolute_tolerances": {
+    "clean": {
+      "r2": 0.003,
+      "nrmse": 0.003
+    },
+    "five": {
+      "r2": 0.01,
+      "nrmse": 0.01
+    },
+    "seven": {
+      "r2": 0.003,
+      "nrmse": 0.003
+    }
+  },
+  "clean_candidates_initial": [
+    "sequential42",
+    "independent42",
+    "sequential0",
+    "independent0"
+  ],
+  "clean_candidates_additional": [
+    "independent1",
+    "independent2",
+    "independent3",
+    "independent7",
+    "independent11",
+    "independent13",
+    "independent17",
+    "independent23"
+  ],
+  "max_clean_candidates": 12,
+  "five_generator_initial": {
+    "shift_scale": 10.0,
+    "label_scale": 1.0
+  },
+  "five_generator_maximum_candidates": 9,
+  "five_generator_coefficients_grid": {
+    "shift_scale": [
+      8.0,
+      10.0,
+      12.0
+    ],
+    "label_scale": [
+      0.9,
+      1.0,
+      1.1
+    ]
+  },
+  "seven_initial_protocol": "seven_calibrated_v2, reuse exact inputs and Base predictions",
+  "metric_scale_five": "unmodified source response population std",
+  "metric_scale_seven": "query response population std, metrics only",
+  "no_metric_denominator_tuning": true,
+  "no_ensemble_outcomes_for_benchmark_selection": true,
+  "historical_Shared_reference": {
+    "five": {
+      "r2": 0.363,
+      "nrmse": 0.783
+    },
+    "seven": {
+      "r2": 0.467,
+      "nrmse": 0.659
+    }
+  },
+  "method_fit_uses_Shared_score_bounds": false,
+  "all_development_trials_retained": true,
+  "classification_accepted_snapshot_unchanged": true,
+  "Random_excluded_from_main_table": true,
+  "Shared_run": false,
+  "Markdown_written": false
+}

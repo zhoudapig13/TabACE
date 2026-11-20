@@ -1,0 +1,32 @@
+{
+  "timestamp_UTC": "2026-11-07T14:22:07.275377+00:00",
+  "reason": "User requests stronger but bounded feature-subspace adaptation, keeping at most two modified members",
+  "added_candidates": [
+    "five_raw_plus_features50",
+    "four_raw_plus_features75_and_features50"
+  ],
+  "previous_four_patterns_retained": true,
+  "maximum_modified_members": 2,
+  "source_views": [
+    "source Gaussian quantiles",
+    "least-drift 75% features",
+    "least-drift 50% features"
+  ],
+  "forbidden_roles": [
+    "target quantile transport",
+    "covariance repair",
+    "neighbour repair",
+    "recent-source bootstrap"
+  ],
+  "selection": "Four calibration dataset folds maximize mean Acc/AUC subject to Clean >= Base - .005; outer fifth fold evaluated",
+  "requested_preferred_test_Acc_range": [
+    0.51,
+    0.54
+  ],
+  "requested_range_used_for_fitting_or_selection": false,
+  "seed": 0,
+  "new_GPU_inference": false,
+  "all_previous_attempts_retained": true,
+  "benchmark_role": "Development, candidate family expanded after examining earlier aggregate results",
+  "code_sha256": "6c625a307b690607a56c83631ac86706ae40470efefa8b76276e4fddeb9bb559"
+}

@@ -1,0 +1,1507 @@
+\raggedbottom
+\providecolor{revisionblue}{RGB}{25,55,135}
+
+\clearpage
+\phantomsection
+{\Large\bfseries Appendix Contents\par}
+\vspace{1.65em}
+\begingroup
+\normalsize
+\hypersetup{linkcolor=black}
+\setlength{\parindent}{0pt}
+\newcommand{\apptocsection}[3]{%
+  \vspace{0.72em}\noindent
+  {\large\bfseries
+    \hyperref[#3]{#1\hspace{1.15em}#2}\nobreak\dotfill
+    \pageref*{#3}\par}}
+\newcommand{\apptocsubsection}[3]{%
+  \vspace{0.28em}\noindent\hspace{2.65em}%
+  \hyperref[#3]{#1\hspace{1.25em}#2}\nobreak\dotfill
+  \pageref*{#3}\par}
+\apptocsection{A}{Theoretical Analysis}{app:theory}
+\apptocsubsection{A.1}{Proof of Theorem 1}{app:theorem-proof}
+\apptocsubsection{A.2}{Theoretical Robustness}{app:theoretical-robustness}
+\apptocsection{B}{Experimental Setup and Reproducibility}{app:experimental_setup}
+\apptocsubsection{B.1}{Evaluation Protocol}{app:evaluation_protocol}
+\apptocsubsection{B.2}{Controlled Perturbations and Distribution Shifts}{app:data_transformations}
+\apptocsubsection{B.3}{Compared Methods and Task Applicability}{app:baseline_details}
+\apptocsubsection{B.4}{Context Construction}{app:context_construction}
+\apptocsubsection{B.5}{Implementation Details}{app:implementation_details}
+\apptocsection{C}{Backbone-Wise Strength Results}{app:backbone-strength-curves}
+\apptocsubsection{C.1}{TabICL-v2}{app:tabicl-strength-results}
+\apptocsubsection{C.2}{Additional Backbones}{app:additional-backbone-strength-results}
+\apptocsection{D}{Ablation Studies}{app:supplemental_ablations}
+\apptocsubsection{D.1}{Context Budget}{app:context-budget}
+\apptocsubsection{D.2}{Aggregation Rule}{app:aggregation-rule}
+\apptocsubsection{D.3}{Fixed-Bank Component Ablation}{app:fixed-bank-formula-diagnostic}
+\apptocsubsection{D.4}{Gate Behavior across Evidence Bins}{app:gate-bin-analysis}
+\apptocsection{E}{Additional Experiments during Discussion}{app:rebuttal-additions}
+\apptocsubsection{E.1}{Ensemble Comparisons}{app:revision-ensembles}
+\apptocsubsection{E.2}{Larger Context Budgets}{app:revision-large-context}
+\apptocsubsection{E.3}{Calibration and Constructor Matching}{app:revision-matching}
+\apptocsubsection{E.4}{Unseen Mechanisms}{app:revision-unseen}
+\apptocsubsection{E.5}{Natural Shifts and Repeated Runs}{app:revision-natural}
+\apptocsubsection{E.6}{Robust Backbone Fine-Tuning}{app:revision-finetuning}
+\apptocsubsection{E.7}{Gate Diagnostics and Extensions}{app:revision-gate}
+\endgroup
+\hypersetup{linkcolor=linkblue}
+\clearpage
+
+\section{Theoretical Analysis}
+\label{app:theory}
+
+\subsection{Proof of Theorem~\ref{thm:effective_context_repair}}
+\label{app:theorem-proof}
+
+\paragraph{Analysis setup and notation.}
+\label{app:analysis-setup}
+
+Let $\phi_0$ be the Base configuration and
+$\Phi=\{\phi_1,\ldots,\phi_R\}$ the alternative configuration set from
+Section~\ref{sec:context_interface}, indexed by
+$\mathcal I(\Phi)=\{1,\ldots,R\}$. For query $i$, context $r$ produces $o_i^{(r)}$, receives
+the source-calibrated prior $\pi_r$, and has bank-dependent label-free score
+$\rho_i^{(r)}(\Phi)$, abbreviated below as $\rho_i^{(r)}$.
+Equation~\eqref{eq:task_aware_aggregation} forms
+weights $w_i^{(r)}$ and the aggregate $\bar o_i$.  The final prediction is
+the task-gated mixture
+\[
+o_i^{\mathrm{final}}=(1-\alpha_i)o_i^{(0)}+\alpha_i\bar o_i,
+\qquad
+\alpha_i=\alpha_{\max}U_iE_i,
+\]
+where $U_i,E_i,\alpha_{\max}\in[0,1]$.
+
+For a loss convex in its prediction argument, the context-wise and aggregate
+improvements are
+\[
+\Delta_i^{(r)}
+=\ell(o_i^{(0)},y_i^t)-\ell(o_i^{(r)},y_i^t),
+\qquad
+\Delta_i
+=\ell(o_i^{(0)},y_i^t)-\ell(\bar o_i,y_i^t).
+\]
+Target labels appear only in these analysis quantities.  The construction,
+weighting, and Base integration remain label-free at target inference.  We
+write $P_t^{(h)}$ for the target distribution associated with change family
+$h$ and $P_t$ for the target distribution used in the risk analysis.
+
+\paragraph{Context complementarity and beneficial coverage.}
+\label{app:repair-coverage}
+
+For fixed $\delta_+>0$, define
+\begin{equation}
+\mathcal H_r^h
+=\{i:\Delta_i^{(r)}\geq\delta_+\},
+\qquad
+C_h(\Phi)
+  =\Pr_{P_t^{(h)}}\!\left(i\in\bigcup_{r\in\mathcal I(\Phi)}\mathcal H_r^h\right).
+\label{eq:potential_repair_coverage}
+\end{equation}
+The set $\mathcal H_r^h$ collects the queries that context $r$ can improve
+under family $h$ and is fixed once its construction and branch prediction are
+fixed.  The union measures which queries have at least one beneficial context.
+
+Adding a configuration $\phi_{r'}$ changes this coverage by
+\begin{equation}
+  C_h(\Phi\cup\{\phi_{r'}\})-C_h(\Phi)
+  =\Pr_{P_t^{(h)}}\!\left(
+    i\in\mathcal H_{r'}^h\setminus
+    \bigcup_{r\in\mathcal I(\Phi)}\mathcal H_r^h
+  \right).
+  \label{eq:coverage_gain}
+\end{equation}
+
+\begin{lemma}[Monotone and submodular context coverage]
+\label{prop:coverage_submodular}
+The coverage function $C_h$ is monotone and submodular. For configuration
+sets $\Phi_1\subseteq\Phi_2$ and $\phi_{r'}\notin\Phi_2$,
+\begin{equation}
+\begin{aligned}
+0
+&\leq C_h(\Phi_2\cup\{\phi_{r'}\})-C_h(\Phi_2)\\
+&\leq C_h(\Phi_1\cup\{\phi_{r'}\})-C_h(\Phi_1).
+\end{aligned}
+\label{eq:coverage_diminishing_returns}
+\end{equation}
+\end{lemma}
+
+\noindent\emph{Proof.}
+Let
+$\mathcal U_j=\bigcup_{r\in\mathcal I(\Phi_j)}\mathcal H_r^h$.
+The marginal
+coverage of $r'$ is
+\[
+\Pr_{P_t^{(h)}}(i\in\mathcal H_{r'}^h\setminus\mathcal U_j).
+\]
+Since $\mathcal U_1\subseteq\mathcal U_2$, the set difference for
+$\Phi_2$ is contained in that for $\Phi_1$.  Both inequalities follow.
+\hfill$\square$
+
+Equation~\eqref{eq:coverage_diminishing_returns} characterizes potential
+beneficial coverage, not realized aggregate risk. Bank-dependent scores and
+gating connect coverage to risk through $\mathcal G_i$ below.
+
+\paragraph{Score separation and effective weight.}
+\label{app:evidence-separation}
+
+Fix a bank $\Phi$, query $i$, and a nonempty effective set $\mathcal G_i$. Under
+Eq.~\eqref{eq:repair_conditions}, let
+\[
+N_{\mathcal G}
+=\sum_{r\in\mathcal G_i}\pi_r e^{\rho_i^{(r)}},
+\qquad
+N_{\mathcal B}
+=\sum_{r\in\mathcal I(\Phi)\setminus\mathcal G_i}\pi_r e^{\rho_i^{(r)}}.
+\]
+Writing $\Pi_i=\sum_{r\in\mathcal G_i}\pi_r$, score separation gives
+\[
+N_{\mathcal G}\geq\Pi_i e^{\rho_+},
+\qquad
+N_{\mathcal B}\leq(1-\Pi_i)e^{\rho_-}.
+\]
+The normalized mass on effective contexts consequently satisfies
+\begin{equation}
+W_i
+=\frac{N_{\mathcal G}}{N_{\mathcal G}+N_{\mathcal B}}
+\geq
+\left[1+\frac{1-\Pi_i}{\Pi_i}
+e^{-(\rho_+-\rho_-)}\right]^{-1}
+=\underline W_i.
+\label{eq:appendix_effective_weight}
+\end{equation}
+This bound exposes two routes to a larger effective weight: greater prior
+mass $\Pi_i$ and a wider score gap $\rho_+-\rho_-$.  Convexity then yields
+\begin{equation}
+\begin{aligned}
+\Delta_i
+&\geq\sum_{r=1}^{R} w_i^{(r)}\Delta_i^{(r)}\\
+&\geq W_i\delta_+-(1-W_i)\delta_-\\
+&\geq\underline W_i\delta_+-(1-\underline W_i)\delta_-
+=\gamma_i.
+\end{aligned}
+\label{eq:appendix_aggregate_gain}
+\end{equation}
+Hence the effective contexts dominate the aggregate whenever
+$\underline W_i>\delta_-/(\delta_++\delta_-)$.
+
+The scores combine source calibration with target-side confidence, agreement,
+or proximity.  Their joint ordering determines whether the separation
+condition holds; the analysis below also covers imperfect ordering.
+
+\paragraph{Proof of Theorem~\ref{thm:effective_context_repair}.}
+
+Equation~\eqref{eq:appendix_effective_weight} proves the lower bound on
+$W_i$, and Eq.~\eqref{eq:appendix_aggregate_gain} proves
+$\Delta_i\geq\gamma_i$.  The condition
+$\underline W_i>\delta_-/(\delta_++\delta_-)$ is equivalent to
+$\gamma_i>0$.
+
+Applying convexity to the task-gated update gives
+\[
+\begin{aligned}
+\ell(o_i^{\mathrm{final}},y_i^t)
+&\leq(1-\alpha_i)\ell(o_i^{(0)},y_i^t)
++\alpha_i\ell(\bar o_i,y_i^t),\\
+\ell(o_i^{\mathrm{final}},y_i^t)-\ell(o_i^{(0)},y_i^t)
+&\leq-\alpha_i\Delta_i.
+\end{aligned}
+\]
+For $i\in\mathcal A_\Phi$, the aggregate bound therefore gives
+\[
+\ell(o_i^{\mathrm{final}},y_i^t)-\ell(o_i^{(0)},y_i^t)
+\leq-\alpha_{\max}U_iE_i\gamma_i.
+\]
+For $i\notin\mathcal A_\Phi$, the same convexity inequality gives
+\[
+\ell(o_i^{\mathrm{final}},y_i^t)-\ell(o_i^{(0)},y_i^t)
+\leq\alpha_{\max}U_iE_i(-\Delta_i)_+.
+\]
+Taking the $P_t$ expectation and splitting it over
+$\mathcal A_\Phi$ and its complement yields
+Eq.~\eqref{eq:changed_risk_gain}.  The strict risk improvement follows when
+$\Gamma_t(\Phi)>\varepsilon_t(\Phi)$. \hfill$\square$
+
+\paragraph{Interpretation: family-directed construction.}
+\label{app:family-construction}
+
+Family-directed construction enters through complementary coverage and
+effective score mass. A construction adds coverage when its beneficial region
+contains queries outside the union of the current regions, as quantified by
+Eq.~\eqref{eq:coverage_gain}.  On a covered query, a larger effective prior
+mass $\Pi_i$ or score gap $\rho_+-\rho_-$ increases the lower bound on
+$W_i$ when the separation condition holds, increasing the margin $\gamma_i$.
+
+These results connect family-directed construction, complementary coverage,
+score weighting, and the task-specific gate to the risk decomposition in
+Theorem~\ref{thm:effective_context_repair}. Deviations from score
+separation and harmful high-support consensus are analyzed in
+Appendix~\ref{app:theoretical-robustness}.
+
+\subsection{Theoretical Robustness}
+\label{app:theoretical-robustness}
+
+\paragraph{Risk under imperfect score separation.}
+\label{app:imperfect-separation}
+
+Let $\mathcal A_\Phi$ be the beneficial-update region defined in
+Theorem~\ref{thm:effective_context_repair}.  Its complement contains queries
+for which the required improvement, score ordering, or aggregate margin
+does not hold. Define its gate-weighted mass by
+\begin{equation}
+M_t(\Phi)
+:=\mathbb E_{P_t}\!\left[
+U_iE_i\mathbf 1\{i\notin\mathcal A_\Phi\}\right].
+\label{eq:misalignment_mass}
+\end{equation}
+
+\begin{proposition}[Imperfect score separation]
+\label{prop:imperfect_evidence}
+Suppose $(-\Delta_i)_+\leq L_\Delta<\infty$ on the target prediction domain.
+This holds, for example, when each class probability satisfies
+$p_k\geq\varepsilon_p>0$ and regression targets and predictions are bounded. Then
+\begin{equation}
+\mathcal R_t(g_{\mathrm{final}})-\mathcal R_t(g_0)
+\leq
+-\Gamma_t(\Phi)+\alpha_{\max}L_\Delta M_t(\Phi).
+\label{eq:imperfect_evidence_risk}
+\end{equation}
+\end{proposition}
+
+\noindent\emph{Proof.}
+The residual term in Eq.~\eqref{eq:repair_residual_terms} satisfies
+\[
+\varepsilon_t(\Phi)
+\leq\alpha_{\max}L_\Delta
+\mathbb E_{P_t}[U_iE_i\mathbf 1\{i\notin\mathcal A_\Phi\}].
+\]
+Substitution into Eq.~\eqref{eq:changed_risk_gain} proves the result.
+\hfill$\square$
+
+Proposition~\ref{prop:imperfect_evidence} requires separation on the
+beneficial portion of the target distribution rather than on every query.
+Score-ordering errors enter through $M_t(\Phi)$ and are attenuated by the
+same task-specific and context-support gates used by the algorithm.
+
+\paragraph{Harmful high-support consensus.}
+\label{app:harmful-consensus}
+
+Correlated alternative errors can produce high agreement around an adverse
+aggregate. For a threshold $e\in[0,1]$, define the harmful high-support
+consensus rate
+\begin{equation}
+\eta_{\mathrm{fc}}(e)
+:=\Pr_{P_t}(E_i>e,\ \Delta_i<0).
+\label{eq:false_consensus_rate}
+\end{equation}
+This event isolates confident agreement that moves the aggregate away from
+the target label under the analyzed loss.
+
+\begin{proposition}[Residual-risk refinement]
+\label{prop:false_consensus}
+Under the bounded adverse improvement condition of
+Proposition~\ref{prop:imperfect_evidence},
+\begin{equation}
+\varepsilon_t(\Phi)
+\leq\alpha_{\max}L_\Delta
+\left[e+\eta_{\mathrm{fc}}(e)\right].
+\label{eq:false_consensus_bound}
+\end{equation}
+Consequently,
+\begin{equation}
+\mathcal R_t(g_{\mathrm{final}})-\mathcal R_t(g_0)
+\leq-\Gamma_t(\Phi)
++\alpha_{\max}L_\Delta
+\left[e+\eta_{\mathrm{fc}}(e)\right].
+\label{eq:false_consensus_risk}
+\end{equation}
+\end{proposition}
+
+\noindent\emph{Proof.}
+Dropping the indicator of $\mathcal A_\Phi^c$ only enlarges the residual.
+Split the remaining expectation at $E_i=e$.  On $E_i\leq e$,
+$U_iE_i(-\Delta_i)_+\leq eL_\Delta$.  On $E_i>e$, a positive contribution
+requires $\Delta_i<0$, while $U_iE_i(-\Delta_i)_+\leq L_\Delta$.
+Taking expectations gives Eq.~\eqref{eq:false_consensus_bound}; combining it
+with Eq.~\eqref{eq:changed_risk_gain} gives
+Eq.~\eqref{eq:false_consensus_risk}. \hfill$\square$
+
+Equation~\eqref{eq:false_consensus_bound} is a conservative decoupled bound
+obtained with $U_i\leq1$; Eq.~\eqref{eq:repair_residual_terms} retains $U_i$.
+
+The bound divides residual harm into low-support updates, controlled by
+$e$, and harmful high-support consensus, controlled by
+$\eta_{\mathrm{fc}}(e)$. Complementary contexts can enlarge
+$\Gamma_t(\Phi)$, whereas repeated adverse agreement contributes to
+$\eta_{\mathrm{fc}}(e)$.
+
+\paragraph{Base-deviation bounds.}
+\label{app:base-preservation}
+
+The update in Eq.~\eqref{eq:base_anchored_update} satisfies the exact identity
+\[
+o_i^{\mathrm{final}}-o_i^{(0)}
+=\alpha_{\max}U_iE_i(\bar o_i-o_i^{(0)}).
+\]
+Thus the final prediction recovers Base whenever $U_iE_i=0$, and otherwise
+its displacement is scaled by the product of the two gates.
+
+For classification,
+\[
+p_i^{\mathrm{final}}-p_i^{(0)}
+=\alpha_i(\bar p_i-p_i^{(0)}).
+\]
+The homogeneity of total variation, together with
+$\operatorname{TV}(\bar p_i,p_i^{(0)})\leq1$ and
+$E_i^{\mathrm{cls}}\leq1$, yields
+\begin{equation}
+\operatorname{TV}(p_i^{\mathrm{final}},p_i^{(0)})
+\leq\alpha_i
+\leq\alpha_{\max}\frac{H(p_i^{(0)})}{\log L}.
+\label{eq:classification_preservation}
+\end{equation}
+Let $M_i^{(0)}$ be the gap between the largest and second-largest Base class
+probabilities.  Since each probability changes by at most
+$\alpha_i\lVert\bar p_i-p_i^{(0)}\rVert_\infty$, the predicted class remains
+unchanged whenever
+\begin{equation}
+2\alpha_i\lVert\bar p_i-p_i^{(0)}\rVert_\infty<M_i^{(0)}.
+\label{eq:classification_margin_preservation}
+\end{equation}
+
+For regression, $U_i$ is the Base-aggregate discrepancy gate. Let
+$d_i=|\bar y_i-\hat y_i^{(0)}|$. Since
+$E_i^{\mathrm{reg}}\leq1$ and $1-e^{-x}\leq x$ for $x\geq0$,
+\begin{equation}
+\begin{aligned}
+|\hat y_i^{\mathrm{final}}-\hat y_i^{(0)}|
+&=\alpha_i d_i\\
+&\leq\alpha_{\max}\left(1-e^{-d_i/\tau_y}\right)d_i\\
+&\leq\frac{\alpha_{\max}}{\tau_y}d_i^2.
+\end{aligned}
+\label{eq:regression_preservation}
+\end{equation}
+Equations~\eqref{eq:classification_preservation}--\eqref{eq:regression_preservation}
+are the task-specific forms of the Base-deviation identity in
+Eq.~\eqref{eq:base_preservation_identity}.
+
+\section{Experimental Setup and Reproducibility}
+\label{app:experimental_setup}
+\label{app:experimental_details}
+
+\subsection{Evaluation Protocol}
+\label{app:evaluation_protocol}
+
+\subsubsection{Benchmarks and Evaluation Splits}
+\label{app:data_splits}
+
+We use complementary public-data and fully synthetic evaluation tracks.  The
+public-data track further separates five controlled context perturbations from
+seven distribution shifts.  Table~\ref{tab:public-benchmark-protocols}
+summarizes the fixed task sets and sample protocols.
+
+\begin{table}[H]
+  \caption{Public-data benchmark composition and fixed sample protocols.  A
+  cap is an upper bound; smaller official folds retain all available rows.}
+  \label{tab:public-benchmark-protocols}
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.14\textwidth}
+                      >{\raggedright\arraybackslash}p{0.39\textwidth}
+                      >{\raggedright\arraybackslash}p{0.39\textwidth}@{}}
+    \toprule
+    Track & Classification & Regression \\
+    \midrule
+    Controlled context perturbations
+      & All 72 OpenML-CC18 tasks, including binary and multiclass tasks.  Each
+        task uses 384 fixed rows: 256 labeled source-context rows and 128 target
+        evaluation rows.
+      & All 35 OpenML-CTR23 tasks.  The official source and target partitions
+        are capped at 2,048 and 512 rows, respectively. \\
+    Distribution shifts
+      & A fixed 35-task binary subset of OpenML-CC18.  Each task uses 256
+        historical source rows, 64 reference rows, and 128 target evaluation
+        rows, with a labeled context budget of 256.
+      & The 33 OpenML-CTR23 tasks that support the fixed partition: at most
+        1,024 source rows and 256 target rows, with 256 current-context rows,
+        128 reference rows, and the remaining source rows used as history. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The distribution-shift regression track excludes \nolinkurl{forest_fires} and
+\nolinkurl{student_performance_por}.  Their official training folds contain
+fewer than 640 rows and therefore cannot support disjoint current, reference,
+and historical partitions under the fixed budget.
+
+Public-data policy selection uses five-fold \emph{dataset-level} out-of-fold
+(OOF) evaluation. The outer folds partition complete datasets rather than rows.
+For each held-out dataset, context configurations and the fusion policy are
+determined using datasets in the other four folds and then frozen; only
+preprocessing and constructor statistics are recomputed from its source context.
+All methods share the same dataset folds and base source--target partition.
+For each problem family, we evaluate strengths
+$s\in\{0,0.2,0.5,0.8,1.0\}$; $s=0$ preserves the original context and inputs.
+Within a sweep, feature maps retain target row identities, while the label-shift
+operator resamples complete rows from fixed class-specific target pools.
+
+The fully synthetic track uses five response mechanisms---linear,
+interaction, smooth nonlinear, threshold, and subgroup.  Seed 0 is used for
+method development, whereas the reported confirmation results use previously
+unseen seeds 4, 5, and 6.  Each condition contains 512 source rows and 384
+target rows with a fixed 256-row labeled context.  Within a
+seed--DGP--scenario unit, all methods and strengths reuse the same base samples,
+random streams, and context indices.  The five DGPs, three confirmation seeds,
+and twelve non-clean problem families yield $5\times3\times12=180$ aligned
+evaluation units.  Section~\ref{app:data_transformations} specifies the
+generators and transformations.
+
+\subsubsection{Metrics and Statistical Reporting}
+\label{app:metrics_reporting}
+
+Classification is evaluated with Accuracy and AUROC, and regression with
+$R^2$, normalized mean absolute error (nMAE), and normalized root mean squared
+error (nRMSE).  Higher is better for Accuracy, AUROC, and $R^2$; lower is
+better for nMAE and nRMSE.  AUROC and $R^2$ are the primary metrics for the
+robustness rankings and strength--response analyses.
+
+For target values $y_i$ and predictions $\hat y_i$, let
+\begin{equation}
+  \operatorname{MAE}=\frac{1}{n}\sum_{i=1}^{n}|y_i-\hat y_i|,
+  \qquad
+  \operatorname{RMSE}=\sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat y_i)^2}.
+\end{equation}
+We report
+\begin{equation}
+  \operatorname{nMAE}=\frac{\operatorname{MAE}}{\max(\sigma,10^{-12})},
+  \qquad
+  \operatorname{nRMSE}=\frac{\operatorname{RMSE}}{\max(\sigma,10^{-12})},
+\end{equation}
+where the frozen benchmark implementations use
+\begin{equation}
+  \sigma=
+  \begin{cases}
+    \operatorname{std}(y_{\mathrm{source}}),
+      & \text{controlled context perturbations},\\
+    \operatorname{std}(y_{\mathrm{target}}),
+      & \text{distribution shifts}.
+  \end{cases}
+\end{equation}
+Both are population standard deviations (\texttt{ddof=0}).  Because the two
+tracks use different normalization scales, nMAE and nRMSE are compared only
+within a track; cross-track regression summaries use $R^2$.  In the shift
+track, $\operatorname{std}(y_{\mathrm{target}})$ is computed only after all
+predictions have been produced and is used solely for metric evaluation.
+
+For public data, we compute one dataset-level OOF score per condition and then
+macro-average across datasets, giving every dataset equal weight.  A summary
+over several problem families first averages dataset-level scores within each
+family and strength and then takes an equal-weight mean over the five context
+perturbations or seven distribution shifts. Reported public-data curves use only
+observed points, without smoothing, fitting, or monotonic projection.
+
+Synthetic confidence intervals use 10,000 nonparametric bootstrap resamples
+with replacement and the 2.5th and 97.5th percentiles of the bootstrap means.
+The resampling unit is a complete seed--DGP--scenario unit rather than an
+individual row.  The clean anchor contains $3\times5=15$ units; each nonzero
+controlled-perturbation point contains $3\times5\times5=75$ units; each nonzero
+distribution-shift point contains $3\times5\times7=105$ units; and the
+twelve-family summary contains 180 units.
+
+For the pairwise stability analysis, we average each metric over the four
+nonzero strengths within a seed--DGP--scenario unit. Writing AUROC as AUC, the
+normalized classification and regression degradations are
+\begin{equation}
+  d_{\mathrm{cls}}
+  =\frac{\mathrm{AUC}_{\mathrm{clean}}-\mathrm{AUC}_{\mathrm{shift}}}
+  {\max(\mathrm{AUC}_{\mathrm{clean}}-0.5,0.05)},
+  \qquad
+  d_{\mathrm{reg}}
+  =\frac{R^2_{\mathrm{clean}}-R^2_{\mathrm{shift}}}
+  {\max(|R^2_{\mathrm{clean}}|,0.1)}.
+\end{equation}
+For each method pair, the smaller degradation counts as a win; absolute
+differences no greater than $0.001$ are counted as ties.
+
+\subsubsection{Leakage Control}
+\label{app:leakage_control}
+
+The dataset-level OOF design separates policy selection from held-out-dataset
+evaluation. For a held-out dataset, fusion weights and other data-dependent
+policy parameters are determined from the other four folds and then frozen.
+Constructors may use the labeled source context available to the method, and
+target-aware constructors may additionally inspect unlabeled target features
+$X_t$, but never target labels.
+
+Held-out labels are not used for context construction, candidate selection,
+fusion-policy fitting, or prediction.  They are accessed only after prediction
+to compute the reported metrics.  Metadata visibility is fixed by the method
+interface: Shared uses a family-agnostic context registry, whereas the
+prior-informed Specific variant may receive the problem-family identifier
+specified before target inference.  Section~\ref{app:regression_evidence}
+details candidate selection and aggregation for each interface.
+
+\subsection{Controlled Perturbations and Distribution Shifts}
+\label{app:data_transformations}
+
+\subsubsection{Common Design}
+
+We express every intervention as a deterministic, severity-indexed operator
+$\mathcal T_s$, where $s\in\{0,0.2,0.5,0.8,1.0\}$ and $\mathcal T_0$ is the
+identity.  For a source-context perturbation, $s$ determines the affected-row
+count $m_s=\lceil s n_c\rceil$ for $s>0$; for a distribution shift, it controls
+either a nested replacement fraction or the magnitude of a feature or response
+map.  Within a dataset--family pair, the clean partition and base cohort are
+fixed, and every random seed is a deterministic function of the registered
+condition.  No split, model, or policy is retuned along a strength curve.
+
+The synthetic track draws $X\sim\mathcal N(0,\Sigma)$ in 12 dimensions, where
+$\Sigma_{jj}=1$, $\Sigma_{12}=\Sigma_{21}=0.35$,
+$\Sigma_{34}=\Sigma_{43}=-0.25$, and all other off-diagonal entries are zero.
+It uses five fixed response mechanisms---linear, pairwise interaction, smooth
+nonlinear, threshold, and two-subgroup piecewise linear---with the same active
+coordinates and coefficients across all methods, strengths, and seeds.
+For each generated block, $g(x)=h(x)-\operatorname{median}\{h(X)\}$.
+Classification draws $Y\sim\operatorname{Bernoulli}(\operatorname{sigmoid}(g(X)))$;
+regression uses $Y=g(X)+\epsilon$ with
+$\epsilon\sim\mathcal N(0,0.65^2)$. The rotated concept rule reverses the
+first five signal coordinates. The public-data track starts from the fixed OpenML partitions in
+Table~\ref{tab:public-benchmark-protocols} and applies empirical resampling or
+feature/response transformations.  Consequently, distributional equalities
+below describe the synthetic construction; their OpenML counterparts preserve
+the corresponding variables or row identities by design, rather than asserting
+exact finite-sample equality.
+
+\subsubsection{Controlled Source-Context Perturbations}
+
+Let $j^\star$ denote the feature with the largest absolute source
+feature--target association.  For each family, a deterministic rule selects a
+subset $I_s$ of $m_s$ source rows; score-ranked families are nested across
+severity, whereas Mixed uses a seeded subset at each severity.  Only
+$(X_c,y_c)$ on these rows is modified; the target evaluation cohort and its
+labels are unchanged.
+Table~\ref{tab:context-perturbation-transformations} gives the complete
+operator-level description.
+
+\begin{table}[H]
+  \caption{Controlled transformations of the labeled source context.  Label
+  cycling applies only to classification; opposite-tail response replacement
+  applies only to regression.}
+  \label{tab:context-perturbation-transformations}
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.12\textwidth} >{\raggedright\arraybackslash}p{0.25\textwidth} >{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+    \toprule
+    Family & Affected-row rule & Transformation on selected rows \\
+    \midrule
+    Shortcut
+      & Decreasing absolute label/response deviation from its median.
+      & Replace $X_{j^\star}$ by a strong value on the side opposite to the
+        observed label or response; $y$ is retained. \\
+    Boundary
+      & Increasing distance to empirical label/response quartile cut points.
+      & Classification shifts $X_{j^\star}$ against the label and cycles a
+        deterministic half of the labels; regression sends responses to the
+        opposite empirical tail. \\
+    AUC/Rank-band
+      & Increasing distance to the median of $X_{j^\star}$.
+      & Classification shifts $X_{j^\star}$ and cycles every third selected
+        label; regression sends selected responses to the opposite empirical
+        tail. \\
+    Local
+      & Increasing distance to a fixed local anchor in feature space.
+      & Modify both $X_{j^\star}$ and the label/response, creating a
+        contradictory pattern confined to one neighborhood. \\
+    Mixed
+      & A seeded random subset of size $m_s$.
+      & Partition the selected subset into four fixed chunks and apply
+        Shortcut, Boundary, AUC/Rank-band, and Local, respectively. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{Distribution-Shift Families}
+
+For the synthetic track, let $Z$ denote latent features,
+$g_{\mathrm{rot}}$ a response rule with reordered signal coordinates, and
+$T_s$ a severity-controlled observation map.  Table~\ref{tab:shift-transformations}
+first states the intended distributional change and then records its
+classification and regression OpenML realizations.  The public classification
+protocol can transform the historical/reference source blocks or the target
+block, whereas the public regression protocol transforms the current labeled
+context against a fixed target cohort; this distinction follows the sample
+interfaces in Table~\ref{tab:public-benchmark-protocols}.
+
+\begin{table}[H]
+  \caption{Seven source--target shift families.  The invariant column describes
+  the synthetic population construction; the last two columns specify the
+  empirical OpenML operators.}
+  \label{tab:shift-transformations}
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2.5pt}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.09\textwidth}
+                      >{\raggedright\arraybackslash}p{0.22\textwidth}
+                      >{\raggedright\arraybackslash}p{0.30\textwidth}
+                      >{\raggedright\arraybackslash}p{0.30\textwidth}@{}}
+    \toprule
+    Family & Synthetic change / invariant & OpenML classification & OpenML regression \\
+    \midrule
+    Covariate
+      & Change $P(X)$ while retaining $P(Y\mid X)$.
+      & Resample historical/reference rows with an $X$-only weight; keep the
+        target cohort fixed.
+      & Replace a nested fraction of current-context rows along the
+        highest-variance feature; keep the target fixed. \\
+    Label
+      & Change $P(Y)$ while retaining $P(X\mid Y)$.
+      & Resample complete target rows within class to vary the class prior.
+      & Resample complete current-context rows toward one response tail. \\
+    Concept
+      & Interpolate $g$ toward $g_{\mathrm{rot}}$ at fixed $P(X)$.
+      & Apply nested local boundary-label changes to reference and target rows;
+        features are fixed.
+      & Add a smooth, feature-dependent response drift to the current context;
+        features are fixed. \\
+    Selection
+      & Make source inclusion depend on $X$; retain $P(Y\mid X)$.
+      & Resample source rows by an $X$-only predicted-majority affinity; keep
+        the target fixed.
+      & Resample current rows by $X$-only distance from the target center. \\
+    Domain
+      & Use $T_0$ and $T_s$ on shared latent rows; retain $P(Y\mid Z)$.
+      & Apply an affine observation map to target features; row identities and
+        labels are fixed.
+      & Apply an affine observation map to current-context features; responses
+        are fixed. \\
+    Temporal
+      & Evolve both $T_s$ and the response rule while preserving temporal order.
+      & Apply joint feature and local concept drift to the reference and target
+        blocks; historical rows remain earlier observations.
+      & Apply joint feature and response drift to the current block while
+        retaining disjoint history and reference blocks. \\
+    Support
+      & Translate observed support while retaining $P(Y\mid Z)$.
+      & Translate target coordinates; row identities and labels are fixed.
+      & Resample the current context toward a restricted central support using
+        an $X$-only score. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+All intervention operators are created before method evaluation.  Target labels
+used to define or score a benchmark condition are never exposed to a compared
+method, a context constructor, or the aggregation policy.
+
+\FloatBarrier
+
+\subsection{Compared Methods and Task Applicability}
+\label{app:baseline_details}
+
+We organize the compared methods by evaluation purpose.  The OpenML study
+compares standard statistical, tree-based, deep tabular, and frozen
+foundation-model predictors under common data partitions.  The synthetic study
+focuses on methods designed for perturbations or distribution shifts.  Because
+not every robustness method supports both prediction tasks, we distinguish
+shared, classification-only, and regression-only baselines.  This subsection
+defines the comparison set and task applicability; protocol and selection
+details are separated into the surrounding appendix subsections.
+
+\subsubsection{OpenML Baselines}
+
+\paragraph{Classical and tree models.}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{Logistic/Ridge}---regularized linear classification and
+  regression~\citep{cox1958binary,hoerl1970ridge}.
+  \item \textbf{SVM/SVR}---margin-based classification and
+  regression~\citep{cortes1995svm,drucker1996svr}.
+  \item \textbf{kNN}---classification or regression from local neighbors in
+  feature space~\citep{cover1967knn}.
+  \item \textbf{Random Forest}---bagged decision-tree
+  ensembles~\citep{breiman2001randomforests}.
+  \item \textbf{LightGBM}---histogram-based gradient-boosted
+  trees~\citep{ke2017lightgbm}.
+  \item \textbf{CatBoost}---gradient-boosted trees trained with ordered
+  boosting~\citep{prokhorenkova2018catboost}.
+  \item \textbf{XGBoost}---regularized gradient-boosted
+  trees~\citep{chen2016xgboost}.
+  \item \textbf{MLP}---a feed-forward neural baseline trained on each source
+  fold~\citep{rumelhart1986backprop}.
+\end{itemize}
+
+\paragraph{Deep tabular models.}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{FT-Transformer}---a Transformer over tokenized tabular
+  features~\citep{gorishniy2021fttransformer}.
+  \item \textbf{TabM}---a parameter-efficient ensemble of MLP-like
+  predictors~\citep{gorishniy2025tabm}.
+  \item \textbf{TabulaRNN}---an RNN-inspired architecture for efficient
+  tabular learning~\citep{thielmann2024tabularnn}.
+  \item \textbf{MambaTab}---a structured state-space architecture for tabular
+  prediction~\citep{ahamed2024mambatab}.
+  \item \textbf{RealMLP}---an MLP with a pre-tuned configuration for tabular
+  data~\citep{holzmueller2024realmlp}.
+\end{itemize}
+
+\paragraph{Frozen foundation-model backbones.}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{LimiX-2M}---the official checkpoint, evaluated without
+  parameter updates and displayed under its full model name in the main
+  table~\citep{wang2026limix2m}.
+  \item \textbf{TabICL-v2}---a scalable tabular in-context learning
+  model~\citep{qu2026tabiclv2}.
+  \item \textbf{TabPFN-v3}---a pretrained tabular foundation
+  model~\citep{grinsztajn2026tabpfn3technicalreport}.
+  \item \textbf{TabDPT v1.2}---a tabular foundation model pretrained on real
+  data~\citep{ma2025tabdpt}.
+\end{itemize}
+
+\paragraph{LimiX compatibility on the complete suites.}
+The LimiX-2M study excludes classification datasets with more than ten target
+classes and consequently reports 62 of the 72 OpenML-CC18 tasks; applying the
+same filters leaves 33 OpenML-CTR23 tasks~\citep{wang2026limix2m}.  Our main
+table instead targets the complete 72-task CC18 and 35-task CTR23
+context-perturbation suites.  Of the 72 classification tasks, 67 use the native
+multiclass interface.  The remaining five use a predeclared one-vs-rest (OvR)
+compatibility wrapper: \texttt{letter} (26 classes), \texttt{vowel} (11),
+\texttt{isolet} (26), \texttt{texture} (11), and
+\texttt{Devnagari-Script} (46).  Each class is evaluated by one binary LimiX
+call, and the positive-class probabilities are normalized across classes for
+Accuracy and macro one-vs-rest AUROC.  These five results are wrapper-based
+rather than native multiclass LimiX results, and the checkpoint remains fixed.
+
+For the three CC18 tasks with more
+than 1,024 predictor columns: \texttt{Bioresponse} (1,776), \texttt{CIFAR\_10}
+(3,072), and \texttt{Internet-Advertisements} (1,558), the perturbation is
+first applied in the original feature space.  A deterministic
+TruncatedSVD, fitted only on the unmodified labeled source features, then maps
+both context and target features to at most 256 components.  Target labels are
+never used by this projection.  All 35 regression tasks use the native LimiX
+regression interface without OvR or feature projection.  The official
+non-retrieval ensembles use four classification and eight regression members;
+all configurations and pretrained parameters remain fixed across clean and
+nonzero-strength conditions.
+
+The seven-shift classification block follows the frozen 35-task binary CC18
+subset used by that protocol.  The network loader converts nominal features to
+ordinal codes and median-imputes missing feature values before forming the
+split.  We apply the same deterministic conversion to cached OpenML parquet
+files before invoking the unchanged split and shift constructors; the
+conversion uses no target labels.
+
+The foundation models retain their prescribed prediction interfaces and their
+pretrained parameters are not updated.  For each frozen backbone, Base,
+\method{}-Shared, and the prior-informed \method{}-Specific use the same data
+partitions, context budget, and target evaluation examples.
+
+\subsubsection{Synthetic Robustness Baselines}
+
+\paragraph{Shared classification and regression baselines.}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{CatBoost}---a boosted-tree reference that does not depend on a
+  task-specific neural architecture~\citep{prokhorenkova2018catboost}.
+  \item \textbf{GroupDRO}---optimization against the worst predefined
+  group~\citep{sagawa2020groupdro}.
+  \item \textbf{CVaR-DRO}---optimization of the upper tail of the loss
+  distribution~\citep{rockafellar2000cvar}.
+  \item \textbf{CORAL}---source--target covariance
+  alignment~\citep{sun2016deepcoral}.
+  \item \textbf{Elliptic Loss Regularization}---loss regularization for robust
+  prediction~\citep{hasan2025elliptic}.
+\end{itemize}
+
+\paragraph{Classification-only baselines.}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{CAA-AT + CutMix}---adversarial training based on constrained
+  adaptive attacks, combined with sample mixing~\citep{simonetto2024caa,yun2019cutmix,
+  madry2018adversarial}.
+  \item \textbf{Drift-Resilient TabPFN}---in-context adaptation for temporal
+  distribution shift~\citep{helli2024drifttabpfn}.
+  \item \textbf{FTAT}---fully test-time adaptation for tabular
+  classification~\citep{zhou2025ftat}.
+  \item \textbf{DistPFN}---label-shift posterior correction applied to the
+  TabICL-v2 base probabilities~\citep{lee2026distpfn}.
+\end{itemize}
+
+\paragraph{Regression-only baselines.}
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item \textbf{PGD-AT + Mixup}---projected-gradient adversarial training with
+  sample mixing~\citep{madry2018adversarial,zhang2018mixup}.
+  \item \textbf{DANN}---domain-adversarial representation
+  alignment~\citep{ganin2016domain}.
+  \item \textbf{SSA}---test-time subspace alignment for
+  regression~\citep{adachi2025ssa}.
+  \item \textbf{V-REx}---risk extrapolation across training
+  environments~\citep{krueger2021vrex}.
+\end{itemize}
+
+\subsection{Context Construction}
+\label{app:context_construction}
+
+This section specifies the context-construction interface, the registered
+constructors available to each variant, and the procedure used to select and
+aggregate their predictions.  Each constructor maps a labeled source context
+and, when required, available unlabeled target features to a labeled context with the
+same feature interface as the target data.
+
+\subsubsection{Test-Time Target-Feature Interface and Singleton Calls}
+\label{app:test_time_batch_interface}
+
+Each test-time call supplies one or more unlabeled target queries
+$X_t=\{x_i^t\}_{i=1}^{n_t}$. Source-only constructors use the labeled reference
+context and the current query. Target-dependent constructors additionally use
+the available target covariates required for target support, coordinate-wise
+quantiles, or location and scale. Target labels remain unavailable, and the
+frozen predictor and source-learned policy remain fixed. In the reported
+benchmarks, the held-out target partition for each evaluation condition is
+supplied through this interface.
+
+For selection-shift constructions, the Base predictor first assigns
+pseudo-labels to target rows. When predicting $x_i^t$, the registered
+constructor may use a subset of the available peers
+$\{x_j^t:j\ne i\}$, with the queried row excluded. Source-only
+constructors use sampling, reweighting, and response adjustments derived from
+the labeled reference context.
+
+For a singleton streaming request ($n_t=1$), we disable constructors that
+require target-batch statistics or peer queries, including target-support
+matching, location and scale or quantile transport, and leave-one-out
+pseudo-labeling.  The remaining source-only contexts use the ordinary fusion
+rule.  If no valid source-only alternative is available, we set
+$\alpha_i=0$ in Eq.~\eqref{eq:base_anchored_update} and return the Base
+prediction exactly.
+
+\input{sections/context_construction_details}
+
+\iffalse
+\subsubsection{Notation and Information Interface}
+
+Let $(X_c,y_c)$ denote the labeled context available in an outer fold and let
+$X_t$ denote the unlabeled target batch.  We use $d_t(x_j)$ for the robust
+distance from a source example to the target support, $u(x_j)$ for its robust
+feature outlyingness, and $a(x_j,y_j)$ for local label disagreement.  Let
+$j^\star$ be the dominant source-predictive feature, $J_{\mathrm{weak}}$ a
+feature set that excludes dominant predictive directions, and $r_j$ the
+absolute deviation of a source response from its local regression estimate.
+For label shift, $\hat\pi_t$ denotes the class proportions estimated from the
+unlabeled target batch.
+
+Table~\ref{tab:context-information-interface} states the information boundary.
+Shared uses the same registered bank for every problem.  Prior-informed
+Specific additionally receives a declared family $z$, which determines the
+registered family-directed candidates available to the selector.  Writing
+$\mathcal C_{\mathrm{Shared}}$ for the Shared bank and $\mathcal C_z$ for these
+additional candidates, its admissible bank is
+\begin{equation}
+  \mathcal C_{\mathrm{Specific}}(z)
+  =\mathcal C_{\mathrm{Shared}}\cup\mathcal C_z.
+  \label{eq:specific-context-bank}
+\end{equation}
+The identifier $z$ controls candidate availability only; it does not encode
+shift strength or provide target labels.  Feature-subspace constructors apply
+the same projection to source and target features, and classification subsets
+preserve every observed source class.
+
+\begin{table}[H]
+  \caption{Information available during context construction and target
+  inference.  Both variants use labeled source data and may use unlabeled
+  target features; neither observes target labels or shift strength.}
+  \label{tab:context-information-interface}
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth} >{\raggedright\arraybackslash}p{0.20\textwidth} >{\raggedright\arraybackslash}p{0.27\textwidth} >{\raggedright\arraybackslash}p{0.23\textwidth}@{}}
+    \toprule
+    Variant & Family identifier & Available data & Unavailable information \\
+    \midrule
+    Shared
+      & None
+      & $(X_c,y_c)$ and, when required, $X_t$
+      & Target labels and shift strength \\
+    Prior-informed Specific
+      & Declared family $z$
+      & $(X_c,y_c)$ and, when required, $X_t$
+      & Target labels and shift strength \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{Shared Constructor Registry}
+
+Shared organizes its registered bank around five complementary construction
+principles for each task.  The resulting views vary sample support, local
+supervision, feature representation, and source--target alignment without a
+family identifier.  Table~\ref{tab:shared-context-bank} gives the operations
+that instantiate these views.
+
+\begin{table}[H]
+  \caption{Registered context constructions used by Shared.}
+  \label{tab:shared-context-bank}
+  \centering
+  \footnotesize
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}p{0.70\textwidth}@{}}
+    \toprule
+    Context view & Construction \\
+    \midrule
+    \multicolumn{2}{@{}l}{\textit{Classification}} \\
+    Target-neighbor
+      & Select a high-coverage subset of source examples with small
+        $d_t(x_j)$ relative to robust anchors derived from $X_t$. \\
+    Representative
+      & Select representative source examples by jointly favoring small
+        $d_t(x_j)$ and low $u(x_j)$. \\
+    Neighborhood-stable
+      & Retain examples with low $a(x_j,y_j)$, using $d_t(x_j)$ to distinguish
+        among similarly stable observations. \\
+    Feature-subspace
+      & Remove $j^\star$ and apply the resulting feature projection to both
+        the source context and target batch. \\
+    Noise-filtered
+      & Filter examples that jointly exhibit high $a(x_j,y_j)$ and high
+        $u(x_j)$ while preserving all observed classes. \\
+    \addlinespace
+    \multicolumn{2}{@{}l}{\textit{Regression}} \\
+    Source bootstrap
+      & Resample the labeled source context uniformly with replacement. \\
+    Response-balanced
+      & Resample observations across response quantiles so that different
+        regions of the source response distribution are represented evenly. \\
+    Target-matched
+      & Resample source observations with weights decreasing in $d_t(x_j)$. \\
+    Moment-aligned
+      & Transport source features toward the robust location and scale of
+        $X_t$ while preserving their source responses. \\
+    Aligned target-matched
+      & Apply target-matched resampling after robust moment alignment. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{Prior-Informed Specific Constructor Registry}
+
+Prior-informed Specific retains the Shared bank and activates the complete
+registered pool associated with the declared family $z$. The identifier is
+fixed for every target batch in an evaluation condition and controls registry
+activation and fusion. It does not specify the change strength. Each
+bold entry in Tables~\ref{tab:specific-perturbation-contexts}
+and~\ref{tab:specific-shift-contexts} denotes a separately registered
+constructor group; alternative coverage, neighborhood, repair, or alignment
+levels are separate context candidates. The pool has no protocol-level cap,
+and its membership is fixed before outer-fold policy selection.
+
+\paragraph{Controlled context perturbations.}
+All five controlled perturbation families access the same complete registry;
+$z$ fixes the corresponding source-side fusion policy. The classification pool
+includes neighborhood, prototype, boundary,
+minority-preserving, cleaning, and feature-subspace views. The regression pool
+adds the current registry of tail repair, frequency-spike repair, feature
+stabilization, subspace, and joint feature--response repair views. Table~\ref{tab:specific-perturbation-contexts}
+states the family-directed roles of these candidates.
+
+\begingroup
+  \footnotesize
+  \setlength{\LTpre}{0.45\baselineskip}
+  \setlength{\LTpost}{0.45\baselineskip}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.11\textwidth} >{\raggedright\arraybackslash}p{0.405\textwidth} >{\raggedright\arraybackslash}p{0.405\textwidth}@{}}
+    \caption{Family-directed context constructions used by Specific under
+    controlled source-context perturbations. Bold labels identify distinct
+    constructor groups; each group may instantiate several registered levels.}
+    \label{tab:specific-perturbation-contexts} \\
+    \toprule
+    Family & Classification construction & Regression construction \\
+    \midrule
+    \endfirsthead
+    \multicolumn{3}{@{}l}{\tablename~\thetable\ (continued)} \\
+    \toprule
+    Family & Classification construction & Regression construction \\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{Continued on next page} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    Shortcut
+      & \textbf{Dominant-direction removal:} drop one or more highly predictive
+        features. \textbf{Weak-correlation subspaces:} retain low-correlation
+        halves or broader weak-feature sets. \textbf{Support recovery:} add
+        neighborhood, prototype, and cleaned contexts after projection.
+      & \textbf{Shortcut subspaces:} remove the highest shortcut scores or
+        retain low-correlation feature sets. \textbf{Feature stabilization:}
+        clip or neutralize repeated extreme feature levels. \textbf{Joint
+        repair:} combine a selected feature view with response repair. \\
+    Boundary
+      & \textbf{Boundary neighborhoods:} retain samples near the decision
+        boundary over several neighborhood sizes. \textbf{Neighborhood
+        stability:} keep locally consistent examples. \textbf{Complementary
+        anchors:} include prototype and weak-subspace contexts.
+      & \textbf{Paired-tail repair:} reflect repeated extreme response levels
+        toward a robust center. \textbf{Midpoint repair:} estimate the center
+        from paired tail levels. \textbf{Coverage variants:} vary tail depth
+        and repair strength. \\
+    AUC/Rank-band
+      & \textbf{Minority-preserving neighborhoods:} retain minority and local
+        contrast examples at several neighborhood sizes. \textbf{Prototype
+        views:} select representative source anchors. \textbf{Subspace
+        complements:} reduce reliance on the dominant ranking direction.
+      & \textbf{Frequency-spike repair:} identify repeated response levels in
+        empirical tails and shrink them toward the center. \textbf{Winsorized
+        feature views:} stabilize extreme covariates. \textbf{Combined repair:}
+        apply response repair together with feature stabilization. \\
+    Local
+      & \textbf{Local neighborhoods:} construct contexts over several $k$-NN
+        scales. \textbf{Clean neighborhoods:} suppress samples with high local
+        disagreement. \textbf{Representation complements:} add boundary and
+        feature-subspace views.
+      & \textbf{Local support views:} vary neighborhood and trimming scales.
+        \textbf{Tail repairs:} correct locally unsupported response extremes.
+        \textbf{Feature--response repair:} pair cleaned feature views with
+        repaired responses. \\
+    Mixed
+      & \textbf{Primitive views:} expose neighborhood, boundary, minority,
+        prototype, cleaning, and subspace candidates. \textbf{Composed views:}
+        combine sample filtering with feature projection. \textbf{Diversity
+        anchors:} retain complementary high-coverage contexts.
+      & \textbf{Response repair:} combine paired-tail, midpoint, and
+        frequency-spike corrections. \textbf{Feature repair:} use clipping,
+        spike neutralization, and shortcut subspaces. \textbf{Joint repair:}
+        compose feature and response transformations. \\
+  \end{longtable}
+\endgroup
+
+\paragraph{Distribution shifts.}
+For distribution shifts, Specific augments the Shared views with a
+family-conditioned registry. The classification registry includes the complete
+advanced pool for each family, so its size may vary with $z$. The regression
+registry combines coarse and fine repair grids; Selection, Support, and
+Temporal additionally use the support-reconstruction operators introduced in
+the current hierarchy. Target matching and transport depend only on $X_t$ and
+never on target labels.
+
+\begingroup
+  \footnotesize
+  \setlength{\LTpre}{0.45\baselineskip}
+  \setlength{\LTpost}{0.45\baselineskip}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.11\textwidth} >{\raggedright\arraybackslash}p{0.405\textwidth} >{\raggedright\arraybackslash}p{0.405\textwidth}@{}}
+    \caption{Current family-conditioned context registry used by Specific under
+    seven distribution-shift families. Bold labels identify distinct constructor
+    groups; grid values yield separate context candidates.}
+    \label{tab:specific-shift-contexts} \\
+    \toprule
+    Family & Classification construction & Regression construction \\
+    \midrule
+    \endfirsthead
+    \multicolumn{3}{@{}l}{\tablename~\thetable\ (continued)} \\
+    \toprule
+    Family & Classification construction & Regression construction \\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{Continued on next page} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    Covariate
+      & \textbf{Target-matched bootstrap:} reweight source rows by target
+        proximity. \textbf{Target-neighbor subsets:} vary retained coverage.
+        \textbf{Representative support:} combine target distance with robust
+        outlyingness. \textbf{Transported views:} align source moments before
+        matching.
+      & \textbf{Quantile transport:} map source feature marginals toward the
+        target over coarse and fine transport grids. \textbf{Moment transport:}
+        align robust location and scale. \textbf{Target matching:} resample
+        transported or original source rows by target proximity. \\
+    Label
+      & \textbf{Prior matching:} partially or fully move source class mass
+        toward $\hat\pi_t$. \textbf{Class-balanced bootstrap:} equalize observed
+        class support. \textbf{Target-matched bootstrap:} reweight examples by
+        $X_t$. \textbf{Identity anchor:} retain the source context.
+      & \textbf{Response scaling:} shrink source responses toward their median
+        over coarse and fine grids. \textbf{Quantile bootstrap:} balance
+        response regions. \textbf{Target matching and tail repair:} resample by
+        $X_t$ and stabilize extreme responses. \\
+    Concept
+      & \textbf{Progressive subspaces:} remove one or more dominant predictive
+        directions. \textbf{Weak-feature views:} retain broader and narrower
+        low-correlation subsets. \textbf{Stable support:} keep high-coverage
+        examples with low local disagreement.
+      & \textbf{Concept residualization:} attenuate the strongest smooth
+        feature--response component over coarse and fine grids.
+        \textbf{Target-matched anchor:} retain a target-aligned resampled view. \\
+    Selection
+      & \textbf{Propensity views:} reweight source observations by estimated
+        source--target membership. \textbf{Target-neighbor subsets:} vary
+        coverage under $d_t(x_j)$. \textbf{Outlier control:} limit high-$u(x_j)$
+        observations. \textbf{Matched prototypes:} preserve representative
+        target-facing support.
+      & \textbf{Exact deduplication:} collapse repeated resampled rows.
+        \textbf{Adaptive target-quantile subsets:} retain target-supported bins
+        over several resolutions. \textbf{Deduplicated bag views:} rebuild
+        diverse contexts at several retained fractions. \\
+    Domain
+      & \textbf{Moment transport:} partially or fully align robust location and
+        scale. \textbf{Location transport:} shift centers while retaining source
+        scale. \textbf{Aligned matching:} resample after transport.
+        \textbf{Direct matching:} retain an untransported target-matched view.
+      & \textbf{Quantile transport:} use coarse and fine marginal-alignment
+        grids. \textbf{Location--scale transport:} align robust moments.
+        \textbf{Transported matching:} resample target-facing rows after full
+        alignment. \\
+    Temporal
+      & \textbf{Recent windows:} retain short, intermediate, and broad suffixes.
+        \textbf{Recency bootstraps:} vary temporal weighting strength.
+        \textbf{Target matching:} preserve target-facing support.
+        \textbf{Temporal complements:} combine recency with stable or aligned
+        contexts.
+      & \textbf{Temporal phase filters:} exclude progressively larger periodic
+        phases. \textbf{Phase-matched subsets:} apply target-quantile matching
+        after phase filtering. \textbf{Recency grids:} provide coarse and fine
+        power-weighted suffix hypotheses. \\
+    Support
+      & \textbf{Support transport:} partially or fully align source support to
+        $X_t$. \textbf{Target matching:} reweight both transported and original
+        rows. \textbf{Neighbor coverage:} retain several target-facing support
+        levels. \textbf{Representative views:} control source outliers.
+      & \textbf{Exact deduplication:} remove multiplicity induced by resampling.
+        \textbf{Adaptive support subsets:} retain target-supported quantile bins.
+        \textbf{Deduplicated bag views:} expand coverage with several
+        independently reconstructed contexts. \\
+  \end{longtable}
+\endgroup
+
+\fi
+\subsubsection{Candidate Selection and Aggregation}
+\label{app:regression_evidence}
+
+\paragraph{Outer-fold policy learning.}
+\label{app:policy_learning}
+Let $\Theta=(\mathbf u,\mathbf v_Q,\mathbf v_S,a)$ for classification and
+$(\mathbf u,\mathbf v_S^{\mathrm{reg}},t_y,a)$ for regression, with
+$\boldsymbol\pi=\operatorname{softmax}(\mathbf u)$,
+$\boldsymbol\eta_Q=\operatorname{softplus}(\mathbf v_Q)$,
+$\boldsymbol\eta_S=\operatorname{softplus}(\mathbf v_S)$,
+$\boldsymbol\eta_S^{\mathrm{reg}}=
+\operatorname{softplus}(\mathbf v_S^{\mathrm{reg}})$,
+$\alpha_{\max}=\operatorname{sigmoid}(a)$, and
+$\tau_y=\operatorname{softplus}(t_y)+\epsilon_0$ for small $\epsilon_0>0$.
+For the current outer fold, $P^{\mathrm{cal}}$ is the distribution of episodes
+$e=(\mathcal D_{s,e}^{\mathrm{cal}},\mathcal X_{t,e}^{\mathrm{cal}},
+y_{t,e}^{\mathrm{cal}})$ formed from its training datasets. We fit
+\begin{equation}
+  \Theta^*\in\arg\min_{\Theta}
+  \mathbb E_{e\sim P^{\mathrm{cal}}}
+  \!\left[\mathcal L_{\mathrm{task}}
+  \!\left(o^{\mathrm{final}}(\mathcal D_{s,e}^{\mathrm{cal}},
+  \mathcal X_{t,e}^{\mathrm{cal}};\Theta),y_{t,e}^{\mathrm{cal}}\right)\right].
+  \label{eq:joint_calibration}
+\end{equation}
+Here $y_{t,e}^{\mathrm{cal}}$ is used only by $\mathcal L_{\mathrm{task}}$
+(cross-entropy for classification or squared error for regression), never by
+context construction. The resulting $\Theta^*$ and $\Phi$ are fixed before
+target inference, while the backbone parameters $\theta$ remain frozen.
+
+Fusion policies are fitted by five-fold dataset-level out-of-fold evaluation.
+For each held-out dataset, aggregation parameters are fitted using the other
+outer folds and are then fixed for target inference. Calibration episodes span
+the fixed grid $\{0,0.2,0.5,0.8,1\}$ under the registered operators;
+calibration does not synthesize additional shifts. Shared pools families,
+whereas Specific fits one policy per declared family over a fixed constructor
+registry. Strength is not supplied to the deployed policy, and no
+held-out-dataset label enters fitting.
+
+For a regression query $x_i^t$, the Base context produces
+$\hat y_i^{(0)}$, while the configurable alternatives produce the scalar
+prediction bank $\mathcal P_i=\{\hat y_i^{(r)}\}_{r=1}^{R}$.
+The interface does not assume a fixed list of context constructors; it only
+requires each branch to expose a scalar prediction. Equations
+\eqref{eq:regression_evidence} and \eqref{eq:task_aware_aggregation} assign
+support-weighted member weights and form $\bar y_i$. Equation
+\eqref{eq:context_integration_evidence} then scores this supported
+aggregate with Base, and Eq.~\eqref{eq:base_anchored_update} performs the
+task-gated convex update. All aggregation and integration parameters are
+calibrated through Eq.~\eqref{eq:joint_calibration} and fixed before target
+inference; the foundation model remains frozen.
+
+\paragraph{Batch sharing and computational complexity.}
+Let $\mathcal B$ and $\mathcal Q$ index the batch-shared and query-specific
+alternative branches, with $|\mathcal B|+|\mathcal Q|=R$. For a frozen TFM,
+a shared branch costs $T_{G_r}(n_s,n_t,d)+T_f(m_r,n_t)$, whereas a leave-one-out
+branch costs $\sum_i[T_{G_r}^{(i)}(n_s,n_t,d)+T_f(m_{ir},1)]$. Here $T_G$
+and $T_f$ denote construction and forward costs, respectively; the Base branch
+adds $T_{G_0}(n_s,d)+T_f(m_0,n_t)$. Scoring and fusion across the $R$
+alternatives require $O(n_tRL)$ operations for classification and $O(n_tR)$
+for regression.
+
+\subsection{Implementation Details}
+\label{app:implementation_details}
+
+Table~\ref{tab:implementation-details} summarizes the shared implementation
+settings; track-specific sample limits and context layouts are given above.
+
+\begingroup
+  \scriptsize
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.0}
+  \setlength{\LTpre}{0.45\baselineskip}
+  \setlength{\LTpost}{0.45\baselineskip}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.17\textwidth}
+                      >{\raggedright\arraybackslash}p{0.75\textwidth}@{}}
+    \caption{Implementation settings for the public-data experiments.}
+    \label{tab:implementation-details} \\
+    \toprule
+    Configuration & Setting \\
+    \midrule
+    \endfirsthead
+    \multicolumn{2}{@{}l}{\tablename~\thetable\ (continued)} \\
+    \toprule
+    Configuration & Setting \\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{2}{r@{}}{Continued on next page} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    Backbone
+      & TabICL 2.1.1 with
+        \nolinkurl{tabicl-classifier-v2-20260212.ckpt} and
+        \nolinkurl{tabicl-regressor-v2-20260212.ckpt}. Each context uses one
+        estimator with batch size 8; backbone parameters remain frozen. Model
+        inputs use \texttt{float32}, stored predictions and fusion use
+        \texttt{float64}, and TabICL retains automatic mixed precision. \\
+    Data processing
+      & Preprocessing is fitted on source data. Numerical values use median
+        imputation. Classification categories are ordinally encoded, with unseen
+        or missing values mapped to $-1$. Regression categories use
+        most-frequent imputation and one-hot encoding; constant encoded columns
+        are removed. Regression targets are standardized within the backbone. \\
+    context construction
+      & Labeled-row budgets follow Table~\ref{tab:public-benchmark-protocols}.
+        Shared uses the fixed registry in
+        Table~\ref{tab:shared-context-bank}. Specific retains Shared and uses
+        the family-conditioned ranges in
+        Tables~\ref{tab:specific-perturbation-contexts}
+        and~\ref{tab:specific-shift-contexts}, without a protocol-level cap on
+        candidate-pool size. \\
+    Candidate selection
+      & Shared retains its fixed five-context registry. For Specific, the
+        complete family-conditioned registry defines the selection space.
+        Five-fold dataset-level OOF selects $\Phi_z$ and fits source-side policy
+        parameters on the other four folds; both are frozen for the held-out
+        dataset. Selection uses cross-entropy for classification and squared
+        error for regression. \\
+    Aggregation
+      & Candidate predictions are combined using the query-dependent evidence
+        weights in Eq.~\eqref{eq:task_aware_aggregation}. The resulting
+        aggregate is integrated with the Base prediction through
+        Eqs.~\eqref{eq:context_integration_evidence}--\eqref{eq:base_anchored_update};
+        its parameters are calibrated by Eq.~\eqref{eq:joint_calibration}. \\
+    Evaluation
+      & Compared methods use identical source partitions, target batches, and
+        dataset-level outer folds. Track-specific target-batch sizes are reported
+        in Table~\ref{tab:public-benchmark-protocols}. \\
+    Compute
+      & Experiments run on an NVIDIA GeForce RTX 4090 with Python 3.12.3,
+        PyTorch 2.8.0+cu128, scikit-learn 1.9.0, and NumPy 2.3.2. \\
+  \end{longtable}
+\endgroup
+
+\FloatBarrier
+\section{Backbone-Wise Strength Results}
+\label{app:backbone-strength-curves}
+
+This section expands the backbone-wise macro-averages in
+Table~\ref{tab:overall-performance} across shift strength. For TabICL-v2, the
+tables pair Accuracy/AUC and $R^2$/nMAE for Base, \method{}-Shared, and the
+prior-informed \method{}-Specific. Specific selects its frozen member list from
+the complete admissible pool without pre-truncating the selection space. Averaging the
+Mean rows over the four nonzero strengths recovers the corresponding $R^2$
+entries in Table~\ref{tab:overall-performance}; nMAE supplies the complementary
+absolute-error view.
+Section~\ref{app:tabicl-strength-results} reports the primary TabICL-v2 results,
+and Section~\ref{app:additional-backbone-strength-results} evaluates the same
+interfaces on additional frozen backbones. Component ablations are reported
+separately in Appendix~\ref{app:supplemental_ablations}.
+
+\subsection{TabICL-v2}
+\label{app:tabicl-strength-results}
+
+\input{tables/tabicl_strength_details}
+
+\subsection{Additional Backbones}
+\label{app:additional-backbone-strength-results}
+
+\begingroup
+\setlength{\intextsep}{5pt}
+\setlength{\abovecaptionskip}{3pt}
+\setlength{\belowcaptionskip}{0pt}
+
+For LimiX-2M, TabPFN-v3, and TabDPT v1.2, Figures~\ref{fig:limix-strength-summary},
+\ref{fig:tabpfn-strength-summary}, and~\ref{fig:tabdpt-strength-summary} show
+the same eight macro-average strength curves used in the main comparison. All
+three backbones use the Shared context-construction and evaluation interface in
+Appendix~\ref{app:context_construction}, with fitted policies frozen before
+held-out inference.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_limix_2m_strength_summary.pdf}
+  \caption{LimiX-2M results across shift strength. Rows aggregate the five
+  context perturbations and seven distribution shifts; columns report
+  Accuracy, AUC, $R^2$, and nRMSE (lower is better).}
+  \label{fig:limix-strength-summary}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_tabpfn_v3_strength_summary.pdf}
+  \caption{TabPFN-v3 results across shift strength. Rows aggregate the five
+  context perturbations and seven distribution shifts; columns report
+  Accuracy, AUC, $R^2$, and nMAE (lower is better).}
+  \label{fig:tabpfn-strength-summary}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_tabdpt_v1_2_strength_summary.pdf}
+  \caption{TabDPT v1.2 results across shift strength. Rows aggregate the five
+  context perturbations and seven distribution shifts; columns report
+  Accuracy, AUC, $R^2$, and nMAE (lower is better).}
+  \label{fig:tabdpt-strength-summary}
+\end{figure}
+
+\FloatBarrier
+\section{Ablation Studies}
+\label{app:supplemental_ablations}
+
+The ablations use a five-context Shared reference bank selected on each
+outer-training fold. The context-budget study evaluates nested prefixes, while
+the remaining studies keep all five contexts fixed. This design isolates the
+effects of context count, aggregation, and formula components from context
+reselection.
+
+\subsection{Context Budget}
+\label{app:context-budget}
+
+We vary the context budget from $R=1$ to $R=5$ while holding construction and
+aggregation fixed.  The single-context setting trails Base, after which all
+six metrics improve monotonically and $R=5$ exceeds Base throughout.  This
+trend is consistent with the complementarity analysis in
+Section~\ref{sec:theory}: added contexts can cover previously unrepaired queries.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_context_count_ablation.pdf}
+  \caption{Context-count ablation over four nonzero strengths. Each curve
+  starts from Base and continues through $R=1,\ldots,5$; dashed horizontal
+  lines mark the Base level. The five-perturbation and seven-shift tracks
+  receive equal macro weight. With only a few contexts, shift coverage is
+  limited. Performance improves as complementary contexts are added, and
+  $R=5$ outperforms Base on all six metrics. Arrows indicate the preferred
+  direction.}
+  \label{fig:context-count}
+\end{figure}
+
+\subsection{Aggregation Rule}
+\label{app:aggregation-rule}
+
+Using the same five-context bank, we compare mean, median, trimmed-mean, and
+out-of-fold weighted aggregation while keeping context count and membership
+fixed. For classification, the coordinate-wise median and the mean after
+discarding the largest and smallest of five values per class are renormalized
+to the probability simplex; regression applies the same operators to scalar
+predictions. These context-only variants replace the entire aggregation rule,
+so none uses $Q_i$, $S_i$, or the Base gate. The out-of-fold weighted rule attains the highest classification
+Accuracy and lowest regression nRMSE, showing the benefit of source-learned
+reliability weights over unweighted statistical aggregation for this bank.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_aggregation_ablation.pdf}
+  \caption{Aggregation-rule ablation at $R=5$, equally weighting the
+  five-perturbation and seven-shift tracks. Panels compare classification
+  Accuracy and regression nRMSE.}
+  \label{fig:aggregation-ablation}
+\end{figure}
+
+\subsection{Fixed-Bank Component Ablation}
+\label{app:fixed-bank-formula-diagnostic}
+
+Within this diagnostic configuration, we hold each fold-specific five-context
+bank fixed and remove one component at a time. All aggregation and gate
+parameters are selected on the corresponding
+outer-training folds, and outer-test labels are used only for evaluation. We
+evaluate five ablations:
+\emph{w/o Confidence} sets $\eta_Q=0$ while retaining $Q_i$ in $E_i$;
+\emph{w/o Agreement} sets $\eta_S=0$
+\textcolor{revisionblue}{while retaining $S_i$ in $E_i$}; \emph{Uniform Prior} sets
+$\pi_r=1/R$; \emph{w/o Base Gate} sets $U_i=1$; \emph{w/o context Gate}
+sets $E_i=1$. \emph{w/o Confidence} applies to classification, whose formula
+includes $Q_i$. The four nonzero strengths are averaged within the
+five-perturbation and seven-shift tracks before giving the tracks equal weight.
+\textcolor{revisionblue}{The confidence and agreement removals are
+weighting-term ablations: they remove the corresponding branch-weight factor,
+while retaining the remaining evidence and gate definitions.}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_k5_formula_diagnostic.pdf}
+  \caption{Component ablation for classification and regression. Higher
+  Accuracy and lower nRMSE are better. Gray bars remove one component from the
+  fixed-bank reference, shown by the final blue bar. Values are printed above
+  each bar, and asterisks mark Holm-corrected paired sign-flip $p<0.05$
+  relative to this reference. Break marks indicate truncated vertical axes.}
+  \label{fig:k5-formula-diagnostic}
+\end{figure}
+
+The fixed-bank reference reaches 0.672 Accuracy and 0.739 nRMSE. Removing
+confidence, agreement,
+the learned prior, Base gating, or context gating reduces classification
+Accuracy to 0.638, 0.639, 0.636, 0.642, and 0.656, respectively. For
+regression, removing agreement, the learned prior, Base gating, or context
+gating increases nRMSE to 0.805, 0.835, 0.780, and 0.756. Every displayed
+difference is significant after Holm correction, with the largest degradation
+arising from the learned context prior on both tasks.
+
+\subsection{Gate Behavior across Evidence Bins}
+\label{app:gate-bin-analysis}
+
+We partition 752,144 query predictions into task-wise tertiles of Base
+unreliability $U_i$ and context evidence $E_i$. Each cell reports the mean
+interpolation weight and loss gain over Base, together with the fraction of
+material modifications ($\alpha_i\geq0.5$) and their worsening rate.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth]{figures/tabace_gate_bin_analysis.pdf}
+  \caption{Gate behavior across Base-unreliability ($U_i$) and context-evidence
+  ($E_i$) tertiles. Positive gain indicates improvement; gray cells contain no
+  material modifications. In the high-$U_i$/high-$E_i$ bin,
+  classification/regression attain interpolation weights of 0.667/0.534,
+  modification rates of 0.809/0.529, loss gains of 0.322/2.040, and worsening
+  rates of 0.037/0.128; low/low loss gains are 0.000/0.005.}
+  \label{fig:gate-bin-analysis}
+\end{figure}
+
+In the regression high-$U_i$/mid-$E_i$ cell, only $0.6\%$ of queries receive
+a material update; their conditional worsening rate is $43.8\%$, while the
+cell-level mean loss gain remains positive at $0.163$.
+
+\FloatBarrier
+\endgroup
+
+\input{sections/rebuttal_additions}

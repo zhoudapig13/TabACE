@@ -1,0 +1,16 @@
+{
+  "allowed_GPUs": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "reserved_GPUs": [
+    6,
+    7
+  ],
+  "maximum_concurrent_GPU_workers": 6,
+  "user_requested_six_GPUs": true
+}

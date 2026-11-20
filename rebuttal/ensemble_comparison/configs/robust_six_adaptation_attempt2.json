@@ -1,0 +1,34 @@
+{
+  "finite_attempt": 2,
+  "first_attempt_preserved": true,
+  "seed": 0,
+  "candidate_budget": 6,
+  "tracks": [
+    "five_feature_calibrated",
+    "seven_reimplemented"
+  ],
+  "preprocessing": "same six fixed views, evaluate both source-detected-shift backoff and always-adapted variants",
+  "variants": [
+    "raw",
+    "source-only gated adaptation",
+    "always adaptation"
+  ],
+  "inner_selection": "equal-weight mean of validation Acc and macro one-vs-rest AUC; negative score minimized",
+  "probability_weight_fitting": "NLL on inner training datasets; test datasets disjoint in every outer fold",
+  "raw_and_NLL_selected_versions_retained": true,
+  "Shared_run": false,
+  "Shared_scores_used_in_selection": false,
+  "maximum_configs_per_method": {
+    "Native": 3,
+    "Random": 3,
+    "DENSE": 3,
+    "GES": 3,
+    "Convex": 12,
+    "Loglinear": 9
+  },
+  "code_sha256": {
+    "robust_six_views.py": "56b986428bc24f6fb224eaca7212bd6d9e9d8ab7794095bfdcd194900be40a9d",
+    "run_robust_six.py": "7ceecdeecafa77b19e512e325a9ab02e27312957921c42efec1094de2c8137ab",
+    "fit_robust_six.py": "72d06490f2aa1c0f048410034c6d4a467ed50254f4784c11f9a6b4715c884b94"
+  }
+}

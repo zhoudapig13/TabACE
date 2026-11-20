@@ -1,0 +1,37 @@
+{
+  "five_classification": {
+    "name": "labels_2.75_features1_amplitude0",
+    "label_multiplier": 2.75,
+    "feature_fraction": 0.0,
+    "feature_count": 1,
+    "amplitude": 0.0
+  },
+  "seven_regression": {
+    "name": "amplitude_0.59",
+    "amplitude_multiplier": 0.59
+  },
+  "five_regression": "reuse original standalone amplitude 10, label_scale 1",
+  "seven_classification": "reuse original declared reconstruction parameters",
+  "status": "FROZEN",
+  "protocol_sha256": "e3d4ff46a6bc6778191409dcc0b81a9357e5710179b1148d2409ef66225eeb25",
+  "frozen_utc": "2026-11-07T10:52:40.421407+00:00",
+  "severity_selection": "reserved disjoint calibration-query metrics; no method-order criterion",
+  "five_classification_calibration_scores": {
+    "configuration": "labels_2.75_features1_amplitude0",
+    "datasets": 63,
+    "complete": true,
+    "accuracy": 0.4899429563492063,
+    "auc": 0.6900457078103279,
+    "calibration_distance": 0.2280322087923713
+  },
+  "seven_regression_calibration_scores": {
+    "configuration": "amplitude_0.59",
+    "datasets": 25,
+    "complete": true,
+    "r2": 0.2614337586540955,
+    "nrmse": 0.7206991470151138,
+    "calibration_distance": 0.3048122570830034
+  },
+  "benchmark_fusion_tuning_authorized": true,
+  "benchmark_tuned_numbers_are_independent_test_scores": false
+}

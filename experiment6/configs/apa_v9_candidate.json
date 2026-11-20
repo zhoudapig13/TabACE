@@ -1,0 +1,35 @@
+{
+  "candidate": "apa_cf_strict_margin_router",
+  "version": "apa_v9",
+  "description": "Safety-first counterfactual context-prior intervention with strict low-margin and train-prior-imbalance gates.",
+  "method_arg": "apa_cf_strict_margin_router",
+  "parent_candidate": "apa_cf_directional_router",
+  "router": {
+    "min_batch_prior_js": 0.008,
+    "min_train_prior_imbalance": 0.1,
+    "directional_shift_gate": true,
+    "target_must_be_batch_majority": true,
+    "max_changed_fraction": 0.03125,
+    "max_baseline_margin": 0.15,
+    "off_majority_max_baseline_margin": 0.0,
+    "sensitivity_gate": 0.12,
+    "disagreement_gate": 0.004,
+    "max_baseline_confidence": 0.92,
+    "blend_weight": 0.6
+  },
+  "reference_commands": {
+    "seed01": "python -u experiment6/scripts/run_apa_tabicl.py --datasets openml_ilpd,openml_credit_g,openml_blood_transfusion,openml_kc1,openml_diabetes_pima,openml_pc1 --force-label-shift --label-shift-strengths 0.0,0.3,0.6,0.9 --seeds 0,1 --n-samples 180 --train-size 90 --test-size 32 --k 16 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_cf_strict_margin_router --output-prefix apa_v9_cf_strict_majority_seed01",
+    "seed23_probe": "python -u experiment6/scripts/run_apa_tabicl.py --datasets openml_credit_g,openml_diabetes_pima,openml_kc1 --force-label-shift --label-shift-strengths 0.0,0.3,0.6,0.9 --seeds 2,3 --n-samples 180 --train-size 90 --test-size 32 --k 16 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_cf_directional_router,apa_cf_strict_margin_router --output-prefix apa_v9_cf_strict_majority_probe",
+    "seed23_rest": "python -u experiment6/scripts/run_apa_tabicl.py --datasets openml_ilpd,openml_blood_transfusion,openml_pc1 --force-label-shift --label-shift-strengths 0.0,0.3,0.6,0.9 --seeds 2,3 --n-samples 180 --train-size 90 --test-size 32 --k 16 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_cf_strict_margin_router --output-prefix apa_v9_cf_strict_majority_probe_rest"
+  },
+  "current_evidence": {
+    "openml_forced_shift_seed0_3": {
+      "n": 96,
+      "mean_accuracy_delta": 0.004557291666666667,
+      "mean_balanced_accuracy_delta": 0.002444846125324433,
+      "mean_macro_f1_delta": 0.0031265050414960045,
+      "mean_ece_delta": -0.0018356225665836616,
+      "positive_negative_balanced_accuracy_splits": "14 / 0"
+    }
+  }
+}

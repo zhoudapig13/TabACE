@@ -1,0 +1,25 @@
+\begin{table}[H]
+\centering\footnotesize
+\color{revisionblue}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{TabICL-v2 classification ensemble comparison (Accuracy/AUROC).}
+\label{tab:revision-tabicl-cls}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Method & Clean & Five perturbations & Seven shifts \\
+\midrule
+TabICL-v2 Base & 0.804 / 0.901 & 0.494 / 0.676 & 0.763 / 0.826 \\
+Native-6 & 0.803 / 0.901 & 0.507 / 0.683 & 0.763 / 0.825 \\
+Random-6 & 0.800 / 0.897 & 0.523 / 0.696 & 0.764 / 0.828 \\
+DENSE-6 & 0.798 / 0.897 & 0.531 / 0.695 & 0.764 / 0.826 \\
+GES-6 & 0.801 / 0.899 & 0.539 / 0.694 & 0.765 / 0.827 \\
+Convex Stacking-6 & 0.800 / 0.898 & 0.559 / 0.704 & 0.766 / 0.827 \\
+Log-linear Stacking-6 & 0.803 / 0.901 & 0.535 / 0.692 & 0.763 / 0.824 \\
+TabFM feature-view NNLS-6 & 0.805 / 0.901 & 0.506 / 0.672 & 0.767 / 0.827 \\
+Divide-and-conquer & 0.805 / 0.902 & 0.503 / 0.672 & 0.763 / 0.825 \\
+Shared & 0.804 / 0.901 & \textbf{0.575 / 0.720} & \textbf{0.772 / 0.831} \\
+\bottomrule
+\end{tabular}}
+\end{table}

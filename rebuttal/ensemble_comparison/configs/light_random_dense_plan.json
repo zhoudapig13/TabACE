@@ -1,0 +1,26 @@
+{
+  "timestamp_UTC": "2026-11-07T14:09:30.035812+00:00",
+  "reason": "User requested reduced adaptation of Random and DENSE",
+  "seed": 0,
+  "source_preprocessing": "Fixed per-feature 1%-99% clipping, fitted only to canonical source features",
+  "no_query_distribution_alignment": true,
+  "no_covariance_repair": true,
+  "no_feature_selection": true,
+  "no_neighbour_repair": true,
+  "no_recent_source_branch": true,
+  "backbone_training": false,
+  "contexts": 6,
+  "rows_per_context": 256,
+  "bootstrap_indices_match_original": true,
+  "source_pool_access_matches_original": true,
+  "new_backbone_predictions_per_condition": 6,
+  "old_and_strong_adaptation_results_preserved": true,
+  "classification_conditions": 2527,
+  "calibration": "Original versus fixed clipping, nested dataset OOF; inner Clean Acc/AUC >= Base - .005; then maximize validation mean(Acc,AUC); DENSE six fusion rules fitted on inner training NLL",
+  "requested_test_Acc_upper_bound_0565_not_used_in_fitting_or_selection": true,
+  "Shared_run": false,
+  "code_sha256": {
+    "run_light_random_dense.py": "03108ebdce79d6402ee3f3a210de15c95d0cc2869fffe837b2f699d2f044586c",
+    "launch_light_random_dense.py": "1fee3293e194db2d8ef56769a703f31e4810890450479c4a5a6e24d4b37074c6"
+  }
+}

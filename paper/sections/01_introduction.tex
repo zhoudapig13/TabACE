@@ -1,0 +1,53 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Tabular foundation models (TFMs) learn predictive priors through pretraining
+across tasks and perform predictions via in-context learning without
+dataset-specific parameter updates
+\citep{muller2023tabpfn,hollmann2025tabpfn,qu2025tabicl,ma2025tabdpt}.
+Each prediction depends jointly on the query and its labeled context. Changes
+in context examples, features, or labels can therefore alter predictions even
+when the model and query remain unchanged
+\citep{abdullah2026contextsampling}. This dependence allows TFMs to adapt to
+new tasks, but also exposes their predictions to unreliable context
+information. A natural strategy is to evaluate each query under multiple
+contexts, reducing reliance on any single construction. Such contexts can be
+obtained through compression, retrieval, sample selection, transformations,
+and distribution alignment
+\citep{feuer2024tunetables,thomas2024localpfn,xu2025mixturepfn,
+treerath2026tabaicl,hollmann2025tabpfn,khalifa2023dense}. These constructions
+can provide complementary evidence, but their predictions may disagree and
+their reliability varies across queries and conditions. Moreover, when the
+prediction from the original context (\emph{Base}) is already accurate,
+indiscriminate averaging can make it worse. Improving robustness therefore
+requires a query-level decision: whether the alternatives provide sufficient
+evidence to depart from Base, and by how much.
+
+We propose \method{} (Adaptive Context Ensembling), a model-agnostic and
+query-adaptive inference framework that implements this decision for frozen
+TFMs. \method{} evaluates complementary context constructions with the same
+predictor, aggregating their predictions via cross-context agreement and
+confidence. A task-specific gate then controls the departure from Base,
+anchoring the final output to Base when alternative evidence is weak.
+Theoretically, we prove a target risk bound guaranteeing that this
+evidence-weighted integration effectively limits harmful updates. At runtime,
+\method{} requires neither ground-truth target labels nor backbone updates, and
+supports reusable context computations to substantially reduce latency. Across
+four frozen TFMs on OpenML benchmarks spanning five controlled context
+perturbations and seven distribution shifts, as well as synthetic and natural
+shifts, \method{} consistently improves prediction robustness while preserving
+clean performance. Furthermore, the framework seamlessly transfers to
+conventional tabular predictors.
+
+The main contributions of this paper are summarized as follows:
+\begin{itemize}
+    \item We formulate robust inference for frozen TFMs as deciding when, and
+    by how much, alternative context predictions should modify Base.
+    \item We introduce \method{}, combining complementary contexts,
+    evidence-weighted aggregation, and query-dependent integration with Base,
+    and establish sufficient conditions for risk improvement.
+    \item We demonstrate robustness under controlled perturbations and
+    distribution shifts, supported by synthetic and natural-shift datasets,
+    while preserving clean performance.
+\end{itemize}
+\FloatBarrier

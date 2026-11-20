@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETE",
+  "active_protocol": "acs_natural_strict_source_nested512_v8",
+  "result_directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/strict_source_nested_512_v8",
+  "accuracy_table": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/strict_source_nested_512_v8/accuracy_table.csv",
+  "paper_comparison": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/strict_source_nested_512_v8/comparison_long.csv",
+  "audit": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/strict_source_nested_512_v8/audit.json",
+  "configuration": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/configs/protocol_v8_strict_source_nested512.json",
+  "seed": 0,
+  "per_context_row_cap": 512,
+  "shared_types": 5,
+  "specific_types_maximum": 8,
+  "source_only_adaptation": true,
+  "target_domain_calibration_labels_used": false,
+  "test_labels_used_for_fitting_or_selection": false,
+  "original_configuration_recovered": false,
+  "all_requested_result_thresholds_met": false,
+  "constraints_observed": {
+    "test_specific_strictly_higher_than_shared": 5,
+    "test_specific_equal_to_shared": 3,
+    "test_specific_lower_than_shared": 4,
+    "adapted_test_cells_at_least_paper_accuracy": 17,
+    "adapted_test_cells_below_paper_accuracy": 7
+  },
+  "previous_results_preserved": true,
+  "reproduce_script": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/reproduce.py",
+  "md_summary_size_bytes": 0
+}

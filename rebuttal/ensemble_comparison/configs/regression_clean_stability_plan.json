@@ -1,0 +1,22 @@
+{
+  "purpose": "Apply user Clean stability constraint to fixed regression predictions, without any Shared score bound",
+  "absolute_clean_tolerance": 0.005,
+  "task_metrics": {
+    "r2": "no decrease over 0.005",
+    "nrmse": "no increase over 0.005"
+  },
+  "seed": 0,
+  "inference_runs_added": false,
+  "candidate_policy": "Fixed original prediction or Base backoff; learned GES or convex weights selected on inner calibration only",
+  "members": "At most 6; Base backoff uses 1 and is explicitly labelled",
+  "data_regimes": [
+    "five canonical source",
+    "seven canonical source",
+    "seven complete labelled history/reference pool"
+  ],
+  "preserve_unconstrained_results": true,
+  "paper_scores_used_for_selection": false,
+  "Shared_run": false,
+  "max_regularization_candidates": 5,
+  "code_sha256": "f56fb4b44e160cf2f6dc99956bd987578fc835c2f38e70881374e34b77e85592"
+}

@@ -1,0 +1,40 @@
+{
+  "declared_at_utc": "2026-11-11T08:58:48.686825+00:00",
+  "role": "Development-only Specific refinement for two remaining tasks",
+  "tasks": [
+    "sepsis_B_to_A",
+    "readmission_other_to_ER"
+  ],
+  "base_shared": "Frozen v8; no rerun or weakening",
+  "target_fitting_labels": 64,
+  "context_sizes": [
+    32,
+    64,
+    128,
+    256
+  ],
+  "feature_views": [
+    "top16",
+    "top64",
+    "top128",
+    "phenotype"
+  ],
+  "new_context_candidates": 16,
+  "fusion_candidates_per_context": 8,
+  "target_calibration_share": [
+    0.25,
+    0.5
+  ],
+  "regularization": [
+    1,
+    0.1
+  ],
+  "update_cap": [
+    0.15,
+    0.25
+  ],
+  "confidence_floor": 0.25,
+  "threshold": "Same frozen Base threshold",
+  "selection": "development Acc maximum; no metric-range filtering",
+  "final_labels_used": false
+}

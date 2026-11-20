@@ -1,0 +1,236 @@
+\subsubsection{构造范围与信息接口}
+
+令 $(X_c,y_c)$ 表示外层折中可用的有标签上下文，$X_t$ 表示无标签目标批次。Shared 通过统一的输入--输出接口使用表~\ref{tab:shared-context-bank} 中五种与变化类别无关的构造角色，并在所有变化类别与强度下复用它们。采用先验信息的 Specific 保留该 Shared 注册表，并加入与已声明类别 $z$ 对应的构造器：
+\begin{equation}
+  \mathcal C_{\mathrm{Specific}}(z)
+  =\mathcal C_{\mathrm{Shared}}\cup\mathcal C_z.
+  \label{eq:specific-context-bank}
+\end{equation}
+类别只决定哪些候选可用，不提供偏移强度。所有构造器都无法访问目标标签。特征投影以相同方式应用于 $X_c$ 和 $X_t$，且每个分类子集都保留所有已观测的源类别。
+
+\begin{table}[H]
+  \caption{上下文构造与目标推理过程中可用的信息。}
+  \label{tab:context-information-interface}
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth}
+                      >{\raggedright\arraybackslash}p{0.20\textwidth}
+                      >{\raggedright\arraybackslash}p{0.27\textwidth}
+                      >{\raggedright\arraybackslash}p{0.23\textwidth}@{}}
+    \toprule 变体&类别标识符&可用数据&不可用信息\\
+    \midrule Shared&无& $(X_c,y_c)$；必要时可用 $X_t$
+      &目标标签与偏移强度\\
+采用先验信息的 Specific&已声明类别 $z$
+      & $(X_c,y_c)$；必要时可用 $X_t$
+      &目标标签与偏移强度\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+在整个注册表中，我们采用显式的百分位范围。首先按源样本到目标支持集的稳健距离排序，再划分为五个等频区间：
+\begin{equation}
+  \mathcal B_t=\{[0,20),[20,40),[40,60),[60,80),[80,100]\}.
+  \label{eq:target-support-bins}
+\end{equation}
+区间端点是目标距离的经验百分位点。第一个区间包含距离最近的源样本；更宽的上下文依次加入其余区间，并使所有已包含区间具有相同贡献。
+
+对于回归，粗粒度响应分区为
+\begin{equation}
+  \mathcal B_y^{(4)}
+  =\{[0,25),[25,50),[50,75),[75,100]\},
+  \label{eq:response-quartile-bins}
+\end{equation}
+细粒度分区为
+\begin{equation}
+\begin{aligned}
+  \mathcal B_y^{(8)}=\{&[0,12.5),[12.5,25),[25,37.5),[37.5,50),\\
+                       &[50,62.5),[62.5,75),[75,87.5),[87.5,100]\}.
+\end{aligned}
+\label{eq:response-octile-bins}
+\end{equation}均衡响应环境从每一个不空间隔中抽出相同数量的例子，必要时使用替换.
+\begin{equation}
+  \mathcal T_y(q)=[0,q]\cup[100-q,100],\qquad
+  q\in\{15,20,25,30,35\}\%,
+  \label{eq:symmetric-response-tails}
+\end{equation}
+已注册候选由窄尾部逐步扩展到宽尾部。对于分类任务，平衡在每个已观测类别内进行；二分类的平衡上下文尽可能在两个类别之间平均分配样本行。
+
+\subsubsection{可复用构造算子}
+
+\paragraph{目标支持匹配.}我们强有力的标准化$X_c$其他$X_t$使用源中位数和中位数范围.$x_i$让我们
+\begin{equation}
+  d_t(x_i)=\frac{1}{|\mathcal N_t(x_i)|}
+  \sum_{x\in\mathcal N_t(x_i)}\|\widetilde x_i-\widetilde x\|_2^2,
+  \label{eq:target-support-distance}
+\end{equation}
+在哪里$\mathcal N_t(x_i)$目标批次中的一个小社区.
+\begin{equation}
+  w_i=\frac{\exp[-d_t(x_i)/h]}{\sum_j\exp[-d_t(x_j)/h]},
+  \label{eq:target-matching-weight}
+\end{equation}
+随着$h$样本取量在包含的间隔中均.$\mathcal B_t$另外，在每个类别内，分类权重也得到归一化.
+
+\paragraph{地方一致性和标签修复.}为了分类，十个来源邻居定义
+\begin{equation}
+  c_i=\max_y\frac{1}{|\mathcal N_c(x_i)|}
+  \sum_{j\in\mathcal N_c(x_i)}\mathbb I(y_j=y).
+  \label{eq:local-class-consensus}
+\end{equation}
+稳定背景保留每个类内高共识的例子。标签修复在共识水平为 $60\%$, $70\%$和 $80\%$的社区多数所取代的$y_i$.一个目标面向的稳定分数, $s_i^{\mathrm{stable}}=(1-c_i)+0.10d_t(x_i)$,在每个类内排名了每个类和目标支持间隔中的例子.
+
+\paragraph{代表支持和过.}强大的特征是
+\begin{equation}
+  u(x_i)=\frac{1}{p}\sum_{j=1}^{p}
+  \min\!\left(\left|\frac{x_{ij}-\operatorname{med}(X_{c,j})}
+  {\operatorname{IQR}(X_{c,j})}\right|,10\right)^2.
+  \label{eq:robust-feature-outlyingness}
+\end{equation}
+代表性文本分类的例子是以 $s_i^{\mathrm{rep}}=d_t(x_i)+0.35u(x_i)$和样本的低分数例子分类在 $\mathcal B_t$的每个间隔内。每个类内的分类样本;在 $\mathcal B_y^{(4)}$或 $\mathcal B_y^{(8)}$内的回归样本。过的文本保留了源列的 $70\%$, $75\%$, $80\%$, $85\%$或 $90\%$,从更强到更轻的过.
+
+\paragraph{功能视图}功能按
+\begin{equation}
+  s_j^{\mathrm{feat}}
+  =|\operatorname{corr}(X_{c,j},y_c)|.
+  \label{eq:feature-construction-score}
+\end{equation}
+登记的视图删除了领先特征或逐渐更大的领先集，保留了最弱的 $50\%$或 $75\%$的特征，对称地切断了实验性特征值的外部 $1\%$, $5\%$或 $10\%$,或切断到 $[m_j-cs_j,m_j+cs_j]$和 $c\in\{1.5,2,2.5,3,3.5,4\}$,其中 $m_j$和 $s_j$是特征中和四分之一间范围。反复的极端水平可以被 $m_j$取代.
+
+\paragraph{反应平衡和修复.}均衡回归背景的样本均从$\mathcal B_y^{(4)}$或$\mathcal B_y^{(8)}$复制的回应$\mathcal T_y(q)$它们反射到一个强大的中心$m$:
+\begin{equation}
+  y_i^{(\lambda)}=m-\lambda(y_i-m),\qquad
+  \lambda\in\{20,30,40,50,60\}\%.
+  \label{eq:tail-response-repair}
+\end{equation}
+第二次修复估计$m$总体反应缩短使用
+\begin{equation}
+  y_i^{(\beta)}=m+\beta(y_i-m),\qquad
+  \beta\in\{45,60,75,90\}\%.
+  \label{eq:response-contraction}
+\end{equation}
+
+\paragraph{源到目标的运输.}具有强大的来源和目标时刻$(\mu_s,\sigma_s)$其他$(\mu_t,\sigma_t)$总体地址运输是
+\begin{equation}
+  T(X_c)=\frac{X_c-\mu_s}{\sigma_s}\sigma_t+\mu_t.
+  \label{eq:full-context-transport}
+\end{equation}
+部分运输用途
+\begin{equation}
+  X_c^{(\alpha)}=(1-\alpha)X_c+\alpha T(X_c),\qquad
+  \alpha\in\{25,50,75,100,125,150\}\%.
+  \label{eq:partial-context-transport}
+\end{equation}
+首先四个层次从部分到完全的对齐;最后两个提供了轻微的外分，当目标支持超越源头时。仅基于位置的运输保留了源尺度，而分位点运输地图将每个经验源量量量量量量量映射到目标对应。然后运输的行列可以在 $\mathcal B_t$内重新样本.
+
+\paragraph{支持重建和时间过.}选择和支持构造器首先将特征相同的行组合在一起。然后，它们用四，八或十六个目标数量间隔重建支持，从每一个非空间隔中均样样样化.$80\%$其他$100\%$时间构造器将周期分为20个相位位置，并过$20\%$, $40\%$, $60\%$, $80\%$或是$100\%$后续保留的行列可能会
+进行运输和目标间隔平衡.
+
+\subsubsection{共同的建筑商注册表}
+
+\begingroup
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.04}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.12\textwidth}
+                         >{\raggedright\arraybackslash}p{0.18\textwidth}
+                         >{\raggedright\arraybackslash}p{0.62\textwidth}@{}}
+    \caption{已被共享使用的注册文本构建.}
+    \label{tab:shared-context-bank}\\
+    \toprule 任务&环境&建筑\\
+    \midrule
+    \endfirsthead
+    \toprule 任务&环境&建筑\\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot 类别&目标邻居&标准化$X_c$其他$X_t$使用源中位数和四分之一间范围，将目标支总结为五个分位点，并按离近的 near方方程排列源示例.$80\%$保持每个源类的同时,\\
+类别&代表&排名源的例子以目标支持距离的总和和$0.35$保持最低分数的值.$70\%$在保护每个源类的同时。\\
+类别&地方稳定&计算对十个来源邻居的标签不一致，并加$0.10$保持最低的得分$80\%$在保护每个源类的同时。\\
+类别&功能子空间&按绝对源特征排名的特征--标签相关性，删除主要预测特征;所有源行和剩余特征都保留。\\
+类别&低冲突&根据本地标签分歧加上排名示例$0.20$保持最低分数的值.$75\%$在保护每个源类的同时。\\
+    \midrule 回归&统一的自助采样&绘制一个全尺寸的引导带$(X_c,y_c)$具有均的概率和替代性。\\
+回归&反应平衡&分区$y_c$在八个相同频率间隔中$\mathcal B_y^{(8)}$通过替换来保存源上下文尺寸，从每一个不空间隔中绘制相同数量的例子。\\
+回归&目标匹配&计算每个源例'根据强大的标准化，它与其十个最近的目标邻居的平均距离.$w_i\propto\exp[-d_t(x_i)/h]$在哪里$h$平均正距离是正距离。\\
+回归&配分排列&通过方程绘制每个源特征的强大的源位置和规模到相应的目标位置和规模~\eqref{eq:full-context-transport}保留$y_c$没有变化。\\
+回归&符合目标&应用完整位置--进行量化运输，然后再用上述使用的目标匹配概率来重新样本运输的行列。\\
+\end{longtable}
+\endgroup
+
+在LimiX-2M,TabPFN-v3和TabDPT v1.2中，共享使用上述定义的共同的文本构建接口。注册视图是没有变量类别或强度输入构建的，并且在推断之前，安装的政策被结。仅用于计算最终指标.
+
+\subsubsection{预先通知的具体建筑商登记}
+
+具体保留所有共享文本，并激活了全注册库为类别 $z$.库没有协议级候选人数额限制。下面的每个范围，维修强度，子空间和运输水平定义了一个单独的候选人。这个库是外层选区，而不是部署的分支数:选择的成员列表 $\Phi_z$在进行推断之前被结，使用一个Basepass和 $R_z=|\Phi_z|$替代通过.
+对于共享的实验修正 $R_z=5$.
+
+\paragraph{受控上下文扰动.}
+\begingroup
+  \footnotesize
+  \setlength{\LTpre}{0.45\baselineskip}
+  \setlength{\LTpost}{0.45\baselineskip}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.10\textwidth}
+                      >{\raggedright\arraybackslash}p{0.41\textwidth}
+                      >{\raggedright\arraybackslash}p{0.41\textwidth}@{}}
+    \caption{类别导向的特定环境，在控制的源上下文扰动下.}
+    \label{tab:specific-perturbation-contexts} \\
+    \toprule 家庭&类别结构&回归结构\\
+    \midrule
+    \endfirsthead
+    \multicolumn{3}{@{}l}{\tablename~\thetable\ （续）} \\
+    \toprule 家庭&类别结构&回归结构\\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{在下一页继续} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot 快捷方式&删除领先或逐步更大的预测功能集;保留最弱的$50\%$或$75\%$具有特征;外面剪切$1\%$, $5\%$或是$10\%$保持领先特征;$70\%$--$90\%$在每个类中稳定的行列.
+      &删除高快捷方式分数功能;保持弱$50\%/75\%$亚空间;带有剪辑$c\in\{1.5,2,2.5,3,3.5,4\}$;并在同等样样本采集后修复反应$\mathcal B_y^{(4)}$. \\
+边界&维修标签使用十个邻居$60\%$, $70\%$并且$80\%$根据各类的标准,$\mathcal B_t$间隔;在取消领先功能后重复修理.
+      &检测对应$\mathcal T_y(q)$对于$q\in\{15,20,25,30,35\}\%$使用$\lambda\in\{20,30,40,50,60\}\%$保护平等的覆盖$\mathcal B_y^{(4)}$. \\
+AUC/\newline{}排名带&将主要特征的取值范围划分为带内与带外区域；在每个类别内分别从两个区域采样；在 $60\%$、$70\%$ 和 $80\%$ 的一致性水平下修复标签，并包含裁剪主要特征后的视图。
+      &检测到反复响应$\mathcal T_y(q)$对于$q\in\{15,20,25,30,35\}\%$修复$\lambda\in\{20,30,40,50,60\}\%$并且将修复与切割功能结合在一起$c\in\{1.5,2,2.5,3,3.5,4\}$. \\
+地方&建立本地环境从第一，二，三个累积间隔$\mathcal B_t$根据各类的标准，应对环境问题进行解决.&总体的时间间隔$\mathcal B_t$保存$\mathcal B_y^{(4)}$覆盖范围，然后添加尾部修复和功能剪辑的视图。\\
+混合物&结合所有五个目标支持间隔，三个共识水平,$50\%/75\%$弱特征的视图,$1\%$, $5\%$或是$10\%$功能尾部剪辑.&结合$\mathcal B_y^{(4)}$, $\mathcal T_y(q)$,
+        $\lambda\in\{20,30,40,50,60\}\%$,
+        $c\in\{1.5,2,2.5,3,3.5,4\}$并且$50\%/75\%$功能子空间。\\
+  \end{longtable}
+\endgroup
+
+\paragraph{分布偏移.}
+\begingroup
+  \footnotesize
+  \setlength{\LTpre}{0.45\baselineskip}
+  \setlength{\LTpost}{0.45\baselineskip}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.10\textwidth}
+                      >{\raggedright\arraybackslash}p{0.41\textwidth}
+                      >{\raggedright\arraybackslash}p{0.41\textwidth}@{}}
+    \caption{在七个分布偏移类别中，类别导向的特定环境.}
+    \label{tab:specific-shift-contexts} \\
+    \toprule 家庭&类别结构&回归结构\\
+    \midrule
+    \endfirsthead
+    \multicolumn{3}{@{}l}{\tablename~\thetable\ （续）} \\
+    \toprule 家庭&类别结构&回归结构\\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{在下一页继续} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot 变量&形成平方根，线性，中级权力和平方密度比重;按五类的平衡$\mathcal B_t$间隔;并加上在$\alpha\in\{25,50,75,100\}\%$.
+      &运输量量或定位量$\alpha\in\{25,50,75,100,125,150\}\%$并且对比样品的$\mathcal B_t$在运输前和后。\\
+标签&间隔从源到预计目标类比例$25\%$, $50\%$, $75\%$并且$100\%$检测类别均等样本;包括运输的先前匹配的文本.
+      &样本同样从$\mathcal B_y^{(4)}$其他$\mathcal B_y^{(8)}$答复与$\beta\in\{45,60,75,90\}\%$及在$\mathcal T_y(q)$对于$q\in\{15,20,25,30,35\}\%$. \\
+概念&通过最近标记的文本来找到一个改变的边界区域; 内部和外部分别采样; 并修复，过或减重该区域$60\%$, $70\%$并且$80\%$总共识.
+      &删除$10\%$, $25\%$, $50\%$, $75\%$或是$100\%$具有最强的光滑特征响应组件，同时保持覆盖率$\mathcal B_y^{(4)}$. \\
+选择 & 通过所有五个 $\mathcal B_t$间隔和观察到的类进行源目标会员权重平衡;添加Base-pseudo标记的目标行除了当前查询之外的混合文本，占据 $50\%$或 $75\%$.
+      &减倍行;重建支持，使用四，八和十六个目标量间隔;从每一个不空间隔中均样样;并保留$80\%$--$100\%$具有独特的排列。\\
+域名&运行位置，位置规模和量化运输$\alpha\in\{25,50,75,100\}\%$通过五个目标支持间隔进行平衡.&运行定位规模和量化运输$\alpha\in\{25,50,75,100,125,150\}\%$并且对比$\mathcal B_t$在运输前和后。\\
+时间&设置历史份额为$0\%$, $10\%$, $20\%$, $30\%$, $40\%$或是$50\%$其他部分则填写最近行，在每个类中平衡，并添加运输边界修复文本.
+      &过器$20\%$, $40\%$, $60\%$, $80\%$或是$100\%$在20个位置周期中记录的阶段;运输保留的行列;以及对目标数量间隔的平衡。\\
+支持&移动源支持到目标$\alpha\in\{25,50,75,100\}\%$;从累计间隔中获取的样本$\mathcal B_t$保持阶级平衡.&减倍行;重建支持，使用4个,8个和16个目标量间隔;在每个间隔内均样本;并扩大保留的独特覆盖范围$80\%$为了$100\%$. \\
+  \end{longtable}
+\endgroup
+
+不同范围，维修强度，子空间和运输水平是不同的候选人.$X_t$没有目标标签;没有任何制造商都获得操纵强度.

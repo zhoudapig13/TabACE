@@ -1,0 +1,51 @@
+{
+  "scope": "regression ensemble comparison on frozen seven_calibrated_v2; previous five-perturbation results reused",
+  "seed": 0,
+  "backbones": [
+    "tabicl",
+    "tabpfn"
+  ],
+  "datasets": 33,
+  "nonzero_conditions": 924,
+  "clean_conditions": 33,
+  "nominal_strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "context_budget": 256,
+  "protocol_sha256": "30a2b8b0757e1a89eb1b13496a1231f13fa34b252f07488790f9ded6585c8d47",
+  "Shared_and_Specific_deferred": true,
+  "generator_or_severity_tuning_during_comparison": false,
+  "methods": {
+    "tabicl": [
+      "Base reused",
+      "Native6",
+      "Native8",
+      "Random6",
+      "OligoICP6keep1",
+      "OligoICP40keep4",
+      "OligoICP400keep40",
+      "Random40",
+      "Random400",
+      "OOF GES",
+      "OOF convex stacking",
+      "feature-views NNLS adaptation"
+    ],
+    "tabpfn": [
+      "Base",
+      "Native6",
+      "Native8",
+      "Random6",
+      "official PHE custom-six portfolio"
+    ],
+    "standalone": [
+      "TabM official default source refit"
+    ]
+  },
+  "extended_candidate_cost_reported": true,
+  "all_outcomes_retained": true,
+  "benchmark_development_calibration": true,
+  "original_paper_protocol_restored": false
+}

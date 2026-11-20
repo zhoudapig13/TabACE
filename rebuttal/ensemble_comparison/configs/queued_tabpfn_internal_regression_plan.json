@@ -1,0 +1,66 @@
+{
+  "status": "QUEUED_AFTER_TABICL_REGRESSION",
+  "user_requested": true,
+  "task": "regression",
+  "model_seed": 0,
+  "paper_Base_targets": {
+    "clean": {
+      "r2": 0.739,
+      "nrmse": 0.476
+    },
+    "five": {
+      "r2": -1.253,
+      "nrmse": 1.313
+    },
+    "seven": {
+      "r2": 0.426,
+      "nrmse": 0.669
+    }
+  },
+  "paper_Shared_references": {
+    "five": {
+      "r2": 0.237,
+      "nrmse": 0.834
+    },
+    "seven": {
+      "r2": 0.46,
+      "nrmse": 0.656
+    }
+  },
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "logical_ensemble_members": 6,
+  "internal_development_only": true,
+  "benchmark_choice": "Independently calibrated TabPFN internal development benchmark, per explicit user response",
+  "required_baselines": [
+    "Native6",
+    "PHE6 official portfolio",
+    "RF-PFN6 official implementation",
+    "OligoICP IQR strategy budget adaptation"
+  ],
+  "generic_baselines": [
+    "GES6",
+    "ConvexStacking6",
+    "AffineRidgeStacking6",
+    "Mean6 or Median6"
+  ],
+  "annotations": {
+    "dagger": "Input/context adaptation beyond original method",
+    "double_dagger": "Learned combiner or validation-selected adaptation parameters",
+    "section": "Actual backbone parameter fine-tuning"
+  },
+  "do_not_claim_model_finetuning_without_weight_updates": true,
+  "save_checkpoint_and_adapter_provenance": true,
+  "all_variants_preserved_for_future_correction": true,
+  "raw_defaults_retained_separately": true,
+  "Shared_bounds_used_for_test_selection": false,
+  "Shared_run": false,
+  "Markdown_written": false,
+  "cross_backbone_benchmark_configurations_differ": true,
+  "adaptation_selection": "Calibration datasets only; no historical Shared upper bounds or held-out test labels",
+  "report_all_range_failures": true
+}

@@ -1,0 +1,66 @@
+{
+  "version": "public-medical-casecontrol-v1",
+  "status": "DECLARED_BEFORE_CASECONTROL_INFERENCE",
+  "datasets": [
+    "PhysioNet Challenge 2019 Sepsis"
+  ],
+  "backbone": "TabICL-v2 classifier 20260212",
+  "seed": 0,
+  "context_cap_per_branch": 256,
+  "native_estimators_per_branch": 1,
+  "source_split": [
+    0.6,
+    0.2,
+    0.2
+  ],
+  "max_source_training_pool": 8192,
+  "max_source_calibration": 1024,
+  "max_evaluation_per_domain": 4096,
+  "sepsis_patients_per_hospital": 8192,
+  "sepsis_sample_selection": "Uniform without replacement from official S3 file listing; seed 0; independent of labels or model results",
+  "sepsis_task": "Retrospective 1:1 event-centered case-control DEVELOPMENT task. Case index = first positive official early-label hour; clinical onset=index+6. Require index>=12 and observation through onset. Predictors use only (index-12,index]. Controls never have a positive released label, with index drawn from SOURCE case-index distribution conditional on adequate prior and follow-up observation. No future measurements or label-derived variables are predictors.",
+  "sepsis_directions": [
+    "A_to_B",
+    "B_to_A"
+  ],
+  "readmission_task": "30-day readmission, positive iff readmitted=<30; prediction at discharge",
+  "readmission_domain": "Other admission sources to emergency room (admission_source_id=7), following TableShift's domain definition",
+  "readmission_cohort": "Exclude expired discharge codes 11,19,20,21; retain one eligible encounter per patient, minimum encounter_id; omit patient/encounter IDs and domain indicator from predictors",
+  "official_tableshift_bit_exact": false,
+  "source_preprocessing": "Fit imputation, scaling and categorical encoding on source-training rows only",
+  "target_information": "Unlabelled target covariates for context construction and density-ratio estimation; no target labels for fitting, selecting thresholds, tuning or selecting methods",
+  "base": "One random source context with natural class proportions; same labelled source pool is available to all methods",
+  "shared": "Base plus five existing classification context roles: target-neighbor, representative, locally-stable, feature-subspace, low-conflict; source-calibrated reliability and entropy gate",
+  "specific": "Retains Shared bank and policy fallback; adds target-matched sampling, density-ratio sampling, and partial numeric median/IQR alignment; source calibration can use unlabelled domain-density weights",
+  "method_status": "Medical-task transfer/reconstruction of context rules, not a claim that archived exact TabACE implementation was recovered",
+  "primary_metric": "accuracy",
+  "secondary_metrics": [
+    "AUROC",
+    "average_precision",
+    "balanced_accuracy",
+    "Brier"
+  ],
+  "decision_threshold": "Select using source calibration only; identical threshold-selection procedure for each method",
+  "significance": "Patient-paired bootstrap and exact McNemar, Holm across four OOD adjacent comparisons in this development experiment.",
+  "selection": "Same four gain/regularization candidates per tier as natural-cohort study. Source-only fit/validation. No test-based ranking enforcement.",
+  "references": [
+    "https://physionet.org/content/challenge-2019/1.0.0/",
+    "https://tableshift.org/datasets.html#hospital-readmission"
+  ],
+  "markdown_summary_write_authorized": false,
+  "reserved_gpus": [],
+  "available_gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "casecontrol_balance": "1:1 per hospital and per train/cal/ID/OOD split; uniform seeded control sampling. Patient-disjoint within each direction.",
+  "previous_evaluation_overlap": "These public patients have been used in the earlier different-landmark study; this is explicitly exploratory development, not an untouched confirmatory validation.",
+  "original_natural_results": "results/public_shift_v1 (frozen and retained)",
+  "negative_index_distribution": "Source-training CASE indices only (same stratified split as prepared training), before source-calibration or test labels are used for fitting. Require full prior12h and observed following6h."
+}

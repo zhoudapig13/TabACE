@@ -1,0 +1,51 @@
+{
+  "status": "DECLARED_BEFORE_NEW_SELECTION",
+  "internal_only": true,
+  "paper_protocol_recovered": false,
+  "targets": {
+    "clean": {
+      "r2": 0.739,
+      "nrmse": 0.476
+    },
+    "five": {
+      "r2": -1.077,
+      "nrmse": 1.27
+    },
+    "seven": {
+      "r2": 0.273,
+      "nrmse": 0.73
+    }
+  },
+  "absolute_tolerance_each_metric": 0.005,
+  "all_six_metric_checks_required": true,
+  "nominal_strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "model_seed": 0,
+  "five_datasets": 35,
+  "seven_datasets": 33,
+  "clean_and_seven_reused_without_changes": true,
+  "five_generator_choices_global_per_family": true,
+  "datasets_or_strengths_dropped": false,
+  "macro_averaging_unchanged": true,
+  "metric_definitions_unchanged": true,
+  "benchmark_selection_uses_Base_development_labels": true,
+  "Shared_or_ensemble_outcomes_used": false,
+  "new_GPU_probe_budget": 8,
+  "source_only_generator_profiles_first": true,
+  "profiles_using_query_label_standard_deviation_excluded": true,
+  "all_trials_retained": true,
+  "previous_ensemble_results_not_valid_on_new_five_benchmark": true,
+  "Markdown_written": false,
+  "budget_revision_after_diagnosis": {
+    "original_8_profiles_complete": true,
+    "diagnosis": "Existing-profile upper envelope nRMSE 1.260469 at target R2; below required lower bound 1.265",
+    "additional_targeted_profiles": 3,
+    "new_total_profile_budget": 11,
+    "source_diagnostic": "joint_metric_envelope_diagnosis.json",
+    "trial_definition": "One global physical parameter choice per family, evaluated on 35 datasets and four strengths"
+  }
+}

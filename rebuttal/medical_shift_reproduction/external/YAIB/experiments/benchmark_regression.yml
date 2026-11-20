@@ -1,0 +1,43 @@
+command:
+  - ${env}
+  - ${program}
+  - train
+  - -d
+  - ../data/
+  - -t
+  - Regression
+  - --log-dir
+  - ../yaib_logs
+  - --tune
+  - --wandb-sweep
+  - -gc
+  - -lc
+method: grid
+name: yaib_regression_benchmark
+parameters:
+  data_dir:
+    values:
+      - ../data/los/miiv
+      - ../data/los/hirid
+      - ../data/los/eicu
+      - ../data/los/aumc
+      - ../data/kidney_function/miiv
+      - ../data/kidney_function/hirid
+      - ../data/kidney_function/eicu
+      - ../data/kidney_function/aumc
+  model:
+    values:
+      - ElasticNet
+      - LGBMRegressor
+      - GRU
+      - LSTM
+      - TCN
+      - Transformer
+      - Mamba
+  seed:
+    values:
+      - 1111
+  use_pretrained_imputation:
+    values:
+      - None
+program: icu-benchmarks

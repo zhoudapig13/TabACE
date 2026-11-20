@@ -1,0 +1,47 @@
+{
+  "stage": "benchmark-development fusion tuning",
+  "authorized_by_user": true,
+  "independent_test_score": false,
+  "backbones": [
+    "tabicl",
+    "tabpfn"
+  ],
+  "variants": [
+    "shared",
+    "specific"
+  ],
+  "gain_grid": [
+    1,
+    2,
+    4
+  ],
+  "regularization_grid": [
+    0.0001,
+    0.001,
+    0.01
+  ],
+  "maximum_configurations_per_policy": 9,
+  "objective": "class NLL / normalized regression MSE, never target ranking",
+  "backbone_weights_frozen": true,
+  "deployed_context_branches": 5,
+  "strength_is_model_input": false,
+  "fresh_holdout_ready": {
+    "classification": 56,
+    "seven_regression": 25
+  },
+  "fresh_holdout_labels_used_for_tuning": false,
+  "preserve_failed_variants": true,
+  "no_further_severity_search_in_this_cycle": true,
+  "documented_specific_union_correction": {
+    "candidate_pool": 10,
+    "deployed_members": 5,
+    "source": "paper/sections/context_construction_details.tex",
+    "original_uncapped_pool_restored": false,
+    "all_previous_specific_results_preserved": true,
+    "additional_structural_attempts": 1
+  },
+  "specific_context_cap": null,
+  "shared_registry_size": 5,
+  "fixed_R5_specific_role": "diagnostic equal-budget comparison only; not primary Specific",
+  "specific_full_pool_required": true
+}

@@ -1,0 +1,80 @@
+\ifdefined\ICLRLayout\clearpage\fi
+\subsection{理论分析}
+\label{sec:theory}
+
+本节给出上下文聚合优于 Base 的充分条件，并刻画任务门控融合如何根据上下文支持度控制预测变化。令 $g_0$ 与 $g_{\mathrm{final}}$ 分别输出 $o_i^{(0)}$ 与 $o_i^{\mathrm{final}}$，并定义 $\mathcal R_t(g)=\mathbb E_{(x,y)\sim P_t}[\ell(g(x),y)]$。对于关于预测参数凸的损失函数 $\ell$，上下文 $r$ 以及上下文聚合结果相对于 Base 的改进分别定义为
+\begin{equation}
+  \Delta_i^{(r)}
+  =\ell(o_i^{(0)},y_i^t)-\ell(o_i^{(r)},y_i^t),
+  \qquad
+  \Delta_i
+  =\ell(o_i^{(0)},y_i^t)-\ell(\bar o_i,y_i^t).
+  \label{eq:context_improvements}
+\end{equation}
+这些量只在理论分析中使用目标标签；上下文构造、支持度评分与预测均不使用目标标签。
+
+\paragraph{互补上下文覆盖。}
+对于变化类别 $h$，不同替代上下文会在不同查询子集上改进 Base。以 $C_h(\Phi)$ 表示目标分布下，上下文库 $\Phi$ 中至少一个上下文相对 Base 改进不少于 $\delta_+$ 的概率。若一个新上下文增加了现有上下文库尚未覆盖的有益查询，则称其具有互补性。形式化定义与收益递减性质见附录~\ref{app:repair-coverage}。
+
+\begin{theorem}[加权上下文聚合的风险界]
+\label{thm:effective_context_repair}
+对于查询 $i$ 和固定上下文库 $\Phi$，假设存在非空有效集合 $\mathcal G_i$，使得对于某些 $\delta_+>0$、$\delta_-\geq0$ 和 $\rho_+>\rho_-$，有
+\begin{equation}
+\begin{aligned}
+\Delta_i^{(r)}&\geq\delta_+,&\rho_i^{(r)}(\Phi)&\geq\rho_+&& (r\in\mathcal G_i),\\
+\Delta_i^{(r)}&\geq-\delta_-,&\rho_i^{(r)}(\Phi)&\leq\rho_-&& (r\in\mathcal I(\Phi)\setminus\mathcal G_i).
+\end{aligned}
+\label{eq:repair_conditions}
+\end{equation}
+令 $\Pi_i=\sum_{r\in\mathcal G_i}\pi_r$，$W_i=\sum_{r\in\mathcal G_i}w_i^{(r)}$，则
+\begin{equation}
+\begin{aligned}
+W_i&\geq\underline W_i
+=\left[1+\frac{1-\Pi_i}{\Pi_i}
+e^{-(\rho_+-\rho_-)}\right]^{-1},\\
+\Delta_i&\geq\gamma_i
+:=\underline W_i\delta_+-(1-\underline W_i)\delta_-.
+\end{aligned}
+\label{eq:repair_margin}
+\end{equation}
+因此，$\underline W_i>\delta_-/(\delta_++\delta_-)$ 蕴含 $\gamma_i>0$，且
+\begin{equation}
+  \ell(o_i^{\mathrm{final}},y_i^t)-\ell(o_i^{(0)},y_i^t)
+  \leq-\alpha_i\Delta_i
+  \leq-\alpha_{\max}U_iE_i\gamma_i.
+  \label{eq:query_repair_gain}
+\end{equation}
+
+令 $\mathcal A_\Phi$ 包含满足上述分离条件且 $\gamma_i>0$ 的查询，则目标风险之差满足
+\begin{equation}
+  \mathcal R_t(g_{\mathrm{final}})-\mathcal R_t(g_0)
+  \leq-\Gamma_t(\Phi)+\varepsilon_t(\Phi),
+  \label{eq:changed_risk_gain}
+\end{equation}
+其中
+\begin{equation}
+\begin{aligned}
+\Gamma_t(\Phi)
+&:=\alpha_{\max}\mathbb E_{P_t}
+  [U_iE_i\gamma_i\mathbf 1\{i\in\mathcal A_\Phi\}],\\
+\varepsilon_t(\Phi)
+&:=\alpha_{\max}\mathbb E_{P_t}
+  [U_iE_i(-\Delta_i)_+\mathbf 1\{i\notin\mathcal A_\Phi\}].
+\end{aligned}
+\label{eq:repair_residual_terms}
+\end{equation}
+因此，$\Gamma_t(\Phi)>\varepsilon_t(\Phi)$ 蕴含 $\mathcal R_t(g_{\mathrm{final}})<\mathcal R_t(g_0)$。
+\end{theorem}
+
+\paragraph{证明概述。}
+得分分离条件给出有效集合 $\mathcal G_i$ 的归一化权重下界 $W_i\geq\underline W_i$。随后利用凸性将该权重界转化为聚合改进 $\gamma_i$，进而得到式~\eqref{eq:query_repair_gain} 的查询级收益。将目标分布期望分别限制在 $\mathcal A_\Phi$ 及其补集上，即可得到式~\eqref{eq:changed_risk_gain}。完整证明见附录~\ref{app:theorem-proof}。
+
+\paragraph{推论。}
+更大的有效先验质量 $\Pi_i$ 或更宽的得分间隔 $\rho_+-\rho_-$ 会提高 $\underline W_i$，从而增大有保证的聚合收益 $\gamma_i$。互补上下文决定潜在有益覆盖范围，得分加权与门控则决定该覆盖如何转化为实际风险变化。以下恒等式精确给出各任务特定更新相对于 Base 的幅度：
+\begin{equation}
+  \lVert o_i^{\mathrm{final}}-o_i^{(0)}\rVert
+  =\alpha_{\max}U_iE_i
+   \lVert\bar o_i-o_i^{(0)}\rVert.
+  \label{eq:base_preservation_identity}
+\end{equation}
+因此，当 $U_iE_i=0$ 时，预测恢复为 Base。分类与回归的任务特定界见附录~\ref{app:theory}。

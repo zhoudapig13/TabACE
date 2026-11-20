@@ -1,0 +1,32 @@
+{
+  "timestamp_UTC": "2026-11-07T14:18:38.061089+00:00",
+  "reason": "User requested intermediate adaptation; source clipping alone failed to improve five-perturbation Acc over Base",
+  "source_view_count": 6,
+  "maximum_modified_members": 2,
+  "fixed_patterns": [
+    "raw6",
+    "raw5+source_quantile1",
+    "raw5+source_features75_1",
+    "raw4+source_quantile1+source_features75_1"
+  ],
+  "forbidden_roles": [
+    "target quantile alignment",
+    "covariance sign repair",
+    "nearest neighbour repair",
+    "recent-source bootstrap"
+  ],
+  "Random_fusion": "arithmetic mean",
+  "DENSE_fusions": [
+    "uniform MoE",
+    "uniform PoE",
+    "uniform Max"
+  ],
+  "calibration": "Four dataset folds choose fixed configuration under Clean >= Base - .005 and maximize mean Acc/AUC; fifth dataset fold evaluated",
+  "score_ordering_bounds_used": false,
+  "seed": 0,
+  "contexts_per_configuration": 6,
+  "new_GPU_inference": false,
+  "all_previous_attempts_retained": true,
+  "development_history": "Candidate family added after observing previous aggregate scores; development benchmark, not untouched confirmatory testing",
+  "code_sha256": "a7cd04114844fe541ed76d9f38f37d8300f2538b1fa9e6069c3ae62fa5c106b8"
+}

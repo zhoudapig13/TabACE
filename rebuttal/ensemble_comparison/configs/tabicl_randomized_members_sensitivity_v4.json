@@ -1,0 +1,33 @@
+{
+  "status": "DECLARED_BEFORE_NEW_RANDOMIZED_PREDICTIONS",
+  "purpose": "Measure member diversity and robustness sensitivity",
+  "outer_seed": 0,
+  "outer_repetitions": 1,
+  "candidate_count": 6,
+  "new_sensitivity_configurations": 1,
+  "feature_bank": "random subspaces, all canonical rows, column fraction Uniform(.85,1)",
+  "bootstrap_bank": "random patches, row fraction Uniform(.70,1), column fraction Uniform(.85,1), replacement=True",
+  "member_preprocessing_seeds": "SeedSequence([0, task_id, bank_id, member_id]).spawn(4)",
+  "fractions_fixed_per_dataset_and_member_across_conditions": true,
+  "same_random_candidate_banks_for_all_applicable_fusion_methods": true,
+  "single_and_native6_controls_unchanged": true,
+  "weights_retrained": false,
+  "reused_checkpoint_set": "tabicl_regression_weight_adaptation_v3/checkpoints/initial128",
+  "context_row_count_may_be_less_than_Base": true,
+  "canonical_source_access_unchanged": true,
+  "no_new_history_reference_rows_or_labels_at_inference": true,
+  "benchmark_unchanged": true,
+  "nominal_strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "test_scores_used_to_choose_randomization_config": false,
+  "decimal_prefix_or_score_dispersion_selection_objective": false,
+  "original_default_results_retained": true,
+  "all_results_reported_even_if_similar_or_worse": true,
+  "additional_clean_TRAIN_supervision_same_as_v3": true,
+  "single_seed_does_not_mean_identical_member_random_streams": true,
+  "Markdown_written": false
+}

@@ -1,0 +1,38 @@
+{
+  "protocol_id": "acs_natural_strict_source_nested512_v8",
+  "seed": 0,
+  "context_row_cap": 512,
+  "shared_context_types": 5,
+  "specific_context_types_maximum": 8,
+  "base_context_rows": 256,
+  "base_and_test_split_unchanged": true,
+  "calibration_domains": {
+    "geographic": [
+      "2018_CA"
+    ],
+    "temporal": [
+      "2014_CA"
+    ]
+  },
+  "additional_source_calibration_labels": {
+    "fit": 2048,
+    "selection": 2048
+  },
+  "accessible_labeled_source_pool_rows": 2048,
+  "specific_inheritance": "p_specific=(1-beta)*p_shared+beta*p_eight_view_expert; beta=0 returns p_shared exactly",
+  "beta_candidates": [
+    0,
+    0.125,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "selection": "source validation Accuracy, with cross-entropy as tie-breaker; paper/test accuracy thresholds are evaluated only after freezing policies",
+  "source_output_calibration": "regularized two-parameter logit calibration; identity is an available option",
+  "backbone_weights_finetuned": false,
+  "target_domain_calibration_labels_used": false,
+  "test_labels_used_for_fitting_or_selection": false,
+  "original_configuration_recovered": false,
+  "note": "Exploratory reconstructed adaptation; exact Shared inheritance does not guarantee strict test dominance."
+}

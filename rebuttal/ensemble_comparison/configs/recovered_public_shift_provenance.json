@@ -1,0 +1,18 @@
+{
+  "git_blob": "cd4ca23b778cbf3aa39d158b7c7f8d2b6ee83462",
+  "git_revision": "9ecb908",
+  "original_path": "experiment6/scripts/run_apa_tabicl.py",
+  "recovered_entire_blob_sha256": "50f1f7f0e686672e1aecf78d9a4740bca86bea489a4dd7debcb1b31e992b355f",
+  "extraction": "original top-level AST source segments, unchanged bodies",
+  "symbols": [
+    "PublicShiftSpec",
+    "parse_public_shift_name",
+    "_public_shift_feature_scores",
+    "_public_shift_class_means",
+    "_public_shift_select_mask",
+    "_public_shift_opposite_positions",
+    "_public_shift_move_toward_opposite",
+    "apply_public_shift_to_split"
+  ],
+  "current_file_sha256": "7e7ed91e48194a422b003199c3ad444388f2f42a46edf222a9201ab04e0c1c6b"
+}

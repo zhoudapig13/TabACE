@@ -1,0 +1,29 @@
+{
+  "created_UTC": "2026-11-07T16:21:30.492479+00:00",
+  "seed": 0,
+  "candidate_count": 6,
+  "backbone_candidates": {
+    "TabICL": [
+      "identity",
+      "SVD32",
+      "cross32"
+    ],
+    "TabPFN": [
+      "identity",
+      "bootstrap1",
+      "bootstrap2"
+    ]
+  },
+  "methods": [
+    "Mean",
+    "GES"
+  ],
+  "nested_dataset_OOF": true,
+  "clean_limit": 0.005,
+  "refit_calibration_margin": 0.0025,
+  "score_ordering_or_Shared_used_for_fitting": false,
+  "raw_and_calibrated_variants_saved": true,
+  "new_GPU_inference": false,
+  "Markdown_written": false,
+  "code_sha256": "0204415c3597c442721385e00e7f50cb6672acbd0d849c3daa7e0cddf9b218b0"
+}

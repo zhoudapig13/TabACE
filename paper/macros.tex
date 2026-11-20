@@ -1,0 +1,22 @@
+% Shared notation for the arXiv and conference entry points.
+\newcommand{\method}{TabACE}
+\newcommand{\methodlong}{Tabular Adaptive Context Ensemble}
+\newcommand{\methodmath}{\mathrm{TabACE}}
+\newcommand{\dataset}{\mathcal{D}}
+\newcommand{\model}{\mathcal{M}_{\theta}}
+\newcommand{\contextset}{\mathcal{C}}
+
+% Shared theorem environments for the main theoretical analysis.
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{theorem}{Theorem}
+
+% Lightweight shared algorithm float; the full algorithm packages are not
+% required by either manuscript entry point.
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+% Keep unfinished material conspicuous in working PDFs.  The arXiv package
+% target refuses to run while any \TODO commands remain in the manuscript.
+\newcommand{\TODO}[1]{\textcolor{red}{[TODO: #1]}}

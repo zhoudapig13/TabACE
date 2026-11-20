@@ -1,0 +1,15 @@
+{
+  "declared_at_utc": "2026-11-11T09:13:05.532865+00:00",
+  "fixed_context_draws_per_family": 8,
+  "additional_fitting_labels": false,
+  "target_fitting_label_count": 64,
+  "update_cap": 0.25,
+  "base_shared": "frozen v8",
+  "context_draws_not_chosen_by_test_performance": true,
+  "fusion_hyperparameter_choices": 4,
+  "context_budget_shared": 6,
+  "context_budget_specific_candidate": 30,
+  "compute_budget_matched": false,
+  "method_status": "DAGGER bagging development variant with increased inference budget",
+  "selection": "development-validation accuracy only, no test outcomes available"
+}

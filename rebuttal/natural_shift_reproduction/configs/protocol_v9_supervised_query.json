@@ -1,0 +1,29 @@
+{
+  "protocol_id": "specific_supervised_query_adapter_v9",
+  "previous_goal_turn_classification": "progress",
+  "acceptance": "Each of all 12 fixed test Accuracy values must exceed fixed Shared by at least 0.005. No averaging substitutes for a failed cell.",
+  "seed": 0,
+  "reference": "strict_source_nested_512_v8",
+  "Shared_frozen": true,
+  "test_partitions_frozen": true,
+  "context_row_cap": 512,
+  "context_types": 8,
+  "source_fit_rows": 2048,
+  "source_selection_rows": 2048,
+  "calibration_domains": {
+    "geographic": "2018_CA",
+    "temporal": "2014_CA"
+  },
+  "models": "3 regularized logistic probability stackers and 4 CatBoost query-and-probability correctors",
+  "model_selection": "source validation Accuracy, cross-entropy tie-breaker; inner household-disjoint source split for boosting iterations",
+  "beta_grid": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "additional_supervised_model": true,
+  "original_paper_Specific": false,
+  "target_labels_used_for_fitting_or_selection": false
+}

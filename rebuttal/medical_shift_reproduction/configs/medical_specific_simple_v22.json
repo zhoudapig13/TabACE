@@ -1,0 +1,23 @@
+{
+  "version": "medical-specific-simple-v22",
+  "declared_at_utc": "2026-11-11T10:37:51.671472+00:00",
+  "hypothesis": "Small-data learned residual gates may over-shrink useful experts; assess simpler fixed-weight score fusion.",
+  "parent_base_shared": "Frozen v18; no changes",
+  "target_fitting_budget": 64,
+  "expert_candidates": [
+    "v20 standalone auxiliary learner selected using development only",
+    "v21 TFM expert from learned forest context, existing selected constructor; fallback fixed16anchors128context"
+  ],
+  "weights": [
+    0.15,
+    0.25,
+    0.35
+  ],
+  "formula": "Weighted centered logits, keeping the original Shared/Base decision threshold.",
+  "no_fitted_residual_gate": true,
+  "expert_calibration": "Source+32target calibration only, crossfitted calibration threshold for TFM expert",
+  "known_domain_routing": true,
+  "selection": "Per-domain development accuracy maximum with Shared fallback; no test sorting or numeric interval filters",
+  "not_original_paper_specific": true,
+  "all_previous_variants_retained": true
+}

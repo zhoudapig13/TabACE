@@ -1,0 +1,20 @@
+\begin{table}[H]
+\centering\footnotesize
+\color{revisionblue}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{High-confidence error corrections on reconstructed five-perturbation data (original $\rightarrow$ extended).}
+\label{tab:revision-high-confidence}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Backbone & HC errors/all & Correction rate & Corrected & Overall Acc \\
+\midrule
+TabICL & 2.06\% & 0 \(\rightarrow\) \textbf{17.09\%} & 648 & 67.5532\% \(\rightarrow\) \textbf{67.8380\%} \\
+TabPFN & 2.44\% & 0 \(\rightarrow\) \textbf{26.43\%} & 1191 & 66.1437\% \(\rightarrow\) \textbf{66.6759\%} \\
+\bottomrule
+\end{tabular}}
+\par\smallskip\begin{minipage}{\linewidth}\scriptsize
+Correction rates condition on high-confidence Base errors; overall Accuracy is macro-averaged across datasets and conditions.
+\end{minipage}
+\end{table}

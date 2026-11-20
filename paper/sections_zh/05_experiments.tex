@@ -1,0 +1,79 @@
+\ifdefined\ICLRLayout
+\clearpage
+\input{tables_zh/overall_results}
+\else
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_strength_comparison.pdf}
+  \caption{OpenML 基准上不同问题强度下的性能。分类面板使用 OpenML-CC18，回归面板使用 OpenML-CTR23。第一行对五种受控上下文扰动进行宏平均，第二行对七种分布偏移进行宏平均。}
+  \label{fig:semisynthetic-strength}
+\end{figure}
+
+\clearpage
+\input{tables_zh/overall_results}
+\fi
+
+\section{实验}
+\label{sec:experiments}
+
+\subsection{实验设置}
+\label{sec:experimental_setup}
+
+\paragraph{评估轨道。}
+我们在公开 OpenML 基准和全合成数据上评估 TabACE。OpenML 轨道的分类任务来自 OpenML-CC18~\citep{bischl2021openml}，回归任务来自 OpenML-CTR23~\citep{fischer2023openmlctr23}。受控变化采用五折数据集级折外（OOF）评估：策略在其余四折上拟合，并在留出数据集上保持固定。强度为零时，上下文与输入均不改变。合成轨道使用受控数据生成过程，分别考察问题类别与强度的影响。
+
+\paragraph{问题与配置。}
+两个轨道均覆盖五种源上下文扰动（Shortcut、Boundary、AUC/Rank-band、Local 和 Mixed）与七种分布偏移（Covariate、Label、Concept、Selection、Domain、Temporal 和 Support），强度取 $0$、$0.2$、$0.5$、$0.8$ 和 $1.0$。Base 表示不进行上下文集成的冻结主干模型。Shared 在所有预定义变化上采用固定上下文库；Specific 则根据目标推理前给定的变化类别选择并融合候选上下文。除非另行注明预测器，所有次要实验均采用冻结的 TabICL-v2，Base 表示其未经修改的预测。附录列出全部算子与上下文布局。
+
+% Register this float before the final setup paragraphs so that the arXiv
+% layout places it at the top of page 7.  The ICLR layout inserts the same
+% figure at the corresponding results subsection instead.
+\ifdefined\ICLRLayout\else
+\clearpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.88\textwidth]{figures/tabace_synthetic_stability.pdf}
+  \caption{在 180 个对齐的“随机种子--DGP--场景”实验单元上的成对稳定性。分类使用经机会水平校正的 AUROC 边际退化，回归使用归一化 $R^2$ 退化。单元格表示行方法取得较小性能下降的频率；差异不超过 $0.001$ 时记为平局。}
+  \label{fig:synthetic-stability}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.94\textwidth]{figures/tabace_controlled_response.pdf}
+  \caption{全合成设置下对受控上下文扰动的响应。各面板分别报告分类 AUROC 与回归 $R^2$；曲线汇总五种扰动类别上的对齐实验单元，阴影带表示 $95\%$ bootstrap 区间。}
+  \label{fig:synthetic-controlled-response}
+\end{figure}
+\fi
+
+\paragraph{任务与指标。}
+分类任务报告 Accuracy 和 AUROC，回归任务报告 $R^2$、nMAE 与 nRMSE。稳健性排名和强度响应图分别使用 AUROC 与 $R^2$。
+
+\paragraph{基线。}
+OpenML 实验比较经过调优的常规预测器、树模型、神经网络模型和冻结的基础模型，其中包括 LimiX-2M 检查点（下文简称 LimiX）~\citep{wang2026limix2m}。合成实验比较稳健学习、对抗训练与分布适配基线。附录列出所有方法及其适用任务，并说明使用 LimiX 覆盖完整 OpenML 测试套件的兼容性方案。
+
+\ifdefined\ICLRLayout
+\clearpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_strength_comparison.pdf}
+  \caption{OpenML 基准上不同问题强度下的性能。分类面板使用 OpenML-CC18，回归面板使用 OpenML-CTR23。第一行对五种受控上下文扰动进行宏平均，第二行对七种分布偏移进行宏平均。}
+  \label{fig:semisynthetic-strength}
+\end{figure}
+\fi
+
+\paragraph{选择方案。}
+在每个外层折内，上下文配置、分支权重与整合参数均在其余四个数据集折生成的校准 episode 上拟合，并在留出数据集评估前固定。这些 episode 覆盖已注册的条件，但拟合策略和留出推理均不接收变化强度。所有方法使用相同的外层折与评估样本，留出目标标签仅用于计算最终指标。
+
+% Keep the two compact tables and the inference-cost figure together at the
+% top of arXiv page 8, after the page-7 figures and setup text.
+\ifdefined\ICLRLayout\else
+\clearpage
+\input{tables_zh/result_tables_3_4}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.96\textwidth]{figures/tabace_inference_cost_ablation.pdf}
+  \caption{固定五上下文 Shared 库与单独评估的 Base 分支的推理成本消融。面板 (a--b) 分解中位延迟；(c) 比较原始推理与缓存推理；(d) 在摊销加速比中计入一次性缓存建立成本。}
+  \label{fig:inference-cost}
+\end{figure}
+\fi

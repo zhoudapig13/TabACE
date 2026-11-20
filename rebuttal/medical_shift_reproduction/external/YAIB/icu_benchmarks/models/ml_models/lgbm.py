@@ -1,0 +1,67 @@
+import gin
+import lightgbm as lgbm
+import numpy as np
+import shap
+import wandb
+from wandb.integration.lightgbm import wandb_callback as wandb_lgbm
+
+from icu_benchmarks.constants import RunMode
+from icu_benchmarks.models.wrappers import MLWrapper
+
+
+class LGBMWrapper(MLWrapper):
+    explainer_cls = shap.TreeExplainer
+
+    def fit_model(self, train_data, train_labels, val_data, val_labels):
+        """Fitting function for LGBM models."""
+        self.model.set_params(random_state=np.random.get_state()[1][0])
+        callbacks = [
+            lgbm.early_stopping(self.hparams.patience, verbose=False),
+            lgbm.log_evaluation(period=-1),
+        ]
+
+        if wandb.run is not None:
+            callbacks.append(wandb_lgbm())
+
+        self.model = self.model.fit(
+            train_data,
+            train_labels,
+            eval_set=(val_data, val_labels),
+            callbacks=callbacks,
+        )
+        val_loss = list(self.model.best_score_["valid_0"].values())[0]
+        return val_loss
+
+
+@gin.configurable
+class LGBMClassifier(LGBMWrapper):
+    _supported_run_modes = [RunMode.classification]
+
+    def __init__(self, *args, verbosity: int = -1, **kwargs):
+        self.model = self.set_model_args(lgbm.LGBMClassifier, *args, **kwargs)
+        # verbosity is not in the LightGBM signature, so set_model_args would drop it.
+        self.model.set_params(verbosity=verbosity)
+        super().__init__(*args, **kwargs)
+
+    def predict(self, features):
+        """
+        Predicts class probabilities for the given features.
+
+        Args:
+            features: Input features for prediction.
+
+        Returns:
+            numpy.ndarray: Predicted probabilities for each class.
+        """
+        return self.model.predict_proba(features)
+
+
+@gin.configurable
+class LGBMRegressor(LGBMWrapper):
+    _supported_run_modes = [RunMode.regression]
+
+    def __init__(self, *args, verbosity: int = -1, **kwargs):
+        self.model = self.set_model_args(lgbm.LGBMRegressor, *args, **kwargs)
+        # verbosity is not in the LightGBM signature, so set_model_args would drop it.
+        self.model.set_params(verbosity=verbosity)
+        super().__init__(*args, **kwargs)

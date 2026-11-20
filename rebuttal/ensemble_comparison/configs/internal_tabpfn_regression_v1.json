@@ -1,0 +1,119 @@
+{
+  "status": "DECLARED_BEFORE_NEW_TABPFN_INFERENCE",
+  "internal_only": true,
+  "benchmark_independent_of_TabICL_per_user_choice": true,
+  "cross_backbone_benchmarks_not_identical": true,
+  "paper_protocol_reproduction": false,
+  "development_labels_used_for_Base_calibration": true,
+  "ensemble_outcomes_or_Shared_bounds_used_for_benchmark_selection": false,
+  "seed": 0,
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "clean_candidates": [
+    "sequential42",
+    "source11_target7",
+    "source11_target7_precision0.03"
+  ],
+  "five_candidates": [
+    {
+      "name": "label0.9",
+      "shift_scale": 10.0,
+      "label_scale": 0.9
+    },
+    {
+      "name": "label1",
+      "shift_scale": 10.0,
+      "label_scale": 1.0
+    },
+    {
+      "name": "label1.1",
+      "shift_scale": 10.0,
+      "label_scale": 1.1
+    }
+  ],
+  "seven_candidates": [
+    {
+      "name": "amplitude0.25",
+      "amplitude": 0.25
+    },
+    {
+      "name": "amplitude0.375",
+      "amplitude": 0.375
+    },
+    {
+      "name": "amplitude0.5",
+      "amplitude": 0.5
+    }
+  ],
+  "candidate_budget_per_block": 3,
+  "targets": {
+    "clean": {
+      "r2": 0.739,
+      "nrmse": 0.476
+    },
+    "five": {
+      "r2": -1.253,
+      "nrmse": 1.313
+    },
+    "seven": {
+      "r2": 0.426,
+      "nrmse": 0.669
+    }
+  },
+  "select_nearest_and_report_actual_gap": true,
+  "all_trials_preserved": true,
+  "no_test_score_ordering_constraints": true,
+  "Markdown_written": false,
+  "bounded_refinement_v2": {
+    "five_additional": [
+      {
+        "name": "shift1_label0.8",
+        "shift_scale": 1.0,
+        "label_scale": 0.8
+      },
+      {
+        "name": "shift2_label0.85",
+        "shift_scale": 2.0,
+        "label_scale": 0.85
+      }
+    ],
+    "seven_additional": [
+      {
+        "name": "amplitude0.4125",
+        "amplitude": 0.4125
+      },
+      {
+        "name": "amplitude0.425",
+        "amplitude": 0.425
+      }
+    ],
+    "maximum_candidates_five_and_seven": 5,
+    "reason": "Initial Base deviations from historical reference; two neighboring amplitude probes for seven and two reduced-label/reduced-feature-shift probes for five. No ensemble outcomes or Shared upper bounds consulted.",
+    "all_prior_frozen_configs_and_partial_ensembles_archived": "results/internal_tabpfn_regression_v1/development_round1_archive",
+    "time_unix": 1794077604.5795577
+  },
+  "bounded_family_refinement_v3": {
+    "label_amplitude_probes": [
+      0.4375,
+      0.45,
+      0.4625
+    ],
+    "other_family_amplitude_options": [
+      0.25,
+      0.375,
+      0.5,
+      0.4125,
+      0.425
+    ],
+    "selection": "real predicted family blocks, equal dataset/family/strength weights, nearest historical Base only",
+    "per_dataset_parameter_choices": false,
+    "Shared_bounds_used": false,
+    "label_probe_prediction_count": 396,
+    "all_aggregate_combinations_will_be_saved": true,
+    "declared_unix": 1794077901.9613287
+  }
+}

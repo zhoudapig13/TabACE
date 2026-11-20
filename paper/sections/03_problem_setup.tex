@@ -1,0 +1,51 @@
+\section{Preliminaries and Problem Formulation}
+\label{sec:preliminaries}
+
+\noindent\textbf{Tabular In-Context Prediction.}\label{sec:tabular_icl}
+Let $\mathcal{D}_s=\{(x_j^s,y_j^s)\}_{j=1}^{n_s}$ and
+$\mathcal{X}_t=\{x_i^t\}_{i=1}^{n_t}$ denote labeled reference data and
+unlabeled target queries. Indices $j$ and $i$ refer to reference rows and
+target queries, respectively, with $x_j^s,x_i^t\in\mathcal{X}\subseteq
+\mathbb{R}^d$. We take $\mathcal{Y}=\{1,\ldots,L\}$ for classification and
+$\mathcal{Y}\subseteq\mathbb{R}$ for regression; target labels are unavailable
+at inference and used only for evaluation.
+A tabular in-context learner predicts each query by conditioning on labeled
+rows supplied as context. For $x_i^t$, let
+$C_i=(X_i^{\mathrm{ctx}},\mathbf{y}_i^{\mathrm{ctx}})
+\in\mathbb{R}^{B_i\times d}\times\mathcal{Y}^{B_i}$ be its context of $B_i$
+labeled rows. Thus, $\mathcal{D}_s$ is the available reference set, whereas
+$C_i$ is the model input selected or constructed from the available data.
+Let $f_\theta$ denote a TFM pretrained before deployment via synthetic prior
+fitting or real-table pretraining
+\citep{hollmann2025tabpfn,qu2025tabicl,ma2025tabdpt} and frozen at inference.
+Given $C_i$ and $x_i^t$, it returns an $L$-class probability vector,
+\begin{equation}
+  p_\theta(\cdot\mid x_i^t,C_i)=f_\theta(C_i,x_i^t).
+  \label{eq:tfm_inference}
+\end{equation}
+For regression, $f_\theta$ instead returns a real-valued prediction or
+predictive distribution. Section~\ref{sec:method} extends this interface to
+context ensembles.
+
+\noindent\textbf{Prediction under Data Change.}\label{sec:data_change}
+Let $P_s(X,Y)$ and $P_t(X,Y)$ denote the joint distributions of the reference
+and target environments, respectively, with
+$(x_j^s,y_j^s)\sim P_s$ and $(x_i^t,y_i^t)\sim P_t$. We call $P_t=P_s$ the
+nominal setting. A \emph{controlled source-context perturbation} intentionally
+modifies the accessible labeled evidence to isolate a particular Context
+failure, without requiring that the operation correspond to a named deployment
+shift. A \emph{distribution shift} instead describes a difference between the
+underlying source and target distributions, $P_t\neq P_s$. Controlled
+perturbations modify the source context. Distribution-shift operators may act
+on the source, the target, or both, according to the family definition in
+Appendix~\ref{app:data_transformations}.
+For a predictor $g$ and loss $\ell$, performance in the target environment is
+measured by the target risk
+\begin{equation}
+  \mathcal{R}_t(g)
+  =\mathbb{E}_{(X,Y)\sim P_t}\!\left[\ell\!\left(g(X),Y\right)\right].
+  \label{eq:target_risk}
+\end{equation}
+Our objective is to reduce target risk across nominal and changed conditions
+using $\mathcal D_s$ and the unlabeled queries $\mathcal X_t$, while keeping
+$f_\theta$ fixed.

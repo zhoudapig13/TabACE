@@ -1,0 +1,28 @@
+{
+  "version": "known-domain-logit-fusion-v17",
+  "declared_at_utc": "2026-11-11T09:39:58.766136+00:00",
+  "hypothesis": "Probability mixture cap prevents correcting confident Base errors; development-only bound diagnostic found10/14ID errors uncorrectable in Sepsis B->A at25percent mixing.",
+  "change": "Geometric/logit pooling instead of probability-space mixture, with learned reliability; separate additional adapted variant, NOT original TabACE fusion.",
+  "labels_and_data": "Same64 target fitting labels and unchanged development/test patients as v16.",
+  "base": "Frozen v16 Base per known domain; no weakening",
+  "domain_metadata": "Known hospital/admission source, given equally to all methods, same as v16",
+  "source_fitting_development_split": "Unchanged v14/v16",
+  "gate": "Weights based on confidence, agreement; Base uncertainty floor0or0.25",
+  "fusion_formula": "sigmoid((1-alpha)*logit(anchor)+alpha*sum_j w_j logit(p_j))",
+  "alpha_cap": [
+    0.15,
+    0.25
+  ],
+  "alpha_note": "These are LOGIT-space weights; probability differences need not be bounded by0.25. This is reported, not conflated with previous probability cap.",
+  "confidence_floor": 0.25,
+  "gate_regularization": [
+    1,
+    0.1
+  ],
+  "source_target_calibration_weights": "Domain-specific, same grid as v16",
+  "selection": "Development accuracy only with fallback to v16 policy; no final outcomes or target numeric-band selection",
+  "shared_bank_choices": 4,
+  "specific_bank_choices": 12,
+  "previous_results_retained": true,
+  "test_labels_not_opened": true
+}

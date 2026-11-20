@@ -1,0 +1,37 @@
+{
+  "experiment": "single_specific_geo_income_v12",
+  "scope": "geographic CA2018 to MI2018 Income only",
+  "Shared_reference": "single_shared_geo_income_v11",
+  "Shared_predictions_frozen": true,
+  "required_Specific_minus_Shared": 0.005,
+  "seed": 0,
+  "context_row_cap": 512,
+  "TFM_context_types": 8,
+  "calibration_domains": [
+    "2018_CA"
+  ],
+  "source_label_budgets_compared": [
+    2048,
+    4096
+  ],
+  "source_selection_rows": 2048,
+  "4096_row_budget": "existing source pool 2048 plus calibration fit 2048; no target labels",
+  "source_validation_selection": "Accuracy, cross-entropy tie-breaker, then smaller update strength",
+  "router_model_space": "prior eight-view meta-models plus query-only CatBoost routers trained on 2048/4096 source rows",
+  "final_prediction": "convex combination of complete v11 Shared and eight frozen TFM context outputs",
+  "test_labels_used_for_training_or_selection": false,
+  "additional_supervised_router": true,
+  "original_paper_Specific_reproduced": false,
+  "data_partitions_changed": false,
+  "other_cases_changed": false,
+  "results_merged_into_main_table": false,
+  "status": "COMPLETE",
+  "frozen_policy": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/single_specific_geo_income_v12/frozen_policy.json",
+  "comparison": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/single_specific_geo_income_v12/single_case_comparison.csv",
+  "audit": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/single_specific_geo_income_v12/audit.json",
+  "verified_OOD_Shared_accuracy": 0.7822596829219346,
+  "verified_OOD_Specific_accuracy": 0.7913907284768212,
+  "verified_OOD_accuracy_gain": 0.0091310455548866,
+  "router_training_rows": 4096,
+  "meets_required_minimum_gain": true
+}

@@ -1,0 +1,68 @@
+{
+  "candidate": "apa_cf_directional_router",
+  "version": "apa_v8",
+  "description": "Counterfactual context-prior intervention with directional batch-support routing.",
+  "method_arg": "apa_cf_directional_router",
+  "conservative_baseline": "apa_dual_shift_router_v7",
+  "router": {
+    "min_batch_prior_js": 0.008,
+    "directional_shift_gate": true,
+    "max_changed_fraction": 0.1,
+    "off_majority_max_baseline_margin": 0.15,
+    "sensitivity_gate": 0.12,
+    "disagreement_gate": 0.004,
+    "max_baseline_confidence": 0.92,
+    "blend_weight": 0.6
+  },
+  "context_interventions": {
+    "k_cap": 24,
+    "lambda_balance": 0.35,
+    "alpha": 0.75,
+    "prior_floor": 0.08,
+    "evidence_temperature": 1.1,
+    "targets": [
+      "knn",
+      "balanced_knn",
+      "uniform_prior",
+      "train_prior",
+      "class_tilted_priors"
+    ]
+  },
+  "reference_commands": {
+    "synthetic_shift_round4": "python -u experiment6/scripts/run_apa_tabicl.py --datasets synthetic_label_shift_hard,synthetic_label_shift --label-shift-strengths 0.0,0.3,0.6,0.9 --seeds 0,1 --n-samples 140 --train-size 70 --test-size 24 --k 16 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_dual_shift_router_v7,apa_cf_directional_router --output-prefix apa_v8_cf_directional_round4",
+    "small_safety_round4": "python -u experiment6/scripts/run_apa_tabicl.py --datasets synthetic_imbalanced,breast_cancer,wine,openml_blood_transfusion,openml_diabetes_pima --seeds 0,1 --n-samples 140 --train-size 70 --test-size 24 --k 16 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_dual_shift_router_v7,apa_cf_directional_router --output-prefix apa_v8_cf_directional_safety_round4",
+    "openml_broad3": "python -u experiment6/scripts/run_apa_tabicl.py --datasets openml_cmc,openml_ilpd,openml_credit_g,openml_blood_transfusion,openml_kc1,openml_dmft,openml_diabetes_pima,openml_pc1 --seeds 0,1,2 --n-samples 180 --train-size 90 --test-size 32 --k 16 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_dual_shift_router_v7,apa_cf_directional_router --output-prefix apa_v8_cf_openml_broad3",
+    "openml_forced_shift_round2": "python -u experiment6/scripts/run_apa_tabicl.py --datasets openml_ilpd,openml_credit_g,openml_blood_transfusion,openml_kc1,openml_diabetes_pima,openml_pc1 --force-label-shift --label-shift-strengths 0.0,0.3,0.6,0.9 --seeds 0,1 --n-samples 180 --train-size 90 --test-size 32 --k 16 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_dual_shift_router_v7,apa_cf_directional_router --output-prefix apa_v8_cf_openml_forced_shift_round2"
+  },
+  "current_evidence": {
+    "synthetic_shift_round4": {
+      "n": 16,
+      "mean_accuracy_delta": 0.046875,
+      "mean_balanced_accuracy_delta": 0.02445652173913042,
+      "mean_macro_f1_delta": 0.03207006141056209,
+      "mean_ece_delta": -0.01225413889555273,
+      "positive_negative_balanced_accuracy_splits": "12 / 0"
+    },
+    "small_safety_round4": {
+      "n": 10,
+      "mean_balanced_accuracy_delta": 0.0,
+      "positive_negative_balanced_accuracy_splits": "0 / 0"
+    },
+    "openml_broad3": {
+      "n": 24,
+      "mean_accuracy_delta": 0.0013020833333333333,
+      "mean_balanced_accuracy_delta": 0.0013020833333333333,
+      "mean_macro_f1_delta": 0.0012157906894748975,
+      "mean_ece_delta": -0.0005396794149502282,
+      "positive_negative_balanced_accuracy_splits": "1 / 0"
+    },
+    "openml_forced_shift_round2": {
+      "n": 48,
+      "mean_accuracy_delta": 0.024739583333333332,
+      "mean_balanced_accuracy_delta": 0.013046903967371152,
+      "mean_macro_f1_delta": 0.015180340480543555,
+      "mean_ece_delta": -0.008446215589786773,
+      "positive_negative_balanced_accuracy_splits": "21 / 0"
+    }
+  }
+}

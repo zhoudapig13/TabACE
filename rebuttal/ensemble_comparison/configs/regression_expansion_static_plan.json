@@ -1,0 +1,41 @@
+{
+  "created_UTC": "2026-11-07T16:15:43.003548+00:00",
+  "seed": 0,
+  "methods": [
+    "GES6",
+    "ConvexStacking6",
+    "RidgeStacking6",
+    "Median6",
+    "FeatureMean6"
+  ],
+  "bank": "Fixed six source-feature views, includes identity; no new backbone inference",
+  "calibration": "Nested dataset five-fold OOF; inner fold checks Clean R2 and nRMSE within .005 of Base; minimize normalized validation MSE among feasible fixed candidates; report infeasibility rather than silently revert to Base",
+  "alpha_grid": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "ridge_lambda_grid": [
+    0.001,
+    0.01,
+    0.1,
+    1,
+    10,
+    100
+  ],
+  "convex_lambda_grid": [
+    0,
+    0.001,
+    0.01,
+    0.1,
+    1,
+    10,
+    100
+  ],
+  "prior": "Identity view for ridge/convex regularization and static shrinkage",
+  "raw_variants_saved": true,
+  "target_test_labels_or_Shared_bounds_used": false,
+  "Markdown_written": false,
+  "code_sha256": "89af00f97246e7627cb5465315485e0a937ee4d6a5f6e5b0b80dbb63f2e620e8"
+}

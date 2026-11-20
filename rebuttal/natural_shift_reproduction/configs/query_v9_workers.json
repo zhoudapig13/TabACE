@@ -1,0 +1,86 @@
+[
+  {
+    "pid": 1866861,
+    "scenario": "geographic",
+    "task": "Employment",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/specific_query_adapter_v9.py",
+      "--scenario",
+      "geographic",
+      "--task",
+      "Employment"
+    ]
+  },
+  {
+    "pid": 1866862,
+    "scenario": "geographic",
+    "task": "Income",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/specific_query_adapter_v9.py",
+      "--scenario",
+      "geographic",
+      "--task",
+      "Income"
+    ]
+  },
+  {
+    "pid": 1866863,
+    "scenario": "geographic",
+    "task": "TravelTime",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/specific_query_adapter_v9.py",
+      "--scenario",
+      "geographic",
+      "--task",
+      "TravelTime"
+    ]
+  },
+  {
+    "pid": 1866864,
+    "scenario": "temporal",
+    "task": "Employment",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/specific_query_adapter_v9.py",
+      "--scenario",
+      "temporal",
+      "--task",
+      "Employment"
+    ]
+  },
+  {
+    "pid": 1866865,
+    "scenario": "temporal",
+    "task": "Income",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/specific_query_adapter_v9.py",
+      "--scenario",
+      "temporal",
+      "--task",
+      "Income"
+    ]
+  },
+  {
+    "pid": 1866866,
+    "scenario": "temporal",
+    "task": "TravelTime",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/specific_query_adapter_v9.py",
+      "--scenario",
+      "temporal",
+      "--task",
+      "TravelTime"
+    ]
+  }
+]

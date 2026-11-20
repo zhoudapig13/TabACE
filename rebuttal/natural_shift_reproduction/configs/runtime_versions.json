@@ -1,0 +1,25 @@
+{
+  "python": "3.12.3 (main, Jun 18 2025, 17:59:45) [GCC 13.3.0]",
+  "packages": {
+    "folktables": "0.0.12",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.15.3",
+    "torch": "2.8.0a0+34c6371d24.nv25.8"
+  },
+  "source_sha256": {
+    "audit_natural.py": "359a6ba7e6b35b5744d1382962d065fd2ef0313cea4ea08590c9f3e3d607f4a0",
+    "fit_and_report.py": "8bcaed2f55cd54b59b9f346cd1d1e49a14a10d34b72b2d44c3678fa5197b5566",
+    "fit_expanded.py": "0583efa306923ce0d683d4b5f48cbb9d2cfd13389a68a824c94da94affc56758",
+    "fit_row_budgets.py": "559c4634a378da9aced00fa630bc3bef2c6561da1a88aed28ff5752405b3133d",
+    "launch_natural.py": "f50a6b0a70f4f70a199a874db622751061e277c29b85eac05a5307023447c722",
+    "natural_components.py": "c64cc945504906d62e095fe670ab81c4fad3681371f9ecfe5b9422a26970330f",
+    "prepare_acs.py": "8db2084784be2bae0bb3dd11058b4af1b20fcefc1b3c9cca70b9d5ce3f5c6d17",
+    "reproduce.py": "a30fcf3fd5a43b8e7e05fc5bb2e9d22351b06d6cab5b7383bd69155774f35abb",
+    "row_budget_views.py": "1e578b8a47a6629fbc9158a27cbda22bc4c82e91911a0c375313f6f9d84acf53",
+    "run_expanded_views.py": "b675af631a23e4ed5ab3e593634e26eea6bd84d2f7ccc54cd4016008618252e3",
+    "run_natural.py": "b06fa349f3de86019b89690c33aab694ed62a56996743a062c5bae4620563151",
+    "run_row_budgets.py": "af4e4f34dd587b68f5bff042013b30160fae2331f663c5282a857c79706764ff"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "seed": 0,
+  "selection": "Development accuracy only; strict improvement, Shared fallback",
+  "alphas": [
+    0.1,
+    0.2,
+    0.3
+  ],
+  "parent": "medical_common_native8_v24",
+  "fixed_base_shared": true,
+  "target_fitting_labels": 64,
+  "target_labels_split": {
+    "context": 32,
+    "calibration": 32
+  },
+  "additional_development_validation_labels": true,
+  "added_experts": "Previously frozen v22 TFM context (Native-1) and supervised auxiliary",
+  "mixed_compute_explicit": true,
+  "original_tabace_reproduction": false,
+  "previous_test_cohorts_observed": true
+}

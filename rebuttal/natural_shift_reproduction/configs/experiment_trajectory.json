@@ -1,0 +1,42 @@
+[
+  {
+    "version": 1,
+    "change": "Canonical 256-row Shared registry and expanded-pool Specific; reconstructed frozen splits."
+  },
+  {
+    "version": 2,
+    "change": "Expanded source-pool top-ranking adaptation at 256 row cap; retained as exploratory record."
+  },
+  {
+    "version": 3,
+    "change": "Preserve registered coverage fractions before downsampling; briefly tested 5/8 Shared members before user clarified row-count intent."
+  },
+  {
+    "version": 4,
+    "change": "User clarified expansion of context rows; 5 Shared types and 8 Specific types at 256/512/1024/2048."
+  },
+  {
+    "version": 5,
+    "change": "Matched Shared/Specific per-task maximum row budgets."
+  },
+  {
+    "version": 6,
+    "change": "User fixed maximum context row count to 512; active result uses 5/8 types and source-only fusion calibration."
+  },
+  {
+    "version": 7,
+    "change": "Pooled-source output calibration and exact Shared fallback; has additional target-year supervision for temporal Shared and its inherited Specific."
+  },
+  {
+    "version": 8,
+    "change": "Strict per-scenario source-only calibration, 512-row cap, five Shared/eight Specific types, exact Shared fallback and validation-selected update strength. All thresholds were evaluated after policy freezing; not all were met."
+  },
+  {
+    "version": 9,
+    "change": "Source-only supervised query corrector; all 12 fixed test Accuracy gains exceeded 0.005; not the original paper Specific."
+  },
+  {
+    "version": 10,
+    "change": "Supervised query router restricted to convex combinations of frozen TFM outputs and full Shared; all 12 gains exceeded 0.005; minimum 0.0106. Original paper reproduction remains incomplete."
+  }
+]

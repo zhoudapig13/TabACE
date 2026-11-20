@@ -1,0 +1,25 @@
+{
+  "declared_at_utc": "2026-11-11T08:54:43.890977+00:00",
+  "user_approved_casecontrol": true,
+  "task": "readmission_other_to_ER",
+  "prevalence": 0.5,
+  "counts": {
+    "train": 1460,
+    "cal": 166,
+    "dev_fit": 442,
+    "dev_val": 296,
+    "id": 684,
+    "ood": 812
+  },
+  "source_preprocessing": "Frozen natural source-training preprocessor",
+  "extra_target_development_labels": true,
+  "all_methods_same_label_access": true,
+  "context_cap": 256,
+  "native_estimators": 1,
+  "seed": 0,
+  "method": "Target-supervised context selection and fusion; optional local/floor development adapters",
+  "candidate_grid": "Same versioned12 context x12 fusion choices per ensemble tier as previous development run",
+  "final_labels_access": "Cohort preparation uses outcomes only to sample prespecified1:1; model selection never receives final labels",
+  "original_natural_results_preserved": true,
+  "test_evaluation_after_all_development_search": true
+}

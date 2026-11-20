@@ -1,0 +1,52 @@
+{
+  "created_UTC": "2026-11-07T16:13:04.238202+00:00",
+  "objective": "Expand regression ensemble comparisons; omit Random from main display while retaining predictions",
+  "seed": 0,
+  "tracks": {
+    "five": {
+      "datasets": 35,
+      "conditions": 735,
+      "source_rows": "465–2048, actual same canonical source as Base"
+    },
+    "seven_calibrated_v2": {
+      "datasets": 33,
+      "conditions": 957,
+      "source_rows": 256
+    }
+  },
+  "rhos": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "existing_reused": [
+    "Native TabICL6",
+    "PHE TabPFN6",
+    "six feature-view banks",
+    "canonical TabICL bootstrap banks"
+  ],
+  "new_GPU_methods": [
+    "Native TabPFN6",
+    "IQR6→1 TabPFN strategy adaptation",
+    "official RF-PFN6 depth2 adaptive tree"
+  ],
+  "new_CPU_methods": [
+    "GES on fixed source-feature views",
+    "convex stacking on same views",
+    "affine ridge stacking on same views",
+    "Median6 on same views",
+    "cross-TFM Mean/GES six-candidate bank"
+  ],
+  "IQR_not_original_400_candidate_configuration": true,
+  "RF_node_and_validation_costs_recorded_separately": true,
+  "maximum_added_feature_or_neural_adaptation": false,
+  "Clean_absolute_decline_limit": 0.005,
+  "learned_parameters": "dataset-OOF calibration only, finite fixed candidate grids",
+  "Shared_historical_reference_only": true,
+  "score_ordering_not_used_for_fit_or_stopping": true,
+  "all_old_outcomes_retained": true,
+  "Random_main_table_removed": true,
+  "Markdown_enabled": false,
+  "code_sha256": "c94794a1f58a7ca49504e2976a5e750f087ef2a308856f7e118d23263415ddc7"
+}

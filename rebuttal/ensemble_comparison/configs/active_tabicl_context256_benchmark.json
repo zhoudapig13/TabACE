@@ -1,0 +1,14 @@
+{
+  "status": "FROZEN_AND_AUDITED",
+  "suite": "results/tabicl_base256_calibration_v22",
+  "frozen_configuration": "results/tabicl_base256_calibration_v22/frozen_suite.json",
+  "input_bank": "results/tabicl_base256_calibration_v22/input_banks",
+  "averages": "results/tabicl_base256_calibration_v22/Base_averages.csv",
+  "context_rows": 256,
+  "seed": 0,
+  "n_estimators": 1,
+  "use_only_for_explicit_development_experiments": true,
+  "semisynthetic_regression_Clean_five": true,
+  "original_paper_replication": false,
+  "original_2048_context_benchmark_preserved": true
+}

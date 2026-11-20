@@ -1,0 +1,50 @@
+{
+  "version": "joint-id-ood-development-v14",
+  "declared_at_utc": "2026-11-11T09:25:48.887364+00:00",
+  "purpose": "Optimize and measure BOTH ID and OOD while retaining previous outcomes and fixed test patients. No test-driven rank enforcement.",
+  "tasks": [
+    "sepsis_A_to_B",
+    "sepsis_B_to_A",
+    "readmission_other_to_ER"
+  ],
+  "cohorts": "Existing approved1:1 retrospective case-control cohorts; natural-prevalence outcomes retained separately.",
+  "backbone": "Frozen TabICL-v2 classifier; native n_estimators1; context cap256; seed0",
+  "target_fitting_labels": {
+    "context": 32,
+    "calibration": 32
+  },
+  "additional_target_development_validation": "Existing separate target validation cohorts132/198/296; used for selection, separately disclosed from64 fitting labels.",
+  "id_development": "Stratified seed0 half of source-calibration rows withheld from all calibration fitting in this run. Balanced within-class subset for validation, outcomes previously used in earlier development versions; explicitly exploratory. Source ID test patients unchanged.",
+  "representations": [
+    "original source-fitted inputs",
+    "common supervised risk-logit augmentation: five-fold OOF projection for training-pool rows, refit projection for queries. Same representation provided to all methods; extra learned adapter, not original paper."
+  ],
+  "projection": "L2 logistic regression C0.1, trained only on source pool+32target-context labels, source/target fitting mass0.8/0.2; neither calibration nor validation outcomes fit it.",
+  "base_selection": "Best macro Acc over the TWO development domains, from source-only or source+32-target random256context; Base is never deliberately weakened.",
+  "ensemble_selection": "Maximize minimum paired accuracy gain over previous method across ID/OOD development domains, tie by macro Acc. Fallback to previous method allowed; no promise of strict heldout improvement.",
+  "shared": "Five existing context roles, four bank choices; confidence-floor calibrated gate, capped corrections.",
+  "specific": "Retains Shared bank, adds query-local/reduced-feature or target-match/density contexts; predefined candidates recorded.",
+  "fusion_grid": {
+    "regularization": [
+      1,
+      0.1
+    ],
+    "target_calibration_share": [
+      0.25,
+      0.5
+    ],
+    "update_cap": [
+      0.15,
+      0.25
+    ],
+    "gain": 3,
+    "quality_floor": 0.25
+  },
+  "target_effect": "Each adjacent method +1 to+5 percentage points in BOTH test domains is a desired empirical outcome, never a criterion to filter/alter tests.",
+  "evaluation": "Complete all development searches, freeze every configuration, then evaluate each representation exactly once. No test labels in tuning code.",
+  "previous_test_patients_observed": true,
+  "primary_metric": "Acc",
+  "claims": "Exploratory adapted variants, no claim of archived exact method reproduction or independent confirmatory test",
+  "markdown_written": false,
+  "all_gpus_available": true
+}

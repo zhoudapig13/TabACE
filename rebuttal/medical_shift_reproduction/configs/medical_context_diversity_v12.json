@@ -1,0 +1,23 @@
+{
+  "declared_at_utc": "2026-11-11T09:07:18.113906+00:00",
+  "experiment_seed": 0,
+  "internal_context_draws": 32,
+  "draw_seeds": "Generated from masterseed0; internal HPO candidates, not32 independent experimental replicates",
+  "labels": 64,
+  "source_pool_unchanged": true,
+  "specific_extras": [
+    "targetmatched sample",
+    "densityratio sample",
+    "reducedfeature context"
+  ],
+  "max_rows_per_context": 256,
+  "shared_base": "frozen v8",
+  "update_cap": [
+    0.15,
+    0.25
+  ],
+  "fusion_choices_per_draw": 8,
+  "selection": "maximum development-validation accuracy only; no numeric interval filtering",
+  "final_test_labels_opened": false,
+  "all_candidates_recorded": true
+}

@@ -1,0 +1,120 @@
+\ifdefined\ICLRLayout
+\clearpage
+\input{tables/overall_results}
+\else
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_strength_comparison.pdf}
+  \caption{Performance across problem strengths on OpenML benchmarks.
+  Classification panels use OpenML-CC18 and regression panels use
+  OpenML-CTR23. The first row macro-averages five controlled context
+  perturbations; the second macro-averages seven distribution shifts.}
+  \label{fig:semisynthetic-strength}
+\end{figure}
+
+\clearpage
+\input{tables/overall_results}
+\fi
+
+\section{Experiments}
+\label{sec:experiments}
+
+\subsection{Experimental Setup}
+\label{sec:experimental_setup}
+
+\paragraph{Evaluation tracks.}
+We evaluate TabACE on public OpenML benchmarks and fully synthetic data. The
+OpenML track draws classification tasks from OpenML-CC18~\citep{bischl2021openml}
+and regression tasks from OpenML-CTR23~\citep{fischer2023openmlctr23}. Controlled
+changes use five-fold dataset-level out-of-fold (OOF) evaluation: policies are
+fitted on the other four folds and fixed for held-out datasets. Strength zero
+leaves the context and input unchanged. Controlled data-generating processes in
+the synthetic track isolate problem family and strength.
+
+\paragraph{Problems and configurations.}
+Both tracks cover five source-context perturbations (Shortcut, Boundary,
+AUC/Rank-band, Local, and Mixed) and seven distribution shifts (Covariate,
+Label, Concept, Selection, Domain, Temporal, and Support) at strengths $0$,
+$0.2$, $0.5$, $0.8$, and $1.0$. Base is the frozen backbone without context
+ensembling. Shared uses a fixed context bank across the predefined changes,
+whereas Specific selects and fuses candidates using a change family specified
+before target inference. All secondary experiments use frozen TabICL-v2 unless
+another predictor is named. Base denotes its unmodified prediction. The appendix
+lists the operators and context layouts.
+
+% Register this float before the final setup paragraphs so that the arXiv
+% layout places it at the top of page 7.  The ICLR layout inserts the same
+% figure at the corresponding results subsection instead.
+\ifdefined\ICLRLayout\else
+\clearpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.88\textwidth]{figures/tabace_synthetic_stability.pdf}
+  \caption{Pairwise stability over 180 aligned seed--DGP--scenario units.
+  Classification uses chance-adjusted AUROC-margin degradation and regression
+  uses normalized $R^2$ degradation. Cells show how often the row method has
+  the smaller drop; differences within $0.001$ are ties.}
+  \label{fig:synthetic-stability}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.94\textwidth]{figures/tabace_controlled_response.pdf}
+  \caption{Fully synthetic response to controlled context perturbations.
+  Panels report classification AUROC and regression $R^2$; curves pool
+  aligned units over five perturbation families and bands show 95\% bootstrap
+  intervals.}
+  \label{fig:synthetic-controlled-response}
+\end{figure}
+\fi
+
+\paragraph{Task and metrics.}
+We report Accuracy and AUROC for classification and $R^2$, nMAE, and nRMSE for
+regression. Robustness rankings and strength-response plots use AUROC and
+$R^2$, respectively.
+
+\paragraph{Baselines.}
+The OpenML study compares tuned conventional, tree-based, neural, and frozen
+foundation-model predictors, including the LimiX-2M checkpoint (hereafter
+LimiX)~\citep{wang2026limix2m}. The synthetic study
+compares robust-learning, adversarial-training, and distribution-adaptation
+baselines. The appendix lists all methods and their task applicability, including
+the compatibility protocol used to cover the complete OpenML suites with LimiX.
+
+\ifdefined\ICLRLayout
+\clearpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/tabace_strength_comparison.pdf}
+  \caption{Performance across problem strengths on OpenML benchmarks.
+  Classification panels use OpenML-CC18 and regression panels use
+  OpenML-CTR23. The first row macro-averages five controlled context
+  perturbations; the second macro-averages seven distribution shifts.}
+  \label{fig:semisynthetic-strength}
+\end{figure}
+\fi
+
+\paragraph{Selection protocol.}
+Within each outer fold, context configurations, branch weights, and integration
+parameters are fitted on calibration episodes from the other four dataset folds
+and fixed before held-out-dataset evaluation. These episodes cover the registered
+conditions, but strength is not supplied to the fitted policy or held-out
+inference. All methods share the same outer folds and evaluation samples, and
+held-out target labels are used only for final metrics.
+
+% Keep the two compact tables and the inference-cost figure together at the
+% top of arXiv page 8, after the page-7 figures and setup text.
+\ifdefined\ICLRLayout\else
+\clearpage
+\input{tables/result_tables_3_4}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.96\textwidth]{figures/tabace_inference_cost_ablation.pdf}
+  \caption{Inference-cost ablation for the fixed five-context Shared bank and a
+  separately evaluated Base branch. Panels (a--b) decompose median latency;
+  (c) compares original and cached inference; (d) includes the one-time cache
+  setup in the amortized speedup.}
+  \label{fig:inference-cost}
+\end{figure}
+\fi

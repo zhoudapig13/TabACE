@@ -1,0 +1,18 @@
+{
+  "timestamp_UTC": "2026-11-07T14:28:19.233914+00:00",
+  "purpose": "Reduce calibration weight overfitting while preserving six actual canonical-source members",
+  "seed": 0,
+  "source_rows": 256,
+  "context_count": 6,
+  "source_row_resampling_fraction": 0.1,
+  "fixed_shrinkage_candidate": [
+    0.25
+  ],
+  "uniform_weight_fraction": 0.75,
+  "no_new_GPU_inference": true,
+  "OOF_training_datasets_exclude_evaluated_datasets": true,
+  "historical_Shared_or_score_bounds_used_for_selection": false,
+  "all_previous_variants_retained": true,
+  "development_attempt": true,
+  "code_sha256": "1175b5b321818a4919210d25e951e21ecf6a96bfb31da4c6797581359b9daedd"
+}

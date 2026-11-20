@@ -1,0 +1,21 @@
+\begin{table}[H]
+\centering\footnotesize
+\color{revisionblue}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Classification under unseen mechanisms (Accuracy/AUROC).}
+\label{tab:revision-unseen-cls}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Unseen mechanism & Datasets & Base & Shared \\
+\midrule
+Heavy-tailed noise & 64 & 0.7875 / 0.8932 & \textbf{0.8176 / 0.9068} \\
+Column misalignment & 72 & 0.7824 / 0.8920 & \textbf{0.8186 / 0.9100} \\
+Feature quantization & 64 & 0.7070 / 0.8782 & \textbf{0.7576 / 0.8902} \\
+Feature rotation & 31 & 0.7609 / 0.8217 & \textbf{0.7861 / 0.8420} \\
+Nonlinear sensor transformations & 32 & 0.8002 / 0.8524 & \textbf{0.8208 / 0.8600} \\
+Interaction-dependent sampling & 35 & 0.8214 / 0.8676 & \textbf{0.8288 / 0.8779} \\
+\bottomrule
+\end{tabular}}
+\end{table}

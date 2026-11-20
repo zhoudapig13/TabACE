@@ -1,0 +1,48 @@
+{
+  "reason": "Pooled source-year labels become target-year supervision in temporal evaluation.",
+  "corrected_results": [
+    {
+      "directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results",
+      "numeric_results_unchanged": true,
+      "original_csv_sha256": "6ca784c5b6683f6273d79cc40ff642493c464bc3aed3a73378a2088645c033c6",
+      "corrected_csv_sha256": "81922a71a220679f4e305a4664fb6a66aca75f640ce65b781ba956000abf0096"
+    },
+    {
+      "directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/expanded_adapter_v2",
+      "numeric_results_unchanged": true,
+      "original_csv_sha256": "59601da25a053591a18d25c8b3f8903fed74f2f2b58c3a9310efa4460409543e",
+      "corrected_csv_sha256": "e05d7625c8c051ccfb4e94f9e44c8a92d4097494b05c112c9d66fd3099e4513b"
+    },
+    {
+      "directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/coverage_adapter_v3",
+      "numeric_results_unchanged": true,
+      "original_csv_sha256": "537b2714d5852ffde3bd04a2a840afba8f78d2291f237d9e22b78b7845d1db69",
+      "corrected_csv_sha256": "ae585d7f09e1c5a386f9c5487e118bd229e67d0aa0849ad73092cff546673710"
+    },
+    {
+      "directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/row_budget_adapter_v4",
+      "numeric_results_unchanged": true,
+      "original_csv_sha256": "f0051095d5c91fae9e4e4c56cfe33a0173d9e97f97c7b4e6844c33c169e4412a",
+      "corrected_csv_sha256": "be96038c389fa696b4a4b4b66b2898b1f270f2dc7bc0c0551019237ac3ecf02a"
+    },
+    {
+      "directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/matched_row_budget_v5",
+      "numeric_results_unchanged": true,
+      "original_csv_sha256": "0b1552550a776ce557ced3ae3b3a422f862be939778f5b11eb010cf56bee15cc",
+      "corrected_csv_sha256": "b7961c10972ee4c8cd13203807ff2d3034f37d3b3c41cf351b731a4991e65369"
+    },
+    {
+      "directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/fixed_512_v6",
+      "numeric_results_unchanged": true,
+      "original_csv_sha256": "a17322f5ad921f56597fed9cb4f9d0a2fa086d4710789aa579c48dea63dd46ed",
+      "corrected_csv_sha256": "b6a37a9cd96accaca5aa4be0d73b33ca80c5e9947333de6abf3d10e179f82888"
+    },
+    {
+      "directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/nested_512_v7",
+      "numeric_results_unchanged": true,
+      "original_csv_sha256": "267d09933baf24d8a59cde132e4412bec0acc687ca68b89395026dd0ff396acf",
+      "corrected_csv_sha256": "ceda665ddd951d75fb7413d934ac6668d0656579ba66ab1b316a01a80791b3ef"
+    }
+  ],
+  "test_labels_were_never_used_for_training_or_selection": true
+}

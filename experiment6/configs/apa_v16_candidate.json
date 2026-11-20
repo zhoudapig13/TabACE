@@ -1,0 +1,34 @@
+{
+  "version": "apa_v16",
+  "method": "apa_cf_hybrid_stability_router",
+  "description": "Hybrid stability router: v14 plus a global context-disagreement cap to avoid unstable clear-batch flips.",
+  "core_change": "Apply a global context-disagreement cap after counterfactual context probing. This fixes the observed synthetic_balanced v14 failure, but the 11-dataset validation shows a new hard-shift synthetic failure, so v16 is a stability ablation rather than a full replacement for v14.",
+  "evaluation": {
+    "datasets": "openml_ilpd,openml_credit_g,openml_blood_transfusion,openml_kc1,openml_diabetes_pima,openml_pc1,breast_cancer,synthetic_balanced,synthetic_imbalanced,synthetic_label_shift,synthetic_label_shift_hard",
+    "seeds": "0,1,2",
+    "label_shift_strengths": "0.0,0.3,0.6,0.9",
+    "groups": 132,
+    "n_samples": 180,
+    "train_size": 90,
+    "test_size": 32,
+    "k": 16,
+    "n_estimators": 1,
+    "device": "cpu"
+  },
+  "result": {
+    "mean_accuracy_delta": 0.013731060606060606,
+    "mean_balanced_accuracy_delta": 0.006209125976703986,
+    "mean_macro_f1_delta": 0.013627033813109432,
+    "mean_minority_recall_delta": -0.0025252525252525255,
+    "mean_ece_delta": -0.0013523204192139036,
+    "positive_balanced_accuracy_groups": 41,
+    "negative_balanced_accuracy_groups": 1,
+    "min_balanced_accuracy_delta": -0.14942528735632188
+  },
+  "artifacts": [
+    "results/apa_v16_cf_hybrid_stability_11dataset_shift_detail.csv",
+    "results/apa_v16_cf_hybrid_stability_11dataset_shift_summary.csv",
+    "results/apa_v16_cf_hybrid_stability_11dataset_shift_shift_curve.csv",
+    "results/apa_v16_cf_hybrid_stability_11dataset_shift_report.md"
+  ]
+}

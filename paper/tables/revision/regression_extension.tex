@@ -1,0 +1,20 @@
+\begin{table}[H]
+\centering\footnotesize
+\color{revisionblue}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Composite regression extension on reconstructed tasks (original $\rightarrow$ extended).}
+\label{tab:revision-regression-extension}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Backbone & Clean $R^2$ & Perturb./shift $R^2$ & Perturb./shift nRMSE & Loss recovered \\
+\midrule
+TabICL & 0.71918 \(\rightarrow\) \textbf{0.72052} & -0.12264 \(\rightarrow\) \textbf{-0.09363} & 0.89654 \(\rightarrow\) \textbf{0.88471} & \textbf{30.32\%} \\
+TabPFN & 0.72387 \(\rightarrow\) \textbf{0.72542} & -0.19912 \(\rightarrow\) \textbf{-0.16110} & 0.91558 \(\rightarrow\) \textbf{0.90061} & \textbf{64.75\%} \\
+\bottomrule
+\end{tabular}}
+\par\smallskip\begin{minipage}{\linewidth}\scriptsize
+Excess loss is $\max\{\ell(\widehat y_{\mathrm{TabACE}},y)-\ell(\widehat y_{\mathrm{Base}},y),0\}$. Recovery uses its original total in the fixed severe-joint-error cohort, not total prediction error.
+\end{minipage}
+\end{table}

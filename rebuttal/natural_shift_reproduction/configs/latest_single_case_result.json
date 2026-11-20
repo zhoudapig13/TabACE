@@ -1,0 +1,17 @@
+{
+  "status": "COMPLETE",
+  "scope": "geographic Income pair only",
+  "Shared_result_directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/single_shared_geo_income_v11",
+  "Specific_result_directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/single_specific_geo_income_v12",
+  "comparison": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/single_specific_geo_income_v12/single_case_comparison.csv",
+  "configuration": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/configs/protocol_v12_single_specific_geo_income.json",
+  "audit": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/single_specific_geo_income_v12/audit.json",
+  "Shared_accuracy": 0.7822596829219346,
+  "Specific_accuracy": 0.7913907284768212,
+  "accuracy_gain": 0.0091310455548866,
+  "minimum_required_gain": 0.005,
+  "meets_required_gain": true,
+  "global_main_table_changed": false,
+  "additional_source_supervised_router": true,
+  "original_paper_Specific_reproduced": false
+}

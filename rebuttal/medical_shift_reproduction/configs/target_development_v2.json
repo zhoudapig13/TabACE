@@ -1,0 +1,67 @@
+{
+  "version": "medical-target-development-v2",
+  "declared_at_utc": "2026-11-11T08:36:13.370342+00:00",
+  "status": "BEFORE_NEW_DEVELOPMENT_MODEL_EVALUATION",
+  "datasets": [
+    "Sepsis2019 case-control both directions",
+    "Diabetes readmission natural prevalence other->ER"
+  ],
+  "target_development_information": "Additional labeled target patients, explicitly extra supervision; all Base/Shared/Specific receive same access; never overlap original test patients. Developed versions marked dagger.",
+  "target_development_selection": {
+    "sepsis": "4096 uniform unused raw patients per hospital, seed0; retrospective 1:1 eligible cases/controls, same task as previous casecontrol",
+    "readmission": "Up to4096 target patients outside existing OOD test; uniform without replacement seed0; original natural prevalence"
+  },
+  "development_split": [
+    0.6,
+    0.4
+  ],
+  "source_inputs": "Original prepared source train and calibration, preprocessor source-fitted exactly as before",
+  "methods": "TabICL-v2 frozen weights;256rows/branch;1native-estimator. Base dagger uses one development-selected source/target mixed random context; Shared five context roles, Specific retains Shared+three target roles. Any extra adaptors explicitly marked new development variants.",
+  "selection_metric": "Development-validation Acc only; no test sorting/range enforcement",
+  "context_candidates_per_tier": 12,
+  "fusion_candidates_per_tier": 12,
+  "seed": 0,
+  "statistical_claim": "Single seed exploratory development; previously observed final test cohorts, no new confirmatory generalization claim",
+  "test_evaluation": "All selected policies frozen before opening final labels in new evaluator; retain old results and report matched Base dagger and original Base",
+  "markdown_written": false,
+  "available_gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "development_split_detail": "60% outer fit split subdivided 2:1 into context patients and fusion calibration patients; outer validation40% only ranks candidates. Source and target calibration clinically labeled; target calibration shares .25,.5,1 available to ALL methods.",
+  "fusion_candidates_per_context": 12,
+  "total_candidates_per_ensemble_tier": 144,
+  "base_candidates": 12,
+  "context_target_fractions": [
+    0,
+    0.25,
+    0.5,
+    1
+  ],
+  "shared_sampling_strength": [
+    0,
+    0.5,
+    1
+  ],
+  "specific_alignment": [
+    0,
+    0.25,
+    0.5
+  ],
+  "gains": [
+    1,
+    3
+  ],
+  "regularization": [
+    0.01,
+    0.1
+  ],
+  "hierarchical_residual": "Specific fusion anchors at selected Shared and retains its bank. It may fall back unchanged; no strict test ranking is imposed.",
+  "observed_test_results_control_search": false
+}

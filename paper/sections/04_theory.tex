@@ -1,0 +1,111 @@
+\ifdefined\ICLRLayout\clearpage\fi
+\subsection{Theoretical Analysis}
+\label{sec:theory}
+
+The analysis establishes sufficient conditions under which context aggregation
+improves Base and characterizes how task-gated fusion controls prediction
+changes according to context support. Let
+$g_0$ and $g_{\mathrm{final}}$ return $o_i^{(0)}$ and
+$o_i^{\mathrm{final}}$, respectively, and define
+$\mathcal R_t(g)=\mathbb E_{(x,y)\sim P_t}[\ell(g(x),y)]$. For a loss $\ell$
+that is convex in its prediction argument, define the improvements of context
+$r$ and the context aggregate over Base as
+\begin{equation}
+  \Delta_i^{(r)}
+  =\ell(o_i^{(0)},y_i^t)-\ell(o_i^{(r)},y_i^t),
+  \qquad
+  \Delta_i
+  =\ell(o_i^{(0)},y_i^t)-\ell(\bar o_i,y_i^t).
+  \label{eq:context_improvements}
+\end{equation}
+These quantities use target labels only for analysis, never for context
+construction, support scoring, or prediction.
+
+\paragraph{Complementary context coverage.}
+For a change family $h$, alternative contexts improve Base on different
+subsets of queries. We use $C_h(\Phi)$ to denote the target probability that
+at least one context in bank $\Phi$ improves Base by at least $\delta_+$. A new
+context is complementary when it adds beneficial queries not already covered
+by the bank. Formal definitions and the
+diminishing-returns property are given in Appendix~\ref{app:repair-coverage}.
+
+\begin{theorem}[Risk bound for weighted context aggregation]
+\label{thm:effective_context_repair}
+For query $i$ and fixed bank $\Phi$, suppose that a nonempty effective set
+$\mathcal G_i$ satisfies, for
+some $\delta_+>0$, $\delta_-\geq0$, and $\rho_+>\rho_-$,
+\begin{equation}
+\begin{aligned}
+\Delta_i^{(r)}&\geq\delta_+,&\rho_i^{(r)}(\Phi)&\geq\rho_+&& (r\in\mathcal G_i),\\
+\Delta_i^{(r)}&\geq-\delta_-,&\rho_i^{(r)}(\Phi)&\leq\rho_-&& (r\in\mathcal I(\Phi)\setminus\mathcal G_i).
+\end{aligned}
+\label{eq:repair_conditions}
+\end{equation}
+Let $\Pi_i=\sum_{r\in\mathcal G_i}\pi_r$ and
+$W_i=\sum_{r\in\mathcal G_i}w_i^{(r)}$.  Then
+\begin{equation}
+\begin{aligned}
+W_i&\geq\underline W_i
+=\left[1+\frac{1-\Pi_i}{\Pi_i}
+e^{-(\rho_+-\rho_-)}\right]^{-1},\\
+\Delta_i&\geq\gamma_i
+:=\underline W_i\delta_+-(1-\underline W_i)\delta_-.
+\end{aligned}
+\label{eq:repair_margin}
+\end{equation}
+Hence $\underline W_i>\delta_-/(\delta_++\delta_-)$ implies
+$\gamma_i>0$ and
+\begin{equation}
+  \ell(o_i^{\mathrm{final}},y_i^t)-\ell(o_i^{(0)},y_i^t)
+  \leq-\alpha_i\Delta_i
+  \leq-\alpha_{\max}U_iE_i\gamma_i.
+  \label{eq:query_repair_gain}
+\end{equation}
+
+Let $\mathcal A_\Phi$ contain the queries for which the preceding separation
+conditions hold and $\gamma_i>0$.  The target-risk difference obeys
+\begin{equation}
+  \mathcal R_t(g_{\mathrm{final}})-\mathcal R_t(g_0)
+  \leq-\Gamma_t(\Phi)+\varepsilon_t(\Phi),
+  \label{eq:changed_risk_gain}
+\end{equation}
+where
+\begin{equation}
+\begin{aligned}
+\Gamma_t(\Phi)
+&:=\alpha_{\max}\mathbb E_{P_t}
+  [U_iE_i\gamma_i\mathbf 1\{i\in\mathcal A_\Phi\}],\\
+\varepsilon_t(\Phi)
+&:=\alpha_{\max}\mathbb E_{P_t}
+  [U_iE_i(-\Delta_i)_+\mathbf 1\{i\notin\mathcal A_\Phi\}].
+\end{aligned}
+\label{eq:repair_residual_terms}
+\end{equation}
+Therefore $\Gamma_t(\Phi)>\varepsilon_t(\Phi)$ implies
+$\mathcal R_t(g_{\mathrm{final}})<\mathcal R_t(g_0)$.
+\end{theorem}
+
+\paragraph{Proof sketch.}
+Score separation yields $W_i\geq\underline W_i$ for the normalized weight on
+$\mathcal G_i$. Convexity then converts this bound into the aggregate
+improvement $\gamma_i$, which yields the query-level gain in
+Eq.~\eqref{eq:query_repair_gain}. Splitting the target expectation over
+$\mathcal A_\Phi$ and its complement gives
+Eq.~\eqref{eq:changed_risk_gain}. The complete proof appears in
+Appendix~\ref{app:theorem-proof}.
+
+\paragraph{Implications.}
+A larger effective prior mass $\Pi_i$ or a wider score gap
+$\rho_+-\rho_-$ raises $\underline W_i$ and hence the guaranteed aggregate
+gain $\gamma_i$. Complementary contexts determine potential beneficial coverage,
+while score weighting and gating determine how that coverage affects realized
+risk. The following exact identity gives the magnitude of each task-specific
+update relative to Base:
+\begin{equation}
+  \lVert o_i^{\mathrm{final}}-o_i^{(0)}\rVert
+  =\alpha_{\max}U_iE_i
+   \lVert\bar o_i-o_i^{(0)}\rVert.
+  \label{eq:base_preservation_identity}
+\end{equation}
+Thus, the prediction recovers Base whenever $U_iE_i=0$. Task-specific
+classification and regression bounds are given in Appendix~\ref{app:theory}.

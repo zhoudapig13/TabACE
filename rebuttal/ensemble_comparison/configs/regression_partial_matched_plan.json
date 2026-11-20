@@ -1,0 +1,29 @@
+{
+  "timestamp_UTC": "2026-11-07T15:21:28.725151+00:00",
+  "seed": 0,
+  "purpose": "Apply identical fixed conservative canonical-input resampling to both backbones; preserve complete-pool controls",
+  "tracks": {
+    "tabicl": [
+      "five (735 new conditions)",
+      "seven_calibrated_v2 (957 existing conditions reused)"
+    ],
+    "tabpfn": [
+      "five (735 new conditions)",
+      "seven_calibrated_v2 (957 new conditions)"
+    ]
+  },
+  "context_count": 6,
+  "row_replacement_fraction": 0.1,
+  "row_budget": {
+    "five_regression": "All canonical source rows, actual 465\u20132048, same as Base",
+    "seven_regression": 256
+  },
+  "calibration_or_adaptation_training": false,
+  "candidate_fraction_grid": [
+    0.1
+  ],
+  "score_ordering_bounds_used": false,
+  "Shared_run": false,
+  "old_baseline_and_all_prior_variants_retained": true,
+  "script_sha256": "87ea613b4ee65460ea8c2501e6142c64d5bbda4cd6acb19607fa4467224291c6"
+}

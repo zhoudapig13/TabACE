@@ -1,0 +1,40 @@
+{
+  "protocol_id": "acs_natural_reconstructed_v1",
+  "original_config_recovered": false,
+  "seed": 0,
+  "backbone": "TabICL-v2 frozen; tabicl-classifier-v2-20260212.ckpt",
+  "n_estimators_per_branch": 1,
+  "canonical_context_rows": 256,
+  "accessible_labeled_source_pool": 2048,
+  "source_calibration_fit_rows": 2048,
+  "source_calibration_selection_rows": 2048,
+  "test_rows_cap": 10000,
+  "test_partition": "household-disjoint, frozen before first evaluation",
+  "inference_query_chunk_rows": 1024,
+  "kv_cache": true,
+  "shared_bank": "5 fixed appendix roles on canonical 256 rows",
+  "specific_bank": "Shared plus domain-support resampling, source resampling, continuous-only transport, geographic-feature exclusion; source-pool expansion explicitly recorded",
+  "specific_temporal_note": "No fake within-year timestamp: use cross-year support alignment, no row-order recency",
+  "fusion": "paper confidence/agreement weights and Base gate; trained on disjoint SOURCE calibration only",
+  "selection": "source selection cross-entropy; no test-label tuning; lambda grid [0.0001,0.001,0.01,0.1]",
+  "extra_supervision": "4096 disjoint source labels used for fitting/selection of fusion; Specific candidates can access labeled pool beyond canonical 256",
+  "target_labels_available_to_methods": false,
+  "paper_table": "reference only; not objective of optimizer",
+  "code_sha256": {
+    "fit_and_report.py": "8168cae4f124c05a8963578567037778560db7e193bc4a7932328aed854b0eed",
+    "launch_natural.py": "f50a6b0a70f4f70a199a874db622751061e277c29b85eac05a5307023447c722",
+    "natural_components.py": "c64cc945504906d62e095fe670ab81c4fad3681371f9ecfe5b9422a26970330f",
+    "prepare_acs.py": "8db2084784be2bae0bb3dd11058b4af1b20fcefc1b3c9cca70b9d5ce3f5c6d17",
+    "run_natural.py": "b06fa349f3de86019b89690c33aab694ed62a56996743a062c5bae4620563151"
+  },
+  "shared_policy_scope": "one task-specific policy per prediction task, pooled CA2014/CA2018 source calibration; same parameters across geographic and temporal scenarios",
+  "supervision_scope_correction": {
+    "pooled_shared_calibration_domains": [
+      "CA2014",
+      "CA2018"
+    ],
+    "temporal_Shared_has_labeled_target_year_calibration": true,
+    "test_labels_used_for_fitting_or_selection": false,
+    "superseded_by_strict_source_protocol": "protocol_v8_strict_source_nested512.json"
+  }
+}

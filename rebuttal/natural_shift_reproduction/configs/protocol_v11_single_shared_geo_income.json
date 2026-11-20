@@ -1,0 +1,33 @@
+{
+  "experiment": "single_shared_geo_income_v11",
+  "scope": "geographic California2018 to Michigan2018 Income; standalone Shared candidate",
+  "required_OOD_accuracy_strictly_greater_than": 0.766,
+  "seed": 0,
+  "context_row_cap": 512,
+  "context_types": [
+    "target_neighbor",
+    "representative",
+    "locally_stable",
+    "feature_subspace",
+    "low_conflict"
+  ],
+  "calibration_domains": [
+    "2018_CA"
+  ],
+  "source_fit_rows": 2048,
+  "source_selection_rows": 2048,
+  "candidate_grid": "same seven finite source-validation-selected logistic/CatBoost router configurations as previous Specific adaptation, using five Shared view predictions only",
+  "Specific_only_contexts_used": false,
+  "test_labels_used_for_training_or_selection": false,
+  "data_partition_changed": false,
+  "additional_supervised_router": true,
+  "original_paper_Shared_reproduction": false,
+  "other_cases_and_Specific_unchanged": true,
+  "results_merged_into_main_table": false,
+  "frozen_policy": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/single_shared_geo_income_v11/frozen_policy.json",
+  "comparison": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/single_shared_geo_income_v11/single_case_comparison.csv",
+  "audit": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/single_shared_geo_income_v11/audit.json",
+  "verified_OOD_shared_accuracy": 0.7822596829219346,
+  "status": "COMPLETE",
+  "meets_requested_threshold": true
+}

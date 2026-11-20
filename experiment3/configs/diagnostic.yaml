@@ -1,0 +1,66 @@
+output_dir: experiment3/results/synthetic_diagnostic
+random_states: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+test_size: 0.3
+max_test_eval: 32
+
+synthetic:
+  n_samples: 420
+  n_features: 12
+  treatment_imbalance: 0.0
+  confounding_strength: 1.0
+  overlap_violation: 0.0
+  heterogeneity: 1.0
+  effect_nonlinearity: 1.0
+  noise_std: 1.0
+
+context_sizes: [16, 32, 64, 128, 256]
+retrievers:
+  - random
+  - knn
+  - treatment_balanced_random
+  - propensity_nearest
+  - matched_pair
+  - matched_pair_propensity
+  - matched_pair_feature
+  - matched_pair_hybrid_w0.05
+  - matched_pair_hybrid_w0.2
+  - matched_pair_hybrid_w0.5
+  - matched_pair_caliper_c0.05
+  - matched_pair_caliper_c0.1
+  - matched_pair_caliper_c0.2
+  - matched_pair_diverse
+  - overlap_filtered_matched_pair
+  - overlap_aware
+context_estimators:
+  - local_context_t_learner
+classical_estimators:
+  - global_t_learner
+  - global_s_learner
+  - global_x_learner
+  - global_dr_learner
+
+regimes:
+  - name: strong_confounding
+    confounding_strength: 2.5
+    treatment_imbalance: 0.0
+    overlap_violation: 0.25
+    heterogeneity: 1.0
+    effect_nonlinearity: 1.0
+  - name: poor_overlap
+    confounding_strength: 1.5
+    treatment_imbalance: 0.0
+    overlap_violation: 2.0
+    heterogeneity: 1.0
+    effect_nonlinearity: 1.0
+  - name: high_imbalance
+    confounding_strength: 1.25
+    treatment_imbalance: 1.75
+    overlap_violation: 0.75
+    heterogeneity: 1.0
+    effect_nonlinearity: 1.0
+  - name: nonlinear_heterogeneity
+    confounding_strength: 1.25
+    treatment_imbalance: 0.0
+    overlap_violation: 0.75
+    heterogeneity: 2.0
+    effect_nonlinearity: 2.5

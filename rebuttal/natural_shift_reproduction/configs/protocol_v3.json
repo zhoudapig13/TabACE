@@ -1,0 +1,57 @@
+{
+  "protocol_id": "acs_natural_coverage_adapter_v3",
+  "seed": 0,
+  "base_frozen_from_v1": true,
+  "test_split_frozen_from_v1": true,
+  "source_pool_rows": 2048,
+  "per_member_context_cap": 256,
+  "shared_candidate_member_counts": [
+    5,
+    8
+  ],
+  "shared_five_roles": [
+    "target_neighbor",
+    "representative",
+    "locally_stable",
+    "feature_subspace",
+    "low_conflict"
+  ],
+  "shared_extra_three": "three independent source-pool resampling views, derived from outer seed 0",
+  "coverage_before_sampling": {
+    "target_neighbor": 0.8,
+    "representative": 0.7,
+    "locally_stable": 0.8,
+    "low_conflict": 0.75
+  },
+  "shared_candidate_samplers": [
+    "canonical",
+    "coverage_rank",
+    "coverage_strat"
+  ],
+  "specific_candidate_banks": [
+    "original source-pool registry",
+    "original registry plus ten coverage-preserving views"
+  ],
+  "selection": "source-only calibration selection cross-entropy; no paper-score objective; no target test labels",
+  "regularization_grid": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1
+  ],
+  "adaptation_flags": [
+    "expanded source-pool access",
+    "learned source calibration fusion",
+    "potential Shared 5 to 8 member expansion"
+  ],
+  "original_configuration_recovered": false,
+  "supervision_scope_correction": {
+    "pooled_shared_calibration_domains": [
+      "CA2014",
+      "CA2018"
+    ],
+    "temporal_Shared_has_labeled_target_year_calibration": true,
+    "test_labels_used_for_fitting_or_selection": false,
+    "superseded_by_strict_source_protocol": "protocol_v8_strict_source_nested512.json"
+  }
+}

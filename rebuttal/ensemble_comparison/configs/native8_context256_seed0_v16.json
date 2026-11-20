@@ -1,0 +1,48 @@
+{
+  "status": "FROZEN_BEFORE_INFERENCE",
+  "seed": 0,
+  "n_estimators": 8,
+  "context_rows": 256,
+  "run_512": false,
+  "finetuning": false,
+  "adaptation": false,
+  "backbone": "TabICL-v2 official frozen checkpoint",
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "tracks": {
+    "classification_five": "five_feature_calibrated",
+    "classification_seven": "internal_seven_fixed_strength_v2",
+    "regression_clean_five": "internal_regression_benchmark_v2",
+    "regression_seven": "seven_calibrated_v2"
+  },
+  "cohorts": {
+    "classification_clean_five": 72,
+    "classification_seven": 35,
+    "regression_clean_five": 35,
+    "regression_seven": 33
+  },
+  "expected_cells": 4151,
+  "context_selection": "first 256 rows of the already materialized source context",
+  "regression_five_original_source_cap": 2048,
+  "queries_and_metric_denominators_unchanged": true,
+  "native_options": "official defaults, except n_estimators=8, batch_size=1, random_state=0",
+  "reuse": "only exact source/query/label hashes with a saved native_8 prediction",
+  "reuse_cross_check": "fresh inference for first reused cell of each worker",
+  "benchmark_parameters_previously_selected_on_development_data": true,
+  "exact_original_paper_protocol": false,
+  "same_protocol_Shared_run": false,
+  "all_outcomes_reported_without_ranking_selection": true,
+  "frozen_input_files_sha256": {
+    "configs/feature_protocol_frozen.json": "8a2de5ed3c00ccb1b6909926ac8f26964013a3ff4e73602a0bd09f5888d674df",
+    "results/internal_seven_fixed_strength_v2/frozen_benchmark.json": "c9dc11e290af3fd78d01d3f58c20e0d87023f44e443fe2a970e803c246614c0a",
+    "results/internal_regression_benchmark_v2/frozen_clean.json": "f3eb5e5663506e9687405eaf528069ffa05602a349fa2a9ceb6a6a6f7440577d",
+    "results/internal_regression_benchmark_v2/frozen_five.json": "2393d5bb79ed921504b7ad74dad73a3d492744e701bc68d0fd4d3c9569406254",
+    "results/internal_regression_benchmark_v2/frozen_seven.json": "840f9705feb07653ce859efc3bfe43749feeea250b8cb3aa0c1332bfa13a5ff5"
+  },
+  "script_sha256": "11b08cd444721e8911b06b3d3711f97f172f0d206ba3e1bb3f26816be672480f",
+  "Markdown_written": false
+}

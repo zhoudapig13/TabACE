@@ -1,0 +1,39 @@
+{
+  "version": "known-domain-medical-v16",
+  "declared_at_utc": "2026-11-11T09:35:24.386883+00:00",
+  "role": "Additional explicit known-domain adaptation comparison; no replacement of domain-blind joint experiments",
+  "domain_metadata": "Hospital A/B or admission-source grouping is observable before outcomes. Same routing metadata supplied to Base, Shared, Specific. This is NOT unknown-domain inference.",
+  "clinical_target_budget": 64,
+  "source_id_development": "Same held-out half source-calibration rows as jointv14; never fit on these in v16",
+  "calibration_contexts": "ID contexts use unlabeled source-calibration covariates for support; OOD contexts use unlabeled target covariates, explicit transductive protocol",
+  "decision_thresholds": "Base threshold learned on calibration only per known domain; shared/specific use SAME Base threshold within each domain",
+  "base": "Best per-domain development accuracy over source-only/source+32target contexts and two calibration weights; never weakened",
+  "shared_context_banks": 4,
+  "specific_local_candidates": 12,
+  "calibration_weights": {
+    "id_target_share": [
+      0,
+      0.25
+    ],
+    "ood_target_share": [
+      0.5,
+      0.75
+    ]
+  },
+  "gate_regularization": [
+    1,
+    0.1
+  ],
+  "update_cap": [
+    0.15,
+    0.25
+  ],
+  "selection": "Per-domain development accuracy only; candidate fallback allowed. No tests or metric-band filters.",
+  "contexts": "256 row cap, native estimators1, seed0",
+  "representation": "raw; no learned projection in this additional version",
+  "final_test_labels_opened_during_search": false,
+  "test_data_unchanged": true,
+  "previously_observed_test_cohorts": true,
+  "all_earlier_versions_retained": true,
+  "desired_test_improvement_is_not_guaranteed": true
+}

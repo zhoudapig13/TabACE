@@ -1,0 +1,45 @@
+{
+  "candidate": "apa_cf_hybrid_tempered_router",
+  "version": "apa_v14",
+  "description": "Hybrid counterfactual context intervention: use batch-margin routing when batch evidence is clear, and row-level tempered rescue when batch evidence is weak.",
+  "method_arg": "apa_cf_hybrid_tempered_router",
+  "parent_candidates": [
+    "apa_cf_batch_margin_router",
+    "apa_cf_tempered_rescue_router"
+  ],
+  "router": {
+    "min_batch_prior_js": 0.008,
+    "min_batch_pred_margin": 0.05,
+    "min_train_prior_imbalance": 0.1,
+    "directional_shift_gate": true,
+    "max_changed_fraction": 0.1,
+    "off_majority_max_baseline_margin": 0.15,
+    "sensitivity_gate": 0.12,
+    "max_abs_sensitivity": 0.9,
+    "max_abs_sensitivity_low_batch_margin_only": true,
+    "disagreement_gate": 0.004,
+    "max_disagreement": 0.04,
+    "max_disagreement_low_batch_margin_only": true,
+    "max_baseline_margin": 0.55,
+    "max_baseline_confidence": 0.92,
+    "blend_weight": 0.6
+  },
+  "reference_commands": {
+    "focused_probe": "python -u experiment6/scripts/run_apa_tabicl.py --datasets openml_credit_g,openml_diabetes_pima,openml_kc1 --force-label-shift --label-shift-strengths 0.0,0.3,0.6,0.9 --seeds 0,1,2,3 --n-samples 180 --train-size 90 --test-size 32 --k 16 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_cf_batch_margin_router,apa_cf_tempered_rescue_router,apa_cf_hybrid_tempered_router --output-prefix apa_v14_cf_hybrid_tempered_probe"
+  },
+  "current_evidence": {
+    "focused_openml_forced_shift_probe": {
+      "n": 48,
+      "mean_accuracy_delta": 0.025390625,
+      "mean_balanced_accuracy_delta": 0.013359751575824988,
+      "mean_macro_f1_delta": 0.015073348503685538,
+      "mean_ece_delta": -0.005630425125637481,
+      "positive_negative_balanced_accuracy_splits": "22 / 0"
+    }
+  },
+  "next_validation": [
+    "Run broader OpenML forced-label-shift suite beyond credit_g, diabetes_pima, and kc1.",
+    "Re-run synthetic label-shift and standard-split safety suites.",
+    "Compare against v8 on high-opportunity datasets and v10/v13 on safety-critical datasets."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "declared_at_utc": "2026-11-11T08:48:52.207086+00:00",
+  "hypothesis": "Original quality factor suppresses corrections from uncertain but useful context branches; test quality floor while keeping previous data, context choices and extra target labels.",
+  "changed_fusion": true,
+  "quality_floors": [
+    0,
+    0.25,
+    0.5,
+    1
+  ],
+  "target_calibration_share": [
+    0.25,
+    0.5,
+    1
+  ],
+  "gain": 3,
+  "regularization": 0.01,
+  "context_candidates_per_tier": 12,
+  "choices_per_context": 12,
+  "selection": "development-validation accuracy only",
+  "test_evaluation": false,
+  "all_previous_results_preserved": true
+}

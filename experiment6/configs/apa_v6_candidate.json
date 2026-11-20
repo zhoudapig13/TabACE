@@ -1,0 +1,17 @@
+{
+  "candidate": "apa_dual_shift_router",
+  "algorithm_version": "apa_v6",
+  "description": "Current best APA-TabICL inference-only candidate. Binary dual router: low batch-prior JS returns baseline, medium JS uses hard-shift prior-aware aggressive correction, high JS uses conservative batch-shift correction. Nonbinary tasks return baseline.",
+  "recommended_method_arg": "apa_dual_shift_router",
+  "reference_commands": {
+    "hard_label_shift_5seed": "python experiment6/scripts/run_apa_tabicl.py --datasets synthetic_label_shift_hard --label-shift-strengths 0.0,0.3,0.6,0.9 --seeds 0,1,2,3,4 --n-samples 180 --train-size 90 --test-size 40 --k 30 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_shift_margin_gate,apa_hard_shift_router,apa_dual_shift_router --output-prefix apa_v6_hard_label_shift_5seed",
+    "easy_label_shift_5seed": "python experiment6/scripts/run_apa_tabicl.py --datasets synthetic_label_shift --label-shift-strengths 0.0,0.3,0.6,0.9 --seeds 0,1,2,3,4 --n-samples 180 --train-size 90 --test-size 40 --k 30 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_shift_margin_gate,apa_hard_shift_router,apa_dual_shift_router --output-prefix apa_v6_easy_label_shift_5seed",
+    "mixed_safety": "python experiment6/scripts/run_apa_tabicl.py --datasets synthetic_imbalanced,synthetic_label_shift,wine,breast_cancer,synthetic_multiclass_imbalance --label-shift-strengths 0.0,0.3,0.6 --seeds 0,1 --n-samples 180 --train-size 90 --test-size 40 --k 30 --n-estimators 1 --device cpu --methods tabicl_baseline,apa_shift_margin_gate,apa_hard_shift_router,apa_dual_shift_router --output-prefix apa_v6_mixed_safety"
+  },
+  "router_thresholds": {
+    "baseline_if_batch_prior_js_below": 0.004,
+    "hard_shift_branch_if_batch_prior_js_at_least": 0.004,
+    "high_shift_branch_if_batch_prior_js_at_least": 0.05,
+    "binary_only": true
+  }
+}

@@ -1,0 +1,165 @@
+\section{Method}
+\label{sec:method}
+
+\subsection{Problem Setting and Overview}
+
+Let $\mathcal D_s=\{(x_j^s,y_j^s)\}_{j=1}^{n_s}$ denote labeled reference
+data and $\mathcal X_t=\{x_i^t\}_{i=1}^{n_t}$ available unlabeled target queries, with
+$x_j^s,x_i^t\in\mathbb R^d$. We consider classification with
+$\mathcal Y=\{1,\ldots,L\}$ and regression with $\mathcal Y\subseteq\mathbb R$.
+A frozen tabular foundation model
+$f_\theta$ predicts each query from a labeled context constructed from
+source examples and, for registered selection-shift constructors,
+pseudo-labeled target examples. Ground-truth target labels are used only for
+evaluation, and $f_\theta$ remains frozen at test time.
+Reference and target examples follow $P_s(X,Y)$ and $P_t(X,Y)$, respectively.
+We study both controlled changes to the accessible context and distribution
+shifts with $P_t\neq P_s$, using $\mathcal D_s$, the current query, and any
+target features required by the registered constructor at inference.
+
+As illustrated in Figure~\ref{fig:tabace_overview}, \method{} uses one Base
+branch and multiple alternative context branches while keeping $f_\theta$
+frozen. Confidence and cross-context agreement determine the relative influence
+of the alternatives, while the task-specific gate and aggregate context support
+set the update magnitude relative to Base. The update therefore follows the
+available query-level evidence.
+
+\subsection{Configurable Context and Output Interface}
+\label{sec:context_interface}
+
+Let $\phi_0$ denote the Base configuration and
+$\Phi=\{\phi_1,\ldots,\phi_R\}$ the alternative branch configurations chosen
+from source-side information and application knowledge before target inference.
+We write $\mathcal I(\Phi)=\{1,\ldots,R\}$ for their indices. Let
+$F_{\phi_r}$ denote the complete prediction mapping induced by configuration
+$\phi_r$. For an available query $x_i^t$,
+\begin{equation}
+  o_i^{(r)}
+  =F_{\phi_r}(\mathcal D_s,\mathcal X_t,x_i^t;f_\theta),
+  \qquad r=0,\ldots,R.
+  \label{eq:context_prediction}
+\end{equation}
+The $\mathcal X_t$ argument supplies any target subset required by $\phi_r$ and
+is ignored by source-only constructors.
+For a TFM branch, this mapping composes a configurable context constructor
+with the frozen predictor. A shared-context constructor forms
+$C^{(r)}=G_{\phi_r}(\mathcal D_s,\mathcal X_t)$ once and reuses it across
+queries, so that
+$F_{\phi_r}(\mathcal D_s,\mathcal X_t,x_i^t;f_\theta)
+=f_\theta(C^{(r)},x_i^t)$. A query-dependent construction forms
+$C_i^{(r)}=G_{\phi_r}(\mathcal D_s,\mathcal X_t,x_i^t)$. A compatible conventional predictor uses the
+constructed context as its branch-specific training data and exposes the same
+output interface. For classification,
+$o_i^{(r)}=p_i^{(r)}\in\Delta^{L-1}$ is a class-probability vector; for point regression,
+$o_i^{(r)}=\hat y_i^{(r)}$ is scalar.
+
+We write $o_i^{(0)}$ for the Base output.
+Its constructor $G_{\phi_0}$ follows the backbone's standard sampling rule to
+form the canonical context from the available labeled reference data, with its
+selected features and labels unchanged. For
+$r\geq1$, $G_{\phi_r}$ constructs a complementary context by selecting or
+reweighting reference examples, selecting or transforming features, or
+applying a prescribed source-derived label adjustment. A selection-shift
+constructor may also attach Base pseudo-labels to target peers. For query
+$x_i^t$, these rows satisfy
+$\widehat{\mathcal D}_{t,-i}^{(0)}\subseteq
+\{(x_j^t,\widetilde y_j^{(0)}):j\neq i\}$, where
+$\widetilde y_j^{(0)}=\arg\max_{\ell\in\mathcal Y}p_{j,\ell}^{(0)}$. The
+current query is excluded. Constructors use reference information and, when
+registered, statistics of the available target subset. Target
+labels remain unavailable to all constructors. When a constructor selects a
+feature subset, the same
+projection is applied to the context and the query. The resulting
+configurations produce the alternative output bank
+\begin{equation}
+  \mathcal O_i(\Phi)=\{o_i^{(r)}:r\in\mathcal I(\Phi)\}.
+  \label{eq:output_bank}
+\end{equation}
+Here, $\Phi$ specifies the context-construction rules and
+$\mathcal O_i(\Phi)$ collects their query-dependent outputs.
+
+\subsection{Context Aggregation by Confidence and Agreement}
+\label{sec:evidence_aggregation}
+
+For query $x_i^t$, the $R$ alternative contexts yield Eq.~\eqref{eq:output_bank}.
+We derive task-compatible support scores and aggregate the predictions with a
+shared normalized weighting rule.
+
+For classification, let $p_i^{(r)}\in\Delta^{L-1}$ be the prediction from
+context $r$. With source-learned $\eta_{Q,r},\eta_{S,r}\geq0$, we compute
+\begin{equation}
+  \begin{aligned}
+    \mu_i&=\frac{1}{R}\sum_{s=1}^{R}p_i^{(s)},
+    &Q_i^{(r)}&=1-\frac{H(p_i^{(r)})}{\log L},\\
+    S_i^{(r)}&=1-\frac12\lVert p_i^{(r)}-\mu_i\rVert_1,
+    &\rho_i^{(r)}&=\eta_{Q,r}Q_i^{(r)}+\eta_{S,r}S_i^{(r)}.
+  \end{aligned}
+  \label{eq:classification_evidence}
+\end{equation}
+Here $H(p)=-\sum_{\ell=1}^{L}p_\ell\log p_\ell$.
+$Q_i^{(r)}$ measures normalized-entropy confidence and $S_i^{(r)}$ measures
+agreement with the mean alternative prediction; $\rho_i^{(r)}$ increases when
+both are high.
+
+For regression, let $\hat y_i^{(r)}\in\mathbb R$ be the prediction from
+context $r$. We define
+\begin{equation}
+  \begin{aligned}
+    m_i&=\operatorname{median}\{\hat y_i^{(s)}\}_{s=1}^{R},
+    &S_i^{(r)}&=\exp\!\left(-\frac{|\hat y_i^{(r)}-m_i|}{\tau_y}\right),\\
+    \rho_i^{(r)}&=\eta_{S,r}^{\mathrm{reg}}S_i^{(r)},
+    \qquad \eta_{S,r}^{\mathrm{reg}}\geq0.
+  \end{aligned}
+  \label{eq:regression_evidence}
+\end{equation}
+The median $m_i$ is a robust center and $\tau_y>0$ is determined from source
+data; predictions far from this center receive less support.
+
+Both tasks then use the same normalized weighting and aggregation rule:
+\begin{equation}
+  \begin{aligned}
+    w_i^{(r)}&=\frac{\pi_r e^{\rho_i^{(r)}}}
+      {\sum_{s=1}^{R}\pi_s e^{\rho_i^{(s)}}},\\
+    \bar o_i&=\sum_{r=1}^{R}w_i^{(r)}o_i^{(r)},
+    \qquad \sum_{r=1}^{R}w_i^{(r)}=1.
+  \end{aligned}
+  \label{eq:task_aware_aggregation}
+\end{equation}
+Here $\pi_r>0$ is the source-learned prior reliability of context $r$, with
+$\sum_r\pi_r=1$. Thus $(o_i^{(r)},\bar o_i)=(p_i^{(r)},\bar p_i)$ for
+classification and $(o_i^{(r)},\bar o_i)=(\hat y_i^{(r)},\bar y_i)$ for
+regression. The aggregate $\bar o_i$ is then integrated with Base.
+
+\subsection{Query-Dependent Integration with Base}
+\label{sec:base_integration}
+
+We integrate $\bar o_i$ with Base using a task-specific gate $U_i$ and aggregate
+context support $E_i$. Here $U_i$ is intrinsic Base uncertainty for classification
+and the Base-aggregate discrepancy for regression, while $E_i$ measures
+alternative support:
+\begin{equation}
+  \begin{aligned}
+    U_i^{\mathrm{cls}}&=\frac{H(p_i^{(0)})}{\log L},
+    &E_i^{\mathrm{cls}}&=\sum_{r=1}^{R}w_i^{(r)}Q_i^{(r)}S_i^{(r)},\\
+    U_i^{\mathrm{reg}}&=1-\exp\!\left(-\frac{|\bar y_i-\hat y_i^{(0)}|}{\tau_y}\right),
+    &E_i^{\mathrm{reg}}&=\sum_{r=1}^{R}w_i^{(r)}S_i^{(r)}.
+  \end{aligned}
+  \label{eq:context_integration_evidence}
+\end{equation}
+Below, $U_i$ and $E_i$ denote the pair for the current task.
+
+Both tasks use the same integration rule:
+\begin{equation}
+  \alpha_i=\alpha_{\max}U_iE_i,
+  \qquad o_i^{\mathrm{final}}
+  =(1-\alpha_i)o_i^{(0)}+\alpha_i\bar o_i.
+  \label{eq:base_anchored_update}
+\end{equation}
+Since $U_i,E_i,\alpha_{\max}\in[0,1]$, the update remains close to Base whenever
+the task-specific gate or context support is weak.
+
+\paragraph{Outer-fold policy learning.}
+Calibration episodes from outer-training datasets fit the context priors, score
+coefficients, output scale, and integration cap. Each episode pairs a labeled
+source context with a pseudo-target feature set whose labels enter only the
+calibration loss. The fitted policy and $\Phi$ are fixed before held-out inference.

@@ -1,0 +1,16 @@
+Tabular Foundation Models (TFMs) have demonstrated remarkable performance
+across prediction tasks through their in-context learning capabilities.
+However, perturbations or shifts in the context can easily cause predictions
+for a query to fluctuate drastically. Leveraging the configurability of TFM
+contexts, we propose \textbf{\method{}} (Adaptive Context Ensembling), a model-agnostic
+and training-free inference strategy to enhance prediction robustness.
+\method{} aggregates diverse alternative contexts and modifies the default
+prediction (Base) only when their agreement and a task-specific gate support
+the update. We provide a theoretical risk
+bound guaranteeing that this aggregation and integration effectively limits
+harmful updates. Across OpenML benchmarks spanning five context perturbations
+and seven distribution shifts, fully synthetic settings, and natural shifts,
+\method{} consistently mitigates performance degradation across foundation and
+conventional predictors while preserving clean performance. Additionally,
+caching reusable context computations provides a nearly sixfold speedup for
+repeated inference.

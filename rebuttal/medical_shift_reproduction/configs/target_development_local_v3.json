@@ -1,0 +1,19 @@
+{
+  "declared_at_utc": "2026-11-11T08:46:37.761291+00:00",
+  "role": "DEVELOPMENT ONLY; no final evaluation until search closes",
+  "base_and_shared": "v2 frozen choices and predictions retained",
+  "specific": "Retains Shared five branches; extras: cluster-local context, supervised correlation-ranked feature-subspace context, medical phenotype feature-view context",
+  "locality": "8 training-pool KMeans clusters using covariates only; closest source and labeled target development patients, size64,128,256",
+  "feature_views": [
+    "top32 training-label correlation",
+    "top64",
+    "top128",
+    "last observed measurements and baseline attributes (Sepsis); top32 (readmission)"
+  ],
+  "candidates": 12,
+  "fusion_choices_per_candidate": 12,
+  "same_target_labels_available_to_all_methods": true,
+  "test_data_unchanged": true,
+  "no_final_label_access_during_search": true,
+  "not_exact_original_paper_method": true
+}

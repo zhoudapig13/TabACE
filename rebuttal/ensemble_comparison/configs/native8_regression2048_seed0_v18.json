@@ -1,0 +1,34 @@
+{
+  "status": "FROZEN_BEFORE_INFERENCE",
+  "seed": 0,
+  "n_estimators": 8,
+  "context_cap": 2048,
+  "source_selection": "entire unchanged old Native-1 source context",
+  "same_source_query_and_metric_scale_as_previous_Native1": true,
+  "task": "regression",
+  "blocks": [
+    "Clean",
+    "Five"
+  ],
+  "datasets": 35,
+  "conditions": 735,
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "finetuning": false,
+  "adaptation": false,
+  "seven_not_rerun": true,
+  "classification_not_rerun": true,
+  "512_not_run": true,
+  "benchmark": "internal_regression_benchmark_v2",
+  "exact_original_paper_protocol": false,
+  "frozen_files_sha256": {
+    "results/internal_regression_benchmark_v2/frozen_clean.json": "f3eb5e5663506e9687405eaf528069ffa05602a349fa2a9ceb6a6a6f7440577d",
+    "results/internal_regression_benchmark_v2/frozen_five.json": "2393d5bb79ed921504b7ad74dad73a3d492744e701bc68d0fd4d3c9569406254"
+  },
+  "execution_script_sha256": "a69f261402485ded08a62651ffec0ae0d26a0433aa33d7a5e0f84d8371abeb9c",
+  "Markdown_written": false
+}

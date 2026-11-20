@@ -1,0 +1,34 @@
+{
+  "frozen_before_evaluation_at_utc": "2026-11-11T09:08:59.266474+00:00",
+  "selections": [
+    {
+      "task": "sepsis_A_to_B",
+      "frozen": "results/medical_limited_development_v8/sepsis_A_to_B/frozen_development_selection.json",
+      "data": "data/processed/target_development_v2/sepsis_A_to_B",
+      "predictions": "selected_limited_predictions.npz"
+    },
+    {
+      "task": "sepsis_B_to_A",
+      "frozen": "results/medical_limited_specific_v9/sepsis_B_to_A/frozen_development_selection.json",
+      "data": "data/processed/target_development_v2/sepsis_B_to_A",
+      "predictions": "selected_refined_predictions.npz"
+    },
+    {
+      "task": "readmission_other_to_ER",
+      "frozen": "results/medical_context_diversity_v12/readmission_other_to_ER/frozen_development_selection.json",
+      "data": "data/processed/target_development_readmission_cc_v5/readmission_other_to_ER",
+      "predictions": "selected_diversity_predictions.npz"
+    }
+  ],
+  "selection_uses_development_only": true,
+  "target_fitting_budget": 64,
+  "all_dagger_variants_use_same_source_target_label_access": true,
+  "all_casecontrol": true,
+  "test_labels_not_accessed_to_choose_this_protocol": true,
+  "postselection_development_metrics_optimistic": true,
+  "single_seed": 0,
+  "context_cap": 256,
+  "native_estimators": 1,
+  "previously_observed_test_patients": true,
+  "do_not_select_final_metrics_to_match_a_numeric_band": true
+}

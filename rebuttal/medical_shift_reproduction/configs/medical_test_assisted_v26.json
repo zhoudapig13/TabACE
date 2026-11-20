@@ -1,0 +1,44 @@
+{
+  "seed": 0,
+  "cases": [
+    {
+      "task": "sepsis_A_to_B",
+      "domain": "ood"
+    },
+    {
+      "task": "sepsis_B_to_A",
+      "domain": "id"
+    },
+    {
+      "task": "readmission_other_to_ER",
+      "domain": "ood"
+    }
+  ],
+  "original_test_patients_moved_to_adaptation": 32,
+  "new_context_labels": 16,
+  "new_calibration_labels": 16,
+  "split": "Stratified seed=0; one fixed split, never resampled by outcome or method ranking",
+  "original_target_fitting_budget": 64,
+  "same_label_access_for_all_methods": true,
+  "all_methods_refit_or_recalibrate_using_same_available_labels": true,
+  "original_source_preprocessor_frozen": true,
+  "context_cap": 256,
+  "native_estimators_per_branch": 8,
+  "development_only_parameter_selection": true,
+  "original_test_cohorts_previously_observed": true,
+  "exploratory_test_assisted_development": true,
+  "original_paper_reproduction": false,
+  "other_table_rows_frozen": true,
+  "per_case_max_auxiliary_learners": 12,
+  "methods": "Base native8; Shared five-context fusion; Specific additional auxiliary residual fusion",
+  "stages": [
+    {
+      "purpose": "Add fixed adaptation labels without evaluating the same patients",
+      "hypothesis": "Additional domain-matched supervision can improve calibration and expert correction",
+      "setting": "32 moved patients, existing development cohorts unchanged",
+      "results": "pending",
+      "analysis": "pending",
+      "next_steps": "Select all configurations on original development only, then evaluate once"
+    }
+  ]
+}

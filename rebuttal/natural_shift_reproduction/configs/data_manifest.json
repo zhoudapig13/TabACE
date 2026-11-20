@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETE",
+  "seed": 0,
+  "domains": [
+    {
+      "year": 2018,
+      "state": "CA"
+    },
+    {
+      "year": 2018,
+      "state": "MI"
+    },
+    {
+      "year": 2014,
+      "state": "CA"
+    }
+  ],
+  "protocol": "reconstructed_official_acs_household_disjoint_v1",
+  "notes": [
+    "Original Table 2 scripts and splits are unavailable.",
+    "No corruption, label alteration, or test-score matching is applied.",
+    "2048 accessible labeled source rows; Base randomly uses 256.",
+    "4096 disjoint source calibration rows provide additional supervision for fusion adaptation."
+  ]
+}

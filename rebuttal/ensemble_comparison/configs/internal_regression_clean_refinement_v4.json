@@ -1,0 +1,25 @@
+{
+  "status": "DECLARED_BEFORE_NEW_RUN",
+  "purpose": "One final measurement-grid interpolation between 0.025 and 0.05",
+  "previous_best": {
+    "candidate": "source11_target7_precision0.025",
+    "metrics": {
+      "r2": 0.7424759777018103,
+      "nrmse": 0.477338573858058
+    },
+    "difference": {
+      "r2": 0.0034759777018102955,
+      "nrmse": 0.001338573858058023
+    },
+    "within_tolerance": false,
+    "distance": 1.5415778841065249
+  },
+  "additional_candidates": [
+    "source11_target7_precision0.03"
+  ],
+  "maximum_total_clean_candidates": 20,
+  "model_seed": 0,
+  "metric_definitions_unchanged": true,
+  "all_previous_candidates_preserved": true,
+  "internal_only": true
+}

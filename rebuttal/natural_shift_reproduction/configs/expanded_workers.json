@@ -1,0 +1,92 @@
+[
+  {
+    "gpu": 0,
+    "pid": 1865461,
+    "scenario": "geographic",
+    "task": "Employment",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_expanded_views.py",
+      "--scenario",
+      "geographic",
+      "--task",
+      "Employment"
+    ]
+  },
+  {
+    "gpu": 1,
+    "pid": 1865462,
+    "scenario": "geographic",
+    "task": "Income",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_expanded_views.py",
+      "--scenario",
+      "geographic",
+      "--task",
+      "Income"
+    ]
+  },
+  {
+    "gpu": 2,
+    "pid": 1865463,
+    "scenario": "geographic",
+    "task": "TravelTime",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_expanded_views.py",
+      "--scenario",
+      "geographic",
+      "--task",
+      "TravelTime"
+    ]
+  },
+  {
+    "gpu": 3,
+    "pid": 1865464,
+    "scenario": "temporal",
+    "task": "Employment",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_expanded_views.py",
+      "--scenario",
+      "temporal",
+      "--task",
+      "Employment"
+    ]
+  },
+  {
+    "gpu": 4,
+    "pid": 1865465,
+    "scenario": "temporal",
+    "task": "Income",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_expanded_views.py",
+      "--scenario",
+      "temporal",
+      "--task",
+      "Income"
+    ]
+  },
+  {
+    "gpu": 5,
+    "pid": 1865466,
+    "scenario": "temporal",
+    "task": "TravelTime",
+    "command": [
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+      "-u",
+      "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/run_expanded_views.py",
+      "--scenario",
+      "temporal",
+      "--task",
+      "TravelTime"
+    ]
+  }
+]

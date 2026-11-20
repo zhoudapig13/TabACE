@@ -1,0 +1,18 @@
+{
+  "timestamp_UTC": "2026-11-07T14:20:52.413549+00:00",
+  "reason": "Canonical ordinary bootstrap lost Clean performance; test conservative context resampling while holding input membership fixed",
+  "seed": 0,
+  "datasets": 33,
+  "conditions": 957,
+  "context_count": 6,
+  "rows_per_context": 256,
+  "resampling": "Replace a fixed 10% of positions using source-row draws; keep remaining positions unchanged",
+  "replacement_fraction_candidates": [
+    0.1
+  ],
+  "source_access": "Exact same 256 canonical rows as Base; no history/reference samples",
+  "new_feature_or_label_adaptation": false,
+  "standard_bootstrap_control_retained": true,
+  "Shared_or_score_bound_used": false,
+  "code_sha256": "63ede7b1b83dcdde4b2f24f4595ed33e0cd35b2efd714d88b32b48b6b130900d"
+}

@@ -1,0 +1,39 @@
+\providecolor{revisionblue}{RGB}{25,55,135}
+\definecolor{sharedblue}{RGB}{31,84,147}
+\definecolor{specificred}{RGB}{213,94,0}
+
+\begin{table}[H]
+  \centering
+  \caption{ID and OOD Accuracy under natural geographic and temporal shifts.}
+  \label{tab:natural-shifts}
+  \small
+  \setlength{\tabcolsep}{4.4pt}
+  \renewcommand{\arraystretch}{1.02}
+  \begin{tabular}{llcccccc}
+    \toprule
+    & & \multicolumn{3}{c}{Geographic: California $\rightarrow$ Michigan (2018)}
+      & \multicolumn{3}{c}{Temporal: California 2014 $\rightarrow$ 2018} \\
+    \cmidrule(lr){3-5}\cmidrule(lr){6-8}
+    Method & Domain & Employment & Income & TravelTime
+      & Employment & Income & TravelTime \\
+    \midrule
+    \multicolumn{8}{l}{\textit{Accuracy} $\uparrow$} \\
+    Base & ID
+      & 0.7922 & 0.7888 & 0.5912 & 0.7704 & 0.7926 & 0.5951 \\
+         & OOD
+      & 0.8043 & 0.7655 & 0.5472 & 0.7847 & 0.7844 & 0.5908 \\
+    Shared & ID
+      & \textcolor{revisionblue}{0.7952} & \textcolor{revisionblue}{0.8118} & \textcolor{revisionblue}{0.6225}
+      & \textcolor{revisionblue}{0.7861} & \textcolor{revisionblue}{0.8126} & \textcolor{revisionblue}{0.6237} \\
+         & OOD
+      & \textcolor{revisionblue}{0.8106} & \textcolor{revisionblue}{0.7823} & \textcolor{revisionblue}{0.5818}
+      & \textcolor{revisionblue}{0.7922} & \textcolor{revisionblue}{0.8000} & \textcolor{revisionblue}{0.6045} \\
+    Specific & ID
+      & \textcolor{revisionblue}{\textbf{0.8089}} & \textcolor{revisionblue}{\textbf{0.8201}} & \textcolor{revisionblue}{\textbf{0.6569}}
+      & \textcolor{revisionblue}{\textbf{0.7994}} & \textcolor{revisionblue}{\textbf{0.8240}} & \textcolor{revisionblue}{\textbf{0.6526}} \\
+         & OOD
+      & \textcolor{revisionblue}{\textbf{0.8245}} & \textcolor{revisionblue}{\textbf{0.7914}} & \textcolor{revisionblue}{\textbf{0.6012}}
+      & \textcolor{revisionblue}{\textbf{0.8030}} & \textcolor{revisionblue}{\textbf{0.8106}} & \textcolor{revisionblue}{\textbf{0.6350}} \\
+    \bottomrule
+  \end{tabular}
+\end{table}

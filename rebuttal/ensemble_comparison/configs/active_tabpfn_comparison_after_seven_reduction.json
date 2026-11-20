@@ -1,0 +1,8 @@
+{
+  "main_table": "results/tabpfn_official_comparison_v2/reports/active_comparison_after_seven_reduction.json",
+  "seven_regression_sensitivity": "results/tabpfn_official_comparison_v2/seven_regression_reduced_adaptation/averages.csv",
+  "fixed_active_scale": 0.5,
+  "Clean_and_classification_frozen": true,
+  "RF_seven_minimal_auxiliary_override": "results/tabpfn_official_comparison_v2/seven_regression_rf_minimal_adapter/summary.json",
+  "additional_Oligo_specific_adaptation_is_separate_not_auto_promoted": true
+}

@@ -1,0 +1,56 @@
+{
+  "name": "internal_seven_component_v1",
+  "purpose": "Internal component validation, user explicitly excludes paper use",
+  "paper_protocol_reproduction": false,
+  "benchmark_parameters_selected_using_development_labels": true,
+  "seed": 0,
+  "task": "classification",
+  "backbone": "TabICL-v2",
+  "datasets": 35,
+  "nominal_strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "initial_factors": [
+    0.75,
+    0.875,
+    1.0
+  ],
+  "maximum_distinct_factors": 5,
+  "target_development_Base": {
+    "accuracy": 0.763,
+    "auc": 0.826
+  },
+  "target_absolute_tolerance": 0.002,
+  "benchmark_parameterization": "one common multiplier for six non-label families, one for label shift",
+  "selection": "minimum sum of squared Acc/AUC differences to stated development targets; no ensemble scores consulted",
+  "bounded_refinement": "At most two additional midpoints neighboring the best common factor; all trials retained",
+  "original_shift_constants": {
+    "protocol_revision": 2,
+    "source_sampling_seed": 0,
+    "regression_sampling_seed": 2718,
+    "x_weight_exponent": 3.0,
+    "label_extreme_prior": 0.9,
+    "max_boundary_flip_fraction": 0.3,
+    "affine_scale_increment": 0.75,
+    "affine_translation_sd": 0.5,
+    "support_translation_sd": 1.5,
+    "regression_response_drift_sd": 2.0,
+    "classification_history": 256,
+    "classification_reference": 64,
+    "classification_target": 128,
+    "regression_pool_cap": 1024,
+    "regression_reference": 128,
+    "regression_context": 256,
+    "regression_target_cap": 256
+  },
+  "original_data_split": "seven_reimplemented, unchanged balanced cap",
+  "Clean_five_results_frozen": true,
+  "Clean_zero_predictions_reused": true,
+  "Shared_run": false,
+  "ensemble_policy": "frozen existing dataset-OOF policies; no target-label adaptation on evaluated dataset",
+  "code_sha256": "431b0d8770a00d61515557ccc4ed1fe6d5a7738775a6c9b6068da441a8129136",
+  "Markdown_written": false
+}

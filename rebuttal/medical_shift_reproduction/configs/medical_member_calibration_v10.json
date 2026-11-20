@@ -1,0 +1,37 @@
+{
+  "declared_at_utc": "2026-11-11T09:01:26.094524+00:00",
+  "task": "readmission casecontrol",
+  "target_fitting_labels": 64,
+  "base_shared": "frozen v8",
+  "member_calibration": "Logistic Platt on each branch logit,5fold OOF for gate fit, final refit for validation/query predictions",
+  "member_calibration_C": [
+    0.1,
+    1,
+    10
+  ],
+  "local_features": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "local_context": 64,
+  "source_target_calibration_share": 0.5,
+  "gate_regularization": [
+    1,
+    0.1
+  ],
+  "gate_target_share": [
+    0.25,
+    0.5
+  ],
+  "update_cap": [
+    0.15,
+    0.25
+  ],
+  "max_context_rows": 256,
+  "threshold": "fixed Base threshold",
+  "new_supervision": false,
+  "selection": "development validation accuracy only",
+  "final_test_metrics_opened": false
+}

@@ -1,0 +1,18 @@
+{
+  "version": "medical-common-native8-v24",
+  "declared_at_utc": "2026-11-11T11:00:47.415466+00:00",
+  "purpose": "Additional strong common-backbone control, not a replacement selected from test outcomes.",
+  "backbone": "TabICL-v2, n_estimators8 for Base AND every Shared/Specific branch",
+  "seed": 0,
+  "context_cap_per_branch": 256,
+  "target_fitting_budget": 64,
+  "source_calibration": "Same full restored pool as v18",
+  "development_and_tests": "Exact same expanded development and frozen test cohorts as v18",
+  "context_and_fusion_selection": "Same v18 probability-fusion grid, per-known-domain development accuracy, Base not weakened.",
+  "known_domain_metadata_given_to_all": true,
+  "cache_namespace": "Separate Native8 cache; Native1 cache is not reused.",
+  "no_test_labels_used_for_selection": true,
+  "not_backbone_weight_training": true,
+  "all_native1_results_retained": true,
+  "desired_numeric_test_band_not_used_for_filtering": true
+}

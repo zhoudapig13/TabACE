@@ -1,0 +1,20 @@
+{
+  "task": "UCI Diabetes readmission, other admission sources to emergency room",
+  "seed": 0,
+  "original_source_preprocessing_frozen": true,
+  "new_development_fit_labels": 64,
+  "new_development_calibration_labels": 32,
+  "original_test_adaptation32_unchanged": true,
+  "no_more_test_patients_reassigned": true,
+  "target_context_pool": 112,
+  "target_calibration_pool": 80,
+  "total_target_fitting_labels": 192,
+  "source_training_labels": 1460,
+  "remaining_development_labels": 578,
+  "evaluation_patients": 780,
+  "label_access_matched_all_methods": true,
+  "context_cap": 256,
+  "native_estimators_per_branch": 8,
+  "original_test_cohorts_previously_observed": true,
+  "exploratory_development_not_paper_reproduction": true
+}

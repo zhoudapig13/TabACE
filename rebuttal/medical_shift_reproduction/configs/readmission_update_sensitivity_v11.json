@@ -1,0 +1,12 @@
+{
+  "declared_at_utc": "2026-11-11T09:05:18.312880+00:00",
+  "task": "readmission casecontrol",
+  "role": "One-variable probability-update sensitivity; no new labels, contexts or fitted weights",
+  "parent": "medical_limited_specific_v9",
+  "new_specific_update_cap": 0.35,
+  "shared_unchanged": true,
+  "label_budget": 64,
+  "threshold": "unchanged Base threshold",
+  "no_test_labels_opened": true,
+  "select_on_metric_band": false
+}

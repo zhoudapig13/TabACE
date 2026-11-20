@@ -1,0 +1,90 @@
+import logging
+from statistics import mean
+
+import gin
+import shap
+import torch
+import wandb
+import xgboost as xgb
+from xgboost.callback import EarlyStopping
+from wandb.integration.xgboost import WandbCallback
+
+from icu_benchmarks.constants import RunMode
+from icu_benchmarks.models.wrappers import MLWrapper
+
+
+# Uncomment if needed in the future
+# from optuna.integration import XGBoostPruningCallback
+
+
+@gin.configurable
+class XGBClassifier(MLWrapper):
+    _supported_run_modes = [RunMode.classification]
+    explainer_cls = shap.TreeExplainer
+
+    def __init__(self, *args, device: str = "cpu", verbosity: int = 0, **kwargs):
+        device = self.resolve_device(device, cpu=kwargs.get("cpu", False))
+        self.model = self.set_model_args(xgb.XGBClassifier, *args, **kwargs, device=device, verbosity=verbosity)
+        super().__init__(*args, **kwargs)
+
+    @staticmethod
+    def resolve_device(device: str, cpu: bool = False) -> str:
+        """Returns the XGBoost device; "auto" picks CUDA when available, and the --cpu flag always forces the CPU."""
+        if cpu:
+            if device not in ("cpu", "auto"):
+                logging.warning(f"Ignoring XGBoost device={device!r} because the CPU was requested.")
+            return "cpu"
+        if device == "auto":
+            return "cuda" if torch.cuda.is_available() else "cpu"
+        return device
+
+    def predict(self, features):
+        """
+        Predicts class probabilities for the given features.
+
+        Args:
+            features: Input features for prediction.
+
+        Returns:
+            numpy.ndarray: Predicted probabilities for each class.
+        """
+        return self.model.predict_proba(features)
+
+    def fit_model(self, train_data, train_labels, val_data, val_labels):
+        """Fit the model to the training data (default SKlearn syntax)"""
+        callbacks = [EarlyStopping(self.hparams.patience)]
+
+        if wandb.run is not None:
+            # XGBoost >= 2.0 only accepts TrainingCallback instances; wandb_callback() returns a legacy function
+            # gblinear only defines the "weight" feature importance that the callback logs after training
+            importance_type = "weight" if self.model.get_params().get("booster") == "gblinear" else "gain"
+            callbacks.append(WandbCallback(importance_type=importance_type))
+        logging.debug(f"train_data: {train_data.shape}, train_labels: {train_labels.shape}")
+        logging.debug(train_labels)
+        # XGBoost >= 2.0 takes callbacks as an estimator parameter, not as a fit() argument.
+        self.model.set_params(callbacks=callbacks)
+        self.model.fit(train_data, train_labels, eval_set=[(val_data, val_labels)], verbose=False)
+        # shap.summary_plot(shap_values, X_test, feature_names=features)
+        # logging.info(self.model.get_booster().get_score(importance_type='weight'))
+        # self.log_dict(self.model.get_booster().get_score(importance_type='weight'))
+        # Return the first metric we use for validation
+        eval_score = mean(next(iter(self.model.evals_result_["validation_0"].values())))
+        return eval_score
+
+    # Arguments that train_common and MLWrapper pass to the wrapper itself, not to XGBoost
+    _wrapper_args = {"optimizer", "input_size", "epochs", "run_mode", "cpu", "loss", "patience", "mps"}
+
+    def set_model_args(self, model, *args, **kwargs):
+        """Pass every argument except the wrapper's own to XGBoost, which takes its hyperparameters as **kwargs.
+
+        Booster-specific parameters (such as DART's rate_drop) are not in get_params(), so filtering against it would
+        drop them. XGBoost warns about parameters it does not use.
+        """
+        xgb_kwargs = {k: v for k, v in kwargs.items() if k not in self._wrapper_args}
+        logging.debug(f"Creating model with: {xgb_kwargs}.")
+        return model(**xgb_kwargs)
+
+    def get_feature_importance(self):
+        if not hasattr(self.model, "feature_importances_"):
+            raise ValueError("Model has not been fit yet. Call fit_model() before getting feature importances.")
+        return self.model.feature_importances_

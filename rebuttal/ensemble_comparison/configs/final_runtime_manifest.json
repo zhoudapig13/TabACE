@@ -1,0 +1,149 @@
+{
+  "python": "3.12.3 (main, Jun 18 2025, 17:59:45) [GCC 13.3.0]",
+  "platform": "Linux-5.15.0-173-generic-x86_64-with-glibc2.39",
+  "scripts": {
+    "audit_classification_source_fix.py": "91530b4fc1248243ab9d1c8777952a1c56f3fc68883370a5e001e1e021334434",
+    "audit_oof_results.py": "5d054795981c0704462ebe4a76d50f689b7dc9bf2812603d8b69634d288ad724",
+    "audit_seven.py": "e9fcde8d3f48c6372e9aa0851c41be6db303ed26f3273252ce8a8a9faa714bc6",
+    "continue_corrected_pipeline.py": "5b652a9011fe89959e0996325793272fb6a47b660ab64cf88d825a3ec1440f22",
+    "corrected_source_protocol.py": "14e143fe5c08b21fc92a90cb488585128c7b897ebdc80f116a10037031bd0df7",
+    "dense_full_context.py": "d19d79ed741fdddeda2090418c9519d13803a8de36b0ee9f5de16a5935574814",
+    "diagnose_recovered_public_shift.py": "08a18ca6ec05fbb82bf8cacd4556b2cec990589e78e29c050f7b95526e61188a",
+    "download_checkpoints.py": "229f5ab7fe10f12ce3418505da6eafa95cb1d240a39851eeb4861108eafcfc2b",
+    "finalize_current_protocol.py": "15860615e073f5279627fe59cf60d76b52cbd422b5167ade72b9b743fcffd5b5",
+    "finalize_tabm_scaler_v2.py": "bb806a2d1b2e8ed0ce4e41545b1f4f2a527185c04ab0f8ec70e8dc408ddafa2b",
+    "fit_combiners.py": "30a5f2b78db588f6fca431ca1b1c93280381d41e3ac3dfa2d5519596f4b59451",
+    "fit_convex_combiners.py": "12289011fb7e7a7cd5a457a4644c8ebc5b7cde1bac439b4f814f9e16f7b6e3d0",
+    "fit_feature_nnls.py": "69446a57507b03f258dddbec0316d0d4dc7b804e0819a1aecb1f20c9fd894a77",
+    "fit_shared_reference.py": "f03f510fb56ef34fba41cf3a737b5d9e31a447839d9d741713d2cb1f4047d5b9",
+    "fit_specific_reference.py": "7c2066a11361822cf2993c4932a3add8e2161936145f79a92d9d2f2de25d83bf",
+    "launch_corrected_stage.py": "4c39bbaa8ab441a62589f021da85eac6a9b5dbb73ed45997f70d392803592d05",
+    "launch_feature_views.py": "6011ad628d8c392b957f90c786731e7132d325dd4517b37e2d57a4645c6c8306",
+    "launch_oligo_extended.py": "006357e91bb64ebe20f9a4d4ee2c8b9fed6496579e6cff1c1406bd79a8bfd912",
+    "launch_phe_repair.py": "f25fb8eac0a619572e93df5ca3e65f1f26edaf75d18696c763c70818dddd4434",
+    "launch_reference.py": "2514b6d3af9556f586c55f093bec831c94f6d115ccc6c4fe263f21314f8af5e0",
+    "launch_seven.py": "b2e104585f4d82650449e94550b49c8f528dc5ae1ddc9e2a87c8af03f6c9e3b9",
+    "launch_seven_tabpfn.py": "939d1340fdd04563c8aad1bbf01b381efb4c32e232aad0f3e22bcd8d01be3ec1",
+    "launch_specific.py": "704178a6fa84f91e3eed6484cb906b67564fdf6f7dec7cd5265efaddccbaee9e",
+    "launch_tabicl.py": "fe705d2d6ed0c59723d1db54ceb6d76450eecc181bf0147692c651e3e9ed8888",
+    "launch_tabm.py": "bf1ca88354c09c0ba8c4a61a6ffcccc7c93822fe3891e96f3ca91914f9068340",
+    "launch_tabm_scaler_v2.py": "49bb96cf52d3db548dd6d7046d620fc9bc16e89579f7e56650d312a891f805af",
+    "launch_tabpfn.py": "a12448a0ddb2b3aed7bb47663042bf1c0adf891c116acfe71efbeba8b86924e8",
+    "monitor_seven.py": "d588e101df2266531a2a287814f38c915bf57ce0657a337d6e53fae718cc426b",
+    "prepare_data.py": "98fbe8355fc59f91ff684f78bdda2b9c504eae782bee64c4742c72c3bd2aaeaf",
+    "recovered_public_shift.py": "7e7ed91e48194a422b003199c3ad444388f2f42a46edf222a9201ab04e0c1c6b",
+    "repair_feature_file_integrity.py": "d89584114102be471d0d2bbbc9e0cb4c5065c9a05fa3e5b3952afd26f14586dd",
+    "repair_phe_singletons.py": "66f5e2bca5b43974b7623ef800e601c2981a78cba0ae2e7795a0508356efeed2",
+    "repair_reg_bootstrap.py": "0a37ba7796b8003a99142ae0413ff38e7fe7989d18c23798d0615bc3f26a0761",
+    "repair_specific_constant.py": "7e1244e3901475adf19abf55733499b13bc063659466a33a888260db0412cfce",
+    "report.py": "a64680cf71218877d5c8d8296ecd43d5196fbde7533631ddaee83cb06636fbe1",
+    "run_corrected_baselines.py": "d321c0ca0325e062e70011b79c2255bff6d77870c612caf04ad5fdb917ccd920",
+    "run_feature_views.py": "b2d6b49e73bba274fc60d59b03cd6d0af6d3d2f13b954c56705719704e5fe359",
+    "run_oligo_extended.py": "09252e9b579d9d21ebef7e42ccd2a11c915f673f3f6a21910c92898df46f6bb7",
+    "run_seven.py": "09012ee085f78da83f62838e946e7674d48dcd5d883f1c721edc53916fe1aec2",
+    "run_seven_tabpfn.py": "214b736c30559f5df4410669a491ac019c3d3e789addf6596ce319cb0dfe7523",
+    "run_tabicl.py": "4bb2ae22b1cfaaec2aba16152a8c54d1dbe8583e862efaeeef6261ff25a8a1dd",
+    "run_tabm.py": "2f19c74f7e4c3b5c9d8bcd889530e354899ea5cc49c2cc9cbe225d829ae556d8",
+    "run_tabpfn.py": "44db60ee014285ab9bb50d1dc055776f7bc343eaa5719584c92f8a4c498841cd",
+    "seven_shifts.py": "cae8365fa4c2f374fb8127bab269da414a4b82198381c7569ebc750d12d4e78d",
+    "shared_reference.py": "a806af398e619ca96036482ad826bdcf2896a9b468e810e54af7caad8ef30b3c",
+    "specific_reference.py": "4f7699e56c5857bfea81bc3bb7795c139dd56f2447d3374a11434d38dd9096b2",
+    "verify_raw_results.py": "728dbc936843720e10d8d97f8cc9459087469a8e0f455a81e7befbe49d647bdd"
+  },
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "torch": "2.8.0a0+34c6371d24.nv25.8",
+    "tabicl": "2.1.1",
+    "tabm": "0.0.3",
+    "openml": "0.15.1"
+  },
+  "status": "runtime_snapshot",
+  "seed": 0,
+  "run_scope": {
+    "run_id": "ensemble_single_seed_20261107",
+    "seed": 0,
+    "suite": "original_main_table",
+    "tracks": [
+      "five",
+      "seven"
+    ],
+    "strengths": [
+      0,
+      20,
+      50,
+      80,
+      100
+    ],
+    "classification_tasks": {
+      "five": 72,
+      "seven": 35
+    },
+    "regression_tasks": {
+      "five": 35,
+      "seven": 33
+    },
+    "tune_on": "outer_training_calibration_only",
+    "test_result_selection": false,
+    "adaptation_training": false,
+    "reuse_existing": true,
+    "status": "RUNNING_ALL_COMPARISONS",
+    "missing_original_seven_protocol": true,
+    "five_main_table_comparability": "FAILED_OPERATOR_MATCH_PENDING_RECONSTRUCTION",
+    "seven_implementation": "scripts/seven_shifts.py",
+    "seven_protocol_audit": "results/seven_protocol_audit.json",
+    "old_base_numeric_matching_required": false,
+    "main_nonzero_strengths": [
+      0.2,
+      0.5,
+      0.8,
+      1.0
+    ],
+    "fixed_protocol_no_test_score_selection": true,
+    "stress_levels_separate_from_main": [
+      1.0,
+      1.25,
+      1.5
+    ],
+    "new_matched_tabace_reference_required": true
+  },
+  "execution_note": "Unfinished GPU work repartitioned by condition without changing algorithms or data; feature stage duplicate writers stopped; all 1512 resulting feature archives passed bank consistency and identity-view checks; final audit remains mandatory.",
+  "tabpfn_runtime": {
+    "python": "3.12.3 (main, Jun 18 2025, 17:59:45) [GCC 13.3.0]",
+    "packages": {
+      "tabpfn": "9.2.0",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.6.1",
+      "torch": "2.8.0a0+34c6371d24.nv25.8"
+    }
+  },
+  "checkpoints": {
+    "/mnt/public/zhouyibo/TabSwift/artifacts/checkpoints/tabicl-classifier-v2-20260212.ckpt": {
+      "bytes": 110368038,
+      "sha256": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+    },
+    "/mnt/public/zhouyibo/TabSwift/artifacts/checkpoints/tabicl-regressor-v2-20260212.ckpt": {
+      "bytes": 114324594,
+      "sha256": "0db9cb538f114e79026bf08f45f41ad8dd7ad2de2aaca9a5ca8cd3bd9748ae7a"
+    },
+    "/mnt/public/zhouyibo/PFN-Research/checkpoints/tabpfn3/tabpfn-v3-classifier-v3_default.ckpt": {
+      "bytes": 212804803,
+      "sha256": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988"
+    },
+    "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/checkpoints/tabpfn-v3-regressor-v3_default.ckpt": {
+      "bytes": 233289807,
+      "sha256": "311ce18d97e9533d8585eaadafe040fbdd8070533209ed8696641dadc97a7301"
+    }
+  },
+  "audits": {
+    "raw_result_audit": "PASS",
+    "oof_result_audit": "PASS",
+    "classification_source_fix_audit": "PASS",
+    "feature_file_integrity_audit": "PASS",
+    "seven_protocol_audit": "PASS"
+  },
+  "tabm_preprocessing_revision": 2
+}

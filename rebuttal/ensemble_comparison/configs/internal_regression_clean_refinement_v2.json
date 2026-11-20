@@ -1,0 +1,36 @@
+{
+  "status": "DECLARED_BEFORE_NEW_RUNS",
+  "purpose": "Isolate source cap composition and target cohort composition after coupled-seed candidates failed",
+  "initial_candidates_evaluated": 12,
+  "best_initial": {
+    "candidate": "independent11",
+    "metrics": {
+      "r2": 0.7372079393811118,
+      "nrmse": 0.48255022420854243
+    },
+    "difference": {
+      "r2": -0.0017920606188881472,
+      "nrmse": 0.0065502242085424545
+    },
+    "within_tolerance": false,
+    "distance": 5.1241020493272655
+  },
+  "diagnosis": "R2 and source-normalized RMSE respond differently to source and target composition; using the same cap RNG seed couples two independent choices.",
+  "additional_candidates": [
+    "source11_target0",
+    "source11_target7",
+    "source3_target0",
+    "source3_target7"
+  ],
+  "maximum_additional_candidates": 4,
+  "maximum_total_clean_candidates": 16,
+  "model_seed": 0,
+  "official_fold": 0,
+  "source_cap": 2048,
+  "target_cap": 512,
+  "metric_definition_unchanged": true,
+  "historical_variance_check_did_not_justify_normalization_change": true,
+  "all_initial_attempts_retained": true,
+  "method_outcomes_not_used": true,
+  "internal_only": true
+}

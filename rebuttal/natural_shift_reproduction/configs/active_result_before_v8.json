@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETE",
+  "active_protocol": "acs_natural_fixed_512_v6",
+  "result_directory": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/fixed_512_v6",
+  "accuracy_table": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/fixed_512_v6/accuracy_table.csv",
+  "paper_comparison": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/fixed_512_v6/comparison_long.csv",
+  "audit": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/fixed_512_v6/audit.json",
+  "source_adapted_reconstruction": true,
+  "original_configuration_recovered": false,
+  "seed": 0,
+  "base_context_rows": 256,
+  "shared_types": 5,
+  "specific_types": 8,
+  "per_context_row_cap": 512,
+  "test_labels_used_for_fitting_or_selection": false,
+  "original_paper_numbers_used_as_optimization_target": false,
+  "additional_source_supervision": {
+    "accessible_source_pool_rows": 2048,
+    "source_calibration_fit_rows": 2048,
+    "source_calibration_select_rows": 2048
+  },
+  "backbone_weights_finetuned": false,
+  "reproduce_command": [
+    "/mnt/public/zhouyibo/ICLR2027/rebuttal/ensemble_comparison/.venv/bin/python",
+    "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/scripts/reproduce.py"
+  ],
+  "md_summary_size_bytes": 0
+}

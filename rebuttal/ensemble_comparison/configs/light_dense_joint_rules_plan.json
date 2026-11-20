@@ -1,0 +1,13 @@
+{
+  "timestamp_UTC": "2026-11-07T14:13:57.587071+00:00",
+  "reason": "NLL-preselected Max rule exceeded actual Clean decline tolerance; evaluate fixed fusion rules under same inner Clean criterion",
+  "attempt": 2,
+  "preprocessing_changed": false,
+  "new_backbone_inference": false,
+  "candidates_per_fold": 12,
+  "selection": "Original/clipped bank x 6 fusion rules, inner validation mean Acc/AUC; Clean Acc/AUC each >= Base - .005",
+  "outer_test_scores_not_used_to_select_configuration": true,
+  "requested_Acc_upper_bound_and_Shared_not_used": true,
+  "first_attempt_retained": true,
+  "code_sha256": "d7d2db62523deac27afef687bdc1c81243c9415bbddcee73be66c5262eee7f25"
+}

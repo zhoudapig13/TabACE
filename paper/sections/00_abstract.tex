@@ -1,0 +1,14 @@
+For tabular foundation models (TFMs) pretrained across tasks, inference
+depends on both the query and its labeled Context. Alternative Contexts make
+inference configurable, but can also destabilize predictions under Context
+perturbations and distribution shifts. We propose \textbf{\method{}}, a
+query-adaptive ensemble built on this interface. It requires no additional
+backbone training or parameter updates. For each query, \method{} constructs multiple
+Contexts and aggregates their outputs by confidence and cross-Context agreement.
+It modifies Base only when alternative predictions support one another and Base
+confidence is low. Across OpenML benchmarks spanning five Context perturbations
+and seven distribution shifts, fully synthetic settings, and natural shifts,
+\method{} limits performance degradation for multiple foundation and
+conventional predictors while largely preserving clean performance. Caching
+reusable Context computations further provides a nearly sixfold speedup for
+repeated inference.

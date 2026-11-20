@@ -1,0 +1,172 @@
+{
+  "status": "FROZEN_BEFORE_SCORING",
+  "stage": "five-classification label multiplier only",
+  "configurations": [
+    {
+      "name": "labels_1_features1_amplitude6",
+      "label_multiplier": 1.0,
+      "feature_fraction": 0.0,
+      "feature_count": 1,
+      "amplitude": 6.0
+    },
+    {
+      "name": "labels_1.25_features1_amplitude6",
+      "label_multiplier": 1.25,
+      "feature_fraction": 0.0,
+      "feature_count": 1,
+      "amplitude": 6.0
+    },
+    {
+      "name": "labels_1.5_features1_amplitude6",
+      "label_multiplier": 1.5,
+      "feature_fraction": 0.0,
+      "feature_count": 1,
+      "amplitude": 6.0
+    },
+    {
+      "name": "labels_1.75_features1_amplitude6",
+      "label_multiplier": 1.75,
+      "feature_fraction": 0.0,
+      "feature_count": 1,
+      "amplitude": 6.0
+    },
+    {
+      "name": "labels_2_features1_amplitude6",
+      "label_multiplier": 2.0,
+      "feature_fraction": 0.0,
+      "feature_count": 1,
+      "amplitude": 6.0
+    },
+    {
+      "name": "labels_2.5_features1_amplitude6",
+      "label_multiplier": 2.5,
+      "feature_fraction": 0.0,
+      "feature_count": 1,
+      "amplitude": 6.0
+    },
+    {
+      "name": "labels_3_features1_amplitude6",
+      "label_multiplier": 3.0,
+      "feature_fraction": 0.0,
+      "feature_count": 1,
+      "amplitude": 6.0
+    }
+  ],
+  "severity_selection_inputs": "disjoint calibration queries only; no original test or TabACE scores",
+  "rho": [
+    20,
+    50,
+    80,
+    100
+  ],
+  "additional_phases": [
+    {
+      "phase": 2,
+      "declared_before_scoring": true,
+      "configurations": [
+        {
+          "name": "labels_3_features1_amplitude0",
+          "label_multiplier": 3.0,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 0.0
+        },
+        {
+          "name": "labels_3_features1_amplitude1",
+          "label_multiplier": 3.0,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 1.0
+        },
+        {
+          "name": "labels_3_features1_amplitude2",
+          "label_multiplier": 3.0,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 2.0
+        },
+        {
+          "name": "labels_3_features1_amplitude3",
+          "label_multiplier": 3.0,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 3.0
+        },
+        {
+          "name": "labels_3_features1_amplitude12",
+          "label_multiplier": 3.0,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 12.0
+        },
+        {
+          "name": "labels_3_features1_amplitude24",
+          "label_multiplier": 3.0,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 24.0
+        }
+      ],
+      "factor_changed": "feature displacement amplitude; label multiplier fixed at 3",
+      "timestamp": "2026-11-07T10:43:54.470900+00:00"
+    },
+    {
+      "phase": 3,
+      "declared_before_scoring": true,
+      "configurations": [
+        {
+          "name": "labels_3_features1_amplitude0.05",
+          "label_multiplier": 3.0,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 0.05
+        },
+        {
+          "name": "labels_3_features1_amplitude0.1",
+          "label_multiplier": 3.0,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 0.1
+        },
+        {
+          "name": "labels_3_features1_amplitude0.2",
+          "label_multiplier": 3.0,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 0.2
+        },
+        {
+          "name": "labels_3_features1_amplitude0.4",
+          "label_multiplier": 3.0,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 0.4
+        }
+      ],
+      "reason": "refine near the bracketed calibration target; no original test or TabACE values are used",
+      "timestamp": "2026-11-07T10:47:22.840028+00:00"
+    },
+    {
+      "phase": 4,
+      "declared_before_scoring": true,
+      "configurations": [
+        {
+          "name": "labels_2.5_features1_amplitude0",
+          "label_multiplier": 2.5,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 0.0
+        },
+        {
+          "name": "labels_2.75_features1_amplitude0",
+          "label_multiplier": 2.75,
+          "feature_fraction": 0.0,
+          "feature_count": 1,
+          "amplitude": 0.0
+        }
+      ],
+      "reason": "last label-fraction refinement on independent calibration data",
+      "timestamp": "2026-11-07T10:50:14.488206+00:00"
+    }
+  ]
+}

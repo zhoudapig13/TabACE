@@ -1,0 +1,21 @@
+{
+  "updated_UTC": "2026-11-07T15:25:57.845630+00:00",
+  "markdown_enabled": false,
+  "explicit_user_instruction_required_to_resume_markdown": true,
+  "chat_progress_reports": true,
+  "document": "/mnt/public/zhouyibo/ICLR2027/REBUTTAL_EXPERIMENTS.md",
+  "reason": "User requested clearing MD and chat-only real-time results until explicitly asked to write",
+  "automatic_report_writers_guarded": [
+    "audit_track_sample_budgets.py",
+    "report_benchmark_tuning.py",
+    "report_canonical_regression.py",
+    "report_classification_adaptations.py",
+    "report_partial_regression_shrinkage.py",
+    "report_random_dense_update.py",
+    "report_stable_regression.py",
+    "report_final_ensembles.py",
+    "write_average_tables.py"
+  ],
+  "regression_main_table_exclude_Random": true,
+  "Random_predictions_preserved_for_audit": true
+}

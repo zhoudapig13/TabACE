@@ -1,0 +1,27 @@
+{
+  "status": "FROZEN",
+  "beta": 5.0,
+  "feature_multiplier": 8,
+  "family_order": [
+    "shortcut",
+    "boundary",
+    "band",
+    "local",
+    "mixed"
+  ],
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "purpose": "additional reconstructed historical feature-only protocol, not original numerical replication",
+  "severity_selection": "Base only on 63 disjoint calibration-query sets; no Shared/Specific result used",
+  "calibration_accuracy": 0.5008494543650794,
+  "calibration_auc": 0.6803525942095101,
+  "generator_reads_query_labels": false,
+  "source_labels_changed": false,
+  "seed": 0,
+  "protocol_sha256": "a26ae463ccd99c123b1a8feecde96325bba48c0ce9b0b8a92b84677bfbb17777",
+  "frozen_utc": "2026-11-07T11:24:22.150363+00:00"
+}

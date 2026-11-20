@@ -1,0 +1,43 @@
+{
+  "status": "DECLARED",
+  "name": "internal_seven_fixed_strength_v2",
+  "internal_only": true,
+  "paper_reproduction": false,
+  "user_authorized_development_benchmark": true,
+  "nominal_strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "strength_argument_rescaled": false,
+  "datasets": 35,
+  "seed": 0,
+  "source_context_rows": 256,
+  "query_rows": 128,
+  "initial_coefficient_scales": [
+    0.75,
+    0.875,
+    1.0
+  ],
+  "label_prior_directions": [
+    -1,
+    1
+  ],
+  "maximum_coefficient_scales": 5,
+  "maximum_initial_and_refined_configurations": 10,
+  "target_Base": {
+    "accuracy": 0.763,
+    "auc": 0.826
+  },
+  "absolute_tolerance": 0.002,
+  "selection": "minimize squared development Base Acc/AUC error; no ensemble outcomes consulted",
+  "uses_development_evaluation_labels_for_benchmark_selection": true,
+  "refinement": "At most two additional coefficient midpoints neighboring the best initial scale",
+  "all_trials_retained": true,
+  "Clean_five_frozen": true,
+  "Shared_run": false,
+  "Markdown_written": false,
+  "prior_scaled_strength_branch_is_exploration_only": "results/internal_seven_component_v1",
+  "reusing_prior_predictions_requires_exact_input_hash_match": true
+}

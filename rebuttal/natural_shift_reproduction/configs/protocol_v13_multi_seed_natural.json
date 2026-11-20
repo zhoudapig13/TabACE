@@ -1,0 +1,238 @@
+{
+  "protocol_id": "multi_seed_natural_v13",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "scenarios": [
+    "geographic",
+    "temporal"
+  ],
+  "tasks": [
+    "Employment",
+    "Income",
+    "TravelTime"
+  ],
+  "methods": [
+    "Base",
+    "Shared",
+    "Specific"
+  ],
+  "context_row_cap": 512,
+  "Base_context_rows": 256,
+  "Shared_context_types": 5,
+  "Specific_context_types": 8,
+  "checkpoint": "/mnt/public/zhouyibo/TabSwift/artifacts/checkpoints/tabicl-classifier-v2-20260212.ckpt",
+  "checkpoint_sha256": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0",
+  "fixed_data_partitions": true,
+  "fixed_source_pools": true,
+  "fixed_source_fit_and_selection_partitions": true,
+  "randomized_components": [
+    "context row selection and bootstrap",
+    "TabICL random_state",
+    "torch/NumPy seed",
+    "CatBoost random_seed"
+  ],
+  "fixed_hyperparameters": true,
+  "per_seed_hyperparameter_search": false,
+  "all_seeds_retained_without_accuracy_filtering": true,
+  "source_only_fitting": true,
+  "target_labels_used_for_fitting": false,
+  "statistics": {
+    "mean": "arithmetic mean over exactly five seeds",
+    "variance_ddof": 1,
+    "variance_units": "Accuracy squared",
+    "fixed_split_conditional_variance": true
+  },
+  "additional_supervised_adaptation": true,
+  "original_paper_reproduction": false,
+  "dataset_sha256": {
+    "2014_CA_Employment_source.npz": "00503ddc314ae1f209a0154f6f5f20b28d3424ecc45a3e61591f30a5dc762ec1",
+    "2014_CA_Employment_calibration.npz": "3cfab653878dfd7408c70d5bdb34d11e1c91b6ccda2536519db5e76887a246cc",
+    "2014_CA_Employment_test_features.npz": "4cda9fa05ae39953e6226ce754875f6c5f169fa60fdf498dc7c4a172b2f8c5ec",
+    "2014_CA_Employment_test_labels.npz": "fa155e05582bbc92557355375fec5d5ee5b4ab3623e63d2e492d1c9d37ca2696",
+    "2014_CA_Income_source.npz": "bb85b95132aa3049cb99b5cc8acbf355f312d984dfbbb905f4c4b92825cfd124",
+    "2014_CA_Income_calibration.npz": "149df067c5e9a0925359a1134260a34407d33431dde14c8c67e701f69b283208",
+    "2014_CA_Income_test_features.npz": "a6330f49b7f4963e40a5ea507dde61c775a5e8faf013b8d7a7c2b9c5a94c081a",
+    "2014_CA_Income_test_labels.npz": "d0c2cc7e4d9a4219c429e11f16065953afd6cb330db9a7c46553c9d362a49ca3",
+    "2014_CA_TravelTime_source.npz": "5b44e93bd4c292707be24a91633f627fa0551e176017fa13531b62114fa16472",
+    "2014_CA_TravelTime_calibration.npz": "df506c83e882315e74a955d5eb96e37d5e502a724ec18ac32882f44607076167",
+    "2014_CA_TravelTime_test_features.npz": "7b8c8228ba5a8c61ece850f27089a6749001141c0c6ae0c5a0cebeaf793bcc17",
+    "2014_CA_TravelTime_test_labels.npz": "f2f5ac298e88edfa5199b4db7e2b4ae4e27f5e155f6006d9140214e641d8c83a",
+    "2018_CA_Employment_source.npz": "9e2a7511f722efc2c503ddc4a05c4d7d3e14ef9877daedd8fdd20afe4e597a4b",
+    "2018_CA_Employment_calibration.npz": "00d5ffc6d5784b03a32490174fd26ad610f1dd3b9d785424b0f9733c832a66ac",
+    "2018_CA_Employment_test_features.npz": "b3369409bc3d11d7eb4b395b0daa3908a235225fdd82c2699b10999c3b191104",
+    "2018_CA_Employment_test_labels.npz": "66a7b35b50933b969c9ccd7fff5b0ac633decac83a6e72c136400ac2cb232d8a",
+    "2018_CA_Income_source.npz": "cde9b8f65551a48854c28c7857480c003fa9355efba0060133a95499fa8a0cee",
+    "2018_CA_Income_calibration.npz": "0b561c3bda49475d136214a81804160264e89d144e06a52f223ad896fc0c8f31",
+    "2018_CA_Income_test_features.npz": "3717ba1ec6f384430898229dc7c3fe2a2bb3ec209e06a27eb739ca054d01f4c9",
+    "2018_CA_Income_test_labels.npz": "cb4e593da9f22b7b412c549446fa6fc980bb18aee9727b8c3818d20fdc9fce40",
+    "2018_CA_TravelTime_source.npz": "da89b1b681a13d7f11521f3a6013c7caa1046407d640081aaabd95700fba8170",
+    "2018_CA_TravelTime_calibration.npz": "b03f0db4f08bdb231f499671c84c833295184e022e2583c8410fc51195914c5b",
+    "2018_CA_TravelTime_test_features.npz": "4f0e6e413f4da5b60c996ccb205db4e53569cdcedb34204ec42f5ab37211391c",
+    "2018_CA_TravelTime_test_labels.npz": "5215147ddb5444a7ab5b6a1a2fa5712f73192f92abd461b93024a2a9a74d554f",
+    "2018_MI_Employment_source.npz": "d4b53b7f1baa45614088c81a64d6b79d47b4cfd05438cabee3f81464353b25ab",
+    "2018_MI_Employment_calibration.npz": "92be19ae78eb3d7d788b3e523fba2ca2987891116fcfe39798caaa9b69964bc1",
+    "2018_MI_Employment_test_features.npz": "78978d2c7e8609a2e8683b54443f66afe23d0c87ec2509a16999b1146ae89471",
+    "2018_MI_Employment_test_labels.npz": "3f73d70a96bee0aeff57b67560218c434c96791df16b1ef89e77e6b545d30484",
+    "2018_MI_Income_source.npz": "9631c47ee39bea349b55f2ce85f819526e62ff0385260b9af814e6c0e1d13cab",
+    "2018_MI_Income_calibration.npz": "76c076960b9beed87d615237c66b71f1484f3d2536b41efdb95c8b66b09a9ac7",
+    "2018_MI_Income_test_features.npz": "6f0b34dbeef7f0c44c10236c0dc07c52784bf3350dd3561d061abeb9df858557",
+    "2018_MI_Income_test_labels.npz": "67a9c44fd5ca39dc43ba729dee85963a592c11a9d976ab82301e06d8be976d30",
+    "2018_MI_TravelTime_source.npz": "d68059908e9cbe3780f3592f744dc41c2f072c9ea20acff705da3707451c1796",
+    "2018_MI_TravelTime_calibration.npz": "b815926169de8d26476707ebe995a80e9405720e61ca9d3661fe789abcc94f82",
+    "2018_MI_TravelTime_test_features.npz": "3d3ac2e8c0ad6e555b82ded85071d7cc9b05908a05f646dcd9fe7e4bbf5538f7",
+    "2018_MI_TravelTime_test_labels.npz": "61a51faeb96628a694ade0b4a6601e3ae9fc76e0d26ac5d8f895fd681bd59abe"
+  },
+  "cases": {
+    "geographic/Employment": {
+      "scenario": "geographic",
+      "task": "Employment",
+      "source_domain": "2018_CA",
+      "target_domain": "2018_MI",
+      "Shared_fusion_regularization": 0.01,
+      "Shared_head_regularization": null,
+      "Shared_core_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/strict_source_nested_512_v8/policies/Shared_geographic_Employment.json",
+      "Shared_core_reference_sha256": "e0794ca0a3dd164e95501fa6c85e806256366dbcdff8012369c26cc4775c0d3e",
+      "Shared_supervised_router": null,
+      "Specific_router": {
+        "kind": "meta_eight",
+        "depth": 6,
+        "l2_leaf_reg": 3.0,
+        "iterations": 102,
+        "learning_rate": 0.05,
+        "fit_rows": 2048,
+        "beta": 0.75
+      },
+      "seed0_prediction_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/specific_convex_router_v10/predictions/geographic/Employment"
+    },
+    "geographic/Income": {
+      "scenario": "geographic",
+      "task": "Income",
+      "source_domain": "2018_CA",
+      "target_domain": "2018_MI",
+      "Shared_fusion_regularization": 0.0001,
+      "Shared_head_regularization": 0.1,
+      "Shared_core_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/strict_source_nested_512_v8/policies/Shared_geographic_Income.json",
+      "Shared_core_reference_sha256": "8f13a5387944d66fe36ccd38d496735ddce2c82cbe0aae05fbdbf53f0415544c",
+      "Shared_supervised_router": {
+        "kind": "meta_five",
+        "depth": 4,
+        "l2_leaf_reg": 3.0,
+        "iterations": 116,
+        "learning_rate": 0.05,
+        "fit_rows": 2048,
+        "beta": 1.0
+      },
+      "Specific_router": {
+        "kind": "query_only",
+        "depth": 4,
+        "l2_leaf_reg": 10.0,
+        "iterations": 250,
+        "learning_rate": 0.05,
+        "fit_rows": 4096,
+        "beta": 0.75
+      },
+      "seed0_prediction_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/single_specific_geo_income_v12"
+    },
+    "geographic/TravelTime": {
+      "scenario": "geographic",
+      "task": "TravelTime",
+      "source_domain": "2018_CA",
+      "target_domain": "2018_MI",
+      "Shared_fusion_regularization": 0.0001,
+      "Shared_head_regularization": 0.001,
+      "Shared_core_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/strict_source_nested_512_v8/policies/Shared_geographic_TravelTime.json",
+      "Shared_core_reference_sha256": "eb8afac8e5d65a2aa6eb6bfd279440908513283ea75b69b6c4f8982e43191950",
+      "Shared_supervised_router": null,
+      "Specific_router": {
+        "kind": "meta_eight",
+        "depth": 6,
+        "l2_leaf_reg": 3.0,
+        "iterations": 97,
+        "learning_rate": 0.05,
+        "fit_rows": 2048,
+        "beta": 1.0
+      },
+      "seed0_prediction_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/specific_convex_router_v10/predictions/geographic/TravelTime"
+    },
+    "temporal/Employment": {
+      "scenario": "temporal",
+      "task": "Employment",
+      "source_domain": "2014_CA",
+      "target_domain": "2018_CA",
+      "Shared_fusion_regularization": 0.001,
+      "Shared_head_regularization": 0.001,
+      "Shared_core_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/strict_source_nested_512_v8/policies/Shared_temporal_Employment.json",
+      "Shared_core_reference_sha256": "aa1616ee64e177e94c9e6a21664d753a0a9be9d923b948a7528b7a63e175a4f5",
+      "Shared_supervised_router": null,
+      "Specific_router": {
+        "kind": "meta_eight",
+        "depth": 6,
+        "l2_leaf_reg": 10.0,
+        "iterations": 194,
+        "learning_rate": 0.05,
+        "fit_rows": 2048,
+        "beta": 1.0
+      },
+      "seed0_prediction_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/specific_convex_router_v10/predictions/temporal/Employment"
+    },
+    "temporal/Income": {
+      "scenario": "temporal",
+      "task": "Income",
+      "source_domain": "2014_CA",
+      "target_domain": "2018_CA",
+      "Shared_fusion_regularization": 0.01,
+      "Shared_head_regularization": 0.1,
+      "Shared_core_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/strict_source_nested_512_v8/policies/Shared_temporal_Income.json",
+      "Shared_core_reference_sha256": "897cfea340c33b3b1978194ee3eb892158ccf489255b3a4d8658cebdb35d5c1f",
+      "Shared_supervised_router": null,
+      "Specific_router": {
+        "kind": "meta_eight",
+        "depth": 6,
+        "l2_leaf_reg": 10.0,
+        "iterations": 132,
+        "learning_rate": 0.05,
+        "fit_rows": 2048,
+        "beta": 1.0
+      },
+      "seed0_prediction_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/specific_convex_router_v10/predictions/temporal/Income"
+    },
+    "temporal/TravelTime": {
+      "scenario": "temporal",
+      "task": "TravelTime",
+      "source_domain": "2014_CA",
+      "target_domain": "2018_CA",
+      "Shared_fusion_regularization": 0.0001,
+      "Shared_head_regularization": null,
+      "Shared_core_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/strict_source_nested_512_v8/policies/Shared_temporal_TravelTime.json",
+      "Shared_core_reference_sha256": "9840e1c1929eb4dc994f990f8cbc084ed627db076e09ebd0bc0d6a212b3e47fd",
+      "Shared_supervised_router": null,
+      "Specific_router": {
+        "kind": "meta_eight",
+        "depth": 4,
+        "l2_leaf_reg": 3.0,
+        "iterations": 66,
+        "learning_rate": 0.05,
+        "fit_rows": 2048,
+        "beta": 0.75
+      },
+      "seed0_prediction_reference": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/specific_convex_router_v10/predictions/temporal/TravelTime"
+    }
+  },
+  "versions": {
+    "numpy": "1.26.4",
+    "torch": "2.8.0a0+34c6371d24.nv25.8",
+    "catboost": "1.2.10",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.6.1"
+  },
+  "code_sha256": {
+    "multi_seed_natural_v13.py": "c279ba423bf9b86682b4381c9d12e28592469d02784c54a7513ce234f1db11a1",
+    "row_budget_views.py": "0d66831fbef4b73e4f77bcf572730409bdb62e01ef4d5d4c738d0eb7693f4d25",
+    "natural_components.py": "c64cc945504906d62e095fe670ab81c4fad3681371f9ecfe5b9422a26970330f"
+  }
+}

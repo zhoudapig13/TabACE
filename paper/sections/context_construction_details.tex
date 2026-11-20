@@ -1,0 +1,455 @@
+\subsubsection{Construction Ranges and Information Interface}
+
+Let $(X_c,y_c)$ denote the labeled context available in an outer fold and let
+$X_t$ denote the unlabeled target features available to a test-time call.
+Shared uses the five family-agnostic
+construction roles in Table~\ref{tab:shared-context-bank} through a common
+input--output interface and reuses them across all change families and
+strengths. Prior-informed Specific retains this Shared registry and adds the
+constructors associated with a declared family $z$:
+\begin{equation}
+  \mathcal C_{\mathrm{Specific}}(z)
+  =\mathcal C_{\mathrm{Shared}}\cup\mathcal C_z.
+  \label{eq:specific-context-bank}
+\end{equation}
+The family determines candidate availability but does not provide the shift
+strength. Target labels are unavailable to every constructor. Feature
+projections are applied identically to $X_c$ and $X_t$, and every
+classification subset retains all observed source classes.
+
+\begin{table}[H]
+  \caption{Information available during context construction and target
+  inference.}
+  \label{tab:context-information-interface}
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth}
+                      >{\raggedright\arraybackslash}p{0.20\textwidth}
+                      >{\raggedright\arraybackslash}p{0.27\textwidth}
+                      >{\raggedright\arraybackslash}p{0.23\textwidth}@{}}
+    \toprule
+    Variant & Family identifier & Available data & Unavailable information \\
+    \midrule
+    Shared & None & $(X_c,y_c)$ and, when needed, $X_t$
+      & Target labels and shift strength \\
+    Prior-informed Specific & Declared family $z$
+      & $(X_c,y_c)$ and, when needed, $X_t$
+      & Target labels and shift strength \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+We use explicit percentile ranges throughout the registry. Source examples are
+first ordered by their robust distance to the target support and split into
+five equal-frequency intervals,
+\begin{equation}
+  \mathcal B_t=\{[0,20),[20,40),[40,60),[60,80),[80,100]\}.
+  \label{eq:target-support-bins}
+\end{equation}
+The endpoints are empirical percentiles of target distance. The first interval
+contains the closest source examples. Successively broader contexts add the
+remaining intervals in order, with equal contributions from all included
+intervals.
+
+For regression, the coarse response partition is
+\begin{equation}
+  \mathcal B_y^{(4)}
+  =\{[0,25),[25,50),[50,75),[75,100]\},
+  \label{eq:response-quartile-bins}
+\end{equation}
+and the fine partition is
+\begin{equation}
+\begin{aligned}
+  \mathcal B_y^{(8)}=\{&[0,12.5),[12.5,25),[25,37.5),[37.5,50),\\
+                       &[50,62.5),[62.5,75),[75,87.5),[87.5,100]\}.
+\end{aligned}
+\label{eq:response-octile-bins}
+\end{equation}
+Balanced response contexts draw the same number of examples from every
+nonempty interval, using replacement when necessary. Symmetric response tails
+are written as
+\begin{equation}
+  \mathcal T_y(q)=[0,q]\cup[100-q,100],\qquad
+  q\in\{15,20,25,30,35\}\%,
+  \label{eq:symmetric-response-tails}
+\end{equation}
+where the registered candidates expand from narrow to broad tails. For
+classification, balancing is performed within each observed class; a binary
+balanced context allocates its rows as evenly as possible between the two classes.
+
+\subsubsection{Reusable Construction Operators}
+
+\paragraph{Target-support matching.}
+We robustly standardize $X_c$ and $X_t$ using the source median and
+interquartile range. For source example $x_j$, let
+\begin{equation}
+  d_t(x_j)=\frac{1}{|\mathcal N_t(x_j)|}
+  \sum_{x\in\mathcal N_t(x_j)}\|\widetilde x_j-\widetilde x\|_2^2,
+  \label{eq:target-support-distance}
+\end{equation}
+where $\mathcal N_t(x_j)$ is a small neighborhood in the available target set.
+Target-matched resampling uses
+\begin{equation}
+  v_j=\frac{\exp[-d_t(x_j)/h]}{\sum_k\exp[-d_t(x_k)/h]},
+  \label{eq:target-matching-weight}
+\end{equation}
+with $h$ equal to the empirical median of positive distances. Sampling is
+balanced across the included intervals of $\mathcal B_t$; classification
+weights are additionally normalized within each class.
+
+\paragraph{Local consistency and label repair.}
+For classification, ten source neighbors define
+\begin{equation}
+  c_j=\max_{a\in\mathcal Y}\frac{1}{|\mathcal N_c(x_j)|}
+  \sum_{k\in\mathcal N_c(x_j)}\mathbb I(y_k=a).
+  \label{eq:local-class-consensus}
+\end{equation}
+Stable contexts retain high-consensus examples within every class. Label repair
+replaces $y_j$ by the neighborhood majority at consensus levels of
+$60\%$, $70\%$, and $80\%$. A target-facing stable score,
+$s_j^{\mathrm{stable}}=(1-c_j)+0.10d_t(x_j)$, ranks examples within each
+class and target-support interval.
+
+\paragraph{Representative support and filtering.}
+Robust feature outlyingness is
+\begin{equation}
+  u(x_j)=\frac{1}{d}\sum_{k=1}^{d}
+  \min\!\left(\left|\frac{x_{jk}-\operatorname{med}(X_{c,k})}
+  {\operatorname{IQR}(X_{c,k})}\right|,10\right)^2.
+  \label{eq:robust-feature-outlyingness}
+\end{equation}
+Representative contexts rank examples by
+$s_j^{\mathrm{rep}}=d_t(x_j)+0.35u(x_j)$ and sample low-score examples
+within every interval of $\mathcal B_t$. Classification samples within each
+class; regression samples within $\mathcal B_y^{(4)}$ or
+$\mathcal B_y^{(8)}$. Filtered contexts retain
+$70\%$, $75\%$, $80\%$, $85\%$, or $90\%$ of the source rows, ranging from
+stronger to lighter filtering.
+
+\paragraph{Feature views.}
+Features are ranked by
+\begin{equation}
+  s_k^{\mathrm{feat}}
+  =|\operatorname{corr}(X_{c,k},y_c)|.
+  \label{eq:feature-construction-score}
+\end{equation}
+Registered views remove the leading feature or a progressively larger leading
+set, retain the weakest $50\%$ or $75\%$ of features, symmetrically clip the
+outer $1\%$, $5\%$, or $10\%$ of empirical feature values, or clip to
+$[m_k-cs_k,m_k+cs_k]$ with
+$c\in\{1.5,2,2.5,3,3.5,4\}$, where $m_k$ and $s_k$ are the
+feature median and interquartile range. Repeated extreme levels may instead be
+replaced by $m_k$.
+
+\paragraph{Response balancing and repair.}
+Balanced regression contexts sample equally from the intervals of
+$\mathcal B_y^{(4)}$ or $\mathcal B_y^{(8)}$. Repeated responses in
+$\mathcal T_y(q)$ are reflected toward a robust center $m$:
+\begin{equation}
+  y_j^{(\lambda)}=m-\lambda(y_j-m),\qquad
+  \lambda\in\{20,30,40,50,60\}\%.
+  \label{eq:tail-response-repair}
+\end{equation}
+A second repair estimates $m$ jointly from the lower and upper tail
+representatives. Global response contraction uses
+\begin{equation}
+  y_j^{(\beta)}=m+\beta(y_j-m),\qquad
+  \beta\in\{45,60,75,90\}\%.
+  \label{eq:response-contraction}
+\end{equation}
+
+\paragraph{Source-to-target transport.}
+With robust source and target moments $(\mu_s,\sigma_s)$ and
+$(\mu_t,\sigma_t)$, full location-scale transport is
+\begin{equation}
+  T(X_c)=\frac{X_c-\mu_s}{\sigma_s}\sigma_t+\mu_t.
+  \label{eq:full-context-transport}
+\end{equation}
+Partial transport uses
+\begin{equation}
+  X_c^{(\alpha_{\mathrm{tr}})}=(1-\alpha_{\mathrm{tr}})X_c
+  +\alpha_{\mathrm{tr}}T(X_c),\qquad
+  \alpha_{\mathrm{tr}}\in\{25,50,75,100,125,150\}\%.
+  \label{eq:partial-context-transport}
+\end{equation}
+The first four levels range from partial to full alignment; the final two
+provide mild extrapolation when the target support extends beyond the source.
+Location-only transport preserves source scale, while quantile transport maps
+each empirical source quantile to its target counterpart. Transported rows can
+then be resampled within $\mathcal B_t$.
+
+\paragraph{Support reconstruction and temporal filtering.}
+Selection and Support constructors first merge feature-identical rows. They
+then rebuild support with four, eight, or sixteen target-quantile intervals,
+sampling equally from every nonempty interval. Deduplicated candidates retain
+between $80\%$ and $100\%$ of unique rows. Temporal constructors divide a
+cycle into 20 phase positions and filter $20\%$, $40\%$, $60\%$, $80\%$, or
+$100\%$ of the registered affected phases. The retained rows may subsequently
+undergo transport and target-interval balancing.
+
+\subsubsection{Shared Constructor Registry}
+
+\begingroup
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.04}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.12\textwidth}
+                         >{\raggedright\arraybackslash}p{0.18\textwidth}
+                         >{\raggedright\arraybackslash}p{0.62\textwidth}@{}}
+    \caption{Registered context constructions used by Shared.}
+    \label{tab:shared-context-bank}\\
+    \toprule
+    Task & context & Construction \\
+    \midrule
+    \endfirsthead
+    \toprule
+    Task & context & Construction \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+    Classification
+      & Target-neighbor
+      & Standardize $X_c$ and $X_t$ using the source median and interquartile
+        range, summarize the target support with five quantile anchors, and
+        rank source examples by squared distance to the nearest anchor. Retain
+        $80\%$ of the closest examples while preserving every source class. \\
+    Classification
+      & Representative
+      & Rank source examples by the sum of target-support distance and
+        $0.35$ times robust feature outlyingness. Retain the lowest-scoring
+        $70\%$ while preserving every source class. \\
+    Classification
+      & Locally stable
+      & Compute label disagreement over ten source neighbors and add
+        $0.10$ times the target-support distance. Retain the lowest-scoring
+        $80\%$ while preserving every source class. \\
+    Classification
+      & Feature subspace
+      & Rank features by their absolute source feature--label correlation and
+        remove the leading predictive feature; all source rows and the
+        remaining features are retained. \\
+    Classification
+      & Low conflict
+      & Rank examples by local label disagreement plus $0.20$ times robust
+        feature outlyingness. Retain the lowest-scoring $75\%$ while
+        preserving every source class. \\
+    \midrule
+    Regression
+      & Uniform bootstrap
+      & Draw a full-size bootstrap from $(X_c,y_c)$ with uniform probability
+        and replacement. \\
+    Regression
+      & Response balanced
+      & Partition $y_c$ into the eight equal-frequency intervals of
+        $\mathcal B_y^{(8)}$ and draw the same number of examples from every
+        nonempty interval, using replacement to preserve the source context
+        size. \\
+    Regression
+      & Target matched
+      & Compute each source example's mean distance to its ten nearest target
+        neighbors after robust standardization. Resample a full-size context
+        with probabilities $v_j\propto\exp[-d_t(x_j)/h]$, where $h$ is the
+        median positive distance. \\
+    Regression
+      & Distribution aligned
+      & Map each source feature from its robust source location and scale to
+        the corresponding target location and scale using
+        Equation~\eqref{eq:full-context-transport}; retain $y_c$ unchanged. \\
+    Regression
+      & Aligned target matched
+      & Apply full location--scale transport and then resample the transported
+        rows with the target-matching probabilities used above. \\
+\end{longtable}
+\endgroup
+
+Across LimiX-2M, TabPFN-v3, and TabDPT v1.2, Shared uses the common
+context-construction interface defined above. Registered views are constructed
+without shift-family or strength inputs, and the fitted policy is frozen before
+held-out inference. Held-out labels are used only to compute final metrics.
+
+\subsubsection{Prior-Informed Specific Constructor Registry}
+
+Specific retains all Shared contexts and activates the complete registered pool
+for family $z$. The pool has no protocol-level candidate-count cap. Each range,
+repair strength, subspace, and transport level below defines a separate
+candidate. This pool is the outer-fold selection space, not the deployed branch
+count: the selected member list $\Phi_z$ is frozen before held-out inference,
+which uses one Base pass and $R_z=|\Phi_z|$ alternative passes. For the latency
+experiment, Shared and Specific are both evaluated with five alternative
+contexts to provide a matched-cost comparison.
+
+\paragraph{Context categories and prediction counts.}
+\label{app:context-category-counts}
+\begingroup\color{revisionblue}
+\begin{itemize}
+  \item \textbf{Shared classification:} target-neighbor, representative,
+  locally stable, feature-subspace, and low-conflict views. These are five
+  alternative branches plus Base, giving six predictions per query.
+  \item \textbf{Shared regression:} uniform bootstrap, response-balanced,
+  target-matched, distribution-aligned, and aligned target-matched views.
+  These likewise give five alternatives plus Base, or six predictions.
+  \item \textbf{Family-directed Specific:} candidates combine the Shared
+  registry with the declared-family constructions in
+  Tables~\ref{tab:specific-perturbation-contexts}
+  and~\ref{tab:specific-shift-contexts}. For the frozen selected list
+  $\Phi_z$, the deployed alternative count is $R_z=|\Phi_z|$, and the total
+  prediction count including Base is $1+R_z$. A constructor type with several
+  selected parameterizations contributes one branch per selected member.
+\end{itemize}
+The explicit supplemental Folktables list and its numerical branch counts are
+reported in Appendix~\ref{app:revision-folktables-contexts}.
+\endgroup
+
+\paragraph{Controlled context perturbations.}
+\begingroup
+  \footnotesize
+  \setlength{\LTpre}{0.45\baselineskip}
+  \setlength{\LTpost}{0.45\baselineskip}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.10\textwidth}
+                      >{\raggedright\arraybackslash}p{0.41\textwidth}
+                      >{\raggedright\arraybackslash}p{0.41\textwidth}@{}}
+    \caption{Family-directed Specific contexts under controlled source-context
+    perturbations.}
+    \label{tab:specific-perturbation-contexts} \\
+    \toprule
+    Family & Classification construction & Regression construction \\
+    \midrule
+    \endfirsthead
+    \multicolumn{3}{@{}l}{\tablename~\thetable\ (continued)} \\
+    \toprule
+    Family & Classification construction & Regression construction \\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{Continued on next page} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    Shortcut
+      & Remove the leading or a progressively larger predictive feature set;
+        retain the weakest $50\%$ or $75\%$ of features; clip the outer
+        $1\%$, $5\%$, or $10\%$ of the leading feature; and retain
+        $70\%$--$90\%$ stable
+        rows within each class.
+      & Remove high shortcut-score features; retain weak $50\%/75\%$
+        subspaces; clip with $c\in\{1.5,2,2.5,3,3.5,4\}$; and repair responses after equal
+        sampling from $\mathcal B_y^{(4)}$. \\
+    Boundary
+      & Repair labels using ten neighbors at $60\%$, $70\%$, and $80\%$
+        consensus; select stable examples within each class and
+        $\mathcal B_t$ interval; and repeat repair after removing the leading
+        feature.
+      & Detect paired responses in $\mathcal T_y(q)$ for
+        $q\in\{15,20,25,30,35\}\%$; use
+        $\lambda\in\{20,30,40,50,60\}\%$ reflection;
+        and preserve equal coverage over $\mathcal B_y^{(4)}$. \\
+    AUC/\newline Rank-band
+      & Split the leading-feature range into band and off-band regions; sample
+        both regions within each class; repair labels at $60\%$, $70\%$, and
+        $80\%$ consensus; and include a clipped leading-feature view.
+      & Detect repeated responses in $\mathcal T_y(q)$ for
+        $q\in\{15,20,25,30,35\}\%$; repair with
+        $\lambda\in\{20,30,40,50,60\}\%$; and combine the repair with feature
+        clipping at $c\in\{1.5,2,2.5,3,3.5,4\}$. \\
+    Local
+      & Construct local contexts from the first one, two, and three cumulative
+        intervals of $\mathcal B_t$; balance within each class; and apply
+        neighborhood repair and conflict filtering.
+      & Sample from cumulative intervals of $\mathcal B_t$ while preserving
+        $\mathcal B_y^{(4)}$ coverage, then add tail-repaired and
+        feature-clipped views. \\
+    Mixed
+      & Combine all five target-support intervals, three consensus levels,
+        $50\%/75\%$ weak-feature views, and $1\%$, $5\%$, or $10\%$
+        feature-tail clipping.
+      & Combine $\mathcal B_y^{(4)}$, $\mathcal T_y(q)$,
+        $\lambda\in\{20,30,40,50,60\}\%$,
+        $c\in\{1.5,2,2.5,3,3.5,4\}$, and $50\%/75\%$ feature
+        subspaces. \\
+  \end{longtable}
+\endgroup
+
+\paragraph{Distribution shifts.}
+\begingroup
+  \footnotesize
+  \setlength{\LTpre}{0.45\baselineskip}
+  \setlength{\LTpost}{0.45\baselineskip}
+  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.10\textwidth}
+                      >{\raggedright\arraybackslash}p{0.41\textwidth}
+                      >{\raggedright\arraybackslash}p{0.41\textwidth}@{}}
+    \caption{Family-directed Specific contexts under seven distribution-shift
+    families.}
+    \label{tab:specific-shift-contexts} \\
+    \toprule
+    Family & Classification construction & Regression construction \\
+    \midrule
+    \endfirsthead
+    \multicolumn{3}{@{}l}{\tablename~\thetable\ (continued)} \\
+    \toprule
+    Family & Classification construction & Regression construction \\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{Continued on next page} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    Covariate
+      & Form square-root, linear, intermediate-power, and squared density-ratio
+        weights; balance by class across all five $\mathcal B_t$ intervals;
+        and add transport at $\alpha_{\mathrm{tr}}\in\{25,50,75,100\}\%$.
+      & Use location-scale or quantile transport at
+        $\alpha_{\mathrm{tr}}\in\{25,50,75,100,125,150\}\%$ and balance samples across
+        $\mathcal B_t$ before and after transport. \\
+    Label
+      & Interpolate from source to estimated target class proportions at
+        $25\%$, $50\%$, $75\%$, and $100\%$; sample equally across observed
+        classes; and include transported prior-matched contexts.
+      & Sample equally from $\mathcal B_y^{(4)}$ and $\mathcal B_y^{(8)}$;
+        contract responses with $\beta\in\{45,60,75,90\}\%$; and clip responses in
+        $\mathcal T_y(q)$ for $q\in\{15,20,25,30,35\}\%$. \\
+    Concept
+      & Locate a changed boundary region using the recent labeled context;
+        sample separately inside and outside it; and repair, filter, or
+        downweight the region at $60\%$, $70\%$, and $80\%$ consensus.
+      & Remove $10\%$, $25\%$, $50\%$, $75\%$, or $100\%$ of the strongest
+        smooth feature-response component while preserving coverage over
+        $\mathcal B_y^{(4)}$. \\
+    Selection
+      & Balance source-target membership weights across all five
+        $\mathcal B_t$ intervals and observed classes; add mixed contexts in
+        which Base-pseudo-labeled target rows other than the current query
+        occupy $50\%$ or $75\%$.
+      & Deduplicate rows; rebuild support with four, eight, and sixteen target
+        quantile intervals; sample equally from each nonempty interval; and
+        retain $80\%$--$100\%$ of unique rows. \\
+    Domain
+      & Apply location, location-scale, and quantile transport at
+        $\alpha_{\mathrm{tr}}\in\{25,50,75,100\}\%$, then balance across the five target
+        support intervals.
+      & Apply location-scale and quantile transport at
+        $\alpha_{\mathrm{tr}}\in\{25,50,75,100,125,150\}\%$ and balance over
+        $\mathcal B_t$ before and after transport. \\
+    Temporal
+      & Set the historical share to $0\%$, $10\%$, $20\%$, $30\%$, $40\%$, or
+        $50\%$, fill the
+        remainder with recent rows, balance within each class, and add
+        transported boundary-repair contexts.
+      & Filter $20\%$, $40\%$, $60\%$, $80\%$, or $100\%$ of registered phases
+        in a 20-position cycle; transport the retained rows; and balance over
+        target-quantile intervals. \\
+    Support
+      & Move source support toward the target at
+        $\alpha_{\mathrm{tr}}\in\{25,50,75,100\}\%$; sample from cumulative intervals of
+        $\mathcal B_t$; and maintain class balance.
+      & Deduplicate rows; rebuild support with four, eight, and sixteen target
+        quantile intervals; sample equally within each interval; and expand
+        retained unique coverage from $80\%$ to $100\%$. \\
+  \end{longtable}
+\endgroup
+
+Different ranges, repair strengths, subspaces, and transport levels are
+separate candidates. Target matching and transport use $X_t$ but not target
+labels; no constructor receives manipulation strength.

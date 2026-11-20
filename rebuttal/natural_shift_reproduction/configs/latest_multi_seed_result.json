@@ -1,0 +1,71 @@
+{
+  "status": "COMPLETE",
+  "scope": "full natural-shift table; two scenarios, three tasks, ID/OOD; Base/Shared/Specific",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "full_repetitions": 30,
+  "metric_rows": 180,
+  "fixed_data_partitions": true,
+  "fixed_hyperparameters": true,
+  "variance_ddof": 1,
+  "variance_units": "Accuracy squared",
+  "variance_scope": "context sampling, TabICL seed and supervised-router training, conditional on fixed data splits and source pools",
+  "all_seeds_retained": true,
+  "all_fusion_optimizers_converged": true,
+  "positive_Specific_vs_Shared_pairs": 60,
+  "pairs_with_gain_at_least_0_005": 55,
+  "total_pairs": 60,
+  "below_gain_0_005": [
+    {
+      "seed": 1,
+      "scenario": "geographic",
+      "task": "Income",
+      "domain": "ID",
+      "Specific_minus_Shared": 0.0049
+    },
+    {
+      "seed": 1,
+      "scenario": "geographic",
+      "task": "Income",
+      "domain": "OOD",
+      "Specific_minus_Shared": 0.0011037527593819
+    },
+    {
+      "seed": 2,
+      "scenario": "geographic",
+      "task": "Income",
+      "domain": "ID",
+      "Specific_minus_Shared": 0.0045
+    },
+    {
+      "seed": 4,
+      "scenario": "geographic",
+      "task": "Income",
+      "domain": "ID",
+      "Specific_minus_Shared": 0.0034
+    },
+    {
+      "seed": 4,
+      "scenario": "temporal",
+      "task": "Income",
+      "domain": "OOD",
+      "Specific_minus_Shared": 0.0031999999999999
+    }
+  ],
+  "summary_csv": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/multi_seed_natural_v13/summary_mean_std_variance.csv",
+  "formatted_accuracy_table": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/multi_seed_natural_v13/formatted_accuracy_table.csv",
+  "per_seed_csv": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/multi_seed_natural_v13/per_seed_accuracy_and_gain.csv",
+  "all_metrics_csv": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/multi_seed_natural_v13/all_seed_metrics.csv",
+  "paired_gain_summary": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/multi_seed_natural_v13/paired_gain_summary.csv",
+  "configuration": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/configs/protocol_v13_multi_seed_natural.json",
+  "audit": "/mnt/public/zhouyibo/ICLR2027/rebuttal/natural_shift_reproduction/results/multi_seed_natural_v13/audit.json",
+  "additional_supervised_adaptation": true,
+  "original_paper_reproduction": false,
+  "single_seed_archives_unchanged": true,
+  "MD_summary_size_bytes": 0
+}

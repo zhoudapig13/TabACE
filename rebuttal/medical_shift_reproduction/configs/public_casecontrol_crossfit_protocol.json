@@ -1,0 +1,23 @@
+{
+  "version": "public-casecontrol-source-crossfit-v1",
+  "declared_at_utc": "2026-11-11T08:21:58.548668+00:00",
+  "status": "DECLARED_BEFORE_CROSSFIT_EVALUATION",
+  "role": "EXPLORATORY_DEVELOPMENT; first-round same test cohort already observed",
+  "change": "Replace single source 60/40 fusion selection with 5-fold source-calibration OOF fusion probabilities, threshold and policy selected only on source OOF outputs. Refit selected gate on all source calibration; threshold retained from OOF. All context memberships/data unchanged.",
+  "candidates_per_tier": 4,
+  "gains": [
+    1.0,
+    2.0
+  ],
+  "regularization": [
+    0.01,
+    0.1
+  ],
+  "folds": 5,
+  "seed": 0,
+  "target_outcomes_used_for_fitting_or_candidate_selection": false,
+  "attempt_budget": 1,
+  "first_round_results_preserved": true,
+  "selection_metric": "source OOF accuracy; Specific weighted by unlabelled target density ratio",
+  "ranking_enforced": false
+}

@@ -1,0 +1,32 @@
+output_dir: experiment3/results/synthetic_default
+random_states: [42]
+test_size: 0.3
+max_test_eval: 80
+
+synthetic:
+  n_samples: 600
+  n_features: 10
+  treatment_imbalance: 0.0
+  confounding_strength: 1.0
+  overlap_violation: 0.0
+  heterogeneity: 1.0
+  noise_std: 1.0
+
+context_sizes: [16, 32, 64, 128, 256]
+retrievers:
+  - random
+  - knn
+  - treatment_balanced_random
+  - propensity_nearest
+  - matched_pair
+  - overlap_aware
+context_estimators:
+  - local_context_t_learner
+classical_estimators:
+  - global_t_learner
+  - global_s_learner
+
+ablations:
+  confounding_strengths: [0.5, 1.5]
+  treatment_imbalances: [-1.0, 0.0, 1.0]
+  overlap_violations: [0.0, 1.0]

@@ -1,0 +1,26 @@
+\begin{table}[H]
+  \centering
+  \caption{Gains from Context ensembling with conventional tabular predictors.}
+  \label{tab:traditional-backbone-gains}
+  \small
+  \setlength{\tabcolsep}{5.0pt}
+  \renewcommand{\arraystretch}{1.08}
+  \begin{tabular}{lcc@{\hspace{10pt}}lcc}
+    \toprule
+    \multicolumn{3}{c}{Classification: $\Delta$Accuracy $\uparrow$}
+      & \multicolumn{3}{c}{Regression: $\Delta R^2$ $\uparrow$} \\
+    \cmidrule(lr){1-3}\cmidrule(lr){4-6}
+    Predictor & Shared & Specific
+      & Predictor & Shared & Specific \\
+    \midrule
+    kNN & \textcolor{sharedblue}{+0.0167} & \textcolor{specificred}{\textbf{+0.0227}}
+      & kNN & \textcolor{sharedblue}{+0.0203} & \textcolor{specificred}{\textbf{+0.0654}} \\
+    Logistic Regression & \textcolor{sharedblue}{+0.0069} & \textcolor{specificred}{\textbf{+0.0287}}
+      & Ridge Regression & \textcolor{sharedblue}{+0.1425} & \textcolor{specificred}{\textbf{+0.1966}} \\
+    CatBoost & \textcolor{sharedblue}{+0.0145} & \textcolor{specificred}{\textbf{+0.0287}}
+      & CatBoost & \textcolor{sharedblue}{+0.1279} & \textcolor{specificred}{\textbf{+0.1740}} \\
+    MLP & \textcolor{sharedblue}{+0.0107} & \textcolor{specificred}{\textbf{+0.0285}}
+      & MLP & \textcolor{sharedblue}{+0.0499} & \textcolor{specificred}{\textbf{+0.1645}} \\
+    \bottomrule
+  \end{tabular}
+\end{table}

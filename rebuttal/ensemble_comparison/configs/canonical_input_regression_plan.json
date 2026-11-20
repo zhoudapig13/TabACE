@@ -1,0 +1,18 @@
+{
+  "timestamp_UTC": "2026-11-07T13:50:54.257310+00:00",
+  "purpose": "Separate ensemble gains from extra labelled history/reference access",
+  "seed": 0,
+  "source_protocol": "seven_calibrated_v2; frozen and unchanged",
+  "datasets": 33,
+  "conditions_each": 29,
+  "source_rows": 256,
+  "candidate_budget": 6,
+  "intervention": "Use exact Base canonical source rows as bootstrap pool; retain full-pool results",
+  "selection": "IQR source-predicted spread only; supervised GES/convex calibrated using dataset-level outer-OOF",
+  "Shared_run": false,
+  "paper_scores_used_for_fit_or_selection": false,
+  "code_sha256": {
+    "run_canonical_regression.py": "3ce37a2d133e8390e368ba5cac625e89f9e9cf76768bb4dd6e5c396c86c57921",
+    "launch_canonical_regression.py": "e6034200391b00b756b0395a56d0fbab4e65426e4d0e0fef935271f89876b525"
+  }
+}

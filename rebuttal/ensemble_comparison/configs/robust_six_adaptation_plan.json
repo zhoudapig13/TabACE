@@ -1,0 +1,28 @@
+{
+  "seed": 0,
+  "tracks": [
+    "five_feature_calibrated",
+    "seven_reimplemented"
+  ],
+  "task": "classification",
+  "purpose": "improve correlated-error ensemble baselines under fixed protocols using source-only feature adaptation and nested dataset-OOF model selection",
+  "finite_attempt": 1,
+  "candidate_views": 6,
+  "constructors_receive_target_labels": false,
+  "constructors_receive_shift_family_or_strength": false,
+  "paper_Shared_values_used_in_tuning": false,
+  "backbone_training": false,
+  "original_results_preserved": true,
+  "roles": [
+    "Base",
+    "Gaussian source quantiles",
+    "unlabelled covariance-sign and quantile transport",
+    "stable75percent",
+    "stable50percent",
+    "source-neighbour feature repair or recent-source bootstrap"
+  ],
+  "calibration": "five-fold dataset-OOF; inner calibration selects raw/adapted variant and fusion hyperparameters by NLL",
+  "goals": "genuine held-out improvement, with all outcomes retained; no prescribed score interval",
+  "low_shift_backoff": "source-centroid outlier and recent-labelled-source consistency diagnostics; no query labels",
+  "adapter_sha256": "3d2888d7e7b94ca144d7e65094f7678a888a238332ee2dd05b4bd5e134ccddde"
+}

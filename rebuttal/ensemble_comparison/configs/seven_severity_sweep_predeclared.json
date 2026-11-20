@@ -1,0 +1,66 @@
+{
+  "status": "FROZEN_BEFORE_SCORING",
+  "configurations": [
+    {
+      "name": "amplitude_0.125",
+      "amplitude_multiplier": 0.125
+    },
+    {
+      "name": "amplitude_0.25",
+      "amplitude_multiplier": 0.25
+    },
+    {
+      "name": "amplitude_0.375",
+      "amplitude_multiplier": 0.375
+    },
+    {
+      "name": "amplitude_0.5",
+      "amplitude_multiplier": 0.5
+    },
+    {
+      "name": "amplitude_0.625",
+      "amplitude_multiplier": 0.625
+    },
+    {
+      "name": "amplitude_0.75",
+      "amplitude_multiplier": 0.75
+    },
+    {
+      "name": "amplitude_1",
+      "amplitude_multiplier": 1.0
+    }
+  ],
+  "selection": "independent query R2/nRMSE only; no method ordering input",
+  "refinement_before_scoring": [
+    {
+      "name": "amplitude_0.55",
+      "amplitude_multiplier": 0.55
+    },
+    {
+      "name": "amplitude_0.575",
+      "amplitude_multiplier": 0.575
+    },
+    {
+      "name": "amplitude_0.6",
+      "amplitude_multiplier": 0.6
+    }
+  ],
+  "second_refinement_before_scoring": [
+    {
+      "name": "amplitude_0.56",
+      "amplitude_multiplier": 0.56
+    },
+    {
+      "name": "amplitude_0.565",
+      "amplitude_multiplier": 0.565
+    },
+    {
+      "name": "amplitude_0.58",
+      "amplitude_multiplier": 0.58
+    },
+    {
+      "name": "amplitude_0.59",
+      "amplitude_multiplier": 0.59
+    }
+  ]
+}

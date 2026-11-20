@@ -1,0 +1,43 @@
+{
+  "status": "DECLARED_BEFORE_NEW_V2_ENSEMBLE_INFERENCE",
+  "seed": 0,
+  "backbone": "TabICL-v2",
+  "benchmark_version": "internal_regression_benchmark_v2",
+  "benchmark_frozen": true,
+  "benchmark_changes_allowed": false,
+  "nominal_strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "candidate_budget": 6,
+  "source_access": "Base canonical source only",
+  "methods": [
+    "Native6",
+    "GES6",
+    "ConvexStacking6",
+    "RidgeStacking6",
+    "Median6",
+    "FeatureMean6",
+    "TrimmedMean6",
+    "IQR6"
+  ],
+  "first_stage": "Previously declared nested dataset-OOF grid; preserve all raw and adapted results",
+  "recommended_additional_adaptation": "Calibration safety gate, explicitly separate from original methods",
+  "gate_calibration": "Inner cross-fitting over four calibration dataset folds; fifth dataset fold held out",
+  "gate_evidence": "One-sided 95% Bonferroni-adjusted normal lower bounds on dataset-level R2 and nRMSE gains",
+  "gate_requires_both_metric_lower_bounds_positive": true,
+  "gate_Clean_tolerance": 0.005,
+  "fallback": "Base when calibration evidence or Clean feasibility is insufficient; disclose every fallback fold",
+  "fallback_is_ensemble_improvement": false,
+  "deployed_candidates_maximum": 6,
+  "native_fallback_branch_deploys_Base_only_not_seven_calls": true,
+  "Shared_bounds_used_for_selection": false,
+  "outer_test_labels_used_for_selection": false,
+  "all_original_and_failed_variants_preserved": true,
+  "backbone_weights_updated": false,
+  "single_seed_per_user": true,
+  "Shared_run": false,
+  "Markdown_written": false
+}

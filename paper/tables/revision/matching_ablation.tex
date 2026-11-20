@@ -1,0 +1,20 @@
+\begin{table}[H]
+\centering\footnotesize
+\color{revisionblue}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Shortcut calibration/constructor-matching ablation.}
+\label{tab:revision-matching}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Configuration & Shortcut in calibration & Matched constructor & Acc $\uparrow$ & AUC $\uparrow$ \\
+\midrule
+Base & --- & --- & 0.51719 & 0.65690 \\
+A & Yes & Yes & \textbf{0.74394} & \textbf{0.87909} \\
+B & No & Yes & 0.70777 & 0.85370 \\
+C & Yes & No & 0.71187 & 0.85757 \\
+D & No & No & 0.69333 & 0.84662 \\
+\bottomrule
+\end{tabular}}
+\end{table}

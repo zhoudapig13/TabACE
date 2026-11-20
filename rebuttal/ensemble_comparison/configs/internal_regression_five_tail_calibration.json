@@ -1,0 +1,56 @@
+{
+  "status": "DECLARED_BEFORE_NEW_RUNS",
+  "internal_only": true,
+  "calibration_uses_Base_only": true,
+  "reason": "Source-standardized context noise disproportionately affects R2 on heavy-tailed response tasks (verified per-dataset error profiles).",
+  "formula": "contrast = clip(IQR(y_source)/(1.349*std(y_source)), 0.05, 2)^tail_power; y_corrupt = y_original + contrast*(previous_corrupt_response - y_original)",
+  "candidates": [
+    {
+      "name": "tail_power0.05",
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast_tail_power": 0.05
+      }
+    },
+    {
+      "name": "tail_power0.1",
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast_tail_power": 0.1
+      }
+    },
+    {
+      "name": "tail_power0.2",
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast_tail_power": 0.2
+      }
+    },
+    {
+      "name": "tail_power0.3",
+      "parameters": {
+        "shift_scale": 8.0,
+        "label_scale": 1.0,
+        "label_contrast_tail_power": 0.3
+      }
+    }
+  ],
+  "maximum_initial_candidates": 4,
+  "maximum_additional_interpolations": 2,
+  "data_set_specific_parameters": false,
+  "source_statistics_only": true,
+  "target_labels_not_used_by_generator": true,
+  "metric_definitions_unchanged": true,
+  "Clean_fixed": true,
+  "strengths": [
+    0.2,
+    0.5,
+    0.8,
+    1.0
+  ],
+  "strength_rescaled": false,
+  "all_prior_trials_retained": true
+}

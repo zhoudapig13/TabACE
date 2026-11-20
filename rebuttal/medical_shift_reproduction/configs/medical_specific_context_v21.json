@@ -1,0 +1,20 @@
+{
+  "version": "medical-specific-context-v21",
+  "declared_at_utc": "2026-11-11T10:17:33.005777+00:00",
+  "method": "Specific-C dagger: supervised forest proximity retrieves patient contexts; final expert predictions still come from frozen TabICL-v2.",
+  "parent": "v18 Base/Shared frozen",
+  "clinical_target_budget": 64,
+  "source_training": "Existing full source pool plus32 target-context patients; forest64trees depth4 minleaf8, source/target loss mass.8/.2",
+  "retrieval": "RF shared-leaf proximity; farthest-first8or16 training-pool anchors; query assignment by proximity; nearest64,128,256 context rows; ensure both classes. ID contexts source-only; OOD contexts include up to32 target-training rows.",
+  "clinical_labels_not_in_context": "Source and target calibration, validation and final test patients are excluded from retrieval pool.",
+  "models": "Native TabICL-v2 n_estimators1, row cap256, samecheckpoint, no backbone weight training.",
+  "calibration": "Cross-fitted reference Shared predictions and Platt probabilities; learned capped logit residual, as v20.",
+  "candidate_contexts": 6,
+  "source_and_target_supervision": "All Base/Shared/Specific have same available pools; supervised learned retrieval is explicitly additional algorithmic processing.",
+  "reference": "Forest standalone output also reported separately.",
+  "known_domain_metadata": true,
+  "selection": "Development accuracy only with Shared fallback. No final labels, ranking filters, or numeric-band selection.",
+  "prior_results_retained": true,
+  "not_original_paper_specific": true,
+  "seed": 0
+}
