@@ -1,8 +1,13 @@
-# Complete working-directory backup
+# Working-directory backups
 
 Source directory: `ICLR2027/`.
 
-The lightweight Git repository preserves source, documents, and selected reports. The full archive is uploaded separately to the [`server-backup-20261120` release](https://github.com/zhoudapig13/TabACE/releases/tag/server-backup-20261120). Until `BACKUP_COMPLETE.json` appears in that release, the full upload is still in progress.
+The Git repository preserves source, documents, and selected reports under `ICLR2027/`. Large working files are uploaded as checked archive volumes in GitHub Releases:
+
+- [`essential-backup-20261120`](https://github.com/zhoudapig13/TabACE/releases/tag/essential-backup-20261120): project snapshot excluding prediction-bank directories named `banks`, plus the exclusions below.
+- [`server-backup-20261120`](https://github.com/zhoudapig13/TabACE/releases/tag/server-backup-20261120): full project snapshot, including prediction banks, with the exclusions below.
+
+An archive is complete only when its release contains `BACKUP_COMPLETE.json`, `SHA256SUMS`, and `RESTORE.md`. Upload workers resume matching volumes by SHA-256 and retry temporary network failures. A partial release must not be mistaken for a complete backup.
 
 The archive preserves the original project directory, regular files, and symbolic links, including datasets, model weights, and historical outputs. Disposable Git metadata, environment/cache directories, and credential files are excluded. Consult the manifest for exact exclusions.
 
