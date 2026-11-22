@@ -55,9 +55,9 @@ cd ICLR2027/paper
 make iclr
 ```
 
-## Full project backup
+## Project backup
 
-Git tracks the source, documents, and lightweight reports. Large files and the complete original working-directory snapshot are preserved as split release assets when uploaded. See [backup/README.md](backup/README.md) for the manifest, checksums, and restore commands. The archive, rather than the lightweight Git checkout, is the restoration source for excluded datasets, checkpoints, and historical outputs.
+Git tracks the source, documents, and lightweight reports. The [curated project archive](https://github.com/zhoudapig13/TabACE/releases/tag/curated-project-20261122) additionally preserves experiment summaries, configurations, provenance, and audit records in the original `ICLR2027/` layout. Re-downloadable datasets, prediction caches, virtual environments, progress logs, and retrainable model checkpoints are omitted. See [backup/README.md](backup/README.md) for completion checks, the selection manifest, and restoration commands.
 
 ## Attribution
 
