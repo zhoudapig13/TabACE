@@ -1,0 +1,9 @@
+{
+  "checked_utc": "2026-11-22T02:45:34Z",
+  "downloaded_sha256_verified": true,
+  "zstd_exit_code": 0,
+  "tar_exit_code": 0,
+  "selected_files_checked": 14274,
+  "missing_files": [],
+  "selection_manifest_in_archive": true
+}

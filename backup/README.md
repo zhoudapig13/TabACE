@@ -6,6 +6,10 @@ It preserves source code, paper files and figures, configurations, aggregate exp
 
 The snapshot excludes re-downloadable raw datasets, prediction banks and per-query caches, virtual environments, training progress logs, retrainable model checkpoints, and dense runtime directories. The local originals were not deleted. Credentials, private keys, and Git metadata are excluded from the archive.
 
+## Verified snapshot
+
+The curated upload is complete: one archive volume of 169,693,500 compressed bytes. The archive and all completion metadata have been checked against GitHub SHA-256 digests. Checksums and the completed volume manifest are also preserved under [curated/](curated/).
+
 ## Completion check
 
 A release is complete only when it contains `BACKUP_COMPLETE.json`, `SHA256SUMS`, and `RESTORE.md`. The numbered archive volumes are checked against GitHub SHA-256 digests.

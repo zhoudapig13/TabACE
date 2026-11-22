@@ -1,0 +1,32 @@
+{
+  "source_directory": "ICLR2027",
+  "repository": "zhoudapig13/TabACE",
+  "release_url": "https://github.com/zhoudapig13/TabACE/releases/tag/curated-project-20261122",
+  "completed_utc": "2026-11-22T02:44:07Z",
+  "archive_format": "tar.zst split into ordered chunks",
+  "exclusions": [
+    ".git",
+    "__pycache__",
+    ".pytest_cache",
+    ".cache",
+    "node_modules",
+    ".venv",
+    "venv",
+    ".ssh",
+    ".env",
+    ".env.*",
+    ".git-credentials",
+    "*.pem",
+    "*.key"
+  ],
+  "compressed_bytes": 169693500,
+  "chunks": [
+    {
+      "name": "TabACE-curated.tar.zst.part-000000",
+      "bytes": 169693500,
+      "sha256": "93976b124878fa8a562d453c76d02f8c3aa67cb66edce5cb6d069c104e83d73c",
+      "github_digest": "sha256:93976b124878fa8a562d453c76d02f8c3aa67cb66edce5cb6d069c104e83d73c",
+      "url": "https://github.com/zhoudapig13/TabACE/releases/download/curated-project-20261122/TabACE-curated.tar.zst.part-000000"
+    }
+  ]
+}
